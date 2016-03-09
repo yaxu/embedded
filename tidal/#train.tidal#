@@ -9,4 +9,4 @@ d2 $ (jux (inside (1/8) rev) $ s (unwrap $ e <$> ((+1) <$> (slow 8 $ run 8)) <*>
 
 d3 $ slow 2 $ struct "x ~ x [x x*2]/2" $ s "drum"
 
-d4 $ sometimes (off 0.125 (# up "[5 7]/4")) $ struct "x ~ [x ~ x]" $ n ("[c4 d4 es4 f4]/8") # s "xx"
+d4 $ rarely (off 0.125 (# up "[5 7]/4")) $ struct "x ~ [x ~ x] " $ n ("[[c4,e4] [d4,g4] [ds4,bs4] [f4,es3,a4]]/8") # s "xx"
