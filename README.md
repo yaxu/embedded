@@ -1,5 +1,5 @@
 # embedded
-Working folder from ODI/Sound and Music embedded residency
+Working folder from ODI/Sound and Music embedded sound art residency
 
 Please note that this folder will contain work in progress and should
 not be taken seriously.
