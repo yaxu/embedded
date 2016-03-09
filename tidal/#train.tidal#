@@ -9,11 +9,16 @@ d2 $ slow 2 $ (jux (inside (1/8) rev) $ s (unwrap $ e <$> ((+1) <$> (slow 8 $ ru
 
 d3 $ slow 2 $ struct "x ~ x [x x*2]/2" $ s "drum"
 
-d1 $ slow 2 $ often (off 1 (|*| speed "2")) $ sometimes (off 0.125 (# up "[5 7 12]/6")) $ struct "x [x x]" $ n ("[[c3,e4] d3 ds3 f3]/8") # s "xx"
+d1 $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 -7 12]/6")) $ struct "x [x x]" $ n ("[[c3,e4] d3 ds3 f3]/8") # s "xx"
   # room "1"
   # size "0.9"
   # orbit "1"
   # crush "3"
+
+d4 $ n "[c d ds f]/4" # s "ravebass"
+  # gain "1.5"
+  # orbit "3"
+  # speed "4"
   
 d2 $ jux (iter 4)  $ whenmod 4 2 rev $ every 2 (chop 8) $ sound "glitch:2(3,8)"
   # gain "1.9"
@@ -22,4 +27,4 @@ d2 $ jux (iter 4)  $ whenmod 4 2 rev $ every 2 (chop 8) $ sound "glitch:2(3,8)"
 
 d3 $ iter 8 $ slow 2 $ chop 16 $ sound "arc"
   # unit "c" # speed "0.5"
-  # gain "1.2"
+  # gain "1.3"
