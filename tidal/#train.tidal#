@@ -1,0 +1,12 @@
+
+
+d1 $ (slow 4 $ n (slowspread (offadd 0.125) [7,-5] $ "e3(3,8) f3(5,8,[2 4 6]/3)") # s "xx")
+  # room (slow 4 sine1)
+  # size "0.5"
+
+d2 $ (jux (inside (1/8) rev) $ s (unwrap $ e <$> ((+1) <$> (slow 8 $ run 8)) <*> "[8]/16" <*> (pure "cp")))
+  # vowel "a e i o u"
+
+d3 $ slow 2 $ struct "x ~ x [x x*2]/2" $ s "drum"
+
+d4 $ n "[e,f,g] # s "xx"
