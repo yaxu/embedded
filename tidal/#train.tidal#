@@ -15,10 +15,12 @@ d1 $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 -7 12]/6")
   # orbit "1"
   # crush "3"
 
-d4 $ n "[c d ds f]/4" # s "ravebass"
+d4 $ off upn ("[c d ds [a e]]/8") # s "ravebass"
   # gain "1.5"
   # orbit "3"
-  # speed "4"
+  # speed "2"
+  # room "1"
+  # size "0.9"
   
 d2 $ jux (iter 4)  $ whenmod 4 2 rev $ every 2 (chop 8) $ sound "glitch:2(3,8)"
   # gain "1.9"
