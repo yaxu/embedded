@@ -1,7 +1,7 @@
 
     Aims of the project: 
         Develop the idea of data ethnography
-        To write about the seams between imagination and reality
+        To write code about the seams between imagination and reality
         Develop a way of working where the method is the key to the work and the outcome is a side product
         To gain feedback from a wider group of people (non live coders)
     What are you trying that’s new for you in this project?
