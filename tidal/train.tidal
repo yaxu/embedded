@@ -52,3 +52,7 @@ d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenm
   
 
 d1 $ sound "xx:"  
+
+d1 $ s $ (["cp", "sn", "hc"] !!) <$> "2 0 1 2"
+
+d1 $ s $ fit 3 ["cp", "sn", "hc"] "2 0 1 2"
