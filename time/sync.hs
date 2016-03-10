@@ -1,5 +1,4 @@
 import qualified Network.Socket as N
--- ximport qualified Sound.OSC.Transport.FD.UDP as O
 import Sound.OSC.FD
 
 set_udp_opt k v (UDP s) = N.setSocketOption s k v
