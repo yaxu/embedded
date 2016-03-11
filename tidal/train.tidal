@@ -49,10 +49,12 @@ d1 $ palindrome $
 
 
 d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenmod 8 4 (jux rev) $ (slow 2 $ n "0 [0 2] [2 0] 0 [2 0] 0 [2 1] [0 !?]" # s "drum")) # speed (slow 4 $ scale 0.9 1.5 sine1)
-  
+
 
 d1 $ sound "xx:"  
 
 d1 $ s $ (["cp", "sn", "hc"] !!) <$> "2 0 1 2"
 
 d1 $ s $ fit 3 ["cp", "sn", "hc"] "2 0 1 2"
+
+let select xs p = fit (length xs) xs p
