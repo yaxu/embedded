@@ -22,3 +22,5 @@ What else?
 - Crowd movement
 - Machine listening
 
+Use rate of evaluation as a pattern source ?
+
