@@ -33,10 +33,9 @@ d1 $ slow 2 . striate' 8 (scale 0.05 0.15 sine1) $ sound "longsample"
 d1 $ slow 2 $
 
 d1 $ (slow 4 $ unwrap $ (\x -> striate' 8 x $ sound "breaks152") <$> (scale 0.05 0.15 sine1))
-  # unit "c"
-  # speed "0.25"
 
-
+d1 $ do n <- scale 0.05 0.15 sine1
+        slow 4 $ striate' 8 n $ sound "breaks152"
 
 
 -- patterning
