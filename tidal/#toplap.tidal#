@@ -1,11 +1,10 @@
 -- sounds + effects
 
-d1 $ sound "{xx:60 xx:62 xx:64}"
-  # coarse "4"
+d1 $ degrade $ sound "{xx:60 [xx:62 xx:64 xx:84] xx:64, xx:72 xx:84}"
   # room "1"
   # size "0"
 
-
+hu
   -- patterning
 -- > sequences (granulation, polymetry)
 -- > glitch
