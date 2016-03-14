@@ -1,4 +1,0 @@
-d1 $ jux (iter 4) $ n (offadd 0.25 7 $ "[d3 d2] e e6*2") # s "pno2"
-
-d2 $ sound "hoover(3,8)" # n "[c g]/2"
-
