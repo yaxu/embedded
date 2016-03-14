@@ -17,8 +17,15 @@ d1 $ jux (rev) $ n (slowspread (offadd 0.125) [7,-5,12] "c5 e [f d3] a") # s "[p
 
 
 d2 $ jux rev $ chop 4 $ n "d [e f]" # s "arpy"
-  # 
+  # size "0.6"
+  # room "0.9"
+  # orbit "1"
 
+d3 $ jux rev $ chop 4 $ n "d [e f]" # s "arpy"
+  # room "0"
+  # size "0"
+  # speed "2"
+  # orbit "2"
 
 -- patterning
 -- > sequences (granulation, polymetry)
