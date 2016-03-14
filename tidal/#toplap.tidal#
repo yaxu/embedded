@@ -1,0 +1,14 @@
+-- sounds + effects
+
+d1 $ sound "{xx:60 xx:62 xx:64}"
+  # coarse "4"
+  # room "1"
+  # size "0"
+
+
+  -- patterning
+-- > sequences (granulation, polymetry)
+-- > glitch
+-- > composition
+-- > interference
+
