@@ -13,8 +13,9 @@ d3 $ jux rev $ weave 16 (sound (every 2 rev $ samples' "arpy" (run 16)))
    speed "1 [2 0.5] 3"
   ]
 
-d1 $ n "60 50" # s "xx"
+d1 $ iter 4 $ jux (rev) $ n (slowspread (offadd 0.125) [7,-5,12] "c5 e [f d3] a") # s "pno"
 
+hush
   -- patterning
 -- > sequences (granulation, polymetry)
 -- > glitch
