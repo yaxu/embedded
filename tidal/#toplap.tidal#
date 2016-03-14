@@ -1,0 +1,10 @@
+-- sounds + effects
+-- patterning
+-- > sequences (granulation, polymetry)
+-- > glitch
+-- > composition
+-- > interference
+
+d1 $ sound "newnotes*2 ~"
+
+hush
