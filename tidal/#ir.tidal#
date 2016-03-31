@@ -1,1 +1,5 @@
-d1 $ s  "claus" # n "8"
+d1 $ jux (iter 4) $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
+  # speed (superimpose "1,1.1]"
+
+d2 $ sound "drum cp8"
+
