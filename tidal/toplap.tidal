@@ -20,7 +20,9 @@ d2 $ jux rev $ chop 4 $ n "d [e f]" # s "arpy"
   # size "0.6"
   # room "0.9"
   # orbit "1"
-schush
+  
+hush
+
 d3 $ jux rev $ chop 4 $ n "d [e f]" # s "arpy"
   # room "0"
   # size "0"
