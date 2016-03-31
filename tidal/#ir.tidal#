@@ -1,5 +1,10 @@
-d1 $ jux (iter 4) $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
-  # speed (superimpose "1,1.1]"
+d1 $ jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
+  # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
+  # room "0.3"
+  # orbit "2"
+  
+d2 $ sound "[drum cp8]"
+  # orbit "1"
 
-d2 $ sound "drum cp8"
+d3 $ n "c d " # s "xx"
 
