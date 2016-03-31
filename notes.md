@@ -1,0 +1,44 @@
+## Data from live coding environments
+
+Making thought processes visible (?)
+
+eg
+![livecodethoughtdata](./images/livecodethoughtdata.jpg)
+
+From: https://www.youtube.com/watch?v=W0Cf2ywYUcI
+(turn subtitles on)
+
+- Drink (beer / mezcal)
+- Glance at co-performer
+- Code evaluation
+- Thematic change
+
+What else?
+
+- Syntax errors
+- Changing of mind
+- Typing rate
+- Gaze
+- Crowd movement
+- Machine listening
+
+Use rate of evaluation as a pattern source ?
+
+Look into Atom with Jack..
+
+## Deep learning
+
+Seems to be ANNs with bugfixes and GPUs
+
+Maybe Deep Learning will separate us from the structure of
+computation, just as the Jacquard device separated us from the
+structure of cloth?
+
+## Datalove
+
+Ref Quinn
+
+Remix chains as datalove? Do a tidal remix chain then look for ways of
+making datalove interfaces. Should they be anonymous? Should datalove
+be exclusive or unbounded?
+Could a remix chains be cyclic? It github a good interface for this?
