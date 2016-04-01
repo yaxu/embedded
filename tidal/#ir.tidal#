@@ -18,5 +18,5 @@ d1 $ density 2 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut
 hush
 
 cps 8
-
+d1 silence
 d1 $ sound "cp"
