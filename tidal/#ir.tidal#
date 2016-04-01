@@ -1,0 +1,18 @@
+d1 $ jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
+  # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
+  # room "0.3"
+  # orbit "2"
+
+d1 silence
+
+d2 $ sound "[drum cp8]"
+  # orbit "1"
+
+d3 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4(3,8) f3*3 g4(3,8) e3*3") # s "xx") |+| n "[0 2 7]/8"
+
+d1 <- dirtStream
+
+d1 $ sound "[gab, cp]"
+
+d1 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
+  |+| speed "4"
