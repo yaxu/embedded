@@ -12,4 +12,4 @@ d3 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4(3,8) f3*3 g4(3,8) e3*3") # s "xx
 
 d1 <- dirtStream
 
-d1 $ sound "bd"
+d1 $ sound "[gab]"
