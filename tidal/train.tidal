@@ -1,4 +1,4 @@
--- for Renick
+
 
 d1 $ (slow 4 $ n (slowspread (offadd 0.125) [7,-5] $ "e3(3,8) f3(5,8,[2 4 6]/3)") # s "xx")
   # room (slow 4 sine1)
