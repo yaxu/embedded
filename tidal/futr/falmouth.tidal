@@ -27,4 +27,4 @@ d6 $ slow 2 $ chop 16 $  s "repetition" # n (irand 8)
   # unit "c" # speed "0.5"
   # gain "1.1"
 
-cps 0.6
+cps 0.
