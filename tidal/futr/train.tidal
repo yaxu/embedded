@@ -42,7 +42,8 @@ d1 $ palindrome $
             # size (slow 4 sine1)
            ]
 
-d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenmod 8 4 (jux rev) $ (slow 2 $ n "0 [0 2] [2 0] 0 [2 0] 0 [2 1] [0 !?]" # s "drum")) # speed (slow 4 $ scale 0.9 1.5 sine1)
+-- solo $
+  d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenmod 8 4 (jux rev) $ (slow 2 $ n "0 [0 2] [2 0] 0 [2 0] 0 [2 1] [0 !?]" # s "drum")) # speed (slow 4 $ scale 0.9 1.5 sine1)
 
 # b
 
