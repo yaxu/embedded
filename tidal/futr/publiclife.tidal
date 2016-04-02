@@ -17,10 +17,16 @@ d4 $ (slow 8 $ jux rev $ every 2 (slow 2) $ (striate 32 $ sound (samples "[newno
 d5 $ slowspread ($) [id, trunc 0.25, slow 1.5, trunc (1/8)] $ sound "{bd ~ [~ hc], future bd*2 bd*3 sn:2 drum}%4" |+| gain "1"
 
 -- risea0
-d1 $ sound $ samples "arpy*8" (run 8)
+d1 $ jux rev $ weave 16 (sound $ samples "arpy*8" (run 8))
+  [vowel "a e i",
+   vowel "i o u a",
+   vowel "i o u a",
+   speed "1 2 [1.5 0.5]"
+  ]
+  # gain "1" # speed "[0.5]"
 
 -- plastika
-d1 $ weave 16 (speed (scale 1 1.4 sine1)) [juxBy 0.5 (iter 8) $ sound "sd8:4*4",
+d5 $ weave 16 (speed (scale 1 1.4 sine1)) [juxBy 0.5 (iter 8) $ sound "sd8:4*4",
                                            juxBy 0.5 (iter 4) $ sound "bd*2",
                                            juxBy 0.5 (iter 3) $ sound "sd8:3*4"
                                           ] |+| gain "0.9"
@@ -51,3 +57,6 @@ d2 $ every 3 (0.25 <~) $ every 4 (density 2) $ jux (iter 8) $ sound "drum mouth:
              |+| cutoff (slow 12 $ (*8000) <$> sine1)
              |+| gain "1.2"
              
+
+d7 $ sometimes (# speed "2") $ jux rev $ slow 4 $ n (offadd 0.125 7 "d4(3,8) e3([5 7],8) f3(3,8) g3*4") # s "xx"
+  
