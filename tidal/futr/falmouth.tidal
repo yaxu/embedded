@@ -1,4 +1,4 @@
-d1 $ whenmod 8 4 (# speed "2") $ slowspread (\x -> within x (density 2)) [(0,0.25), (0.25,0.5), (0.5,0.75)] $ s "bd*8" # n (irand 16)
+d1 $ whenmod 8 4 (# speed "3 2") $ slowspread (\x -> within x (density 2)) [(0,0.25), (0.25,0.5), (0.5,0.75)] $ s "bd*8" # n (irand 16)
   # shape "0.5"
   # size "0.5"
   # room "0.35"
