@@ -1,7 +1,7 @@
 cps 0.75
 
 d9 $ sound "[drum, wobble]([3 5]/2,8)"
-  # gain "1.2" # speed "0.9"
+  # gain "1.2" # speed "[0.9,2]"
 
 -- phase
 d1 $ echo (1/64) $ sound "bd8:1*2 ! ! bd8:5"
