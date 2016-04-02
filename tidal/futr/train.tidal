@@ -49,3 +49,5 @@ d3 $ s $ (["cp", "sn", "hc"] !!) <$> "2 0 1 2"
 d4 $ s $ fit 3 ["cp", "sn", "hc"] "2 0 1 2"
 
 let select xs p = fit (length xs) xs p
+
+d1 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.25) [7,12] $ "c3 e4*2 g2 [[a*2 c*2] e3]") # s "dirty"
