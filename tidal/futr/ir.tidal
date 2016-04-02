@@ -6,7 +6,7 @@ d1 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
             # orbit "1"
            ]
 
-d2 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4(3,8) f3*3 g4(3,8) e3*3") # s "xx") |+| n "[-12 -10 -5]/8"
+d2 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8"
 
 d1 <- dirtStream
 
