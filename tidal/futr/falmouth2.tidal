@@ -28,3 +28,5 @@ d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| cru
   # speed "[1,2]"
 
 d1 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ tom "c3(3,8) e3(3,8) f3(3,8) g3(3,8)")) # up "3"
+
+d1 silence >> d2 silence >> d4 silence
