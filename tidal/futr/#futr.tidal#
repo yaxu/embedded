@@ -23,6 +23,6 @@ d6 $ jux rev $ chop 16 $ sound "arc" # unit "c"
 
 d7 $ sound "gab:2(3,8)"
 
-d1 $ slow 2 $ chop 16 $ sound "repetition"
+d1 $ slow 2 $ chop 16 $ s "repetition" # n (irand 8)
   # unit "c" # speed "0.5"
-  # gain "1.1"
+  # gain "1.2"
