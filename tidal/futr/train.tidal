@@ -4,6 +4,8 @@ d1 $ (slow 4 $ n (slowspread (offadd 0.125) [7,-5] $ "e3(3,8) f3(5,8,[2 4 6]/3)"
   # room (slow 4 sine1)
   # size "0.5"
 
+d1 $ sound "numbers"
+
 d2 $ slow 2 $ (jux (inside (1/8) rev) $ s (unwrap $ e <$> ((+1) <$> (slow 8 $ run 8)) <*> "[8]/16" <*> (pure "cp")))
   # vowel "a e i o u"
 
@@ -42,6 +44,8 @@ d1 $ slow 2 $ chop 16 $ sound "repetition"
 d7 silence
 
 hush
+
+
 
 d4 $ palindrome $
   stack [slow 4 $ n (offadd 0.125 7 "[c4(7,16) b3(5,16), [a3 e4 g2](17,32)]") # s "xx"
