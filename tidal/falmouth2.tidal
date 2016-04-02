@@ -36,3 +36,4 @@ cps 0.8
 d1 $ slow 2 $ sound "can can:5 can:5 can:5"
   # gain "1"
   # nudge "0.04"
+hush
