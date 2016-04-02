@@ -1,8 +1,7 @@
-that'll do, thanks for listening
 
 (p"2r100 3") :: Pattern Double
 
-d8 $ stack  [slow 16 $ n (slowspread (offadd 0.25) [7,12,-5] "d3 ~ [e2 g3? e2] ~ ") # s "xx"
+d8 $ stack  [slow 2 $ n (slowspread (offadd 0.25) [7,12,-5] "d3 ~ [e2 g3? e2] ~ ") # s "xx"
              # room "0.8"
              # size "0.7"
              # orbit "1",
