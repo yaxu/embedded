@@ -27,17 +27,27 @@ d2 $ jux (iter 4)  $ whenmod 4 2 rev $ every 2 (chop 8) $ sound "glitch:2(3,8)"
   # orbit "2"
   # vowel "i"
 
-d3 $ iter 8 $ slow 2 $ chop 16 $ sound "arc"
+
+d3 $ jux rev $ iter 8 $ slow 2 $ chop 16 $ sound "arc"
   # unit "c" # speed "0.5"
   # gain "1.3"
 
 # c
+d1 silence
+d1 $ slow 2 $ chop 16 $ sound "repetition"
+  # unit "c" # speed "0.5"
+  # gain "1.2"
 
-d1 $ palindrome $
+
+d7 silence
+
+hush
+
+d4 $ palindrome $
   stack [slow 4 $ n (offadd 0.125 7 "[c4(7,16) b3(5,16), [a3 e4 g2](17,32)]") # s "xx"
             # gain "0.9"
                         ,
-            (jux rev $ off 0.25 (# up "[7 12]") $ struct "x([3 5]/2,8)" $slow 4 $ n "e3 a3 g3 b3" # s "dirty")
+            (jux rev $ off 0.25 (# up "[7 12]") $ struct "x([3 5]/2,8)" $slow 4 $ n "e3*3 a3 g3 b3" # s "dirty")
             # gain "1.3"
             # size (slow 4 sine1)
            ]
