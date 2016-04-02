@@ -14,5 +14,9 @@ d4 $ jux rev $ chop 8 $ slow 2 $ sound "casio:1*3 casio*2"
   # gain "1.2"
   # speed "0.5"
   
-d5 $ chop 32 $ sound "drum [cp arpy]"
-  # nudge (slow 5 sine1)
+d5 $ (jux rev $ stack [(chop 32 $ sound "[drum drum*2] [cp [arpy sd8:2]]"),
+                       sound "arpy*2"
+                      ])
+  # nudge "[0,0.04]*4"
+
+d6 $ sound "
