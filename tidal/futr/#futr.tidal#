@@ -1,0 +1,10 @@
+
+
+
+
+
+d1 $ s "numbers*2" # n "1 2" # pan "0 1"
+
+d2 $ jux rev $ chop 8 $ s "alphabet*2" # n "1 2"
+
+d3 $ jux () $ every 4 (density 2) $ sound "[odx, future](3,8)"
