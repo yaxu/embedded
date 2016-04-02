@@ -21,6 +21,8 @@ d4 $ rarely (within (0.75,1) (density 2)) $ superimpose rev $ slow 4 $ n (slowsp
   
 d5 $ slow 4 $ n (sometimes (slowspread (offadd 0.25) [-5,7,-12]) "[d4 g4 f4 e4](6,16,[2 4 6]/3)") # s "xx"
 
+d8 $ jux (iter 4) $ striate 16 $ sound "arc" # unit "c" # gain "1.2" # speed "[1,2]"
+
 d6 $ slow 2 $ chop 16 $  s "repetition" # n (irand 8)
   # unit "c" # speed "0.5"
   # gain "1.1"
