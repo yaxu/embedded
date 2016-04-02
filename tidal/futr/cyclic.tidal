@@ -33,7 +33,7 @@ d3 $ slow 3 $ chop 3 $ striate 4 $ sound "newnotes:5 newnotes:8 newnotes:6"
 d4 $ every 8 (rev) $ sound "wobble*2 wobble [wobble*3]/2"
              |+| speed "2.5 3.4"
              |+| gain "1.2"
-             
+
 -- latibro
 d5 $ juxBy 0.25 ((|+| speed "[-2.41]/4") . (0.006 <~)) $ chop 4 $ sound (samples "latibro ~ latibro" "[0 5 0]/3")
               |+| speed "[-2.4]/4"
