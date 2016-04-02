@@ -32,7 +32,7 @@ d5 $ superimpose (# nudge (slow 4 $ scale 0 0.1 sine1)) $ brak $ sound "[feel [f
 
 d1 $ slowspread ($) [id,rev,struct "x(7,16)"] $ sound "[bd, drum](3,8)"
 
-
+  
 d7 $ slow 4 $ chop 8 $ s "repetition" # n ("0")
   # unit "c" # speed "0.25"
   # gain "1.4"
