@@ -1,3 +1,8 @@
+
+d3 $ density 2 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
+  # speed "1.93"
+  # gain "1.1"
+
 d1 $ slow 2 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
             # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
             # room "0.3"
@@ -6,13 +11,7 @@ d1 $ slow 2 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s 
             # orbit "1"
            ]
 
-d2 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8"
-hush
-
-d3 $ density 2 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
-  |+| speed "4"
-
-
-cps 8
-d1 silence
-d1 $ sound "cp"
+d2 $ ((slow 4 $ n (offadd 0.125 12 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8")
+  -- # vowel "a e i o u"
+  -- # cutoff (slow 4 $ scale 1000 6000 sine1)
+  # resonance "0.4"
