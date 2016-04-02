@@ -14,8 +14,8 @@ d1 $ slow 2 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s 
            ]
 
 d2 $ ((slow 4 $ n (offadd 0.125 12 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8")
-  -- # vowel "a e i o u"
-  -- # cutoff (slow 4 $ scale 1000 6000 sine1)
+  # vowel "a e i o u"
+  # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.4"
 
 d6 $ jux (iter 4) $ slow 2 $ chop 8 $ sound "[os os:2 os:1]/3" # unit "c" # speed "0.5"
