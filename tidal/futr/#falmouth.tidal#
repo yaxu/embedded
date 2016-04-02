@@ -1,0 +1,30 @@
+d1 $ whenmod 8 4 (# speed "3 2") $ slowspread (\x -> within x (density 2)) [(0,0.25), (0.25,0.5), (0.5,0.75)] $ s "bd*8" # n (irand 16)
+  # shape "0.5"
+  # size "0.5"
+  # room "0.35"
+  # orbit "0"
+  # gain "0.95"
+
+d2 $ superimpose (slow 2) $ (every 2 (rev . striate 16) $ sound "cp:4 [arpy cp:4 arpy:1]")
+  # orbit "1"
+  # pan (scale 0.25 0.75 $ slow 2 saw1)
+  # crush "3"
+  # gain "0.9"
+
+d3 $ slow 4 $ sound "mt:5*8 mt:4*6 mt:4*16 mt:5*4"
+  # orbit "1"
+  # speed (scale 4 2 sine1)
+  # vowel "[a e i o u]/5"
+
+d4 $ rarely (within (0.75,1) (density 2)) $ superimpose rev $ slow 4 $ n (slowspread (offadd (-0.125)) [7,12,-5] (palindrome "d(3,8) e(5,16) f(3,8) g(5,16)")) # s "pno2"
+  # gain "1.3"
+  
+d5 $ slow 4 $ n (sometimes (slowspread (offadd 0.25) [-5,7,-12]) "[d4 g4 f4 e4](6,16,[2 4 6]/3)") # s "xx"
+
+d8 $ (jux (iter 4) $ striate 16 $ sound "arc" # unit "c" # gain "1.2" # speed "[-1]") # cutoff (scale 2000 5000 $ slow 1 saw1) # resonance "0.3"
+
+d6 $ slow 2 $ chop 16 $  s "repetition" # n (irand 8)
+  # unit "c" # speed "0.5"
+  # gain "1.1"
+
+cps 0.6
