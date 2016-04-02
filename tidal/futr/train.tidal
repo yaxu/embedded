@@ -52,4 +52,4 @@ let select xs p = fit (length xs) xs p
 
 # b
 
-d1 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.25) [3,5,-7,-5] $ "c3(3,8) g3") # s "dirty"
+d1 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.25) [3,5,-7,-5] $ "c3(3,8) [g3(3,8)]") # s "dirty"
