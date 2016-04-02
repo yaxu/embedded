@@ -47,7 +47,8 @@ d1 $ palindrome $
 
 # b
 
-d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c3(3,8) [g3(3,8)]") # s "dirty" # resonance "0.3" # cutoff "[4000,400]" 
+d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c3(3,8) [g3(3,8)]") # s "dirty" # resonance "0.3" # cutoff "[4000,400]"
+  # gain "1.1"
 
 d5 $ jux rev $ stut' 3 0.125 (|*| speed "2") $ slow 2 $ n "c3 [~ g2*2]" # sound "xx" # cutoff (slow 2 $ scale 1000 3000 sine1) # resonance "0.1" # vowel "[a e]/2"
 
