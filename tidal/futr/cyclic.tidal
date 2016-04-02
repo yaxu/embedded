@@ -62,7 +62,8 @@ d9 $ every 4 (chop 3) $ sound "{bd8*2 sd8:2 [~ ~ glitch:2]}%3"
 -- glitchroll2
 d10 $ slow 2 $ rev $ chop 3 $ sound "bd8 sn glitch:3"
   |+| gain "1"
-                  
+d2 silence                  
+
 -- oa
 d1 $ slow 2 $ whenmod 12 4 (id) $ jux (iter 3) $ chop 4 $ sound "[bd8:1*4 bd8:5*4 cp8]"
          --   |+| (shape $ slow 4 $ scale 0.4 0.9 sine1)
