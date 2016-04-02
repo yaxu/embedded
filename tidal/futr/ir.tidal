@@ -1,4 +1,4 @@
-d1 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
+d1 $ slow 2 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
             # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
             # room "0.3"
             # orbit "2",
@@ -7,13 +7,11 @@ d1 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
            ]
 
 d2 $ (jux rev $ slow 4 $ n (offadd 0.125 12 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8"
-
-d1 <- dirtStream
-
-d1 $ density 2 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
-  |+| speed "4"
-  
 hush
+
+d3 $ density 2 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
+  |+| speed "4"
+
 
 cps 8
 d1 silence
