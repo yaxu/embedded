@@ -66,3 +66,11 @@ d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c3(3,8) [g
 
 d5 $ jux rev $ stut' 3 0.125 (|*| speed "2") $ slow 2 $ n "c3 [~ g2*2]" # sound "xx" # cutoff (slow 2 $ scale 1000 3000 sine1) # resonance "0.1" # vowel "[a e]/2"
 
+
+cps 0.77
+
+d1 $ slow 2 $ chop 8 $ sound "sometimes" # speed "0.5" # unit "c"
+
+d2 $ slow 2 $ n "[f*2 ~] [f ds ~ ~] ~ ~" # s "xx"
+
+hush
