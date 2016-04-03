@@ -69,6 +69,8 @@ d5 $ jux rev $ stut' 3 0.125 (|*| speed "2") $ slow 2 $ n "c3 [~ g2*2]" # sound 
 
 cps 0.77
 
-d1 $ jux (iter 4) $ slow 2 $ chop 8 $ sound "sometimes" # speed "0.5" # unit "c"
+d1 $ slow 2 $ chop 8 $ sound "sometimes" # speed "0.5" # unit "c"
 
-d2 $ slow 2 $ n "[f*2 ~] f*2 ~ ~" # s "xx"
+d2 $ slow 2 $ n "[f*2 ~ ~]  ~ ~ ~" # s "xx"
+
+hush
