@@ -26,5 +26,5 @@ d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ so
   # orbit "2") |+| pan (slow 8 saw1)
 
 
-d7 $ every 4 (density 2) $ every 3 (# speed "0.75") $ (sound "wobble off*2")
-  # gain "0.9"
+d7 $ (superimpose ((# speed "4") . density 2) $ every 4 (density 2) $ every 3 (# speed "0.75") $ (sound "wobble off*2")
+  # gain "0.9") |+| pan rand
