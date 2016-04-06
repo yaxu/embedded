@@ -27,3 +27,4 @@ d7 $ sound "gab:2(3,8)"
 d1 $ jux rev $ slow 2 $ iter 4 $ chop 16 $ s "repetition" # n (irand 8)
   # unit "c" # speed "[0.5, 1]"
   # gain "1"
+
