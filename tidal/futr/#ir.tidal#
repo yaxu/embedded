@@ -1,7 +1,7 @@
-cps 0.9
+cps 0.7
 
-d1 $ slow 64 $ sound "bev:1*8" # pan "0.5" # speed "0.125" # unit "c"
-
+d1 $ jux' [id, rev, iter 4, rev] $ slow 64 $ chop 128 $ sound "bev:1*8" # pan "0.5" # speed "0.125" # unit "c"
+hush
 d2 $ jux' [id, rev] $ slow 2 $ chop 8 $ sound "os" # unit "c" # speed "0.5"
 
 d3 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
