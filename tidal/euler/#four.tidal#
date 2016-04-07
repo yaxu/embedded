@@ -1,0 +1,6 @@
+d1 $ sound "drum([3 5],8)" # pan (slow 8 saw1)
+d1 silence
+
+d2 $ (jux' [id,rev,density 2,id] $ slow 4 $ sometimes (|*| speed "12") $ n (slowspread (offadd 0.125) [7,12] $ "[g2*2 c3*3] [[e4 f4]/2](5,8) c5 g3(3,8)") # s "xx") # pan (slow 4 saw1) # gain "0.9"
+
+d3 $ jux' [id,rev,density 2, iter 4] $ slow 2 $ chop 8 $ sound "arc " # unit "c" # speed "0.5" # vowel "e" |+| pan "0.125"
