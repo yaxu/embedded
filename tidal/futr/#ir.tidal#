@@ -1,6 +1,6 @@
 cps 0.7
 
-d1 $ (n "0 1 2 3" # sound "numbers") # pan saw1
+d1 $ slow 4 $ (n "0 1 2 3" # sound "numbers") # pan saw1
 
 d1 $ jux' [id, rev, iter 4, rev] $ slow 64 $ chop 128 $ sound "bev:1*8" # pan "0.5" # speed "0.125" # unit "c"
 
