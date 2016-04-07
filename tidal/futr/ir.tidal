@@ -4,7 +4,7 @@ d3 $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4)
   # speed "1.93"
   # gain "1.1"
 
-d1 $ slow 2 $ stack [jux (rev) $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
+d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
             # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
             # room "0.5"
             # size "0.7"
