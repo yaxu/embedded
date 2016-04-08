@@ -1,6 +1,6 @@
 d1 $ jux (# speed "8") $ slow 4 $ off 0.125 ((# speed "4") . chop 8) $ sound "drum([3 5],[4 8]/2) drum(5,8)" # pan (slow 8 saw1)
 
-d1 $ jux (density 2 . (# speed "2")) $ sound "bd sn" # pan "0"
+d1 $ juxBy 0.5 rev $ (density 2 . (# speed "2")) $ sound "bd sn [sn:2 sn:5]" # pan "0"
 
 d1 silence
 hush
