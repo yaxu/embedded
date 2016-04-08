@@ -57,6 +57,4 @@ d2 $ every 3 (0.25 <~) $ every 4 (density 2) $ jux (iter 8) $ sound "drum mouth:
              |+| cutoff (slow 12 $ (*8000) <$> sine1)
              |+| gain "1.2"
              
-
-d7 $ sometimes (# speed "2") $ jux rev $ slow 4 $ n (offadd 0.125 7 "d4(3,8) e3([5 7],8) f3(3,8) g3*4") # s "xx"
   
