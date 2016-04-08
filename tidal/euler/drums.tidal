@@ -18,8 +18,9 @@ d4 $ slowspread (\x -> juxBy x (|+| speed "4.02")) [0.25, 0.5, 1] $ slowspread (
 d5 $ (chop 2) $ every 2 (0.25 <~) $ sound "drum feel drum [~ sd8:2]"
 
 -- yeah
-d6 $ (jux' [id,rev] $ slow 2 $ gap 32 $ sound "fm:12*2"
+d6 $ (jux'' [id,(#speed "1.5")] $ slow 2 $ gap 32 $ sound "fm:12*2"
   |+| speed "[1,2.01]"
   |+| gain "0.8")
            
 
+let jux'' xs p = (jux' xs p) |+| pan "0.125"
