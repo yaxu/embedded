@@ -3,7 +3,7 @@ d1 $ whenmod 8 4 (# speed "3 2") $ slowspread (\x -> within x (density 2)) [(0,0
   # size "0.5"
   # room "0.35"
   # orbit "0"
-  # gain "0.95"
+
 
 d2 $ superimpose (slow 2) $ (every 2 (rev . striate 16) $ sound "cp:4 [arpy cp:4 arpy:1]")
   # orbit "1"
