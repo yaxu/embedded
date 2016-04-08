@@ -1,9 +1,5 @@
 cps 0.8
 
-d1 $ ghost $ sound "bd8:5*1"
-  # gain "1.5"
-
-
 d8 $ off 0.5 (# speed "2") $ jux (1 <~) $ slowspread (\x -> within x (slowspread (density) [1.5,2,4])) [(0,0.25), (0.25,0.5),(0.5,0.75),(0.75,1)] $ s "bd [mt8 lt8] sd8 bd" # n (irand 16)
   # vowel "a"
   # crush "4"
