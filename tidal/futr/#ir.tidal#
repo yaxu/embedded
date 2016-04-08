@@ -41,4 +41,7 @@ d1 $ brak $ jux' [id, rev . chop 8, rev] $ sound "bd*3 cp"
 hush
 
 
-d1 $ jux' [id, rev, iter 4, echo 0.25 . (|*| up "12")] $ slow 4 $ n (offadd 0.125 7 $ slow 2 $  "c3*3 d3*2 e3*3") # s "xx"
+d1 $ jux' [id, rev, iter 4, echo 0.25 . (|*| up "12")] $ slow 4 $ n (offadd 0.125 7 $ slow 2 $  "c3*3 d3*2 e3(3,8)") # s "xx"
+
+d2 $ spin 3 $ chop 8 $ sound "os" # unit "c"
+
