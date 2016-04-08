@@ -23,5 +23,3 @@ d6 $ slow 2 $ gap 32 $ sound "fm:12*2"
   |+| gain "0.75"
            
 
-d9 $ brak $ sound "[[wobble, gab]*2, mt ht lt ht]"
-  # gain "1.1"
