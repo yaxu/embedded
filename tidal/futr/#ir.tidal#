@@ -12,7 +12,7 @@ d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4
             sound "[drum cp8]"
             # orbit "1"
            ]
-
+   
 d2 $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "[-12 -10 -5]/8")
   # vowel "a e i o u"
   # cutoff (slow 4 $ scale 1000 6000 sine1)
@@ -23,7 +23,7 @@ d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ so
   # resonance "0.3"
   # shape "0.5"
   # orbit "2") |+| pan (slow 8 saw1)
-
+jjhhhhhhhhjhjsdkjhskdjh
 
 d7 $ (superimpose ((# speed "4") . density 2) $ every 4 (density 2) $ every 3 (# speed "0.75") $ (sound "wobble off*2")
   # gain "0.9") |+| pan rand
