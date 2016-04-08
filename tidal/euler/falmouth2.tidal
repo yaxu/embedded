@@ -22,9 +22,9 @@ d3 $ (slow 2 $ juxBy 0.5 rev $ slowspread (\x -> stut' 4 x (|*| speed "[-0.75 1.
 
 d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ tom "c4(3,8) e4(3,8) f4(3,8) g4(3,8)"))
 
-d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
-  # speed "[1,2]"
+d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.7")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]" # gain "0.9"
 
 d1 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ tom "c3(3,8) e3(3,8) f3(3,8) g3(3,8)")) # up "3"
 
-d1 silence >> d2 silence >> d4 silence
+
