@@ -36,25 +36,18 @@ d6 $  ((1/4) <~) $ slow 2 $ chop 4 $ sound "sb:1"
 d7 $ (rev $ every 2 (inside 2 rev) $ chop 8 $ sound "breaks165")
        |+| speed "0.9"
        |+| resonance "0.2"
-       |+| cutoff "5000"
+       |+| cutoff "0.1"
+       # gain "1.2"
 
 -- icfdbtt_breaknorm
 d8 $ chop 8 $ sound "breaks165"
        |+| speed "0.9"
        |+| resonance "0.4"
-       |+| cutoff "10000"
+       |+| cutoff "0.1"
+       # gain "1.2"
 
 -- icfdbtt_bd
 d9 $ sound "[bd8:1*8, bd8:4]"
-
--- icfdbtt_vocal
-d10 $ weave' 16 ((slow 16 $ striate' 128 (1/64) $ sound "bev*2") |+| pan sine1)
-            [(vowel "a e i o u" |+|),
-             (vowel "i e p u" |+|),
-             (speed ("1 1.5 0.5") |+|)
-            ] |+| gain "0.9"
-
-d10 silence
 
 -- icfdbtt_vocal2
 d10 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan (scale 0.25 0.75 sine1))
