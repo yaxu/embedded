@@ -41,4 +41,4 @@ d1 $ brak $ jux' [id, rev . chop 8, rev] $ sound "bd*3 cp"
 hush
 
 
-d1 $ slow 4 $ n "1 2 3 4" # s "arpy" # pan saw1
+d1 $ jux' [id, rev, iter 4, echo 0.25 . (|*| up "12")] $ slow 4 $ n (offadd 0.125 7 $ slow 2 $  "c3*3 d3*2 e3*3") # s "xx"
