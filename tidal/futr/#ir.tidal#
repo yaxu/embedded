@@ -41,4 +41,4 @@ d1 $ brak $ jux' [id, rev . chop 8, rev] $ sound "bd*3 cp"
 hush
 
 
-d1 $ slow 4 $ n "1 2 3 4" # s "numbers" # pan saw1
+d1 $ slow 4 $ n "1 2 3 4" # s "arpy" # pan saw1
