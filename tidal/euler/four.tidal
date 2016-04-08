@@ -1,4 +1,4 @@
-d1 $ slow 4 $ off 0.125 ((# speed "4") . chop 8) $ sound "drum([3 5],[4 8]/2) drum(5,8)" # pan (slow 8 saw1)
+d1 $ jux (# speed "8") $ slow 4 $ off 0.125 ((# speed "4") . chop 8) $ sound "drum([3 5],[4 8]/2) drum(5,8)" # pan (slow 8 saw1)
 
 d1 silence
 hush
