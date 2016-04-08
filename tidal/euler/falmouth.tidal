@@ -1,15 +1,11 @@
-d1 $ whenmod 8 4 (# speed "3 2") $ slowspread (\x -> within x (density 2)) [(0,0.25), (0.25,0.5), (0.5,0.75)] $ s "bd*8" # n (irand 16)
-  # shape "0.5"
-  # size "0.5"
-  # room "0.35"
-  # orbit "0"
+d1 $ jux (iter 4) $ whenmod 8 4 (# speed "3 2") $ slowspread (\x -> within x (density 2)) [(0,0.25), (0.25,0.5), (0.5,0.75)] $ s "bd*8" # n (irand 16)
+  # shape "0.7"
 
 
 d2 $ superimpose (slow 2) $ (every 2 (rev . striate 16) $ sound "cp:4 [arpy cp:4 arpy:1]")
   # orbit "1"
   # pan (scale 0.25 0.75 $ slow 2 saw1)
   # crush "3"
-  # gain "0.9"
 
 d3 $ slow 4 $ sound "mt:5*8 mt:4*6 mt:4*16 mt:5*4"
   # orbit "1"
@@ -27,4 +23,4 @@ d6 $ slow 2 $ chop 16 $  s "repetition" # n (irand 8)
   # unit "c" # speed "0.5"
   # gain "1.1"
 
-cps 0.
+
