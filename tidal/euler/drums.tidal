@@ -7,14 +7,12 @@ d1 $ juxBy 0.8 ((1 <~) . (|+| speed "1.45")) $ slow 2 $ sound (pick <$> "bd sd8 
 d2 $ slowspread (\x -> chop x) [2,3,4,5] $ sound "glitch:2 ~ ~ ~" |+| speed "6" |+| gain "1.2"
 
 -- light
-d3 $ (juxBy 0.5 (iter 4 . (|+| accelerate "1")) $ every 4 (|+| speed "1.5") $ slow 2 $ spread (\x -> (x <~)) [1/2, 1/4] $ striate 16 $ sound "[breaks125,breaks165]" |+| accelerate "-6" |+|  speed "1.4") |+| cutoff (slow 4 $ scale 2000 4000 sine1) |+| resonance "0.3" |+| gain "1" # orbit "1"
+d3 $ (jux (iter 4 . (|+| accelerate "1")) $ every 4 (|+| speed "1.5") $ slow 2 $ spread (\x -> (x <~)) [1/2, 1/4] $ striate 16 $ sound "[breaks125,breaks165]" |+| accelerate "-6" |+|  speed "1.4") |+| cutoff (slow 4 $ scale 2000 4000 sine1) |+| resonance "0.3" |+| gain "1" # orbit "1"
 
 -- bass
 d4 $ slowspread (\x -> juxBy x (|+| speed "4.02")) [0.25, 0.5, 1] $ slowspread ($) [id, trunc 0.25, rev, trunc (1/8)] $ striate' 3 0.3 $ sound "jungbass:6*2"
       |+| gain "0.8" |+| speed "4"
       # room "0.5" # orbit "2" # size "0.9"
-
-d6 silence
 
 -- dh
 d5 $ (chop 2) $ every 2 (0.25 <~) $ sound "drum feel drum [~ sd8:2]"
