@@ -7,4 +7,9 @@ d4 $ jux rev $ chop 8 $ slow 2 $ sound "casio:1*3 casio*2"
   # speed "0.5"
 
 
-d6 $ jux rev $ chop 16 $ sound "arc" # unit "c" # gain "1.4"
+d7 $ jux rev $ chop 16 $ sound "arc" # unit "c" # gain "1.4"
+
+d5 $ jux (iter 4) $ chop 8 $ sound "[os os:1]/2"
+
+d6 $ sometimes (# speed "0.5") $ stut 4 0.9 0.25 $ sound "~ kurt*4"
+
