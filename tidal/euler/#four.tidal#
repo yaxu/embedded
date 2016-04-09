@@ -1,5 +1,9 @@
 
 
 d1 $ jux' [id,rev,iter 4, density 2] $ slow 4 $ rev $ chop 8 $ n "0 1 2 3" # s "numbers"
+`
+d2 $ jux4 rev $ sound "bd:3(3,8) bd*3 mt8 ht8*4"
 
-d2 $ jux4 rev $ sound "bd:3(3,8) bd*3 ,t cp"
+d3 $ (slowspread (chop) [64,128] $ jux' [id,rev, dens] $ sound "bd*4 cp*2 bd*6 bd*3")
+  # nudge (slow 4 sine1)
+
