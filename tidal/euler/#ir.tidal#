@@ -1,15 +1,14 @@
-cps 1.3
+cps 1.2
 
 d1 $ jux4 rev $ every 4 (const (sound "feel:2"))  $ superimpose (iter 4) $ stut 4 0.9 (1/4) $ every 4 rev $ striate 4 $ sound "[[bd*4, can] [bass3:2, can:2]]/2"
   # speed "1.93"
   # gain "1.1"
   |+| pan (slow 4 saw1)
 
+
+
 d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4] 8] [15 ~ [15 3]]" # s  "claus"
             # speed (overlay "1" (slow 4 $ scale 1 1.2 sine1))
-            # room "0.5"
-            # size "0.7"
-            # orbit "2",
             sound "[drum cp8]"
             # orbit "1"
            ]
@@ -19,14 +18,14 @@ d2 $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "
   # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.2"
 
-d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
-  # cutoff "30000"
+d6 $ jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
+  # cutoff "0.4"
   # resonance "0.3"
 
+d7 $ sound "bd*4 bd*"
 
+d1 silence
 
-  # shape "0.5"
-  # orbit "2") |+| pan (slow 8 saw1)
 
 d7 $ (superimpose ((# speed "4") . density 2) $ every 4 (density 2) $ every 3 (# speed "0.75") $ (sound "wobble off*2")
   # gain "0.9") |+| pan rand
