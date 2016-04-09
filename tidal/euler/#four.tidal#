@@ -1,4 +1,4 @@
-
+cps 0.85
 
 d1 $ jux' [id,rev,iter 4, density 2] $ slow 4 $ rev $ chop 8 $ n "0 1 2 3" # s "numbers"
 `
@@ -14,7 +14,11 @@ d5 $ (chop 32 $ iter 4 $ sound "arc")
 
 d6 $ slowspread ($) [id, density 1.5, id, rev] $ jux4 (density 0.5 . rev) $ sound "drum [mt arpy] future*3 wobble"
 
-d7 $ jux4 rev $ weave 16 (n "0 1 2 3" # s "arpy" )
+d7 $ jux' [id,rev,(#speed "0.5") ] $ weave 16 (n "0 1 2 3" # s "arpy" )
    [vowel "a [e i] o i",
-    speed "2 1.5"
+    speed "2 1.5",
+    vowel "o i u",
+    vowel "[e i] o i"
    ]
+
+d8 $ brak $ sound "feel feel:2*2"
