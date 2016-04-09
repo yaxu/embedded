@@ -1,14 +1,23 @@
-
+cps 0.85
 
 d1 $ jux' [id,rev,iter 4, density 2] $ slow 4 $ rev $ chop 8 $ n "0 1 2 3" # s "numbers"
 `
 d2 $ jux4 rev $ sound "bd:3(3,8) bd*3 mt8 ht8*4"
 
-d3 $ slow 2 $ (slowspread (chop) [32,64,128] $ jux' [id,rev, density 2, iter 4] $ sound "bd sd8 [~ bd] bd*3")
+d3 $ slow 4 $ (slowspread (chop) [32,64,128] $ jux' [id,rev, density 2, iter 4] $ sound "bd sd8 [~ bd] bd*3")
 
-d4 $ jux4 rev $ slow 4 $ n (offadd 0.25 7 $ "c4(3,8) d3(5,8) e4(3,8) f4*2") # s "xx"
-   # gain "1.1"
-   # vowel "o"
+d4 $ degradeBy 0.8 $ jux4 rev $ slow 4 $ n (slowspread (offadd 10.25) [-5,7,12] $ "c4(3,8) d3(5,8) e4(3,8) f4*2") # s "xx"
+   # gain "1.1" # vowel "[o e,p]" |*| up "-12"
 
-d5 $ jux' [id,iter 4,slow 2, (# speed "0.9")] $ chop 16 $ sound "arc"
-   # gain "1.1"
+d5 $ (chop 32 $ iter 4 $ sound "arc")
+   # gain "1.1" # pan saw1
+
+d6 $ slowspread ($) [id, density 1.5, id, rev] $ jux4 (density 0.5 . rev) $ sound "drum [mt arpy] future*3 wobble"
+
+d7 $ slow 2 $ jux' [id,rev,(#speed "0.5") ] $ weave 16 (n "0 1 2 3" # s "arpy" )
+   [vowel "a [e i] o i",
+    speed "2 1.5",
+    vowel "o i u",
+
+d8 $ jux4 (iter 4) $ brak $ sound "[feel feel:2*2, sn:4 ~ sn:4]"
+
