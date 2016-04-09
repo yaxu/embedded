@@ -4,4 +4,4 @@ d1 $ slowspread (\x -> (inside x (juxBy 0.5 rev))) [1,4,8,2] $ (density 2 . (# s
 
 d2 $ jux' [id,rev,rev . (# speed "0.5"), (|*| up "12")] $ n (offadd 0.125 7 (slow 2 "[c3(3,8) d4] e4([3 5]/2,[8 4]/2) f3*3 a4*4")) # s "xx"
 
-d1 $ n "0 1 2 3" #s "numbers" # pan saw1
+d1 $ n "0 0 0 0" #s "can" # pan saw1
