@@ -13,7 +13,6 @@ d5 $ (iter 4 $ slow 2 $ chop 8 $ sound "arc" # unit "c") # speed (slow 4 $ scale
 d3 $ (slow 2 $ juxBy 0.5 rev $ slowspread (\x -> stut' 4 x (|*| speed "[-0.75 1.1]/2")) [1/32, 1/64,1/4] $ s "voodoo*8" # n (irand 16) # gain "0.9") |+| pan (slow 4 saw1)
  # gain "0.8"
 
-
 (d4 $ (jux (rev . iter 4) $ rev $ slow 4 $ chop 16 $ sound "paper"
       # unit "c"
       # speed "[0.25]"
