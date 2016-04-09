@@ -1,0 +1,13 @@
+
+
+d1 $ jux' [id,rev,iter 4, density 2] $ slow 4 $ rev $ chop 8 $ n "0 1 2 3" # s "numbers"
+`
+d2 $ jux4 rev $ sound "bd:3(3,8) bd*3 mt8 ht8*4"
+
+d3 $ slow 2 $ (slowspread (chop) [32,64,128] $ jux' [id,rev, density 2, iter 4] $ sound "bd sd8 [~ bd] bd*3")
+
+d4 $ jux4 rev $ slow 4 $ n (slowspread (offadd 0.25) [7,12] $ "c4(3,8) d3(5,8) e4(3,8) f4*2") # s "xx"
+   # gain "1.1" # vowel "[o e,p]"
+
+d5 $ (chop 32 $ iter 4 $ sound "arc")
+   # gain "1.1" # pan saw1
