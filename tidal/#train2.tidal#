@@ -1,4 +1,0 @@
-
-
-d1 $ slow 4 $ (n (offadd 0.2slow 2 $ offadd 0.25 7 "c3 [d3 ~ g2]") # s "xx")
-  # room "0.4"
