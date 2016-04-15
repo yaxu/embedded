@@ -7,6 +7,7 @@ d1 $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.25 7 "c3(3,8) [es3(5,8) f3*
   # orbit "1" 
 
   
-d2 $ slow 4 $ sound "[sometimes ~]/2" # unit "c" # speed "0.25"
+d2 $ jux (iter 4) $ slow 4 $ chop 8 $ sound "[sometimes ~]/2" # unit "c" # speed "[0.25, 0.27]"
   # orbit "2"
-  # gain "1.4"
+  # gain "1.5"
+
