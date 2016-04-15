@@ -1,6 +1,6 @@
 
 
-d1 $ (slow 4 $ (n (whenmod 4 2 ((+5) <$>) $ offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) "c3(3,8) [es3(5,8) f3*2 ~]") # s "xx")
+d1 $ (slow 4 $ (n ((+) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "c3(3,8) [es3(5,8) f3*2 ~]")) <*> "[5 7]/6") # s "xx")
   # room "0.8" # size "0.9"
   # orbit "1") # vowel "[o e i]/3"
 
