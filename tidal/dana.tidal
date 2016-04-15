@@ -1,0 +1,7 @@
+d1 $ jux rev $ weave 16 (sound (palindrome $ samples' "arpy*8" (run 8)))
+  [vowel "a e i",
+   vowel "a i o o",
+   vowel "e i o",
+   speed "1 2 [3 1]"
+  ]
+
