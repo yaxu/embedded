@@ -1,9 +1,9 @@
 
 
-d1 $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) "c3(3,8) [es3(5,8) f3*2 ~]") # s "xx")
+d1 $ (slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) "c3(3,8) [es3(5,8) f3*2 ~]") # s "xx")
   # room "0.7" # size "0.8"
   # nudge "[0 0.04]*4"
-  # orbit "1" # vowel "a"
+  # orbit "1") # vowel "o e i"
 
 
 d2 $ jux (iter 4) $ slow 4 $ chop 8 $ sound "[sometimes ~]/2" # unit "c" # speed "[0.25, 0.27]"
