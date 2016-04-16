@@ -17,5 +17,5 @@ d4 $ (slow 8 $ striate 256 $ sound "[~ ~ sometimes*4 ~]/4" # unit "c" # speed "[
   # nudge (slow 3 $ scale 0 0.25 sine1)
   # orbit "3" # room "0.6" # size "0.9"
 
-d5 $ sound "drum [~ drum ~]" # crush "6" # shape "0.99"
+d5 $ sound "drum [~ drum ~]" # crush "2" # shape "0.99"
 
