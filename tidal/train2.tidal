@@ -10,7 +10,7 @@ d3 $ (sometimes (echo 0.125) $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.1
   # resonance (slow 4 $ scale 0 0.5 sine1)
   # cutoff ((scale 2000 5000) $ discretise 0.5 rand)
 
-d2 $ (slow 8 $ chop 256 $ sound "[~ sometimes ~ ~]/4" # unit "c" # speed "[0.42]"
+d2 $ (slow 8 $ striate 256 $ sound "[~ sometimes ~ ~]/4" # unit "c" # speed "[0.42]"
   # orbit "2")
   # nudge (slow 3 $ scale 0 0.25 sine1)
   # orbit "3" # room "0.6" # size "0.9"
