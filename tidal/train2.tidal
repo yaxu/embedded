@@ -3,7 +3,7 @@ d1 $ (slow 4 $ (n ((+) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindr
   # room "0.8" # size "0.9"
   # orbit "1") # vowel "[o e i]/3"
 
-d2 $ sometimes (density 2) $ every 2 ((# gain "0.85") . jux rev) $ chop 8 $ sound "breaks125" # unit "c" # speed "1.5"
+d2 $ every 4 ((# gain "0.85") . jux rev) $ chop 8 $ sound "breaks125" # unit "c" # speed "1.5"
 
 
 d2 $ slow 4 $ chop 8 $ sound "[sometimes ~]/2" # unit "c" # speed "[0.25, 0.27]"
