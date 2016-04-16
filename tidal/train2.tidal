@@ -8,9 +8,7 @@ d2 $ every 4 ((|*| gain "0.85") . jux rev) $ chop 8 $ sound "breaks165" # unit "
 d3 $ sometimes (echo 0.5) $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "d4(3,8) e5*4 f4(5,8) g4(5,8)")) # s "dirty" # gain "0.9")
   |+| n "[5 7]/4"
 
-
-
-d2 $ slow 4 $ gap 8 $ sound "[sometimes ~ ~ ~]/4" # unit "c" # speed "[0.25, 0.27]"
+d2 $ slow 8 $ chop 64 $ sound "[sometimes ~ ~ ~]/4" # unit "c" # speed "[0.5, 0.27]"
   # orbit "2"
   # gain "1.3"
 
