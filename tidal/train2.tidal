@@ -7,7 +7,7 @@ d2 $ every 4 ((|*| gain "0.85") . jux rev) $ chop 8 $ sound "breaks165" # unit "
 
 d3 $ n "d4 e4 f4 g4" # s "xx"
 
-d3 $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "d4(3,8) e4 f4(5,8) g4")) # s "xx" # gain "0.9")
+d3 $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "d4(3,8) e5*4 f4(5,8) g4(5,8)")) # s "xx" # gain "0.9")
   |+| n "[5 7]/4"
   
 
