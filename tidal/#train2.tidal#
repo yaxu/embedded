@@ -20,8 +20,8 @@ d4 $ (slow 8 $ striate 256 $ sound "[~ ~ sometimes*4 ~]/4" # unit "c" # speed "[
 d5 $ whenmod 8 4 (const silence) $ sound "drum [~ drum ~]" # shape "0.9" # speed "4" # gain "0.8"
 
 
-d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) ((palindrome "d2 e2 f2 g2"))) # s "aid" # gain "0.9") # gain "0.8" # speed "-1" # shape "0.5"
-  |+| n "[0 2]/4") |+| speed "4"
+d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n ((+24) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) ((palindrome "d2 e2 f2 g2")))) # s "m2" # gain "0.9") # gain "0.8" # speed "-1" # shape "0.5"
+  |+| n "[5 7]/4")
   -- # resonance (slow 4 $ scale 0 0.4 sine1)
   -- # cutoff ((scale 2000 5000) $ discretise 0.5 rand)
 
