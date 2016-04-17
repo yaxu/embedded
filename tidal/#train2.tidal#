@@ -23,3 +23,4 @@ d5 $ sound "drum [~ drum ~]" # crush "2" # shape "0.99"
 x1 <- dirtStream
 x1 silence
 x1 $ sound "bd*32"
+
