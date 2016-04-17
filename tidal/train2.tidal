@@ -19,9 +19,3 @@ d4 $ (slow 8 $ striate 256 $ sound "[~ ~ sometimes*4 ~]/4" # unit "c" # speed "[
 
 d5 $ whenmod 8 4 (const silence) $ sound "drum [~ drum ~]" # shape "0.9" # speed "4" # gain "0.8"
 
-
-x1 <- dirtStream
-x1 silence
-x1 $ sound "bd*32"
-
-:t sustain
