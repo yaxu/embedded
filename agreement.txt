@@ -25,6 +25,7 @@ AM to think about and then let KC know. Rich might me able to help with suggesti
 AM to send to both comms teams
 
 5.     Evaluation
+
     Aims of the project: 
         Develop the idea of data ethnography
         To write about the seams between imagination and reality
