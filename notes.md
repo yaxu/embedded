@@ -42,3 +42,8 @@ Remix chains as datalove? Do a tidal remix chain then look for ways of
 making datalove interfaces. Should they be anonymous? Should datalove
 be exclusive or unbounded?
 Could a remix chains be cyclic? It github a good interface for this?
+
+## Patternlib
+
+Revisit instructionset.org ideas, instructions for people to implement
+as tidal patterns
