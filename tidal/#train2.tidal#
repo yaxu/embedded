@@ -32,6 +32,9 @@ d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n ((+36) <$> (offadd 0.25 12 
 
 d7 silence
 
-d7 $ jux (iter 4) $ sound "[xx:50 m2:47*3]" # gain "1.1"
+d7 $ jux (2 <~) $ randcat [jux (iter 4) $ sound "[drum [m2:47*3]]" # gain "1.1",
+                           sound "cp(3,8)",
+                           sound "drum(5,8) arpy*3"
+                          ]
 
 hush
