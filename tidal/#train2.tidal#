@@ -12,6 +12,8 @@ d3 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n (offadd 0.25 12 $ slow 2 $ 
   -- # resonance (slow 4 $ scale 0 0.4 sine1)
   -- # cutoff ((scale 2000 5000) $ discretise 0.5 rand)
 
+
+
 d4 $ (slow 8 $ striate 256 $ sound "[~ ~ sometimes*4 ~]/4" # unit "c" # speed "[0.42]"
   # orbit "2")
   # nudge (slow 3 $ scale 0 0.25 sine1)
@@ -22,6 +24,7 @@ d5 $ whenmod 8 4 (const silence) $ sound "drum [~ drum ~]" # shape "0.9" # speed
 d1 $ sound "bd*16 bd*8 bd*3 bd*32"
 
 d1 $ sound "adsfs"
+
 d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n ((+36) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) ((palindrome "d2(3,8) e2(5,8) f2*4 g2(3,8)")))) # s "m2" # gain "0.9") # gain "0.8" # speed "1" # shape "0.5"
   |+| n "[2 4]/4")
   -- # resonance (slow 4 $ scale 0 0.4 sine1)
@@ -30,9 +33,5 @@ d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n ((+36) <$> (offadd 0.25 12 
 d7 silence
 
 d7 $ sound "[xx:50 m2:47*2]"
-
-
-d1 $ sound "gabor:20"
-
 
 hush
