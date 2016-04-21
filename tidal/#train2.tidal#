@@ -1,8 +1,8 @@
 cps 0.6
 
-d1 $ (slow 4 $ (n ((+) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "d3(3,8) [e3(5,8) f3(3,8)] ~ g3*2")) <*> "[5 7]/4") # s "xx")
+d1 $ sometimes (|*| speed "2") $ jux (rev) $  (slow 4 $ (n ((+) <$> (offadd 0.25 12 $ slow 2 $ offadd 0.125 (-5) (palindrome "d3(3,8) [e3(5,8) f3(3,8)] ~ g3*2")) <*> "[5 7]/4") # s "xx")
   # room "0.5" # size "0.8"
-  # orbit "1") # gain "0.8" # speed "2"
+  # orbit "1") # gain "0.7" # speed "2"
   --  # vowel "[o e i]/3"
 
 d2 $ foldEvery [3,5,7] (slowspread (\x -> within x (density 2)) [(0,0.5), (0,0.25)]) $ every 4 ((|*| gain "0.85") . jux rev) $ chop 8 $ sound "breaks165" # unit "c" # speed "2" # gain "0.9" # resonance (slow 4 $ scale 0 0.3 sine1) # cutoff (scale 1000 5000 $ discretise 0.5 rand) # orbit "1" # room "0.5" # size "0.8"
@@ -32,6 +32,6 @@ d6 $ jux rev $ (sometimes (echo 0.125) $ slow 4 $ (n ((+36) <$> (offadd 0.25 12 
 
 d7 silence
 
-d7 $ sound "[xx:50 m2:47*2]"
+d7 $ jux (iter 4) $ sound "[xx:50 m2:47*3]" # gain "1.1"
 
 hush
