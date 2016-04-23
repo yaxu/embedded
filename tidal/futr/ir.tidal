@@ -1,6 +1,7 @@
 cps 1.3
 
 d1 $ slow 2 $ 
+
 sound "arpy:0 arpy:1 arpy:2 arpy:3" # pan saw1
 
 
@@ -16,7 +17,7 @@ d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4
             sound "[drum cp8]"
             # orbit "1"
            ]
-   
+
 d2 $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "[-12 -10 -5]/8")
   # vowel "a e i o u"
   # cutoff (slow 4 $ scale 1000 6000 sine1)
