@@ -1,7 +1,11 @@
-d2 $ ((slow 4 $ n (offadd 0.125 7 "c4 f3 g4 e3") # s "xx") |+| n "[-12 -10 -5]/8")
-  -- # vowel "a e i o u"
-  -- # cutoff (slow 4 $ scale 1000 6000 sine1)
-  -- # resonance "0.2"
+d2 $ jux rev $ ((slow 4 $ n (palindrome $ offadd 0.125 7 "c4*3 f3 g4(3,8) e3") # s "xx") |+| n "[-12 -10 -5]/8")
+  # vowel "a e i o u"
+  # cutoff (slow 4 $ scale 1000 6000 sine1)
+  # resonance "0.2"
 
 
+
+d3 $ sometimes (density 2) $ jux (iter 4) $ slow 4 $ sometimes (rev . chop 16) $ s "claus ~ [claus*2 claus] [~ claus]" # n (irand 16) # speed "[1, 0.5]"
+hush
+d4 $ jux (iter 4) $ slow 2 $ chop 8 $ sound "arc"
 
