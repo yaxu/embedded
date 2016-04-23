@@ -1,0 +1,17 @@
+d2 $ degrade $ jux rev $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4(5,8) e3*2")
+       # s "xx") |+| n "[-12 -10 -5]/8")
+  # cutoff (slow 4 $ scale 1000 6000 sine1)
+  # resonance "0.2"
+
+d3 $ jux (iter 4) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus bd claus*2" # n (irand 16)
+  # gain "1.1"
+  # vowel "a i i o*2"
+  # crush "5"
+
+d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "os"
+  # gain "0.8"
+
+d5 $ jux (rev) $ iter 4 $ slow 16 $ chop 128 $ sound "bev"
+  # gain "1"
+
+d6 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ chop 8 $ sound "~ kurt*2"
