@@ -8,7 +8,13 @@ d3 $ jux (iter 4 . rev) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2
   # vowel "a i i o*2"
   # crush "[5 8]/4"
 
-d1 $ sound "bd!?!!?!!!?! [mt*2 ht]"
+
+
+
+
+
+
+d1 $ jux (iter 4) $ sound "bd!?!!?!!!?! [mt*2 ht]"
 
 
 d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "os"
