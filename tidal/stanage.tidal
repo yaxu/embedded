@@ -6,6 +6,7 @@ d2 $ degrade $ jux rev $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4(5,8) e3*2
 d3 $ jux (iter 4) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus bd claus*2" # n (irand 16)
   # gain "1.1"
   # vowel "a i i o*2"
+  # crush "5"
 
 d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "arc"
   # gain "0.8"
