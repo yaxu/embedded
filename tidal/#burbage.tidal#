@@ -1,10 +1,12 @@
-d2 $ jux rev $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4(3,8) e3") # s "xx") |+| n "[-12 -10 -5]/8")
+d2 $ degradeBy 0.9 $ jux rev $ ((slow 4 $ n (palindrome $ offadd 0.125 7 "c4*3 f3(3,8) g4(3,8) e3*2") # s "xx") |+| n "[-12 -10 -5 12]/8")
   # vowel "a e i o u"
   # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.1"
 
+hush
+
+d3 $ jux (iter 4 . rev) $ sound (samples' "drum claus*4p" (run 8))
 
 
-d3 $ jux (iter 4) $ sound (samples' "drum claus*4" (run 8))
-
-d5 $ sound
+d5 $ iter 4 $ jux (rev) $ chop 16 $ sound "arc"
+   # speed "2"
