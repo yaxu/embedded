@@ -1,0 +1,6 @@
+d2 $ jux rev $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3 g4 e3")
+       # s "xx") |+| n "[-12 -10 -5]/8")
+  -- # cutoff (slow 4 $ scale 1000 6000 sine1)
+  -- # resonance "0.2"
+
+d3 $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus bd claus*2" # n (irand 16)
