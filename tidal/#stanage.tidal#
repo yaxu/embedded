@@ -7,5 +7,7 @@ d3 $ jux (iter 4) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus
   # gain "1.1"
   # vowel "a i i o*2"
 
-d4 $ slowspread (id, rev) $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "arc"
+d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "arc"
 
+d5 $ iter 4 $ slow 16 $ chop 128 $ sound "bev"
+  # gain "1.1
