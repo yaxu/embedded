@@ -3,7 +3,7 @@ d2 $ degradeBy 0.9 $ jux rev $ ((slow 4 $ n (palindrome $ offadd 0.125 7 "c4*3 f
   # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.1"
 
-hush
+
 
 d3 $ jux (iter 4 . rev) $ sound (samples' "drum claus*4p" (run 8))
 
