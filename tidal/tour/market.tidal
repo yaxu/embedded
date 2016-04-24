@@ -12,6 +12,7 @@ let rise = "c3 d3 c3 d3" in
 d4 $ stack [sometimes (|+| n "12") $ jux rev $ n (slowspread (offadd 0.25) [7,7,12,-5] $ slow 4 $ struct "x(3,8) x x*3 x" rise) # s "dirty"
             -- # crush "7"
             -- # vowel "a e i"
-            , sometimes (|+| n "12") $ n (slowspread (slowspread (offadd) [0.25, 0.125, 0.5]) [19,19,12,7] $ slow 4 $ struct "x x*3 x x(3,8)" rise) # s "xx" # gain "0.8"
+            , sometimes (|+| n "12") $ n (slowspread (offadd 0.25) [19,19,12,7] $ slow 4 $ struct "x x*2 x x" rise) # s "xx" # gain "0.8"
            ]
 
+hush
