@@ -8,7 +8,10 @@ d3 $ within (0,0.5) $ sound "odx(3,8)"
   # gain "1.1"
 
 
-d4 $ sometimes (|+| n "12") $ jux rev $ n (slowspread (offadd 0.5) [7,7,12,-5] $ slow 4 $ "c3(3,8) d3 a2*3 e3") # s "xx"
+d4 $ sometimes (|+| n "12") $ jux rev $ n (slowspread (offadd 0.5) [7,7,12,-5] $ slow 4 $ "c3(3,8) d3 a2*3 e3") # s "dirty"
   # crush "7"
-  
+  # vowel "a e i"
+
+d4 $ sometimes (|+| n "12") $ jux rev $ n (slowspread (offadd 0.5) [7,7,12,-5] $ slow 4 $ "c3(3,8) d3 a2*3 e3") # s "dirty"
+  # crush "7"
   # vowel "a e i"
