@@ -8,5 +8,6 @@ d3 $ within (0,0.5) $ sound "odx(3,8)"
   # gain "1.1"
 
 
-d4 $ jux rev $ n (offadd 0.5 7 $ slow 4 $ "c3(3,8) d4 a2*3 e4") # s "xx"
-  
+d4 $ jux rev $ n (offadd 0.5 7 $ slow 4 $ "c3(3,8) d3 a2*3 e3") # s "xx"
+  # crush "7"
+  # vowel "a e i"
