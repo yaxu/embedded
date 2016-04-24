@@ -1,0 +1,9 @@
+cps 1.1
+
+d1 $ jux (iter 4) $ slowspread ($) [id, rev, density 2, (0.25 <~)] $ n "[0 [1 2] [5 ~ 4] 3]/2" # s "claus" # speed "0.5"
+
+d2 $ jux (iter 8) $ rev $ slowspread ($) [id, rev, density 3, (0.5 <~)] $ n "[0 [1 2] [5 ~ 4] 3]/2" # s "claus" # speed "4"
+
+d3 $ within (0,0.5) $ sound "odx(3,8)"
+  # gain "1.1"
+
