@@ -7,4 +7,4 @@ d1 $ jux (iter 4) $ slowspread (chop) [8,128] $ sound "bd [[cp cp?] sb cp]"
   # speed "2"
 
 
-d2 $ n # s "xx"
+d2 $ slow 4 $ n (offaoffadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "xx"
