@@ -50,7 +50,7 @@ as tidal patterns
 
 ## Keylogger
 
-Emacs or atom plugin that saves out
+Emacs or atom plugin, or web based thingie (codemirror?) that saves out
 
 * buffer position (x/y)
 * timestamp in ms
