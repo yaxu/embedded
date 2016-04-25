@@ -38,7 +38,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       editor.on('keypress',
          function (editor, event) {
           var secs = (new Date().getTime()) / 1000.0;
-          console.log("aha: " + secs + editor);
+          console.log("aha: " + secs + event);
           // return false so codemirror handles the event
           return(false);
         }
