@@ -102,4 +102,7 @@ d3 $ sound "gabba [kurt kurt:3*2]"
   # vowel "a e"
 
 
-d1 $ slow 2 $ chop 128 $ sound "shackup"
+d1 $ slowspread (density) [1,2,0.5] $ slow 4 $ chop 128 $ sound "shackup" # unit "c" # speed "0.25"
+
+d2 $ sound "bd [mt8 jungbass]"
+  # gain "1.2"
