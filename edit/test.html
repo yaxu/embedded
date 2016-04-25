@@ -37,7 +37,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       });
       editor.on('keypress',
          function (editor, event) {
-          alert("bang");
           console.log("aha");
           // return false so codemirror handles the event
           return(false);
