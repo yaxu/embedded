@@ -8,11 +8,6 @@ d1 $ jux (iter 4) $ slowspread (chop) [8,128] $ sound "bd [[cp cp?] sb cp]"
 
 
 
-d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "[dirty,xx]"
-  # gain "1.1"
-  # cutoff (slow 4 $ scale 1000 3000 sine1)
-  # resonance "0.1"
-
 
 
 d7 $ chop 8 $ sound "g(3,8)"
@@ -44,3 +39,10 @@ d5 $ sound "ravebass:8*2"
 
 d1 $ every 4 (0.25 <~) $ stut 4 0.5 (1/16) $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "[c3 d4 e3 g3]/2") # s "xx"
 
+
+
+
+d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "[dirty,xx]"
+  # gain "1.1"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.1"
