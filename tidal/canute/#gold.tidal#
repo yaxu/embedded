@@ -49,8 +49,12 @@ d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.12
 
 
 d1 $ jux rev $ whenmod 8 6 (iter 4) $ off 0.25 (# vowel "a e o") $ foldEvery [5,7] (|*| speed "2") $ slow 4 $ sound "bd*8 claus:3 [bd*8 sd8:2*2] [claus:4]"
+  # gain "1.1"
+
+d2 $ jux rev $  n (run 8) # sound "claus"
   # gain "1.2"
 
+d3
 
 d2 $ slow 4 $ chop 16 $ sound "repetition" # n (irand 16) 
   # unit "c" # speed "0.25"
