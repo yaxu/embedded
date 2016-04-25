@@ -104,9 +104,11 @@ d3 $ sound "gabba [kurt kurt:3*2]"
 
 d1 $ slowspread (density) [1,2,0.5] $ slow 8 $ chop 128 $ sound "shackup" # unit "c" # speed "0.125"
 
-d2 $ jux (rev) $ sometimes (chop 32) $ sound "bd [mt8 [jungbass:1]]"
-  # gain "1" # shape "0.3"
-  # speed "[1,2]"
-  # cutoff "4000"
-  # resonance "0."
-  
+d2 $ jux (rev) $ sometimes (chop 32) $ sound "bd [mt8 [jungbass:1 jungbass:4]]"
+  # gain "1" # shape "0.4"
+  # speed "[1,2,3]"
+  # cutoff "3000"
+  # resonance "0.44"
+
+d3 $ slow 2 $ n (offadd 0.25 7 "c4 e4") # s "xx"
+  # gain "1.2"
