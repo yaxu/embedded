@@ -7,4 +7,7 @@ d1 $ jux (iter 4) $ slowspread (chop) [8,128] $ sound "bd [[cp cp?] sb cp]"
   # speed "2"
 
 
-d2 $ slow 4 $ n (offaoffadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "xx"
+d2 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "xx"
+  # gain "1.1"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  
