@@ -73,7 +73,7 @@ d4 $ jux rev $
           superimpose ((0.125<~) . (fmap (+7))) $
           tom "[d4(3,8) c3(5,8) f4(3,8) g3(5,8)]")
         )
-  # gain "1.2"
+  # gain "1.1"
 
 hush
 
