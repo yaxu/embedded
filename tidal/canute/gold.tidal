@@ -75,6 +75,9 @@ d4 $ jux rev $
         )
   # gain "1.2"
 
+hush
+
+d4 silence
 
 
 d3 $ sometimes (# speed "2") $ jux (iter 8) $ every 3 (density 2) $ n (run 8) # sound "claus"
@@ -85,4 +88,6 @@ hush
 d2 $ slow 4 $ chop 16 $ sound "repetition" # n (irand 16) 
   # unit "c" # speed "0.25"
   # gain "1.2"
+
+
 
