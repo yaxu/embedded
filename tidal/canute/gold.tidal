@@ -80,10 +80,10 @@ hush
 d4 silence
 
 
-d3 $ sometimes (# speed "2") $ jux (iter 8) $ every 3 (density 2) $ n (run 8) # sound "claus"
+d2 $ slow 2 $ jux (iter 8) $ every 3 (density 2) $ n (run 8) # sound "claus"
   # gain "1.2"
 
-hush
+
 
 d2 $ slow 4 $ chop 16 $ sound "repetition" # n (irand 16) 
   # unit "c" # speed "0.25"
@@ -91,3 +91,13 @@ d2 $ slow 4 $ chop 16 $ sound "repetition" # n (irand 16)
 
 
 
+d1 $ smash 4 [1,2,3,4] $ jux (iter 4
+         ) $ slowspread ($) [(# vowel "a e"), id, density 1.5, (# speed "2")] $ sound (samples "ht lt*2 mt lt*2" (slow 2 $ run 8))
+
+d2 $ jux rev $ iter 4 $ sound "drum*2 odx*3 future*2 jazz"
+  # speed "[1,1.5]"
+
+
+d3 $ sound "gabba [kurt kurt:3*2]"
+  # gain "1.3"
+  # vowel "a e"
