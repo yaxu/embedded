@@ -35,6 +35,8 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         mode: "text/x-haskell",
         keyMap: "emacs",
         onKeyEvent : function (editor, event) {
+          
+          // return false so codemirror handles the event
           return(false);
         }
       });
