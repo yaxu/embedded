@@ -54,6 +54,6 @@ Emacs or atom plugin that saves out
 
 * buffer position (x/y)
 * timestamp in ms
-* diff?
+* inserted character / diff?
 
 every keypress/mouseclick/command
