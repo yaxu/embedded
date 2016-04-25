@@ -1,0 +1,6 @@
+
+
+
+d1 $ jux (iter) $ slowspread (chop) [8,128] $ sound "bd [cp ~ cp]"
+  # room "0.8"
+  # size "0.7"
