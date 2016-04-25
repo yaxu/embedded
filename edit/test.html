@@ -33,14 +33,17 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         mode: "text/x-haskell",
-        keyMap: "emacs",
-        onKeyEvent : function (editor, event) {
+        keyMap: "emacs"
+      });
+      editor.on('keypress',
+         function (editor, event) {
           alert("bang");
           console.log("aha");
           // return false so codemirror handles the event
-          // return(false);
+          return(false);
         }
-      });
+      );
+
     </script>
 
 </body>
