@@ -107,8 +107,9 @@ d1 $ slowspread (density) [1,2,0.5] $ slow 8 $ chop 128 $ sound "shackup" # unit
 d2 $ jux (rev) $ sometimes (chop 32) $ sound "bd [mt8 [jungbass:1 jungbass:4]]"
   # gain "1" # shape "0.4"
   # speed "[1,2,3]"
-  # cutoff "3000"
   # resonance "0.44"
 
-d3 $ slow 2 $ n (offadd 0.25 7 "c4 e4") # s "xx"
+d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c2*3 e3*2 f3*3 a3*2") # s "xx"
   # gain "1.2"
+  # cutoff "1000"
+  # resonance "0.4"
