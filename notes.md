@@ -47,3 +47,13 @@ Could a remix chains be cyclic? It github a good interface for this?
 
 Revisit instructionset.org ideas, instructions for people to implement
 as tidal patterns
+
+## Keylogger
+
+Emacs or atom plugin that saves out
+
+* buffer position (x/y)
+* timestamp in ms
+* diff?
+
+every keypress/mouseclick/command
