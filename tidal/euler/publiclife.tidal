@@ -56,5 +56,4 @@ d2 $ every 3 (0.25 <~) $ every 4 (density 2) $ jux (iter 8) $ sound "drum mouth:
              |+| resonance "0.4"
              |+| cutoff (slow 12 $ (*8000) <$> sine1)
              |+| gain "1.2"
-             
-  
+hush
