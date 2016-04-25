@@ -91,5 +91,7 @@ d2 $ slow 4 $ chop 16 $ sound "repetition" # n (irand 16)
 
 
 
-d1 $ slowspread ($) [(# vowel "a"), id, speed
-                                       1.5] $ sound "ht lt*2"
+d1 $ smash 4 [1,2,3,4] $ jux (iter 4
+         ) $ slowspread ($) [(# vowel "a e"), id, density 1.5, (# speed "2")] $ sound (samples "ht lt*2 mt lt*2" (slow 2 $ run 8))
+
+d2 $ sound "drum odx future 
