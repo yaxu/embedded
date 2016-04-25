@@ -38,8 +38,7 @@ d5 $ sound "ravebass:8*2"
 
 
 d1 $ every 4 (0.25 <~) $ stut 4 0.5 (1/16) $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "[c3 d4 e3 g3]/2") # s "xx"
-
-
+hush
 
 d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "[dirty,xx]"
   # gain "1.1"
@@ -97,7 +96,22 @@ d1 $ smash 4 [1,2,3,4] $ jux (iter 4
 d2 $ jux rev $ iter 4 $ sound "drum*2 odx*3 future*2 jazz"
   # speed "[1,1.5]"
 
-
+d3 silence
 d3 $ sound "gabba [kurt kurt:3*2]"
   # gain "1.3"
   # vowel "a e"
+
+
+d1 $ slowspread (density) [1,2,0.5] $ slow 8 $ chop 128 $ sound "shackup" # unit "c" # speed "0.125"
+
+d2 $ jux (rev) $ sometimes (chop 32) $ sound "bd [mt8 [jungbass:1 jungbass:4]]"
+  # gain "1" # shape "0.4"
+  # speed "[1,2,3]"
+  # resonance "0.44"
+
+d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c2*3 e3(3,8) f3*3 a2*2") # s "xx"
+  # gain "1.2"
+  # cutoff "8000"
+  # resonance "0.2"
+  # room "0.5"
+  # size "0.5"
