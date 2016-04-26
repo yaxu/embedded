@@ -65,7 +65,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
                 prev--;
               }
               var next = pos.line + 1;
-              while (prev < cm.lineCount() && getLine(prev) != "") {
+              while (next < cm.lineCount() && getLine(prev) != "") {
                 selection = selection + "\n" + getLine(next);
                 next++;
               }
