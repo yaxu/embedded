@@ -70,6 +70,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
                 selection = selection + "\n" + cm.getLine(below);
                 below++;
               }
+              setSelection({line: above+1, ch: 0}, {line: below, ch:0});
             }
           }
           console.log("eval: " + selection);
