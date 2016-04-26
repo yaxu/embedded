@@ -38,7 +38,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       editor.on('change',
          function (editor, event) {
           var secs = (new Date().getTime()) / 1000.0;
-          console.log("PRESS t: " + secs + " e: " + event.key);
+          console.log("change: " + secs + " e: " + event);
           // return false so codemirror handles the event
           return(false);
         }
