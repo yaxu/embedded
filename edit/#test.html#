@@ -55,7 +55,14 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
             selection = cm.getSelection();
           }
           else {
-
+            var pos = cm.getCursor();
+            selection =getLine(pos.line)
+            if (getLine(pos.line) == "") {
+              selection = "";
+            }
+            else {
+              selection = 
+            }
           }
           console.log("eval: " + selection);
           // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
