@@ -36,9 +36,9 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         keyMap: "emacs"
       });
       editor.on('change',
-         function (editor, event) {
+         function (editor, change) {
           var secs = (new Date().getTime()) / 1000.0;
-          console.log("change: " + secs + " e: " + event);
+          console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
           // return false so codemirror handles the event
           return(false);
         }
