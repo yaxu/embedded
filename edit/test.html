@@ -17,8 +17,6 @@
 <html>
 <body>
 
-<h1>aha</h1>
-
 <form><textarea id="code" name="code">
 data Pattern a = Pattern {arc :: Arc -> [Event a]}
   deriving Typeable
@@ -70,10 +68,10 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
                 selection = selection + "\n" + cm.getLine(below);
                 below++;
               }
+              var c = cm.getCursor();
               cm.setSelection({line: above+1, ch: 0}, {line: below, ch:0});
-
               // strange way to reset selection..
-              setTimeout(function(){cm.setCursor(cm.getCursor)});
+              setTimeout(function(){cm.setCursor(c)},100);
             }
           }
           console.log("eval: " + selection);
