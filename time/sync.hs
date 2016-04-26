@@ -5,7 +5,7 @@ import Sound.Tidal.Tempo
 set_udp_opt k v (UDP s) = N.setSocketOption s k v
 get_udp_opt k (UDP s) = N.getSocketOption s k
 
-main = do fd <- openUDP N.iNADDR_ANY 6010
+main = do fd <- openUDP "192.168.120.255" 6010
           set_udp_opt N.Broadcast 1 fd
           clocked $ onTick fd 
 
