@@ -56,16 +56,17 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           }
           else {
             var pos = cm.getCursor();
+            var nonempty = /\S/;
             selection = cm.getLine(pos.line);
-            if (/\S/.test(selection)) {
+            if (nonempty.test(selection)) {
               var prev = pos.line - 1;
               // todo check for non-whitespace
-              while (prev >= 0 && cm.getLine(prev) != "") {
+              while (prev >= 0 && nonempty.test(cm.getLine(prev))) {
                 selection = cm.getLine(prev) + "\n" + selection;
                 prev--;
               }
               var next = pos.line + 1;
-              while (next < cm.lineCount() && cm.getLine(prev) != "") {
+              while (next < cm.lineCount() && nonempty.test(cm.getLine(next))) {
                 selection = selection + "\n" + cm.getLine(next);
                 next++;
               }
