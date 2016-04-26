@@ -35,7 +35,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         mode: "text/x-haskell",
         keyMap: "emacs"
       });
-      editor.on('keypress',
+      editor.on('change',
          function (editor, event) {
           var secs = (new Date().getTime()) / 1000.0;
           console.log("PRESS t: " + secs + " e: " + event.key);
@@ -44,23 +44,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         }
       );
 
-      editor.on('keyup',
-         function (editor, event) {
-          var secs = (new Date().getTime()) / 1000.0;
-          console.log("UP t: " + secs + " e: " + event.key);
-          // return false so codemirror handles the event
-          return(false);
-        }
-      );
-
-      editor.on('keyHandled',
-         function (editor, event) {
-          var secs = (new Date().getTime()) / 1000.0;
-          console.log("HANDLED t: " + secs + " e: " + event.key);
-          // return false so codemirror handles the event
-          return(false);
-        }
-      );
 
     </script>
 
