@@ -61,6 +61,6 @@ every keypress/mouseclick/command
 
 ## TODO
 
-* Speak to Ellen
-* Chase Julian
+* Speak to Ellen - before May
+* Chase Julian - before May
 * Look up manifestos
