@@ -56,11 +56,13 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           }
           else {
             var pos = cm.getCursor();
-            selection =getLine(pos.line)
-            if (getLine(pos.line) == "") {
-              selection = "";
-            }
-            else {
+            selection = getLine(pos.line);
+            if (selection != "") {
+              prev = pos.line;
+              while (prev > 0) {
+                prev--;
+                
+              }
               selection = 
             }
           }
