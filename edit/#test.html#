@@ -1,0 +1,86 @@
+<!doctype html>
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" href="lib/codemirror.css">
+<!-- link rel="stylesheet" href="theme/elegant.css" -->
+
+<script src="lib/codemirror.js"></script>
+
+<script src="keymap/emacs.js"></script>
+<script src="addon/edit/matchbrackets.js"></script>
+<script src="addon/comment/comment.js"></script>
+<script src="addon/dialog/dialog.js"></script>
+<script src="addon/search/searchcursor.js"></script>
+<script src="addon/search/search.js"></script>
+<script src="mode/haskell/haskell.js"></script>
+
+<html>
+<body>
+
+<h1>aha</h1>
+
+<form><textarea id="code" name="code">
+data Pattern a = Pattern {arc :: Arc -> [Event a]}
+  deriving Typeable
+</textarea></form>
+
+    <script>
+      var changes = [];
+      CodeMirror.commands.save = function() {
+        var elt = editor.getWrapperElement();
+        elt.style.background = "#def";
+        setTimeout(function() { elt.style.background = ""; }, 300);
+      };
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-haskell",
+        keyMap: "emacs"
+      });
+      editor.on('change',
+         function (editor, change) {
+          var secs = (new Date().getTime()) / 1000.0;
+          console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
+          change.when = secs;
+
+          changes.push(change);
+
+          // return false so codemirror handles the event
+          return(false);
+        }
+      );
+      editor.setOption("extraKeys", {
+        "Ctrl-Enter": function(cm) {
+          var selection;
+          if (cm.somethingSelected()) {
+            selection = cm.getSelection();
+          }
+          else {
+            var pos = cm.getCursor();
+            var nonempty = /\S/;
+            selection = cm.getLine(pos.line);
+            if (nonempty.test(selection)) {
+              var above = pos.line - 1;
+              // todo check for non-whitespace
+              while (above >= 0 && nonempty.test(cm.getLine(above))) {
+                selection = cm.getLine(above) + "\n" + selection;
+                above--;
+              }
+              var below = pos.line + 1;
+              while (below < cm.lineCount() && nonempty.test(cm.getLine(below))) {
+                selection = selection + "\n" + cm.getLine(below);
+                below++;
+              }
+              cm.setSelection({line: above+1, ch: 0}, {line: below, ch:0});
+              setTimeout(function(){cm.
+            }
+          }
+          console.log("eval: " + selection);
+          // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+          // cm.replaceSelection(spaces);
+        }
+      });
+
+    </script>
+
+</body>
+</html>
