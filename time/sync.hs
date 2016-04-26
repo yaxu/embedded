@@ -1,10 +1,18 @@
 import qualified Network.Socket as N
 import Sound.OSC.FD
+import Sound.Tidal.Tempo
 
 set_udp_opt k v (UDP s) = N.setSocketOption s k v
 get_udp_opt k (UDP s) = N.getSocketOption s k
 
 main = do fd <- openUDP "0" 6010
           set_udp_opt N.Broadcast 1 fd
-          sendOSC fd $ Message "/test" [string "1 2 3 4 5 8 9"]
+          clocked $ onTick fd 
+
+tempo_n = 1
+
+onTick fd tempo tick_n = sendOSC fd $ Message "/tick" [int32 tick_n,
+                                                       int32 tempo_n,
+                                                       float (cps tempo)
+                                                      ]
 
