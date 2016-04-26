@@ -69,9 +69,13 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
                 below++;
               }
               var c = cm.getCursor();
-              cm.readOnly = true;
+
+              // highlight evaluated area
+              // make editor temporarily read only so that the selection doesn't get 
+              // overwritten by fast typing..
+              cm.setOption('readOnly', true);
               cm.setSelection({line: above+1, ch: 0}, {line: below, ch:0});
-              setTimeout(function(){cm.setCursor(c);cm.readOnly = false;},1000);
+              setTimeout(function(){cm.setCursor(c);cm.setOption('readOnly', false);},100);
             }
           }
           console.log("eval: " + selection);
