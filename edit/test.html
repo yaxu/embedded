@@ -53,6 +53,15 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         }
       );
 
+      editor.on('keyHandled',
+         function (editor, event) {
+          var secs = (new Date().getTime()) / 1000.0;
+          console.log("HANDLED t: " + secs + " e: " + event.key);
+          // return false so codemirror handles the event
+          return(false);
+        }
+      );
+
     </script>
 
 </body>
