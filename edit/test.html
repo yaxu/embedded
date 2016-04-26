@@ -50,7 +50,28 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       );
       editor.setOption("extraKeys", {
         "Ctrl-Enter": function(cm) {
-          var selection = cm.getSelection();
+          var selection;
+          if (cm.somethingSelected()) {
+            selection = cm.getSelection();
+          }
+          else {
+            var pos = cm.getCursor();
+            selection = getLine(pos.line);
+            if (selection != "") {
+              var prev = pos.line - 1;
+              // todo check for non-whitespace
+              while (prev >= 0 && getLine(prev) != "") {
+                selection = getLine(prev) + "\n" + selection;
+                prev--;
+              }
+              var next = pos.line + 1;
+              while (prev < cm.lineCount() && getLine(prev) != "") {
+                selection = selection + "\n" + getLine(next);
+                next++;
+              }
+              selection = 
+            }
+          }
           console.log("eval: " + selection);
           // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
           // cm.replaceSelection(spaces);
