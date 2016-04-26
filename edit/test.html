@@ -71,7 +71,9 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
                 below++;
               }
               cm.setSelection({line: above+1, ch: 0}, {line: below, ch:0});
-              setTimeout(function(){cm.setCursor(cm.getCursor)};
+
+              // strange way to reset selection..
+              setTimeout(function(){cm.setCursor(cm.getCursor)});
             }
           }
           console.log("eval: " + selection);
