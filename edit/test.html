@@ -25,7 +25,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
 </textarea></form>
 
     <script>
-      var lastchange;
+      var changes = [];
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
@@ -40,8 +40,11 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
          function (editor, change) {
           var secs = (new Date().getTime()) / 1000.0;
           console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
+          change.when = secs;
+
+          changes.push(change);
+
           // return false so codemirror handles the event
-          lastchange = change;
           return(false);
         }
       );
