@@ -57,3 +57,10 @@ Emacs or atom plugin, or web based thingie (codemirror?) that saves out
 * inserted character / diff?
 
 every keypress/mouseclick/command
+
+
+## TODO
+
+* Speak to Ellen
+* Chase Julian
+* Look up manifestos
