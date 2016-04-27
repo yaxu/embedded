@@ -1,2 +1,0 @@
-d1 $ n (slow 4 $ offadd 0.125 12 $ slowspread (offadd 0.125) [-5,-7] $ "c3(3,8) d3(5,8) e3(3,8) ~*2") # s "xx"
-
