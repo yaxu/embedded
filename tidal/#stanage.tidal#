@@ -1,5 +1,0 @@
-d1 $ jux (rev) $ slow 2  $n (offadd 0.125 12 $ (offadd 0.25 5) $ slow 4 $ "c3(3,8) d3(5,8) g3*3 e3*2") # s "xx" # gain "1" # orbit "2" # room "0.5"
-
-d2 $ jux (rev) $ every 4 (density 1.5) $ sound (samples "claus*8" (irand 8)) # orbit "1" 
-
-d4 $ slowspread ($) [id, rev, density 2, (# speed "2")] $ jux (iter 4) $ chop 8 $ sound "arc" # orbit "3"
