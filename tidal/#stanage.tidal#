@@ -1,26 +1,25 @@
-d2 $ jux rev $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4(5,8) e3*4")
-       # s "dirty") |+| n "[-12 -10 -5]/8")
+d2 $ jux rev $ ((slow 4 $ n (offadd (1/32) 24 $ offadd 0.125 7 "c4*3 f3(3,8) g4(5,8) e3*2")
+       # s "xx") |+| n "[-12 -10 -5]/8")
   # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.2"
 
-d3 $ jux (iter 4 . rev) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus*3 bd claus*2" # n (irand 16)
+d3 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
+
+d4 $ jux (iter 4) $ slow 2 $ chop 8 $ sound "arc"
+  # gain "1.2"
+
+
+d3 $ jux (iter 4) $ slowspread ($) [id, rev, density 2] $ slow 2 $ s "bd*2 claus bd claus*2" # n (irand 16)
   # gain "1.1"
   # vowel "a i i o*2"
-  # crush "[5 8]/4"
+  # crush "5"
 
-
-
-
-
-
-
-d1 $ jux (iter 4) $ sound "bd!?!!?!!!?! [mt*2 ht]"
-
-
-d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "os"
+d4 $ iter 4 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "arc"
   # gain "0.8"
 
 d5 $ jux (rev) $ iter 4 $ slow 16 $ chop 128 $ sound "bev"
   # gain "1"
 
-d6 $ slowspread ($) [id, density 1.5, id, (# speed "2") . density 2] $ chop 8 $ sound "~ kurt*2"
+  
