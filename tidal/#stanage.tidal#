@@ -1,5 +1,5 @@
 
-d1 $ iter 4 $ sometimes (|+| n "-12") $ (slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4(3,8) d3*2 e3(5,8) f4")) # s "xx"
+d1 $ iter 2 $ sometimes (|+| n "-12") $ (slow 4 $ n (offadd 0.125 12 $ offadd 0.25 5 "c4(3,8) d3*2 g* ~")) # s "xx"
   # gain "0.9"
   # orbit "2" # room "0.5"
 
