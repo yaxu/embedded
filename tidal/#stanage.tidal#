@@ -1,3 +1,9 @@
 
-d1 $ (slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4(3,8) e3*2 d3(5,8) a4")) # s "xx"
-  # off
+d1 $ sometimes (|+| n "-12") $ (slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4(3,8) e3*2 d3(5,8) a4")) # s "xx"
+  # gain "0.9"
+  # orbit "2" # room "0.5"
+
+d2 $ sound "bd*2 [bd ~ sn:2]"
+  # orbit "1"
+
+d3 $ jux (iter 4) $striate 16 $ sound "arc"
