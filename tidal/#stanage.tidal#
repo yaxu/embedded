@@ -1,9 +1,0 @@
-d1 $ sometimes (|+| n "12") $ n (slow 4 $ offadd 0.125 12 $ offadd 0.25 5 "c3(3,8) d3*3 g3(5,8) e3*2") # s "xx" # room "0.5" # orbit "2"
-  # gain "0.9"
-  # vowel "a e i"
-  # cutoff (slow 4 $ scale 1000 6000 $ sine1)
-
-d2 $ jux (iter 4) $ every 4 (density 1.5) $ sound (samples "claus*8" (irand 8))
-  # orbit "3"
-
-d3 $ jux (rev) $ slow 2 $ iter 4 $ chop 8 $ sound "arc" # gain "0.
