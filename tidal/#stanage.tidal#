@@ -1,3 +1,8 @@
 d1 $ slow 2 $ (jux rev (slowspread (chop) [16,128,32,64] (sound "[odx bd*2 arpy] arpy:3 [cp kurt:3] arpy:4")))
+  # orbit "1"
 
-d2 $ slow 4 $ n (offadd 0.25 5 "c3(3,8) d3 g4 e3" # s "xx"
+d2 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 5 $ slow 4 "c3(3,8) d3(5,8) g4*3 e3*2") # s "xx"
+  # orbit "2" # room "0.5"
+  # vowel "a"
+
+d3 $ jux rev $ slow 2 $ iter 4 $ chop 8 $ sound "arc"
