@@ -6,16 +6,18 @@ d1 $ jux rev $ ((slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4*3 f3(3,8) g4*2 
 
 d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
-  # nudge "[0 0.04]*4" # shape "0.2"
 
-hush
+
+d1 silence >> (
+d3 $ jux (iter 4) $ chop 8 $ sound "[os os:1 os:2]/3"
+  # gain "1.1" # vowel "a")
 
 
 d3 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   -- # nudge "[0 0.04]*4" # shape "0.2"
 
-d2 $ jux (iter 4) $ chop 8 $ sound "[os os:1 os:2]/3"
+d4 $ jux (iter 4) $ chop 8 $ sound "[os os:1 os:2]/3"
   # gain "1.1"
 
 
