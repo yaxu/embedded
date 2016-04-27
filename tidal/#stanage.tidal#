@@ -1,1 +1,6 @@
-d1 $ n (offadd 0.125 12 $ (offadd 0.25 5) $ slow 4 $ "c3(3,8) d3(5,8) e3*3 g3*2") # s "xx" # gain "0.9" # orbit "2" 
+d1 $ n (offadd 0.125 12 $ (offadd 0.25 5) $ slow 4 $ "c3(3,8) d3(5,8) g3*3 e3*2") # s "xx" # gain "1" # orbit "2" # room "0.5"
+
+d2 $ jux (rev) $ every 4 (density 1.5) $ sound (samples "claus*8" (irand 8)) # orbit "1" 
+
+
+d4 $ sou
