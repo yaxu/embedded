@@ -56,3 +56,4 @@ d5 $ jux (rev) $ iter 4 $ slow 16 $ chop 128 $ sound "bev"
   # gain "1"
 
   
+hush
