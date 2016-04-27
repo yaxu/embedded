@@ -1,2 +1,2 @@
-d1 $ n (offadd 0.125 12 $ offadd 0.125 5  $ slow 4 "c3(3,8) e3(5,8) g3(3,8) d3*2") # s "xx"
+d1 $ n (slow 4 $ offadd 0.125 12 $ slowspread (offadd 0.125) [7,-7] $ "g3(3,8) e3(5,8) d3(3,8) b3*2") # s "xx"
 
