@@ -38,6 +38,7 @@ d5 $ sound "ravebass:8*2"
 
 
 d1 $ every 4 (0.25 <~) $ stut 4 0.5 (1/16) $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "[c3 d4 e3 g3]/2") # s "xx"
+
 hush
 
 d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "[dirty,xx]"
@@ -123,3 +124,6 @@ d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c2*3 e3(3,8) f3*3 a2*2") # s
   # resonance "0.2"
   # room "0.5"
   # size "0.5"
+
+
+d1 $ s "xx"
