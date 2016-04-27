@@ -126,12 +126,14 @@ d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c2*3 e3(3,8) f3*3 a2*2") # s
   # size "0.5"
 
 
-d1 $ slow 4 $ n (offadd (1/12) 12 $ offadd 0.125 7 "c2*2 e3(3,8) f3*3 a2*2") # s "xx"
-  # vowel "a e"
+d1 $ jux rev $ slow 4 $ n (offadd (1/12) 12 $ offadd 0.125 7 "c2*2 e3(3,8) f3*3 a2*2") # s "xx"
   # room "0.75"
   # size "0.5"
+  # resonance "0.2"
 
 d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
   # orbit "2"
+
+d3 $ slow 4 $ jux (iter 4) $ chop 16 $ sound "shackup" # unit "c" # speed "0.25"
