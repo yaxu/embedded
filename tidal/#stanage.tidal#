@@ -1,8 +1,0 @@
-d1 $ jux rev $ sometimes (|+| n "12") $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4*3 e3(3,8) d4(5,8) a3*2") # s "xx"
-  # gain "0.9" # orbit "2" # room "0.5"
-  # vowel "a"
-
-d2 $ jux (iter 4) $ slowspread ($) [id, rev, density 2] $ every 4 (rev . chop 8) $ sound "bd [~ sn:2]"
-  # orbit "1" # room "0.6"
-
-hush
