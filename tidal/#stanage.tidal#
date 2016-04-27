@@ -1,6 +1,7 @@
 
-d1 $ n (offadd 0.125 12 $ offadd 0.25 5 $ slow 4 $ "c3(3,8) d3*3 g3(5,8) e3*2") # s "xx" # gain "0.9" # room "0.5" # orbit "2"
+d1 $ sometimes (|+| n "12") $  n (offadd 0.125 12 $ offadd 0.25 5 $ slow 4 $ "c3(3,8) d3*3 g3(5,8) e3*2") # s "xx" # gain "0.9" # room "0.5" # orbit "2"
 
 d2 $ every 4 (density 1.5) $ jux (iter 4) $ sound (samples "claus*8" (irand 8)) # orbit "3"
 
-d3 $ sound 
+d3 $ sometimes (density 2) $ jux (iter 4) $ chop 8 $ sound "arc"
+  # orbit "4"
