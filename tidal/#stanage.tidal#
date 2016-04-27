@@ -1,2 +1,3 @@
-d1 $ (slowspread (chop) [16,128,32,64] (sound "odx [cp kurt:3]"))
-  # nudge (slow 4 sine1)
+d1 $ slow 2 $ (jux rev (slowspread (chop) [16,128,32,64] (sound "[odx bd*2 arpy] arpy:3 [cp kurt:3] arpy:4")))
+
+d2 $ slow 4 $ n (offadd 0.25 5 "c3(3,8) d3 g4 e3" # s "xx"
