@@ -133,9 +133,11 @@ d1 $ (slow 4 $ n (offadd (1/12) 24 $ offadd 0.125 7 "c2*2 e3(3,8) f3*3 a2*2") # 
   # orbit "3"
   # cutoff "1000"
 
+d7 $ sound "odx*2 odx*3" # gain "1.4"
+
 d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
   # orbit "2"
-
-d3 $ slowspread ($) [id, density 2] $ slow 4 $ chop 16 $ sound "shackup" # unit "c" # speed "0.25"
+d3
+d3 $ slowspread ($) [id, density 2, id, rev] $ slow 2 $ chop 16 $ sound "arc" # unit "c" # speed "0.5" # gain "1.5"
