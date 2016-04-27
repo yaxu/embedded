@@ -1,0 +1,1 @@
+d1 $ n (offadd 0.125 12 $ (offadd 0.25 5) $ slow 4 $ "c3(3,8) d3(5,8) e3*3 g3*2") # s "xx" # gain "0.9" # orbit "2" 
