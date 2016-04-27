@@ -1,7 +1,18 @@
 
 
-d1 $ slow 4 $ n (offadd 0.25 7 "c*3 e(3,8) f(5,8) a*2") # s "xx"
-  # cutoff "
+d1 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c3*3 e4(3,8) f3(5,8) a3*2") # s "xx"
+  # cutoff "2000"
+  # vowel "a e i"
+  # size "0.9" # room "0.4"
+
+
+d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+
+d3 $ chop 8 $ sound "[os os:"
+  
+  # nudge "[0 0.04]*4" # shape "0.2"
+
 
 d1 $ jux rev $ ((slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4*3 f3(3,8) g4*2 e3(5,8)")
        # s "xx") |+| n "[-12 -10 -5]/8")
