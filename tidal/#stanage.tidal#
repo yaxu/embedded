@@ -1,1 +1,4 @@
+d1 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4(3,8) e3*3 f4(5,8) a3*2") # s "xx"
+  # room "0.5" # orbit "2"
 
+d2 $ sound "
