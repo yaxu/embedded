@@ -1,0 +1,2 @@
+d1 $ (slowspread (chop) [16,128,32,64] (sound "odx [cp kurt:3]"))
+  # nudge (slow 4 sine1)
