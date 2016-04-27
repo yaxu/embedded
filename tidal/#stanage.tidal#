@@ -1,0 +1,2 @@
+d1 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c4*3 e3(3,8) d4(5,8) a3*2") # s "xx"
+  # gain "
