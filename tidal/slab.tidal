@@ -19,6 +19,7 @@ cps 0.2
 d1 $ sound "bd"
 
 
+
 (mTempo, mCps) <- runClient
 
 t <- readMVar mTempo
