@@ -231,5 +231,6 @@ d8 $ jux (iter 4) $ slow 2 $ sound "[drum:0 sd8]([6 10]/2,16)" # n (irand 8)
   # vowel "a"
 
 d6 $ e 3 8 $ every 2 (striate 30) $ sound (samples "jvbass*8" (irand 3))
-hush
-d8 $ slow 2 $ struct "[x x] x?" $ sound "os" # cut "1" # unit "c" # speed "0.5"
+
+d8 $ jux (iter 4) $ slow 2 $ struct "x [x!?!?!?] x? ~" $ sound "breaks125" # cut "1" # unit "c" # speed "0.5" # g
+
