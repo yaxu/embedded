@@ -236,4 +236,4 @@ d8 $ jux (rev) $ slow 2 $ struct "x [x!?!?!?] x? ~" $ sound "breaks125" # cut "1
 
 d1 $ n "0 !" # sound "breaks125" # cut "1" # unit "c" # speed "0.5" # gain "1.2"
 
-d1 $ sound "bd lt*2 ht mt"
+d1 $ jux (rev) $ sometimes (# speed "2") $ sound "{bd lt*2 ht mt?, arpy arpy:2*2 arpy:0}"
