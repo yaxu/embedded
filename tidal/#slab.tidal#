@@ -196,3 +196,4 @@ hush
 
 d1 $ n "[f3 a2 c3 e2]" # s "xx" 
 
+d1 $ sound "can"
