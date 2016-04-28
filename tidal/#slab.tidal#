@@ -271,9 +271,11 @@ d1 $ jux (iter 4) $ struct "x [~ x*2] x*2 x" $ slow 3 $ n (run 4) # s "kurt*4"
 d2 $ slow 2 $ jux rev $ (slowspread (chop) [8,16,4] $ s "[alphabet]/2") # n (irand 26) # speed (density 2 $ scale 1 2 sine1) 
 
 d3 $ jux (iter 4) $ slow 2 $ sound "[bd, sn:1]([6 10]/2,16)" # speed "4"
-  # cutoff "500" # res
+  # cutoff "500" # resonance "0.3"
 
-d4 $ density 2 $ jux rev $ iter 4 $ chop 8 $ sound "arc" # speed "2" 
+d4 $ (density 2 $ jux rev $ iter 4 $ chop 8 $ sound "arc" # speed "2" )
+  # cutoff (slow 4 $ scale 1000 5000 saw1) # resonance "0.3" # vowel "i"
 
 d5 $ sound "~ [jungbass:5 ~ ~ jungbass:5]" # speed "2" # coarse "2"
 
+d6 $ sound "wobble(3,8)" # speed "2" # shape "0.5" # crush "5"
