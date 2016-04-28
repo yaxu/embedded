@@ -46,7 +46,11 @@ d2 $ slow 8 $ rev $ slowspread (chop) [64,32,128,256] $ sound "bev" # unit "c" #
 
 
 hush
-d1 $ chop 8 $ sound "cp arpy arpy:3 bd"
+
+d1 $ jux rev $ slowspread (chop) [8,32,128,64] $ sound "cp arpy*2 arpy:3 bd"
+  # nudge "0.55"
+
+hush
 
 
 
