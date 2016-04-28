@@ -263,3 +263,7 @@ cps (0.5)
 cps 1.1
 
 hush
+
+
+
+d1 $ struct "x [~ x*2] x x" $ n (run 4) # s "kurt*4"
