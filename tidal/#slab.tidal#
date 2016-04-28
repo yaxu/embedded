@@ -187,5 +187,6 @@ d1 $ sound "[ho:2 hc]*4" # cut "1"
 
 d2 $ s "os os*2?" # cut "2" # unit "c" # n (irand 3)
 
-d1 $ slowspread (density) [2,4] $ sound "bd bd bd bd"
+d1 $ slowspread (density) [2,4] $ sound "bd bd bd bd*4" # speed "2"
 
+let jux f p = superimpose (p # pan "0") ((p) # pan "1")
