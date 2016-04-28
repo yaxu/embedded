@@ -145,8 +145,10 @@ d1 $ every 4 (density 1.5) $ sound (samples (struct "x [~ x] [x*2 x] x" "claus")
   # size "0.7"
   # orbit "1"
 
-d2 $ jux (iter 4) $ every 4 (rev . chop 8) $ sound "~ sd8:4"
+d2 $ brak $ slowspread (chop) [8,16,32,64] $ sound "drum [sd8:4 mt:2?]"
   # room "0.6"
   # size "0.7"
   # orbit "1"
+  # crush "
+
 
