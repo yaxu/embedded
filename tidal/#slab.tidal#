@@ -249,3 +249,5 @@ d2 $ sometimes (# n "12") $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 
 d3 $ jux $ iter 4 $ struct "x x*2?" $ chop 8 $ s "arc" # speed "0.5"
   # gain "1.4"
 
+d1 $ jux (iter 4) $ sound "bd [~ cp] hc sn:2"
+
