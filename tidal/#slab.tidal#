@@ -169,4 +169,5 @@ d7 $ sound "cp"
 d8 $ slow 2 $ s "bd ~ bd glitch*2" # n (irand 8)
 
 
+d4 $ sound (samples "[sd8, jvbass]*8" (slow 8 $ scan 8))
 
