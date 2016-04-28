@@ -15,6 +15,9 @@ d1 $ slow 4 $ chop 16 $ sound (samples "repetition" (irand 8))
   # gain "1.1"
 
 
+d1 $ (slowspread (chop) [128,64,32] $ sound "drum* [drum:4 drum:2 ~ cp]")
+  # nudge (slow 4 $ sine1)
+
 d1 $ n "b4" # s "xx" # gain "0.7"
 
 d1 $ sound (samples "claus*2 claus*4" (irand 16))
