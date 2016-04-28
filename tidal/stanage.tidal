@@ -1,11 +1,8 @@
 
-d1 $ slow 4 $ n (offadd 0.25 7 "f3(5,8) a3*2 c3*3 e4(3,8)")
+d1 $ slow 4 $ n (offadd 0.25 7 "f3 a3 c3 e4")
   # s "xx"
   # cutoff "2000"
   # resonance "0.3"
   # size "0.9" # room "0.4"
   # vowel "a e i"
   # orbit "1"
-
-
-
