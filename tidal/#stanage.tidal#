@@ -1,0 +1,9 @@
+
+d1 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(5,8) a3*3 c3*2 e4(3,8)")
+  # s "xx"
+  # cutoff (slow 4 $ scale 2000 "2000"
+  # resonance "0.3"
+  # size "0.9" # room "0.4"
+  # vowel "a e i"
+  # orbit "1"
+
