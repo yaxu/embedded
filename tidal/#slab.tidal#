@@ -191,4 +191,4 @@ d1 $ slowspread (density) [2,4] $ sound "bd bd bd bd*4" # speed "2"
 
 let jux f p = stack [p # pan "0", f p # pan "1"]
 
-d1 $ n "[c3,e3,f3]" # s "dirty" 
+d1 $ n "[c5,d5,f6]" # s "xx" 
