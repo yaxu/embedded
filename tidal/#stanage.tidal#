@@ -1,9 +1,11 @@
 
-d1 $ degrade $ sometimes (|+| n "12") $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(5,8) a3*2 c3*3 e4(3,8)")
+d1 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(5,8) a3*3 c3*2 e4(3,8)")
   # s "xx"
   # cutoff (slow 4 $ scale 2000 6000 sine1)
   # resonance "0.3"
   # size "0.9" # room "0.4"
   # vowel "a e i"
   # orbit "1"
-  
+
+
+d2 $ iter 4 $ slow 2 $ chop 8 $ sound "arc" # gain "1.3"
