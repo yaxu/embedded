@@ -1,4 +1,4 @@
-d1 $ sound "cp"
-  # nudge "0.02"
+d1 $ sound "bd"
 
-cps 0.2
+
+cps 1.1
