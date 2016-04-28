@@ -164,7 +164,31 @@ d6 $ degrade $ n (offadd 0.125 12 $ offadd 0.25 7 ("[f3 g3]/2(3,8) a3*3 c3*2 e2(
   # cutoff (slow 4 $ scale 1000 4000 sine1)
   # resonance "0.2"
 
-d7 $ sound "drum ~ [~ cp:3] ~"
+d7 $ sound "cp"
 
 d8 $ slow 2 $ s "bd ~ bd glitch*2" # n (irand 8)
 
+
+d4 $ sound (samples "[sd8, jvbass]*8" (slow 8 $ scan 8))
+
+d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]"
+
+d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ tom "c3(3,8) e3(3,8) f3(3,8) g3(3,8)")) # up "3"
+
+
+  (d4 $ jux (iter 4) $ (slow 4 $ chop 16 $ sound "paper"
+                        # unit "c"
+                        # speed "[0.25]"
+                        # gain "0.8"))
+  
+
+d1 $ sound "[ho:2 hc]*4" # cut "1"
+
+d2 $ s "os os*2?" # cut "2" # unit "c" # n (irand 3)
+
+d1 $ slowspread (density) [2,4] $ sound "bd bd bd bd*4" # speed "2"
+
+let jux f p = stack [p # pan "0", f p # pan "1"]
+
+d1 $ sound "can"
