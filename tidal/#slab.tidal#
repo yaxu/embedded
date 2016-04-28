@@ -223,4 +223,6 @@ d5 $ (sometimes (|-| n "12") $  jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0
 d6 $ jux rev $ iter 4 $ every 2 (density 4) $ slow 4 $ chop 8 $ sound "arc" # unit "c" # speed "0.25"
   # gain "1.1"
 
-d7 $ slow 2 $ n "" # s "claus"
+d7 $ every 4 (# vowel "a e i o") $ jux (rev) $ slow 2 $ struct "x x*4 x*2 x*2" $ slow 3 $ n (run 12) # s "claus"
+  # speed "[0.5,1,2]"
+
