@@ -230,4 +230,4 @@ d8 $ jux (iter 4) $ slow 2 $ sound "[drum:0 sd8]([6 10]/2,16)" # n (irand 8)
   # gain "1.5"
   # vowel "a"
 
-d6 silence
+d6 $ e 3 8 $ every 2 (striate 30) $ sound (samples "jvbass*8" (irand 3))
