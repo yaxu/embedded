@@ -42,7 +42,7 @@ d1 $ whenmod 6 3 (const silence) $ every 4 (density 2) $ n "1 2*4 5 ~" # s "meta
 
 d1 $ sound "arpy" # speed "2" # speed "3"
 
-d2 $ slow 8 $ rev $ slowspread (chop) [64,32,128,256] $ sound "bev" # unit "c" # speed "0.125"
+d2 $ slow 8 $ chop 8 $ sound "bev" # unit "c" # speed "0.125"
 
 
 hush
