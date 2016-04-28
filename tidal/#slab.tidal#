@@ -4,13 +4,15 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
   # nudge "0.57"
 
 
-d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ "f3(3,8) a3*2 c3(5,8) e3*2") # s "dirty"
+
+d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ iter 2 $ "f3(3,8) a3*2 c3(5,8) e3*2") # s "xx"
   # nudge "0.57"
   # cutoff (slow 4 $ scale 1000 5000 sine1)
-  # resonance "0.2"
-  # vowel "[a i u e]/4"
+  -- # resonance "0.2"
+  -- # vowel "[a i u e]/4"
+  -- # speed "2"
 
-d3 $ slowspread (stut 3 0.6) [0.125, 0.01, 0.05] $ sound "drum ~ [odx drum] cp"
+d3 $ jux (iter 4) $ slowspread (stut 5 0.6) [0.125, 0.01, 0.08] $ sound "drum ~ [odx drum] cp"
   # gain "1.1"
   # nudge "0.57"
 
