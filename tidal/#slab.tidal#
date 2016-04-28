@@ -28,9 +28,13 @@ hush
 cps 0.4
 
 
+import Data.Fixed
 d1 $ superimpose
 
+let juxBy n f p = stack [p |+| pan (pure $ mod' (0-(n/2)) 1), f $ p # pan (pure $ mod' (n/2) 1)]
 
+
+d1 $ juxBy 1 (density 2) $ sound "bd"
 
 
 1 2 3 4
