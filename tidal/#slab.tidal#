@@ -240,6 +240,8 @@ d1 $ jux (rev) $ sometimes (# speed "2") $ sound "{bd lt*2 ht mt?}"
 
 d1 $ jux (iter 4) $ slow 2 $ every 2 (density 2) $ sound (samples "claus*8" (irand 8)) # speed "0.5"
 
-d2 $ slow 2 $ n "f3 a3 c3 e3" # s "xx"
+d2 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(3,8) a3 c2 e3") # s "xx"
+  # vowel "a e"
+  # cutoff (scale 2000 8000 )
 
 cps 0.7
