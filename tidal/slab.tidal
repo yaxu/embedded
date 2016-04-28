@@ -12,6 +12,7 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
                                              ]
   # nudge "0.57"
 
+cps 0.4
 
 d1 $ sound "bd"
   # nudge "0.57"
