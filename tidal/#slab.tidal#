@@ -193,6 +193,6 @@ let jux f p = stack [p # pan "0", f p # pan "1"]
 
 d1 $ jux (iter 4) $ sound "[drum,odx bd]([3 5]/2,8,[0 0 4 4]/4)"
 hush
-hush
+
 d1 $ n "[c3, [e3 eb3]/2, g3]" # s "xx" 
 
