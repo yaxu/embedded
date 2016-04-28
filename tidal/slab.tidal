@@ -164,5 +164,7 @@ d6 $ degrade $ n (offadd 0.125 12 $ offadd 0.25 7 ("[f3 g3]/2(3,8) a3*3 c3*2 e2(
   # cutoff (slow 4 $ scale 1000 4000 sine1)
   # resonance "0.2"
 
-d7 $ sound "drum*4 bd*3"
-  # gain "1.2"
+d7 $ sound "drum ~ [~ cp:3] ~"
+
+d8 $ slow 2 $ s "bd ~ bd glitch*2" # n (irand 8)
+
