@@ -1,8 +1,7 @@
-d1 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c3*3 e4(3,8) f3(5,8) a3*2") # s "xx"
+d1 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(5,8) a3*2 c3*3 e4(3,8) ") # s "xx"
   # cutoff "2000"
-  # vowel "a e i"
   # size "0.9" # room "0.4"
+  # vowel "a e i"
 
-
-d2 $ sound "bd ~ bd ~"
+d2 $ sound "bd ~ bd [~ cp]"
   # orbit "2"
