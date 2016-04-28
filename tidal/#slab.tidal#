@@ -16,9 +16,10 @@ d3 $ jux (iter 4) $ sound "drum ~ [odx drum] sn:4"
   # gain "1.1"
   # nudge "0.57"
 
-d4 $ slow 2 $ jux (iter 4) $ chop 8 $ sound "arc"
+d4 $ every 3 (rev) $ every 2 (# speed "2") $ slow 2 $ jux (iter 4) $ slowspread (chop) [64,128] $ sound "arc"
   # nudge "0.57"
 
+d5 $ sound "drum"
+hush
 
-
-cps 0.7
+cps 0.4
