@@ -51,6 +51,15 @@ d1 $ jux rev $ slowspread (chop) [8,32,128,64] $ sound "cp arpy*2 arpy:3 bd"
   # nudge "0.55"
 
 
+d1 $ weave 16 (n (run 16) # s "arpy")
+  [vowel "a [e o] i o",
+   vowel "e*4 u*3",
+   vowel "i [e i e] i o",
+   vowel "e*4 u*3"
+  ]
+
+
+
 d1 $ sound "alex2*16" # n (run 100)
   # pan sine1
 
