@@ -210,10 +210,12 @@ d2 $ slow 2 $ sound "[drum*2, wobble] [~ cp]"
 
 d3 $ iter 4 $ every 4 rev $ slow 2 $ chop 4 $ sound "breaks125" # unit "c"
   # speed "0.5" -- # vowel "[a e i o u]/4"
-  # cutoff (scale 1000 8000 sine1)
+  -- # cutoff (scale 1000 8000 sine1)
   # resonance "0.3"
 
-d4 $ sound "drum ~ [kurt cp]"
-  # coarse "7"
+d4 silence
 
-d5 $ slow 4 $ n ("f3 a3 c3 e3") # s "xx"
+d5 $ (sometimes (|+| )$  jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(3,8) a3*3 c3(5,8) e3*2") # s "xx")
+  # cutoff (slow 4 $ scale 1000 8000 sine1)
+  # resonance "0.3"
+  
