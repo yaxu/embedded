@@ -1,9 +1,10 @@
-d1 $ jux (iter 4) $ every 2 (rev . chop 8) $ stack [sound "bd [bd ~ bd]",
-                                                    sound "~ cp8:3"
-                                                   ]
+d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
+                                              sound "~ cp8:3"
+                                             ]
   # nudge "0.57"
 
-d2 $ slow 4 $ n "c3 e3 f4 d3" # s "xx"
+d2 $ slow 4 $ n (offadd 0.25 7 $ "c3(3,8) g3*2 4*3 d3(5,8)") # s "xx"
+  # nudge "0.57"
 
 
 cps 1.1
