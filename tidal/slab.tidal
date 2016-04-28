@@ -1,4 +1,4 @@
-d1 $ sound "can can can can"
+d1 $ sound "can"
 
 
-cps 0.125
+cps 0.5
