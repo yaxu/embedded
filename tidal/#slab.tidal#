@@ -10,6 +10,8 @@ d1 $ n "b4" # s "xx" # gain "0.7"
 d1 $ sound (samples "claus*2 claus*4" (irand 16))
 
 
+d2 $ slow 1 $ chop 8 $ sound "os:2"
+
 d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ "f3(3,8) a3*2 c3(5,8) e3*2") # s "[xx pno2]/2"
   # nudge "0.57"
   # cutoff (slow 4 $ scale 1000 5000 sine1)
