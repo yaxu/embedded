@@ -171,3 +171,14 @@ d8 $ slow 2 $ s "bd ~ bd glitch*2" # n (irand 8)
 
 d4 $ sound (samples "[sd8, jvbass]*8" (slow 8 $ scan 8))
 
+d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]"
+
+d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ tom "c3(3,8) e3(3,8) f3(3,8) g3(3,8)")) # up "3"
+
+
+  (d4 $ jux (iter 4) $ (slow 4 $ chop 16 $ sound "paper"
+                        # unit "c"
+                        # speed "[0.25]"
+                        # gain "0.8"))
+  
