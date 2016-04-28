@@ -251,3 +251,8 @@ d3 $ jux $ iter 4 $ struct "x x*2?" $ chop 8 $ s "arc" # speed "0.5"
 
 d1 $ jux (iter 4) $ sound "bd [~ cp] hc sn:2"
 
+
+d1 $ slow 4 $ chop 16 $ sound "repetition"
+  # unit "c" # speed "0.25"
+  # gain "1.1"
+
