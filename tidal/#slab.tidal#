@@ -37,8 +37,8 @@ let juxBy n f p = stack [p |+| pan (pure $ mod' (0-(n/2)) 1), f $ p # pan (pure 
 d1 $ juxBy 1 (density 2) $ sound "bd"
 
 
-d1 $ n "1 2*4 5 ~" # s "metal"
-  # nudge "0.55" |+| n "0"
+d1 $ every 3 (co) $ every 4 (density 2) $ n "1 2*4 5 ~" # s "metal"
+  # nudge "0.55" # speed "0.5"
 
 d1 $ sound "arpy" # speed "2" # speed "3"
 
