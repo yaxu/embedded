@@ -208,8 +208,10 @@ d2 $ slow 2 $ sound "[drum*2, wobble] [~ cp]"
   # crush "5"
   # vowel "[a i]/2"
 
-d3 $ jux (iter 4) $ every 4 rev $ slow 2 $ chop 4 $ sound "breaks125" # unit "c"
-  # speed "0.5" # vowel "[a e i o u]/4"
+d3 $ iter 4 $ every 4 rev $ slow 2 $ chop 4 $ sound "breaks125" # unit "c"
+  # speed "0.5" -- # vowel "[a e i o u]/4"
   # cutoff (scale 1000 8000 sine1)
   # resonance "0.3"
 
+d4 $ sound "drum ~ [kurt cp]"
+  # coarse "7"
