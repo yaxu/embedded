@@ -6,6 +6,15 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
 d1 $ sound "claus:1"
 
 
+d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
+
+d1 $ slow 4 $ chop 16 $ sound (samples "repetition" (irand 8))
+  # unit "c" # speed "0.25"
+  # gain "1.1"
+
+
 d1 $ n "b4" # s "xx" # gain "0.7"
 
 d1 $ sound (samples "claus*2 claus*4" (irand 16))
