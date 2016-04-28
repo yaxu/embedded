@@ -14,8 +14,10 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
 
 cps 0.5
 
-(cps, ) <-
+(mTempo, mCps) <- runClient
 
+t <- readMVar mTempo
+t
 d1 $ sound "bd"
   # nudge "-0.4"
 
