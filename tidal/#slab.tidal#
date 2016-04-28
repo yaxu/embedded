@@ -268,11 +268,12 @@ hush
 
 d1 $ jux (iter 4) $ struct "x [~ x*2] x*2 x" $ slow 3 $ n (run 4) # s "kurt*4"
 
-d2 $ jux rev $ (slowspread (chop) [64,128] $ s "[numbers alphabet]/2") # speed (density 2 $ scale 1 2 sine1) # n (irand )
+d2 $ slow 2 $ jux rev $ (slowspread (chop) [8,16,4] $ s "[alphabet]/2") # n (irand 26) # speed (density 2 $ scale 1 2 sine1) 
 
-d3 $ jux (iter 4) $ slow 2 $ sound "[bd, sn:1]([6 10]/2,16)"
+d3 $ jux (iter 4) $ slow 2 $ sound "[bd, sn:1]([6 10]/2,16)" # speed "4"
+  # cutoff "500" # res
 
-d4 $ jux rev $ iter 4 $ chop 8 $ sound "arc"
+d4 $ density 2 $ jux rev $ iter 4 $ chop 8 $ sound "arc" # speed "2" 
 
 d5 $ sound "~ [jungbass:5 ~ ~ jungbass:5]" # speed "2" # coarse "2"
 
