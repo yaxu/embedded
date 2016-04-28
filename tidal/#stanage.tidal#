@@ -1,4 +1,4 @@
-d1 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(5,8) a3*2 c3*3 e4(3,8) ")
+d1 $ degrade $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(5,8) a3*2 c3*3 e4(3,8) ")
   # s "xx"
   # cutoff (scale 2000 4000 (slow 4 $ sine1))
   # resonance "0.3"
@@ -8,5 +8,9 @@ d1 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(5,8) a3*2 
 
 d2 $ every 4 (rev . chop 8) $ jux (iter 4) $ sound "bd [sn:3 bd*3]"
   # crush "5"
+  # gain "1.1"
 
-d3 $ chosound "arc"
+d3 $ degrade $ every 2 (# speed "2") $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
+  # gain "1.5"
+
+
