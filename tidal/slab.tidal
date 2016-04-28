@@ -16,8 +16,8 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
 
 cps 4
 
-d1 $ sound "cp"
-  
+
+
 
 
 
@@ -136,3 +136,6 @@ hush
 4 1 2 3
 
 d
+
+
+
