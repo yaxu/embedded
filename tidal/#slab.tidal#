@@ -197,8 +197,12 @@ hush
 d1 $ n "[f3 a2 c3 e2]" # s "xx" 
 
 
-
-
+d2 $ stut 2 0.9 0.5 $ jux rev $ chop 8 $ slow 4 $ sound "numbers"
+  # room (slow 4 saw1)
+  # size "0.6"
+  # cutoff (scale 1000 8000 sine1)
+  # resonace
+  
 
 
 
