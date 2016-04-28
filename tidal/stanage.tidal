@@ -1,4 +1,4 @@
-d1 $ degrade $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(5,8) a3*2 c3*3 e4(3,8) ")
+d1 $ slow 4 $ n (offadd 0.25 7 "f3(5,8) a3*2 c3*3 e4(3,8) ")
   # s "xx"
   # cutoff "2000"
   # size "0.9" # room "0.4"
