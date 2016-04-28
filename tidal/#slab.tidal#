@@ -5,7 +5,7 @@ d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
 
 
 
-d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ "f3(3,8) a3*2 c3(5,8) e3*2") # s "xx"
+d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ "f3(3,8) a3*2 c3(5,8) e3*2") # s "pno2"
   # nudge "0.57"
   # cutoff (slow 4 $ scale 1000 5000 sine1)
   -- # resonance "0.2"
@@ -46,6 +46,11 @@ d2 $ slow 8 $ chop 8 $ sound "bev" # unit "c" # speed "0.125"
 
 
 hush
+d1 silence
+d1 $ n "c d4*2 e f" # sound "pno2" 
+
+hush
+
 
 d1 $ jux rev $ slowspread (chop) [8,32,128,64] $ sound "cp arpy*2 arpy:3 bd"
   # nudge "0.55"
