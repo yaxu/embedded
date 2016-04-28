@@ -1,4 +1,8 @@
-d1 $ sound "can"
-  # nudge "0.58"
+d1 $ jux (iter 4) $ every 2 (rev . chop 8) $ stack [sound "bd [bd ~ bd]",
+                                                    sound "~ cp8:3"
+                                                   ]
+  # nudge "0.57"
 
-cps 0.25
+
+
+cps 1.1

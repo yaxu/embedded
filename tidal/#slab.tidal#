@@ -1,8 +1,0 @@
-d1 $ stack [sound "bd [bd ~ bd]",
-            sound "~ cp
-           ]
-  # nudge "0.57"
-
-
-
-cps 1.1
