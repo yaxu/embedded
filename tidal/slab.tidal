@@ -1,9 +1,22 @@
+d1 $ jux (# speed "2") $ every 4 (density 1.5) $ sound (samples "claus*8" (irand 8))
+  # nudge "0.57"
+
+
+d2 $ sound "ind:4"
+  # nudge "0"
+
+cps 0.5
+hush
 d1 $ jux (iter 4) $ every 2 (chop 8) $ stack [sound "bd [bd ~ bd] bd bd",
                                               sound "~ cp8:3"
                                              ]
   # nudge "0.57"
 
-d1 $ sound "claus:1"
+
+d1 $ sound "bd"
+  # nudge "0.57"
+
+d1 $ striate 8 $ sound "bev" # cut "1"
 
 
 d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
