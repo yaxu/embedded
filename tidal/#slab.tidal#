@@ -226,3 +226,6 @@ d6 $ jux rev $ iter 4 $ every 2 (density 4) $ slow 4 $ chop 8 $ sound "arc" # un
 d7 $ every 4 (# vowel "a e i o") $ jux (rev) $ slow 2 $ struct "x x*4 x*2 x*2" $ slow 3 $ n (run 12) # s "claus"
   # speed "[0.5,1,2]"
 
+d8 $ slow 2 $ sound "[drum:0 sd8]([6 10]/2,16)" # n (irand 8)
+  # gain "1.5"
+  # v
