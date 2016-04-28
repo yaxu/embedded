@@ -256,3 +256,8 @@ d1 $ slow 4 $ chop 16 $ sound "repetition"
   # unit "c" # speed "0.25"
   # gain "1.1"
 
+cps (-1)
+
+cps 1.1
+
+hush
