@@ -12,6 +12,9 @@ d2 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ "f3(3,8) a3*2 c3(5,
   -- # vowel "[a i u e]/4"
   -- # speed "2"
 
+d1 $ sound "bd"
+  # nudge "0.55"
+
 d3 $ jux (iter 4) $ sound "drum ~ [odx drum] sn:4"
   # gain "1.1"
   # nudge "0.57"
