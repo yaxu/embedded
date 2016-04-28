@@ -51,7 +51,7 @@ d1 $ jux rev $ slowspread (chop) [8,32,128,64] $ sound "cp arpy*2 arpy:3 bd"
   # nudge "0.55"
 
 
-d1 $ sound "alex2*16" # n "80"
+d1 $ sound "alex2*16" # n (run 100)
   # pan sine1
 
 hush
