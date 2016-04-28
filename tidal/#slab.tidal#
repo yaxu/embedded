@@ -62,6 +62,11 @@ d1 $ weave 16 (n (run 8) # s "arpy")
    vowel "i [e i e] i o",
    speed "1 2 3"
   ]
+
+d1 $ weave 16 (sound "bd [sn drum:2*2] bd*2 [sn drum:1]")
+  [vowel "a i u",
+   vowel  "i o e u"
+  ]
   
 hush
 
