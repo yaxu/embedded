@@ -12,6 +12,9 @@ d2 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
   # gain "1.3"
 
 d1 silence
+hush
+
 d3 $ degrade $ slow 2 $ every 4 (rev . chop 8) $ jux (rev . iter 4) $ sound "bd claus:4 claus:2 [~ cp]"  # gain "1.35"
+
 d3 silence
 
