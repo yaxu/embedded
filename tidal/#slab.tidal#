@@ -27,7 +27,10 @@ hush
 
 cps 0.4
 
-d1 $ jux (const silence) $ sound "arpy:1 arpy:2 arpy:3 arpy:4"
+
+d1 $ superimpose
+
+
 
 
 1 2 3 4
