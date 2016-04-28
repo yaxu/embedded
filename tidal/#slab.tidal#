@@ -42,6 +42,13 @@ d1 $ whenmod 6 3 (const silence) $ every 4 (density 2) $ n "1 2*4 5 ~" # s "meta
 
 d1 $ sound "arpy" # speed "2" # speed "3"
 
+d2 $ slow 4 $ chop 64 $ sound "bev" # unit "c" # speed "0.25"
+
+d1 $ rev $ striate 8 $ sound "cp arpy a"
+
+
+
+
 1 2 3 4
 2 3 4 1
 3 4 1 2
