@@ -2,6 +2,7 @@ d1 $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(5,8) a3*2 c3*3 e4(3,8) ") #
   # cutoff "2000"
   # size "0.9" # room "0.4"
   # vowel "a e i"
+  # orbit "1"
 
 d2 $ sound "bd ~ bd [~ cp]"
   # orbit "2"
