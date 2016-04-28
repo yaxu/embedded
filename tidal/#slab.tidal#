@@ -215,7 +215,11 @@ d3 $ iter 4 $ every 4 rev $ slow 2 $ chop 4 $ sound "breaks125" # unit "c"
 
 d4 silence
 
-d5 $ (sometimes (|+| )$  jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(3,8) a3*3 c3(5,8) e3*2") # s "xx")
+d5 $ (sometimes (|+| n "12") $  jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(3,8) a3*3 c3(5,8) e3*2") # s "xx")
   # cutoff (slow 4 $ scale 1000 8000 sine1)
   # resonance "0.3"
+  # vowel "[a e o i]/2"
+
+d6 $ slow 4 $ striate 8 $ sound "arc*2" # unit "
+  # gain "1.2"
   
