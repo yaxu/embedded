@@ -189,4 +189,6 @@ d2 $ s "os os*2?" # cut "2" # unit "c" # n (irand 3)
 
 d1 $ slowspread (density) [2,4] $ sound "bd bd bd bd*4" # speed "2"
 
-let jux f p = superimpose (p # pan "0") ((p) # pan "1")
+let jux f p = stack [p # pan "0", f p # pan "1"]
+
+d1 $ sound "bd"
