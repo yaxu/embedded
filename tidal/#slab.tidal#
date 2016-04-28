@@ -194,4 +194,5 @@ let jux f p = stack [p # pan "0", f p # pan "1"]
 d1 $ jux (iter 4) $ sound "[drum,odx bd]([3 5]/2,8,[0 0 4 4]/4)"
 hush
 
-d1 $ sound ""
+d1 $ sound (samples "xx" )
+
