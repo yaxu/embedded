@@ -16,10 +16,10 @@ d3 $ every 4 (slowspread (chop) [16,32]) $ sound "~ sn:2"
 d5 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
   # gain "1"
 
-d4 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(3,8) a3*3 c3(5,8) e3*2") # s "xx"
-  # cutoff (slow 4 $ scale 1000 8000 $ sine1)
+d4 $ sometimes (|+| n "12") $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(3,8,4) a3*3 c3(5,8) e3*2") # s "xx"
+  # cutoff (slow 8 $ scale 1000 8000 $ sine1)
   # resonance "0.2"
-  # gain "0"
+  # gain "1"
 
 d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound "[drum future]/2([3 5]/2,8)"
   # gain "1.1"
@@ -29,9 +29,14 @@ d6 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "os" # unit "c" # speed "0.5"
   # cutoff "3000"
   # gain "0.8"
 
+d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
+
+
 d8 $ (iter 4) $ chop 8 $ slow 2 $ sound "gabba([6 8]/2,16)"
 
-d1 $ jux rev $ iter 4 $ slow 4 $ chop 16 $ s "repetition" # n (irand 8)
+d1 $ sometimes (# speed "2") $ jux rev $ iter 4 $ slow 4 $ chop 16 $ s "repetition" # n (irand 8)
   # unit "c" # speed "0.25"
   # gain "1.2"
 
