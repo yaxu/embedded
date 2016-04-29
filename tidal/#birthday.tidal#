@@ -1,0 +1,7 @@
+
+
+d1 $ jux (iter 4) $ sometimes (# vowel "a") $  every 4 (density 1.5) $ s "claus*8" # n (irand 4)
+  # size "0.5"
+  # room "0.5"
+
+d2 $ sound £"
