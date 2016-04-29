@@ -265,6 +265,7 @@ cps 1.1
 hush
 
 
+d1 $ sound "wobble"
 
 d1 $ jux (iter 4) $ struct "x [~ x*2] x*2 x" $ slow 3 $ n (run 4) # s "kurt*4"
 
@@ -290,7 +291,3 @@ d3 $ slowspread (chop) [128,64,32,1] $
   jux (iter 8) $ sound (samples "amencutup*8" (run 8))
   # nudge "[0 0.04]*8"
 
-d1 $ do x <- discretise 1 $ irand 3
-        every x (density 2) $ sound "bd sn"
-
-d1 $ every 4 (density 2) $ sound "bd sn"
