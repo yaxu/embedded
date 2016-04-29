@@ -25,16 +25,15 @@ d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound 
   # gain "1.1"
   # crush "7"
 
-d6 $ slow 4 $ chop 8 $ sound "os" # unit "c" # speed "0.25"
+d6 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "os" # unit "c" # speed "0.5"
+  # cutoff "3000"
+  # gain "0.8"
 
-d1 $ slow 4 $ chop 16 $ sound "repetition"
+
+d1 $ slow 4 $ chop 16 $ s "repetition"
   # unit "c" # speed "0.25"
-  # gain "1.1"
+  # gain "1.2"
 
-
-d6 $ sound "~ wobble"
-  # shape "0.2"
-  # gain "1.4"
 
 d7 $ every 2 rev $ chop 8 $ jux (iter 4) $ brak $ sound "[feel !?] feel"
 
