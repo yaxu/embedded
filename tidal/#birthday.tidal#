@@ -16,6 +16,7 @@ d3 $ every 4 (slowspread (chop) [16,32]) $ sound "~ sn:2"
 d5 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
   # gain "1"
 
+
 d4 $ slow 2 $ sometimes (|+| n "12") $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "[f3 g3]/2(3,8,4) a3*3 c3(5,8) e3*2") # s "xx"
   # cutoff (slow 8 $ scale 1000 8000 $ sine1)
   # resonance "0.2"
@@ -66,4 +67,4 @@ d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ tom "c(3,8)
 d8 $ sound "~ kurt*2"
 
 
-d9 $ sound "sometimes"
+d9 $ slow 4 $ chop 16 $ sound "sometimes" # unit "c" # speed "0.25"
