@@ -12,7 +12,11 @@ d2 $ sound "drum ~ ~ bd*2"
 
 d3 $ every 4 (slowspread (chop) [16,32]) $ sound "~ sn:2"
 
-d5 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
-  # gain "1.2"
 
-d4 $ n "" # s "xx"
+d5 $ jux rev $ iter 4 $ slow 2 $ chop 8 $ sound "arc"
+  # gain "1"
+
+d4 $ slow 4 $ n ("f3(3,8) a3 c3 e3") # s "xx"
+  # cutoff (slow 4 $ scale 1000 8000 $ sine1)
+  # resonance "0.3"
+  # gain "1.1"
