@@ -278,7 +278,7 @@ d4 $ (density 2 $ jux rev $ iter 4 $ chop 8 $ sound "arc" # speed "2" )
   -- # cutoff (slow 4 $ scale 1000 5000 saw1) # resonance "0.3" # vowel "i"
 
 d5 $ sound "~ [jungbass:5 ~ ~ jungbass:5]" # speed "2" # coarse "2"
-
+hush
 d6 $ sound "wobble(5,8)" # speed "2" # shape "0.5" # crush "3"
 
 d7 $ whenmod 8 6 (density 2) $ stut 2 0.7 0.125 $ brak $ sound "feel feel:3" # gain "1.3"
