@@ -268,7 +268,7 @@ hush
 d1 $ sound "wobble"
 
 d1 $ sound "bd"
-
+hush
 d1 $ jux (iter 4) $ struct "x [~ x*2] x*2 x" $ slow 3 $ n (run 4) # s "kurt*4"
 
 d2 $ slow 2 $ jux rev $ (slowspread (chop) [8,16,4] $ s "[alphabet]/2") # n (irand 26) # speed (density 2 $ scale 1 2 sine1) 
