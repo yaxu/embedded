@@ -21,4 +21,13 @@ d4 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "f3(3,8) a3*3 c3(5,8)
   # resonance "0.2"
   # gain "1.1"
 
-d5 $ slowspread ($) [id,rev] $ chop 16 $ sound "drum([3 5]/2,8)"
+d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound "[drum future]/2([3 5]/2,8)"
+  # gain "1.1"
+  # crush "7"
+
+d6 $ sound "~ wobble"
+  # shape "0.2"
+  # gain "1.2
+
+d7 $ brak $ sound "feel feel:2"
+
