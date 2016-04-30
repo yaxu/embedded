@@ -10,6 +10,8 @@ d2 $ sound "drum ~ ~ bd*2"
   # gain "1.1"
   # orbit "2"
 
+d1 $ sound "can*2"
+
 d3 $ every 4 (slowspread (chop) [16,32]) $ sound "~ sn:2"
 
 
