@@ -14,4 +14,5 @@ d4 $ foldEvery [3,5] (0.25 <~) $ slowspread (stretch) [2,1,2,4] $ chop 16 $ soun
   # gain "1.2"
 
 let stretch n p = slow n p |*| speed (pure $ fromRational $ 1/n) # unit "c"
+
 hush
