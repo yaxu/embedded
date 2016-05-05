@@ -10,7 +10,6 @@ d3 $ juxBy 0.6 (|*| speed "2") $ slowspread (stretch) [4,6,2,3] $ chop 12 $ soun
   # resonance "0.3"
   # vowel "i"
 
-
 d4 $ foldEvery [3,5] (0.25 <~) $ slowspread (stretch) [2,1,2,4] $ chop 16 $ sound "breaks165"
   # gain "1.2"
 
