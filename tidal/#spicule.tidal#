@@ -4,6 +4,6 @@ d1 $ jux rev $ sound "drum [[mt mt?] [ht sd8:3]]"
 
 d2 $ sound "[drum:6*4 ! ! [drum:6*8 drum:6*3]/2]/4"
 
-d3 $ slow 4 $ sound "fm:14" # unit "c" # speed "0.25"
+d3 $ jux (2 <~) $ slowspread (stretch) [4,6,2,3] $ chop 16 $ sound "fm:14" # unit "c"
 
-let stretch 
+let stretch n p = slow n p # speed (pure $ fromRational $ 1/n)
