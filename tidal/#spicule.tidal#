@@ -2,4 +2,8 @@ d1 $ jux rev $ sound "drum [[mt mt?] [ht sd8:3]]"
   # cutoff (slow 2 $ scale 1000 5000 sine1)
   # resonance "0.3"
 
-d2 $ sound "
+d2 $ sound "[drum:6*4 ! ! [drum:6*8 drum:6*3]/2]/4"
+
+d3 $ slow 4 $ sound "fm:14" # unit "c" # speed "0.25"
+
+let stretch 
