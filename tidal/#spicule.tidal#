@@ -4,10 +4,10 @@ d1 $ jux rev $ sound "drum [[mt mt?] [ht sd8:3]]"
 
 d2 $ sound "[drum:6*4 ! ! [drum:6*8 drum:6*3]/2]/4"
 
-d3 $ juxBy 0.6 (|*| speed "2") $ slowspread (loopAt) [4,6,2,3] $ sound "fm:14"
+d3 $ loopAt 4 $ sound "breaks125"
 
 
-d3 $ juxBy 0.6 (|*| speed "2") $ slowspread (loopAt) [4,6,2,3] $ chop 12 $ sound "fm:14" # unit "c"
+d3 $ juxBy 0.6 (|*| speed "2") $ slowspread (loopAt) [4,6,2,3] $ chop 12 $ sound "fm:14"
   |*| speed "[1]"
   # cutoff (slow 4 $ scale 1000 3000 sine1)
   # resonance "0.3"
