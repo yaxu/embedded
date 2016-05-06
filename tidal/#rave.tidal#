@@ -25,4 +25,5 @@ d6 $ degradeBy 0.75 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f
   # gain "1.1"
   # cutoff "3000"
 
-d1 $ sou
+d1 $ jux (rev . iter 4) $ chop 8 $ (s "[onoff [bd drum:1]]" # n (irand 4))
+  # speed (scale 1 2 sine1)
