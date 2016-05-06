@@ -17,4 +17,7 @@ d4 $ brak $ jux (2 <~) $ foldEvery [3,5] (0.25 <~) $ sound (samples "claus*8" (s
   # room "0.5"
   # size "0.7"
   
-d5 $ sound "arc"  
+d5 $ jux (iter 4) $ loopAt 2 $ sound "arc"
+  # gain "1.2"
+
+d6 $ n (offadd 0.25 7 "[c4 d4] [g*3 d4]") # s "xx"
