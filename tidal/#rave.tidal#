@@ -4,5 +4,7 @@ d1 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c3(3,8) d3*4 e4(5,
   # vowel "o"
   # speed "0.5"
 
-d2 $ jux (iter 4) $ every 4 (rev) $ slowspread (loopAt) [2,2,8,1] $ chop 12 $ sound "shakedown"
-  # gain "1.3"
+d2 $ jux (iter 4) $ every 4 (rev) $ slowspread (loopAt) [2,2,8,4] $ chop 12 $ sound "shakedown"
+
+d3 $ every 2(cho) $ jux (iter 4) $ s "drum [cp8 arpy*2]" # n (irand 8)
+  # gain "1.1"
