@@ -1,1 +1,6 @@
-d1 $ slow 4 $ n "c3(3,8) d3*4 e4(5,8,2) g3*2" # s "xx"
+d1 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c3(3,8) d3*4 e4(5,8,2) g3*2") # s "xx"
+  # cutoff (scale 3000 8000 sine1)
+  # resonance "0.3"
+
+d2 $ loopAt 4 $ chop 12 $ sound "shakedown"
+  # gain "
