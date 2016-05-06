@@ -36,8 +36,13 @@ d1 $ jux ((every 3 rev) . (2<~)) $ slowspread (loopAt) [2,4,4,1] $ chop 12 $ sou
   # size "0.5"
   # room "0.65"
   # resonance "0.1"
+  # orbit "2"
 
 d2 $ sound "bd ~ bd*2 drum"
   # speed "2"
+  # orbit "2"
 
-d3 $ sound 
+d3 $ slow 4 $ n  (offadd 0.25 7 $ "c3(3,8) d3 e4 g3") # s "xx" 
+  # gain "1.2"
+  # orbit "1"
+  
