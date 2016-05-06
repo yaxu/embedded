@@ -1,6 +1,4 @@
-12 5 c d g e
-every 4 dens 4 claus 8
-iter 4 arc
+
 
 
 d1 $ jux (iter 4) $ slowspread (chop) [8,128] $ sound "bd [[cp cp?] sb cp]"
@@ -17,7 +15,7 @@ d7 $ chop 8 $ sound "g(3,8)"
 
 d1 $ iter 4 $ slowspread ($) [id,density 2, within (0,0.25) (density 4)] $ jux (rev) $ brak $ sound "drum*4 [claus:10 drum:1]"
   # gain "1.2"
-size "0.7"
+  # size "0.7"
   # orbit "1"
 
 
@@ -43,7 +41,7 @@ d1 $ every 4 (0.25 <~) $ stut 4 0.5 (1/16) $ n (offadd (1/16) 12 $ offadd 0.125 
 
 hush
 
-d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c4(3,8) d4*3 e3*2 g3(3,8)") # s "[dirty,xx]"
+d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 (iter 4 "c4(3,8) d4*3 e3*2 g3(3,8)")) # s "[xx]"
   # gain "1.1"
   # vowel "u"
   # cutoff (slow 4 $ scale 1000 3000 sine1)
@@ -121,9 +119,9 @@ d3 $ sound "~ wobble"
 
 d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 "c2*3 e3(3,8) f3*3 a2*2") # s "xx"
   # gain "1.2"
-  # cutoff "2000"
-  # vowel "a e"
-  # resonance "0.2"
+  -- # cutoff "2000"
+  -- # vowel "a e"
+  -- # resonance "0.2"
   # room "0.5"
   # size "0.5"
 
