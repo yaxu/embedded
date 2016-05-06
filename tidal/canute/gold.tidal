@@ -15,7 +15,7 @@ d7 $ chop 8 $ sound "g(3,8)"
 
 d1 $ iter 4 $ slowspread ($) [id,density 2, within (0,0.25) (density 4)] $ jux (rev) $ brak $ sound "drum*4 [claus:10 drum:1]"
   # gain "1.2"
-size "0.7"
+  # size "0.7"
   # orbit "1"
 
 
