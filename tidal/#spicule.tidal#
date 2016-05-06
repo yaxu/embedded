@@ -42,7 +42,8 @@ d2 $ sound "bd ~ bd*2 drum"
   # speed "2"
   # orbit "2"
 
-d3 $ slow 4 $ n  (offadd 0.25 7 $ "c3(3,8) d3 e4 g3") # s "xx" 
+d3 $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "c3(3,8) d3*3 e4(5,8) g3*4") # s "xx" 
   # gain "1.2"
   # orbit "1"
-  
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 2000 8000 saw1)
