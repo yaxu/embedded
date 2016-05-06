@@ -20,4 +20,9 @@ d4 $ brak $ jux (2 <~) $ foldEvery [3,5] (0.25 <~) $ sound (samples "claus*8" (s
 d5 $ jux (iter 4) $ loopAt 2 $ sound "arc"
   # gain "1.2"
 
-d6 $ slow jux rev $  n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $"f3(3,8) a3*4 c3*3 e3(3,8)]" # s "xx"
+
+d6 $ degradeBy 0.75 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f3(3,8) a3*4 c3*3 e3(3,8)]") # s "xx"
+  # gain "1.1"
+  # cutoff "3000"
+
+d1 $ sou
