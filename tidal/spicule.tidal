@@ -32,5 +32,9 @@ d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0
 
 d2 $ jux (2 <~)$ slowspread (loopAt) [2,1,4,4] $ chop 12 $ sound "shakedown"
 
-d1 $ jux (rev . (2<~)) $ slowspread (loopAt) [2,4,1,4,2] $ chop 12 $ sound "shakedown"
+d1 $ jux ((every 4 rev) . (2<~)) $ slowspread (loopAt) [2,4,4,1] $ chop 12 $ sound "shakedown"
+  # size "0.5"
+  # room "0.65"
+  # resonance "0.1"
+
 
