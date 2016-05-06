@@ -58,7 +58,9 @@ d4 $ sound "amencutup"
 
 d2 $ sound "sn:2"
 
-d1 $ jux (density 2) $ iter 4 $ slow 4 $ n "[0 7 3] [3 5*2 4*2 !]" # s "gretsch"
+d1 $ jux (density 2) $ iter 4 $ slow 4 $ n "[0 7 3] [3 5*2 4*2 !]" # s "voodoo"
+  # gain "1.1"
 
-d4 $ jux (sound "bd ~ kurt kurt:3"
+d4 $ slowspread (chop) [8,16,32] $ jux (iter 4) $ sound "bd [~ wobble] cp ~"
   # pan (slow 4 sine1)
+  
