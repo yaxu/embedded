@@ -41,7 +41,7 @@ d1 $ every 4 (0.25 <~) $ stut 4 0.5 (1/16) $ n (offadd (1/16) 12 $ offadd 0.125 
 
 hush
 
-d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 (iter 4 "c4(3,8) d4*3 e3*2 g3(3,8)")) # s "[xx]"
+d2 $ every 2 (|+| n "12") $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 (iter 8 "c4(3,8) d4*3 e3*2 g3(3,8)")) # s "[xx]"
   # gain "1.1"
   # vowel "u"
   # cutoff (slow 4 $ scale 1000 3000 sine1)
