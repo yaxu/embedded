@@ -42,16 +42,20 @@ d7 $ slowspread (chop) [4,8] $ sound "~ off"
 cps 1.1
 
 
-d1 $ jux (iter 4) $ weave 16 (sound (samples "arpy*8" (run 8)))
+d1 $ jux (iter 4) $ weave 16 (palindrome $ sound (samples "arpy*8" (run 8)))
   [vowel "a e o",
    vowel "a e i*3 o",
    vowel "i o",
    speed "1 2 3 1"
   ]
   # gain "1.2"
+  |*| speed "0.5"
 
-d2 $ jux (iter 4) $ sound "bd arpy:2*2 sn sn*3"
+d2 $ jux (iter 4) $ sound "bd arpy:2*2 sn*3 sn:2"
 
-d4 $ sound "amenc
+
+d4 $ sound "amencutup"
 
 d2 $ sound "sn:2"
+
+d1 $ slow 4 $n "0 3" # s "gretsch"
