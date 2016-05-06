@@ -27,4 +27,6 @@ d1 $ jux rev $ sometimes (|+| n "12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.
   # cutoff "3000"
   # resonance "0.3"
 
-d2 $ loopAt 4 $ chop 12 $ sound "fm:12"
+d2 $ slowspread (loopAt) [2,3,2,4] $ chop 12 $ sound "fm:15"
+
+hush
