@@ -31,4 +31,4 @@ d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0
 
 d2 $ jux (2 <~)$ slowspread (loopAt) [2,1,4,4] $ chop 12 $ sound "shakedown"
 
-hush
+
