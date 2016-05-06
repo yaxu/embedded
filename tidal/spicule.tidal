@@ -21,3 +21,9 @@ d4 $ foldEvery [3,5] (0.25 <~) $ slowspread (loopAt) [2,1,2,4] $ chop 16 $ sound
 let stretch n p = slow n p |*| speed (pure $ fromRational $ 1/n) # unit "c"
 
 hush
+
+
+d1 $ jux rev $ sometimes (|+| n "12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "c3(3,8) d3*2 e4*3 g3*4") # s "xx"
+  # cutoff "3000"
+  # resonance "0.3"
+
