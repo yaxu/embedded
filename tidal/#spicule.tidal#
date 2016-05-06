@@ -46,5 +46,5 @@ d3 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ palindrome "c3(3,
   # orbit "1"
   # cutoff (slow 4 $ scale 2000 8000 saw1)
 
-d1 $ slow 2 $ sound "numbers:0 numbers:1"
+d1 $ slow 4 $ sound "numbers:0 numbers:1"
   # pan "0 1"
