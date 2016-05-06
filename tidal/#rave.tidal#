@@ -58,4 +58,7 @@ d4 $ sound "amencutup"
 
 d2 $ sound "sn:2"
 
-d1 $ slow 4 $n "0 3" # s "gretsch"
+d1 $ jux (density 2) $ iter 4 $ slow 4 $ n "[0 7 3] [3 5*2 4*2 !]" # s "gretsch"
+
+d4 $ jux (sound "bd ~ kurt kurt:3"
+  # pan (slow 4 sine1)
