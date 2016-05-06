@@ -42,6 +42,11 @@ d7 $ slowspread (chop) [4,8] $ sound "~ off"
 cps 1.1
 
 
-d1 $ sound (samples "lighter*8" (run 8))
+d1 $ weave 16 (sound (samples "arpy*8" (run 8)))
+  [vowel "a e o",
+   vowel "a e i*3 o",
+   vowel "i o",
+   s
+  ]
 
-d2 $ sound
+d2 $ sound "sn:2"
