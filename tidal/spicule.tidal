@@ -32,9 +32,16 @@ d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0
 
 d2 $ jux (2 <~)$ slowspread (loopAt) [2,1,4,4] $ chop 12 $ sound "shakedown"
 
-d1 $ jux ((every 4 rev) . (2<~)) $ slowspread (loopAt) [2,4,4,1] $ chop 12 $ sound "shakedown"
+d1 $ jux ((every 3 rev) . (2<~)) $ slowspread (loopAt) [2,4,4,1] $ chop 12 $ sound "shakedown"
   # size "0.5"
   # room "0.65"
   # resonance "0.1"
+  # orbit "2"
 
+d2 $ sound "bd ~ bd*2 drum"
+  # speed "2"
+  # orbit "2"
 
+d3 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ palindrome "c3(3,8) d3*3 e4(5,8) g3*4") # s "xx" 
+  # orbit "1"
+  # cutoff (slow 4 $ scale 2000 8000 saw1)
