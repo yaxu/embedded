@@ -1,0 +1,4 @@
+c1 <- dirtStream
+
+c1 $ n "3 1 1 1" # s "claus"
+  
