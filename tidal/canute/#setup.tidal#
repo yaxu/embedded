@@ -1,5 +1,0 @@
-c1 <- dirtStream
-
-c1 $ n "4 3 3 3" # s "claus"
-  # nudge "0.18"
-  
