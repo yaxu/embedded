@@ -28,8 +28,15 @@ d6 $ degradeBy 0.75 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f
 d1 $ jux (rev . iter 4) $ chop 8 $ (s "[bd*2 [bd drum:1]]" # n (irand 4))
   # speed (scale 1 2 sine1)
 
-d2 $ superiiter 4 $ jux (rev . chop 128) $ sound "gabba [cp wobble cp]"
+d2 $ foldEvery [3,5] (const silence) $ superimpose (iter 4) $ jux (rev . chop 64) $ sound "gabba [cp wobble cp]"
   # shape "0.4"
   # speed "2"
+
+d6 $ slow 4 $ chop 16 $ sound "repetition"
+  # unit "c" # speed "0.25"
+  # gain "1.4"
+
+d7 $ slowspread (chop) [4,8] $ sound "~ off"
+  # gain "1.2"
 
 cps 1.1
