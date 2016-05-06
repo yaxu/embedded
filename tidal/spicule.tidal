@@ -23,7 +23,12 @@ let stretch n p = slow n p |*| speed (pure $ fromRational $ 1/n) # unit "c"
 hush
 
 
-d1 $ jux rev $ sometimes (|+| n "12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ iter 4 "c3(3,8) d3*2 e4*3 g3*4") # s "xx"
+d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ struct "x(3,8) x*2 x*3 x*4]" "[[f3 a3 c3 e3] ! ! ! [c3 d3 e3 g3] ! ! !]/8") # s "xx"
   # cutoff "3000"
   # resonance "0.3"
+  # size "0.5"
+  # room "0.65"
 
+d2 $ jux (2 <~)$ slowspread (loopAt) [2,1,4,4] $ chop 12 $ sound "shakedown"
+
+hush
