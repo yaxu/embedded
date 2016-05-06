@@ -23,7 +23,7 @@ let stretch n p = slow n p |*| speed (pure $ fromRational $ 1/n) # unit "c"
 hush
 
 
-d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ "f3(3,8) a3*2 c4*3 e3*4]") # s "xx"
+d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ struct "x(3,8) x*2 x*3 x*4]" "[f3 a3 c3 e3]") # s "xx"
   # cutoff "3000"
   # resonance "0.3"
   # size "0.5"
