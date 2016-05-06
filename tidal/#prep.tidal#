@@ -1,4 +1,0 @@
-
-
-
-d1 $ slowspread (loopAt) [4,2,8,1] $ chop 12 $ sound "shakedown"
