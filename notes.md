@@ -64,3 +64,8 @@ every keypress/mouseclick/command
 * Speak to Ellen - before May
 * Chase Julian - before May
 * Look up manifestos
+
+## Gavin + James
+
+Owning means of communication via APIs
+
