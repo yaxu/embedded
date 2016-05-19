@@ -64,7 +64,7 @@ The 'change' event in codemirror seems perfect:
 
 
 could get it out with osc over websockets
--- 
+-- https://github.com/colinbdclark/osc.js/
 -- https://github.com/jaspervdj/websockets/blob/master/example/server.lhs#L53
 
 Does atom have something similar?
