@@ -58,13 +58,6 @@ Emacs or atom plugin, or web based thingie (codemirror?) that saves out
 
 every keypress/mouseclick/command
 
-
-## TODO
-
-* Speak to Ellen - before May
-* Chase Julian - before May
-* Look up manifestos
-
 ## Gavin + James
 
 Owning means of communication via APIs
