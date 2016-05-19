@@ -63,6 +63,7 @@ The 'change' event in codemirror seems perfect:
   https://github.com/yaxu/embedded/blob/master/edit/test.html
 
 Does atom have something similar?
+- discussion here https://discuss.atom.io/t/change-listener/363
 
 Live writing (sang won lee): http://web.eecs.umich.edu/~snaglee/live-writing/
 Google docs replay: http://features.jsomers.net/how-i-reverse-engineered-google-docs/
