@@ -128,7 +128,7 @@ application state pending = do
              -- Remove client and return new state
              s <- modifyMVar state $ \s ->
                let s' = removeClient client s in return (s', s')
-               broadcast (fst client `mappend` " disconnected") s
+             broadcast (fst client `mappend` " disconnected") s
 
 -- The talk function continues to read messages from a single client
 -- until he disconnects. All messages are broadcasted to the other
