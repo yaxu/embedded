@@ -62,6 +62,8 @@ The 'change' event in codemirror seems perfect:
   https://codemirror.net/doc/manual.html#events
   https://github.com/yaxu/embedded/blob/master/edit/test.html
 
+Does atom have something similar?
+
 ## Gavin + James
 
 Owning means of communication via APIs
