@@ -19,60 +19,60 @@ type Client = (Text, WS.Connection)
 -- clients. We've added an alias and some utility functions, so it
 -- will be easier to extend this state later on.
 
-> type ServerState = [Client]
+type ServerState = [Client]
 
-Create a new, initial state:
+-- Create a new, initial state:
 
-> newServerState :: ServerState
-> newServerState = []
+newServerState :: ServerState
+newServerState = []
 
-Get the number of active clients:
+-- Get the number of active clients:
 
-> numClients :: ServerState -> Int
-> numClients = length
+numClients :: ServerState -> Int
+numClients = length
 
-Check if a user already exists (based on username):
+-- Check if a user already exists (based on username):
 
-> clientExists :: Client -> ServerState -> Bool
-> clientExists client = any ((== fst client) . fst)
+clientExists :: Client -> ServerState -> Bool
+clientExists client = any ((== fst client) . fst)
 
-Add a client (this does not check if the client already exists, you should do
-this yourself using `clientExists`):
+-- Add a client (this does not check if the client already exists, you
+-- should do this yourself using `clientExists`):
 
-> addClient :: Client -> ServerState -> ServerState
-> addClient client clients = client : clients
+addClient :: Client -> ServerState -> ServerState
+addClient client clients = client : clients
 
-Remove a client:
+-- Remove a client:
 
-> removeClient :: Client -> ServerState -> ServerState
-> removeClient client = filter ((/= fst client) . fst)
+removeClient :: Client -> ServerState -> ServerState
+removeClient client = filter ((/= fst client) . fst)
 
-Send a message to all clients, and log it on stdout:
+-- Send a message to all clients, and log it on stdout:
 
-> broadcast :: Text -> ServerState -> IO ()
-> broadcast message clients = do
->     T.putStrLn message
->     forM_ clients $ \(_, conn) -> WS.sendTextData conn message
+broadcast :: Text -> ServerState -> IO ()
+broadcast message clients = do
+  T.putStrLn message
+    forM_ clients $ \(_, conn) -> WS.sendTextData conn message
 
-The main function first creates a new state for the server, then spawns the
-actual server. For this purpose, we use the simple server provided by
-`WS.runServer`.
+-- The main function first creates a new state for the server, then
+-- spawns the actual server. For this purpose, we use the simple
+-- server provided by `WS.runServer`.
 
-> main :: IO ()
-> main = do
->     state <- newMVar newServerState
->     WS.runServer "0.0.0.0" 9160 $ application state
+main :: IO ()
+main = do
+  state <- newMVar newServerState
+  WS.runServer "0.0.0.0" 9160 $ application state
 
-Our main application has the type:
+-- Our main application has the type:
 
-> application :: MVar ServerState -> WS.ServerApp
+application :: MVar ServerState -> WS.ServerApp
 
-Note that `WS.ServerApp` is nothing but a type synonym for
-`WS.PendingConnection -> IO ()`.
+-- Note that `WS.ServerApp` is nothing but a type synonym for
+-- `WS.PendingConnection -> IO ()`.
 
-Our application starts by accepting the connection. In a more realistic
-application, you probably want to check the path and headers provided by the
-pending request.
+-- Our application starts by accepting the connection. In a more
+-- realistic application, you probably want to check the path and
+-- headers provided by the pending request.
 
 We also fork a pinging thread in the background. This will ensure the connection
 stays alive on some browsers.
