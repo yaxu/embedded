@@ -72,4 +72,6 @@ Simon, H. A. and Sumner, R. K. (1992). Paern in music. In Schwanauer, S. and 
 editors, Maine models of music, pages 83–110. MIT Press, Cambridge, MA, USA.
 https://books.google.co.uk/books?id=CIFqbWcjfHEC&pg=PA1&lpg=PA1&dq=%22Machine+models+of+music+%22&source=bl&ots=Mo4zFDGdCR&sig=ZgsEkcdH_mxZA4nG3rrfDTvCfgQ&hl=en&sa=X&ved=0ahUKEwiFh9CSnebMAhULCMAKHXJ_BzIQ6AEIMDAD#v=onepage&q=pattern&f=false
 
+Pattern induction and matching in music signals
 http://www.cs.tut.fi/sgn/arg/klap/patterns.pdf
+
