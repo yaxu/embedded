@@ -24,7 +24,7 @@ What else?
 
 Use rate of evaluation as a pattern source ?
 
-Look into Atom with Jack..
+Look into Atom with Jack (?)..
 
 ## Deep learning
 
