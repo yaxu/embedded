@@ -62,7 +62,7 @@ every keypress/mouseclick/command
 
 Owning means of communication via APIs
 
-## Pattern recognition in algorithmic music
+## Pattern induction in algorithmic music
 
 https://en.wikipedia.org/wiki/Pattern_recognition
 https://en.wikipedia.org/wiki/Time_series#Methods_for_time_series_analyses
