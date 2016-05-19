@@ -77,3 +77,5 @@ http://www.cs.tut.fi/sgn/arg/klap/patterns.pdf
 
 Finding meter and rhythm (ground and figure) in open data feeds?
 
+Pattern Discovery Techniques for Music Audio
+http://www.cs.cmu.edu/~./rbd/papers/patterndiscovery-JNMR-web.pdf
