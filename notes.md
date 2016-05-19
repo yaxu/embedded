@@ -71,3 +71,5 @@ https://kb.osu.edu/dspace/bitstream/handle/1811/48550/EMR000097a-Dean_Bailes.pdf
 Simon, H. A. and Sumner, R. K. (1992). Paern in music. In Schwanauer, S. and Levi, D.,
 editors, Maine models of music, pages 83–110. MIT Press, Cambridge, MA, USA.
 https://books.google.co.uk/books?id=CIFqbWcjfHEC&pg=PA1&lpg=PA1&dq=%22Machine+models+of+music+%22&source=bl&ots=Mo4zFDGdCR&sig=ZgsEkcdH_mxZA4nG3rrfDTvCfgQ&hl=en&sa=X&ved=0ahUKEwiFh9CSnebMAhULCMAKHXJ_BzIQ6AEIMDAD#v=onepage&q=pattern&f=false
+
+http://www.cs.tut.fi/sgn/arg/klap/patterns.pdf
