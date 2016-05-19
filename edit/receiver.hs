@@ -52,7 +52,7 @@ removeClient client = filter ((/= fst client) . fst)
 broadcast :: Text -> ServerState -> IO ()
 broadcast message clients = do
   T.putStrLn message
-    forM_ clients $ \(_, conn) -> WS.sendTextData conn message
+  forM_ clients $ \(_, conn) -> WS.sendTextData conn message
 
 -- The main function first creates a new state for the server, then
 -- spawns the actual server. For this purpose, we use the simple
