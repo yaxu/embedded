@@ -64,6 +64,9 @@ The 'change' event in codemirror seems perfect:
 
 Does atom have something similar?
 
+Live writing:
+Google docs replay: http://features.jsomers.net/how-i-reverse-engineered-google-docs/
+
 ## Gavin + James
 
 Owning means of communication via APIs
