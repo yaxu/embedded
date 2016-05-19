@@ -62,3 +62,5 @@ every keypress/mouseclick/command
 
 Owning means of communication via APIs
 
+## Pattern recognition
+
