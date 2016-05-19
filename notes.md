@@ -79,3 +79,6 @@ Finding meter and rhythm (ground and figure) in open data feeds?
 
 Pattern Discovery Techniques for Music Audio
 http://www.cs.cmu.edu/~./rbd/papers/patterndiscovery-JNMR-web.pdf
+
+Large-Scale Pattern Discovery in Music
+http://academiccommons.columbia.edu/catalog/ac:156137
