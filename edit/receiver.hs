@@ -87,7 +87,7 @@ application state pending = do
 
   msg <- WS.receiveData conn
   clients <- readMVar state
-     case msg of
+  case msg of
 
 -- Check that the first message has the right format:
 
