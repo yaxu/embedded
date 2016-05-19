@@ -75,3 +75,5 @@ https://books.google.co.uk/books?id=CIFqbWcjfHEC&pg=PA1&lpg=PA1&dq=%22Machine+mo
 Pattern induction and matching in music signals
 http://www.cs.tut.fi/sgn/arg/klap/patterns.pdf
 
+Finding meter and rhythm (ground and figure) in open data feeds?
+
