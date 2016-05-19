@@ -91,3 +91,8 @@ http://www.cs.cmu.edu/~./rbd/papers/patterndiscovery-JNMR-web.pdf
 
 Large-Scale Pattern Discovery in Music (thesis)
 http://academiccommons.columbia.edu/catalog/ac:156137
+
+## Data ethnography
+
+Programming as writing about data?
+
