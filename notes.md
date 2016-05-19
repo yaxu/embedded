@@ -64,7 +64,7 @@ The 'change' event in codemirror seems perfect:
 
 Does atom have something similar?
 
-Live writing:
+Live writing (sang won lee): http://web.eecs.umich.edu/~snaglee/live-writing/
 Google docs replay: http://features.jsomers.net/how-i-reverse-engineered-google-docs/
 
 ## Gavin + James
