@@ -62,6 +62,11 @@ The 'change' event in codemirror seems perfect:
   https://codemirror.net/doc/manual.html#events
   https://github.com/yaxu/embedded/blob/master/edit/test.html
 
+
+could get it out with osc over websockets
+-- 
+-- https://github.com/jaspervdj/websockets/blob/master/example/server.lhs#L53
+
 Does atom have something similar?
 - discussion here https://discuss.atom.io/t/change-listener/363
 
