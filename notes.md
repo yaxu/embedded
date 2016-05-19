@@ -58,6 +58,11 @@ Emacs or atom plugin, or web based thingie (codemirror?) that saves out
 
 every keypress/mouseclick/command
 
+The 'change' event in codemirror seems perfect:
+  https://codemirror.net/doc/manual.html#events
+
+
+
 ## Gavin + James
 
 Owning means of communication via APIs
