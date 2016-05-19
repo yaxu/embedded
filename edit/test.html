@@ -27,6 +27,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       var oscPort = new osc.WebSocketPort({
             url: "ws://localhost:9160" // URL to your Web Socket server.
       });
+      alert(oscPort);
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
