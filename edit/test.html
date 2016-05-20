@@ -30,7 +30,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       oscPort.on("error", function (error) {
         console.log("An error occurred: ", error.message);
       });
-      alert(oscPort);
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
@@ -46,10 +45,10 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           var secs = (new Date().getTime()) / 1000.0;
           console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
           change.when = secs;
-          alert(oscPort.send({
+          oscPort.send({
              address: "/change",
              args: secs
-          }));
+          });
           changes.push(change);
 
           // return false so codemirror handles the event
