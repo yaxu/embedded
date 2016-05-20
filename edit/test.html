@@ -25,8 +25,8 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
     <script>
       var changes = [];
       var c = new WebSocket('ws://localhost:9160', ['soap']);
-      c.onmessage = function (e) { console.log("msg: " + e.data) };
-      c.onerror = function (error) { console.log("ws error" + error) };
+      ws.onmessage = function (e) { console.log("msg: " + e.data) };
+      ws.onerror = function (error) { console.log("ws error" + error) };
       
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
@@ -40,8 +40,8 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       });
       editor.setOption('readOnly', true);
 
-      c.onopen = function () {
-        c.send('/join alex'); // Send the message 'Ping' to the server
+      ws.onopen = function () {
+        ws.send('/join alex'); // Send the message 'Ping' to the server
         editor.setOption('readOnly', false);
       };
 
@@ -89,7 +89,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
             }
           }
           console.log("eval: " + selection);
-          var rv = c.send("/eval ||" + selection + "||");
+          ws.send("/eval ||" + selection + "||");
           // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
           // cm.replaceSelection(spaces);
         }
