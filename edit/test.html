@@ -43,10 +43,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           var secs = (new Date().getTime()) / 1000.0;
           console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
           change.when = secs;
-          var rv = oscPort.send({
-             address: "/change",
-             args: secs
-          });
+          var rv = c.send("/change");
           alert("sent: " + rv);
           changes.push(change);
 
