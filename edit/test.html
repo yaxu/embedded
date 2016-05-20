@@ -24,12 +24,10 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
 
     <script>
       var changes = [];
-      var oscPort = new osc.WebSocketPort({
-            url: "ws://localhost:9160" // URL to your Web Socket server.
-      });
-      oscPort.on("error", function (error) {
-        console.log("An error occurred: ", error.message);
-      });
+      var c = new WebSocket('ws://localhost:9160', ['soap']);
+      c.onmessage = function (e) { console.log("msg: " + e.data) };
+      c.onerror = function (error) { console.log("ws error" + error) };
+
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
