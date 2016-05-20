@@ -140,6 +140,5 @@ handle conn state (user, _) = forever $ do
   readMVar state >>= broadcast
     (user `mappend` ": " `mappend` msg)
 
---   Status API Training Shop Blog About 
 
-
+  
