@@ -120,7 +120,7 @@ application state pending = do
                        T.intercalate ", " (map fst s)
                  broadcast (fst client `mappend` " joined") s'
                  return s'
-               talk conn state client
+               handle conn state client
          where
            prefix     = "/join "
            client     = (T.drop (T.length prefix) msg, conn)
@@ -130,12 +130,12 @@ application state pending = do
                let s' = removeClient client s in return (s', s')
              broadcast (fst client `mappend` " disconnected") s
 
--- The talk function continues to read messages from a single client
--- until he disconnects. All messages are broadcasted to the other
+-- The handle function continues to read messages from a single client
+-- until they disconnect. All messages are broadcasted to the other
 -- clients.
 
-talk :: WS.Connection -> MVar ServerState -> Client -> IO ()
-talk conn state (user, _) = forever $ do
+handle :: WS.Connection -> MVar ServerState -> Client -> IO ()
+handle conn state (user, _) = forever $ do
   msg <- WS.receiveData conn
   readMVar state >>= broadcast
     (user `mappend` ": " `mappend` msg)
