@@ -25,24 +25,14 @@ emptyLine = say ""
 testHint :: Interpreter ()
 testHint =
     do
-      say "Load SomeModule.hs"
-      loadModules ["SomeModule.hs"]
-      emptyLine
-      say "Put the Prelude, Data.Map and *SomeModule in scope"
-      say "Data.Map is qualified as M!"
-      setTopLevelModules ["SomeModule"]
-      setImportsQ [("Prelude", Nothing), ("Data.Map", Just "M")]
-      emptyLine
-      say "Now we can query the type of an expression"
-      let expr1 = "M.singleton (f, g, h, 42)"
-      say $ "e.g. typeOf " ++ expr1
-      say =<< typeOf expr1
-      emptyLine
-      say $ "Observe that f, g and h are defined in SomeModule.hs, " ++
-            "but f is not exported. Let's check it..."
-      exports <- getModuleExports "SomeModule"
-      say $ show exports
-      emptyLine
+      -- say "Load SomeModule.hs"
+      -- loadModules ["SomeModule.hs"]
+      -- emptyLine
+      -- say "Put the Prelude, Data.Map and *SomeModule in scope"
+      -- say "Data.Map is qualified as M!"
+      setTopLevelModules ["Sound.Tidal.Context"]
+      setImportsQ [("Prelude", Nothing)]
+
       say "We can also evaluate an expression; the result will be a string"
       let expr2 = "length $ concat [[f,g],[h]]"
       say $ "e.g. eval " ++ show expr2
