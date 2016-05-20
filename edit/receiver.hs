@@ -116,7 +116,7 @@ application state pending = do
                modifyMVar_ state $ \s -> do
                  let s' = addClient client s
                  WS.sendTextData conn $
-                       "Welcome! Users: " `mappend`
+                       "/users " `mappend`
                        T.intercalate ", " (map fst s)
                  broadcast (fst client `mappend` " joined") s'
                  return s'
