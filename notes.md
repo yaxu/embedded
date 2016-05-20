@@ -112,3 +112,15 @@ http://academiccommons.columbia.edu/catalog/ac:156137
 
 Programming as writing about data?
 
+## Manifestos
+
+From aymeric:
+https://github.com/greyscalepress/manifestos/blob/master/output/output-archivo.pdf
+
+antoine:
+"Here is another one.. (1998) :
+http://www.antoineschmitt.com/wp/wp-content/uploads/texte-2000-3eme-brouillonEN.pdf
+(poorly translated from french, I admit)
+
+And a Vademecum, for curators (2003) :
+http://www.gratin.org/vademecum_en.html"
