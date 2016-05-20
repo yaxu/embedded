@@ -28,7 +28,8 @@ Look into Atom with Jack (?)..
 
 ## Data into live coding environments
 
-
+- Is it possible to be able to transform history but also the future
+  via e.g. Markov
 
 ## Deep learning
 
