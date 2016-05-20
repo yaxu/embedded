@@ -28,11 +28,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       c.onmessage = function (e) { console.log("msg: " + e.data) };
       c.onerror = function (error) { console.log("ws error" + error) };
 
-      connection.onopen = function () {
-        connection.send('Ping'); // Send the message 'Ping' to the server
-      };
-
-
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
@@ -44,6 +39,11 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         keyMap: "emacs"
       });
       editor.setOption('readOnly', true);
+
+      c.onopen = function () {
+        connection.send('Ping'); // Send the message 'Ping' to the server
+        editor.setOption('readOnly', false);
+      };
 
       editor.on('change',
          function (editor, change) {
