@@ -28,6 +28,11 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       c.onmessage = function (e) { console.log("msg: " + e.data) };
       c.onerror = function (error) { console.log("ws error" + error) };
 
+      connection.onopen = function () {
+        connection.send('Ping'); // Send the message 'Ping' to the server
+      };
+
+
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
@@ -38,6 +43,8 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
         mode: "text/x-haskell",
         keyMap: "emacs"
       });
+      editor.setOption('readOnly', true);
+
       editor.on('change',
          function (editor, change) {
           var secs = (new Date().getTime()) / 1000.0;
