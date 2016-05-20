@@ -25,7 +25,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
     <script>
       var changes = [];
       var c = new WebSocket('ws://localhost:9160', ['soap']);
-      alert(c);
       c.onmessage = function (e) { console.log("msg: " + e.data) };
       c.onerror = function (error) { console.log("ws error" + error) };
       
