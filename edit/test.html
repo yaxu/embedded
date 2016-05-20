@@ -52,7 +52,6 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
           change.when = secs;
           var rv = c.send("/change");
-          alert("sent: " + rv);
           changes.push(change);
 
           // return false so codemirror handles the event
