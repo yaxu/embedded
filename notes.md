@@ -26,6 +26,10 @@ Use rate of evaluation as a pattern source ?
 
 Look into Atom with Jack (?)..
 
+## Data into live coding environments
+
+
+
 ## Deep learning
 
 Seems to be ANNs with bugfixes and GPUs
