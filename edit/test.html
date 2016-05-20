@@ -41,7 +41,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       editor.setOption('readOnly', true);
 
       ws.onopen = function () {
-        ws.send('/join alex'); // Send the message 'Ping' to the server
+        // ws.send('/join alex'); // Send the message 'Ping' to the server
         editor.setOption('readOnly', false);
       };
 
@@ -89,7 +89,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
             }
           }
           console.log("eval: " + selection);
-          ws.send("/eval |||>" + selection + "<|||");
+          ws.send(selection);
           // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
           // cm.replaceSelection(spaces);
         }
