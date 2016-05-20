@@ -67,6 +67,8 @@ The 'change' event in codemirror seems perfect:
   https://codemirror.net/doc/manual.html#events
   https://github.com/yaxu/embedded/blob/master/edit/test.html
 
+Does atom have something similar?
+- discussion here https://discuss.atom.io/t/change-listener/363
 
 could get it out with osc over websockets
 -- https://github.com/colinbdclark/osc.js/
@@ -76,9 +78,6 @@ Having problems with browser osc..
 https://github.com/colinbdclark/osc.js/issues/57
 
 try just plain web sockets.. Estuary already does what I want.
-
-Does atom have something similar?
-- discussion here https://discuss.atom.io/t/change-listener/363
 
 Live writing (sang won lee): http://web.eecs.umich.edu/~snaglee/live-writing/
 Google docs replay: http://features.jsomers.net/how-i-reverse-engineered-google-docs/
