@@ -75,7 +75,7 @@ could get it out with osc over websockets
 Having problems with browser osc..
 https://github.com/colinbdclark/osc.js/issues/57
 
-try just plain web sockets..
+try just plain web sockets.. Estuary already does what I want.
 
 Does atom have something similar?
 - discussion here https://discuss.atom.io/t/change-listener/363
