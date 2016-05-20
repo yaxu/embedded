@@ -89,7 +89,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
             }
           }
           console.log("eval: " + selection);
-          ws.send("/eval selection");
+          ws.send("/eval " + selection);
           // var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
           // cm.replaceSelection(spaces);
         }
