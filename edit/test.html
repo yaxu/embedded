@@ -27,7 +27,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       var c = new WebSocket('ws://localhost:9160', ['soap']);
       c.onmessage = function (e) { console.log("msg: " + e.data) };
       c.onerror = function (error) { console.log("ws error" + error) };
-
+      
       CodeMirror.commands.save = function() {
         var elt = editor.getWrapperElement();
         elt.style.background = "#def";
