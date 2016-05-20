@@ -122,7 +122,7 @@ application state pending = do
                  return s'
                talk conn state client
          where
-           prefix     = "Hi! I am "
+           prefix     = "/join "
            client     = (T.drop (T.length prefix) msg, conn)
            disconnect = do
              -- Remove client and return new state
