@@ -45,10 +45,11 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
           var secs = (new Date().getTime()) / 1000.0;
           console.log("change: " + secs + " from: " + change.from + " to: " + change.to);
           change.when = secs;
-          oscPort.send({
+          var rv = oscPort.send({
              address: "/change",
              args: secs
           });
+          alert("sent: " + rv);
           changes.push(change);
 
           // return false so codemirror handles the event
