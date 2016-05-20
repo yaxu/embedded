@@ -42,7 +42,7 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
 
       c.onopen = function () {
       alert("aha");
-        connection.send('/join alex'); // Send the message 'Ping' to the server
+        c.send('/join alex'); // Send the message 'Ping' to the server
         editor.setOption('readOnly', false);
       };
 
