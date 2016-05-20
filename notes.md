@@ -77,7 +77,7 @@ could get it out with osc over websockets
 Having problems with browser osc..
 https://github.com/colinbdclark/osc.js/issues/57
 
-try just plain web sockets.. Estuary already does what I want.
+try just plain web sockets.. Via Estuary.
 
 Live writing (sang won lee): http://web.eecs.umich.edu/~snaglee/live-writing/
 Google docs replay: http://features.jsomers.net/how-i-reverse-engineered-google-docs/
