@@ -72,6 +72,9 @@ could get it out with osc over websockets
 -- https://github.com/colinbdclark/osc.js/
 -- https://github.com/jaspervdj/websockets/blob/master/example/server.lhs#L53
 
+Having problems with browser osc..
+https://github.com/colinbdclark/osc.js/issues/57
+
 Does atom have something similar?
 - discussion here https://discuss.atom.io/t/change-listener/363
 
