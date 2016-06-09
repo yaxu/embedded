@@ -1,0 +1,38 @@
+import Sound.OSC.FD
+x <- udpServer "0.0.0.0" 4040
+
+let recvSync = do b <- recvBundle x
+                  let timestamp = ntpr_to_ut $ bundleTime b
+                      msg = head $ bundleMessages b
+                      tick = datum_floating $ (messageDatum msg) !! 0
+                      tempo = datum_floating $ (messageDatum msg) !! 1
+                      address = messageAddress msg
+                  act address timestamp tick tempo
+    act "/sync" timestamp (Just tick) (Just tempo) = putStrLn $ "time " ++ show timestamp ++ " tick " ++ show tick ++ " tempo " ++ show tempo
+    act _ _ _ _  = return ()
+    loop = do recvSync
+               loop
+
+loop
+
+recvSync
+        act m mv
+        mykLoop x mv
+m
+mvF <- newMVar (const silence)
+
+forkIO $ mykLoop x (mvF :: MVar (Pattern Int -> OscPattern))
+                  return (mvF)
+    mykLoop x mv = do m <- recvMessage x
+                      act m mv
+                      mykLoop x mv
+    act (Just (Message "/tidal" [ASCII_String str])) mvF = 
+      do let pat = ((p $ tail $ init $ show str) :: Pattern Int)
+         f <- readMVar mvF
+         myk $ f pat
+         putStrLn $ "got '" ++ (show str) ++ "'"
+         putStrLn $ "parsed as " ++ (show pat)
+         return ()
+    act _ _ = return ()
+
+mv <- startMYK
