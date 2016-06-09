@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+no warnings "all";
+
 use strict;
 
 die "Please do not run this script without reading the documentation" 
