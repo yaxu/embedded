@@ -1,0 +1,8 @@
+
+d2 $ foldEvery [3,5] (const silence) $ superimpose (iter 4) $ jux (rev . chop 64) $ sound "gabba [cp wobble cp]"
+  # shape "0.4"
+  # speed "2"
+
+d6 $ iter 4 $ slow 4 $ chop 16 $ s "repetition" # n "0"
+  # unit "c" # speed "0.25"
+  # gain "1.4"
