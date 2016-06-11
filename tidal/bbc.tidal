@@ -1,7 +1,5 @@
 cps 0.715
 
-d2 $ sound "~ [cp ~ cp]"
-  # speed "2"
 
 -- g0 d0
 d3 $ n (slow 2 $ "f0(3,8) a0*2") # s "xx"
