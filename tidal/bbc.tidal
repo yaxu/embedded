@@ -7,10 +7,6 @@ d2 $ sound "~ [cp ~ cp]"
 d3 $ n (slow 2 $ "f0(3,8) a0*2") # s "xx"
   # cutoff (scale 1000 3000 sine1)
 
-
-d2 $ stack [jux rev $ (n $ offadd 0.125 12 $ slowspread (offadd 0.25) [7,12] $ slow 4 $ "f0(3,8) [~ a0*2] g0(3,8) d0") # s "xx" # gain "0.95"
-           ]
-
 d3 $ loopAt 4 $ chop 64 $ sound "[shackup]"
 
 d4 $ slow 4 $ chop 16 $ sound "fm:10"
