@@ -18,7 +18,8 @@ d4 $ runWith 4 (density 2) $ loopAt 4 $ chop 64 $ sound "[shackup]"
 d6 $ slow 4 $ sometimes (# up "7 12") $ iter 4 $ chop 16 $ sound "fm:10"
   # gain "0.9"
 
-(d5 $ (loopAt 4 $ chop 16 $ sound "paper"
+
+(d5 $ (iter 4 $ loopAt 4 $ chop 16 $ sound "paper"
        # unit "c"
        # gain "0.8"))
 
