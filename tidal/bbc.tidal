@@ -1,7 +1,7 @@
 cps 0.715
-  
-d2 $ stack [jux rev $ (n $ slow 4 $ "f0 a0 g0 d0") # s "xx" # gain "0.95"
 
+d2 $ stack [jux rev $ (n $ offadd 0.125 12 $ slowspread (offadd 0.25) [7,12] $ slow 4 $ "f0(3,8) [~ a0*2] g0(3,8) d0") # s "xx" # gain "0.95"
+           ]
 
 d3 $ loopAt 4 $ chop 64 $ sound "[shackup]"
 
