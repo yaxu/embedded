@@ -64,19 +64,15 @@ d1 $ stack [-- jux (iter 4) $ (slow 2 $ slowspread (chop) [32,128,64] $ sound "[
             -- # resonance "0.2"
            ]
 
-cps 0.71 >>
+cps 0.71
 
 d2 $ loopAt 4 $ chop 64 $ sound "shackup"
 
 d3 $ slow 4 $ chop 16 $ sound "fm:10"
   # gain "0.9"
 
-d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
-  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
-  # nudge "[0 0.04]*4" # shape "0.2"
-
-  (d4 $ (slow 4 $ chop 16 $ sound "paper"
-         # unit "c"
-         # speed "[0.25]"
-         # gain "0.8"))
+(d4 $ (slow 4 $ chop 16 $ sound "paper"
+       # unit "c"
+       # speed "[0.25]"
+       # gain "0.8"))
   
