@@ -6,8 +6,9 @@ d1 $ stack [ghost $ sound "[feel feel:2*2@3 feel feel:4]",
 
 d2 $ sound "drum cp"
 
-d3 $ jux (iter 4) $ slow 2 $ chop 128 $ sound "arc"
-  # gain "1.2"
+d3 $ (jux (iter 4) $ slow 4 $ chop 128 $ sound "shackup"
+  # gain "1.1")
 
 d4 $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
   # vowel "a"
+
