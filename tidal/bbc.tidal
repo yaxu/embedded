@@ -1,8 +1,5 @@
 cps 0.715
 
-d1 $ runWith 4 (density 2) $ jux rev $ n "[0 4] [[2 1] 3 [2 4] 1]@3" # s "voodoo"
-  # gain "1.1"
-
 d2 $ sound "~ [cp ~ cp]"
   # speed "2"
 
