@@ -1,6 +1,8 @@
 cps 0.715
 
 
+d1 $ sound "voodoo"
+
 -- g0 d0
 d3 $ n (slow 2 $ "f0 a0") # s "xx"
   # cutoff (scale 1000 3000 sine1)
@@ -13,8 +15,3 @@ d5 $ slow 4 $ chop 16 $ sound "fm:10"
 (d6 $ (loopAt 4 $ chop 16 $ sound "paper"
        # unit "c"
        # gain "0.8"))
-
-d7 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
-  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
-  # nudge "[0 0.04]*4" # shape "0.2"
-  # gain "0.9"
