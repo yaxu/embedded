@@ -26,3 +26,9 @@ d1 $ jux rev $ (n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 4 $ palindrome "[f0 
 
 d2 $ jux rev $ slow 4 $ chop 128 $ sound "shackup"
   # gain "0.8"
+
+
+d1 $ stack [jux rev $ (chop 32 $ sound ("feel [feel:2 feel:3 feel:5 ~]@3")),
+            n "f0 a0" $ s "xx"
+           ]
+  # nudge (slow 4 sine1)
