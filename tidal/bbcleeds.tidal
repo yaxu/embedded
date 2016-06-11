@@ -1,8 +1,5 @@
 cps 0.715
 
-d1 $ slow 4 $ sound "numbers numbers:1" # pan "0 1"
-
-
 d1 $ sound "voodoo"
 
 -- g0 d0
