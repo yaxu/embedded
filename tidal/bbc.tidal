@@ -14,4 +14,7 @@ d5 $ slow 4 $ chop 16 $ sound "fm:10"
        # unit "c"
        # gain "0.8"))
 
-
+d7 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
+  # gain "0.9"
