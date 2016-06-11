@@ -8,9 +8,10 @@ d2 $ sound "drum [~ cp:2]"
   # gain "1"
 
 -- g0 d0
-d3 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "f0(3,8) a0*2") # s "xx"
+d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ every 4 (rev) $ "f0(3,8) a0*2 g0(3,8) d0(5,8)") # s "xx"
   # cutoff (slow 4 $ scale 1000 3000 sine1)
   # resonance "0.3"
+  # gain "0.95"
 
 d4 $ loopAt 4 $ chop 64 $ sound "[shackup]"
 
