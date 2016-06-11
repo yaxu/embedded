@@ -39,3 +39,6 @@ d2 $ slow 2 $ jux (iter 4) $ slow 4 $ chop 32 $ sound "shackup"
 
 d3 $ jux (rev) $ slow 4 $ degrade $ chop 8 $ sound "fm:10"
   # speed "[1,1.5]"
+
+let gain' = gain . ((* 0.8) <$>)
+
