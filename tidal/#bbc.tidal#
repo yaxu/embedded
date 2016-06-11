@@ -1,0 +1,4 @@
+d1 $ slowspread (chop) [128,64] $
+  stack [sound "[feel feel:2*2@3 feel feel:4]"
+        ]
+  # nudge (slow 4 sine1)
