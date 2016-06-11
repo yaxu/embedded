@@ -12,3 +12,4 @@ d3 $ (jux (iter 4) $ slow 4 $ chop 128 $ sound "shackup"
 d4 $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
   # vowel "a"
 
+hush
