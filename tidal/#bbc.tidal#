@@ -1,0 +1,18 @@
+cps 0.715
+
+d1 $ n "0 2*2@3" # s "voodoo"
+  # gain "1.1"
+
+d2 $ stack [jux rev $ (n $ offadd 0.125 12 $ slowspread (offadd 0.25) [7,12] $ slow 4 $ "f0(3,8) [~ a0*2] g0(3,8) d0") # s "xx" # gain "0.95"
+           ]
+
+d3 $ loopAt 4 $ chop 64 $ sound "[shackup]"
+
+d4 $ slow 4 $ chop 16 $ sound "fm:10"
+  # gain "0.9"
+
+(d5 $ (loopAt 4 $ chop 16 $ sound "paper"
+       # unit "c"
+       # gain "0.8"))
+
+d1 $ sound "gab(3,8)"
