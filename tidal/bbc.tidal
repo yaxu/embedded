@@ -61,15 +61,14 @@ d4 $ every 3 (|*| speed "1.3") $ jux (iter 4) $ loopAt 4 $ chop 16 $ sound "shac
 d1 $ stack [(n $ slow 4 $ "f0 a0 g0 d0") # s "xx" # gain "0.9"
            ]
 
-cps 0.71
+cps 0.715
 
 d2 $ loopAt 4 $ chop 64 $ sound "shackup"
 
 d3 $ slow 4 $ chop 16 $ sound "fm:10"
   # gain "0.9"
 
-(d4 $ (slow 4 $ chop 16 $ sound "paper"
+(d4 $ (loopAt 4 $ chop 16 $ sound "paper"
        # unit "c"
-       # speed "[0.25]"
        # gain "0.8"))
   
