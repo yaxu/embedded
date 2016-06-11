@@ -74,8 +74,8 @@ d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   # nudge "[0 0.04]*4" # shape "0.2"
 
 cps 0.71 >>
-  (d4 $ (iter 4 $ slow 4 $ chop 16 $ sound "paper"
-                        # unit "c"
-                        # speed "[0.25]"
-                        # gain "0.8"))
+  (d4 $ (slow 4 $ chop 16 $ sound "paper"
+         # unit "c"
+         # speed "[0.25]"
+         # gain "0.8"))
   
