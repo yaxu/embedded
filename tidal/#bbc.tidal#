@@ -1,0 +1,46 @@
+d1 $ stack [-- ghost $ sound "[feel feel:2*2@3 feel feel:4]",
+  jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ every 4 rev $ "[f0 g0]/2(3,8) a0(3,8) c0(3,8) e0*2") # s "xx"
+            # cutoff (slow 4 $ scale 1000 3000 sine1)
+            # resonance "0.3"
+            # room "0.9"
+            # size "0.9"
+            # orbit "1"
+           ]
+
+d2 $ sound "drum cp"
+
+d3 $ (jux (iter 4) $ slow 4 $ chop 128 $ sound "shackup"
+  # gain "1.1")
+
+d4 $ jux (rev) $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
+  # speed "[1, 1.5]"
+  # gain "1.1"
+
+hush
+
+
+d1 $ jux rev $ (n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 4 $ palindrome "[f0 g0]/2(3,8) a0(5,8) c0(3,8) e0*2") # s "xx")
+  # cutoff (slow 4 $ scale 400 3000 sine1)
+  # resonance "0.3"
+
+d2 $ jux rev $ slow 4 $ chop 128 $ sound "shackup"
+  # gain "0.8"
+
+
+d1 $ slow 2 $ stack [-- jux rev $ (sound ("feel [feel:2 feel:3 feel:5 feel:1*2]@3")),
+            jux rev $ n (sometimes ((+12) <$>) $ offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f0(3,8) a0*2 c0(3,8) e1*3") # s "xx"
+            # cutoff (slow 4 $ scale 1000 4000 sine1)
+            # resonance "0.4" # gain "0.85"
+           ]
+
+d2 $ slow 2 $ jux (iter 4) $ slow 4 $ chop 32 $ sound "shackup"
+
+
+d3 $ jux (rev) $ slow 4 $ degrade $ chop 8 $ sound "fm:10"
+  # speed "[1,1.5]"
+
+let gain' = gain . ((* 0.8) <$>)
+
+
+
+d1 $ n (offadd 0.25 12 $ offadd 0.125 7 ("[[f0 g0]/2(3,8) a0(5,8) c0*3 e0*2]/4")) # s "xx"
