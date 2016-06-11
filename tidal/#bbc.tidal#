@@ -43,4 +43,10 @@ let gain' = gain . ((* 0.8) <$>)
 
 
 
-d1 $ n (offadd 0.25 12 $ offadd 0.125 7 ("[[f0 g0]/2(3,8) a0(5,8) c0*3 e0*2]/4")) # s "xx"
+d1 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.25 12 $ offadd 0.125 7 (every 4 rev "[[f0 g0]/2(3,8) a0(5,8) c0*3 e0*2]/4")) # s "xx"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.3"
+
+d2 $ slow 8 $ striate 16 $ sound "fm:10*2"
+
+d3 $ sound "
