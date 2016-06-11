@@ -1,6 +1,7 @@
 cps 0.715
 
 d1 $ sound "voodoo"
+  # gain "1.1"
 
 -- g0 d0
 d3 $ n (slow 2 $ "f0 a0") # s "xx"
