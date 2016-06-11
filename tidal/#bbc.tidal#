@@ -6,7 +6,9 @@ d1 $ runWith 4 (density 2) $ jux rev $ n "[0 4] [[2 1] 3 [2 4] 1]@3" # s "voodoo
 d2 $ sound "~ [cp ~ cp]"
   # speed "2"
 
-d3 $ n (slow 2 "f0 a0") # s "xx"
+d3 $ (n (offadd 0.125 7 $ offadd 0.25 12 $ slow 4 $ "f0(3,8) a0*2 g0(5,8) d0*3") # s "xx")
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.3"
 
 d2 $ stack [jux rev $ (n $ offadd 0.125 12 $ slowspread (offadd 0.25) [7,12] $ slow 4 $ "f0(3,8) [~ a0*2] g0(3,8) d0") # s "xx" # gain "0.95"
            ]
