@@ -15,3 +15,6 @@ d5 $ slow 4 $ chop 16 $ sound "fm:10"
 (d6 $ (loopAt 4 $ chop 16 $ sound "paper"
        # unit "c"
        # gain "0.8"))
+
+
+d1 $ sound "bd sn"
