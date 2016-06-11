@@ -19,4 +19,7 @@ d4 $ jux (rev) $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
 hush
 
 
-d1 $ n (offadd 0.125 12 $ offadd 0.25 (7) 4 $ slow 4 "f0(3,8) a0 c0 e0") # s "xx"
+d1 $ (slow 2 $ n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 2 "f0(3,8) a0(5,8) c0(3,8) e0*2") # s "xx"
+  # gain "0.8")
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonace "0.3"
