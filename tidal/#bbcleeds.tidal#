@@ -4,18 +4,19 @@ d1 $ runWith 4 (density 2) $ iter 4 $ every 3 (# speed "2") $ every 2 rev $ n "0
   # gain "1.1"
 
 -- g0 d0
-d3 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f0(3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
+d3 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
   # cutoff (scale 1000 3000 sine1)
   # resonance "0.3"
 
-d4 $ iter 4 $ loopAt 4 $ chop 64 $ sound "[shackup]"
+d4 $ jux rev $ iter 4 $ loopAt 4 $ chop 64 $ sound "[shackup]"
 
-d5 $ slow 4 $ chop 16 $ sound "fm:10"
+d5 $ jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
   # gain "0.9"
 
-(d6 $ (loopAt 4 $ chop 16 $ sound "paper"
+solo 
+(d6 $ rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
        # unit "c"
-       # gain "0.8"))
+       # gain "0.9"))
 
 
 d1 $ sound "bd sn"
