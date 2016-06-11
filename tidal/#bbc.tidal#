@@ -28,7 +28,8 @@ d2 $ jux rev $ slow 4 $ chop 128 $ sound "shackup"
   # gain "0.8"
 
 
-d1 $ stack [jux rev $ (chop 32 $ sound ("feel [feel:2 feel:3 feel:5 ~]@3")),
-            n "f0 a0" $ s "xx"
+d1 $ stack [jux rev $ (slow 4chop 32 $ sound ("feel [feel:2 feel:3 feel:5 ~]@3")),
+            jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f0 a0 c0 e1") # s "xx"
+            # cutoff (slow 4 $ scale 1000 4000 sine1)
+            # resonance "0.4"
            ]
-  # nudge (slow 4 sine1)
