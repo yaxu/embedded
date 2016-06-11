@@ -1,5 +1,4 @@
-d1 $ slowspread (chop) [128,64] $
-  stack [sound "[feel feel:2*2@3 feel feel:4]",
-         n (offadd 0.125 12offadd 0.25 7 $ slow 4 "f2(3,8) a2(5,8) c2(3,8) e2*2") # s "xx"
-        ]
-  # nudge (slow 4 sine1)
+d1 $ stack [ghost $ sound "[feel feel:2*2@3 feel feel:4]",
+            jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 "f0(3,8) a0(3,8) c3(3,8) e2*2") # s "xx"
+            # cutoff (slow 4 $ scale 1000 3000 sine1)
+           ]
