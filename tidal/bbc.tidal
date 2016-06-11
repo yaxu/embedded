@@ -9,7 +9,8 @@ d2 $ sound "drum cp"
 d3 $ (jux (iter 4) $ slow 4 $ chop 128 $ sound "shackup"
   # gain "1.1")
 
-d4 $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
-  # vowel "a"
+d4 $ jux (rev) $ degrade $ slow 2 $ chop 8 $ sound "fm:10"
+  # speed "[1, 1.5]"
+  # gain "1.1"
 
 hush
