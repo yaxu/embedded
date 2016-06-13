@@ -1,4 +1,4 @@
-
+import Data.List
 import Graphics.Rendering.Cairo
 
 w :: Int
