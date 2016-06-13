@@ -20,11 +20,14 @@ main = do h <- openFile "10.txt" ReadMode
           setSourceRGB 1 1 1
           rectangle 0 0 (fromIntegral w) (fromIntegral h)
           fill
+          drawCells 0 0 (rle contents)
+     surfaceWriteToPNG surf "test.png"
+
+
+drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
           setSourceRGB 0 0 0
           rectangle 0 0 100 100
           fill
-     surfaceWriteToPNG surf "test.png"
-     
 
 rle :: Eq a => [a] -> [(Int, a)]
 rle = map (\x -> (length x, head x)) . group
