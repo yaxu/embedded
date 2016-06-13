@@ -1,0 +1,26 @@
+
+import Graphics.Rendering.Cairo
+import Canvas
+
+w = 300
+h = 300
+
+main = C.withImageSurface C.FormatARGB32 w h $ \surf ->
+  do C.renderWith surf $ do
+       save
+       setOperator OperatorOver
+       setSourceRGB 0 0 0
+       rectangle 0 0 100 100
+       fill
+       setSourceRGB 1 1 0
+       rectangle 0 0 100 100
+       fill
+  
+
+draw w g t =
+  do color white
+     rectangle 0 0 w g
+     fill
+     color black
+     rectangle 0 0 10 10
+     fill
