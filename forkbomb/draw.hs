@@ -10,7 +10,7 @@ main = withImageSurface FormatARGB32 w h $ \surf ->
           setSourceRGB 1 1 1
           rectangle 0 0 (fromIntegral w) (fromIntegral h)
           fill
-          setSourceRGB 1 1 1
+          setSourceRGB 0 0 0
           rectangle 0 0 100 100
           fill
      surfaceWriteToPNG surf "test.png"
