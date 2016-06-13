@@ -15,14 +15,14 @@ main = do h <- openFile "10.txt" ReadMode
           contents <- hGetContents h
           hClose h
           withImageSurface FormatARGB32 (floor w) (floor h) $ \surf ->
-  do renderWith surf $
-       do setOperator OperatorOver
-          setSourceRGB 1 1 1
-          rectangle 0 0 (fromIntegral w) (fromIntegral h)
-          fill
-          setSourceRGB 0 0 0
-          drawCells 0 0 (rle contents)
-     surfaceWriteToPNG surf "test.png"
+            do renderWith surf $
+               do setOperator OperatorOver
+                  setSourceRGB 1 1 1
+                  rectangle 0 0 (fromIntegral w) (fromIntegral h)
+                  fill
+                  setSourceRGB 0 0 0
+                  drawCells 0 0 (rle contents)
+               surfaceWriteToPNG surf "test.png"
 
 
 drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
