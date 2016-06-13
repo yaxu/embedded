@@ -29,9 +29,11 @@ drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
           rectangle 0 0 100 100
           fill
 
-splitRLE n col ((count, v):(xs)) | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
-                                 | 
+splitRLE n col ((count, v):(xs))
+  | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
+  | otherwise = (remaining,v):(splitRLE n 0 ((count-remaining, v):xs))
   where col' = col `mod` n
+        remaining = n - col'
 
 rle :: Eq a => [a] -> [(Int, a)]
 rle = map (\x -> (length x, head x)) . group
