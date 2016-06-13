@@ -20,14 +20,18 @@ main = do h <- openFile "10.txt" ReadMode
           setSourceRGB 1 1 1
           rectangle 0 0 (fromIntegral w) (fromIntegral h)
           fill
+          setSourceRGB 0 0 0
           drawCells 0 0 (rle contents)
      surfaceWriteToPNG surf "test.png"
 
 
 drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
-          setSourceRGB 0 0 0
           rectangle 0 0 100 100
           fill
+
+splitRLE n col ((count, v):(xs)) | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
+                                 | 
+  where col' = col `mod` n
 
 rle :: Eq a => [a] -> [(Int, a)]
 rle = map (\x -> (length x, head x)) . group
