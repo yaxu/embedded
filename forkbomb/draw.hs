@@ -1,15 +1,20 @@
 
 import Graphics.Rendering.Cairo
 
+w :: Int
 w = 800
+
+h :: Int
 h = 800
+
 cellw = 4
 cellh = 4
+colls = w `div` 4
 
 main = do h <- openFile "10.txt" ReadMode
           contents <- hGetContents h
           hClose h
-          withImageSurface FormatARGB32 w h $ \surf ->
+          withImageSurface FormatARGB32 (floor w) (floor h) $ \surf ->
   do renderWith surf $
        do setOperator OperatorOver
           setSourceRGB 1 1 1
