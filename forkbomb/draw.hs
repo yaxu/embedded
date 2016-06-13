@@ -21,13 +21,13 @@ main = do h <- openFile "10.txt" ReadMode
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              drawCells 0 0 (rle contents)
+              -- drawCells 0 0 (rle contents)
             surfaceWriteToPNG surf "test.png"
 
 
-drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
-          rectangle 0 0 100 100
-          fill
+-- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
+--           rectangle 0 0 100 100
+--          fill
 
 splitRLE n col ((count, v):(xs))
   | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
