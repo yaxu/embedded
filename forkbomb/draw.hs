@@ -1,6 +1,5 @@
 
 import Graphics.Rendering.Cairo
-import Canvas
 
 w = 300
 h = 300
