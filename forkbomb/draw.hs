@@ -15,5 +15,3 @@ main = withImageSurface FormatARGB32 w h $ \surf ->
           fill
      surfaceWriteToPNG surf "test.png"
      
-       
-  
