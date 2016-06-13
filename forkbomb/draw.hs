@@ -12,10 +12,10 @@ cellw = 4
 cellh = 4
 cols = w `div` 4
 
-main = do h <- openFile "10.txt" ReadMode
-          contents <- hGetContents h
-          hClose h
-          withImageSurface FormatARGB32 (floor w) (floor h) $ \surf -> do
+main = do handle <- openFile "10.txt" ReadMode
+          contents <- hGetContents handle
+          hClose handle
+          withImageSurface FormatARGB32 w h $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
               setSourceRGB 1 1 1
@@ -30,6 +30,7 @@ main = do h <- openFile "10.txt" ReadMode
 --           rectangle 0 0 100 100
 --          fill
 
+splitRLE _ _  [] = []
 splitRLE n col ((count, v):(xs))
   | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
   | otherwise = (remaining,v):(splitRLE n 0 ((count-remaining, v):xs))
