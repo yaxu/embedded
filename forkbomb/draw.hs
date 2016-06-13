@@ -22,7 +22,8 @@ main = do handle <- openFile "10.txt" ReadMode
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              let rects = filter (\(_, _, _, v) -> v == 1) $ rleXY contents
+              let rects = filter (\(_, _, _, v) -> v == '1') $ rleXY cols contents
+              mapM_ (\(x,y,l,_) -> rectangle (cellw* (fromIntegral $ x)) (cellh*y) (cellh) (cellw*l)) rects
               return ()
             surfaceWriteToPNG surf "test.png"
 
