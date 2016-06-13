@@ -8,7 +8,7 @@ main = withImageSurface FormatARGB32 w h $ \surf ->
   do renderWith surf $
        do setOperator OperatorOver
           setSourceRGB 0 0 0
-          rectangle 0 0 (floor w) (floor h)
+          rectangle 0 0 (fromIntegral w) (fromIntegral h)
           fill
           setSourceRGB 1 1 1
           rectangle 0 0 100 100
