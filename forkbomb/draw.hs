@@ -9,7 +9,7 @@ h = 800
 
 cellw = 4
 cellh = 4
-colls = w `div` 4
+cols = w `div` 4
 
 main = do h <- openFile "10.txt" ReadMode
           contents <- hGetContents h
