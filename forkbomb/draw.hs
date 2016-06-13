@@ -30,6 +30,12 @@ main = do handle <- openFile "10.txt" ReadMode
 --           rectangle 0 0 100 100
 --          fill
 
+-- rleXY :: [(Int, a)] -> [(Int, Int), (Int, a)]
+rleXY [] = []
+rleXY xs = map toxy $ rlepos 0 xs
+  where rlepos pos ((count, v):xs) = ((pos, count, v):(rlepos (pos+count) xs))
+        toxy (pos, count, v) = (pos `div` cols, pos `mod` cols, count, v)
+
 splitRLE _ _  [] = []
 splitRLE n col ((count, v):(xs))
   | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
