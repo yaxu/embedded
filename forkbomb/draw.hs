@@ -22,7 +22,8 @@ main = do handle <- openFile "10.txt" ReadMode
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              -- drawCells 0 0 (rle contents)
+              let rects = filter (\(_, _, _, v) -> v == 1) $ rleXY contents
+              return ()
             surfaceWriteToPNG surf "test.png"
 
 
@@ -35,7 +36,7 @@ rleXY cols [] = []
 rleXY cols xs = map toxy $ rlepos 0 $ splitRLE cols 0 $ rle xs
   where rlepos pos ((count, v):xs) = ((pos, count, v):(rlepos (pos+count) xs))
         rlepos _ [] = []
-        toxy (pos, count, v) = (pos, pos `mod` cols, count, v)
+        toxy (pos, count, v) = (pos `mod` cols, pos `div` cols, count, v)
 
 splitRLE _ _  [] = []
 splitRLE n col ((count, v):(xs))
