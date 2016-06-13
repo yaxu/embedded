@@ -1,10 +1,15 @@
 
 import Graphics.Rendering.Cairo
 
-w = 300
-h = 300
+w = 800
+h = 800
+cellw = 4
+cellh = 4
 
-main = withImageSurface FormatARGB32 w h $ \surf ->
+main = do h <- openFile "10.txt" ReadMode
+          contents <- hGetContents h
+          hClose h
+          withImageSurface FormatARGB32 w h $ \surf ->
   do renderWith surf $
        do setOperator OperatorOver
           setSourceRGB 1 1 1
@@ -15,3 +20,6 @@ main = withImageSurface FormatARGB32 w h $ \surf ->
           fill
      surfaceWriteToPNG surf "test.png"
      
+
+rle :: Eq a => [a] -> [(Int, a)]
+rle = map (\x -> (length x, head x)) . group
