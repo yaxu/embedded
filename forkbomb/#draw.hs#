@@ -29,7 +29,7 @@ drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
           rectangle 0 0 100 100
           fill
 
-splitRLE n col (count, x):xs) = 
+splitRLE n col ((count, v):(xs)) | col+count < n = 
 
 rle :: Eq a => [a] -> [(Int, a)]
 rle = map (\x -> (length x, head x)) . group
