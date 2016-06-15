@@ -16,7 +16,7 @@ main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
           hClose handle
           let things = rleXY cols contents
-          putStrLn $ show things
+          putStrLn $ rle 4 things
           withPDFSurface "test.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
