@@ -15,7 +15,7 @@ cols = w `div` 4
 main = do h <- openFile "10.txt" ReadMode
           contents <- hGetContents h
           hClose h
-          withImageSurface FormatARGB32 (floor w) (floor h) $ \surf -> do
+          withImageSurface FormatARGB32 w h $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
               setSourceRGB 1 1 1
