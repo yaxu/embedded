@@ -14,9 +14,9 @@ cols = (w `div` cellw)
 
 main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
-          putStrLn $ show contents
           hClose handle
           let things = rleXY cols contents
+          putStrLn $ show things
           withPDFSurface "test.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
