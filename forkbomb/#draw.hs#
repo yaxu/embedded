@@ -29,7 +29,7 @@ main = do handle <- openFile "10.txt" ReadMode
 --           rectangle 0 0 100 100
 --          fill
 
-rleXY :: Int 
+rleXY :: Int -> [(Int,Int)] -> [(Int, Int, a)]
 
 splitRLE _ _ [] = []
 splitRLE n col ((count, v):(xs))
