@@ -10,7 +10,7 @@ h = 800
 
 cellw = 4
 cellh = 4
-cols = fromIntegral (w / cellw)
+cols = ceiling (w / cellw)
 
 main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
