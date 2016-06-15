@@ -26,7 +26,9 @@ main = do handle <- openFile "10.txt" ReadMode
               mapM_ drawThing things
               return ()
 
-drawThing (x,y,len,v) = do return ()
+drawThing (x,y,len,v) = do rectangle (x+(fromIntegral cellw)) (y+(fromIntegral cellh)) (cellw*(fromIntegral len)) cellh
+                           fill
+                           return ()
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
