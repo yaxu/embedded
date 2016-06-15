@@ -12,7 +12,7 @@ cellw = 4 :: Int
 cellh = 4 :: Int
 cols = (w `div` cellw)
 
-main = do handle <- openFile "10.txt" ReadMode
+main = do handle <- openFile "10-t400.txt" ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
           withPDFSurface "test.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
