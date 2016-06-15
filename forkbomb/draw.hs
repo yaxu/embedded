@@ -9,7 +9,8 @@ cellw = 4 :: Int
 cellh = 4 :: Int
 cols = (w `div` cellw)
 
-main = do handle <- openFile "10-t400.txt" ReadMode
+main = do as <- getArgs
+          handle <- openFile (as[0] ++ ".txt") ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
               h = ((length contents) `div` cols) * cellh + 1
