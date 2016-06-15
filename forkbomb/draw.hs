@@ -29,7 +29,10 @@ main = do handle <- openFile "10.txt" ReadMode
 --           rectangle 0 0 100 100
 --          fill
 
-rleXY :: Int -> [(Int,Int,a)] -> [(Int, Int, a)]
+rleXY :: Eq a => Int -> [a] -> [(Int, Int, Int, a)]
+rleXY n xs = toXY 0 $ splitRLE n 0 $ rle xs
+  where toXY _ [] = []
+        toXY i ((col,v):xs) = (i `mod` n, i `div` n, v):(toXY (i+col) xs)
 
 splitRLE _ _ [] = []
 splitRLE n col ((count, v):(xs))
