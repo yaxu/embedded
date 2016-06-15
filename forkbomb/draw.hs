@@ -1,6 +1,7 @@
 import Data.List
 import Graphics.Rendering.Cairo
 import System.IO
+import System.Environment
 
 w :: Int
 w = 100
