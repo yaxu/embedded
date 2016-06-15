@@ -1,5 +1,6 @@
 import Data.List
 import Graphics.Rendering.Cairo
+import System.IO
 
 w :: Int
 w = 800
