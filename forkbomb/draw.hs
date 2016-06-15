@@ -23,6 +23,7 @@ main = do handle <- openFile "10.txt" ReadMode
               fill
               setSourceRGB 0 0 0
               let things = rleXY cols contents
+              return ()
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
