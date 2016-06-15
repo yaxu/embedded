@@ -3,10 +3,10 @@ import Graphics.Rendering.Cairo
 import System.IO
 
 w :: Int
-w = 400
+w = 200
 
 h :: Int
-h = 1600
+h = 3600
 
 cellw = 4 :: Int
 cellh = 4 :: Int
