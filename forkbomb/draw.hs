@@ -5,9 +5,6 @@ import System.IO
 w :: Int
 w = 200
 
-h :: Int
-h = 3600
-
 cellw = 4 :: Int
 cellh = 4 :: Int
 cols = (w `div` cellw)
@@ -15,6 +12,7 @@ cols = (w `div` cellw)
 main = do handle <- openFile "10-t400.txt" ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
+              h = ((length contents) `div` cols) * cellh
           withPDFSurface "10-t400.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
