@@ -10,7 +10,7 @@ h = 800
 
 cellw = 4
 cellh = 4
-cols = ceiling (w / cellw)
+cols = (w `div` cellw)
 
 main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
