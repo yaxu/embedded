@@ -26,6 +26,8 @@ main = do handle <- openFile "10.txt" ReadMode
               mapM_ drawThing things
               return ()
 
+drawThing (x,y,len,v) = do return ()
+
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
 --           rectangle 0 0 100 100
