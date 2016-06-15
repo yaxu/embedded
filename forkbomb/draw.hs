@@ -6,7 +6,7 @@ w :: Int
 w = 400
 
 h :: Int
-h = 800
+h = 1600
 
 cellw = 4 :: Int
 cellh = 4 :: Int
