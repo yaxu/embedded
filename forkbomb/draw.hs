@@ -23,7 +23,6 @@ main = do handle <- openFile "10.txt" ReadMode
               fill
               setSourceRGB 0 0 0
               -- drawCells 0 0 (rle contents)
-            surfaceWriteToPDF surf "test.pdf"
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
