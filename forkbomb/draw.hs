@@ -3,7 +3,7 @@ import Graphics.Rendering.Cairo
 import System.IO
 
 w :: Int
-w = 800
+w = 400
 
 h :: Int
 h = 800
