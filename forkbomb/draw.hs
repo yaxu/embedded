@@ -13,7 +13,7 @@ cellh = 4
 cols = w `div` 4
 
 main = do handle <- openFile "10.txt" ReadMode
-          contents <- hGetContents h
+          contents <- hGetContents handle
           hClose handle
           withImageSurface FormatARGB32 w h $ \surf -> do
             renderWith surf $ do
