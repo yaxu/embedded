@@ -27,7 +27,7 @@ main = do handle <- openFile "10.txt" ReadMode
           hClose handle
 
 drawThing :: (Int, Int, Int, a) -> Render ()
-drawThing (x,y,len,v) = do rectangle (fromIntegral $ x+cellw) (fromIntegral $ y+cellh) (fromIntegral $ cellw*len) (fromIntegral cellh)
+drawThing (x,y,len,v) = do rectangle (fromIntegral $ x*cellw) (fromIntegral $ y+cellh) (fromIntegral $ cellw*len) (fromIntegral cellh)
                            fill
                            return ()
 
