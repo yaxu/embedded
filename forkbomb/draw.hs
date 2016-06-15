@@ -11,11 +11,11 @@ cellh = 4 :: Int
 cols = (w `div` cellw)
 
 main = do as <- getArgs
-          handle <- openFile (as[0] ++ ".txt") ReadMode
+          handle <- openFile ((as !! 0) ++ ".txt") ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
               h = ((length contents) `div` cols) * cellh + 1
-          withPDFSurface (as[0] ++ ".pdf") (fromIntegral w) (fromIntegral h) $ \surf -> do
+          withPDFSurface ((as !! 0) ++ ".pdf") (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
               setSourceRGB 1 1 1
