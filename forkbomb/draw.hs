@@ -18,11 +18,12 @@ main = do handle <- openFile "10.txt" ReadMode
           withPDFSurface "test.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
-              setSourceRGB 1 1 1
+              setSourceRGB 1 0 1
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
               let things = rleXY cols contents
+              
               return ()
 
 
