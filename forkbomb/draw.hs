@@ -15,7 +15,7 @@ cols = (w `div` cellw)
 main = do handle <- openFile "10-t400.txt" ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
-          withPNGSurface "10-t400.png" (fromIntegral w) (fromIntegral h) $ \surf -> do
+          withPNGSurface "10-t400.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
               setSourceRGB 1 1 1
@@ -23,6 +23,7 @@ main = do handle <- openFile "10-t400.txt" ReadMode
               fill
               setSourceRGB 0 0 0
               mapM_ drawThing $ filter (\(_, _, _, v) -> v == '1') things
+              savePNGSurface "10-t400.png"
               return ()
           hClose handle
 
