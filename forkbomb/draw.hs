@@ -10,7 +10,7 @@ h = 800
 
 cellw = 4
 cellh = 4
-cols = w `div` 4
+cols = w `div` cellw
 
 main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
@@ -22,7 +22,7 @@ main = do handle <- openFile "10.txt" ReadMode
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              drawCells contents
+              let things = rleXY cols contents
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
