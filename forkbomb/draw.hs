@@ -16,7 +16,6 @@ main = do handle <- openFile "10.txt" ReadMode
           contents <- hGetContents handle
           let things = rleXY cols contents
           putStrLn $ show $ things
-          hClose handle
           withPDFSurface "test.pdf" (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
@@ -26,6 +25,7 @@ main = do handle <- openFile "10.txt" ReadMode
               setSourceRGB 0 0 0
               mapM_ drawThing $ filter (\(_, _, _, v) -> v == '1') things
               return ()
+          hClose handle
 
 drawThing :: (Int, Int, Int, a) -> Render ()
 drawThing (x,y,len,v) = do rectangle (fromIntegral $ x+cellw) (fromIntegral $ y+cellh) (fromIntegral $ cellw*len) (fromIntegral cellh)
