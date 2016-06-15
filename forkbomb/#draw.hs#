@@ -25,6 +25,7 @@ main = do handle <- openFile "10.txt" ReadMode
               let things = rleXY cols contents
               mapM_ drawThing things
               return ()
+            
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
