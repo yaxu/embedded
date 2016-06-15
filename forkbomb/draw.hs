@@ -8,8 +8,8 @@ w = 800
 h :: Int
 h = 800
 
-cellw = 4
-cellh = 4
+cellw = 4 :: Int
+cellh = 4 :: Int
 cols = (w `div` cellw)
 
 main = do handle <- openFile "10.txt" ReadMode
