@@ -29,6 +29,7 @@ main = do handle <- openFile "10.txt" ReadMode
 --           rectangle 0 0 100 100
 --          fill
 
+splitRLE _ _ [] = []
 splitRLE n col ((count, v):(xs))
   | col'+count <= n = ((count, v):(splitRLE n (col'+count) xs))
   | otherwise = (remaining,v):(splitRLE n 0 ((count-remaining, v):xs))
