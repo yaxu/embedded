@@ -22,7 +22,7 @@ main = do handle <- openFile "10.txt" ReadMode
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              -- drawCells 0 0 (rle contents)
+              drawCells contents
 
 
 -- drawCells :: Int -> Int -> [(Int, Int)] -> IO ()
