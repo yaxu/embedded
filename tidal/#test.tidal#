@@ -29,4 +29,4 @@ d5 $ loopAt 16 $ jux rev $ chop 32 $ iter 4 $ sound "liq"
 d6 $ slow 4 $ jux (iter 4) $ sound "bd [cp off] drum*2 sn:2*2"
   # gain "1.1"
 
-d7 $ slow 4 $ chop 8 $ sound "arc"
+d7 $ slow 4 $ chop 16 $ sound "breaks165"
