@@ -10,10 +10,13 @@ d4 $ slow 4 $ jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d0(3,8) e
   # cutoff (slow 4 $ scale 1000 5000 $ sine1)
   # resonance "0.2"
 
-d1 $ slow 8 $ slowspread (chop) [32,64,128] $ s "repetition" # n (irand 6)
-  # gain "1.2"
+d1 $ slow 8 $ jux rev $ slowspread (chop) [32,64,128] $ iter 4 $ s "repetition" # n (irand 6)
+  # gain "0.9" # speed "0.5"
+
 
 d2 $ slow 4 $ weave 16 (s ("arpy*8") # n (run 8))
   [vowel "a e i",
-   vowe
+   vowel "i e o u"
    ]
+
+d3 $ slow 2 $ jux (iter 4) $ sound "{gabba*4 industrial,}"
