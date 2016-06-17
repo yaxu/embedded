@@ -1,9 +1,2 @@
-d1 $ slow 2 $
-  stack [runWith 4 (density 4) $ jux rev $ slowspread (chop) [8,16,32] $ sound "cp [bd ~ sn:2 arpy] bd*2 ~" # speed "[4 2]/2"
-         ]
-  
-  
-d1 $ sound "cp/4"
-  # nudge "0.02"
+d1 $ slow 2 $ sound "cp"
 
-hush
