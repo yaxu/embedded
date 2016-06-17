@@ -3,6 +3,6 @@ d1 $ slow 2 $
          ]
   # nudge "0.04"
 
-  
+d1 $ sound "cp/4"
 
 hush
