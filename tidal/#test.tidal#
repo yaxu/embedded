@@ -1,2 +1,4 @@
-d1 $ slow 2 $ sound "cp"
+d1 $ slow 4 $ jux (rev) $ runWith 4 (density 2) $ slowspread (chop) [8,32,64] $ sound "bd*2 future jvbass drum"
+
+d2 $ sound "arc"
 
