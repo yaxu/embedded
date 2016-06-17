@@ -75,7 +75,8 @@ d6 $ slow 4 $ jux (iter 4) $ every 3 (# speed "1.5") $ s "{gabba*2 industrial*4?
   # gain "1.2"
 
 
-d7 $ jux () slow 4 $ every 3 (slow 2)$ "amencutup*16" # (n (irand 16))
+d7 $ jux (iter 4) $ slow 4
+  2$ every 3 (slow 2)$ "amencutup*16" # (n (irand 16))
   # gain "1.2"
   # speed "0.9"
 
