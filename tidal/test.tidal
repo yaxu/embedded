@@ -1,2 +1,7 @@
-d1 $ sound "bd*4 cp"
+d1 $ slow 4 $
+  stack [sound "cp [~ ~ arpy] bd*2 ~"
+         ]
+  # nudge "0.04"
+
+  
 
