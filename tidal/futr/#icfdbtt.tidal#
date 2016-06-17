@@ -71,6 +71,8 @@ d1 $ slowspread (slow) [2,4,1,2] $ jux ((0.25 <~) . rev) $ chop 64 $ n "0 [~ 1] 
   # crush "3"
 
 
-d6 $ slow sound "gabba industrial"
+d6 $ every 3 () $slow 4 $ jux (iter 4) $ s "{gabba*2 industrial*4?, drum off off}" # n (irand 16) 
+  # gain "1.2"
+
 
 hush
