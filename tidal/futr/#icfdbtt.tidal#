@@ -64,7 +64,13 @@ d10 $ slow 4 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan
              density 3 . (vowel "p p o" |+|) . (|+| cut "-3")
             ] |+| gain "1.3"
 
-d1 $ slow jux (0.25 <~) $ chop 8 $ n "0 [~ 1] 2 [2 3]" # s "voodoo"
-  |+| gain "1.2"
+
+d1 $ slowspread (slow) [2,4,1,2] $ jux ((0.25 <~) . rev) $ chop 64 $ n "0 [~ 1] 2 [2 3]" # s "voodoo"
+  # gain "1.2"
+  # speed "0.9"
+  # crush "3"
+
+
+d6 $ slow sound "gabba industrial"
 
 hush
