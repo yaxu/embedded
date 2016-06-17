@@ -1,4 +1,7 @@
 d1 $ slow 4 $ jux (rev) $ runWith 4 (density 2) $ slowspread (chop) [8,32,64] $ sound "bd*2 future jvbass drum"
 
-d2 $ sound "arc"
-
+d2 $ jux (rev) $ runWith 4 (density 2) $ slow 4 $ chop 8 $ sound "sh" # speed "2"
+  # cutoff (slow 4 $ scale 1000 7000 $ sine1)
+  # resonance "0.2"
+  
+d3 $ sound "~ off"
