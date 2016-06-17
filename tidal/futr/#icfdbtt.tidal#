@@ -45,22 +45,26 @@ d8 $ slow 4 $ chop 8 $ sound "breaks165"
        |+| cutoff "10000"
 
 -- icfdbtt_bd
-d9 $ sound "[bd8:1*8, bd8:4]"
+d9 $ slow 4 $ sound "[bd8:1*8, bd8:4]"
 
 -- icfdbtt_vocal
-d10 $ weave' 16 ((slow 16 $ striate' 128 (1/64) $ sound "bev*2") |+| pan sine1)
+d10 $ slow 4 $ weave' 16 ((slow 16 $ striate' 128 (1/64) $ sound "bev*2") |+| pan sine1)
             [(vowel "a e i o u" |+|),
              (vowel "i e p u" |+|),
              (speed ("1 1.5 0.5") |+|)
-            ] |+| gain "0.9"
+            ] |+| gain "1.5"
 
 d10 silence
 hush
+
 -- icfdbtt_vocal2
-d10 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan (scale 0.25 0.75 sine1))
+d10 $ slow 4 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan (scale 0.25 0.75 sine1))
             [density 1.5 . (vowel "i e p u" |+|) . (|+| cut "-2"),
              density 2 . (vowel "p p u o" |+|) . (|+| cut "-1"),
              density 3 . (vowel "p p o" |+|) . (|+| cut "-3")
-            ] |+| gain "1.2"
+            ] |+| gain "1.3"
+
+d1 $ slow jux (0.25 <~) $ chop 8 $ n "0 [~ 1] 2 [2 3]" # s "voodoo"
+  |+| gain "1.2"
 
 hush
