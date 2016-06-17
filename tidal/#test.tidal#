@@ -5,6 +5,10 @@ d2 $ runWith 4 (density 2) $ slow 4 $ chop 8 $ sound "shackup"
 
 d3 $ slow 4 $ sound "drum*4 off"
 
-d4 $ slow 4 $ jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d0(3,8) e0*3 f0(3,8) g0*2") # s "xx"
-  # cutoff ""
-  
+solo $ 
+d4 $ slow 4 $ jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d0(3,8) e0*3 f0(3,8) a0*2") # s "xx"
+  # cutoff (slow 4 $ scale 1000 5000 $ sine1)
+  # resonance "0.2"
+
+d1 $ slow 8 $ chop 16 $ sound "repetition"
+  # gain 
