@@ -1,2 +1,2 @@
-d1 $ sound "can can:2 can:2 can:2"
+d1 $ slow 4 $ sound "can can:2 can:2 can:2"
 
