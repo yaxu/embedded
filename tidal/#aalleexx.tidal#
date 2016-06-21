@@ -1,3 +1,7 @@
-d1 $ sound "cp"
+d1 $ sound "cp*8" # speed (scale - 0.25 2 sine1)
+   # cutoff (scale 1000 3000 rand)
+
+d1 $ sound 
+
 
 hush
