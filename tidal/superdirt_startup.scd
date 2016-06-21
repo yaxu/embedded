@@ -15,7 +15,7 @@ s.options.numInputBusChannels = 2; // set this to your hardware output channel s
 // boot the server and start SuperDirt
 s.waitForBoot {
 	~dirt = SuperDirt(2, s); // two output channels, increase if you want to pan across more channels
-	~dirt.loadSoundFiles("/home/alex/Dropbox/projects/dirt/samples");   // load samples (path can be passed in)
+	~dirt.loadSoundFiles("/home/alex/Dropbox/projects/dirt/samples/*");   // load samples (path can be passed in)
 	s.sync; // wait for samples to be read
 	~dirt.start(57120, [0, 0]);   // start listening on port 57120, create two busses each sending audio to channel 0
 
@@ -32,4 +32,5 @@ s.latency = 0.3; // increase this if you get "late" messages
 );
 
 
+SuperDirt.start("/home/alex/Dropbox/projects/dirt/samples/*");
 
