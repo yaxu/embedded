@@ -9,4 +9,5 @@ d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,
 
 hush
 
-d1 $ sound "cp"
+d1 $ (chop 8 $ sound "cp")
+   # nudge (slow 4 sine1)
