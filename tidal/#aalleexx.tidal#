@@ -5,4 +5,6 @@ d1 $ sometimes (# speed "1.2") $ slow 2 $ runWith 4 (rev . density 2 . chop 16) 
 
 d2 $ slow 2 $ 0.25 ~> (palindrome $ chop 32 $ sound "~ cp")
 
-d3 $ slow 4 $ chop 8 $ sound "os"
+d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
+
+hu
