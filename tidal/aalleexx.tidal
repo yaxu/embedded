@@ -40,10 +40,7 @@ d1 $ n "2 4 2" # s "arpy"
 
 d1 $ n "2 4 2" # s "arpy" |+| n "[2 3]/2"
 
-d1 $ s "arpy" |+| n "2 4 2" 
-
-d1 $ s "arpy*3"
 
 
-cps 0.5
+cps 1.1
 
