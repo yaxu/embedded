@@ -57,7 +57,7 @@ d4 $ every 2 (density 1.5) $ slow 2 $ sound "[wobble jungbass](3,8)"
 
 d1 $ silence
 
-d1 $ slow 2 $ jux rev $ chop 4 $ slow 2 $ weave 16 (palindrome $ n (run 16) # s "arpy")
+d1 $ slow 4 $ jux rev $ slow 2 $ weave 16 (palindrome $ n (run 16) # s "arpy")
   [vowel "a e [i i]",
 --   vowel "i o*2",
    speed "1 [~ 2] 3 2",
@@ -66,7 +66,8 @@ d1 $ slow 2 $ jux rev $ chop 4 $ slow 2 $ weave 16 (palindrome $ n (run 16) # s 
 
 d2 $ slow 2 $ jux (iter 4) $ chop 8 $ sound "arc"
 
-
+d3 $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
+  
 
 
 
