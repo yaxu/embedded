@@ -50,3 +50,4 @@ d2 $ sound "arpy arpy:3"
 
 cps 1.1
 
+d1 $ sound "wobble"
