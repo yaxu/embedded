@@ -9,5 +9,7 @@ d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,
 
 hush
 
-d1 $ (chop 8 $ sound "cp")
-   # nudge (slow 4 sine1)
+d1 $ jux rev $ (slowspread (chop) [32,64] $ sound "bd arpy sn:1 claus")
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.2"
+  
