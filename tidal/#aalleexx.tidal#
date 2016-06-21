@@ -21,10 +21,12 @@ d3 $ degradeBy 0.8 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offa
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
-d5 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ loopAt 2 $ chop 8 $ sound "[os os:1 os:2]/3"
+d5 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ slowspread (loopAt) [2,4,1] $ chop 8 $ sound "[os os:1 os:2]/3"
 
-d7 $ sometimes (# speed "2") $ foldEvery [3,5] (0.25 <~) $ jux (1 <~) $ every 2 (rev . chop 8) $ slow 2 $ brak $ sound "{ht lt [~ mt] lt(3,8), arpy [arpy:2 arpy:4]/2 arpy:7}"
-  # vowel "[a i o u,p]"
+
+d7 $ degradeBy 0.8 $ sometimes (# speed "2") $ foldEvery [3,5] (0.25 <~) $ jux (1 <~) $ every 2 (rev . chop 8) $ slow 2 $ brak $ sound "{ht lt [~ mt] lt(3,8), arpy [arpy:2 arpy:4]/2 arpy:7}"
   # crush "[3 4 5]/3"
 
-d8 $ sound "~ [off off*2]/"
+d8 $ sound "bd*4 [off off*2]/2"
+
+d9 $ jux (rev. chop 8)$ n (run 8) # s "gabba"
