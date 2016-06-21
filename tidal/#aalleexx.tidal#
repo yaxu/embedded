@@ -12,4 +12,8 @@ hush
 d1 $ jux rev $ (slowspread (chop) [32,64] $ sound "bd arpy sn:1 claus")
   # cutoff (slow 4 $ scale 1000 3000 sine1)
   # resonance "0.2"
-  
+
+d2 $ iter 4 $ slowspread (chop) [8,6,3] $ sound "~ off"
+
+
+d3 $ slow 8 $ n "60(3,8) 52*3 48 42" # s "xx"
