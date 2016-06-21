@@ -37,9 +37,9 @@ d1 $ ((loopAt 16 $ rev $ jux (iter 4) $ chop 128 $ sound "bev")
   -- # vowel "a o u i e"
   |*| speed "[1,1.5]"
 
-d7 $ brak $ sound "{[feel, future, drum] [~ feel:3], bd ht [lt cp8]}"
-
-
+hush
+d7 $ slow 4 $ sound "{[~] [~ feel:3]}"
+  # speed "2"
 
 d2 $ slow 2 $ jux (iter 4) $ slow 2 $ ghost $ sound "gab([5 6]/2,16,[0 2]/2)"
   # end "0.07"
@@ -52,7 +52,9 @@ d3 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
 
 d4 $ every 2 (density 1.5) $ slow 2 $ sound "[wobble jungbass](3,8)"
   # gain "1.2"
-  # speed "2"
+  -- # speed "4"
   # crush "7"
 
 d1 $ silence
+
+d1 $ n (run 8) $ s "arpy"
