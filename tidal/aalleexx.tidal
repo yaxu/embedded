@@ -41,6 +41,12 @@ d1 $ n "2 4 2" # s "arpy"
 d1 $ n "2 4 2" # s "arpy" |+| n "[2 3]/2"
 
 
+d1 $ (jux rev $ chop 32 $ sound "bd [~ drum:1] future [cp arpy]")
+  # nudge (slow 4 sine1)
+
+
+
+d2 $ sound "arpy arpy:3"
 
 cps 1.1
 
