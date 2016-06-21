@@ -7,4 +7,4 @@ d2 $ slow 2 $ 0.25 ~> (palindrome $ chop 32 $ sound "~ cp")
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
 
-hu
+hush
