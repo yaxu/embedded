@@ -26,6 +26,18 @@ d1 $ sound "bd sn:2 feel [~ future]"
 -- randcat - like slowcat but plays in random order
 
 d1 $ randcat [sound "bd sn:2",
-              sound "arpy",
+              n "0 [2 3] 1 2" # s "arpy",
               sound "cp"
              ]
+
+-- sound breaks down into s and n
+
+d1 $ sound "arpy:2 arpy:4 arpy:2"
+
+d1 $ n "2 4 2" # s "arpy" |+| n "1 2"
+
+d1 $ s "arpy" |+| n "2 4 2" 
+
+d1 $ s "cp*3"
+
+hush
