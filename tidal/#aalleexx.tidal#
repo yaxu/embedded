@@ -34,4 +34,9 @@ d9 $ jux (rev. chop 8)$ n (run 8) # s "gabba"
 d1 $ (loopAt 16 $ rev $ jux (iter 4) $ chop 128 $ sound "bev")
   # cutoff (slow 8 $ scale 1000 5000 $ saw1)
   
-d2 $ sound "g"
+d2 $ jux (iter 4) $ slow 2 $ ghost $ sound "gab([5 6]/2,16,[0 2]/2)"
+  # end "0.03"
+  # cutoff (slow 8 $ scale 1000 5000 $ saw1)
+  # orbit "1"
+  # room "0.5"
+  # size "0.4"
