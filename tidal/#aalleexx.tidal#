@@ -77,6 +77,5 @@ d7 $ loopAt 8 $ iter 4 $ rev $ slowspread (chop) [16,32,8,32,128] $ sound "paper
   # gain "0.8"
   # accelerate "[-2 2]/2"
 
-d1 $ jux (iter 4) $ sound "bd*16 bd*2 bd*8 bd*12 "
-
+d1 $ slow 8 $ sometimes (# vowel "a i o u") $ jux (iter 4) $ sound "bd*16 bd*2 bd*8 bd*12 "
 
