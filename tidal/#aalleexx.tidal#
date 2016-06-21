@@ -16,5 +16,9 @@ d1 $ jux rev $ (slowspread (chop) [32,64] $ sound "bd arpy sn:1 claus")
 d2 $ iter 4 $ slowspread (chop) [8,6,3] $ sound "~ off"
 
 
-d3 $ n (offadd 0.125 12 $ offadd 0.25 7 "c0(3,8) a0*3 f0(3,8,[2 4]/2) e0*2") # s "xx"
-  # vowel "a"
+d3 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ "c0(3,8) a0*3 f0(3,8,[2 4]/2) e0*2") # s "xx"
+  # resonance "0.2"
+  # cutoff (scale 1000 3000 $ slow 4 $ sine1)
+
+d5 $ jux (iter 4) $ loopAt 4 $ chop 8 $ sound "shackup"
+
