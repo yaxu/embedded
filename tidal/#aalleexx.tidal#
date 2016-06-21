@@ -32,17 +32,18 @@ d8 $ sound "bd*4 [off off*2]/2"
 d9 $ jux (rev. chop 8)$ n (run 8) # s "gabba"
 
 d1 $ ((loopAt 16 $ rev $ jux (iter 4) $ chop 128 $ sound "bev")
-  # cutoff (slow 8 $ scale 1000 5000 $ saw1)
+  -- # cutoff (slow 8 $ scale 1000 5000 $ saw1)
   # shape "0.4")
   -- # vowel "a o u i e"
   |*| speed "[1,1.5]"
+
+d7 $ brak $ sound "[feel future drum] feel:4"
   
-d2 $ jux (iter 4) $ slow 2 $ ghost $ sound "gab([5 6]/2,16,[0 2]/2)"
-  # end "0.02"
-  # cutoff (slow 8 $ scale 1000 5000 $ saw1)
+
+d2 $ slow 2 $ jux (iter 4) $ slow 2 $ ghost $ sound "gab([5 6]/2,16,[0 2]/2)"
+  # end "0.07"
+  -- # cutoff (slow 8 $ scale 1000 5000 $ saw1)
   # orbit "1"
-  # room "0.5"
-  # size "0.4"
 
 
 d3 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
