@@ -74,4 +74,6 @@ d4 $ jux rev $ every 4 (slow 1.5) $ off 0.25 (|*| speed "2") $ sound "gabba [[ga
 d5 $ jux (iter 4) $ slow 4 $ chop 16 $ s "repetition" # n (irand 7)
   # hcutoff "500" # gain "1.1"
 
-d7
+d7 $ loopAt 8 $ iter 4 $ rev $ slowspread (chop) [16,32,8,32] $ sound "paper"
+  # gain "0.7"
+  # accelerate "-2"
