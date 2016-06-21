@@ -38,6 +38,6 @@ d1 $ n "2 4 2" # s "arpy" |+| n "1 2"
 
 d1 $ s "arpy" |+| n "2 4 2" 
 
-d1 $ s "cp*3"
+d1 $ s "cp" 
 
 hush
