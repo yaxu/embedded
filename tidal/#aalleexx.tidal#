@@ -23,5 +23,5 @@ d3 $ degradeBy 0.8 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offa
 
 d5 $ slow 8 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ loopAt 4 $ chop 8 $ sound "shackup"
 
-d7 $ every 2 (rev . chop 8) $ slow 2 $ brak $ sound "ht lt [~ mt] lt(3,8)"
-  
+d7 $ foldEvery [3,5] (0.25 <~) $ jux (1 <~) $ every 2 (rev . chop 8) $ slow 2 $ brak $ sound "{ht lt [~ mt] lt(3,8), arpy [arpy:2 arpy:4]/2 arpy:7}"
+  # vowel "[a i o u,p]"
