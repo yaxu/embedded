@@ -1,1 +1,4 @@
-d1 $ sound "cp"
+d1 $ somslow 2 $ runWith 4 (rev . density 2 . chop 16) $ sound "drum [ht8 [ht8 mt8]] lt8 [~ ht8]"
+  # room "0.5"
+  # size "0.4"
+  # orbit "1"
