@@ -1,8 +1,6 @@
 
 d1 $ sound "cp" # (speed $ slow 8 $ scale (-0.25) 2 rand)
-
-
-# cutoff (scale 1000 3000 rand)
+  # cutoff (scale 1000 3000 sine1)
 
 
 
@@ -10,3 +8,5 @@ d1 $ sound
 
   
 hush
+
+rand
