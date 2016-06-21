@@ -1,0 +1,14 @@
+
+d1 $ sound "cp*8"
+  # hcutoff (slow 4 $ scale 500 10000 sine1)
+
+-- |*|
+
+d1 $ speed "2 [3 1] 4 0.5" # sound "arpy newnotes" |*| speed "[1 2 3]/3" 
+
+-- off
+
+d1 $ off 0.25 (# speed "2") $ sound "arpy arpy:3"
+
+d1 $ sound "arpy arpy:3"
+d2 $  (sound "arpy arpy:3" # speed "2")
