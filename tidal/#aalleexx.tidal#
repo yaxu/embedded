@@ -69,7 +69,9 @@ d2 $ slow 2 $ jux (iter 4) $ chop 8 $ sound "arc"
 d3 $ jux rev $ runWith 4 (rev . chop 8) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
   
 d4 $ jux rev $ every 4 (slow 1.5) $ off 0.25 (|*| speed "2") $ sound "gabba [[gabba ht lt] gabba]@3"
-  # speed "2" # end "0.2" # gain "0.8" # delay "0.4" # delaytime (
+  # speed "2" # end "0.2" # gain "0.8" # delay "0.4" # delaytime (slow 2 $ scale 0.01 0.02 sine1)
 
+d5 $ jux (iter 4) $ slow 4 $ chop 16 $ s "repetition" # n (irand 7)
+  # hcutoff "500" # gain "1.1"
 
-
+d7
