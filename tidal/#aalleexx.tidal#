@@ -35,3 +35,9 @@ d1 $ randcat [sound "bd sn:2",
 d1 $ sound "arpy:2 arpy:4 arpy:2"
 
 d1 $ n "2 4 2" # s "arpy" |+| n "1 2"
+
+d1 $ s "arpy" |+| n "2 4 2" 
+
+d1 $ n "2 4 2" |+| s "arpy drum"
+
+hush
