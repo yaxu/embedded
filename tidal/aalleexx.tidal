@@ -1,2 +1,14 @@
-d1 $ sound "cp"
 
+d1 $ sound "cp"
+  # (speed $ slow 8 $ scale (-0.25) 2 rand)
+  # cutoff (scale 1000 3000 sine1)
+
+d1 $ speed "2 [3 1] 4 0.5" # sound "arpy newnotes" |*| speed "[1 2 3]/3" 
+
+
+d1 $ sound 
+
+  
+hush
+
+rand
