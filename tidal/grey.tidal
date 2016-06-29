@@ -24,7 +24,7 @@ let drawText description pat =
               fill
               restore
               C.save 
-              C.scale w h
+              C.scale (fromIntegral w) (fromIntegral h)
               C.setOperator C.OperatorOver
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
