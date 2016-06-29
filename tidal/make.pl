@@ -57,3 +57,5 @@ drawText description pat =
 main = drawText "$escaped" ("black white")
 !;
 close $fh;
+
+system("runhaskell Code.hs");
