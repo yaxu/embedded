@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
-main = drawText "slowspread (density) [3,4] $ every 3 (rev) $ p \"grey lightgrey darkgrey black lightgrey\"" (slowspread (density) [3,4] $ every 3 (rev) $ p "grey lightgrey darkgrey black lightgrey")
+main = drawText "slowspread (density) [3,1.5] $ every 3 (rev) $ p \"{grey lightgrey darkgrey black lightgrey, grey black}\"" (slowspread (density) [3,1.5] $ every 3 (rev) $ p "{grey lightgrey darkgrey black lightgrey, grey black}")
