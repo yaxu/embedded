@@ -1,4 +1,3 @@
-
 module Code.hs where
 
 import Sound.Tidal.Vis
