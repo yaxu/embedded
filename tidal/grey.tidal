@@ -11,6 +11,15 @@ let drawText description pat =
              h = 288
          withSVGSurface ("text.svg") 384 288 $ \surf -> do
             renderWith surf $ do
+              C.save 
+              C.scale (fromIntegral w) (fromIntegral h)
+              C.setOperator C.OperatorOver
+              C.setSourceRGB 0 0 0 
+              C.rectangle 0 0 1 1
+              C.fill
+              mapM_ renderEvent (events pat)
+              C.restore 
+              return ()
               save
               setOperator OperatorOver
               setSourceRGB 1 1 1
@@ -23,18 +32,9 @@ let drawText description pat =
               textPath description
               fill
               restore
-              C.save 
-              C.scale (fromIntegral w) (fromIntegral h)
-              C.setOperator C.OperatorOver
-              C.setSourceRGB 0 0 0 
-              C.rectangle 0 0 1 1
-              C.fill
-              mapM_ renderEvent (events pat)
-              C.restore 
-              return ()
          rawSystem "convert" ["text.svg", "text.pdf"]
 
-drawText "hello world" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
