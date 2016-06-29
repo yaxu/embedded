@@ -29,8 +29,9 @@ let wrap :: String -> [String]
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
               rotate (pi/ 2)
-              moveTo 10 (w-20)
-              textPath s; fill
+              moveTo 5 (negate (w-15))
+              textPath "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
+              fill
               {-
               let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
                            [0, 10 ..]
