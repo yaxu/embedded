@@ -18,6 +18,7 @@ main = do as <- getArgs
               h = ((length contents) `div` cols) * cellh + 1
           withSVGSurface ((as !! 0) ++ ".svg") (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
+              save
               setOperator OperatorOver
               setSourceRGB 1 1 1
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
@@ -28,6 +29,7 @@ main = do as <- getArgs
               setFontSize 12
               textPath "Hello world"
               fill
+              restore
               return ()
           hClose handle
 
