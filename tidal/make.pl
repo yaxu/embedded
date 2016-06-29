@@ -5,7 +5,3 @@ use strict;
 undef $/;
 my ($code) = <>;
 
-
-
-
-
