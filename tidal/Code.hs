@@ -1,4 +1,4 @@
-module Code.hs where
+module Code where
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
