@@ -1,0 +1,5 @@
+import Sound.Tidal.Vis
+
+let fn = "out.svg"
+    vis pat = vLines (C.withSVGSurface) fn (600,40) pat 1 1
+    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
