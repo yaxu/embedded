@@ -58,4 +58,4 @@ main = drawText "$escaped" ("black white")
 !;
 close $fh;
 
-system("runhaskell Code.hs");
+system("runhaskell -XOverloadedStrings Code.hs");
