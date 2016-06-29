@@ -23,8 +23,7 @@ let wrap :: String -> [String]
                          C.restore
                ) [0 .. (nLines - 1)]
          C.restore
-  where drawLine p = mapM_ renderEvent (events (density cyclesPerLine p))
-
+      where drawLine p = mapM_ renderEvent (events (density cyclesPerLine p))
     drawText description pat =
       do let w = 136
              h = 566
