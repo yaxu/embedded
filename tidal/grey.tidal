@@ -17,7 +17,6 @@ let drawText description =
               rectangle 0 0 (fromIntegral w) (fromIntegral h)
               fill
               setSourceRGB 0 0 0
-              mapM_ drawThing $ filter (\(_, _, _, v) -> v == '1') things
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
               textPath description
