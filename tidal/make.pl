@@ -9,7 +9,8 @@ chomp $code;
 my $fh;
 open($fh, ">Code.hs");
 
-my $escaped = quotemeta($code);
+my $escaped = $code;
+$escaped =~ s/"/\\"/;
 
 print $fh qq!
 module Code.hs where
