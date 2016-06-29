@@ -7,12 +7,12 @@ import Data.Colour.SRGB
 
 
 let drawText description pat =
-      do let w = 284
+      do let w = 384
              h = 288
          withSVGSurface ("text.svg") 384 288 $ \surf -> do
             renderWith surf $ do
               C.save 
-              C.scale (fromIntegral w) (fromIntegral h)
+              C.scale (fromIntegral h) (fromIntegral h)
               C.setOperator C.OperatorOver
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
@@ -24,12 +24,15 @@ let drawText description pat =
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
-              moveTo 10 50
+              moveTo 365 10
+              rotate (pi/ 2)
               textPath description
               fill
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 in drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+:t rotate
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
