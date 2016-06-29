@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
-main = drawText " iter 5 $ every 2 (density 16) $ p \"{white black, grey lightgrey darkgrey grey black}\"" ( iter 5 $ every 2 (density 16) $ p "{white black, grey lightgrey darkgrey grey black}")
+main = drawText "iter' 5 $ every 2 (density 16) $ p \"{white black, grey beige lightgrey darkgrey grey black}\"" (iter' 5 $ every 2 (density 16) $ p "{white black, grey beige lightgrey darkgrey grey black}")
