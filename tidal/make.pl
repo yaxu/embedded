@@ -13,7 +13,7 @@ my $escaped = $code;
 $escaped =~ s/"/\\"/g;
 
 print $fh qq!
-module Code.hs where
+module Code where
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
