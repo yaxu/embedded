@@ -9,7 +9,7 @@ import System.Process
 
 let wrap :: String -> String
     wrap [] = []
-    wrap s = (take 38 s) ++ "\n" ++ (wrap (drop 38 s))
+    wrap s = (take 20 s) ++ "\n" ++ (wrap (drop 38 s))
     drawText description pat =
       do let w = 384
              h = 288
