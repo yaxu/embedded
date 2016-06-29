@@ -6,7 +6,9 @@ import Data.Colour.Names
 import Data.Colour.SRGB
 
 
-let drawText description pat =
+let wrap [] = []
+    wrap s = take 38 s ++ wrap (drop 38 s)
+    drawText description pat =
       do let w = 384
              h = 288
          withSVGSurface ("text.svg") 384 288 $ \surf -> do
@@ -30,7 +32,9 @@ let drawText description pat =
               fill
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-in drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+in drawText (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+
 
 :t rotate
 
