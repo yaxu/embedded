@@ -44,4 +44,4 @@ drawText description pat =
      return ()
 
 
-main = drawText ("red blue") ("black white")
+main = drawText ("red blue") (p "black white")
