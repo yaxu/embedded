@@ -1,4 +1,5 @@
-module Code where
+
+module Code.hs where
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
@@ -39,4 +40,4 @@ drawText description pat =
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
 
-main = drawText "\"black white\"" (p "black white")
+main = drawText "\"red blue\"" ("black white")
