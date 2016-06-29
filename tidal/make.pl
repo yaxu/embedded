@@ -5,7 +5,6 @@ use strict;
 undef $/;
 my ($code) = <>;
 
-print $code;
 
 
 
