@@ -14,7 +14,7 @@ wrap [] = []
 wrap s = ((take 200 s) : (wrap (drop 200 s)))
 
 drawText
-  :: CairoString string =>
+  :: C.CairoString string =>
      string
      -> Sound.Tidal.Context.Pattern (Colour Double)
      -> IO ()
