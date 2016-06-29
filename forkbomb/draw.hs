@@ -16,7 +16,7 @@ main = do as <- getArgs
           contents <- hGetContents handle
           let things = rleXY cols contents
               h = ((length contents) `div` cols) * cellh + 1
-          withPDFSurface ((as !! 0) ++ ".pdf") (fromIntegral w) (fromIntegral h) $ \surf -> do
+          withSVGSurface ((as !! 0) ++ ".svg") (fromIntegral w) (fromIntegral h) $ \surf -> do
             renderWith surf $ do
               setOperator OperatorOver
               setSourceRGB 1 1 1
