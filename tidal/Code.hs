@@ -18,7 +18,7 @@ drawText
   :: CairoString string =>
      string
      -> Sound.Tidal.Context.Pattern (Colour Double)
-     -> IO GHC.IO.Exception.ExitCode
+     -> IO ()
 drawText description pat =
   do let w = 136
          h = 566
@@ -43,6 +43,7 @@ drawText description pat =
           fill
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
+     return ()
 
 
 main = drawText "red blue" (p "black white")
