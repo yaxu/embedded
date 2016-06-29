@@ -10,7 +10,7 @@ my $fh;
 open($fh, ">Code.hs");
 
 my $escaped = $code;
-$escaped =~ s/"/\\"/;
+$escaped =~ s/"/\\"/g;
 
 print $fh qq!
 module Code.hs where
