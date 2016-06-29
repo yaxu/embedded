@@ -36,7 +36,7 @@ let wrap :: String -> [String]
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 in drawText ("foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
-
+wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
 
 :t rotate
 
