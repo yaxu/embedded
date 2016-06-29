@@ -24,6 +24,9 @@ main = do as <- getArgs
               fill
               setSourceRGB 0 0 0
               mapM_ drawThing $ filter (\(_, _, _, v) -> v == '1') things
+              selectFontFace "Terminal Dosis" FontSlantNormal FontWeightLight
+              setFontSize 12
+              textPath "Hello world"
               return ()
           hClose handle
 
