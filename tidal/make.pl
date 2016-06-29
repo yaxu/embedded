@@ -47,3 +47,4 @@ drawText description pat =
 
 main = drawText "$escaped"
 !;
+close $fn;
