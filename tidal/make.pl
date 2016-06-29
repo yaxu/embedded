@@ -17,8 +17,8 @@ wrap s = ((take 200 s) : (wrap (drop 200 s)))
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("text.svg") w h $ \surf -> do
-        renderWith surf $ do
+     withSVGSurface ("text.svg") w h \$ \surf -> do
+        renderWith surf \$ do
           C.save 
           C.scale (w-20) (h)
           C.setOperator C.OperatorOver
@@ -34,13 +34,8 @@ drawText description pat =
           setFontSize 12
           rotate (pi/ 2)
           moveTo 5 (negate (w-15))
-          textPath "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
+          textPath "foldEvery [3,5] (slow 2) \$ density 16 \$ \"grey black\""
           fill
-          {-
-          let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
-                       [0, 10 ..]
-          mapM (\(s,n) -> do {moveTo 10 (n-(w-20)); textPath s; fill}) ls
-          -}
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
