@@ -3,7 +3,6 @@ module Code where
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
-import Graphics.Rendering.Cairo
 import Data.Colour
 import Data.Colour.Names
 import Data.Colour.SRGB
