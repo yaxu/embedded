@@ -35,7 +35,7 @@ let wrap :: String -> [String]
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
               C.fill
-              drawLines pat 1 30
+              drawLines pat 16 140
               -- mapM_ renderEvent (events pat)
               C.restore 
               return ()
@@ -45,7 +45,7 @@ let wrap :: String -> [String]
               setFontSize 12
               rotate (pi/ 2)
               moveTo 5 (negate (w-15))
-              textPath "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
+              textPath description
               fill
               {-
               let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-in drawText ("test") $ "grey red"
+in drawText ("test") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
 
 wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
