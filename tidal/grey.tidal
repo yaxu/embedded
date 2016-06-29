@@ -20,11 +20,6 @@ let drawText description pat =
               mapM_ renderEvent (events pat)
               C.restore 
               return ()
-              save
-              setOperator OperatorOver
-              setSourceRGB 1 1 1
-              rectangle 0 0 (fromIntegral w) (fromIntegral h)
-              fill
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
