@@ -12,6 +12,7 @@ let wrap :: String -> [String]
     wrap s = ((take 200 s) : (wrap (drop 200 s)))
     drawLines pat cyclesPerLine nLines =
       do C.save 
+         C.scale 1 (1 / (fromIntegral nLines))
          C.setOperator C.OperatorOver
          C.setSourceRGB 0 0 0 
          C.rectangle 0 0 1 1
