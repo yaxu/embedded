@@ -66,11 +66,6 @@ drawText description pat =
           moveTo 5 (negate (w-15))
           textPath description
           fill
-          {-
-          let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
-                       [0, 10 ..]
-          mapM (\(s,n) -> do {moveTo 10 (n-(w-20)); textPath s; fill}) ls
-          -}
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
