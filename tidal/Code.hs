@@ -3,6 +3,7 @@ module Code where
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
+import Graphics.Rendering.Cairo
 import Data.Colour
 import Data.Colour.Names
 import Data.Colour.SRGB
@@ -14,15 +15,15 @@ wrap [] = []
 wrap s = ((take 200 s) : (wrap (drop 200 s)))
 
 drawText
-  :: C.CairoString string =>
+  :: CairoString string =>
      string
      -> Sound.Tidal.Context.Pattern (Colour Double)
      -> IO ()
 drawText description pat =
   do let w = 136
          h = 566
-     C.withSVGSurface ("text.svg") w h $ \surf -> do
-        C.renderWith surf $ do
+     withSVGSurface ("text.svg") w h $ \surf -> do
+        renderWith surf $ do
           C.save 
           C.scale (w-20) (h)
           C.setOperator C.OperatorOver
@@ -31,17 +32,18 @@ drawText description pat =
           C.fill
           mapM_ renderEvent (events pat)
           C.restore 
-          C.save
-          C.setSourceRGB 0 0 0
-          C.selectFontFace "Terminal Dosis" C.FontSlantNormal C.FontWeightNormal
-          C.setFontSize 12
-          C.rotate (pi/ 2)
-          C.moveTo 5 (negate (w-15))
-          C.textPath description
-          C.fill
-          C.restore
+          return ()
+          save
+          setSourceRGB 0 0 0
+          selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
+          setFontSize 12
+          rotate (pi/ 2)
+          moveTo 5 (negate (w-15))
+          textPath description
+          fill
+          restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
      return ()
 
 
-main = drawText ("red blue") (p "black white")
+main = drawText "red blue" (p "black white")
