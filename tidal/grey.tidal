@@ -34,7 +34,7 @@ let wrap :: String -> String
               fill
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-in drawText (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+in drawText ("foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
 
 
