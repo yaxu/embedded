@@ -4,6 +4,7 @@ use strict;
 
 #undef $/;
 my ($code) = <>;
+chomp $code;
 
 my $fh;
 open($fh, ">Code.hs");
