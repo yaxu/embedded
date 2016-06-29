@@ -32,7 +32,7 @@ let drawText description pat =
               textPath description
               fill
               restore
-         rawSystem "convert" ["text.svg", "text.pdf"]
+         rawSystem "inkscape" ["--without-gui", "--export-pdf=text.svg", "text.pdf"]
 
 drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
