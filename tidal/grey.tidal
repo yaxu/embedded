@@ -6,7 +6,7 @@ import Data.Colour.Names
 import Data.Colour.SRGB
 
 
-let drawText description =
+let drawText description pat =
       do let w = 284
              h = 288
          withSVGSurface ("text.svg") 384 288 $ \surf -> do
