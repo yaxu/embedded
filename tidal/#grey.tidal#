@@ -1,0 +1,93 @@
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Graphics.Rendering.Cairo
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Process
+
+
+let wrap :: String -> [String]
+    wrap [] = []
+    wrap s = ((take 200 s) : (wrap (drop 200 s)))
+    drawlines = 
+vLines sf fn (x,y) pat cyclesPerLine nLines = 
+  sf fn x y $ \surf -> do
+    C.renderWith surf $ do 
+      C.save 
+      C.scale x (y / (fromIntegral nLines))
+      C.setOperator C.OperatorOver
+      C.setSourceRGB 0 0 0 
+      C.rectangle 0 0 1 1
+      C.fill
+      mapM_ (\x -> do C.save
+                      C.translate 0 (fromIntegral x)
+                      drawLine ((cyclesPerLine * (fromIntegral x)) ~> pat)
+                      C.restore
+            ) [0 .. (nLines - 1)]
+      C.restore 
+  where drawLine p = mapM_ renderEvent (events (density cyclesPerLine p))
+
+    drawText description pat =
+      do let w = 136
+             h = 566
+         withSVGSurface ("text.svg") w h $ \surf -> do
+            renderWith surf $ do
+              C.save 
+              C.scale (w-20) (h)
+              C.setOperator C.OperatorOver
+              C.setSourceRGB 0 0 0 
+              C.rectangle 0 0 1 1
+              C.fill
+              -- mapM_ renderEvent (events pat)
+              C.restore 
+              return ()
+              save
+              setSourceRGB 0 0 0
+              selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
+              setFontSize 12
+              rotate (pi/ 2)
+              moveTo 5 (negate (w-15))
+              textPath "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
+              fill
+              {-
+              let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
+                           [0, 10 ..]
+              mapM (\(s,n) -> do {moveTo 10 (n-(w-20)); textPath s; fill}) ls
+              -}
+              restore
+         rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
+in drawText ("test") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey red"
+
+
+wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
+
+:t rotate
+
+let tmpfn = "out.svg"
+    fn = "out.pdf"
+    vis pat = do vLines (C.withSVGSurface) tmpfn (400,400) pat 10 10
+                 rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [tmpfn]
+                 rawSystem "convert" [tmpfn, fn]
+                 return ()
+    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
+
+
+vis $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+vis $ foldEvery [3,5,7] (slow 4) $ density 16 $ "white black"
+
+do (tempName, tempHandle) <- openTempFile "." "hs"
+   hPutStr "
+   
+   
+
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Cmd
+
+
+vis "black white grey"
