@@ -46,4 +46,4 @@ drawText description pat =
      return ()
 
 
-main = drawText "red blue" ("black white" :: Pattern (Colour Double)
+main = drawText "red blue" ("black white" :: Pattern (Colour Double))
