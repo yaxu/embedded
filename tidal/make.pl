@@ -5,11 +5,11 @@ use strict;
 undef $/;
 my ($code) = <>;
 
-my $fn = open("Code.hs", "w");
+open($fh, ">Code.hs");
 
 my $escaped = quotemeta($code);
 
-print $fn qq!
+print $fh qq!
 wrap :: String -> [String]
 wrap [] = []
 wrap s = ((take 200 s) : (wrap (drop 200 s)))
@@ -42,4 +42,4 @@ drawText description pat =
 
 main = drawText "$escaped" ("black white")
 !;
-close $fn;
+close $fh;
