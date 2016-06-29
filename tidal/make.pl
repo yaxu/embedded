@@ -2,8 +2,9 @@
 
 use strict;
 
-undef $/;
+#undef $/;
 my ($code) = <>;
+
 my $fh;
 open($fh, ">Code.hs");
 
