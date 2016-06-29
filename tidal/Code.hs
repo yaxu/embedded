@@ -14,6 +14,11 @@ wrap :: String -> [String]
 wrap [] = []
 wrap s = ((take 200 s) : (wrap (drop 200 s)))
 
+drawText
+  :: CairoString string =>
+     string
+     -> Sound.Tidal.Context.Pattern (Colour Double)
+     -> IO GHC.IO.Exception.ExitCode
 drawText description pat =
   do let w = 136
          h = 566
