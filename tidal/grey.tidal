@@ -28,12 +28,12 @@ let wrap :: String -> [String]
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 20
-              moveTo 365 10
+              -- moveTo 365 10
               rotate (pi/ 2)
               let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
                            [0, 20 ..]
-              textPath description
-              fill
+              do {moveTo 365 10; textPath "hello there"; fill}
+              -- mapM (\(s,n) -> do {moveTo 365 10; textPath "hello"; fill}) ls
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 in drawText ("foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
