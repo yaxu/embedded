@@ -13,6 +13,11 @@ let tmpfn = "out.svg"
     visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
 
 
+vis $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+vis $ foldEvery [3,5,7] (slow 4) $ density 16 $ "white black"
+
+
 
 import Sound.Tidal.Vis
 import qualified Graphics.Rendering.Cairo as C 
