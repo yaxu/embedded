@@ -2,7 +2,10 @@
 
 use strict;
 
-my $code = shift @ARGV;
+my $code = <>;
+
+print $code;
+
 
 
 
