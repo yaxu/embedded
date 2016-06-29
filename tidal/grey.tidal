@@ -23,6 +23,14 @@ let drawText description =
               textPath description
               fill
               restore
+              C.save 
+              C.scale w h
+              C.setOperator C.OperatorOver
+              C.setSourceRGB 0 0 0 
+              C.rectangle 0 0 1 1
+              C.fill
+              mapM_ renderEvent (events pat)
+              C.restore 
               return ()
          rawSystem "convert" ["text.svg", "text.pdf"]
 
