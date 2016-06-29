@@ -38,7 +38,6 @@ drawText description pat =
           fill
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-     return ()
 
 
-main = drawText "red blue" (p "black white")
+main = drawText "\"red blue\"" ("red blue")
