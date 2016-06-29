@@ -34,7 +34,7 @@ drawText description pat =
           C.return ()
           C.save
           C.setSourceRGB 0 0 0
-          C.selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
+          C.selectFontFace "Terminal Dosis" C.FontSlantNormal C.FontWeightNormal
           C.setFontSize 12
           C.rotate (pi/ 2)
           C.moveTo 5 (negate (w-15))
