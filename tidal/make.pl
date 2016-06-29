@@ -2,7 +2,7 @@
 
 use strict;
 
-my $code = <>;
+my ($code) = <>;
 
 print $code;
 
