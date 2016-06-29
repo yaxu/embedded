@@ -20,6 +20,7 @@ let drawText description pat =
               mapM_ renderEvent (events pat)
               C.restore 
               return ()
+              save
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
@@ -28,8 +29,7 @@ let drawText description pat =
               fill
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-
-drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+in drawText "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
