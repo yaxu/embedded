@@ -6,13 +6,17 @@ import Data.Colour.SRGB
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
-    vis pat = vLines (C.withSVGSurface) fn (600,40) pat 1 1
-    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
-
-let vis pat = do vLines (C.withSVGSurface) tmpfn (400,400) pat 10 10
+    vis pat = do vLines (C.withSVGSurface) tmpfn (400,400) pat 10 10
                  rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [tmpfn]
                  rawSystem "convert" [tmpfn, fn]
                  return ()
+    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
+
+
+vis $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+vis $ foldEvery [3,5,7] (slow 4) $ density 16 $ "white black"
+
 
 
 import Sound.Tidal.Vis
