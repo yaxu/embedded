@@ -46,8 +46,8 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("text.svg") w h $ \surf -> do
-        renderWith surf $ do
+     withSVGSurface ("text.svg") w h \$ \\surf -> do
+        renderWith surf \$ do
           C.save 
           C.scale (w-20) (h)
           C.setOperator C.OperatorOver
