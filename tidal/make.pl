@@ -4,7 +4,7 @@ use strict;
 
 undef $/;
 my ($code) = <>;
-
+my $fh;
 open($fh, ">Code.hs");
 
 my $escaped = quotemeta($code);
