@@ -10,6 +10,21 @@ import System.Process
 let wrap :: String -> [String]
     wrap [] = []
     wrap s = ((take 200 s) : (wrap (drop 200 s)))
+    drawLines (x,y) pat cyclesPerLine nLines =
+      do C.save 
+         C.scale x (y / (fromIntegral nLines))
+         C.setOperator C.OperatorOver
+         C.setSourceRGB 0 0 0 
+         C.rectangle 0 0 1 1
+         C.fill
+         mapM_ (\x -> do C.save
+                         C.translate 0 (fromIntegral x)
+                         drawLine ((cyclesPerLine * (fromIntegral x)) ~> pat)
+                         C.restore
+               ) [0 .. (nLines - 1)]
+         C.restore
+  where drawLine p = mapM_ renderEvent (events (density cyclesPerLine p))
+
     drawText description pat =
       do let w = 136
              h = 566
