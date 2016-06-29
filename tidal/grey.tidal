@@ -34,7 +34,7 @@ let drawText description pat =
               return ()
          rawSystem "convert" ["text.svg", "text.pdf"]
 
-drawText "hello world"
+drawText "hello world" $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
