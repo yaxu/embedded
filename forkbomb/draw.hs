@@ -5,7 +5,7 @@ import System.IO
 import System.Environment
 
 w :: Int
-w = 100
+w = 400
 
 cellw = 12 :: Int
 cellh = 12 :: Int
