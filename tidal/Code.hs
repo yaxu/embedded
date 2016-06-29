@@ -46,4 +46,4 @@ drawText description pat =
      return ()
 
 
-main = drawText "red blue" ("black white" :: Sound.Tidal.Context.Pattern (Colour Double))
+main = drawText ("red blue" :: String) ("black white" :: Sound.Tidal.Context.Pattern (Colour Double))
