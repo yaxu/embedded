@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
-main = drawText "foldEvery [3,5] (slow 1.5) $ density 16 $ p \"grey black white\"" (foldEvery [3,5] (slow 1.5) $ density 16 $ p "grey black white")
+main = drawText "foldEvery [3,5] ((1/3) <~) $ density 16 $ p \"grey [lightgrey darkgrey black] white\"" (foldEvery [3,5] ((1/3) <~) $ density 16 $ p "grey [lightgrey darkgrey black] white")
