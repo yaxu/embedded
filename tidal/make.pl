@@ -21,6 +21,7 @@ import Data.Colour
 import Data.Colour.Names
 import Data.Colour.SRGB
 import System.Process
+import Sound.Tidal.Context
 
 wrap :: String -> [String]
 wrap [] = []
