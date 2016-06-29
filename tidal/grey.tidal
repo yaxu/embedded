@@ -11,9 +11,9 @@ let wrap :: String -> [String]
     wrap [] = []
     wrap s = ((take 38 s) : (wrap (drop 38 s)))
     drawText description pat =
-      do let w = 384
-             h = 288
-         withSVGSurface ("text.svg") 384 288 $ \surf -> do
+      do let w = 136
+             h = 566
+         withSVGSurface ("text.svg") w h $ \surf -> do
             renderWith surf $ do
               C.save 
               C.scale (fromIntegral h) (fromIntegral h)
