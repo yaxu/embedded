@@ -21,7 +21,6 @@ let drawText description =
               fill
               restore
               return ()
-          hClose handle
 
 
 let tmpfn = "out.svg"
