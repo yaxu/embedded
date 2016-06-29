@@ -35,7 +35,7 @@ let wrap :: String -> [String]
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
               C.fill
-              drawLines pat 16 140
+              drawLines pat 1 70
               -- mapM_ renderEvent (events pat)
               C.restore 
               return ()
@@ -54,10 +54,9 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-in drawText ("test") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+in drawText ("test") $ foldEvery [3,5] (slow 1.5) $ density 16 $ p "grey black white"
 
 
-wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
 
 :t rotate
 
