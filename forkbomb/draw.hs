@@ -13,6 +13,7 @@ cols = (w `div` cellw)
 
 main = do as <- getArgs
           handle <- openFile ((as !! 0) ++ ".txt") ReadMode
+          let text = as !! 1
           contents <- hGetContents handle
           let things = rleXY cols contents
               h = ((length contents) `div` cols) * cellh + 1
