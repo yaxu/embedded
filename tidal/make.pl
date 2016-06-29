@@ -30,7 +30,7 @@ wrap s = ((take 200 s) : (wrap (drop 200 s)))
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("text.svg") w h \$ \surf -> do
+     withSVGSurface ("text.svg") w h \$ \\surf -> do
         renderWith surf \$ do
           C.save 
           C.scale (w-20) (h)
