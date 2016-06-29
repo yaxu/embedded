@@ -4,10 +4,12 @@ import Graphics.Rendering.Cairo
 import Data.Colour
 import Data.Colour.Names
 import Data.Colour.SRGB
+import System.Process
 
 
-let wrap [] = []
-    wrap s = take 38 s ++ wrap (drop 38 s)
+let wrap :: String -> String
+    wrap [] = []
+    wrap s = (take 38 s) ++ "\n" ++ (wrap (drop 38 s))
     drawText description pat =
       do let w = 384
              h = 288
