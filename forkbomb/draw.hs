@@ -27,6 +27,7 @@ main = do as <- getArgs
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
               textPath "Hello world"
+              fill
               return ()
           hClose handle
 
