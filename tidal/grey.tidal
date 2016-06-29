@@ -39,7 +39,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
-in drawText ("test") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+in drawText ("test") $ foldEvery [3,5] (slow 2) $ density 16 $ "grey red"
 
 
 wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\""
