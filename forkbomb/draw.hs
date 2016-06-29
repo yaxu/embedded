@@ -7,8 +7,8 @@ import System.Environment
 w :: Int
 w = 100
 
-cellw = 4 :: Int
-cellh = 4 :: Int
+cellw = 12 :: Int
+cellh = 12 :: Int
 cols = (w `div` cellw)
 
 main = do as <- getArgs
