@@ -1,0 +1,25 @@
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+
+let tmpfn = "out.svg"
+    fn = "out.pdf"
+    vis pat = do vLines (C.withSVGSurface) tmpfn (400,400) pat 10 10
+                 rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [tmpfn]
+                 rawSystem "convert" [tmpfn, fn]
+                 return ()
+    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
+
+
+
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Cmd
+
+
+vis "black white grey"
