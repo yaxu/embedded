@@ -1,4 +1,14 @@
 
+module Code.hs where
+
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Graphics.Rendering.Cairo
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Process
+
 wrap :: String -> [String]
 wrap [] = []
 wrap s = ((take 200 s) : (wrap (drop 200 s)))
@@ -29,4 +39,4 @@ drawText description pat =
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
 
-main = drawText "hello" ("black white")
+main = drawText "\"black\ white\"" ("black white")
