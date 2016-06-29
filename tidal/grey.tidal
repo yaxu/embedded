@@ -16,7 +16,7 @@ let wrap :: String -> [String]
          withSVGSurface ("text.svg") w h $ \surf -> do
             renderWith surf $ do
               C.save 
-              C.scale (w-40) (h)
+              C.scale (w-20) (h)
               C.setOperator C.OperatorOver
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
