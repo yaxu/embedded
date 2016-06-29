@@ -34,7 +34,7 @@ drawText description pat =
           setFontSize 12
           rotate (pi/ 2)
           moveTo 5 (negate (w-15))
-          textPath "foldEvery [3,5] (slow 2) \$ density 16 \$ \"grey black\""
+          textPath description
           fill
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
