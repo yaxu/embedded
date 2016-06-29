@@ -1,0 +1,57 @@
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Graphics.Rendering.Cairo
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+
+
+let drawText description =
+      do let w = 284
+             h = 288
+         withSVGSurface ("text.svg") 384 288 $ \surf -> do
+            renderWith surf $ do
+              save
+              setOperator OperatorOver
+              setSourceRGB 1 1 1
+              rectangle 0 0 (fromIntegral w) (fromIntegral h)
+              fill
+              setSourceRGB 0 0 0
+              selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
+              setFontSize 12
+              moveTo 10 50
+              textPath description
+              fill
+              restore
+              return ()
+         rawSystem "convert" ["text.svg", "text.pdf"]
+
+drawText "hello world"
+
+let tmpfn = "out.svg"
+    fn = "out.pdf"
+    vis pat = do vLines (C.withSVGSurface) tmpfn (400,400) pat 10 10
+                 rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [tmpfn]
+                 rawSystem "convert" [tmpfn, fn]
+                 return ()
+    visgrid pat = vLines (C.withSVGSurface) fn (600,600) pat 10 20
+
+
+vis $ foldEvery [3,5] (slow 2) $ density 16 $ "grey black"
+
+vis $ foldEvery [3,5,7] (slow 4) $ density 16 $ "white black"
+
+do (tempName, tempHandle) <- openTempFile "." "hs"
+   hPutStr "
+   
+   
+
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Cmd
+
+
+vis "black white grey"
