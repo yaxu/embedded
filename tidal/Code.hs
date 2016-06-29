@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
-main = drawText "palindrome $ slowspread (density) [3,1.5] $ every 3 (rev) $ p \"{grey lightgrey darkgrey black lightgrey, grey black}\"" (palindrome $ slowspread (density) [3,1.5] $ every 3 (rev) $ p "{grey lightgrey darkgrey black lightgrey, grey black}")
+main = drawText "brak $ palindrome $ slowspread (density) [3,1.5] $ every 3 (rev) $ p \"{grey lightgrey darkgrey black lightgrey, grey black}\"" (brak $ palindrome $ slowspread (density) [3,1.5] $ every 3 (rev) $ p "{grey lightgrey darkgrey black lightgrey, grey black}")
