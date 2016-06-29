@@ -8,7 +8,7 @@ my ($code) = <>;
 my $fn = open("Code.hs", "w");
 
 my $escaped = quotemeta($code);
-print("escaped: $escaped\n");
+
 print $fn qq!
 wrap :: String -> [String]
 wrap [] = []
