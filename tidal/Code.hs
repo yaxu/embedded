@@ -40,7 +40,7 @@ drawText description pat =
           C.setSourceRGB 0 0 0 
           C.rectangle 0 0 1 1
           C.fill
-          drawLines pat 1 30
+          drawLines pat 1 70
           -- mapM_ renderEvent (events pat)
           C.restore 
           return ()
