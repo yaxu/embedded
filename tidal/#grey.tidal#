@@ -6,7 +6,7 @@ import Data.Colour.SRGB
 
 
 let drawText description = 
-       do withSVGSurface ("test.s) (fromIntegral w) (fromIntegral h) $ \surf -> do
+       do withSVGSurface ("test.svg") "384" " $ \surf -> do
             renderWith surf $ do
               save
               setOperator OperatorOver
