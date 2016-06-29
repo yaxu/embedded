@@ -40,4 +40,4 @@ drawText description pat =
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
 
-main = drawText "red blue" ("black white")
+main = drawText "\"red blue\"" ("black white")
