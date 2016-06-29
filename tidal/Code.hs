@@ -29,7 +29,7 @@ drawText description pat =
           C.setSourceRGB 0 0 0 
           C.rectangle 0 0 1 1
           C.fill
-          mapM_ C.renderEvent (events pat)
+          mapM_ renderEvent (events pat)
           C.restore 
           C.save
           C.setSourceRGB 0 0 0
