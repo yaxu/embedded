@@ -54,7 +54,7 @@ drawText description pat =
      rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
 
 
-main = drawText "$escaped" (p "black white")
+main = drawText "$escaped" ("black white")
 !;
 close $fh;
 
