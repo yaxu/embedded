@@ -31,7 +31,6 @@ drawText description pat =
           C.fill
           mapM_ C.renderEvent (events pat)
           C.restore 
-          C.return ()
           C.save
           C.setSourceRGB 0 0 0
           C.selectFontFace "Terminal Dosis" C.FontSlantNormal C.FontWeightNormal
