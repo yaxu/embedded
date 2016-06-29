@@ -21,7 +21,7 @@ let wrap :: String -> [String]
               C.setSourceRGB 0 0 0 
               C.rectangle 0 0 1 1
               C.fill
-              mapM_ renderEvent (events pat)
+              -- mapM_ renderEvent (events pat)
               C.restore 
               return ()
               save
