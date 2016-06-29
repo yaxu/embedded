@@ -7,7 +7,7 @@ import Data.Colour.SRGB
 import System.Process
 
 
-let wrap :: String -> String
+let wrap :: String -> [String]
     wrap [] = []
     wrap s = ((take 20 s) : (wrap (drop 38 s)))
     drawText description pat =
@@ -30,6 +30,8 @@ let wrap :: String -> String
               setFontSize 20
               moveTo 365 10
               rotate (pi/ 2)
+              let ls = zip (wrap "foldEvery [3,5] (slow 2) $ density 16 $ \"grey black\"")
+                           [0, 20 ..]
               textPath description
               fill
               restore
