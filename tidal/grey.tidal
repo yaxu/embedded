@@ -23,7 +23,7 @@ let drawText description pat =
               save
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
-              setFontSize 12
+              setFontSize 20
               moveTo 365 10
               rotate (pi/ 2)
               textPath description
