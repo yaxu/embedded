@@ -13,7 +13,7 @@ cols = (w `div` cellw)
 
 main = do as <- getArgs
           handle <- openFile ((as !! 0) ++ ".txt") ReadMode
-          let text = as !! 1
+          let description = as !! 1
           contents <- hGetContents handle
           let things = rleXY cols contents
               h = ((length contents) `div` cols) * cellh + 1
@@ -28,7 +28,7 @@ main = do as <- getArgs
               mapM_ drawThing $ filter (\(_, _, _, v) -> v == '1') things
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
-              textPath "Hello world"
+              textPath description
               fill
               restore
               return ()
