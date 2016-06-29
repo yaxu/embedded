@@ -19,11 +19,13 @@ let drawText description =
               setSourceRGB 0 0 0
               selectFontFace "Terminal Dosis" FontSlantNormal FontWeightNormal
               setFontSize 12
+              moveTo 10 50
               textPath description
               fill
               restore
               return ()
 
+drawText "hello world"
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
