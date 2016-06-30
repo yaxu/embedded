@@ -45,8 +45,8 @@ let light :: Shape
 lightServer
 l1 <- lightStream
 
-l1 $ red "0*16" # green "0" # blue sine1
-
+l1 $ red "[0 0.5]*16" # green (slow 2 saw1) # blue sine1
+l1 $ red "0"
 output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings
 let to256 f = show $ floor (f * 255)
 
