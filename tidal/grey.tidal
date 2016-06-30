@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=" ++ fn ++ ".pdf", fn ++ ".svg"]
-in drawText "text" "test" $ every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p "white lightgrey"
+in drawText "text" "test" $ slowspread (<~) [0, 0.25, 0.5,0.75] $ (every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p "white [lightgrey black]")
 
 
 
