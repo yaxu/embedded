@@ -23,7 +23,7 @@ let light :: Shape
       namedParams = False,
       preamble = []
       }
-    lightBackend = do s <- makeConnection "127.0.0.1" 909 dirtSlang
+    lightBackend = do s <- makeConnection "127.0.0.1" 909 lightSlang
                       return $ Backend s (\_ _ _ -> return ())
     lightServer = do s <- udpServer "127.0.0.1" 9099
                      output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings
