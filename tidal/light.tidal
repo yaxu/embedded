@@ -37,9 +37,8 @@ let light :: Shape
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
          return ()
-    act m output =
-      do putStrLn $ "message: " ++ show m
-         return ()
+    act m output = do putStrLn $ "message: " ++ show m
+                      return ()
     to256 f = show $ floor (f * 255)
     lightStream = do backend <- dirtBackend
                      stream backend dirt
