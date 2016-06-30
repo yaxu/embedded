@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=" ++ fn ++ ".pdf", fn ++ ".svg"]
-in drawText "text" "test" $ (flip darken) <$> (density 8 $ iter 4 $ (every 2 (density 1.5) $ p "white [lightgrey ~ black]*3")) <*> sine1
+in drawText "text" "test" $ palindrome $ iter 16 $ (flip darken)<$>"white*32"<*>sine1
 
 
 
