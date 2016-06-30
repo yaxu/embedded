@@ -1,3 +1,4 @@
+import Sound.Tidal.OscStream
 
 let light :: Shape
     light = Shape {params = [red_p,
