@@ -32,7 +32,7 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("c.svg") w h $ \surf -> do
+     withSVGSurface ("d.svg") w h $ \surf -> do
         renderWith surf $ do
           C.save 
           C.scale (w-20) (h)
@@ -53,6 +53,6 @@ drawText description pat =
           textPath description
           fill
           restore
-     rawSystem "inkscape" ["--without-gui", "--export-pdf=c.pdf", "c.svg"]
+     rawSystem "inkscape" ["--without-gui", "--export-pdf=d.pdf", "d.svg"]
 
-main = drawText "slowspread (<~) [0, 0.25, 0.5,0.75] $ (every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p \"white [lightgrey black]\")" (slowspread (<~) [0, 0.25, 0.5,0.75] $ (every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p "white [lightgrey black]"))
+main = drawText "blend 0.5 <$> (slowspread (~>) [0, 0.25, 0.5,0.75] $ (every 2 (density 1.5) $ every 3 (darken 0.3 <$>) $ p \"white [lightgrey ~ black]\")) <*> \"lightgrey black lightgrey\"" (blend 0.5 <$> (slowspread (~>) [0, 0.25, 0.5,0.75] $ (every 2 (density 1.5) $ every 3 (darken 0.3 <$>) $ p "white [lightgrey ~ black]")) <*> "lightgrey black lightgrey")
