@@ -32,7 +32,7 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("f.svg") w h $ \surf -> do
+     withSVGSurface ("g.svg") w h $ \surf -> do
         renderWith surf $ do
           C.save 
           C.scale (w-20) (h)
@@ -53,6 +53,6 @@ drawText description pat =
           textPath description
           fill
           restore
-     rawSystem "inkscape" ["--without-gui", "--export-pdf=f.pdf", "f.svg"]
+     rawSystem "inkscape" ["--without-gui", "--export-pdf=g.pdf", "g.svg"]
 
-main = drawText "palindrome $ iter 16 $ (flip darken)<$>p\"white*32\"<*>sine1" (palindrome $ iter 16 $ (flip darken)<$>p"white*32"<*>sine1)
+main = drawText "(flip darken)<$>p\"white*64\"<*>((*)<$>(slow 1.1 sine1)<*>(density 1.1 sine1))" ((flip darken)<$>p"white*64"<*>((*)<$>(slow 1.1 sine1)<*>(density 1.1 sine1)))

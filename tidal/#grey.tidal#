@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=" ++ fn ++ ".pdf", fn ++ ".svg"]
-in drawText "text" "test" $ (flip darken)<$>p"white*64"<*>((*)<$>(slow 1.1 sine1)<*>(density 1.1 sine1))
+in drawText "text" "test" $ foldEvery [3,5] (0.125<~) $ $ (flip darken)<$>p"white*64"<*>((*)<$>(slow 1.1 sine1)<*>(density 1.1 sine1))
 
 let iter n p = slowcat $ map (\i -> ((fromIntegral i)%(fromIntegral n)) <~ p) [0 .. (n-1)]
     iter' n p = slowcat $ map (\i -> ((fromIntegral i)%(fromIntegral n)) ~> p) [0 .. (n-1)]
