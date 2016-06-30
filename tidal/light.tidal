@@ -40,8 +40,8 @@ let light :: Shape
     act m output = do putStrLn $ "message: " ++ show m
                       return ()
     to256 f = show $ floor (f * 255)
-    lightStream = do backend <- dirtBackend
-                     stream backend dirt
+    lightStream = do backend <- lightBackend
+                     stream backend light
 
 lightServer
 
@@ -54,7 +54,7 @@ let to256 f = show $ floor (f * 255)
 
 SP.send output $ B.pack $ "0r\r"
 
-l1 $ red "0.5"
+l1 $ red "0.5*8"
 
 lightServer
 
