@@ -36,10 +36,8 @@ let light :: Shape
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
          return ()
-    act ( Just (Message "/light" [ASCII_String b])) output =
-      do SP.send output $ B.pack $ to256 r ++ "r\r"
-         SP.send output $ B.pack $ to256 g ++ "g\r"
-         SP.send output $ B.pack $ to256 b ++ "b\r"
+    act ( Just (Message "/light" [ASCII_String s])) output =
+      do SP.send output $ B.pack $ s ++ "r"
          return ()
     act m output = do putStrLn $ "message: " ++ show m
                       return ()
