@@ -58,7 +58,6 @@ in drawText ("test") $ iter' 5 $ every 2 (density 16) $ p "{white black, grey be
 
 
 
-:t rotate
 
 let tmpfn = "out.svg"
     fn = "out.pdf"
