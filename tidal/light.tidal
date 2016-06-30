@@ -39,5 +39,10 @@ let light :: Shape
     act _ _ = return ()
     to256 f = show $ floor (f * 255)
 
+let dirtStream = do backend <- dirtBackend
+                    stream backend dirt
+
+
 lightServer
 
+d1 <- 
