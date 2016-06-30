@@ -1,0 +1,43 @@
+import Sound.Tidal.OscStream
+
+let light :: Shape
+    light = Shape {params = [red_p,
+                             green_p,
+                             blue_p
+                            ],
+                   cpsStamp = False,
+                   latency = 0.04
+                  }
+    (red, red_p)     = pF "red"   (Just 0)
+    (green, green_p) = pF "green" (Just 0)
+    (blue, blue_p)   = pF "blue"  (Just 0)
+    lightSlang = OscSlang {
+      path = "/light",
+      timestamp = NoStamp,
+      namedParams = False,
+      preamble = []
+      }
+    lightBackend = do s <- makeConnection "127.0.0.1" 909 dirtSlang
+                      return $ Backend s (\_ _ _ -> return ())
+
+
+let lightServer = do s <- udpServer "127.0.0.1" 909
+                     output <- openSerial "/dev/ttyUSB0" defaultSerialSettings
+                     forkIO $ lightLoop s output
+    lightLoop s output = do m <- recvMessage s
+                            act m output
+                            lightLoop s output
+    act (Just (Message "/setcps" [Float x])) cps =    
+    act _ _ = return ()
+
+
+import System.Hardware.Serialport
+import Control.Monad
+import Control.Monad.Loops
+import qualified Data.ByteString.Char8 as B
+ 
+do 
+   send s $ B.pack "255r\r"
+   send s $ B.pack "0g\r"
+   send s $ B.pack "255b\r"
+   closeSerial s
