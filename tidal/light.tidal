@@ -13,11 +13,11 @@ let light :: Shape
 (blue, blue_p)   = pF "blue"  (Just 0)
 
 dirtSlang = OscSlang {
-  path = "/play",
-  timestamp = MessageStamp,
+  path = "/light",
+  timestamp = NoStamp,
   namedParams = False,
   preamble = []
-  }
+}
 
 superDirtSlang = dirtSlang { timestamp = BundleStamp, path = "/play2", namedParams = True }
 
