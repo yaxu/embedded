@@ -27,7 +27,7 @@ let lightServer = do s <- udpServer "127.0.0.1" 909
     lightLoop s output = do m <- recvMessage s
                             act m output
                             lightLoop s output
-    act (Just (Message "/setcps" [Float x])) cps =    
+    act ( Just (Message "/setcps" [Float x])) cps =    
     act _ _ = return ()
 
 
