@@ -43,9 +43,11 @@ let light :: Shape
     lightStream = do backend <- dirtBackend
                      stream backend dirt
 
+lightServer
+
 l1 <- lightStream
 
-l1 $ red "1"
+l1 $ red "1" # green "1" # blue "1"
 
 output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings
 let to256 f = show $ floor (f * 255)
