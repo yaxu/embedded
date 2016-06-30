@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=" ++ fn ++ ".pdf", fn ++ ".svg"]
-in drawText "text" "test" $ blend 0.5<$>(slowspread(~>)[0,0.25,0.5,0.75]$(every 2 (density 1.5) $ every 3 (darken 0.3 <$>) $ p "white [lightgrey ~ black]")) <*> p "lightgrey black lightgrey"
+in drawText "text" "test" $ density 1.5 $ (flip darken) <$> (density 8 $ iter 4 $ (every 2 (density 1.5) $ p "white [lightgrey ~ black]*3")) <*> sine1
 
 
 

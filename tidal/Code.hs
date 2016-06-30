@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=d.pdf", "d.svg"]
 
-main = drawText "blend 0.5<$>(slowspread(~>)[0,0.25,0.5,0.75]$(every 2(density 1.5)$p \"white [lightgrey ~ black]\"))<*>p \"lightgrey black lightgrey\"" (blend 0.5<$>(slowspread(~>)[0,0.25,0.5,0.75]$(every 2(density 1.5)$p "white [lightgrey ~ black]"))<*>p "lightgrey black lightgrey")
+main = drawText "(flip darken) <$> (density 8 $ iter 4 $ (every 2 (density 1.5) $ p \"white [lightgrey ~ black]*3\")) <*> sine1" ((flip darken) <$> (density 8 $ iter 4 $ (every 2 (density 1.5) $ p "white [lightgrey ~ black]*3")) <*> sine1)
