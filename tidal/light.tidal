@@ -14,6 +14,7 @@ let light :: Shape
                    cpsStamp = False,
                    latency = 0.04
                   }
+    (rgb, rgb_p)     = pF "rgb"   (Just 0)
     (red, red_p)     = pF "red"   (Just 0)
     (green, green_p) = pF "green" (Just 0)
     (blue, blue_p)   = pF "blue"  (Just 0)
