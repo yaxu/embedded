@@ -20,3 +20,9 @@ let light :: Shape
     lightBackend = do s <- makeConnection "127.0.0.1" 909 dirtSlang
                       return $ Backend s (\_ _ _ -> return ())
 
+
+let lightServer = do s <- udpServer "127.0.0.1" 909
+                     forkIO $ lightLoop s cps
+    lightLoop s = do m <- recvMessage s
+                     act m
+                     lightLoop s 
