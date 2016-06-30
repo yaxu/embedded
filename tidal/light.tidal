@@ -48,3 +48,4 @@ l1 $ red "0.5"
 lightServer
 
 
+((\c -> redChannel ) toSRGB) <$> (p "red green" :: Pattern (ColourD))
