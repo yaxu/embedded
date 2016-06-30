@@ -32,8 +32,8 @@ let wrap :: String -> [String]
               C.save 
               C.scale (w-20) (h)
               C.setOperator C.OperatorOver
-              C.setSourceRGB 0 0 0 
-              C.rectangle 0 0 1 1
+              --C.setSourceRGB 0 0 0 
+              --C.rectangle 0 0 1 1
               C.fill
               drawLines pat 1 70
               -- mapM_ renderEvent (events pat)
@@ -54,7 +54,7 @@ let wrap :: String -> [String]
               -}
               restore
          rawSystem "inkscape" ["--without-gui", "--export-pdf=" ++ fn ++ ".pdf", fn ++ ".svg"]
-in drawText "a" "test" $ iter' 5 $ every 2 (density 16) $ p "{white black, grey beige lightgrey darkgrey grey black}"
+in drawText "text" "test" $ every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p "white lightgrey"
 
 
 

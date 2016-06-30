@@ -3,6 +3,7 @@
 use strict;
 
 #undef $/;
+my $fn = shift @ARGV;
 my ($code) = <>;
 chomp $code;
 
@@ -46,14 +47,14 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("text.svg") w h \$ \\surf -> do
+     withSVGSurface ("$fn.svg") w h \$ \\surf -> do
         renderWith surf \$ do
           C.save 
           C.scale (w-20) (h)
           C.setOperator C.OperatorOver
-          C.setSourceRGB 0 0 0 
-          C.rectangle 0 0 1 1
-          C.fill
+          --C.setSourceRGB 0 0 0 
+          --C.rectangle 0 0 1 1
+          --C.fill
           drawLines pat 1 70
           -- mapM_ renderEvent (events pat)
           C.restore 
@@ -67,7 +68,7 @@ drawText description pat =
           textPath description
           fill
           restore
-     rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
+     rawSystem "inkscape" ["--without-gui", "--export-pdf=$fn.pdf", "$fn.svg"]
 
 main = drawText "$escaped" ($code)
 !;

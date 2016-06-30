@@ -32,14 +32,14 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("text.svg") w h $ \surf -> do
+     withSVGSurface ("b.svg") w h $ \surf -> do
         renderWith surf $ do
           C.save 
           C.scale (w-20) (h)
           C.setOperator C.OperatorOver
-          C.setSourceRGB 0 0 0 
-          C.rectangle 0 0 1 1
-          C.fill
+          --C.setSourceRGB 0 0 0 
+          --C.rectangle 0 0 1 1
+          --C.fill
           drawLines pat 1 70
           -- mapM_ renderEvent (events pat)
           C.restore 
@@ -53,6 +53,6 @@ drawText description pat =
           textPath description
           fill
           restore
-     rawSystem "inkscape" ["--without-gui", "--export-pdf=text.pdf", "text.svg"]
+     rawSystem "inkscape" ["--without-gui", "--export-pdf=b.pdf", "b.svg"]
 
-main = drawText "iter' 5 $ every 2 (density 16) $ p \"{white black, grey beige lightgrey darkgrey grey black}\"" (iter' 5 $ every 2 (density 16) $ p "{white black, grey beige lightgrey darkgrey grey black}")
+main = drawText "every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p \"white lightgrey\"" (every 2 (density 16) $ every 3 (darken 0.3 <$>) $ p "white lightgrey")
