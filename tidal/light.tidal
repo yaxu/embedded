@@ -41,7 +41,9 @@ let light :: Shape
     lightStream = do backend <- dirtBackend
                      stream backend dirt
 
+l1 <- lightStream
+
+l1 $ red "0.5"
 
 lightServer
 
-d1 <- 
