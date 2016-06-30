@@ -26,3 +26,12 @@ let lightServer = do s <- udpServer "127.0.0.1" 909
     lightLoop s = do m <- recvMessage s
                      act m
                      lightLoop s 
+
+import System.Hardware.Serialport
+import Control.Monad
+import Control.Monad.Loops
+import qualified Data.ByteString.Char8 as B
+ 
+do s <- openSerial "/dev/ttyUSB0" defaultSerialSettings
+   send s $ B.pack "AT\r"
+
