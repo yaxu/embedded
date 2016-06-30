@@ -33,5 +33,7 @@ import Control.Monad.Loops
 import qualified Data.ByteString.Char8 as B
  
 do s <- openSerial "/dev/ttyUSB0" defaultSerialSettings
-   send s $ B.pack "AT\r"
-
+   send s $ B.pack "255r\r"
+   send s $ B.pack "0g\r"
+   send s $ B.pack "255b\r"
+   closeSerial s
