@@ -26,7 +26,7 @@ let light :: Shape
     lightBackend = do s <- makeConnection "127.0.0.1" 9099 lightSlang
                       return $ Backend s (\_ _ _ -> return ())
     lightServer = do s <- udpServer "127.0.0.1" 9099
-                     output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings
+                     output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings {commSpeed = CS57600}
                      forkIO $ lightLoop s output
     lightLoop s output = do m <- recvMessage s
                             act m output
