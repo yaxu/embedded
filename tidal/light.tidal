@@ -10,7 +10,7 @@ import Data.Colour.Names
 
 let light :: Shape
     light = Shape {params = [s_p,
-                             pan_p,
+                             pan_p,Float
                              begin_p,
                              end_p
                              ],
@@ -31,7 +31,7 @@ let light :: Shape
     lightLoop s output = do m <- recvMessage s
                             act m output
                             lightLoop s output
-    act ( Just (Message "/light" [Float r, Float g, Float b])) output =
+    act (Just (Message "/light" [Float cps', String s', Float begin', Float end'])) output =
       do SP.send output $ B.pack $ to256 r ++ "r\r"
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
@@ -45,6 +45,7 @@ let light :: Shape
     lightStream = do backend <- lightBackend
                      stream backend light
     c2rgb pat = ((\c -> (to256 $ channelRed c) ++ "r" ++ (to256 $ channelGreen c) ++ "g" ++ (to256 $ channelBlue c) ++ "b") . toSRGB) <$> pat
+    s2rgb pat = ((\c -> (to256 $ channelRed c) ++ "r" ++ (to256 $ channelGreen c) ++ "g" ++ (to256 $ channelBlue c) ++ "b") . toSRGB . stringToColour) <$> pat
 
 lightServer
 l1 <- lightStream
