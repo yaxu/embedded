@@ -49,11 +49,11 @@ let light :: Shape
     c2rgb = ((\c -> (to256 $ channelRed c) ++ "r" ++ (to256 $ channelGreen c) ++ "g" ++ (to256 $ channelBlue c) ++ "b") . toSRGB)
     s2rgb = ((\c -> (channelRed c, channelGreen c, channelBlue c)) . toSRGB . stringToColour)
 
-let sendLeft r g b 0 = return ()
-    sendLeft r g b l = do SP.send output $ B.pack $ to256 r ++ "r\r"
-                          SP.send output $ B.pack $ to256 g ++ "g\r"
-                          SP.send output $ B.pack $ to256 b ++ "b\r"
-                          SP.send output $ B.pack $ to256 l ++ "l\r"
+let sendLeft _ _ _ _ 0 = return ()
+    sendLeft output r g b l = do SP.send output $ B.pack $ to256 r ++ "r\r"
+                                 SP.send output $ B.pack $ to256 g ++ "g\r"
+                                 SP.send output $ B.pack $ to256 b ++ "b\r"
+                                 SP.send output $ B.pack $ to256 l ++ "l\r"
     sendRight r g b 0 = return ()
     sendRight r g b l = do SP.send output $ B.pack $ to256 r ++ "R\r"
                            SP.send output $ B.pack $ to256 g ++ "G\r"
