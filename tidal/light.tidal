@@ -35,8 +35,8 @@ let light :: Shape
       do let (r,g,b) = s2rgb $ show s'
          leftch = cos((pi / 2) * pan')
          rightch = sin((pi / 2) * pan')
-         sendLeft r g b leftch
-         sendRight r g b rightch
+         sendLeft output r g b leftch
+         sendRight output r g b rightch
          return ()
     act ( Just (Message "/lightrgb" [ASCII_String s])) output =
       do SP.send output $ B.pack $ (show s) ++ "\r"
