@@ -35,7 +35,6 @@ let light :: Shape
       do let (r,g,b) = s2rgb $ show s'
              leftch = cos((pi / 2) * pan')
              rightch = sin((pi / 2) * pan')
-         putStrLn $ "l: " ++ show leftch ++ "r: " ++ show rightch
          sendLeft output r g b leftch
          sendRight output r g b rightch
          return ()
