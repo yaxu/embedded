@@ -32,7 +32,7 @@ let light :: Shape
                             act m output
                             lightLoop s output
     act (Just (Message "/light" [Float cps', ASCII_String s', Float begin', Float end'])) output =
-      do let (r,g,b) = s2rgb s'
+      do let (r,g,b) = s2rgb $ show s'
              l = 1
          SP.send output $ B.pack $ to256 r ++ "r\r"
          SP.send output $ B.pack $ to256 g ++ "g\r"
