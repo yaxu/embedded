@@ -10,7 +10,7 @@ import Data.Colour.Names
 
 let light :: Shape
     light = Shape {params = [s_p,
-                             pan_p,Float
+                             pan_p,
                              begin_p,
                              end_p
                              ],
@@ -32,7 +32,8 @@ let light :: Shape
                             act m output
                             lightLoop s output
     act (Just (Message "/light" [Float cps', String s', Float begin', Float end'])) output =
-      do let (r,g,b) = s2rg
+      do let (r,g,b) = s2rgb s'
+             l = 
          SP.send output $ B.pack $ to256 r ++ "r\r"
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
