@@ -35,6 +35,7 @@ let light :: Shape
       do SP.send output $ B.pack $ to256 r ++ "r\r"
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
+         SP.send output $ B.pack $ to256 l ++ "l\r"
          return ()
     act ( Just (Message "/lightrgb" [ASCII_String s])) output =
       do SP.send output $ B.pack $ (show s) ++ "\r"
