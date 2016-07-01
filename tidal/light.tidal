@@ -53,12 +53,12 @@ let sendLeft r g b 0 = return ()
     sendLeft r g b l = do SP.send output $ B.pack $ to256 r ++ "r\r"
                           SP.send output $ B.pack $ to256 g ++ "g\r"
                           SP.send output $ B.pack $ to256 b ++ "b\r"
-                          SP.send output $ B.pack $ to256 leftch ++ "l\r"
+                          SP.send output $ B.pack $ to256 l ++ "l\r"
     sendRight r g b 0 = return ()
     sendRight r g b l = do SP.send output $ B.pack $ to256 r ++ "R\r"
                            SP.send output $ B.pack $ to256 g ++ "G\r"
                            SP.send output $ B.pack $ to256 b ++ "B\r"
-                           SP.send output $ B.pack $ to256 leftch ++ "L\r"
+                           SP.send output $ B.pack $ to256 l ++ "L\r"
 
 
 s2rgb <$> (p "hello" :: Pattern String)
