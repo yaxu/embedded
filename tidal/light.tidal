@@ -12,7 +12,7 @@ let light :: Shape
     light = Shape {params = [rgb_p,
                              pan_p
                              ],
-                   cpsStamp = False,
+                   cpsStamp = True,
                    latency = 0.04
                   }
     (rgb, rgb_p)     = pS "rgb"   (Nothing)
