@@ -69,6 +69,8 @@ let x1 p = d1 p >> l1 p
 x1 $ jux (rev . density 2) $ sound "bd cp sn:2 bd*8"
   # pan sine1
 
+x1 silence
+
 l1 $ s "orange*8" # pan (slow 4 sine1)
 l1 silence
 l1 $ s "red green" # pan "0"
