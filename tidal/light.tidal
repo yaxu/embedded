@@ -9,16 +9,16 @@ import Data.Colour.SRGB
 import Data.Colour.Names
 
 let light :: Shape
-    light = Shape {params = [rgbl_p],
+    light = Shape {params = [rgb_p],
                    cpsStamp = False,
                    latency = 0.04
                   }
-    (rgbl, rgbl_p)     = pS "rgbl"   (Nothing)
+    (rgb, rgb_p)     = pS "rgb"   (Nothing)
     (red, red_p)     = pF "red"   (Just 0)
     (green, green_p) = pF "green" (Just 0)
     (blue, blue_p)   = pF "blue"  (Just 0)
     lightSlang = OscSlang {
-      path = "/lightrgbl",
+      path = "/lightrgb",
       timestamp = NoStamp,
       namedParams = False,
       preamble = []
@@ -36,7 +36,7 @@ let light :: Shape
          SP.send output $ B.pack $ to256 g ++ "g\r"
          SP.send output $ B.pack $ to256 b ++ "b\r"
          return ()
-    act ( Just (Message "/lightrgbl" [ASCII_String s])) output =
+    act ( Just (Message "/lightrgb" [ASCII_String s])) output =
       do SP.send output $ B.pack $ (show s) ++ "\r"
          return ()
     act m output = do putStrLn $ "message: " ++ show m
@@ -49,8 +49,8 @@ let light :: Shape
 lightServer
 l1 <- lightStream
 
-l1 $ rgbl $ c2rgb  $ (p "{purple pink, orange blue green}" :: Pattern ColourD)
-l1 $ rgbl "x"
+l1 $ rgb $ c2rgb  $ (p "{purple pink, orange blue green}" :: Pattern ColourD)
+l1 $ rgb "x"
 c2rgb red
 
 l1 silence
