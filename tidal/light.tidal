@@ -10,7 +10,9 @@ import Data.Colour.Names
 
 let light :: Shape
     light = Shape {params = [rgb_p,
-                             pan_p
+                             pan_p,
+                             begin_p,
+                             end_p
                              ],
                    cpsStamp = True,
                    latency = 0.04
