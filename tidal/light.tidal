@@ -65,6 +65,8 @@ let light :: Shape
 lightServer
 l1 <- lightStream
 
+l1 $ s "2"
+
 l1 $ s "red green" # pan "0"
 
 l1 $ rgb $ c2rgb  $ (p "{purple pink, orange blue green}" :: Pattern ColourD)
