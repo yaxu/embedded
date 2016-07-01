@@ -35,7 +35,7 @@ let light :: Shape
       do let (r,g,b) = s2rgb $ show s'
              leftch = cos((pi / 2) * pan')
              rightch = sin((pi / 2) * pan')
-         putStrLn $ "l: " ++ leftch ++ "r: " ++ rightch
+         putStrLn $ "l: " ++ show leftch ++ "r: " ++ show rightch
          sendLeft output r g b leftch
          sendRight output r g b rightch
          return ()
@@ -59,14 +59,14 @@ let light :: Shape
     sendRight output r g b l = do SP.send output $ B.pack $ to256 r ++ "R\r"
                                   SP.send output $ B.pack $ to256 g ++ "G\r"
                                   SP.send output $ B.pack $ to256 b ++ "B\r"
-                                  SP.send output $ B.pack $ to256 l ++ "L\r"
+                                  SP.send output $ B.pack $ to256 l ++ "L\r"n
                                   return ()
 
 lightServer
 l1 <- lightStream
 
 l1 $ s "orange*8" # pan (slow 4 sine1)
-
+l1 silence
 l1 $ s "red green" # pan "0"
 
 l1 $ rgb $ c2rgb  $ (p "{purple pink, orange blue green}" :: Pattern ColourD)
