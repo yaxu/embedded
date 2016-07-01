@@ -58,7 +58,7 @@ let light :: Shape
     sendRight output r g b l = do SP.send output $ B.pack $ to256 r ++ "R\r"
                                   SP.send output $ B.pack $ to256 g ++ "G\r"
                                   SP.send output $ B.pack $ to256 b ++ "B\r"
-                                  SP.send output $ B.pack $ to256 l ++ "L\r"n
+                                  SP.send output $ B.pack $ to256 l ++ "L\r"
                                   return ()
 
 lightServer
