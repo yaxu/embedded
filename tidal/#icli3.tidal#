@@ -7,8 +7,9 @@ x1 $ sometimes (# speed "2") $ jux rev $ slowspread (chop) [16,32,128] $ every 3
 
 x2 $ (chop 16 $ s "jungbass*2") # n (irand 16)
 
-solo $ 
-  x1 $ n "40 52" # s "xx"
+x1 $ slow 4 $ jux rev $ chop 8 $ n (offadd 0.25 12 $ offadd 0.125 7 "40 52 57 37(3,8)") # s "xx"
+  # cutoff (slow 4 $ scale 100 2000 sine1)
+  # resonance "0.2"
 
 
 
