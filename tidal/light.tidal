@@ -9,9 +9,9 @@ import Data.Colour.SRGB
 import Data.Colour.Names
 import Control.Concurrent.MVar
 
-data Sound = Sound {rS :: Double,
-                    gS :: Double,
-                    bS :: Double,
+data Sound = Sound {rS :: Float,
+                    gS :: Float,
+                    bS :: Float,
                     panS :: Float,
                     durS :: Int,
                     ageS :: Int
