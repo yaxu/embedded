@@ -14,6 +14,10 @@ x1 $ jux (iter 4) $ sound "bd8:4*3 sn:2"
 
 hush
 
+x1 $ s "bd*5"
+
+hush
+
 x1 $ slow 4 $ jux rev $ striate 32 $ s "sn" # n "51"
   # dur "0.1"
 
