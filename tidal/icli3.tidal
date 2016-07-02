@@ -13,8 +13,8 @@ x1 $ jux rev $ stack [slow 4 $ chop 8 $ n (offadd 0.25 12 $ offadd 0.125 7 "40 5
    slowspread (chop) [16,32,128,64] $ sound "drum [sd8*2 bd*8]"
    ]
 
-d2 $ (slow 4 $ jux (iter 4) $ rev $ slow 8 $ striate 32 $ sound "bev*4"
-  # speed "0.75")
+d2 $ degradeBy 0.8 $ (slow 4 $ jux (iter 4) $ rev $ slow 8 $ striate 32 $ sound "bev*4"
+  # speed "0.75") # accelerate "-5"
 
   
 
