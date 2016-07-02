@@ -1,5 +1,7 @@
 cps 0.715
 
+d1 $ sound "numbers"
+
 d1 $ runWith 4 (density 2) $ iter 4 $ every 3 (# speed "2") $ every 2 rev $ n "0 [3 2] [~ 4] [~ ~ 2]" # s "voodoo"
   # gain "1.1"
 
