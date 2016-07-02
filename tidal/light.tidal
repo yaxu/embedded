@@ -15,7 +15,7 @@ let light :: Shape
                              end_p
                              ],
                    cpsStamp = True,
-                   latency = 0.04
+                   latency = 0.2
                   }
     lightSlang = OscSlang {
       path = "/lightrgb",
@@ -77,7 +77,7 @@ l1 $ s "orange*8" # pan (slow 4 sine1)
 l1 silence
 l1 $ s "red green" # pan "0"
 
-l1 $ rgb $ c2rgb  $ (p "{purple pink, orange blue green}" :: Pattern ColourD)
+l1 $ s (p "{purple pink, orange blue green}" :: Pattern ColourD)
 l1 $ rgb "x"
 c2rgb red
 
@@ -85,6 +85,8 @@ l1 silence
 l1 $ red "[0 0.1]*16" # green (slow 2 saw1) # blue (slow 4 sine1)
   
 l1 $ red "0"
+
+x1 $ sound "bd 0 0 0"
 
 output <- SP.openSerial "/dev/ttyUSB0" SP.defaultSerialSettings
 let to256 f = show $ floor (f * 255)
