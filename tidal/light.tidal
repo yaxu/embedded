@@ -6,8 +6,6 @@ import Light
 
 lightServer
 l1 <- lightStream
-let x1 p = d1 p >> l1 p
-let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,x1]
 
 x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
   [vowel "a e i",
@@ -18,8 +16,13 @@ x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
 
 x1 $ sound "bd8:4*3 cp [sn:2 wobble*2] "
 
-x2 $ sound "bd*8 bd8*8"
+cps 0.7
 
+x2 $ (chop 32 $ jux (iter 4) $ sound "[bd*16 sn*8,cp8:3*3]")
+  #nudge (slow 4 sine1)
+
+l1 $ s "[bd sn ~ ~]"
+  # dur "0.5"
 
 hush
 
