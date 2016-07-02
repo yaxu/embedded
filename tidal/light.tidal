@@ -20,8 +20,6 @@ data Sound = Sound {rS :: Float,
 
 mv <- startQueue
 
-do s <- takeMVar mv
-   putMVar mv ((Sound 0 0 0 0 5 0):s)
 
 :t withMVar
 
@@ -86,6 +84,8 @@ let light :: Shape
                      threadDelay (1000000 `div` 3)
                      putStrLn $ "left: " ++ (show $ length sounds')
                      runQueue sM
+    addQueue sM newSound = do s <- takeMVar mv
+                           putMVar mv (newSound:s)
 
 lightServer
 l1 <- lightStream
