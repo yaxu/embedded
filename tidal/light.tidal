@@ -13,8 +13,8 @@ data Sound = Sound {rS :: Float,
                     gS :: Float,
                     bS :: Float,
                     panS :: Float,
-                    dur :: Int,
-                    age :: Int
+                    durS :: Int,
+                    ageS :: Int
                    }
 
 let light :: Shape
