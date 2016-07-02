@@ -13,11 +13,6 @@ x1 $ jux (iter 4) $ sound "bd8:4*3 sn:2"
   # dur "0.1"
 
 
-l2 $ sound "cp"
-  # nudge "0.13"
-
-d2 $ sound "cp"
-
 
 hush
 
