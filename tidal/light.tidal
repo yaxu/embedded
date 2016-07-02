@@ -101,6 +101,7 @@ let light :: Shape
             rightch = sin((pi / 2) * panS s)
             l = ((rS s)*leftch, (gS s)*leftch, (bS s)*leftch)
             r = ((rS s)*rightch, (gS s)*rightch, (bS s)*rightch)
+            age = (fromIntegral $ ageS s) / (fromIntegral $ durS s)
     maximum' [] = 0
     maximum' xs = maximum xs
 
