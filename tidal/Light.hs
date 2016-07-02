@@ -112,8 +112,9 @@ splitSound s = (l, r)
 maximum' [] = 0
 maximum' xs = maximum xs
 
-stringToColour' ('b':'d':_) = red
-stringToColour' ('c':'p':_) = green
+stringToColour' ('b':'d':_) = blue
+stringToColour' ('c':'p':_) = yellow
 stringToColour' ('k':'u':'r':'t':_) = blue
-stringToColour' ('s':'n':_) = blue
+stringToColour' ('s':'n':_) = green
+stringToColour' ('c':'l':'a':'u':'s':_) = red
 stringToColour' s = stringToColour s
