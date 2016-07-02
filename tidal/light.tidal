@@ -20,8 +20,8 @@ data Sound = Sound {rS :: Float,
                     panS :: Float,
                     durS :: Int,
                     ageS :: Int,
-                    beginS :: Int,
-                    endS :: Int
+                    beginS :: Float,
+                    endS :: Float
                    }
 
 let fps = 100
