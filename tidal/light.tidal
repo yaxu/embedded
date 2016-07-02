@@ -22,7 +22,7 @@ data Sound = Sound {rS :: Float,
                     ageS :: Int
                    }
 
-let fps = 30
+let fps = 60
     light :: Shape
     light = Shape {params = [s_p,
                              pan_p,
@@ -113,7 +113,9 @@ l1 <- lightStream
 let x1 p = d1 p >> l1 p
 
 x1 silence
-x1 $ slow 4 $ jux (rev) $ sound "bd ~ sn:2 bd*8"
+
+x1 $ slow 4 $ striate 4 $ jux (rev) $ sound "bd ~ sn:2 bd*8"
+  # dur "0.08"
 
 
 x1 $ s "cp bd"
