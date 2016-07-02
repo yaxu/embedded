@@ -11,7 +11,8 @@ let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d
 
 x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
   [vowel "a e i",
-   vowel "i o [u e]"
+   vowel "i o [u e]",
+   speed "1 2 ~ 3"
    ]
   # dur "0.03"
 
