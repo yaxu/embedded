@@ -19,7 +19,7 @@ data Sound = Sound {rS :: Float,
 let startQueue = do sM <- newMVar []
                     forkIO $ runQueue sM
     runQueue sM = do sounds <- takeMVar sM
-                     let sounds' = filter (\s -> durS s > ageS s) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
+                     let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
                      putMVar sM sounds'
                      threadDelay (1000000 / 3)
                      putStrLn $ "left: " ++ (show $ length sounds')
