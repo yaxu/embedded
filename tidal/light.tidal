@@ -15,6 +15,7 @@ x1 $ slow 4 $ jux rev $ striate 32 $ sound "xx" # n "51"
 
 let stringToColour' ('b':'d':[]) = red
     stringToColour' ('c':'p':[]) = green
+    stringToColour' ('k':'u':'r':'t':[]) = blue
     stringToColour' s = stringToColour s
 
 
