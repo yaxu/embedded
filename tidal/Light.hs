@@ -116,4 +116,3 @@ stringToColour' ('c':'p':[]) = green
 stringToColour' ('k':'u':'r':'t':[]) = blue
 stringToColour' ('s':'n':[]) = blue
 stringToColour' s = stringToColour s
-stringToColour' s = stringToColour s
