@@ -78,7 +78,10 @@ let light :: Shape
                     return sM
     runQueue sM = do sounds <- takeMVar sM
                      let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
-                         avgR = 
+                         avgR = maximum . map (rS) sounds'
+                         avgG = maximum . map (rS) sounds'
+                         avgB = maximum . map (rS) sounds'
+                         avgPan = maximum . map (rS) sounds'
                          leftch = cos((pi / 2) * pan')
                          rightch = sin((pi / 2) * pan')
                      sendLeft output r g b leftch
