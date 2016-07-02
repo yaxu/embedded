@@ -11,7 +11,9 @@ import Data.Colour.Names
 data Sound = Sound {rS :: Float,
                     gS :: Float,
                     bS :: Float,
-                    panS :: Float
+                    panS :: Float,
+                    dur :: Int,
+                    age :: Int
                    }
 
 let light :: Shape
