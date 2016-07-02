@@ -26,6 +26,7 @@ data Sound = Sound {rS :: Float,
 fps = 100
 light :: Shape
 light = Shape {params = [s_p,
+                         n_p,
                          pan_p,
                          begin_p,
                          end_p,
