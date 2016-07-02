@@ -1,0 +1,4 @@
+d1 $ jux rev $ sound "bd([3 5]/2,8) cp"
+  # cutoff "100"
+
+l1 $ jux rev $ sound "bd(3,8) [cp ~ [sn sn:2]]"
