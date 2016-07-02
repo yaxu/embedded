@@ -17,15 +17,6 @@ data Sound = Sound {rS :: Float,
                     ageS :: Int
                    }
 
-let startQueue = do sM <- newMVar []
-                    forkIO $ runQueue sM
-                    return sM
-    runQueue sM = do sounds <- takeMVar sM
-                     let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
-                     putMVar sM sounds'
-                     threadDelay (1000000 `div` 3)
-                     putStrLn $ "left: " ++ (show $ length sounds')
-                     runQueue sM
 
 mv <- startQueue
 
@@ -86,6 +77,15 @@ let light :: Shape
                                   SP.send output $ B.pack $ to256 b ++ "B\r"
                                   SP.send output $ B.pack $ to256 l ++ "L\r"
                                   return ()
+    startQueue = do sM <- newMVar []
+                    forkIO $ runQueue sM
+                    return sM
+    runQueue sM = do sounds <- takeMVar sM
+                     let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
+                     putMVar sM sounds'
+                     threadDelay (1000000 `div` 3)
+                     putStrLn $ "left: " ++ (show $ length sounds')
+                     runQueue sM
 
 lightServer
 l1 <- lightStream
