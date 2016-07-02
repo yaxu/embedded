@@ -1,3 +1,4 @@
+import Sound.Tidal.Context
 import Sound.Tidal.OscStream
 import Sound.OSC.FD
 import Sound.OSC.Datum
