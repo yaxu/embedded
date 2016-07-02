@@ -10,7 +10,7 @@ let x1 p = d1 p >> l1 p
 
 x1 silence
 
-x1 $ slow 4 $ jux rev $ striate 16 $ sound "cp" # n "0"
+x1 $ slow 4 $ jux rev $ striate 32 $ sound "xx:60" # n "0"
   # dur "0.1"
 
 
