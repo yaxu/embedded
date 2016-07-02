@@ -88,7 +88,7 @@ let light :: Shape
            sendRight output rr rg rb 1
            putMVar sM sounds'
            threadDelay (1000000 `div` 30)
-           putStrLn $ "left: " ++ (show $ length sounds')
+           -- putStrLn $ "left: " ++ (show $ length sounds')
            runQueue sM output
     addQueue sM newSound = do s <- takeMVar sM
                               putMVar sM (newSound:s)
