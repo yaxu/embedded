@@ -78,22 +78,19 @@ let light :: Shape
                     return sM
     runQueue sM = do sounds <- takeMVar sM
                      let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
-                         lefts = ()
-                         avgR = maximum . map (rS) sounds'
-                         avgG = maximum . map (rS) sounds'
-                         avgB = maximum . map (rS) sounds'
-                         avgPan = maximum . map (rS) sounds'
-                         leftch = cos((pi / 2) * pan')
-                         rightch = sin((pi / 2) * pan')
+                         lefts = map (rgbLeft) sounds'
                      sendLeft output r g b leftch
                      sendRight output r g b rightch
-
                      putMVar sM sounds'
                      threadDelay (1000000 `div` 3)
                      putStrLn $ "left: " ++ (show $ length sounds')
                      runQueue sM
     addQueue sM newSound = do s <- takeMVar sM
                               putMVar sM (newSound:s)
+
+let splitSound s = do let leftch = cos((pi / 2) * panS s)
+                          rightch = sin((pi / 2) * panS s)
+                      
 
 lightServer
 l1 <- lightStream
