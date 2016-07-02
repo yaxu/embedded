@@ -14,7 +14,7 @@ x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
    ]
   # dur "0.03"
 
-x1 $ sound "bd8:4*3 cp [sn:2 wobble*2] "
+x1 $ sound "bd8:4*3 cp [sn:2 wobble*2] sn:3*2"
 
 cps 0.4
 
