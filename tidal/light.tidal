@@ -78,12 +78,12 @@ let light :: Shape
                splitted = map splitSound sounds'
                ls = map fst splitted
                rs = map fst splitted
-               lr = maximum $ map (\(r,_,_) -> r) ls
-               lg = maximum $ map (\(_,g,_) -> g) ls
-               lb = maximum $ map (\(_,_,b) -> b) ls
-               rr = maximum $ map (\(r,_,_) -> r) rs
-               rg = maximum $ map (\(_,g,_) -> g) rs
-               rb = maximum $ map (\(_,_,b) -> b) rs
+               lr = maximum' $ map (\(r,_,_) -> r) ls
+               lg = maximum' $ map (\(_,g,_) -> g) ls
+               lb = maximum' $ map (\(_,_,b) -> b) ls
+               rr = maximum' $ map (\(r,_,_) -> r) rs
+               rg = maximum' $ map (\(_,g,_) -> g) rs
+               rb = maximum' $ map (\(_,_,b) -> b) rs
            sendLeft output lr lg lb 1
            sendRight output rr rg rb 1
            putMVar sM sounds'
@@ -97,7 +97,8 @@ let light :: Shape
             rightch = sin((pi / 2) * panS s)
             l = ((rS s)*leftch, (gS s)*leftch, (bS s)*leftch)
             r = ((rS s)*rightch, (gS s)*rightch, (bS s)*rightch)
-
+    maximum' [] = 0
+    maximum' xs = maximum xs
 
 
 lightServer
