@@ -2,6 +2,8 @@
 -- fix pan
 -- hush x1
 
+:load Light
+
 import Sound.Tidal.OscStream
 import Sound.OSC.FD
 import Sound.OSC.Datum
