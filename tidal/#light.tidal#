@@ -111,6 +111,8 @@ let fps = 100
     maximum' xs = maximum xs
 
 
+0.sin((pi / 2) * 0.5)
+
 lightServer
 l1 <- lightStream
 
@@ -118,8 +120,8 @@ let x1 p = d1 p >> l1 p
 
 x1 silence
 
-x1 $ jux () $slow 2 $ striate 4 $ jux (rev) $ sound "cp" # n "0"
-  # dur "0.2"
+x1 $ slow 4 $ striate 16 $ jux (rev) $ sound "cp" # n "0"
+  # dur "0.1"
 
 
 x1 $ s "cp bd"
