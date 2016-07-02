@@ -10,10 +10,13 @@ x2 $ (chop 16 $ s "jungbass*2") # n (irand 16)
 x1 $ jux rev $ stack [slow 4 $ chop 8 $ n (offadd 0.25 12 $ offadd 0.125 7 "40 52(3,8) 57 37(3,8)") # s "xx"
   # cutoff (slow 4 $ scale 100 200 sine1)
   # resonance "0.2",
-   slowspread (chop) [16,32,128,64] $ sound "drum [sn:2*2 bd*4]"
+   slowspread (chop) [16,32,128,64] $ sound "drum [sd8*2 bd*8]"
    ]
 
+d2 $ (slow 4 $ jux (iter 4) $ rev $ slow 8 $ striate 32 $ sound "bev*4"
+  # speed "0.75")
 
+  
 
 
 
