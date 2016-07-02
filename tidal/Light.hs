@@ -112,4 +112,7 @@ maximum' [] = 0
 maximum' xs = maximum xs
 
 stringToColour' ('b':'d':[]) = red
+stringToColour' ('c':'p':[]) = green
+stringToColour' ('k':'u':'r':'t':[]) = blue
+stringToColour' s = stringToColour s
 stringToColour' s = stringToColour s
