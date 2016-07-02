@@ -51,7 +51,7 @@ lightLoop s output sM = do m <- recvMessage s
                            act m output sM
                            lightLoop s output sM
 act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Int n', Float pan', Float begin', Float end', Float dur'])) output sM =
-  do let (r,g,b) = s2rgb $ show s'
+  do let (r,g,b) = s2rgb $ show s' ++ ":" ++ show' n'
      addQueue sM $ Sound r g b pan' (floor $ dur' * (fromIntegral fps)) 0 begin' end'
      return ()
 act ( Just (Message "/lightrgb" [ASCII_String s])) output _ =
