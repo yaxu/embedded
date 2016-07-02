@@ -1,4 +1,5 @@
 x1 $ n "0 1" # s "numbers" # pan "0 1"
 
-l1 $ s "bd*2 cp bd*3 ~"
-  # dur "0.2"
+x1 $ jux rev $ (chop 128 $ s "bd*2 cp bd*3 asdf")
+  # dur "0.02"
+  # nudge (slow 4 sine1)
