@@ -1,5 +1,0 @@
-x1 $ jux (0.125 <~) $ every 3 (density 1.5) $ slowspread (chop) [64,128,256,128 ] $ sound "bd*4"
-
-x2 $ jux (iter 4) $ slow 4 $ chop 128 $ sound "[bev, os]"
-  # speed "0.5"
-
