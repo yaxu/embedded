@@ -119,14 +119,14 @@ let x1 p = d1 p >> l1 p
 
 x1 silence
 
-x1 $ slow 4 $ striate 16 $ sound "cp" # n "0"
+x1 $ slow 4 $ jux rev $ striate 16 $ sound "cp" # n "0"
   # dur "0.1"
 
 
 x1 $ s "cp bd"
-  # pan "1"
 
-x1 $ jux rev $ s "cp bd cp bd*3"
+
+x1 $ chop 8 $ jux rev $ s "cp bd cp bd*3"
 
 x1 silence
 
