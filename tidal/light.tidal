@@ -18,7 +18,7 @@ data Sound = Sound {rS :: Float,
                    }
 l
 et startQueue = do sM <- newMVar []
-                    forkIO $ runQueue sM
+                   forkIO $ runQueue sM
     runQueue sM = do sounds <- takeMVar sM
                      let sounds' = filter (\s -> durS s > ageS s) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
                      putMVar sM sounds'
