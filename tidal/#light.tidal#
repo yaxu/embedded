@@ -14,11 +14,11 @@ x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
    ]
   # dur "0.03"
 
-x1 $ sound "bd8:4*3 cp [sn:2 wobble*2] sn:3*2"
+x1 $ sound "bd8:4*3 cp [sn:2 arpy wobble*2] sn:3*2"
 
 cps 0.4
 
-
+hush
 x2 $ sometimes (# speed "2 3 [1 4]") $ (jux (# nudge (stack [(slow 4 sine1)])) $ (chop 32 $ sound "drum:3 arpy mt [voodoo:3 cp]"))
   # dur "0.04"
 
