@@ -87,7 +87,7 @@ let light :: Shape
                      putStrLn $ "left: " ++ (show $ length sounds')
                      runQueue sM
     addQueue sM newSound = do s <- takeMVar mv
-                           putMVar mv (newSound:s)
+                              putMVar mv (newSound:s)
 
 lightServer
 l1 <- lightStream
