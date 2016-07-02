@@ -27,7 +27,12 @@ let startQueue = do sM <- newMVar []
                      putStrLn $ "left: " ++ (show $ length sounds')
                      runQueue sM
 
-startQueue
+mv <- startQueue
+
+do s <- takeMVar mv
+   putMVar mv ((Sound 0 0 0 0 5 0):s)
+
+:t withMVar
 
 let light :: Shape
     light = Shape {params = [s_p,
