@@ -76,23 +76,24 @@ let light :: Shape
     startQueue = do sM <- newMVar []
                     forkIO $ runQueue sM
                     return sM
-    runQueue sM = do sounds <- takeMVar sM
-                     let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
-                         splitted = splitSounds sounds'
-                         ls = map fst splitted
-                         rs = map fst splitted
-                         lr = maximum $ map (\(r,_,_) -> r) ls
-                         lg = maximum $ map (\(_,g,_) -> g) ls
-                         lb = maximum $ map (\(_,_,b) -> b) ls
-                         rr = maximum $ map (\(r,_,_) -> r) rs
-                         rg = maximum $ map (\(_,g,_) -> g) rs
-                         rb = maximum $ map (\(_,_,b) -> b) rs
-                     sendLeft output lr lg lb 1
-                     sendRight output rr rg rb 1
-                     putMVar sM sounds'
-                     threadDelay (1000000 `div` 3)
-                     putStrLn $ "left: " ++ (show $ length sounds')
-                     runQueue sM
+    runQueue sM output
+      = do sounds <- takeMVar sM
+           let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
+               splitted = map splitSound sounds'
+               ls = map fst splitted
+               rs = map fst splitted
+               lr = maximum $ map (\(r,_,_) -> r) ls
+               lg = maximum $ map (\(_,g,_) -> g) ls
+               lb = maximum $ map (\(_,_,b) -> b) ls
+               rr = maximum $ map (\(r,_,_) -> r) rs
+               rg = maximum $ map (\(_,g,_) -> g) rs
+               rb = maximum $ map (\(_,_,b) -> b) rs
+           sendLeft output lr lg lb 1
+           sendRight output rr rg rb 1
+           putMVar sM sounds'
+           threadDelay (1000000 `div` 3)
+           putStrLn $ "left: " ++ (show $ length sounds')
+           runQueue sM output
     addQueue sM newSound = do s <- takeMVar sM
                               putMVar sM (newSound:s)
     splitSound s = (l, r)
