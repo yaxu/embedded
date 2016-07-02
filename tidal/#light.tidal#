@@ -81,6 +81,7 @@ let light :: Shape
                          splitted = splitSounds sounds'
                          ls = map fst splitted
                          rs = map fst splitted
+                         (lr,lg,lb) = map
                      sendLeft output r g b leftch
                      sendRight output r g b rightch
                      putMVar sM sounds'
