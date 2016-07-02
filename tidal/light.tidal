@@ -22,7 +22,7 @@ data Sound = Sound {rS :: Float,
                     ageS :: Int
                    }
 
-let fps = 60
+let fps = 100
     light :: Shape
     light = Shape {params = [s_p,
                              pan_p,
@@ -114,8 +114,8 @@ let x1 p = d1 p >> l1 p
 
 x1 silence
 
-x1 $ slow 4 $ striate 4 $ jux (rev) $ sound "bd ~ sn:2 bd*8"
-  # dur "0.08"
+x1 $ striate 4 $ jux (rev) $ sound "xx*8"
+  # dur "0.04"
 
 
 x1 $ s "cp bd"
