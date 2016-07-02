@@ -87,14 +87,14 @@ let light :: Shape
                      runQueue sM
     addQueue sM newSound = do s <- takeMVar sM
                               putMVar sM (newSound:s)
-
-import GHC.Float
-
-let splitSound s = (l, r)
+    splitSound s = (l, r)
       where leftch = cos((pi / 2) * panS s)
             rightch = sin((pi / 2) * panS s)
             l = ((rS s)*leftch, (gS s)*leftch, (bS s)*leftch)
             r = ((rS s)*rightch, (gS s)*rightch, (bS s)*rightch)
+
+import GHC.Float
+
             
 
 lightServer
