@@ -7,6 +7,13 @@ d1 $ runWith 4 (density 2) $ iter 4 $ every 3 (# speed "2") $ every 2 rev $ n "0
 
 -- g0 d0
 
+d1 $ (chop 16 $ sound "wobble(3,8)")
+  # speed (scale 1 2 $ slow 4 sine1)
+
+
+d2 $ jux (iter 4) $ sound "cp8(3,8,[0 3]/2)"
+
+
 d3 $ degrade $ jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
   # cutoff (scale 1000 3000 sine1)
   # resonance "0.3"
