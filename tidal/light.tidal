@@ -81,7 +81,7 @@ let light :: Shape
            let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
                splitted = map splitSound sounds'
                ls = map fst splitted
-               rs = map fst splitted
+               rs = map snd splitted
                lr = maximum' $ map (\(r,_,_) -> r) ls
                lg = maximum' $ map (\(_,g,_) -> g) ls
                lb = maximum' $ map (\(_,_,b) -> b) ls
