@@ -21,7 +21,7 @@ x1 $ (jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ ((subtract 12) <$>
 
 cps 0.4
 
-x2 $ (jux (rev) $ foldEvery [5,7] (slow 2) $ (slowspread (chop) [64,128,32] $ sound "bd*2 [arpy:2 arpy] mt [voodoo ~]"))
+x2 $ every 2 (slow 2) $ (jux (rev) $ foldEvery [5,7] (slow 2) $ (slowspread (chop) [64,128,32] $ sound "bd*2 [arpy:2 arpy] [mt claus*3] [voodoo ind]"))
   # dur "0.02"
   # nudge (slow 4 sine1)
 
