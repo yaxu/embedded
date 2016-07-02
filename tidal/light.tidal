@@ -8,6 +8,12 @@ import qualified Data.ByteString.Char8 as B
 import Data.Colour.SRGB
 import Data.Colour.Names
 
+data Sound = Sound {rS :: Float,
+                    gS :: Float,
+                    bS :: Float,
+                    panS :: Float
+                   }
+
 let light :: Shape
     light = Shape {params = [s_p,
                              pan_p,
