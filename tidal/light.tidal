@@ -12,7 +12,7 @@ import Control.Concurrent.MVar
 data Sound = Sound {rS :: Double,
                     gS :: Double,
                     bS :: Double,
-                    panS :: Double,
+                    panS :: Float,
                     durS :: Int,
                     ageS :: Int
                    }
