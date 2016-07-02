@@ -17,8 +17,9 @@ data Sound = Sound {rS :: Float,
                     ageS :: Int
                    }
 
-let startQueue = do soundMVar <- newMVar []
-                    forkIO 
+let startQueue = do sM <- newMVar []
+                    forkIO $ runQueue sM
+    runQueue sM = threadDelay 1000000
 
 let light :: Shape
     light = Shape {params = [s_p,
