@@ -19,8 +19,8 @@ x1 $ sound "bd8:4*3 cp [sn:2 arpy wobble*2] sn:3*2"
 cps 0.4
 
 
-x2 $ sometimes (# speed "2 3 [1 4]") $ (jux (# nudge (stack [(slow 4 sine1)])) $ (chop 32 $ sound "drum:3 arpy mt [voodoo:3 cp]"))
-  # dur "0.04"
+x2 $ (jux (rev) $ (slowspread (chop) [64,128,32] $ sound "drum:3 [arpy:2 arpy] mt [voodoo ~]"))
+  # dur "0.02"
 
 l1 $ s "[bd ~ ~ ~]"
   # dur "0.5"
