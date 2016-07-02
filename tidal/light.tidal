@@ -52,8 +52,8 @@ let light :: Shape
              leftch = cos((pi / 2) * pan')
              rightch = sin((pi / 2) * pan')
          addQueue sM $ Sound r g b pan' 10 0
-         sendLeft output r g b leftch
-         sendRight output r g b rightch
+         -- sendLeft output r g b leftch
+         -- sendRight output r g b rightch
          return ()
     act ( Just (Message "/lightrgb" [ASCII_String s])) output _ =
       do SP.send output $ B.pack $ (show s) ++ "\r"
