@@ -111,5 +111,5 @@ splitSound s = (l, r)
 maximum' [] = 0
 maximum' xs = maximum xs
 
-stringTocolour' ('b':'d':[]) = red
+stringToColour' ('b':'d':[]) = red
 stringToColour' s = stringToColour s
