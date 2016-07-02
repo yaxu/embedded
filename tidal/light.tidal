@@ -44,9 +44,9 @@ let light :: Shape
                      output <- SP.openSerial "/dev/ttyUSB0" (SP.defaultSerialSettings {SP.commSpeed = SP.CS115200})
                      sM <- startQueue
                      forkIO $ lightLoop s output sM
-    lightLoop s output = do m <- recvMessage s
-                            act m output
-                            lightLoop s output
+    lightLoop s output sM = do m <- recvMessage s
+                               act m output
+                               lightLoop s output sM
     act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Float pan', Float begin', Float end'])) output =
       do let (r,g,b) = s2rgb $ show s'
              leftch = cos((pi / 2) * pan')
