@@ -86,8 +86,8 @@ let light :: Shape
                      threadDelay (1000000 `div` 3)
                      putStrLn $ "left: " ++ (show $ length sounds')
                      runQueue sM
-    addQueue sM newSound = do s <- takeMVar mv
-                              putMVar mv (newSound:s)
+    addQueue sM newSound = do s <- takeMVar sM
+                              putMVar sM (newSound:s)
 
 lightServer
 l1 <- lightStream
