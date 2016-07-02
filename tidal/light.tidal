@@ -45,7 +45,7 @@ let light :: Shape
                      sM <- startQueue
                      forkIO $ lightLoop s output sM
     lightLoop s output sM = do m <- recvMessage s
-                               act m output
+                               act m output sM
                                lightLoop s output sM
     act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Float pan', Float begin', Float end'])) output =
       do let (r,g,b) = s2rgb $ show s'
