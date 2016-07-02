@@ -9,10 +9,10 @@ l1 <- lightStream
 let x1 p = d1 p >> l1 p
 let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,x1]
 
-x1 $ slow 4 $ jux rev $ striate 32 $ s "sn:1" # n "51"
+x1 $ slow 4 $ jux rev $ striate 32 $ s "sn" # n "51"
   # dur "0.1"
 
-x1 $ sound "bd" # dur "0.2"
+x1 $ jux (iter 4) $ sound "bd8 cp sn:8*3" # dur "0.2"
 
 stringToColour' "cp8"
 
