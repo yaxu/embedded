@@ -106,12 +106,10 @@ let fps = 100
             r = ((rS s)*rightch, (gS s)*rightch, (bS s)*rightch)
             age = ((fromIntegral $ ageS s) / (fromIntegral $ durS s))
             age' = (beginS s) + (diff * age)
-            age'' sin((pi / 2) * age')
             diff = (endS s) - (beginS s)
+            age'' = sin((pi / 2) * age')
     maximum' [] = 0
     maximum' xs = maximum xs
-
-
 
 
 lightServer
@@ -121,7 +119,7 @@ let x1 p = d1 p >> l1 p
 
 x1 silence
 
-x1 $ slow 4 $ striate 16 $ jux (rev) $ sound "cp" # n "0"
+x1 $ slow 4 $ striate 16 $ sound "cp" # n "0"
   # dur "0.1"
 
 
