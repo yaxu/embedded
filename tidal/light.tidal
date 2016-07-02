@@ -105,6 +105,8 @@ let fps = 100
             l = ((rS s)*leftch, (gS s)*leftch, (bS s)*leftch)
             r = ((rS s)*rightch, (gS s)*rightch, (bS s)*rightch)
             age = 1 - ((fromIntegral $ ageS s) / (fromIntegral $ durS s))
+            age' = (beginS s) + (diff * age)
+            diff = (endS s) - (beginS s)
     maximum' [] = 0
     maximum' xs = maximum xs
 
