@@ -78,6 +78,7 @@ let light :: Shape
                     return sM
     runQueue sM = do sounds <- takeMVar sM
                      let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
+                         lefts = ()
                          avgR = maximum . map (rS) sounds'
                          avgG = maximum . map (rS) sounds'
                          avgB = maximum . map (rS) sounds'
