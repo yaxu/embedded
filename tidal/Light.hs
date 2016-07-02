@@ -33,7 +33,7 @@ light = Shape {params = [s_p,
                          dur_p
                          ],
                cpsStamp = True,
-               latency = 0.15
+               latency = 0.3
               }
 lightSlang = OscSlang {
   path = "/lightrgb",
