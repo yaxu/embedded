@@ -63,7 +63,7 @@ to256 f = show $ floor (f * 255)
 lightStream = do backend <- lightBackend
                  stream backend light
 c2rgb = ((\c -> (to256 $ channelRed c) ++ "r" ++ (to256 $ channelGreen c) ++ "g" ++ (to256 $ channelBlue c) ++ "b") . toSRGB)
-s2rgb = ((\c -> (double2Float $ channelRed c, double2Float $ channelGreen c, double2Float $ channelBlue c)) . toSRGB . stringToColour)
+s2rgb = ((\c -> (double2Float $ channelRed c, double2Float $ channelGreen c, double2Float $ channelBlue c)) . toSRGB . stringToColour')
 -- sendLeft _ _ _ _ 0 = return ()
 sendLeft output r g b l = do SP.send output $ B.pack $ to256 r ++ "r\r"
                              SP.send output $ B.pack $ to256 g ++ "g\r"
@@ -110,3 +110,6 @@ splitSound s = (l, r)
         age'' = sin((pi / 2) * age')
 maximum' [] = 0
 maximum' xs = maximum xs
+
+stringTocolour' ('b':'d':[]) = red
+stringToColour' s = stringToColour s
