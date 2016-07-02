@@ -1,10 +1,17 @@
 d1 $ jux rev $ sound "bd([3 5]/2,8) cp"
   # cutoff "100"
 
-x1 $ sometimes () $ jux rev $ slowspread (chop) [16,32,128] $ every 3 (within (0,0.25) (density 2)) $ sound "bd(3,8) [cp arpy [sn sn:2] cp]"
+x1 $ sometimes (# speed "2") $ jux rev $ slowspread (chop) [16,32,128] $ every 3 (within (0,0.25) (density 2)) $ sound "bd(5,8,2)/2 [cp arpy [sn sn:2] [cp voodoo*4]]"
   # cutoff "500"
   # vowel "[a e i]/2"
   # dur "0.02"
 
-x2 $ sound "~ wobble"
+x2 $ jux rev $ chop 16 $ s "jungbass*2"
+  # hcutoff "2000"
+
+
+
+
+
+sound "~ wobble"
   # crush "0.2"
