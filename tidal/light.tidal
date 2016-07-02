@@ -43,7 +43,7 @@ let light :: Shape
     lightServer = do s <- udpServer "127.0.0.1" 9099
                      output <- SP.openSerial "/dev/ttyUSB0" (SP.defaultSerialSettings {SP.commSpeed = SP.CS115200})
                      sM <- startQueue
-                     forkIO $ lightLoop s output
+                     forkIO $ lightLoop s output sM
     lightLoop s output = do m <- recvMessage s
                             act m output
                             lightLoop s output
