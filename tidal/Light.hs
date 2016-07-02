@@ -1,3 +1,5 @@
+module Light where
+
 import Sound.Tidal.Context
 import Sound.Tidal.OscStream
 import Sound.OSC.FD
