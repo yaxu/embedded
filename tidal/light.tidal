@@ -15,7 +15,7 @@ let light :: Shape
                              end_p
                              ],
                    cpsStamp = True,
-                   latency = 0.2
+                   latency = 0.3
                   }
     lightSlang = OscSlang {
       path = "/lightrgb",
@@ -69,7 +69,7 @@ let x1 p = d1 p >> l1 p
 x1 $ jux (rev . density 2) $ sound "bd cp sn:2 bd*8"
   # pan sine1
 
-
+x1 $ s "cp u~ ~"
 
 x1 silence
 
