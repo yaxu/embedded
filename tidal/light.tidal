@@ -13,7 +13,7 @@ x1 $ slow 4 $ jux rev $ striate 32 $ sound "xx" # n "51"
   # dur "0.1"
 
 
-x1 $ s "cp bd"
+
 
 
 x1 $ chop 8 $ jux rev $ s "cp bd cp bd*3"
