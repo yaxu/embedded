@@ -42,7 +42,7 @@ let light :: Shape
                       return $ Backend s (\_ _ _ -> return ())
     lightServer = do s <- udpServer "127.0.0.1" 9099
                      output <- SP.openSerial "/dev/ttyUSB0" (SP.defaultSerialSettings {SP.commSpeed = SP.CS115200})
-                     sM <- startQueue
+                     sM <- startQueue output
                      forkIO $ lightLoop s output sM
     lightLoop s output sM = do m <- recvMessage s
                                act m output sM
@@ -73,9 +73,9 @@ let light :: Shape
                                   SP.send output $ B.pack $ to256 b ++ "B\r"
                                   SP.send output $ B.pack $ to256 l ++ "L\r"
                                   return ()
-    startQueue = do sM <- newMVar []
-                    forkIO $ runQueue sM
-                    return sM
+    startQueue output= do sM <- newMVar []
+                          forkIO $ runQueue sM output
+                          return sM
     runQueue sM output
       = do sounds <- takeMVar sM
            let sounds' = filter (\s -> (durS s) > (ageS s)) $ map (\s -> s {ageS = (ageS s) + 1}) sounds
