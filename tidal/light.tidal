@@ -22,7 +22,6 @@ data Sound = Sound {rS :: Float,
                     ageS :: Int
                    }
 
-
 let fps = 30
     light :: Shape
     light = Shape {params = [s_p,
