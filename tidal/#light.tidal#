@@ -19,7 +19,7 @@ x1 $ sound "bd8:4*3 cp [sn:2 arpy wobble*2] sn:3*2"
 cps 0.4
 
 
-x2 $ (jux (rev) $ (slowspread (chop) [64,128,32] $ sound "drum:3 [arpy:2 arpy] mt [voodoo ~]"))
+x2 $ (jux (rev) $ foldEvery [5,7] (slow 2) $ (slowspread (chop) [64,128,32] $ sound "bd*2 [arpy:2 arpy] mt [voodoo ~]"))
   # dur "0.02"
 
 l1 $ s "[bd ~ ~ ~]"
