@@ -21,7 +21,7 @@ cps 0.7
 x2 $ (chop 32 $ jux (iter 4) $ sound "[bd*16 sn*8,cp8:3*3]")
   #nudge (slow 4 sine1)
 
-l1 $ s "[bd sn ~ ~]"
+l1 $ s "[bd ~ ~ ~]"
   # dur "0.5"
 
 hush
