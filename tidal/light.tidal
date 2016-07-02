@@ -57,8 +57,8 @@ let light :: Shape
     act ( Just (Message "/lightrgb" [ASCII_String s])) output _ =
       do SP.send output $ B.pack $ (show s) ++ "\r"
          return ()
-    act m output = do putStrLn $ "message: " ++ show m
-                      return ()
+    act m output _ = do putStrLn $ "message: " ++ show m
+                        return ()
     to256 f = show $ floor (f * 255)
     lightStream = do backend <- lightBackend
                      stream backend light
