@@ -14,12 +14,16 @@ x1 $ jux rev $ weave 16 (n (run 8) # s "arpy")
    ]
   # dur "0.03"
 
-x1 $ sound "bd8:4*3 cp [sn:2 wobble*2] "
 
-cps 0.7
+x1 $ (jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ ((subtract 12) <$>)$ "50(3,8) [50(3,8) 53*3] 48(5,16)/2 52(3,8)") # s "xx")
+  # cutoff (slow 4 $ scale 600 3000 sine1)
+  # resonance "0.2"
 
-x2 $ sometimes (# speed "2 3 1") $ (jux (# nudge (stack [(slow 4 sine1)])) $ (chop 32 $ sound "drum:3 arpy mt [voodoo:3 cp"))
-  # dur "0.04"
+cps 0.4
+
+
+x2 $ (jux (rev) $ foldEvery [5,7] (slow 2) $ (slowspread (chop) [64,128,32] $ sound "bd*2 [arpy:2 arpy] mt [voodoo ~]"))
+  # dur "0.02"
 
 l1 $ s "[bd ~ ~ ~]"
   # dur "0.5"
