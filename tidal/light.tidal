@@ -23,7 +23,8 @@ data Sound = Sound {rS :: Float,
                    }
 
 
-let light :: Shape
+let fps = 30
+    light :: Shape
     light = Shape {params = [s_p,
                              pan_p,
                              begin_p,
