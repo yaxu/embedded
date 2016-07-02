@@ -1,4 +1,4 @@
 x1 $ n "0 1" # s "numbers" # pan "0 1"
 
-x1 $ s "bd*2 bd*3"
+l1 $ s "bd*2 bd*3"
 
