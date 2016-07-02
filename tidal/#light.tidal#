@@ -12,7 +12,7 @@ let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d
 x1 $ slow 4 $ jux rev $ striate 32 $ s "sn" # n "51"
   # dur "0.1"
 
-x1 $ sound "bd" # dur "0.2"
+x1 $ sound "bd8 sn:2" # dur "0.2"
 
 stringToColour' "cp8"
 
