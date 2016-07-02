@@ -50,7 +50,7 @@ let fps = 100
                                lightLoop s output sM
     act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Float pan', Float begin', Float end', Float dur'])) output sM =
       do let (r,g,b) = s2rgb $ show s'
-         addQueue sM $ Sound r g b pan' (floor $ dur' * (fromIntegral fps)) 0
+         addQueue sM $ Sound r g b pan' (floor $ dur' * (fromIntegral fps)) 0 begin'
          return ()
     act ( Just (Message "/lightrgb" [ASCII_String s])) output _ =
       do SP.send output $ B.pack $ (show s) ++ "\r"
