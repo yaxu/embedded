@@ -27,7 +27,8 @@ let light :: Shape
     light = Shape {params = [s_p,
                              pan_p,
                              begin_p,
-                             end_p
+                             end_p,
+                             dur_p
                              ],
                    cpsStamp = True,
                    latency = 0.3
