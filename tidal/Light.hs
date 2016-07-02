@@ -116,5 +116,6 @@ stringToColour' ('b':'d':_) = blue
 stringToColour' ('c':'p':_) = yellow
 stringToColour' ('k':'u':'r':'t':_) = blue
 stringToColour' ('s':'n':_) = green
+stringToColour' ('s':'d':_) = green
 stringToColour' ('c':'l':'a':'u':'s':_) = red
 stringToColour' s = stringToColour s
