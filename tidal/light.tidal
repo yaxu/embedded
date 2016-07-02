@@ -48,7 +48,7 @@ let light :: Shape
     lightLoop s output sM = do m <- recvMessage s
                                act m output sM
                                lightLoop s output sM
-    act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Float pan', Float begin', Float end'])) output sM =
+    act (Just (Message "/lightrgb" [Float cps', ASCII_String s', Float pan', Float begin', Float end', Float dur'])) output sM =
       do let (r,g,b) = s2rgb $ show s'
          addQueue sM $ Sound r g b pan' 5 0
          return ()
