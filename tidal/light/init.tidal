@@ -4,3 +4,8 @@ l2 <- lightStream
 l3 <- lightStream
 l4 <- lightStream
 
+let x1 p = d1 p >> l1 p
+    x2 p = d2 p >> l2 p
+    x3 p = d3 p >> l3 p
+    x4 p = d4 p >> l4 p
+
