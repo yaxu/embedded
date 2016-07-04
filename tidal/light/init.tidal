@@ -1,0 +1,6 @@
+lightServer
+l1 <- lightStream
+l2 <- lightStream
+l3 <- lightStream
+l4 <- lightStream
+
