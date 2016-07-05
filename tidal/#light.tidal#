@@ -71,6 +71,8 @@ lightServer
 
 let to256 f = show $ floor (f * 255)
 
-x1 $ s "bd*4" # pan tri1
+x1 $ jux rev $ iter 4 $ slowspread (slow) [2,1.5,3] $ chop 8 $ sound "[bd*4 mt sn:2 ~ ]/2"
 
 x1 $ s "cp"
+
+hush
