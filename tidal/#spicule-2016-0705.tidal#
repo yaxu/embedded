@@ -53,4 +53,4 @@ x4 $ rev $ slow 2 $ n (slow 4 $ offadd 0.125 12 $ offadd 0.25 5 $ slow 2 $ "c6(3
   # pan "0"
 
 
-d1 $ slow 2 $ n "50 [56] 48 ~" # s "xx"
+d1 $ slow 2 $ n (offadd 0.125 7 "50 [57 55 52]/3 48 [60 47]/2") # s "xx"
