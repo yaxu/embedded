@@ -15,3 +15,4 @@ x4 $ jux rev $ slow 4 $ off (1/4) (|*| speed (scale 0.5 1 sine1)) $ ((chop 16 $ 
   # speed (scale 1.5 2 sine1))
 
 
+x1 $ sound "drum:2*4?"
