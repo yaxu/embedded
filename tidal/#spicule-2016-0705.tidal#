@@ -11,5 +11,7 @@ x2 $ slow 2 $ jux (1 <~) $ slowspread (slow) [1,1.5,3] $ off 0.125 (|*| speed "2
 x3 $ slow 2 $ chop 8 $ s "[lt8*2 lt8*4]/2 mt8*3"
   # crush "5" # speed "4"
 
-x4 $ slow 4 $ offadd 0.125 (|*| speed "2") $ ((chop 16 $ sound "h")
-  # speed (scale 1 2 sine1))
+x4 $ jux rev $ slow 4 $ off (1/4) (|*| speed (scale 0.5 1 sine1)) $ ((chop 16 $ sound "sometimes")
+  # speed (scale 1.5 2 sine1))
+
+
