@@ -58,13 +58,14 @@ d1 $ jux (rev) $ n (sometimes ((+12) <$>) $ offadd 0.25 (-12) $ slow 2 $ slowspr
   # cutoff (slow 4 $ scale 6000 1000 sine1)
 
 
-d2 $ (inside 0.5 (jux rev) $ slowcat [jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[bd(3,8), ht8([5 2]/2,8,4)]",
+d1 $ (inside 0.5 (jux rev) $ slowcat [jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[bd(3,8), ht8([5 2]/2,8,4)]",
                                      jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[drum(3,8) voodoo*2]"
                                      ])
 
 
-x2 $ stack [(jux rev $ chop 64 $ sound ( "bd*3 drum [arpy drum:4] sd8:2")),
-            s "newnote"
+
+d2 $ stack [(jux rev $ slowspread (chop) [64,32,16] $ sound ( "bd*3 drum [arpy drum:4] sd8:2")),
+            jux (iter 4) $ chop 64 $ s "newnotes newnotes:3*2 newnotes:4 newnotes:2"
            ]
-  # nudge (slow 4 sine1)
+
 
