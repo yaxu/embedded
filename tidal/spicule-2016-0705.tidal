@@ -56,6 +56,7 @@ x4 $ rev $ slow 2 $ n (slow 4 $ offadd 0.125 12 $ offadd 0.25 5 $ slow 2 $ "c6(3
 d1 $ jux (rev) $ n (sometimes ((+12) <$>) $ offadd 0.25 (-12) $ slow 2 $ slowspread (offadd 0.125) [(-5),12,7] $ slow 2 "50(3,8) [57 50 52]/3 48(3,8) [60*2 36*2]/2") # s "xx"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 6000 1000 sine1)
+  # gain "0.8"
 
 
 d1 $ (inside 0.5 (jux rev) $ slowcat [jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[bd(3,8), ht8([5 2]/2,8,4)]",
