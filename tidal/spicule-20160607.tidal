@@ -1,4 +1,4 @@
-
+cps 0.9
 
 d1 $ juxBy 0.5 (2 <~) $ slowspread (stut 3 0.9) [0.05,0.06,0.07,0.1] $ sound "[bd8 bd8:3*2]@3 bd8:5*2"
   # speed "4"
