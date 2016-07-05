@@ -1,4 +1,9 @@
 
-x1 $ jux rev $ iter 4 $ slowspread (slow) [2,1.5,3] $ chop 8 $ sound "[bd*4 mt sn:2 ~ ]/2"
+x1 $ jux rev $ iter 4 $ slowspread (slow) [2,1.5,3] $ chop 8 $ sound "[bd*4 mt sn:2 h]/2"
 
-x1 $ slow 4 $ sound "bd cp"
+$jux rev 
+
+x1 $ iter 4 $ jux rev $ chop 8 $ sound "h h:1 ~ h:2"
+  # speed "[0.7 2]"
+  # cutoff (slow 2 $ scale 1000 4000 sine1)
+  # vowel
