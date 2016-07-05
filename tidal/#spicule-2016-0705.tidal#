@@ -16,15 +16,9 @@ x4 $ jux rev $ slow 4 $ off (1/4) (|*| speed (scale 0.5 1 sine1)) $ ((chop 16 $ 
 
 
 
-
-x1 $ runWith 4 (density 2) $ sound "drum:2*4" # pan "0"
-
-
-x2 $ stut 0runWith 4 (density 2) $ slow 2 $ runWith 4 (density 2) $ sound "drum:2*3" # pan "1"
+x1 $ stack [stut 2 0.4 (-0.125) $ runWith 4 (density 4) $ sound "drum:2*4" # pan "0",
+            stut 4 0.4 (-0.125) $ runWith 4 (density 2) $ slow 2 $ runWith 4 (density 2) $ sound "drum:2*3" # pan "1"
+           ]
 
 
-
-
-
-
-
+x2 $ sound "drum drum:1"
