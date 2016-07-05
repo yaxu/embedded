@@ -71,6 +71,6 @@ lightServer
 
 let to256 f = show $ floor (f * 255)
 
-x1 $ s "bd*4"
+x1 $ s "bd*4" # pan tri1
 
 x1 $ s "cp"
