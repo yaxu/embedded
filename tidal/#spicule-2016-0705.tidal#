@@ -22,7 +22,12 @@ x1 $ stack [stut 2 0.4 (-0.125) $ runWith 4 (density 4) $ sound "drum:2*4" # pan
 
 x2 $ slow 2 $ ghost $ sound "drum [drum:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ ~ mt8:3]]"
 
-x3 $ slow 2 $ n (slow 4 $ offadd 0.25 12 $ offadd 0.125 4 "c6(3,8) d7*3") # s "xx" 
+x3 $ slow 2 $ n (slow 4 $ offadd 0.25 12 $ offadd 0.125 5 $ slow 2 $ "c6(3,8) d7*3 c7*3 g7(3,8)") # s "xx" 
   # resonance "0.4"
-  # cutoff "3000"
+  # cutoff (slow 2 $ scale 3000 1000 sine1)
+  # end "0.4"
+
+x4 $ slow 2 $ n (slow 4 $ offadd 0.25 12 $ offadd 0.125 5 $ slow 2 $ "c6(3,8) d7*3 c7*3 g7(3,8)") # s "xx" 
+  # resonance "0.4"
+  # cutoff (slow 2 $ scale 3000 1000 sine1)
   # end "0.4"
