@@ -1,1 +1,1 @@
-x1 $ sound "bd"
+x1 $ chop 8 $ sound "bd"
