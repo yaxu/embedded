@@ -1,4 +1,6 @@
-x1 $ every 3 (slow 1.5) $ jux rev $ chop 8 $ sound "bd ~ cp"
-  # speed "2"
 
-x2 $ chop 8 $ sound "h" # (slow 4 $ pan sine1)
+x1 $ jux (rev . chop 8) $ slow 4 $ sound "bd8:3*3 ~ bd8:6*8 ~"
+  # speed "4"
+
+x2 $ sound "~ [cp cp(3,8,[0,4])]/2"
+  # speed "4"
