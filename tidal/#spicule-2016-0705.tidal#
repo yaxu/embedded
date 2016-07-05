@@ -1,2 +1,4 @@
 x1 $ every 3 (slow 1.5) $ jux rev $ chop 8 $ sound "bd ~ cp"
   # speed "2"
+
+x2 $ chop 8 $ sound "h" # (slow 4 $ pan sine1)
