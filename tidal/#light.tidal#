@@ -71,4 +71,4 @@ lightServer
 
 let to256 f = show $ floor (f * 255)
 
-l1 $ s "blue"
+x1 $ s "bd*4"
