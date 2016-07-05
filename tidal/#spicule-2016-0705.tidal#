@@ -1,0 +1,4 @@
+
+x1 $ jux rev $ iter 4 $ slowspread (slow) [2,1.5,3] $ chop 8 $ sound "[bd*4 mt sn:2 ~ ]/2"
+
+x1 $ slow 4 $ sound "bd cp"
