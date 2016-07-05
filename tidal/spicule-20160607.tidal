@@ -24,9 +24,7 @@ d6 $ loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown"
        # speed "[0.2]"
        # gain "1"))
 
--- thanks for listening
 
--- more soon
 :t range
 "a" :: Pattern Int
 
