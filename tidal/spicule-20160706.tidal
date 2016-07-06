@@ -4,7 +4,9 @@ x1 $ jux rev $ brak $ chop 2 $ slow 4 $ sound "bd8:4(3,8) cp*4"
 d5 $ jux rev $ slow 8 $ n (offadd (1/16) 12 $ offadd 0.125 (-7) $ (+60) <$> (palindrome "c3(3,8) a3(3,8) f3(3,16) e3*4")) # s "xx"
   # gain "0.9"
   # resonance "0.3"
-  # cutoff (scale 2000 4000 tri1)
+  # cutoff (slow 4 $ scale 2000 4000 tri1)
+  # hcutoff "1000"
+  # speed "[1,2,3]"
 
 d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes ~ ~]/3")
   # vowel "[a e]*4" # speed (scale 1 1.5 rand)
@@ -16,5 +18,5 @@ x1 $ (jux rev $ slowspread (chop) [64,128] $ sound "drum cp*2? [arpy:4 arpy:5]/2
 d2 $ runWith 4 ((# speed "1.2") . density 4) $ sometimes (chop 32) $ brak $ sound "drum [drum:1 bd*2]"
   # gain "1.1"
 
-
-cps 1.2
+d6 $ sound "ravebass:10 ~ ravebass:8"
+  # gain "1.1"
