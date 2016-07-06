@@ -1,1 +1,1 @@
-d1 $ sound "bd"
+x1 $ slow 2 $ sound "bd"
