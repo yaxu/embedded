@@ -44,7 +44,9 @@ d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
 d3 $ n (run 4) # sound "kurt(3,8)"
   # orbit "1"
 
-x4 $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[kurt,bd]"
+x4 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[voodoo,bd]"
   # gain "0.9"
   # orbit "1"
-  # speed "2"
+  # speed "1"
+
+d1 $ sound "bd(3,8)"
