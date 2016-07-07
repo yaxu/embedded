@@ -9,3 +9,4 @@ d2 $ palindrome $ chop 2 $ loopAt (1/2) $ sound "~ wobble"
   # accelerate "-3"
 
 d3 $ within (0,0.5) (iter 4) $ sound "drum:5 drum:1"
+  # end "0.3"
