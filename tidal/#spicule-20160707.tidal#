@@ -1,7 +1,5 @@
 -- Making Spicule http://www.pledgemusic.com/projects/spicule
 
--- ok not sure if anyone is still there, but will see what I can find
-
-x1 $ slow 2 $ sound "claus:2 [claus:1*2 claus:1*4]@3"
+d1 $ off 0.5 (# speed "2") $ jux (iter 4 . rev) $ slow 2 $ chop 8 $ sound "voodoo [claus:1*2]@3"
   # crush "3"
 
