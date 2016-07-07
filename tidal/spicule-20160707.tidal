@@ -26,4 +26,4 @@ d2 $ sound "[bd ~ bd] sd8:2*2"
 d3 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99"
 
-x1 $ sound "drum(3,8)"
+
