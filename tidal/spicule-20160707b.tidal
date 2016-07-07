@@ -1,1 +1,10 @@
-d1 $ sound "bd"
+
+d1 $ jux rev $ stut 8 0.4 (0.5) $ slow 2 $ n "[30(3,8) 32(3,8) 35*3]/3 [23(3,8) 18*3]/2" # s "arpy"
+  # speed "[1,2]"
+  # end "0.2"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 1000 2000 sine1)
+
+d2 $ sound "{sd8 sd8 arpy:4@2 arpy:6, bd sd8 ~}"
+
+d3 $ iter 4 $ chop 8 $ loopAt 4 $ sound "arc"
