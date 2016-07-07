@@ -3,4 +3,5 @@
 
 -- seems better now, one min..
 
-d1 $ sound "arpy"
+x1 $ sound "drum"
+  
