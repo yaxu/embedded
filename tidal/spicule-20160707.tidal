@@ -44,6 +44,7 @@ d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
 d3 $ n (run 4) # sound "kurt(3,8)"
   # orbit "1"
 
-d4 $ n (slow 8 $ scan 8) # sound "amencutup*4"
+x4 $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[kurt,bd]"
   # gain "0.9"
   # orbit "1"
+  # speed "2"
