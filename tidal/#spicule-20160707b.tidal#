@@ -1,3 +1,6 @@
 
 d1 $ off 0.125 (|+| n "3") $ s "[dirty(7,16)]/2" # n "40 41"
+  # cutoff "1000"
+  # resonance "0.4"
 
+x2 $ sound "{sd8 sd8 sd8 sn, bd ~ ~}"
