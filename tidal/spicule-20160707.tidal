@@ -4,6 +4,6 @@ d1 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow
                                       off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
                                      ]
 
-
-
-d2 $ sound "~ wobble"
+d2 $ palindrome $ chop 2 $ loopAt (1/2) $ sound "~ wobble"
+  # speed "8"
+  # accelerate "-3"
