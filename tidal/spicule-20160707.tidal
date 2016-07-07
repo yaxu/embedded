@@ -33,7 +33,7 @@ d10 $ slow 4 $ sound "fm:10(3,8)"
 
 d1 $ slow 4 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 ch ch:3}"
 
-d2 $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "sid:3"
+d2 $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
   # resonance "0.3"
   # cutoff "[1000 2000]/4"
   # room "0.5"
