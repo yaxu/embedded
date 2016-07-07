@@ -4,9 +4,10 @@ d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow
                                       off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
                                      ]
 
-x1 $ palindrome $ chop 2 $ loopAt (1/2) $ sound "~ wobble"
-  # speed "6"
-  # accelerate "-2"
+x1 $ palindrome $ chop 8 $ loopAt (1/2) $ sound "bd*2 wobble"
+  # speed "[8 6 4 7]/5"
+  # gain "1.1"
+  -- # accelerate "-2"
 
 d7 $ slowspread (\x -> off x (density 2 . (# gain "0.9") . (|*| speed "1.5"))) [0.25, 0.5, 0.75] $ within (0,0.5) (iter 4) $ sound "drum:5 [drum:1 [arpy arpy:3 arpy arpy:5]/4]"
   # end "0.3"
@@ -24,4 +25,7 @@ d2 $ sound "[bd ~ bd] sd8:2*2"
 d9 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99"
 
-d10 $ whenmod 8 1 (const silence) $ gap 16 $ sound "fm:10"
+d10 $ whenmod 8 1 (const silence) $ sound "fm:10"
+  # vowel "a"
+  # accelerate "-3"
+  # s
