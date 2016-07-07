@@ -1,7 +1,7 @@
--- testing, starting in 1 min
 -- Making Spicule http://www.pledgemusic.com/projects/spicule
 
--- seems better now, one min..
+-- ok not sure if anyone is still there, but will see what I can find
 
-x1 $ sound "drum"
-  
+x1 $ slow 2 $ sound "claus:2 [claus:1*2 claus:1*4]@3"
+  # crush "3"
+
