@@ -5,8 +5,8 @@ d1 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow
                                      ]
 
 d2 $ palindrome $ chop 2 $ loopAt (1/2) $ sound "~ wobble"
-  # speed "8"
-  # accelerate "-3"
+  # speed "6"
+  # accelerate "-2"
 
 d3 $ slowspread (\x -> off x (density 2 . (# gain "0.9") . (|*| speed "1.5"))) [0.25, 0.5, 0.75] $ within (0,0.5) (iter 4) $ sound "drum:5 [drum:1 [arpy arpy:3 arpy arpy:5]/4]"
   # end "0.3"
