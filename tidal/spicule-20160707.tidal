@@ -44,9 +44,22 @@ d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
 d3 $ n (run 4) # sound "kurt(3,8)"
   # orbit "1"
 
-x4 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[voodoo,bd]"
+d4 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[voodoo,bd]"
   # gain "0.9"
   # orbit "1"
   # speed "1"
 
-d1 $ sound "bd(3,8)"
+d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
+  # gain "1.1"
+  # speed "1.1"
+  # accelerate "-3"
+  # cutoff (slow 8 $ scale 3000 5000 saw1)
+  # resonance "0.5"
+l1 silence
+
+d2 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
+  -- # crush "6"
+  # speed "[1,2?]"
+  # gain "0.95"
+  # end "0.1"
+  
