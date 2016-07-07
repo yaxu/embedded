@@ -1,8 +1,7 @@
 -- Making Spicule http://www.pledgemusic.com/projects/spicule
 
-d1 $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
-              off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
-             ]
-
+d1 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
+                                      off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
+                                     ]
 
 d2 $ sound "~ wobble"
