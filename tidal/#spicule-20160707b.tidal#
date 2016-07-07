@@ -1,7 +1,6 @@
 
-d1 $ runWith 4 (density 1.5) $ off 0.125 (|+| n "3") $ s "[dirty(7,16)]/2" # n "40 41"
-  # cutoff "3000"
-  # resonance "0.4"
+d1 $ slow 2 $ n "40(3,8) 52(3,8)" # s "xx"
   # speed "[1,2]"
+  # end "0.2"
 
 x2 $ slow 2 $ jux (rev) $ chop 8 $ sound "{sd8 sd8 sd8 sd8:3, bd future ~}"
