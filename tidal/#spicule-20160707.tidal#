@@ -31,4 +31,4 @@ d10 $ slow 4 $ sound "fm:10(3,8)"
   # speed "[-2,2]"
 
 
-d1 $ slow 8 $ sound "bd [~ mt, lt s] sd8:3 [lt ht]"
+d1 $ slow 4 $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 ch ch:3}"
