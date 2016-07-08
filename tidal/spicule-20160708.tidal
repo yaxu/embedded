@@ -46,12 +46,12 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
 cps 0.8
 
 
-d1 $ (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
+d5 $ (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
   # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
   # cutoff (scale 300 3000 saw1)
   # gain "0.8"
 
-d2 $ every 4 (chop 3) $ sound "newnotes:1"
+d6 $ every 4 (chop 3) $ sound "newnotes:1"
   # gain "1.5"
   # shape "0.4"
   # cutoff "600"
@@ -60,7 +60,7 @@ d2 $ every 4 (chop 3) $ sound "newnotes:1"
 d3 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
   # shape "0.5"
 
-d4 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 !? !? feel:6]/4"
+d9 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 !? !? feel:6]/4"
   # hcutoff "4000"
   # resonance "0.2" # speed "2"
   
