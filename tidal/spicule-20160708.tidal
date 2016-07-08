@@ -60,7 +60,7 @@ d2 $ every 4 (chop 3) $ sound "newnotes:1"
 d3 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
   # shape "0.5"
 
-d4 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:39] [feel:9 ! ! feel:6]/4"
+d4 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 ! ! feel:6]/4"
   # hcutoff "4000"
   # resonance "0.2" # speed "2"
   
