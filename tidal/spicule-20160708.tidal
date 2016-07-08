@@ -64,3 +64,7 @@ d9 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 !? !? fe
   # hcutoff "4000"
   # resonance "0.2" # speed "2"
   
+d1 $ (chop 32 $ loopAt 2 $ sound "sqrpad")
+  # cutoff "300 400 2000 500"
+  # up "[[0 5 7] ! [0 5 7 12] !]/4"
+  # pan saw1
