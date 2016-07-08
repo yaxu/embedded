@@ -18,3 +18,8 @@ d2 $ runWith 4 ((|+| n "12") . density 2) $ slow 2 $ foldEvery [3,5] ((0.25 <~) 
 d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "arc"
   # orbit "1"
 
+----
+
+d1 $ n (fit 3 [1 .. 8] "0 ~ [~ 2] 1")
+  # s ("sid")
+
