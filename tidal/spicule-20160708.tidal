@@ -68,3 +68,4 @@ d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   # cutoff "300 400 2000 500"
   # up "[[0 5 7] ! [0 5 7 12] !]/4"
   # pan saw1
+
