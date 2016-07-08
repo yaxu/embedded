@@ -20,12 +20,15 @@ d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "ar
 
 ----
 
-d1 $ jux rev $ off 0.5 (# speed "2") $ n (offadd 0.125 2 $ fit 3 [0 .. 7] "0 ~ [3 2] 1")
+d1 $ (jux rev $ off 0.5 (# speed "1.5") $ n (offadd 0.125 2 $ fit 3 [0 .. 7] "0 ~ [3 2] 1")
   # s ("arpy")
-  # end "0.2"
-  # 
-  -- # resonance "[0.3 0.4 0.3]/3"
-  -- # cutoff (scale 300 1000 saw1)
+  # end "0.3"
+  # orbit "2"
+  # room "0.3"
+  # size "0.5"
+  |*| speed "0.5"
+  # resonance "[0.3 0.1 0.2]/3")
+  # cutoff (slow 2 $ scale 300 4000 saw1)
 
 d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2"
 
@@ -33,4 +36,5 @@ d4 $ runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[
   # cutoff "1000" # gain "1.1"
   # resonance "0.3" # crush "3" # end "0.4"
   # speed "2"
-  
+
+d5 $ sound
