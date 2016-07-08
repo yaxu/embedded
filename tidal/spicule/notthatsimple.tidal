@@ -4,10 +4,10 @@ d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow
                                       off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
                                      ]
 
-x1 $ palindrome $ chop 8 $ loopAt (1/2) $ sound "bd*2 wobble"
+d1 $ palindrome $ chop 8 $ loopAt (1/2) $ sound "bd*2 wobble"
   # speed "[8 6 4 7]/5"
   # gain "1.1"
-  -- # accelerate "-2"
+  # accelerate "-2"
 
 d7 $ slowspread (\x -> off x (density 2 . (# gain "0.9") . (|*| speed "1.5"))) [0.25, 0.5, 0.75] $ within (0,0.5) (iter 4) $ sound "drum:5 [drum:1 [arpy arpy:3 arpy arpy:5]/4]"
   # end "0.3"
@@ -35,7 +35,7 @@ d10 $ slow 4 $ sound "fm:10(3,8)"
 d1 $ slow 4 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 ch ch:3}"
   # orbit "1"
 
-d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
+d9 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
   # resonance "0.3"
   # cutoff "[1000 2000]/4"
   # room "0.7"
@@ -50,7 +50,7 @@ d4 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
   # orbit "1"
   # speed "1"
 
-d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
+d8 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # gain "1.1"
   # speed "1.1"
   # accelerate "-3"
@@ -58,8 +58,7 @@ d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # cutoff (slow 8 $ scale 3000 5000 saw1)
   # resonance "0.5"
 
-
-d2 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
+d9 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
   -- # crush "6"
   # speed "[1,2?]"
   # gain "0.95"
