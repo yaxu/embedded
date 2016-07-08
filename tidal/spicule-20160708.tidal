@@ -51,8 +51,10 @@ d1 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1)
   # cutoff (scale 300 3000 saw1)
   # gain "0.8"
 
-d2 $ every 4 (chop 3) $  sound "newnotes"
+d2 $ every 4 (chop 3) $ sound "newnotes:2"
   # gain "1.5"
   # shape "0.4"
 
-d3 $ sound "[bd8:5,bd8:4](3,8,2)"
+d3 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
+  # shape "0.5"
+
