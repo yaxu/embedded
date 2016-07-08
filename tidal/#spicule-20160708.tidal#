@@ -20,10 +20,14 @@ d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "ar
 
 ----
 
-d1 $ n (fit 3 [0 .. 7] "0 ~ [3 2] 1")
+d1 $ n (offadd 0.125 2 $ fit 3 [0 .. 7] "0 ~ [3 2] 1")
   # s ("arpy")
   # end "0.2"
-  # resonance "[0.3 0.4]"
-  # cutoff "2000"
+  # resonance "[0.3 0.4 0.3]/3"
+  # cutoff (scale 300 1000 saw1)
 
 d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2"
+
+d3 $ slow 2 $ sound "bd8:4 bd8:4"
+  # cutoff "1000" # gain "1.1"
+  # resonance "0.5" # crush "3" # e
