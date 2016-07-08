@@ -28,6 +28,7 @@ d1 $ n (offadd 0.125 2 $ fit 3 [0 .. 7] "0 ~ [3 2] 1")
 
 d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2"
 
-d3 $ slow 2 $ sound "bd8:4 bd8:4"
+d3 $ runWith slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
   # cutoff "1000" # gain "1.1"
-  # resonance "0.5" # crush "3" # e
+  # resonance "0.3" # crush "3" # end "0.4"
+  # speed "2"
