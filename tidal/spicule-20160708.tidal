@@ -43,4 +43,4 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
   # vowel "[a e i o u]/4"
 
 
--- thanks for listening back soon
+
