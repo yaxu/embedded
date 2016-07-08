@@ -51,7 +51,7 @@ d1 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1)
   # cutoff (scale 300 3000 saw1)
   # gain "0.8"
 
-d2 $ sound "newnotes"
+d2 $ every 4 (chop 3) $  sound "newnotes"
   # gain "1.5"
   # shape "0.4"
 
