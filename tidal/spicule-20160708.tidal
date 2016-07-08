@@ -37,4 +37,6 @@ d4 $ runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[
   # resonance "0.3" # crush "3" # end "0.4"
   # speed "2"
 
-x3 $ jux (every 4 rev) $ chop 8 $ slow 2 $ sound "[gabba(3,16), ~ g:3]" # speed "1.5"
+x3 $ jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 feel:2]]" # speed "2"
+  # shape "0.7"
+  # gain "0.4"
