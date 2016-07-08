@@ -4,8 +4,12 @@ d1 $ (slow 4 $ ghost $ sound "[bd8:4,rs8:2 mt8:3] [[~ mt8] [[lt8:4 ht8:3] lt8 lt
   # room "0.4"
   # size "0.8"
 
-x2 $ runWith 4 (density 2) $ slowspread (chop) [32,64,96] $ sound "drum mt8:3*2"
+d2 $ runWith 4 (density 2) $ slowspread (chop) [32,64,96] $ sound "drum [mt8:3*2 cp8:1*2?]"
   # orbit "1"
+
+d3 $ smash 8 [1,3,4,8] $ sound "sid:3 [ind:50 sb:3]"
+  # orbit "1"
+  
 
 d2 $ runWith 4 ((|+| n "12") . density 2) $ slow 2 $ foldEvery [3,5] ((0.25 <~) . (|+| n "12")) $ n (offadd 0.25 12 $ (+60) <$> "[c2 a3 [~ e2] g3*2]") # s "xx" # end "0.1"
    # orbit "1"
