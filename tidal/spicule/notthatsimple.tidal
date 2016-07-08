@@ -54,9 +54,8 @@ d8 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # gain "1.1"
   # speed "1.1"
   # accelerate "-3"
-  -- TODO - add another sawtooth with duration of track
-  # cutoff (slow 8 $ scale 3000 5000 saw1)
-  # resonance "0.5"
+  # cutoff ((+) <$> (slow 8 $ scale 3000 5000 saw1) <*> (slow 32 $ scale 0 2000 saw1))
+  # resonance "0.3"
 
 d9 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
   -- # crush "6"
