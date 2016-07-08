@@ -4,6 +4,9 @@ d1 $ (slow 4 $ ghost $ sound "[bd8:4,rs8:2 mt8:3] [[~ mt8] [[lt8:4 ht8:3] lt8 lt
   # room "0.4"
   # size "0.8"
 
-d2 $ runWith 4 ((# up "12") . density 2) $ slow 2 $ foldEvery [3,5] ((0.25 <~) . (|+| n "12")) $ n (offadd 0.25 12 $ (+60) <$> "[c3 ~ [~ e2] ~]") # s "vocobass" # end "0.2"
+d2 $ runWith 4 ((# up "12") . density 2) $ slow 2 $ foldEvery [3,5] ((0.25 <~) . (|+| n "12")) $ n (offadd 0.25 12 $ (+60) <$> "[c3 a [~ e2] g3*2]") # s "vocobass" # end "0.1"
    # orbit "1"
+
+d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "arc"
+  # orbit "1"
 
