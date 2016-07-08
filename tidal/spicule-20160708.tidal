@@ -41,7 +41,7 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
   # gain "0.8")
   # vowel "[a e i o u]/4"
 
-d3 silence
+
 cps 0.8
 
 
