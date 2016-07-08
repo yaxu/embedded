@@ -68,4 +68,4 @@ d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   # cutoff "300 400 2000 500"
   # up "[[0 5 7] ! [0 5 7 12] !]/4"
 
-d2 $ slow 4 $ note (o(+60) <$> "[c ~ g] d [e ~ e] f") # s "xx"
+d2 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3 g3") # s "xx"
