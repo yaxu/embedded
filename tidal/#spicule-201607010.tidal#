@@ -19,5 +19,7 @@ d4 $ stut 3 0.5 1.75 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (sl
   # cutoff (slow 8 $ scale 1000 3000 saw1)
   # resonance "0.3"
 
-x1 $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "rs8 rs8:4*3"
+d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "ht8 rs8:4*3"
+  # coarse (slow 4 $ run 16)
 
+x2 $ sound "bd8"
