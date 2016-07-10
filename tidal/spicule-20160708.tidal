@@ -28,6 +28,7 @@ d1 $ (jux rev $ off 0.5 (# speed "1.5") $ n (offadd 0.125 2 $ fit 3 [0 .. 7] $ p
   |*| speed "0.5"
   # resonance "[0.3 0.1 0.2]/3")
   # cutoff (slow 2 $ scale 300 4000 saw1)
+  # gain "0.9"
 
 d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5" # crush "3"
 
