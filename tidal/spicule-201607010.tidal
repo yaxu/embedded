@@ -15,7 +15,7 @@ d7 $ slow 4 $ (chop 16 $ s "repetition")
 
 let never f p = p
 
-d4 $ never (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+d4 $ sometimes (|*| up "[12,7]") $ never (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
   # cutoff (slow 8 $ scale 1000 3000 saw1)
