@@ -13,6 +13,6 @@ d1 $ slow 4 $ chop 16 $ sound "repetition"
   # unit "c" # speed "0.25"
   # gain "1.1"
 
-d4 $ every 2 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+d4 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "2"
