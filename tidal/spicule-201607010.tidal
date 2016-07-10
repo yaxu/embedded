@@ -19,3 +19,4 @@ d4 $ stut 3 0.5 1.75 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (sl
   # cutoff (slow 8 $ scale 1000 3000 saw1)
   # resonance "0.3"
 
+x1 $ sound "rs8 rs8:4*3"
