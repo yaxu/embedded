@@ -42,9 +42,7 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
   # gain "0.8")
   # vowel "[a e i o u]/4"
 
-
 cps 0.8
-
 
 d5 $ (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
   # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
