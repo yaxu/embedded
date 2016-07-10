@@ -16,4 +16,6 @@ d1 $ slow 4 $ chop 16 $ sound "repetition"
 d4 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
-
+  # cutoff (slow 8 $ scale 1000 3000 saw1)
+  # resonance "0.3"
+  
