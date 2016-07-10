@@ -1,8 +1,0 @@
-d1 $ slowspread (chop) [8,128] $ off 0.125 (#up "[3 4 4 [5 7]/2]/4") $ sound "sqrpad"
-  # gain "0.9"
-  # cutoff "[3000 2000 2500]/3" # resonance "[0.3 0.2]/4"
-
-d2 $ jux () slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ ~ [~ ht8:3] ~"
-  # speed "[1,2]"
-  # shape "0.7"
-
