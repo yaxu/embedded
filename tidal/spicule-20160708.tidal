@@ -42,7 +42,7 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
   # gain "0.8")
   # vowel "[a e i o u]/4"
 
-cps 0.8
+cps 0.9
 
 d5 $ (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
   # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
@@ -61,7 +61,7 @@ d3 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8
 d9 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 !? !? feel:6]/4"
   # hcutoff "4000"
   # resonance "0.2" # speed "2"
-  
+
 d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   # cutoff "300 400 2000 500"
   # up "[[0 5 7] ! [0 5 7 12] !]/4"
