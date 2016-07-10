@@ -40,3 +40,4 @@ d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> "b2(5,8)
   # speed "[1,1.01]"
 
   
+-- goodnight kind listeners!
