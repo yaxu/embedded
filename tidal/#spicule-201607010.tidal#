@@ -1,0 +1,11 @@
+d1 $ chop 8 $ off (1/32) (|*| up "[3 4 4 [5 7]/2]/4") $ sound "sqrpad"
+  # gain "0.9"
+  # cutoff "[3000 2000 2500]/3" # resonance "[0.3 0.2]/4"
+
+
+d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+  # speed "[1,2]"
+  # shape "0.7"
+
+d3 $ slow 2 $ sound "[beack(5,16), beack:1*16?]" 
+
