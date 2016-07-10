@@ -9,7 +9,7 @@ d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ 
 
 x3 $ slow 2 $ sound "[beack(5,16), beack:1*16?]" 
 
-d1 $ slow 4 $ (chop 16 $ s "repetition")
+d7 $ slow 4 $ (chop 16 $ s "repetition")
   # unit "c" # speed "0.25"
   # gain "1.2"
 
