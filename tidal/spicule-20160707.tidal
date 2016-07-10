@@ -25,10 +25,12 @@ d2 $ sound "[bd ~ bd] sd8:2*2"
 d9 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99"
 
+{-
 d10 $ slow 4 $ sound "fm:10(3,8)"
   # vowel "a"
   # accelerate "-5"
   # speed "[-2,2]"
+-}
 
 -- 
 
@@ -63,7 +65,3 @@ d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ 
   # speed "[1,2?]"
   # gain "0.95"
   # end "0.1"
-
--- that's it for now, more this evening..
--- thanks for listening
--- just noodling this time really !
