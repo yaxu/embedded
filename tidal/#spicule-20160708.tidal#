@@ -70,4 +70,4 @@ d2 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3(3,8) [g3(3,8) 
   # cutoff (slow 3 $ scale 1000 3000 sine1)
   # resonance "0.3"
 
-d5 $ (chop 8 $ slow 2 $ sound "claus") # speed (rsaw1
+d5 $ (chop 16 $ slow 2 $ sound "claus") # speed (scale 4 0.5 $ rev saw1)
