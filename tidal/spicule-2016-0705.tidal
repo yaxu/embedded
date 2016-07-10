@@ -37,7 +37,6 @@ d5 $ jux rev $ runWith 2 (density 2) $ iter 4 $ loopAt 8 $ chop 32 $ sound "shak
 
 
 
-
   
 d7 $ slow 2 $ n (slow 4 $ offadd 0.25 12 $ offadd 0.125 5 $ slow 2 $ "c6(3,8) d7*3 c7*3 g7(3,8)") # s "xx" 
   # resonance "0.4"
