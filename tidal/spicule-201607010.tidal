@@ -13,7 +13,9 @@ d7 $ slow 4 $ (chop 16 $ s "repetition")
   # unit "c" # speed "0.25"
   # gain "1.2"
 
-d4 $ stut 3 0.5 1.75 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+let never f p = p
+
+d4 $ never (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
   # cutoff (slow 8 $ scale 1000 3000 saw1)
