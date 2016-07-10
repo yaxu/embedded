@@ -55,7 +55,7 @@ d6 $ every 4 (chop 3) $ sound "newnotes:1"
   # cutoff "600"
   # resonance "0.4"
 
-d3 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
+d5 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
   # shape "0.5"
 
 d9 $ runWith 4 (density 2) $ density 2 $ brak $ sound "[ind:42] [feel:9 !? !? feel:6]/4"
@@ -66,7 +66,9 @@ d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   # cutoff "300 400 2000 500"
   # up "[[0 5 7] ! [0 5 7 12] !]/4"
 
-d2 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3(3,8) [g3(3,8) a3(3,8)]") # s "dirty"
+d3 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3(3,8) [g3(3,8) a3(3,8)]") # s "dirty"
   # cutoff (slow 3 $ scale 1000 3000 sine1)
   # resonance "0.3"
+
+d2 $ slow 4 $ stut 2 0.7 (-0.5) $ jux (rev) $ iter 8 $ (slow 2 $ chop 128 $ sound "claus:4 claus:3 claus*4 ~") # speed (density 3 $ scale 4 1 $ saw1)
 
