@@ -66,3 +66,4 @@ d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ 
 
 -- that's it for now, more this evening..
 -- thanks for listening
+-- just noodling this time really !
