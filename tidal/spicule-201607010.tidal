@@ -19,6 +19,3 @@ d4 $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # cutoff (slow 8 $ scale 1000 3000 saw1)
   # resonance "0.3"
 
-d5 $ slow 2 $ n "1 [~ 2 ~] 0 ~" # s "nau"
-  # gain "1"
-
