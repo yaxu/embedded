@@ -1,0 +1,31 @@
+{-d1 $ chop 8 $ off (1/32) (up "[3 4 4 [5 7]/2]/4" |*|) $ sound "sqrpad"
+  # gain "0.9"
+  # cutoff "[3000 2000 2500]/3" # resonance "[0.3 0.2]/4"
+-}
+
+d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+  # speed "[1,2]"
+  # shape "0.8"
+
+d3 $ slow 2 $ sound "[beack(5,16), beack:1*16?]" 
+
+d7 $ slow 4 $ (chop 16 $ s "repetition")
+  # unit "c" # speed "0.25"
+  # gain "1.2"
+
+let never f p = p
+
+d4 $ sometimes (|*| up "[12,7]") $ never (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+  # shape "0.6"
+  # speed "[1 2 3 2]/3"
+  # cutoff (slow 8 $ scale 1000 3000 saw1)
+  # resonance "0.3"
+
+d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "ht8 rs8:4*3"
+  # coarse (slow 4 $ run 16)
+
+d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
+  # shape "0.9"
+  
+d1 $ chop 16 $ loopAt 4 $ sound "jungbass:3"
+
