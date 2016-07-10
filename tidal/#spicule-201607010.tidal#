@@ -27,5 +27,8 @@ d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (#
 d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
   # shape "0.9"
   
-d1 $ chop 16 $ loopAt 4 $ sound "jungbass:3"
-
+x1 $ jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3")
+  # shape "0.8"
+  |*| speed "[1 2 1 3]/3"
+  
+x2 $ n (run 8) # s "amencutup*16"
