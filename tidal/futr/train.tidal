@@ -19,7 +19,7 @@ d1 $ degrade $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 
   # gain "0.9"
 
 d4 $ jux rev $ off 0.125 (|*| up "[7 -5]/2") $ n ("[c1 d1 ds1 [a1 e1]]/8") # s "ravebass"
-  # orbit "3"
+  # orbit "1"
   # speed "2"
   # room "0"
   # size "0.9"
@@ -42,7 +42,6 @@ d1 $ slow 2 $ chop 16 $ sound "repetition"
 
 
 d7 silence
-
 
 
 d4 $ palindrome $
