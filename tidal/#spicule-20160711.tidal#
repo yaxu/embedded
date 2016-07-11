@@ -1,0 +1,3 @@
+
+d1 $ sound $ unwrap $ (\x -> e x 16 "gabba") <$> (floor <$> slow 8 $ scale 0 8 sine1)
+
