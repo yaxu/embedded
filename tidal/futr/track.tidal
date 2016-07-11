@@ -10,6 +10,8 @@ d8 $ stack  [slow 2 $ n (slowspread (offadd 0.25) [7,12,-5] "d3 ~ [e2 g3? e2] ~ 
              # crush "7")
             ]
 
+--
+
 d1 $ off 0.125 (# speed "[2 1.5 3]/3") $ whenmod 2 1 (const silence) $ slow 1.5 $ slowspread (stut 8 0.9) [0.1, 0.2,0.4,0.2] $ jux rev $ every 2 (slow 1.5) $ n ((+60) <$> run 6) # s "m2"
 
 d3 $ slowspread (off 0.25) [rev, id] $ slow 2 $ sound (unwrap $ e <$> "[3 5 7]/2" <*> "[8, 16]" <*> pure "{feel cp8, cp bd:3 bd:4}/2")
