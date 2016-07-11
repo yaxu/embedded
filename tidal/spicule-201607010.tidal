@@ -36,7 +36,7 @@ d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # shape "0.8"
   |*| speed "[1 2 1 3]/3"
 
-d2 $ every 4 (# speed "-1") $ s "amencutup*8" # n (run 32)
+d2 $ every 4 (# speed "-1") $ s "amencutup*8" # n (foldEvery [3,7] (0.25 <~) $ run 32)
   # gain "1.4"
 
 
