@@ -62,9 +62,11 @@ d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # resonance "0.3"
   # orbit "0"
 
-d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
+d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "dirty"
   # crush "6"
   # speed "[1,2?]"
-  # gain "0.95"
+  # gain "0.9"
   # end "0.1"
   # orbit "0"
+
+
