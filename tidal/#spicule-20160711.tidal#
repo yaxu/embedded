@@ -1,3 +1,3 @@
 
-d1 $ sound $ unwrap $ (\x -> e x 16 "gabba") <$> (floor <$> slow 8 $ scale 0 8 sine1)
+x1 $ stut 3 0.5 (-4) $ sound $ unwrap $ (\x -> e x 16 "bd8:4") <$> (floor <$> (slow 16 $ scale 0 8 sine1))
 
