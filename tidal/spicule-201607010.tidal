@@ -6,20 +6,25 @@
 d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
   # speed "[1,2]"
   # shape "0.8"
+  # orbit "0"
 
 d3 $ slow 2 $ sound "[beack(5,16), beack:1*16?]" 
+  # orbit "0"
 
 d7 $ slow 4 $ (chop 16 $ s "repetition")
   # unit "c" # speed "0.25"
   # gain "1.2"
+  # orbit "0"
 
-let never f p = p
+let never = flip const
 
-d4 $ never (|*| up "[12,7]") $ never (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
   # cutoff (slow 8 $ scale 1000 3000 saw1)
   # resonance "0.3"
+  # room "0.3"
+  # orbit "1"
 
 d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "ht8 rs8:4*3"
   # coarse (slow 4 $ run 16)
