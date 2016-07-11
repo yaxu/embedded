@@ -41,6 +41,7 @@ d2 $ runWith 4 (density 2) $ off 0.125 (# hcutoff "[2000 3000]/4") $ every 4 (# 
   # gain "1.1"
   # shape "0.8"
 
+
 d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> (slowspread (\x -> offadd x 7) [(1/32), (1/16)] $ slow 2 "b2(5,8) e2(3,8)")) # s "xx")
   # gain "0.86"
   # cutoff (slow 4 $ scale 1000 4000 sine1)
@@ -48,3 +49,4 @@ d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> (slowspr
   # speed "[1,1.01]"
 
   
+cps 0.9
