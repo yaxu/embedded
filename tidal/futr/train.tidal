@@ -67,10 +67,5 @@ cps 0.77
 
 d1 $ slow 2 $ chop 8 $ sound "sometimes" # speed "0.5" # unit "c"
 
-d2 $ slow 2 $ n "[f*2 ~] [f ds ~ ~] ~ ~" # s "xx"
+d2 $ slow 2 $ n "[f0*2 ~] [f0 ds0 ~ ~] ~ ~" # s "xx"
 
-gst-launch-1.0 v4l2src  ! "video/x-raw,width=640,height=480,framerate=15/1" ! x264enc bitrate=500 ! video/x-h264,profile=high ! h264parse ! queue ! flvmux name=mux alsasrc device=hw:1 ! audioresample ! audio/x-raw,rate=48000 ! queue ! voaacenc bitrate=32000 ! queue ! mux. mux. ! rtmpsink location=\"rtmp://example.com/myapp/mystream live=1\"
-
-ppp
-
-ehush
