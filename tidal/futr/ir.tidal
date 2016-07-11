@@ -24,9 +24,6 @@ d2 $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "
 d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
   # cutoff "30000"
   # resonance "0.3"
-
-
-
   # shape "0.5"
   # orbit "2") |+| pan (slow 8 saw1)
 
@@ -42,5 +39,5 @@ hush
 
 d1 $ jux' [id, rev, iter 4, echo 0.25 . (|*| up "12")] $ slow 4 $ n (offadd 0.125 7 $ slow 2 $  "c3*3 d3*2 e3(3,8)") # s "xx"
 
-d2 $ spin 3 $ chop 8 $ sound "os" # unit "c"
+d2 $ chop 8 $ sound "os" # unit "c"
 
