@@ -78,3 +78,4 @@ d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   shape "0" # gain "0.8"
 
+d1 $ jux (iter 4) $ chop 32 $ sound "jungbass:3"
