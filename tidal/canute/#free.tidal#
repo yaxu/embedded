@@ -81,5 +81,7 @@ d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
 d1 $ jux (iter 4) $ chop 32 $ sound "jungbass:3"
 
 
-t1 (xfadeIn 4) $ sound "cp(3,8)"
-  # speed "2"
+d1 $ slow 2 $ sound "{bd*3 ~  bd*3 ~ arpy:4 ~ arpy arpy:4, wobble ~ ~}"
+  # speed "[1 2]/3"
+  # crush "6"
+  
