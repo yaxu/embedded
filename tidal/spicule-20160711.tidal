@@ -17,3 +17,6 @@ d4 $ off 0.25 (# speed "2") $ jux rev $ (slowspread (chop) [8,16,32,64,128] $ so
   # cutoff (slow 4 $ scale 500 4000 sine1)
   # resonance "0.3"
 
+
+d1 $ sound "cp sn sn sn"
+
