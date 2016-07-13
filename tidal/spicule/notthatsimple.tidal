@@ -58,4 +58,4 @@ d9 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (p
   # speed "[1,2?]"
   # gain "0.95"
   # end "0.1"
-  
+
