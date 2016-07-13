@@ -49,7 +49,6 @@ d2 $ slow 2 $ (jux rev $ n (sometimes ((subtract 12) <$>) $ offadd 0.125 12 $ ne
 
 cps 0.
 
-
 solo $ 
 d3 $ (jux rev $ slowspread (chop) [16,32] $ loopAt 4 $ sound "liq")
   # gain "0.9"
