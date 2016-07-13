@@ -15,6 +15,14 @@ d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # orbit "1")
 
 
+d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
+  # resonance "0.3"
+  # cutoff "[1000 2000]/4"
+  # room "0.7"
+  # size "0.6"
+  # orbit "2"
+
+
 
 
 d1 $ slow 2 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
