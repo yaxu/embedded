@@ -1,6 +1,9 @@
 
 d1 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
-            runWith 4 (density 2) $ chop 16 $ sound "can mt8 lt8 rs8*2"
+            sometimes (# speed "2") $ stut 3 0.1 2 $ runWith 4 (density 2) $ chop 16 $ sound "can mt8 lt8 rs8*2"
             # cutoff (scale 1000 3000 sine1) # resonance "0.3"
             # speed "0.4"
            ]
+
+d2 $ n "40" # s "xx"
+  # cutoff (slow 4 $ scale 1000 3000 sine1) # resonance "0.3"
