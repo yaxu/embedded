@@ -14,7 +14,7 @@ d4 $ slowspread (\x -> juxBy x (|+| speed "4.02")) [0.25, 0.5, 1] $ slowspread (
       |+| gain "0.8" |+| speed "4"
       # room "0.5" # orbit "2" # size "0.9"
 
-d6 silence
+d4 silence
 
 -- dh
 d5 $ (chop 2) $ every 2 (0.25 <~) $ sound "drum feel drum [~ sd8:2]"
