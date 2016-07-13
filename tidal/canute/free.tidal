@@ -112,3 +112,33 @@ d2 $ jux rev $ slowspread (loopAt) [4,2,8,2] $ chop 12 $ sound "shakedown"
   # gain "0.97"
 
 --
+
+
+
+d1 $ runWith 4 (slow 2) $ every 2 (# speed "2") $ every 4 (0.25 <~) $ jux (# speed "2") $ sound "[bd8:4(3,8),bd8:8(5,8,[4 2]/2), ~ cp8]"
+  # crush "5"
+  |*| speed "2"
+
+d2 $ jux (rev) $ chop 64 $ sound "drum ht8*3"
+  # gain "1.2"
+  # speed "0.75"
+  # resonance "0.4"
+  # cutoff (slow 16 $ scale 1000 4000 saw1)
+
+d3 $ inside 8 (every 2 (const silence)) $ jux rev $ iter 4 $ loopAt 4 $ chop 32 $ sound "shakedown" |*| speed "1"
+
+
+d4 $ degrade $ slow 8 $ jux rev $ off (1/16) (|*| speed "2") $ off 0.125 (|*| up "7") $ n "0 1 4 [~ 3]" # s "arpy"
+  # gain "1.1"
+  # room "0.8"
+  # size "0.8"
+  |*| speed "0.25"
+
+hush
+
+d5 $ sound "ravebass:10"
+
+d6 $ sound "gabba"
+
+
+--
