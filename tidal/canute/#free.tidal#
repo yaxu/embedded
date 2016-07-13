@@ -1,0 +1,4 @@
+
+d1 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
+            so
+           ]
