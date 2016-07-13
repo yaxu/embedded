@@ -23,5 +23,11 @@ d4 $ (runWith 4 (density 2) $ jux (iter 4) $ sometimes (# speed "[2,1.5]") $ slo
 
 d5 $ jux rev $ (slowspread (chop) [128,64,32,64] $ sound "drum*2 bd cp [arpy*2 arpy]/2")
   # gain "1.1"
-  
-d6 $ sound "arpy
+
+d6 $ jux rev $ weave 16 (n (run 8) # s "arpy")
+  [vowel "a i o*2 u",
+   vowel "i o u",
+   speed "1 2 3 1",
+   speed "1 [2 3] 1"
+  ]
+  # gain "1.1"
