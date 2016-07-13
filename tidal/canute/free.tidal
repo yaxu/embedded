@@ -1,4 +1,14 @@
 
+d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
+  # shape "0.9"
+
+d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
+  # shape "0.8"
+  |*| speed "[1 2 1 3]/3"
+
+
+
+
 d1 $ slow 2 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
             sometimes (# speed "2") $ stut 3 0.1 2 $ runWith 4 (density 2) $ chop 16 $ sound "can mt8 lt8 rs8*2"
             # cutoff (scale 1000 3000 sine1) # resonance "0.3"
@@ -32,5 +42,14 @@ d6 $ jux rev $ weave 16 (n (palindrome $ run 16) # s "arpy")
   ]
   # gain "1.1"
 
-d7 $ jux (iter 4) $ sound "kurt*2 ~ kurt:2 kurt:3*2"  # gain "1.1"
+d7 $ off (0.125) (# speed "0.75") $ jux (iter 4) $ sound "kurt ~ ~ ~"  # gain "1.1"
+  # vowel "[a i]/2"
+
+d8 $ off 0.5 (
+  # (vowel "a" # speed "2")) $ every 2 (slowspread (chop) [8,12,16]) $ sound "~ off"
+
+
+d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  shape "0" # gain "0.8"
 
