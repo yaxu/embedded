@@ -2,7 +2,7 @@
 d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
   # shape "0.9"
 
-d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
+d9 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # shape "0.5"
   |*| speed "[1 2 1 3]/3"
 
@@ -125,8 +125,10 @@ d2 $ jux (rev) $ chop 64 $ sound "drum ht8*3"
   # resonance "0.4"
   # cutoff (slow 16 $ scale 1000 4000 saw1)
 
+-- what's up with that?
 d3 $ inside 8 (every 2 (const silence)) $ jux rev $ iter 4 $ loopAt 4 $ chop 32 $ sound "shakedown" |*| speed "1"
 
+d1 $ sound "cp8 ~ ~ ~" # gain "1.1"
 
 d4 $ degrade $ slow 8 $ jux rev $ off (1/16) (|*| speed "2") $ off 0.125 (|*| up "7") $ n "0 1 4 [~ 3]" # s "arpy"
   # gain "1.1"
