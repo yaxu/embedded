@@ -35,7 +35,9 @@ d6 $ jux rev $ weave 16 (n (palindrome $ run 16) # s "arpy")
 d7 $ off (0.125) (# speed "0.75") $ jux (iter 4) $ sound "kurt ~ ~ ~"  # gain "1.1"
   # vowel "[a i]/2"
 
-d
+d8 $ off 0.5 (
+  # (vowel "a" # speed "2")) $ every 2 (slowspread (chop) [8,12,16]) $ sound "~ off"
+
 
 d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
