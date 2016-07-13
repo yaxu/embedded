@@ -28,7 +28,7 @@ d9 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
 
 -- 
 
-d1 $ slow 4 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 ch ch:3}"
+d1 $ slow 4 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 hc hc:3}"
   # orbit "1"
 
 d9 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
@@ -46,7 +46,7 @@ d7 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
   # orbit "1"
   # speed "1"
 
-d8 $ chop 16 $ ghost $ sound "g:1(3,8)"
+d8 $ slow 2 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # gain "1.1"
   # speed "1.1"
   # accelerate "-3"
