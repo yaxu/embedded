@@ -1,10 +1,14 @@
 
-d1 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
+d1 $ slow 2 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
             sometimes (# speed "2") $ stut 3 0.1 2 $ runWith 4 (density 2) $ chop 16 $ sound "can mt8 lt8 rs8*2"
             # cutoff (scale 1000 3000 sine1) # resonance "0.3"
             # speed "0.4"
            ]
+  
+let never = flip const
 
-d2 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 5 "40 47 52 43") # s "xx"
+d2 $ jux rev $ n (sometimes ((subtract 12) <$>) $ offadd 0.125 12 $ never (offadd 0.25 5) "c9*2 a9*3 f8*2 e8(3,8)") # s "xx"
   # cutoff (slow 4 $ scale 1000 3000 sine1) # resonance "0.3"
   # gain "0.8"
+
+  
