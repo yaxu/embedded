@@ -52,10 +52,11 @@ d10 $ weave' 16 ((slow 16 $ striate' 128 (1/64) $ sound "bev*2") |+| pan sine1)
             [(vowel "a e i o u" |+|),
              (vowel "i e p u" |+|),
              (speed ("1 1.5 0.5") |+|)
-            ] |+| gain "0.9"
+            ] |+| gain "1.6"
 
 d10 silence
 hush
+
 -- icfdbtt_vocal2
 d10 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan (scale 0.25 0.75 sine1))
             [density 1.5 . (vowel "i e p u" |+|) . (|+| cut "-2"),
