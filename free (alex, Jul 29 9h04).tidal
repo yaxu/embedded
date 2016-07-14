@@ -186,9 +186,10 @@ d4 $ sometimes (|*| speed "2") $ degradeBy 0.3 $ jux rev $ n (offadd 0.125 12 $ 
 cps 1.1
 
 
-d5 $ (slowspread (chop) [32,16,128,] $ sound "{bd arpy cp*2 sn:2, cp sn:4}")
+d5 $ jux (iter 4) $ (slowspread (chop) [32,16,128,64] $ sound "{bd [newnotes arpy] cp*2 sn:2, cp sn:4}")
 
-  
+d3 $ slslowspread (chop) [8,16,32] $ sound "cp off"
+  # speed "[0.8 1 1.2]/3"
 
 d2 $ sound 
 
