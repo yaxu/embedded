@@ -183,9 +183,14 @@ d4 $ sometimes (|*| speed "2") $ degradeBy 0.3 $ jux rev $ n (offadd 0.125 12 $ 
   # cutoff (slow 2 $ scale 1000 3000 sine1)
   # end "0.1"
 
-cps 0
+cps 1.1
 
 
+d5 $ (slowspread (chop) [32,16,128,] $ sound "{bd arpy cp*2 sn:2, cp sn:4}")
+
+  
+
+d2 $ sound 
 
 
 
