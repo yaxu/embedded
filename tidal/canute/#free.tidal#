@@ -165,6 +165,7 @@ d2 $ jux (rev) $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f8*2 a7(3,8) c7(
   # cutoff (slow 8 $ scale 2000 5000 sine1)
   # resonance "0.25"
   # gain "0.9"
+  # end "0.05"
   
 
 
@@ -179,3 +180,8 @@ d2 $ jux (rev) $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f8*2 a7(3,8) c7(
 
 
   
+d2 $ jux rev $ chop 8 $ sound "bd ht*2 mt bd"
+  # speed "2"
+
+d3 $ slowspread (chop) [8,6,3,16] $ sound "~ off"
+hush
