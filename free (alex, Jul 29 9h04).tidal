@@ -196,7 +196,7 @@ d2 $ jux rev $ iter 4 $ loopAt 8 $ chop 32 $ sound "liq"
   # resonance "0.2"
   # cutoff (slow 16 $ scale 1000 7000 sine1)
 
-d3 $ brak $ sound "bd*2 drum future*4 bd"
+d3 $ brak $ sound "bd*1 drum future*2 bd"
   # gain "1.1"
   # speed "2"
 
@@ -207,10 +207,11 @@ d4 $ jux rev $ slow 4 $ iter 4 $ chop 16 $ sound "arc"
 
 d6 $ jux rev $ weave 16 (n (palindrome $ run 8) # s "arpy")
   [vowel "a e i u",
-   vowel "a i [u o] e",
-   speed "1 2 3",
+--    vowel "a i [u o] e",
+--   speed "1 2 3",
    speed "1 2 3 1"
   ] # speed "0.5"
 
-d7 $ iter 4 $ loopAt 4 $ chop 16 $ s "repetition" # n (irand 15)
-  # gain "1.2"
+
+d7 $ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ s "repetition" # n (irand 15)
+  # gain "1"
