@@ -161,8 +161,10 @@ d1 $ jux (rev) $ sound "[bd:2(3,8), bd:5(5,8,[2 5 3]/3)]"
   # crush "5"
   # speed "[2 1.5]/4"
 
-d2 $ s
-
+d2 $ jux (rev) $ slow 2 $ n (offadd 0.125 7 $ "f8 a7 c7 e3") # s "xx"
+  # cutoff (slow 8 $ scale 2000 5000 sine1)
+  # resonance "0.25"
+  
 
 
 
