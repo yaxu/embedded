@@ -141,3 +141,5 @@ s.doWhenBooted{
 //~m.callback = {arg f; f.postln;}
 }
 )
+a = Date.getDate
+a.dayOfWeek
