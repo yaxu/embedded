@@ -1,0 +1,178 @@
+d5 $ sound "wobble"
+
+d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
+  # shape "0.9"
+
+d1 $ sound "drum"
+
+d9 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
+  # shape "0.5"
+  |*| speed "[1 2 1 3]/3"
+
+(d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+  # shape "0.6"
+  # speed "[1 2 3 2]/3"
+  # cutoff (slow 8 $ scale 1000 3000 saw1)
+  # resonance "0.3"
+  # room "0.3"
+  # orbit "1")
+
+-- plink
+d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
+  # resonance "0.3"
+  # cutoff "[1000 2000]/4"
+  # room "0.7"
+  # size "0.6"
+  # orbit "2"
+
+-- heavy
+d6 $ chop 16 $ ghost $ sound "g:1(3,8)"
+  # gain "1.1"
+  # speed "1.1"
+  # accelerate "-3"
+  # cutoff (slow 8 $ scale 3000 5000 saw1)
+  # resonance "0.3"
+  # orbit "0"
+
+
+
+
+d1 $ slow 2 $ stack [slowspread chop [32,64,128] $ slow 2 $ sound "[bd8:3 bd8:4] [mt8:3 ~ mt8:4]",
+            sometimes (# speed "2") $ stut 3 0.1 2 $ runWith 4 (density 2) $ chop 16 $ sound "can mt8 lt8 rs8*2"
+            # cutoff (scale 1000 3000 sine1) # resonance "0.3"
+            # speed "0.4"
+           ]
+  
+let never = flip const
+
+d2 $ slow 2 $ (jux rev $ n (sometimes ((subtract 12) <$>) $ offadd 0.125 12 $ never (offadd 0.25 5) "c9*2 a9*3 f8*2 e8(3,8)") # s "xx"
+  # cutoff (slow 4 $ scale 1000 3000 sine1) # resonance "0.3"
+  # gain "0.7")
+  # vowel "[a e i o u]/5"
+
+d3 $ (jux rev $ slowspread (chop) [16,32] $ loopAt 4 $ sound "liq")
+  # gain "0.9"
+  # hcutoff (slow 4 $ scale 1000 4000 sine1) # resonance "0.2"
+
+d4 $ (runWith 4 (density 2) $ jux (iter 4) $ sometimes (# speed "[2,1.5]") $ slow 2 $ sound "bd*8 bd*4 mt8*2 [bd*4,cp]")
+  # hcutoff (slow 4 $ scale 1000 4000 sine1) # resonance "0.2"
+
+d5 $ jux rev $ (slowspread (chop) [128,64,32,64] $ sound "drum*2 bd cp [arpy*2 arpy]/2")
+  # gain "1.1"
+  
+
+d6 $ jux rev $ weave 16 (n (palindrome $ run 16) # s "arpy")
+  [vowel "a i o*2 u",
+   vowel "i o u",
+   speed "1 2 3 1",
+   speed "1 [2 3] 1"
+  ]
+  # gain "1.1"
+
+d7 $ off (0.125) (# speed "0.75") $ jux (iter 4) $ sound "kurt ~ ~ ~"  # gain "1.1"
+  # vowel "[a i]/2"
+
+d8 $ off 0.5 (
+  # (vowel "a" # speed "2")) $ every 2 (slowspread (chop) [8,12,16]) $ sound "~ off"
+
+
+d2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  shape "0" # gain "0.8"
+
+d1 $ jux (iter 4) $ chop 32 $ sound "jungbass:3"
+
+
+d1 $ jux (rev) $ every 3 (chop 32) $ slow 2 $ sound "{bd*2 claus cp [~ ht8] claus:1 ~ newnotes claus:3, wobble sb:3 ~}"
+  # speed "[1 2]/3"
+  # crush "6"
+  # cutoff "[1000 3000 5000]/5"
+
+d2 $ jux (rev) $ chop 64 $ s "claus*8" # n (run 6)
+  # speed "[1 2]/3"
+  # vowel "e"
+
+d3 $ iter 4 $ (jux rev $ stut 4 0.9 0.5 $ sound "bd [arpy [cp drum:2]]/2"
+  # gain "1.3" # speed "2")
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+
+
+--
+
+--bleep
+
+d1 $ off 0.25 (|*| speed "1.5") $ superimpose ((# crush "5") . (# speed "1.5") . (slowspread (~>) [0.75, 0.125, 1, 0.25])) $ n (iter 4 "0 [2 4]") # s "sb"
+  # room "0.25"
+  # size "0.2"
+  -- # cutoff (slow 4 $ scale 1000 8000 $ sine1)
+  -- # resonance "0.1"
+  # orbit "1"
+  |*| speed "1"
+  # gain "0.7"
+
+d2 $ jux rev $ slowspread (loopAt) [4,2,8,2] $ chop 12 $ sound "shakedown"
+  # gain "0.97"
+
+--
+
+
+
+d1 $ runWith 4 (slow 2) $ every 2 (# speed "2") $ every 4 (0.25 <~) $ jux (# speed "2") $ sound "[bd8:4(3,8),bd8:8(5,8,[4 2]/2), ~ cp8]"
+  # crush "5"
+  |*| speed "2"
+
+d2 $ jux (rev) $ chop 64 $ sound "drum ht8*3"
+  # gain "1.2"
+  # speed "0.75"
+  # resonance "0.4"
+  # cutoff (slow 16 $ scale 1000 4000 saw1)
+
+-- what's up with that?
+d3 $ inside 8 (every 2 (const silence)) $ jux rev $ iter 4 $ loopAt 4 $ chop 32 $ sound "shakedown" |*| speed "1"
+
+d1 $ sound "cp8 ~ ~ ~" # gain "1.1"
+
+d4 $ degrade $ slow 8 $ jux rev $ off (1/16) (|*| speed "2") $ off 0.125 (|*| up "7") $ n "0 1 4 [~ 3]" # s "arpy"
+  # gain "1.1"
+  # room "0.8"
+  # size "0.8"
+  |*| speed "0.25"
+
+hush
+
+d5 $ sound "ravebass:10"
+
+d6 $ sound "gabba"
+
+
+--
+
+
+
+
+
+
+
+
+
+
+
+d1 $ jux (rev) $ sound "[bd:2(3,8), bd:5(5,8,[2 5 3]/3)]"
+  # crush "5"
+  # speed "[2 1.5]/4"
+
+d2 $ s
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
