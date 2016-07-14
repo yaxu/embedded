@@ -177,8 +177,11 @@ d2 $ jux (iter 4) $ every 3 (density 2 . (# speed "2")) $ slow 2 $ sound "jungba
 
 d3 $ slow 4 $ chop 4 $ sound "bd [kurt sn8:3] mt8:3 [cp*2? sn:2]"
 
-d4 $ n (offaslow 4 $ "f7 a7 c7 e6") # s "xx"
-  # accelerate "-2"
+d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 4 $ "[f7*2 g7(3,8)]/2 a7*2 c7(3,8) e6*3") # s "xx"
+  # accelerate "-1"
+  # resonance "0.2"
+  # cutoff (slow 2 $ scale 1000 3000 sine1)
+  
 
 
 
