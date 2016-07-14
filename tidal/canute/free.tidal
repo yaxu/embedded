@@ -49,8 +49,6 @@ d2 $ slow 2 $ (jux rev $ n (sometimes ((subtract 12) <$>) $ offadd 0.125 12 $ ne
   # gain "0.7")
   # vowel "[a e i o u]/5"
 
-cps 0.
-
 d3 $ (jux rev $ slowspread (chop) [16,32] $ loopAt 4 $ sound "liq")
   # gain "0.9"
   # hcutoff (slow 4 $ scale 1000 4000 sine1) # resonance "0.2"
