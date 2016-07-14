@@ -168,7 +168,10 @@ d2 $ jux (rev) $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f8*2 a7(3,8) c7(
   # end "0.05"
   
 
-
+d1 $ (jux (rev) $ chop 8 $ s "claus" # n ((+1) <$> irand 3))
+  # speed "2"
+  # resonance "0.3"
+  # cutoff (scale 1000 3000 sine1)
 
 
 
