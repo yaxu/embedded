@@ -148,4 +148,31 @@ d6 $ sound "gabba"
 --
 
 
-d1 $ sound "cp"
+
+
+
+
+
+
+
+
+
+
+d1 $ jux rev $ iter 4 $ chop 16 $ sound "bd8:2 arpy"
+
+hush
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
