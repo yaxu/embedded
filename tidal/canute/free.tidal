@@ -157,11 +157,16 @@ d6 $ sound "gabba"
 
 
 
-d1 $ sound "[bd:2(3,8), bd:5(5,8,2)]"
+d1 $ jux (rev) $ sound "[bd:2(3,8), bd:5(5,8,[2 5 3]/3)]"
   # crush "5"
+  # speed "[2 1.5]/4"
 
-
-
+d2 $ jux (rev) $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f8*2 a7(3,8) c7(3,8) e7*2") # s "xx"
+  # cutoff (slow 8 $ scale 2000 5000 sine1)
+  # resonance "0.25"
+  # gain "0.9"
+  # end "0.05"
+  
 
 
 
@@ -175,3 +180,7 @@ d1 $ sound "[bd:2(3,8), bd:5(5,8,2)]"
 
 
   
+d2 $ jux rev $ chop 8 $ sound "bd ht*2 mt bd"
+  # speed "2"
+
+d3 $ slowspread (chop) [8,6,3,16] $ sound "~ off"
