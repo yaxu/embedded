@@ -188,3 +188,4 @@ d2 $ jux rev $ chop 8 $ sound "bd ht*2 mt bd"
   # speed "2"
 
 d3 $ slowspread (chop) [8,6,3,16] $ sound "~ off"
+hush
