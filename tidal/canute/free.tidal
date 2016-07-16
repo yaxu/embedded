@@ -105,7 +105,7 @@ d3 $ iter 4 $ (jux rev $ stut 4 0.9 0.5 $ sound "bd [arpy [cp drum:2]]/2"
 
 --bleep
 
-d1 $ off 0.25 (|*| speed "1.5") $ superimpose ((# crush "5") . (# speed "1.5") . (slowspread (~>) [0.75, 0.125, 1, 0.25])) $ n (iter 4 "0 [2 4]") # s "sb"
+d3 $ off 0.25 (|*| speed "1.5") $ superimpose ((# crush "5") . (# speed "1.5") . (slowspread (~>) [0.75, 0.125, 1, 0.25])) $ n (iter 4 "0 [2 4]") # s "sb"
   # room "0.25"
   # size "0.2"
   -- # cutoff (slow 4 $ scale 1000 8000 $ sine1)
