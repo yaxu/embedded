@@ -12,5 +12,5 @@ x2 $ stut 4 0.4 (-0.125) $ jux (iter 4) $ sound "bd8(3,8,[2 3]/2)"
 x3 $ jux (rev) $ slowspread (stut 4 0.4) [-(1/16), (1/8), (1/2)] $ sound "sd8:7(3,8,[3 5]/2)"
   # crush "4"
 
-d4 $ jux (rchop 8)$ sound "sid:1*8"
+d4 $ every 8 (density 2) $ jux (iter 4 . (# speed "2"))$ sound "sid:1*8"
   # speed ((+) <$> scale 1 1.1 saw1 <*> (slow 4 $ scale 0 0.2 saw1))
