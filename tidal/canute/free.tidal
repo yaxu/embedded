@@ -9,6 +9,7 @@ d9 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # shape "0.5"
   |*| speed "[1 2 1 3]/3"
 
+let never = flip const in
 (d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
