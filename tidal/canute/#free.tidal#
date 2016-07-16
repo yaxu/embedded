@@ -4,7 +4,7 @@ d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
   # shape "0.9"
 
 d1 $ sound "drum"
-
+h
 d9 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # shape "0.5"
   |*| speed "[1 2 1 3]/3"
@@ -168,20 +168,11 @@ d2 $ jux (rev) $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f8*2 a7(3,8) c7(
   # end "0.05"
   
 
-d1 $ brak $ (jux (rev) $ slowspread (chop) [8,16,4] $ s "{claus bd, ht mt:3 ~}" # n ((+1) <$> irand 3))
-  # speed "[2 1]/2"
-  # resonance "0.3"
-  # cutoff (slow 2 $ scale 1000 3000 sine1)
 
-d2 $ jux (iter 4) $ every 3 (density 2 . (# speed "2")) $ slow 2 $ sound "jungbass(3,8,[0 4]/4)"
 
-d3 $ slow 4 $ chop 4 $ sound "bd [kurt sn8:3] mt8:3 [cp*2? sn:2]"
 
-d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 4 $ "[f7*2 g7(3,8)]/2 a7*2 c7(3,8) e6*3") # s "xx"
-  # accelerate "-1"
-  # resonance "0.2"
-  # cutoff (slow 2 $ scale 1000 3000 sine1)
-  
+
+
 
 
 
@@ -189,3 +180,7 @@ d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 (7) $ slow 4 $ "[f7*2 g7(3,8)]/2
 
 
   
+d2 $ jux rev $ chop 8 $ sound "bd ht*2 mt bd"
+  # speed "2"
+
+d3 $ slowspread (chop) [8,6,3,16] $ sound "~ off"
