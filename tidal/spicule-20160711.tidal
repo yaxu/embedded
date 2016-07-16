@@ -18,5 +18,8 @@ d4 $ off 0.25 (# speed "2") $ jux rev $ (slowspread (chop) [8,16,32,64,128] $ so
   # resonance "0.3"
 
 
-d1 $ sound "cp sn sn sn"
+x1 $ sound "cp sn sn sn"
+  # pan "0"
 
+  
+hush
