@@ -1,4 +1,5 @@
 
 
-d1 $ (jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d8 [~ a7] f6 e6") # s "xx")
-  # accelerate "[-2 1.6]/2"
+d1 $ jux rev $ slow 2 $ (chop 4 $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d8*2 [~ a7(3,8)] f6(3,8) e6(3,8)") # s "xx")
+  # accelerate "[-1.2 1.2]/2"
+  # hcutoff "500"
