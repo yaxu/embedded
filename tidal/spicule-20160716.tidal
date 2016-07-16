@@ -17,10 +17,12 @@ d4 $ (every 8 (density 2) $ jux (iter 4 . (# speed "2"))$ sound "sid:1*4"
   # cutoff (slow 8 $ scale 900 1000 sine1)
   # resonance "0.1"
 
-d1 $ slow 2 $ whenmod 3 2 (slow 2) $ jux (rev) $ chop 8 $ sound "bd8:7 [dirty:40 dirty:32]/2 sd8:3 dirty:52"
-  # dur "0.02"
-  # speed "8"
-  # cutoff "1000"
+d1 $ slow 4 $ whenmod 3 2 (slow 2) $ jux (rev) $ chop 8 $ sound "bd8:7 [dirty:40 dirty:32]/2 sd8:3 can:52"
+  # dur "0.2"
+  # speed "2"
+  # cutoff "700"
+  # room "0.3"
+  # size "0.5"
 
 d2 $ jux (slow 2 . (|*| speed "0.9")) $ iter' 4 $ chop 8 $ ss "drum:0.8 [drum:1.2*2, ~ [mt ~ lt]]"
 
