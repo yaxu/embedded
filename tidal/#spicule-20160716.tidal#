@@ -1,4 +1,4 @@
-one moment..
 
-d1 $ sound "bd bd"
-  # pan "0 1"
+
+d1 $ (jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d8 [~ a7] f6 e6") # s "xx")
+  # accelerate "[-2 1.6]/2"
