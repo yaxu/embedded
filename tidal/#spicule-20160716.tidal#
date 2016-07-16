@@ -1,5 +1,10 @@
 
 
-d1 $ jux rev $ slow 2 $ (chop 4 $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d8*2 [~ a7(3,8)] f6(3,8) e6(3,8)") # s "xx")
+d1 $ jux rev $ slow 2 $ (n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "d8*2 [~ a7(3,8)] f6(3,8) e6(3,8)") # s "xx")
   # accelerate "[-1.2 1.2]/2"
-  # hcutoff "500"
+  # hcutoff "400"
+  # end "0.1"
+
+d2 $ stut 4 0.4 (-0.125) $ jux (iter 4) $ sound "bd8(3,8,[2 3]/2)"
+  # speed "2"
+  # crush "4"
