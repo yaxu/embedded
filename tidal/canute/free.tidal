@@ -64,9 +64,9 @@ d5 $ jux rev $ (slowspread (chop) [128,64,32,64] $ sound "drum*2 bd cp [arpy*2 a
 
 d6 $ jux rev $ weave 16 (n (palindrome $ run 16) # s "arpy")
   [vowel "a i o*2 u",
-   vowel "i o u",
-   speed "1 2 3 1",
-   speed "1 [2 3] 1"
+   vowel "i o u"
+   -- speed "1 2 3 1",
+   -- speed "1 [2 3] 1"
   ]
   # gain "1.1"
 
