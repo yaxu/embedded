@@ -17,5 +17,8 @@ d4 $ (every 8 (density 2) $ jux (iter 4 . (# speed "2"))$ sound "sid:1*4"
   # cutoff (slow 8 $ scale 900 1000 sine1)
   # resonance "0.1"
 
-x1 $ sound "c"
-  # dur "0.4"
+x1 $ whenmod 3 2 (slow 2) $ jux (rev) $ chop 64 $ sound "bd sd"
+  # dur "0.02"
+
+d2 $ sound "drum drum*2"
+  # speed "0.9"
