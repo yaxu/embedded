@@ -33,6 +33,7 @@ d2 $ runWith 8 (density 4) $ jux rev $ iter' 4 $ loopAt 8 $ striate 32 $ sound "
 
 
 
-d1 $ jux rev $ slow 4 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
+d1 $ slow 2 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
+  # speed "2"
 
-d2 $ stut' 2 0.125 (|*| speed "0.9") $ slow 2 $ sound "~ xx:50 ~ xx:48" # cutoff ("1000" r) # resonance "0.3" # end "0.05"
+d2 $ every 2 (slow 1.5) $ stut' 2 (-0.125) (|*| speed "0.9") $ slow 2 $ sound "~ xx:50 xx:62 xx:38" # cutoff (slow 8 $ scale 2000 200 sine1) # resonance "0.3" # end "0.05"
