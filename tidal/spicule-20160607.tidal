@@ -28,9 +28,6 @@ d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                     ]
 
 
-:t range
-"a" :: Pattern Int
-
 d1 $ sound "in*8" # pan sine1
 
 
