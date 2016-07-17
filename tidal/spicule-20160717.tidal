@@ -34,7 +34,7 @@ d7 $ never (iter 4) $ slow 2 $ off 0.125 (|+| n "-12") $ off 0.25 (|+| n "7") $ 
   # shape "0.7"
 
 d9 $ iter 2 $ slow 2 $ chop 16 $ sound "arc"
-  # gain "1.4"
+  # gain "1.4" # crush "4"
 
 --
 
