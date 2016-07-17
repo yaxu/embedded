@@ -2,7 +2,12 @@ d1 $ (slow 2 $ runWith 8 (|*| speed "4") $ juxBy 0.7 (0.5 <~) $ off (-(1/16)) (|
 
 
 d1 $ jux rev $ spread' chop "32 8!7" $ sound "cp"
+  # hcutoff (slow 4 $ scale 4000 6000 saw1)
+  # room "0.3"
+  # orbit "1"
 
-d2 $ off (-0.125) (# speed "[1.1 1.5]/4") $ sound "bd ~ bd ~ bd [bd bd?] ~ bd"
+d2 $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
   # shape "0.9"
   # gain "0.8"
+  # orbit "0"
+  # speed "2"
