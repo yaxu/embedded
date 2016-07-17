@@ -7,7 +7,7 @@ d1 $ density 4 $ iter 4 $ jux rev $ spread' chop "32 8!7" $ sound "ht8:3"
   # room "0.3"
   # orbit "1"
 
-d2 $ jux (iter 4) $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
+d2 $ runWslow 2 $ jux (iter 4) $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
   # shape "0.9"
   # gain "0.8"
   # orbit "0"
