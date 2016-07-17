@@ -22,3 +22,6 @@ d4 $ up "{0 [~ 0] 1 2, 7*2 ~ ~ 12*2 ~ ~}" # sound "sid:4" # accelerate "-1.3"
   # resonance "0.1"
   # cutoff "1000"
 
+d5 $ n (run 4) # s "odx"
+
+  
