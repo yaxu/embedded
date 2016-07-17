@@ -19,7 +19,6 @@ d7 $ slow 4 $ (chop 16 $ s "repetition")
 let never = flip const
 
 -- 
-d4 silence
 
 (d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
