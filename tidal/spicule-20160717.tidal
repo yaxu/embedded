@@ -7,13 +7,16 @@ d1 $ density 4 $ iter 4 $ jux rev $ spread' chop "32 8!7" $ sound "ht8:3"
   # room "0.3"
   # orbit "1"
 
-d2 $ jux (iter 4) $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
+d2 $ runWith 4 (density 2) $ slow 2 $ jux (iter 4) $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
   # shape "0.9"
   # gain "0.8"
   # orbit "0"
   # speed "2"
 
-d3 $ juxBy 0.5 (rev) $ sound "[bd,future](3,8,[0 4 2 3]/4)"
+d3 $ every 8 (const silence) $ juxBy 0.5 (rev) $ sound "[bd,future](3,8,[0 4 2 3]/4)" # speed "4"
 
 d4 $ up "{0 [~ 0] 1 2, 7*2 ~ ~ 12*2 ~ ~}" # sound "sid:4" # accelerate "-1.3"
-  
+  # shape "0.5"
+  # crush "3"
+  # resonance "0.1"
+  # cutoff "1000"
