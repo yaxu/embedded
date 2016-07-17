@@ -14,15 +14,18 @@ d3 $ sound "~ [~ ~ [bd8:7 bd8:7!6?]]"
 
 d4 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
   |*| up "[0 [1 [3 -1]/2]]/4"
-  # gain "1.3"
+  # gain "1.1"
   |*| speed "[1,0.5]"
 
-d6 $ loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown"
+d6 $ iter 4 $ loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown"
+  # cutoff "3000"
+  # resonance "0.3"
 
-(d9 $ (slow 4 $ chop 16 $ sound "paper"
+d9 $ (iter 4 $ slow 4 $ chop 16 $ sound "paper"
        # unit "c"
        # speed "[0.2]"
-       # gain "1"))
+       # gain "1")
+  # hcutoff "2000"
 
 
 :t range
