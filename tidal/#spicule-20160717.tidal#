@@ -1,0 +1,19 @@
+d1 $ (slow 2 $ runWith 8 (|*| speed "4") $ juxBy 0.7 (0.5 <~) $ off (-(1/16)) (|*| speed "2 1.5") $ off (-(1/8)) (|*| speed "0.6") $ sound "bd8:5 ~ [ht8:4 ht8:3 ht8:4 ht8:5]/4 lt8:3" # end "0.2" |*| speed "1" # orbit "1" # size "0.8" # room "0.3")
+
+
+d1 $ density 4 $ iter 4 $ jux rev $ spread' chop "32 8!7" $ sound "ht8:3"
+  # cutoff (slow 8 $ scale 500 600 saw1)
+  # resonance "0.3"
+  # room "0.3"
+  # orbit "1"
+
+d2 $ jux (iter 4) $ off (-0.125) (|*| speed "[1.1 1.5]/4") $ sound (struct "bd ~ bd ~ bd [bd bd?] ~ bd" "future future:1")
+  # shape "0.9"
+  # gain "0.8"
+  # orbit "0"
+  # speed "2"
+
+d3 $ juxBy 0.5 (rev) $ sound "[bd,future](3,8,[0 4 2 3]/4)" # speed "4"
+
+d4 $ up "{0 [~ 0] 1 2, 7*2 ~ ~ 12*2 ~ ~}" # sound "sid:4" # accelerate "-1.3"
+  
