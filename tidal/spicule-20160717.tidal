@@ -39,3 +39,4 @@ d7 $ never (iter 4) $ slow 2 $ off 0.125 (|+| n "-12") $ off 0.25 (|+| n "7") $ 
 
 d1 $ jux rev $ off 0.125 (|*| up "[3 5]/8") $ sound "ravebass:10(3,8)" # vowel "[a e i o u]/5" |*| speed "[1,1.5,2]" # gain "0.9"
 
+d2 $ n (every 3 (offadd 0.125 12)$ every 4 ((+7) <$>) "~ 50 62 38") # s "xx" # cutoff (slow 8 $ scale 4000 500 sine1) # resonance "0.3" # gain "1.1"
