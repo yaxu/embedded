@@ -1,0 +1,53 @@
+{-d1 $ chop 8 $ off (1/32) (up "[3 4 4 [5 7]/2]/4" |*|) $ sound "sqrpad"
+  # gain "0.9"
+  # cutoff "[3000 2000 2500]/3" # resonance "[0.3 0.2]/4"
+-}
+
+d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+  # speed "[1,2]"
+  # shape "0.8"
+  # orbit "0"
+
+d3 $ slow 2 $ sound "[beack(5,16), beack:1*16?]" 
+  # orbit "0"
+
+d7 $ slow 4 $ (chop 16 $ s "repetition")
+  # unit "c" # speed "0.25"
+  # gain "1.2"
+  # orbit "0"
+
+let never = flip const
+
+-- 
+
+(d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+  # shape "0.6"
+  # speed "[1 2 3 2]/3"
+  # cutoff (slow 8 $ scale 1000 3000 saw1)
+  # resonance "0.3"
+  # room "0.3"
+  # orbit "1")
+
+d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "ht8 rs8:4*3"
+  # coarse (slow 4 $ run 16)
+
+d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
+  # shape "0.9"
+
+d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
+  # shape "0.8"
+  |*| speed "[1 2 1 3]/3"
+
+d2 $ runWith 4 (density 2) $ off 0.125 (# hcutoff "[2000 3000]/4") $ every 4 (# speed "-1") $ s "amencutup*8" # n (foldEvery [3,7] (0.25 <~) $ run 32)
+  # gain "1.1"
+  # shape "0.8"
+
+
+d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> (slowspread (\x -> offadd x 7) [(1/32), (1/16)] $ slow 2 "b2(5,8) e2(3,8)")) # s "xx")
+  # gain "0.95"
+  # cutoff (slow 4 $ scale 1000 4000 sine1)
+  # resonance "0.3"
+  # speed "[1,1.01]"
+
+  
+cps 0.9
