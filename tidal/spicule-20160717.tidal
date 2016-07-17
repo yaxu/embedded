@@ -24,8 +24,10 @@ d4 $ up "{0 [~ 0] 1 2, 7*2 ~ ~ 12*2 ~ ~}" # sound "sid:4"
 
 d5 $ brak $ jux (rev) $ runWith 4 ((# speed "2") . density 2) $ n (run 4) # s "odx"
 
-d6 $ every 4 (0.25 <~) $ sound "~ [~ sb:4] ~ sb:2"
-  # speed "1.73"
+d6 $ superimpose (0.25 <~) $ every 4 (0.25 <~) $ sound "~ [~ sb:4] ~ sb:2"
+  # speed ((0.5 *) <$> "1.73")
+  # resonance "0.2"
+  # cutoff (slow 4 $ scale 1000 2000 sine1)
 
 d7 $ iter 4 $ slow 2 $ off 0.125 (|+| n "-12") $ off 0.25 (|+| n "7") $ slow 4 $ jux rev $ n "g8*2 a8*2 c8*4 e9*2" # s "dirty"
   # resonance "0.3"
