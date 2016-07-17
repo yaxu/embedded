@@ -1,0 +1,3 @@
+d1 $ runWith 8 (|*| speed "4") $ juxBy 0.7 (0.5 <~) $ off (-(1/16)) (|*| speed "2 1.5") $ off (-(1/8)) (|*| speed "0.6") $ sound "mt8:0 ~ [ht8:4 ht8:3 ht8:4 ht8:5]/4 lt8:3" # end "0.2" |*| speed "2"
+
+
