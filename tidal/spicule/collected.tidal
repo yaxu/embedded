@@ -12,3 +12,7 @@ d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
+-- breaks
+
+
+d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
