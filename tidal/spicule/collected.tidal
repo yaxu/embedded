@@ -16,3 +16,6 @@ d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
 
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
+
+
+d5 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ slowspread (loopAt) [2,4,1] $ chop 8 $ sound "[os os:1 os:2]/3" # gain "0.9"
