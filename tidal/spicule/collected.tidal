@@ -77,3 +77,4 @@ d3 $ jux (0.5 <~) $ slowspread (chop) [2,3] $ sound "arpy:5 arpy"
   # speed "[1,1.5]"
   # crush "2"
   # accelerate "[0 -2.5]/4"
+
