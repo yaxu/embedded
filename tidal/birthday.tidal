@@ -4,7 +4,6 @@ d1 $ jux (rev . iter 4) $ chop 8 $ every 4 (density 1.5) $ s "claus*8" # n (iran
   # size "0.5"
   # room "0.5"
   # orbit "2"
-  # cutoff "1000"
   
 d2 $ sound "drum ~ ~ bd*2"
   # gain "1.1"
