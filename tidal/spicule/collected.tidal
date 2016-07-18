@@ -123,6 +123,14 @@ d4 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
   # gain "1.1"
   |*| speed "[1,0.5]"
 
+d7 $ jux rev $ within (0,0.5) (every 3 $ density 2) $  within (0,0.25) (every 2 $ density 1.5) $ s "dirty*8" # n (whenmod 8 4 ((+ 12) <$>) $ "[d2 e1 f1 g1]/4")
+  # gain "0.8"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 1000 3000 saw1)
+  # room "0.8"
+  # size "0.9"
+  # orbit "1"
+
 -- compound
 
 d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
