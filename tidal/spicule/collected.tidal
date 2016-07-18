@@ -41,3 +41,7 @@ d3 $ jux rev $ runWith 4 (rev . chop 8) $ off 0.25 (# crush "4") $ off 0.125 (# 
 d4 $ jux rev $ every 4 (slow 1.5) $ off 0.25 (|*| speed "2") $ sound "gabba [[gabba ht lt] gabba]@3"
   # speed "2" # end "0.2" # gain "0.8" # delay "0.4" # delaytime (slow 2 $ scale 0.01 0.02 sine1)
 
+d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound "[drum future]/2([3 5]/2,8)"
+  # gain "1.1"
+  # crush "7"
+  # vowel "a i o u"
