@@ -16,7 +16,10 @@ d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 
             # cutoff (scale 1000 3000 sine1)
             # resonance "0.3",
             jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
-  # gain "0.9"
+  # gain "0.9",
+            rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
+                            # unit "c"
+                            # gain "0.9")
            ]
 
 -- breaks
