@@ -68,6 +68,9 @@ d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound 
 
 d3 $ n "0 [1 ~ 2]" # s "[wobble,drum,future]"
 
+d1 $ juxBy 0.5 (2 <~) $ slowspread (stut 3 0.9) [0.05,0.06,0.07,0.1] $ sound "[bd8 bd8:3*2]@3 bd8:5*2"
+  # speed "4"
+
 -- atmospheres
 
 d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
