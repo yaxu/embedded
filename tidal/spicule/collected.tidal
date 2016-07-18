@@ -99,7 +99,7 @@ d3 $ jux (0.5 <~) $ slowspread (chop) [2,3] $ sound "arpy:5 arpy"
   # crush "2"
   # accelerate "[0 -2.5]/4"
 
--- acid lines
+-- lead
 
 d4 $ (n (-- offadd 0.125 7 $ offadd 0.125 3 $
          (+) <$> "40(3,8) [50 32 52](5,16)" <*> "[0 2 4 6]/4") # s "dirty")
