@@ -38,6 +38,9 @@ d2 $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
   
+d4 $ jux rev $ slow 4 $ off (1/4) (|*| speed (scale 0.5 1 sine1)) $ ((chop 16 $ sound "arc")
+  # speed (scale 1.5 2 sine1))
+
 -- rhythms
 
 d3 $ jux rev $ runWith 4 (rev . chop 8) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
