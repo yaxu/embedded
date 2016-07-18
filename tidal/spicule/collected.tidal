@@ -12,8 +12,11 @@ d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
--- breaks
+d3 $ jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
+  # cutoff (scale 1000 3000 sine1)
+  # resonance "0.3"
 
+-- breaks
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
 
