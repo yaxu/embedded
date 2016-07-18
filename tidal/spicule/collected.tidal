@@ -78,6 +78,8 @@ d3 $ sound "~ [~ ~ [bd8:7 bd8:7!6?]]"
   # size (slow 4 $ scale 0.7 0.8 sine1)
   # orbit "1"
 
+d4 $ jux (iter 4) $ slow 2 $ juxBy 0.25 (density 2 . (|*| speed "2")) $ superimpose (density 1.5) $ stut 3 0.5 (-0.5) $ s "bd bd*2" # speed "1" # n (irand 4)
+
 -- atmospheres
 
 d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
