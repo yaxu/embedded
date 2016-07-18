@@ -52,12 +52,13 @@ d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound 
 
 -- atmospheres
 
-d1 $ slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
-  # speed "4"
-  # room "0.8"
-  # size "0.8"
-  # orbit "1"
-
-
-d2 $ slow 2 $ jux (1 <~) $ slowspread (slow) [1,1.5,3] $ off 0.125 (|*| speed "2") $ sound "sd8:3 [sd8 sd8:5(3,8,[0 4 2]/3)]/2"
-  # speed "2"  # orbit "0"
+d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
+            # speed "4"
+            # room "0.8"
+            # size "0.8"
+            # orbit "1",
+            slow 2 $ jux (1 <~) $ slowspread (slow) [1,1.5,3] $ off 0.125 (|*| speed "2") $ sound "sd8:3 [sd8 sd8:5(3,8,[0 4 2]/3)]/2"
+            # speed "2"  # orbit "0",
+            slow 2 $ chop 8 $ s "[lt8*2 lt8*4]/2 mt8*3"
+            # crush "5" # speed "4"
+           ]
