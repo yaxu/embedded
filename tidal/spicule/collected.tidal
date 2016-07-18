@@ -34,6 +34,10 @@ d3 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
 
 d4 $ jux rev $ iter 4 $ loopAt 4 $ chop 128 $ sound "[shackup]"
 
+d2 $ sometimes (rev . chop 128) $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
+  
 -- rhythms
 
 d3 $ jux rev $ runWith 4 (rev . chop 8) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
@@ -45,3 +49,4 @@ d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound 
   # gain "1.1"
   # crush "7"
   # vowel "a i o u"
+
