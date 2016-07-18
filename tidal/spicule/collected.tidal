@@ -50,3 +50,10 @@ d5 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound 
   # crush "7"
   # vowel "a i o u"
 
+-- atmospheres
+
+d1 $ slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
+  # speed "4"
+  # room "0.8"
+  # size "0.8"
+  # orbit "1"
