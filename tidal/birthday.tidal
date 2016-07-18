@@ -58,7 +58,6 @@ d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offad
 d2 $ degrade $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
   # speed "[1,2]"
   # gain "0.8"
-  # cutoff "1000"
 
 d1 silence
 
