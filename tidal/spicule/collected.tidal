@@ -12,7 +12,8 @@ d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
-d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
+cps 0.715 >>
+(d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
             # cutoff (scale 1000 3000 sine1)
             # resonance "0.3",
             jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
@@ -20,7 +21,7 @@ d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 
             rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
                             # unit "c"
                             # gain "0.9")
-           ]
+           ])
 
 -- breaks
 
