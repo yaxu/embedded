@@ -66,3 +66,9 @@ d5 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99" # shape "0.4"
 
 -- jungle
+
+
+d4 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
+  |*| up "[0 [1 [3 -1]/2]]/4"
+  # gain "1.1"
+  |*| speed "[1,0.5]"
