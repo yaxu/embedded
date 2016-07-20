@@ -42,7 +42,7 @@ d2 $ slow 2 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ dru
 d1 $ slow 2 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
   # shape "0.7" # speed "1.5"
 
-m1 $ slow 4 $ midinote (offadd 0.25 7 ("c9(3,8) a9(3,5,2) f9(5,8) e9(3,8)"))
+m1 $ slow 4 $ midinote (offadd 0.125 12 $ offadd 0.25 7 ("c9(3,8) a9(3,5,2) f9(5,8) e9(3,8)"))
   # velocity "1"
 
 
