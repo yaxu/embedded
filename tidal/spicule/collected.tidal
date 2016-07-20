@@ -113,6 +113,9 @@ d5 $ jux (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8
 
 d2 $ runWith 8 (density 4) $ jux rev $ iter' 4 $ loopAt 8 $ striate 32 $ sound "shakedown*2"
 
+d1 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
+  # shape "0.7" # speed "1.5"
+
 -- rhythms
 
 d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
