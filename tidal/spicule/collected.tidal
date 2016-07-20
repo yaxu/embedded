@@ -7,12 +7,12 @@ d1 $ sometimes (# speed "1.2") $ slow 2 $ runWith 4 (rev . density 2 . chop 16) 
 
 -- melodies
 
-d2 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ "[c0 d0]/2(3,8) a0*3 f0(3,8,[2 4]/2) e0*2") # s "xx"
+d1 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ "[c0 d0]/2(3,8) a0*3 f0(3,8,[2 4]/2) e0*2") # s "xx"
   # resonance "0.2"
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
-d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
+d1 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
   # speed "[1,2?]"
   # gain "0.9"
   # orbit "0"
@@ -22,7 +22,7 @@ d1 $ jux (rev) $ n (sometimes ((+12) <$>) $ offadd 0.25 (-12) $ slow 2 $ slowspr
   # cutoff (slow 4 $ scale 6000 1000 sine1)
   # gain "0.8"
 
-d7 $ stack [jux rev $ within (0,0.5) (every 3 $ density 2) $  within (0,0.25) (every 2 $ density 1.5) $ s "dirty*8" # n (whenmod 8 4 ((+ 12) <$>) $ "[d2 e1 f1 g1]/4")
+d1 $ stack [jux rev $ within (0,0.5) (every 3 $ density 2) $  within (0,0.25) (every 2 $ density 1.5) $ s "dirty*8" # n (whenmod 8 4 ((+ 12) <$>) $ "[d2 e1 f1 g1]/4")
             # gain "0.8"
             # resonance "0.3"
             # cutoff (slow 4 $ scale 1000 3000 saw1)
