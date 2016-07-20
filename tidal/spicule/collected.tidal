@@ -64,16 +64,16 @@ d2 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3(3,8) [g3(3,8) 
 
 -- breaks
 
-d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
+d1 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
 
-d5 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ slowspread (loopAt) [2,4,1] $ chop 8 $ sound "[os os:1 os:2]/3" # gain "0.9"
+d1 $ runWith 4 (slowspread (density) [2]) $ jux (iter 4) $ slowspread (loopAt) [2,4,1] $ chop 8 $ sound "[os os:1 os:2]/3" # gain "0.9"
 
-d3 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
+d1 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
   # gain "1.2"
 
-d4 $ jux rev $ iter 4 $ loopAt 4 $ chop 128 $ sound "[shackup]"
+d1 $ jux rev $ iter 4 $ loopAt 4 $ chop 128 $ sound "[shackup]"
 
-d2 $ sometimes (|+| speed "2") $
+d1 $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
   
