@@ -41,11 +41,11 @@ d2 $ slow 2 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ dru
 d1 $ slow 2 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
   # shape "0.7" # speed "1.5"
 
-m1 $ midinote ((+36) <$> (offadd 0.125 12 $ offadd (1/16) 7 $ slow 4 ("f7(3,8) a8(3,8,2) c7(5,8) e5(3,8,2)")))
+m1 $ midinote ((+36) <$> ((subtract 12) <$> (offadd 0.125 12 $ offadd (1/16) 7 $ slow 4 ("f7(3,8) a8(3,8,2) c7(5,8) e5(3,8,2)"))))
   # velocity "1" # dur (slow 8 $ scale 0 0.1 sine1)
   # ctf (scale 0 1 sine1)
 
-d8 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 ("f7(3,8) a8(3,5,2) c7(5,8) e8(3,8)")) # s "xx" # room "0" # size "0" # end "0.2" # orbit "1" # room "0" # size "0"
+d8 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd (1/16) 7 ("f7(3,8) a8(3,5,2) c7(5,8) e8(3,8)")) # s "xx" # room "0" # size "0" # end "0.2" # orbit "1" # room "0" # size "0"
   # resonance "0.3" # cutoff (slow 4 $ scale 100 5000 sine1)
 
 -- death dnb
