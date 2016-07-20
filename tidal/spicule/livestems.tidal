@@ -20,7 +20,13 @@ d1 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
   # cutoff "[1000 2000]/4"
   # room "0.7"
   # size "0.6"
-  # orbit "2"
+  # orbit "0"
+
+d2 $ jux (|+| speed "2") $ weave 16 (pan sine1)
+  [slow 2 $ sound "{drum sd8 drum*3 [ht8:3*2 sd8], cp ~ ~ }",
+   slow 3 $ sound "drum sd8*2 drum [ht8:3*2 sd8]"
+   ]
+  # orbit "0"
 
 -- electric
 
