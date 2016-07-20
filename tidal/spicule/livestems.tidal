@@ -106,7 +106,6 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # hcutoff "2000"
                     ]
 
-
 -- xx [f g] a g d
 
 cps 0.785
