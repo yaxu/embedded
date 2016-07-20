@@ -14,12 +14,11 @@ d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
   # vowel "[a e]*4" # speed (scale 1 1.5 rand)
   # gain "1.1"
 
-x1 $ (jux rev $ slowspread (chop) [64,128] $ sound "drum cp*2? [arpy:4 arpy:5]/2 drum?")
-  # nudge (slow 2 $ sine1)
-  # crush "3"
-
-d2 $ runWith 4 ((# speed "1.2") . density 4) $ sometimes (chop 32) $ brak $ sound "drum [drum:1 bd*2]"
-  # gain "1.1"
+d1 $ stack [(jux rev $ slowspread (chop) [64,128] $ sound "drum cp*2? [arpy:4 arpy:5]/2 drum?")
+            # nudge (slow 2 $ sine1),
+            runWith 4 ((# speed "1.2") . density 4) $ sometimes (chop 32) $ brak $ sound "drum [drum:1 bd*2]"
+            # gain "1.1"
+           ]
 
 d6 $ sound "ravebass:10 ~ ravebass:8"
   # gain "1.1"
