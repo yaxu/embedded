@@ -263,3 +263,8 @@ cps 0.715 >>
 
 -- broken beats
 
+d4 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "[voodoo,future]"
+  # gain "0.9"
+  # orbit "1"
+  # speed "1"
+
