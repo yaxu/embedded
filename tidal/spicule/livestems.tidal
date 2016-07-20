@@ -128,7 +128,17 @@ d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
 d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $ sound "drum bd*4"
   # shape "0.5"
 
-m1 $ n "c4 [[~ e3] g3]"
+m1 $ n (offadd 0.125 (-5) $ "[d4 a4]/4")
   # velocity "1"
+
+d3 $ loopAt 4 $ chop 32 $ sound "liq"
+
+cps 0.75
+
+m1 $ off 0.25 (|+| n "12") $ off 0.125 (|+| n "7") $ struct "x(3,8,[0 2]/4)" $ n "[d d as4 g4]/4"
+  # velocity "1"
+  # dur "0.1"
+  # decay (scale 0 0.5 $ slow 4 sine1)
+  # ctf (scale 0.8 1 $ slow 8 sine1)
 
 -- weave
