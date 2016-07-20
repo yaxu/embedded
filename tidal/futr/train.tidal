@@ -43,7 +43,6 @@ d1 $ slow 2 $ chop 16 $ sound "repetition"
 
 d7 silence
 
-
 d4 $ palindrome $
   stack [slow 4 $ n (offadd 0.125 7 "[c1(7,16) b0(5,16), [a0 e0 g0](17,32)]") # s "xx"
             # gain "0.9"
