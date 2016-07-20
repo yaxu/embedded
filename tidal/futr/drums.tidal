@@ -1,7 +1,7 @@
 cps 0.7
 
 -- bd
-d1 $ juxBy 0.8 ((1 <~) . (|+| speed "1.45")) $ slow 2 $ sound (pick <$> "bd sd8 [mt8 ~ bd8]*2 [bd8 ~ bd8 lt8*2] [~ [bd8 ~ bd8]] bd8*2 ht8 ~" <*> "6") |+| speed "1.45" |+| shape "0.5" |+| gain "0.8"
+d1 $ juxBy 0.8 ((1 <~) . (|+| speed "1.45")) $ slow 2 $ sound (pick <$> "bd sd8 [mt8 ~ bd8]*2 [bd8 ~ bd8 lt8*2] [~ [bd8 ~ bd8]] bd8*2 ht8 ~" <*> "6") |+| speed "1.45" |+| shape "0.5"
 
 -- noise
 d2 $ slowspread (\x -> chop x) [2,3,4,5] $ sound "glitch:2 ~ ~ ~" |+| speed "6" |+| gain "1.2"
@@ -12,9 +12,7 @@ d3 $ (jux (iter 4 . (|+| accelerate "-8")) $ every 4 (|+| speed "1.5") $ slow 2 
 -- bass
 d4 $ slowspread (\x -> juxBy x (|+| speed "4.02")) [0.25, 0.5, 1] $ slowspread ($) [id, trunc 0.25, rev, trunc (1/8)] $ striate' 3 0.3 $ sound "jungbass:6*2"
       |+| gain "0.8" |+| speed "4"
-      # room "0.5" # orbit "2" # size "0.9"
-
-d4 silence
+      # room "0.5" # orbit "2" # size "0.9" # shape "0.4"
 
 -- dh
 d5 $ (chop 2) $ every 2 (0.25 <~) $ sound "drum feel drum [~ sd8:2]"
@@ -25,5 +23,3 @@ d6 $ slow 2 $ gap 32 $ sound "fm:12*2"
   |+| gain "0.75"
            
 
-d9 $ brak $ sound "[[wobble, gab]*2, mt ht lt ht]"
-  # gain "1.1"
