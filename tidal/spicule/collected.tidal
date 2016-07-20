@@ -41,6 +41,12 @@ d7 $ stack [jux rev $ within (0,0.5) (every 3 $ density 2) $  within (0,0.25) (e
             # gain "0.7"
            ]
 
+d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> (slowspread (\x -> offadd x 7) [(1/32), (1/16)] $ slow 2 "b2(5,8) e2(3,8)")) # s "xx")
+  # gain "0.95"
+  # cutoff (slow 4 $ scale 1000 4000 sine1)
+  # resonance "0.3"
+  # speed "[1,1.01]"
+
 -- breaks
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
