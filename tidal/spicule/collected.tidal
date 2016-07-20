@@ -42,6 +42,14 @@ d7 $ slowspread (\x -> off x (density 2 . (# gain "0.9") . (|*| speed "1.5"))) [
   # resonance "0.2"
   # cutoff (slow 4 $ scale 300 2000 saw1)
 
+
+d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
+  # resonance "0.3"
+  # cutoff "[1000 2000]/4"
+  # room "0.7"
+  # size "0.6"
+  # orbit "2"
+
 -- breaks
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
