@@ -318,6 +318,11 @@ d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "ar
 
 d2 $ slow 2 $ stut 2 0.7 (-0.5) $ jux (rev) $ iter 8 $ (slow 2 $ chop 128 $ sound "claus:4 claus:3 claus*4 ~") # speed (density 3 $ scale 4 1 $ saw1)
 
+d4 $ off 0.25 (# speed "2") $ jux rev $ (slowspread (chop) [8,16,32,64,128] $ sound "[gabba claus drum cp]/4")
+  -- # nudge (slow 4 sine1)
+  # cutoff (slow 4 $ scale 500 4000 sine1)
+  # resonance "0.3"
+
 -- gabba
 
 d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
