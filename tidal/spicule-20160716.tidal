@@ -28,7 +28,7 @@ d2 $ jux (slow 2 . (|*| speed "0.9")) $ iter' 4 $ chop 8 $ ss "drum:0.8 [drum:1.
 d1 $ slow 4 $ rev $ (struct "x*3 x*4 x*4 x*6" $ chop 16 $ sound "jungbass:7") # speed "2" # crush "2"  # cutoff "500" # resonance "0.3"
 
 d2 $ runWith 8 (density 4) $ jux rev $ iter' 4 $ loopAt 8 $ striate 32 $ sound "shakedown*2"
-
+hush
 
 
 d1 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
