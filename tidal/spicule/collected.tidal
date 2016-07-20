@@ -160,3 +160,7 @@ d5 $ jux (|*| speed "-1") $ off 0.125 (# speed "1.5") $ off 0.25 (# speed "1.5")
 
 -- basslines
 
+d2 $ iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+  # speed "[1,2]"
+  # shape "0.8"
+  # orbit "0"
