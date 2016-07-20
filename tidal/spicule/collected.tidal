@@ -167,16 +167,6 @@ d1 $ (slow 4 $ ghost $ sound "[bd8:4,rs8:2 mt8:3] [[~ mt8] [[lt8:4 ht8:3] lt8 lt
   # room "0.4"
   # size "0.8"
 
-d4 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
-            # cutoff "1000" # gain "1.1"
-            # resonance "0.3" # crush "3" # end "0.4"
-            # speed "2",
-            (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 feel:5]]" # speed "2"
-             # shape "0.98"
-             # gain "0.8")
-            # vowel "[a e i o u]/4",
-            slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5"
-           ]
 
 -- atmospheres
 
