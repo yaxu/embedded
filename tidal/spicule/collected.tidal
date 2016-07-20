@@ -285,6 +285,9 @@ d3 $ density 2 $ jux (iter 4) $ smash 8 [1,3,4,8] $ sound "bubble:4 [mouth:3 mou
   # orbit "1"
   -- # hcutoff "1000"
 
+d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "arc"
+  # orbit "1"
+
 -- gabba
 
 d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
@@ -294,3 +297,4 @@ d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
   # cutoff (slow 8 $ scale 3000 5000 saw1)
   # resonance "0.3"
   # orbit "0"
+
