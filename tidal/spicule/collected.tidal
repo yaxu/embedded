@@ -317,7 +317,7 @@ d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                     ]
 
 cps 0.715 >>
-(d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
+(d6 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
             # cutoff (scale 1000 3000 sine1)
             # resonance "0.3",
             jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
