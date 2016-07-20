@@ -82,6 +82,8 @@ d8 $ jux rev $ slowspread (chop) [3,2,6,8] $ sound "jungbass:1 [bd*2 cp]"
   # gain "1.1" # speed (liftA2 (+) "[1 1.1 1.4]/3" "[1 3]/2")
   # crush (liftA2 (+) "[5 3 4]/3" "[1 0]/2")
 
+d1 $ brak $ (chop 64 $ sound "[sd8:3@3 sd8:5, sd8*4, drum cp8:2, {~ xx:20 ~ xx:40*2}%2]")
+
 -- rhythms
 
 d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
