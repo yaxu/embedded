@@ -37,4 +37,6 @@ d1 $ sometimes (|+| speed "2") $
 
 -- acid
 
-d1 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
+d1 $ slow 2 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
+
+--
