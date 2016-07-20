@@ -135,7 +135,10 @@ d3 $ loopAt 4 $ chop 32 $ sound "liq"
 
 cps 0.75
 
-m1 $ n "[d d as4 g3]/4"
-
+m1 $ off 0.25 (|+| n "12") $ off 0.125 (|+| n "7") $ struct "x(3,8)" $ n "[d d as4 g4]/4"
+  # velocity "1"
+  # dur "0.1"
+  # decay (scale 0 0.5 $ slow 4 sine1)
+  # ctf (scale 0 1 $ slow  sine1)
 
 -- weave
