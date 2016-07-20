@@ -64,3 +64,5 @@ d6 $ brak $ (chop 64 $ sound "[sd8:3@3 sd8:5, sd8*4, drum cp8:2, {~ xx:20 ~ xx:4
 
 d5 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99" # shape "0.4"
+
+--
