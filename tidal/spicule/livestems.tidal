@@ -127,7 +127,6 @@ d4 $ jux (iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
   # speed "[1,2]"
 
 d5 $ jux rev $ chop 4 $ sound "arc"
-  
 
 -- broken
 
