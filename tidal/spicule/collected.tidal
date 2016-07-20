@@ -50,6 +50,11 @@ d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
   # size "0.6"
   # orbit "2"
 
+d2 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
+  # speed "[1,2?]"
+  # gain "0.9"
+  # orbit "0"
+
 -- breaks
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
