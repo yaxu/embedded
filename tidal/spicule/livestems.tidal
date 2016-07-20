@@ -54,3 +54,6 @@ d1 $ juxBy 0.3 rev $ slowspread (chop) [3,2,6,8] $ sound "jungbass:1 [bd*2 cp]"
 
 d3 $ brak $ (chop 64 $ sound "[sd8:3@3 sd8:5, sd8*4, drum cp8:2, {~ xx:20 ~ xx:40*2}%2]")
 
+
+d4 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
+  # gain "0.99"
