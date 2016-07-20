@@ -206,6 +206,9 @@ d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
   # shape "0.8"
   |*| speed "[1 2 1 3]/3"
 
+d6 $ sound "ravebass:10 ~ ravebass:8"
+  # gain "1.1"
+
 -- vocal
 
 d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
