@@ -110,7 +110,7 @@ d1 $ jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slo
   # cutoff (scale 1000 3000 sine1)
   # resonance "0.3"
 
-d2 $ jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
+d2 $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
   # gain "0.9"
 
 d3 $ (loopAt 4 $ chop 16 $ sound "paper"
