@@ -19,6 +19,15 @@ let x n = stack [rev $ juxBy 0.5 ((|+| speed "-1.02")) $ (striate' 6 (3/6) $ sou
   d4 $ bdtune 12
 
 
+-- echobreak
+d6 $ stut 3 1.1 (2) $ brak $ sound "bd8:7 sd8:1"
+  |+| gain "1.2"
+                
+-- broke
+d7 $ juxBy 0.25 (iter 4) $ sound "{bd8:3 ~ [~ rs8] [~ mc8] [~ bd8] sd8*2? bd8:3 ~, ch8 bd8:3*2 mt8:2 ~ ~}%3"
+  |+| end "0.2"
+            
+
 -- notes1
 d3 $ slow 3 $ chop 3 $ chop 4 $ sound "newnotes:2 ~ newnotes:3"
              |+| speed (every 2 ((/2) <$>) "1.28")
@@ -39,14 +48,6 @@ d5 $ juxBy 0.25 ((|+| speed "[-2.41]/4") . (0.006 <~)) $ chop 4 $ sound (samples
               |+| speed "[-2.4]/4"
               |+| gain "1.1"
 
--- echobreak
-d6 $ stut 3 1.1 (2) $ brak $ sound "bd8:7 sd8:1"
-  |+| gain "1.2"
-                
--- broke
-d7 $ juxBy 0.25 (iter 4) $ sound "{bd8:3 ~ [~ rs8] [~ mc8] [~ bd8] sd8*2? bd8:3 ~, ch8 bd8:3*2 mt8:2 ~ ~}%3"
-  |+| end "0.2"
-            
 -- tap
 d8 $every 2 (density 1.5) $ sound "jungbass:1 ~ sd8*2"
           |+| speed (slow 12 $ scale 7.5 8 sine1)
@@ -62,7 +63,6 @@ d9 $ every 4 (chop 3) $ sound "{bd8*2 sd8:2 [~ ~ glitch:2]}%3"
 -- glitchroll2
 d10 $ slow 2 $ rev $ chop 3 $ sound "bd8 sn glitch:3"
   |+| gain "1"
-d2 silence                  
 
 -- oa
 
