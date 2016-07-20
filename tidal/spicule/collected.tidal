@@ -182,3 +182,7 @@ d2 $ stack [iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd
   # resonance "0.3"
   # room "0.3"
   # orbit "1")
+
+d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
+  # shape "0.8"
+  |*| speed "[1 2 1 3]/3"
