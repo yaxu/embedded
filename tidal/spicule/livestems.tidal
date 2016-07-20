@@ -203,3 +203,9 @@ d4 $ palindrome $
            ]
 
 d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenmod 8 4 (jux rev) $ (slow 2 $ n "0 [0 2] [2 0] 0 [2 0] 0 [2 1] [0 !?]" # s "drum")) # speed (slow 4 $ scale 0.9 1.5 sine1)
+
+-- and again
+
+
+d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c1(3,8) [g1(3,8)]") # s "dirty" # resonance "0.3" # cutoff "[4000,400]"
+  # gain "1.1"
