@@ -110,6 +110,9 @@ d3 $ stut 2 0.9 4 $ n (rev $ fit 4 [1 .. 7] "0*2 [1 [2 1]]@3") # s "claus"
 d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (# speed "-1")] $ sound "ht8 rs8:4*3"
   # coarse (slow 4 $ run 16)
 
+d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
+  # shape "0.9"
+
 -- atmospheres
 
 d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
