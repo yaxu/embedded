@@ -72,3 +72,32 @@ d4 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
   # gain "1.1"
   |*| speed "[1,0.5]"
 
+-- paper
+
+
+d4 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
+            # cutoff "1000" # gain "1.1"
+            # resonance "0.3" # crush "3" # end "0.4"
+            # speed "2",
+            (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 feel:5]]" # speed "2"
+             # shape "0.98"
+             # gain "0.8")
+            # vowel "[a e i o u]/4",
+            slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5",
+            (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
+            # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
+            # cutoff (scale 300 3000 saw1)
+            # gain "0.8",
+            every 4 (chop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "600" # resonance "0.4"
+           ]
+
+
+d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
+                     # cutoff (scale 1000 3000 saw1)
+                     # resonance "0.3",
+                     jux rev $ slow 4 $ chop 16 $ sound "paper"
+                     # unit "c"
+                     # speed "[0.2]"
+                     # gain "1"
+                     # hcutoff "2000"
+                    ]
