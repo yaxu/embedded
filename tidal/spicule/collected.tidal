@@ -279,6 +279,11 @@ d1 $ (jux rev $ (chop 16 $ loopAt 4 $ sound "jungbass:3"))
 d6 $ sound "ravebass:10 ~ ravebass:8"
   # gain "1.1"
 
+d4 $ (every 8 (density 2) $ jux (iter 4 . (# speed "2"))$ sound "sid:1*4"
+  # speed ((+) <$> scale 1 1.1 saw1 <*> (slow 4 $ scale 0 0.2 saw1)))
+  # cutoff (slow 8 $ scale 900 1000 sine1)
+  # resonance "0.1"
+
 -- vocal
 
 d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
