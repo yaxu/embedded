@@ -224,10 +224,10 @@ d4 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ s
             # vowel "[a e i o u]/4",
             slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5",
             (slow 2 $ jux (0.25 <~) $ n (run 16) # s "ind" # end (slow 8 $ scale 0.1 0.2 sine1))
-  # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
-  # cutoff (scale 300 3000 saw1)
-  # gain "0.8",
-  every 4 (chop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "600" # resonance "0.4"
+            # resonance (slow 3 $ scale 0.1 0.2 $ rev saw1)
+            # cutoff (scale 300 3000 saw1)
+            # gain "0.8",
+            every 4 (chop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "600" # resonance "0.4"
            ]
 
 -- intense
