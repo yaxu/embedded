@@ -219,7 +219,6 @@ d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
   # vowel "[a e]*4" # speed (scale 1 1.5 rand)
   # gain "1.1"
 
-
 d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # cutoff (scale 1000 3000 saw1)
                      # resonance "0.3",
