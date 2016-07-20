@@ -316,6 +316,8 @@ d3 $ density 2 $ jux (iter 4) $ smash 8 [1,3,4,8] $ sound "bubble:4 [mouth:3 mou
 d3 $ runWith 4 ((|*| speed "1.5") . density 1.5) $ loopAt 4 $ chop 8 $ sound "arc"
   # orbit "1"
 
+d2 $ slow 2 $ stut 2 0.7 (-0.5) $ jux (rev) $ iter 8 $ (slow 2 $ chop 128 $ sound "claus:4 claus:3 claus*4 ~") # speed (density 3 $ scale 4 1 $ saw1)
+
 -- gabba
 
 d1 $ chop 16 $ ghost $ sound "g:1(3,8)"
