@@ -29,7 +29,7 @@ d1 $ (jux rev $ off 0.5 (# speed "1.5") $ n (offadd 0.125 2 $ fit 3 [0 .. 7] $ p
   # cutoff (slow 2 $ scale 300 4000 saw1)
   # gain "0.9"
 
-d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5" # crush "3"
+d2 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5"
 
 d4 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
             # cutoff "1000" # gain "1.1"
