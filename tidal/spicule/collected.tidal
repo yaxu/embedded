@@ -85,6 +85,15 @@ d1 $ stack [(jux rev $ slowspread (chop) [64,128] $ sound "drum cp*2? [arpy:4 ar
 
 -- rhythms
 
+d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
+                                      off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
+                                     ]
+
+d1 $ palindrome $ chop 8 $ loopAt (1/2) $ sound "bd*2 wobble"
+  # speed "[8 6 4 7]/5"
+  # gain "1.1"
+  -- # accelerate "-2"
+
 d3 $ jux rev $ runWith 4 (rev . chop 8) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
 
 d4 $ jux rev $ every 4 (slow 1.5) $ off 0.25 (|*| speed "2") $ sound "gabba [[gabba ht lt] gabba]@3"
