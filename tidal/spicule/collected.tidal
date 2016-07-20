@@ -167,3 +167,12 @@ d2 $ stack [iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd
             slow 2 $ sound "[beack(5,16), beack:1*16?]" 
             # orbit "0"
            ]
+
+
+(d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+  # shape "0.6"
+  # speed "[1 2 3 2]/3"
+  # cutoff (slow 8 $ scale 1000 3000 saw1)
+  # resonance "0.3"
+  # room "0.3"
+  # orbit "1")
