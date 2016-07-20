@@ -1,4 +1,5 @@
-x1 $ jux rev $ brak $ chop 2 $ slow 4 $ sound "bd8:4(3,8) cp*4"
+
+d1 $ jux rev $ brak $ chop 2 $ slow 4 $ sound "bd8:4(3,8) cp*4"
   # speed "2"
 
 d5 $ jux rev $ slow 8 $ n (offadd (1/16) 12 $ offadd 0.125 (-7) $ (+60) <$> (palindrome "c3(3,8) a3(3,8) f3(3,16) e3*4")) # s "xx"
