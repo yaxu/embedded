@@ -128,7 +128,7 @@ d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
 d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $ sound "drum bd*4"
   # shape "0.5"
 
-let f = (rev . iter 4) in 
+let f = id in 
   do m1 $ f $ off 0.25 (|+| n "12") $ off 0.125 (|+| n "[7 12]/3") $ struct "x(3,8,[0 2]/4)" $ n "[d d as4 g4]/4"
        # velocity "1"
        # dur "0.1"
