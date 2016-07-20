@@ -55,6 +55,10 @@ d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
   # size "0.6"
   # orbit "2"
 
+d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
+  # cutoff "300 400 2000 500"
+  # up "[[0 5 7] ! [0 5 7 12] !]/4"
+
 -- breaks
 
 d3 $ jux rev $ loopAt 2 $ every 4 (slow 1.5) $ chop 8 $ s "os" # n (choose [0,1,2])
