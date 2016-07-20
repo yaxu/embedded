@@ -12,17 +12,6 @@ d3 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
-cps 0.715 >>
-(d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
-            # cutoff (scale 1000 3000 sine1)
-            # resonance "0.3",
-            jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
-  # gain "0.9",
-            rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
-                            # unit "c"
-                            # gain "0.9")
-           ])
-
 d1 $ jux (rev) $ n (sometimes ((+12) <$>) $ offadd 0.25 (-12) $ slow 2 $ slowspread (offadd 0.125) [(-5),12,7] $ slow 2 "50(3,8) [57 50 52]/3 48(3,8) [60*2 36*2]/2") # s "xx"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 6000 1000 sine1)
@@ -46,6 +35,12 @@ d3 $ (jux rev $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 3 $ (+60) <$> (slowspr
   # cutoff (slow 4 $ scale 1000 4000 sine1)
   # resonance "0.3"
   # speed "[1,1.01]"
+
+
+d7 $ slowspread (\x -> off x (density 2 . (# gain "0.9") . (|*| speed "1.5"))) [0.25, 0.5, 0.75] $ within (0,0.5) (iter 4) $ sound "drum:5 [drum:1 [arpy arpy:3 arpy arpy:5]/4]"
+  # end "0.3"
+  # resonance "0.2"
+  # cutoff (slow 4 $ scale 300 2000 saw1)
 
 -- breaks
 
@@ -224,3 +219,24 @@ d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
   # vowel "[a e]*4" # speed (scale 1 1.5 rand)
   # gain "1.1"
 
+
+d6 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
+                     # cutoff (scale 1000 3000 saw1)
+                     # resonance "0.3",
+                     jux rev $ slow 4 $ chop 16 $ sound "paper"
+                     # unit "c"
+                     # speed "[0.2]"
+                     # gain "1"
+                     # hcutoff "2000"
+                    ]
+
+cps 0.715 >>
+(d3 $ stack [jux rev $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
+            # cutoff (scale 1000 3000 sine1)
+            # resonance "0.3",
+            jux (iter 4) $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
+  # gain "0.9",
+            rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
+                            # unit "c"
+                            # gain "0.9")
+           ])
