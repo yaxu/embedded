@@ -106,6 +106,8 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # hcutoff "2000"
                     ]
 
+
+-- xx [f g] a g d
 d1 $ n (sometimes ((+12) <$>)  $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[[f0 g0]/2](3,8) a0(2,4) g0(3,8) d0*3") # s "xx"
   # cutoff (scale 1000 3000 sine1)
   # resonance "0.3"
