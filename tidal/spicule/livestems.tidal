@@ -39,7 +39,7 @@ d1 $ sometimes (|+| speed "2") $
 
 d2 $ slow 2 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
 
-d1 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
+d1 $ slow 2 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
   # shape "0.7" # speed "1.5"
 
 -- death dnb
