@@ -46,7 +46,7 @@ m1 $ midinote ((+36) <$> (offadd 0.125 12 $ offadd (1/16) 7 $ slow 4 ("f7(3,8) a
   # ctf (scale 0 1 sine1)
 
 d8 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 ("f7(3,8) a8(3,5,2) c7(5,8) e8(3,8)")) # s "xx" # room "0" # size "0" # end "0.2" # orbit "1" # room "0" # size "0"
-  -- # resonance "0.3" # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.3" # cutoff (slow 4 $ scale 100 5000 sine1)
 
 -- death dnb
 
