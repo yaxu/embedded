@@ -100,7 +100,7 @@ d4 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ 
 
 d5 $ every 4 (chop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "5000" # resonance "0.3"
 
--- paper
+-- paper2
 
 d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # cutoff (scale 1000 3000 saw1)
@@ -123,6 +123,21 @@ d4 $ jux (iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
   # speed "[1,2]"
 
 d5 $ jux rev $ chop 4 $ sound "arc"
+
+-- paper2
+
+
+d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g8(3,8)"))
+
+d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g7(3,8)")) # up "3" # resonance "0.3" # cutoff "2000" # gain "1.1"
+
+d4 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]"
+
+d4 $ jux (iter 4) $ (slow 4 $ chop 16 $ sound "paper"
+                     # unit "c"
+                     # speed "[0.25]"
+                     # gain "0.8")
 
 -- broken
 
