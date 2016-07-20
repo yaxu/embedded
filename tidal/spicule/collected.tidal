@@ -186,6 +186,13 @@ d2 $ stack [stut 4 0.4 (-0.125) $ jux (iter 4) $ sound "bd8(3,8,[2 3]/2)"
             # crush "4"
            ]
 
+d1 $ slow 4 $ whenmod 3 2 (slow 2) $ jux (rev) $ chop 8 $ sound "bd8:7 [dirty:40 dirty:32]/2 sd8:3 can:52"
+  # dur "0.2"
+  # speed "2"
+  # cutoff "700"
+  # room "0.3"
+  # size "0.5"
+
 -- atmospheres
 
 d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
