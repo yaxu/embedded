@@ -291,6 +291,8 @@ d4 $ (every 8 (density 2) $ jux (iter 4 . (# speed "2"))$ sound "sid:1*4"
   # cutoff (slow 8 $ scale 900 1000 sine1)
   # resonance "0.1"
 
+d1 $ slow 4 $ rev $ (struct "x*3 x*4 x*4 x*6" $ chop 16 $ sound "jungbass:7") # speed "2" # crush "2"  # cutoff "500" # resonance "0.3"
+
 -- vocal
 
 d3 $ jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
