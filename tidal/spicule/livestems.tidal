@@ -28,3 +28,9 @@ d1 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up
 d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   # cutoff "300 400 2000 500"
   # up "[[0 5 7] ! [0 5 7 12] !]/4"
+
+-- swing
+
+d1 $ sometimes (|+| speed "2") $
+  jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+  # nudge "[0 0.04]*4" # shape "0.2"
