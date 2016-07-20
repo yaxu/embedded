@@ -98,12 +98,7 @@ d5 $ every 4 (chop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "
 
 d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # cutoff (scale 1000 3000 saw1)
-                     # resonance "0.3",
-                     const silence $ slow 4 $ chop 16 $ sound "paper"
-                     # unit "c"
-                     # speed "[0.2]"
-                     # gain "1"
-                     # hcutoff "2000"
+                     # resonance "0.3"
                     ]
 
 -- xx [f g] a g d
