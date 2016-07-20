@@ -123,6 +123,9 @@ d1 $ runWith 4 (density 1.5) $ jux' [id, slow 2, (# speed "2") . rev, every 2 (#
 d5 $ within (0,0.25) (density 4) $ chop 8 $ sound "bd8:4 ~ ~ [bd8 bd]"
   # shape "0.9"
 
+d1 $ jux rev $ brak $ chop 2 $ slow 4 $ sound "bd8:4(3,8) cp*4"
+  # speed "2"
+
 -- atmospheres
 
 d1 $ stack [slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
