@@ -128,4 +128,7 @@ d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
 d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $ sound "drum bd*4"
   # shape "0.5"
 
+m1 $ n "c4 [[~ e3] g3]"
+  # velocity "1"
+
 -- weave
