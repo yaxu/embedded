@@ -23,7 +23,7 @@ d1 $ slow 4 $ whenmod 3 2 (slow 2) $ jux (rev) $ chop 8 $ sound "bd8:7 [dirty:40
   # room "0.3"
   # size "0.5"
 
-d2 $ jux (slow 2 . (|*| speed "0.9")) $ iter' 4 $ chop 8 $ ss "drum:0.8 [drum:1.2*2, ~ [mt ~ lt]]"
+d2 $ jux (slow 2 . (|*| speed "0.9")) $ iter' 4 $ chop 8 $ s "drum:0.8 [drum:1.2*2, ~ [mt ~ lt]]"
 
 d1 $ slow 4 $ rev $ (struct "x*3 x*4 x*4 x*6" $ chop 16 $ sound "jungbass:7") # speed "2" # crush "2"  # cutoff "500" # resonance "0.3"
 
