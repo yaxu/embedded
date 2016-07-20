@@ -120,12 +120,13 @@ d3 $ jux rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
 
 d4 $ jux (iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
   # shape "0.9"
-  # speed "[1,2]"
+  # speed "[1]"
 
 d5 $ jux rev $ chop 4 $ sound "arc"
 
 -- paper2
 
+cps 0.8
 
 d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g8(3,8)"))
 
