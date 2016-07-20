@@ -34,3 +34,7 @@ d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
 d1 $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
+
+-- acid
+
+d1 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
