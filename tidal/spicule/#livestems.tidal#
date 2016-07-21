@@ -240,5 +240,13 @@ d1 $ jux (iter 4 . rev) $ chop 16 $ sound "{bd [rs8 sd8:3], cp8 ~ sd8:4}"
 d2 $ every 3 (# speed "0.5") $ slowspread (chop) [8,6,3,2] $ sound "~ off"
 
 
-m1 $ n (offadd (1/3) 7 "d [e g]")
-  #
+m1 $ n (offadd 0.125 (-12) $ offadd (1/3) 7 "d4 [e5 g4]")
+  # ctf (slow 8 sine1)
+  # dur "0.02"
+
+
+d2 $ sound "drum drum:1"
+  # shape "0.3"
+  # delay "0.5"
+  # delayfeedback "0.8"
+  # delaytime (slow sine1)
