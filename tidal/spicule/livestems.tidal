@@ -223,5 +223,6 @@ m1 $ stack [sometimes (|+| n "12") $ off 0.25 (|+| n "7")  $ n "[c3(3,8), d5(3,8
            ] # dur "0.02"
 
 
-d1 $ jux (iter 4) $ sound "{bd [rs8 sd8:3], cp8 ~ sd8:4}"
+d1 $ jux (iter 4 . rev) $ chop 16 $ sound "{bd [rs8 sd8:3], cp8 ~ sd8:4}"
   # speed "2"
+
