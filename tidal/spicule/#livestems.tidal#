@@ -52,7 +52,7 @@ m1 $ midinote ((+36) <$> ((subtract 12) <$> (offadd 0.125 12 $ offadd (1/16) 7 $
   # velocity "1" # dur (slow 8 $ scale 0 0.1 sine1)
   # ctf (scale 0 0.4 sine1)
 
-d8 $ degrade $ iter 4 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd (1/16) 7 ("f7(3,8) a8(3,5,2) c7(5,8) e8(3,8)")) # s "xx" # room "0" # size "0" # end "0.1" # orbit "1" # room "0" # size "0"
+d8 $ jux rev $ slow 4 $ n (offadd 0.125 12 $ offadd (1/16) 7 ("f7(3,8) a8(3,5,2) c7(5,8) e8(3,8)")) # s "xx" # room "0" # size "0" # end "0.1" # orbit "1" # room "0" # size "0"
   # resonance "0.3" # cutoff (slow 4 $ scale 100 5000 sine1)
   # gain "0.9"
 
@@ -112,10 +112,6 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # resonance "0.3"
                     ]
 
-d9 $ jux rev $ (n $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[f8(3,8) g8(3,8)]/2 a8(3,8) g8(3,8) d8(3,8)") # s "xx"
-  # shape "0.4"
-  # resonance "0.3"
-  # cutoff (slow 8 $ scale 1000 3000 saw1)
 -- xx [f g] a g d
 
 m1 $ (every 2 rev $ n $ offadd 0.25 7 $ slow 4 $ "[f5(3,8) g4(3,8)]/2 a4(3,8) g5(3,8) d4(3,8)") # velocity "1"
