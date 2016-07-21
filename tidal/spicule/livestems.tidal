@@ -213,7 +213,7 @@ d5 $ jux rev $ stut' 3 0.125 (|*| speed "2") $ slow 2 $ n "c1 [~ g0*2]" # sound 
 d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c1(3,8) [g1(3,8)]") # s "dirty" # resonance "0.3" # cutoff "[4000,400]"
   # gain "1.1"
 
-d5 $ runWith 4 (density 2) $ jux' [id, slow 0.5, rev, (# speed "2") . density 2, (# vowel "a")] $ chop 8 $ sound "bd drum*2 xx:40 jungbass" # gain "1.2" # cutoff "1000" # resonance "0.2"
+d6 $ runWith 4 (density 2) $ jux' [id, slow 0.5, rev, (# speed "2") . density 2, (# vowel "a")] $ chop 8 $ sound "bd drum*2 xx:40 jungbass" # gain "1.2" # cutoff "3000" # resonance "0.2"
 
 d6 $ sound "gabba(3,8)"
   # gain "1.3"
