@@ -217,10 +217,11 @@ d6 $ jux (iter 4) $ chop 8 $ sound "sd8(3,8)"
 
 hush
 
-m1 $ stack [off 0.25 (|+| n "7")  $ n "[c3(3,8), d5(3,8,2)]"
+m1 $ stack [sometimes (|+| n "12") $ off 0.25 (|+| n "7")  $ n "[c3(3,8), d5(3,8,2)]"
             # ctf (scale 0.5 1 $ slow 4 sine1)
             # att (saw1)
-           ]
+           ] # dur "0.02"
 
 
-d1 $ sound "bd"
+d1 $ jux (iter 4) $ sound "{bd [rs8 sd8:3], cp8 ~ sd8:4}"
+  # speed "2"
