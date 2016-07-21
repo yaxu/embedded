@@ -168,7 +168,7 @@ d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $
 
 cps 0.75
 
-let f = id
+let f = (flip const) . slow 2 . iter 4
     never = flip const
   in 
   do m1 $ f $ struct "x(3,8,[0 2]/2)" $ n "[d3 d3 as3 g3]/4"
@@ -176,9 +176,9 @@ let f = id
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
        # ctf (scale 0.8 1 $ slow 8 sine1)
-     d3 $ f $ loopAt 4 $ chop 32 $ sound "liq"
+     d3 $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
 
-d7 $ s "amencutup*8" # n (sc 8)
+d7 $ every 2 (# speed "1.4") $ runWith 4 (density 2) $ jux (4 <~) $ s "amencutup*8" # n (slow 8 $ scan 8)
   # shape "0.7"
 
 -- large reverb
