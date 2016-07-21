@@ -216,6 +216,7 @@ d6 $ runWith 4 (density 2) $ jux' [id, slow 0.5, rev, (# speed "2") . density 2,
 d6 $ sound "gabba(3,8)"
   # gain "1.3"
 
-m1 $ midinote "60"
+m1 $ n "c(3,8)"
+  # ctf (slow 4 saw1)
 
 d1 $ sound "bd"
