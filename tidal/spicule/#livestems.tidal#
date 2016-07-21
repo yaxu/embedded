@@ -168,7 +168,7 @@ d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $
 
 cps 0.75
 
-let f = (flip const) . slow 2 . iter 4
+let f = id
     never = flip const
   in 
   do m1 $ f $ struct "x(3,8,[0 2]/2)" $ n "[d3 d3 as3 g3]/4"
@@ -176,7 +176,7 @@ let f = (flip const) . slow 2 . iter 4
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
        # ctf (scale 0.8 1 $ slow 8 sine1)
-     d3 $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
+     -- d3 $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
 
 d7 $ every 2 (# speed "1.4") $ runWith 4 (density 2) $ jux (4 <~) $ s "amencutup*8" # n (slow 8 $ scan 8)
   # shape "0.7"
@@ -228,7 +228,7 @@ d6 $ runWith 4 (density 2) $ jux' [id, slow 0.5, rev, (# speed "2") . density 2,
 
 d6 $ jux (iter 4) $ chop 8 $ sound "sd8(3,8)"
 
-hush
+-- 
 
 m1 $ stack [sometimes (|+| n "12") $ off 0.25 (|+| n "7")  $ n "[c3(3,8), d5(3,8,2)]"
             # ctf (scale 0.5 1 $ slow 4 sine1)
