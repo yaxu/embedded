@@ -214,4 +214,9 @@ d4 $ slow 2 $ jux (rev) $ n (slowspread (offadd 0.125) [3,5,-7,-5] $ "c1(3,8) [g
 d6 $ runWith 4 (density 2) $ jux' [id, slow 0.5, rev, (# speed "2") . density 2, (# vowel "a")] $ chop 8 $ sound "bd drum*2 xx:40 jungbass" # gain "1.2" # cutoff "3000" # resonance "0.2"
 
 d6 $ sound "gabba(3,8)"
-  # gain "1.3"
+
+
+m1 $ n "c(3,8)"
+  # ctf (slow 4 saw1)
+
+d1 $ sound "bd"
