@@ -217,7 +217,7 @@ d6 $ jux (iter 4) $ chop 8 $ sound "sd8(3,8)"
 
 hush
 
-m1 $ n "c3(3,8)"
-  # ctf (slow 4 saw1)
+m1 $ off 0.125 (|+| n "12")  $ n "[c3(3,8), d5(3,8,2)]"
+  # ctf (slow 4 sine1)
 
 d1 $ sound "bd"
