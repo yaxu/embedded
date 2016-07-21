@@ -155,6 +155,8 @@ d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $
 
 -- rave
 
+cps 0.75
+
 let f = id
     never = flip const
   in 
@@ -165,7 +167,6 @@ let f = id
        # ctf (scale 0.8 1 $ slow 8 sine1)
      -- d3 $ f $ loopAt 4 $ chop 32 $ sound "liq"
 
-cps 0.75
 
 -- large reverb
 
