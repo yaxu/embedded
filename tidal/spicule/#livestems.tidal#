@@ -113,10 +113,12 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # resonance "0.3"
                     ]
 
-d9 $ n $ slow 4 $ "[f8(3,8 g8]/2 a8 g8 d8" # s "xx"
+d9 $ jux rev $ (n $ offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "[f8(3,8) g8(3,8)]/2 a8(3,8) g8(3,8) d8(3,8)") # s "xx"
   # shape "0.4"
+  # resonance "0.3"
+  # cutoff "1000"
 -- xx [f g] a g d
-
+cps 0.9
 cps 0.785
 
 d2 $ iter 4 $ slow 4 $ slowspread (chop) [16,32,64,128] $ sound "fm:10"
