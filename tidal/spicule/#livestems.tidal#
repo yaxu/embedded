@@ -102,7 +102,9 @@ d3 $ (jux (every 8 rev) $ chop 8 $ slow 2 $ brak $ sound "[gabba(3,16), ~ [g:3 f
 
 d4 $ slowspread (\x -> off x (# (gain "0.8" # speed "0.8"))) [0.25,0.125,0.5] $ sound "sid:2*2" # shape "0.5"
 
-d5 $ every 4 (slowschop 3) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "5000" # resonance "0.3"
+d5 $ every 4 (slowspread (chop) [3,5,8]) $ sound "newnotes:1" # gain "1.5" # shape "0.4" # cutoff "5000" # resonance "0.3"
+
+d7 $ sound "bd8*3 future:5*3"
 
 -- paper2
 
@@ -111,6 +113,8 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # resonance "0.3"
                     ]
 
+d9 $ n $ slow 4 $ "[f8(3,8 g8]/2 a8 g8 d8" # s "xx"
+  # shape "0.4"
 -- xx [f g] a g d
 
 cps 0.785
