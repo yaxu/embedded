@@ -145,7 +145,7 @@ d4 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| cru
 d4 $ (slow 4 $ chop 16 $ sound "paper"
       # unit "c"
       # speed "[0.25]"
-      # gain "0.8")
+      # gain "0.9")
 
 
 d5 $ runWith 4 (density 2) $ foldEvery [3,7,9] (0.25 <~) $ chop 32 $ sound "[os os:1 os:2]/3"
