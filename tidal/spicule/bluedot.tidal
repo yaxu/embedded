@@ -1,0 +1,7 @@
+d1 $ slow 2 $ runWith 4 (density 2) $ jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 "{~ ~, d8(3,8) e8*2 c8(3,8) c7*2 g7*2}") # s "xx"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.3"
+
+d2 $ jux rev $ slowspread ($) [id,rev,(0.5 <~),density 2] $ chop 8 $ sound "[bd drum] bd*2 future sd8:4"
+
+
