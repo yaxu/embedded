@@ -14,3 +14,8 @@ d2 $ jux rev $ weave 16 (n (run 8) # s "arpy")
   # speed "0.5"
 
 
+
+d1 $ stack [(slowspread (chop) [32, 64] $ sound "drum drum:2 arpy drum:2"),
+           ]
+  # nudge (slow 4 sine1)
+
