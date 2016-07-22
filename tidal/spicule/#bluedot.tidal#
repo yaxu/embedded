@@ -1,3 +1,7 @@
-d1 $ slow 4 $ n "{bd snd8 e8 c8 c7 g7}" # s "xx"
+d1 $ n (offadd 0.125 7 "{~ ~, d8 e8 c8 c7 g7}") # s "xx"
+  # cutoff (slow 4 $ scale  1000 3000)
+  # resonance "0.3"
+
+d2 $ jux rev $ chop 8 $ sound "bd bd*2 ~ sd8:4"
 
 
