@@ -1,5 +1,9 @@
 decCG
 
-d1 $ sound "bd"
+
+d1 $ jux rev $ sound "bd(3,8)"
+
+
+d2 $ n (run 8) # s "arpy"
 
 
