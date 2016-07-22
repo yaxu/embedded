@@ -1,0 +1,12 @@
+decCG
+
+d1 $ loopAt 4 $ chop 16 $ sound "mef:1"
+
+d1 $ slow 2 $ n "{~ ~, d8(3,8,[0 2]/2) e8*2 c8(3,8,[0 4]/2) c7*2 g10*2}" # s "m2"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # resonance "0.3"
+
+d2 $ struct "x x x" $ jux rev $ slowspread ($) [id,rev,(0.5 <~),density 2] $ chop 8 $ sound "[bd drum] bd*2 future sd8:4"
+
+
+d3 $ sound "~ ravebass:10"
