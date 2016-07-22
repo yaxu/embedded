@@ -29,6 +29,7 @@ d3 $ jux (|+| speed "2") $ weave 16 (pan sine1)
    ]
   # orbit "0"
 
+
 -- electric
 
 d1 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
@@ -41,6 +42,7 @@ d2 $ slow 2 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ dru
 
 d1 $ slow 2 $ sound "{bd8:4 [rs8 mt8, ~ ht8 ~] [~ [ht8 lt8]] [~ [lt8 ~]], bd8 drum bd*2}"
   # shape "0.7" # speed "1.5"
+
 
 m1 $ midinote ((+36) <$> ((subtract 12) <$> (offadd 0.125 12 $ offadd (1/16) 7 $ slow 4 ("f7(3,8) a8(3,8,2) c7(5,8) e5(3,8,2)"))))
   # velocity "1" # dur (slow 8 $ scale 0 0.1 sine1)
