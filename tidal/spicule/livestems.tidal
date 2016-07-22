@@ -248,7 +248,7 @@ d2 $ jux rev $ (chop 8 $ sound "jungbass:6")
 
 d3 $ every 4 (# speed "1.2") $ sound "[bd8:8(3,8), ~ feel:2]"
   # shape "0.7"
-  # gain "1.3"
+  # gain "1"
 
 d4 $ slow 2 $ runWith 4 (slow 2) $ chop 16 $ sound "shakedown"
   # speed "2"
