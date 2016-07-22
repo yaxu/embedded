@@ -173,7 +173,7 @@ let f = id
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
        # ctf (scale 0.8 1 $ slow 16 sine1)
-     d3 $ mute $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
+     d3 $ mute $ f $ loopAt 4 $ chop 32 $ sound "liq"
        # cutoff "1000"
        # resonance "0.3"
 
