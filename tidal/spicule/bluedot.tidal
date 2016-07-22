@@ -7,3 +7,6 @@ d2 $ jux rev $ runWith 4 (density 2) $ slow 2 $ s "leaf*8" # n (run 8)
 d3 $ slowspread (chop) [8,3,16,4] $ sound "~ off"
   # speed "2"
   # ctf "2000"
+
+d4 $ every 4 (density 2) $ jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "shakedown"
+
