@@ -14,17 +14,19 @@ d1 $ stack [
             # orbit "1"
            ]
 
-m
+m1 $ off 0.25 (|+| n "5") $ off 0.125 (|+| n "12") $ slow 4 $ n "d(3,8) e*2 f(3,8) g*2" # velocity "1"
+  # ctf (slow 4 sine1)
+
 -- jungle
 
-d1 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
+d2 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
   # resonance "0.3"
   # cutoff "[1000 2000]/4"
   # room "0.7"
   # size "0.6"
   # orbit "0"
 
-d2 $ jux (|+| speed "2") $ weave 16 (pan sine1)
+d3 $ jux (|+| speed "2") $ weave 16 (pan sine1)
   [slow 2 $ sound "{drum sd8 drum*3 [ht8:3*2 sd8], cp ~ ~ }",
    slow 3 $ sound "drum sd8*2 drum [ht8:3*2 sd8]"
    ]
