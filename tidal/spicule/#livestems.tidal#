@@ -29,8 +29,8 @@ d3 $ jux (|+| speed "2") $ weave 16 (pan sine1)
    ]
   # orbit "0"
 
-d1 $ sound "cp*6"
-  # pan "0 0.5 1"
+d1 $ sound "numbers numbers:1"
+  # pan "0 1"
 
 -- electric
 
