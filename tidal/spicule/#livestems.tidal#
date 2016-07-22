@@ -120,10 +120,10 @@ cps 0.785
 d2 $ iter 4 $ slow 4 $ slowspread (chop) [16,32,64,8] $ sound "fm:10"
   # gain "0.9"
 
-d3 $ (loopAt 4 $ chop 16 $ sound "paper"
+d3 $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
       # unit "c"
       # gain "0.9")
-
+d4 silence
 d4 $ jux (iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
   # shape "0.9"
   # speed "[1]"
@@ -141,14 +141,15 @@ d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offad
 d4 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
   # speed "[1,2]"
 
-d4 $ iter 4 $ (slow 4 $ chop 16 $ sound "paper"
+d4 $ jux rev $ iter 4 $ (slow 4 $ chop 16 $ sound "paper"
       # unit "c"
       # speed "[0.25]"
       # gain "0.9")
 
 
 d5 $ slow 2 $ runWith 4 (density 2) $ foldEvery [3,7,9] (0.25 <~) $ chop 32 $ sound "[os os:1 os:2]/3"
-  # gain "1.2"
+  # gain "1"
+  # speed "0.8"
 
 -- broken
 
