@@ -8,5 +8,6 @@ d3 $ slowspread (chop) [8,3,16,4] $ sound "~ off"
   # speed "2"
   # ctf "2000"
 
-d4 $ every 4 (density 2) $ jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "shakedown"
+d4 $ foldEvery  [5,7] (0.25 <~) $ every 4 (density 2) $ jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "shakedown"
+  # vowel "a"
 
