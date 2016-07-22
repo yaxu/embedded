@@ -1,6 +1,6 @@
 decCG
 
-d1 $ struct "x x x" $ slow 2 $ n "{~ ~, d8(3,8,[0 2]/2) e8*2 c8(3,8,[0 4]/2) c7*2 g7*2}" # s "xx"
+d1 $ slow 2 $ n "{~ ~, d8(3,8,[0 2]/2) e8*2 c8(3,8,[0 4]/2) c7*2 g7*2}" # s "xx"
   # cutoff (slow 4 $ scale 1000 3000 sine1)
   # resonance "0.3"
 
