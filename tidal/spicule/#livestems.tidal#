@@ -287,6 +287,10 @@ d2 $ slow 2 $ jux (iter 4) $ sound "bd [mt8 ravebass:12] [~ rs8] [ht8 lt8]"
  # speed "2"
 
 d3 $ smash 4 [1,2,3,4] $ s "onoff" # n (irand 6)
-  # gain "0.9"
+  # gain "0.9" # speed "1.1"
 
-d4 $ jux ()i $ chop 3 $ sound "{bd*2 sn:2}"
+d4 $ jux (iter 4) $ chop 3 $ sound "{bd*2 arpy sn:2*2 ~}"
+
+d8 $ slow 2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
+    jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
+    # nudge "[0 0.04]*4"
