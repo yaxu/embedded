@@ -181,18 +181,19 @@ d7 $ every 2 (# speed "1.4") $ runWith 4 (density 2) $ jux (4 <~) $ s "amencutup
 
 -- large reverb
 
+d4 $ jux rev $ off 0.125 (|*| up "[7 -5]/2") $ n ("[c3 d3 ds3 [a3 e3]]/8") # s "ravebass"
+  # orbit "1"
+  # speed "2"
+  # room "0"
+  # size "0.9"
+
+
 d1 $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 -7 12]/6")) $ struct "x [x x]" $ n ("[[c0,e0] d0 ds0 f0]/8") # s "xx"
   # room "1"
   # size "0.9"
   # orbit "1"
   # crush "3"
   # gain "0.9"
-
-d4 $ jux rev $ off 0.125 (|*| up "[7 -5]/2") $ n ("[c3 d3 ds3 [a3 e3]]/8") # s "ravebass"
-  # orbit "1"
-  # speed "2"
-  # room "0"
-  # size "0.9"
 
 d2 $ jux (iter 4)  $ whenmod 4 2 rev $ every 2 (chop 8) $ sound "glitch:2(3,8)"
   # gain "1.9"
