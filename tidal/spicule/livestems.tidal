@@ -172,7 +172,7 @@ let f = id
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
        # ctf (scale 0.8 1 $ slow 16 sine1)
-     d3 $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
+     d3 $ const silence $ jux rev $ f $ loopAt 4 $ chop 32 $ sound "liq"
        # cutoff "1000"
        # resonance "0.3"
 
@@ -186,7 +186,6 @@ d4 $ jux rev $ off 0.125 (|*| up "[7 -5]/2") $ n ("[c3 d3 ds3 [a3 e3]]/8") # s "
   # speed "2"
   # room "0"
   # size "0.9"
-
 
 d1 $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 -7 12]/6")) $ struct "x [x x]" $ n ("[[c0,e0] d0 ds0 f0]/8") # s "xx"
   # room "1"
