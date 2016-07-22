@@ -111,7 +111,7 @@ d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
 
 -- xx [f g] a g d
 
-
+d1 $ slow 4 $ n "[f8 g9]/2 a9 g8 d9" # s "xx"
 
 m1 $ (every 2 rev $ n $ offadd 0.25 7 $ slow 4 $ "[f5(3,8) g4(3,8)]/2 a4(3,8) g5(3,8) d4(3,8)") # velocity "1"
 
@@ -120,10 +120,14 @@ cps 0.785
 d2 $ iter 4 $ slow 4 $ slowspread (chop) [16,32,64,8] $ sound "fm:10"
   # gain "0.9"
 
-d3 $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
+
+
+d3 $ jux rev $ iter 4 $ (loopAt 4 $ chop 16 $ sound "paper"
       # unit "c"
       # gain "0.9")
+  
 d4 silence
+
 d4 $ jux (iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
   # shape "0.9"
   # speed "[1]"
