@@ -281,4 +281,10 @@ m1 $ iter 4 $ n (offadd 0.25 7 $ slow 4 $ "f(3,8) a(5,8) c7(3,8) e7(5,8)")
   # velocity "0.9"
 
 
-d1 $ sound "bd mt8 cp 
+d1 $ jux (iter 4) $ sound "bd [mt8 ravebass:10] [~ rs8] ht8"
+
+d2 $ slow 2 $ jux (iter 4) $ sound "bd [mt8 ravebass:12] [~ rs8] [ht8 lt8]"
+ # speed "2"
+
+d3 $ chsound "onoff"
+  # gain "0.8"
