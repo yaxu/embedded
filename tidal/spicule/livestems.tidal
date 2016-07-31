@@ -134,7 +134,6 @@ d4 $ jux (rev . iter 4) $ chop 8 $ sound "[bd8*2 ~] [sd8:4 mt8*2 mt8 ht8]"
 
 d6 $ jux rev $ chop 4 $ sound "arc"
 
-d1 $ sound "
 
 -- paper2
 
