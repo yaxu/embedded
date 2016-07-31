@@ -12,6 +12,8 @@ d1 $ jux rev $ n (sometimes ((+12) <$>) $ offadd 0.125 12 $ offadd 0.25 7 $ slow
   # end "0.2"
   # cutoff (scale 1000 3000 $ slow 4 $ sine1)
 
+let never = flip const
+  in
 d1 $ sometimes (|+| n "[7,12]") $ jux rev $ n (offadd 0.125 12 $ never (offadd 0.5 7) $ slow 4 $ (subtract 60) <$> (palindrome "[[c g4]/2](3,8) a*3 f(2,8) e*2")) # s "xx"
   # speed "[1,2?]"
   # gain "0.9"
