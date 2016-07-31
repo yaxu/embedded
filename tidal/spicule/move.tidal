@@ -5,3 +5,4 @@ d1 $ stack [(jux rev $ slowspread (chop) [16,32,8,4] $ sound "drum cp*2? [arpy:4
             # gain "1.1"
            ]
 
+d2 $ off 0.25 ((# speed "4") . (# crush "3")) $ off 0.125 ((# shape "0.99") . (# gain "0.6"))$ sound "dirty:40 [dirty:36 ~ ~ dirty:48]" |*| gain "1.2" # resonance "0.2" # cutoff "500"
