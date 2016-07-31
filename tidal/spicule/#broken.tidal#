@@ -1,0 +1,5 @@
+d4 $ off 0.125 (# (crush "3" # gain "0.9" # speed "2")) $ juxBy 0.5 (4 <~) $ n (slow 8 $ scan 8) # sound "[voodoo,future]"
+  # gain "0.9"
+  # orbit "1"
+  # speed "1"
+
