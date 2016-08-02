@@ -1,0 +1,12 @@
+import Sound.Tidal.Utils
+
+substruct :: Pattern String -> Pattern b -> Pattern b
+
+let substruct s p = Pattern $ f
+      where f a = concatMap (\a' -> arc (compressTo a' p) a') $ (map fst' $ arc s a)
+            compressTo (s,e) p = compress (cyclePos s, e-(sam s)) p
+
+
+arc (slow 2 $ substruct "x ~ x x*2" $ "a b" :: Pattern String) (0,0.25)
+
+d1 $ slow 4 $ substruct "[x [~ x]]" $ n "f8 a8 c7 e7" # s "drum"
