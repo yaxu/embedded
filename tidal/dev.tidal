@@ -9,4 +9,26 @@ let substruct s p = Pattern $ f
 
 arc (slow 2 $ substruct "x ~ x x*2" $ "a b" :: Pattern String) (0,0.25)
 
-hush
+
+d1 $ stut 4 0.3 (-0.25) $ sound "bd sn:2"
+
+d1 $ substruct "x [~ x]" (sound "bd sn")
+
+
+d1 $ sound $ substruct "x [~ x]" "bd sn"
+
+
+d1 $ (every 2 (chop 128) $ slow 4 $ substruct "x [~ x/2] x [~ x/4]" $ s "bd mt ht*2 [rs [lt cp]]"
+  # n (irand 8))
+  # speed (slow 4 $ scale 1 2 saw1)
+  # cutoff (density 8 $ scale 10 10000 sine1)
+  # resonance "0.3"
+  # shape "0.5"
+
+d1 $ n (substruct (slowcat ["x ~ [~ x]", "x", "~"]) (slowcat ["a e f g", "b e"])) # s "super808 superhex"
+
+d1 $ jux rev $ slow 4 $ substruct "x x/2 x x/4" $ (off 0.125 (|+| n "12") $ off 0.25 (|+| n "7") $ slow 4 $ n "f7(3,8) a7(5,8) c7*2 e7(3,8)" # s "xx")
+  # cutoff (slow 1 $ scale 200 2000 sine1)
+  # resonance "0.3"
+  # shape "0.5" # speed "[1, [2 4]/2]"
+
