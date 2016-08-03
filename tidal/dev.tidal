@@ -8,3 +8,5 @@ let substruct s p = Pattern $ f
 
 
 arc (slow 2 $ substruct "x ~ x x*2" $ "a b" :: Pattern String) (0,0.25)
+
+hush
