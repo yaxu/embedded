@@ -27,9 +27,12 @@ d1 $ jux rev $ slow 4 $ substruct "x x/2 [~ x] x/4" $ (off 0.125 (|+| n "12") $ 
 
 
 
-d1 $ (every 3 (chop 16) $ slow 4 $ substruct "x [~ x/2] [x*2] [~ x/4]" $ s "bd mt ht*2 [rs [lt cp]]"
+d1 $ (chop 64 $ slow 4 $ substruct "x [~ x/2] [x*2] [~ x/4]" $ s "bd mt ht*2 [rs [lt sd8]]"
   # n (irand 8))
   -- # speed (slow 4 $ scale 1 0.5 saw1)
-  -- # cutoff (density 8 $ scale 1000 2000 sine1)
+  # cutoff (density 8 $ scale 1000 2000 sine1)
   # resonance "0.3"
 
+
+
+d1 $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8)
