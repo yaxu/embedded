@@ -35,8 +35,9 @@ d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain 
 
 cps 1.1
 
+hush
+d1 $ slow 4 $ "x [x/3 x/2]" ~~~ n "[0 4*2 6 3*2] [[4 5] 3]" # s "voodoo"
 
-d1 $ slow 4 $ "x [x/3 x/2]" ~ n "[0 4*2 6 3*2] [[4 5] 3]" # s "voodoo"
 
 let (~~) = struct
     (~~~) = substruct
