@@ -25,9 +25,10 @@ d4 $ (jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "liq")
   # cutoff (slow 8 $ scale 500 1500 sine1)
   # resonance "0.3"
 
-d5 $ jux rev $ loopAt 2 $ chop 16 $ sound "arc"
+d5 $ loopAt 2 $ chop 16 $ sound "arc"
   # gain "1.1"
 
-d6 $ loosound "bev"
+d6 $ loopAt 32 $ striate 32 $ sound "bev*4"
+  # gain "1.5"
 
 cps 1.1
