@@ -18,17 +18,25 @@ d1 $ substruct "x [~ x]" (sound "bd sn")
 d1 $ sound $ substruct "x [~ x]" "bd sn"
 
 
-d1 $ (every 2 (chop 128) $ slow 4 $ substruct "x [~ x/2] x [~ x/4]" $ s "bd mt ht*2 [rs [lt cp]]"
-  # n (irand 8))
-  # speed (slow 4 $ scale 1 2 saw1)
-  # cutoff (density 8 $ scale 10 10000 sine1)
-  # resonance "0.3"
-  # shape "0.5"
-
 d1 $ n (substruct (slowcat ["x ~ [~ x]", "x", "~"]) (slowcat ["a e f g", "b e"])) # s "super808 superhex"
 
-d1 $ jux rev $ slow 4 $ substruct "x x/2 x x/4" $ (off 0.125 (|+| n "12") $ off 0.25 (|+| n "7") $ slow 4 $ n "f7(3,8) a7(5,8) c7*2 e7(3,8)" # s "xx")
-  # cutoff (slow 1 $ scale 200 2000 sine1)
+d1 $ jux rev $ slow 4 $ substruct "x x/2 [~ x] x/4" $ (off 0.125 (|+| n "12") $ off 0.25 (|+| n "7") $ slow 4 $ n "f7(3,8) a7(5,8) c7*2 e7(3,8)" # s "xx")
+  # cutoff (slow 1 $ scale 200 4000 sine1)
   # resonance "0.3"
   # shape "0.5" # speed "[1, [2 4]/2]"
 
+
+
+d1 $ (chop 64 $ slow 4 $ substruct "x [~ x/2] [x*2] [~ x/4]" $ s "bd mt ht*2 [rs [lt sd8]]"
+  # n (irand 8))
+  -- # speed (slow 4 $ scale 1 0.5 saw1)
+  # cutoff (density 8 $ scale 1000 2000 sine1)
+  # resonance "0.3"
+
+
+
+d1 $ slow 4 $ substruct "x*4" $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8)
+  # shape "0.5"
+  # delay "0.6"
+  # delayfeedback "0.3"
+  # delaytime "0.25"
