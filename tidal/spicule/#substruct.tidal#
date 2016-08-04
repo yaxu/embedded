@@ -21,8 +21,13 @@ d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # cutoff "4000"
   # resonance "0.3"
 
-d4 $ jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "liq"
+d4 $ (jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "liq")
+  # cutoff (slow 8 $ scale 500 1500 sine1)
+  # resonance "0.3"
 
 d5 $ jux rev $ loopAt 2 $ chop 16 $ sound "arc"
-  # gain "1."
+  # gain "1.1"
 
+d6 $ loosound "bev"
+
+cps 1.1
