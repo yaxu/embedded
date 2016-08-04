@@ -36,4 +36,4 @@ d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain 
 cps 1.1
 
 
-d1 $ sound "claus"
+d1 $ slow 4 $ n "[0 3 3 3] [[4 5] 3]" # s "claus"
