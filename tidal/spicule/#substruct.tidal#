@@ -62,7 +62,7 @@ d5 $ jux (iter 8) $ s "amencutup*8" # n (irand 8)
 
 
 
-d1 $ sound "bd"
+d1 $ sound "cp"
 
 
 
