@@ -1,0 +1,50 @@
+
+d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8))
+  # shape "0.5"
+  # delay "0.6"
+  # delayfeedback "0.3"
+  # delaytime "0.25"
+  # speed "4"
+  # resonance "0.3"
+  # cutoff (density 4 $ scale 100 4000 saw1)
+  # orbit "0"
+
+d2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10 [~ [sd8 sd8?]]")
+  # orbit "1"
+  # shape "0.96"
+  # speed "1.2"
+  # gain "0.8"
+  -- # vowel "[a e i o u]/5"
+
+d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
+  # orbit "1"
+  # cutoff (slow 4 $ scale 1000 6000 saw1)
+  # resonance "0.3"
+
+x4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
+  # dur "0.2"
+  # vowel "[a e i o u]/5"
+
+d4 $ palindrome $ (chop 16 $ loopAt 4 $ sound "liq")
+  -- # cutoff (slow 8 $ scale 500 3500 sine1)
+  -- # resonance "0.2"
+
+d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain "1.1" # speed "2"
+
+d6 $ jux rev $ (slow 4 $ slowspread (loopAt) [16,64,16,32] $ striate 64 $ sound "bev*4")
+  # gain "1.5"
+  -- # cutoff (slow 8 $ scale 500 4500 sine1)
+  # resonance "0.3"
+  -- # vowel "[a e i o u]"
+
+
+d1 $ slow 2 $ substruct "x/4 x/8" $ every 4 (within (0,0.25) (density 2)) $ jux rev $ loopAt 4 $ chop 16 $ sound "shackup"
+  # accelerate "-4"
+
+
+
+d1 $ slow 4 $ "x [x/3 x/2]" ~~~ n "[0 4*2 6 3*2] [[4 5] 3]" # s "voodoo"
+
+
+d1 $ sound "industrial(3,8,[0,2,4,8])"
+  # cutoff "1000"
