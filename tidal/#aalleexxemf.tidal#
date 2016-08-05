@@ -1,7 +1,10 @@
 
 
-x1 $ every 2 (slow 2) $ jux (rev) $ slow 2 $ substruct "x [~ x/2]" $ (chop 64 $ sound "[bd8:3 sd8:5](5,8,[0 4]/2)")
+x1 $ jux (rev) $ slow 2 $ substruct "x [~ x/2]" $ (chop 64 $ sound "[bd8:3 sn:2](5,8,[0 4]/2)")
   # resonance "0.3"
   # cutoff (density 4 $ rev $ scale 1000 5000 saw1)
-  
+
+d2 $ slow  $ n "f7 a6") # s "xx"
+  # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
+  # resonance "0.3"
 
