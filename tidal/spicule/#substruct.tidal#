@@ -79,13 +79,14 @@ d5 $ sometimes (# accelerate "-4") $ jux (0.5 <~) $ slowspread (chop) [3,6,2,1] 
   # accelerate "-2"
 
 d7 $ jux (iter 4) $ always (|*| speed "2") $ loopAt 4 $ striate 16 $ sound "shakedown*2"
-  # 
+
   
-d8 $ off 0.25 (# crush "2") $  slowspread (chop) [128,64,32] $ sound "[drum, wobble, future, bd8:3](3,8)"
+d8 $ off 0.25 (# crush "2") $  slowspread (chop) [256,128,64,16,32,8] $ sound "[drum, wobble, future, bd8:3](3,8)"
   
+d9 $ jux rev $ sound "bd*3 bd*4"
+  # gain "1.2"
 
-cps 1.1
-
-
+d1 $ loopAt 8 $ chop 16 $ sound "atlast"
+  # gain ""
 
  
