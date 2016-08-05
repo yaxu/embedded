@@ -22,13 +22,13 @@ d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # resonance "0.3"
 
 
-x4 $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
+x4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
   # dur "0.2"
   # vowel "[a e i o u]/5"
 
-d4 $ (jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "liq")
-  # cutoff (slow 8 $ scale 500 1500 sine1)
-  # resonance "0.3"
+d4 $ stut 4 0.6 (1) $ slow 2 $ (jux rev $ iter 4 $ chop 16 $ loopAt 4 $ sound "liq")
+  # cutoff (slow 8 $ scale 500 3500 sine1)
+  # resonance "0.2"
 
 d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain "1.1" # speed "2"
 
