@@ -64,18 +64,21 @@ d5 $ jux (iter 8) $ s "amencutup*8" # n (irand 8)
 
 d2 $ slow 2 $ substruct "x [~ x/2]" $ jux rev $ superimpose ((# speed "1.5") . density 2) $ sound "drum(3,8,[2 4]/2)" # speed "2.5" # accelerate "-8"
 
+
 d1 $ superimpose ((# speed "1.5") . density 2) $ sound "future:2(3,8)"
   # shape "0.3"
   # crush "6"
   -- # cutoff (slow 4 $ scale 4000 6000 sine1)
   -- # resonance "0.2"
 
-d3 $ off (0.25) (|*| up "12") $ jux ((rev) . (# speed "2")) $ slow 2 $ substruct "x [~ x/2]" $ n "0 [[3 5]/2 7] 3 1" # s "jvbass"
+solo  $
+d3 $ off (0.25) (|*| up "12") $ slow 2 $ substruct "x [~ x/2]" $ n "0 [[3 5]/2 7] 3 1" # s "jvbass"
   # shape "0.85"
   
 d5 $ sometimes (# accelerate "-4") $ jux (0.5 <~) $ slowspread (chop) [3,6,2,1] $ s "sb*2" # n "[3 1]/2"
   # accelerate "-2"
 
+d7 $ jux (|*| speed "2") $ loopAt 4 $ striate 16 $ sound "shakedown*2"
 
 
 
