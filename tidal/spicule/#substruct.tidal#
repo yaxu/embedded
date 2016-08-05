@@ -31,13 +31,15 @@ d4 $ palindrome $ (chop 16 $ loopAt 4 $ sound "liq")
 
 d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain "1.1" # speed "2"
 
-d6 $ jux rev $ (slow 4 $ slowspread (loopAt) [16,32,16,8] $ striate 64 $ sound "bev*4")
+d6 $ jux rev $ (slow 4 $ slowspread (loopAt) [16,64,16,32] $ striate 64 $ sound "bev*4")
   # gain "1.5"
   -- # cutoff (slow 8 $ scale 500 4500 sine1)
   # resonance "0.3"
   -- # vowel "[a e i o u]"
 
-d1 $ jux rev $loopAt 4 $ sound "shackup"
+
+d1 $ substruct "x/4 x/8" $ every 4 (within (0,0.25) (density 2)) $ jux rev $ loopAt 4 $ chop 16 $ sound "shackup"
+  # accelerate "-2"
 
 
 hush
