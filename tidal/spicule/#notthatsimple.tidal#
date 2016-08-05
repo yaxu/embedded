@@ -62,8 +62,15 @@ d9 $ jux rev $ n (offadd 0.125 12 $ offadd 0.5 7 $ slow 4 $ (subtract 60) <$> (p
   # end "0.1"
 
 
-d1 $ loopAt 4 $ chop 16 $ s "repetition" # n (irand 4)
+d1 $ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ s "repetition" # n (irand 8)
   # gain "1.2"
 
-d2 $ foldEvery [5,7] () $ jux rev $ slow 2 $ s "bd(3,8) sn(3,8,2)" # n (irand 8)
+d2 $ foldEvery [5,7] (0.25 <~) $ jux rev $ slow 2 $ s "bd(3,8) sn(3,8,2)" # n (irand 8)
   # speed "[1 2 1.5]/3"
+
+d3 $ foldEvery [5,7] (0.125 <~) $ jux rev $ slow 2 $ s "lt(3,8) mt(3,8,2)" # n (irand 8)
+  # speed "[1 2 1.5]/3"
+
+d4 $ chosound "~ off"
+
+d5 $ sound "bd(3,8) cp8:2"
