@@ -1,4 +1,4 @@
-solo 
+
 d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8))
   # shape "0.5"
   # delay "0.6"
