@@ -1,4 +1,5 @@
 
+
 d5 $ runWith 4 (density 2) $ slowcat [off 0.125 (# speed "2") $ jux (rev) $ slow 2 $ chop 8 $ sound "drum [voodoo:1*2]@3",
                                       off 0.125 (# speed "1.5") $ jux (rev) $ slow 2 $ chop 4 $ sound "drum [voodoo:2*2]@3"
                                      ]
@@ -25,10 +26,12 @@ d9 $ iter 4 $ jux (2 <~) $ chop 8 $ loopAt 4 $ sound "shakedown"
   # gain "0.99"
 
 
+
 -- 
 
 d1 $ slow 4 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 hc hc:3}"
   # orbit "1"
+
 
 d9 $ sometimes (off 0.25 (# (crush "4" # gain "0.8"))) $ jux (rev) $ slow 2 $ up (sometimes ((subtract 12) <$>) $ slowspread (\x -> offadd x 7) [0.25,0.5] $ "0 [~ 3 ~] 0 3") # sound "[sid:3 sid:4]/4"
   # resonance "0.3"
