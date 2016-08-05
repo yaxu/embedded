@@ -57,4 +57,3 @@ d3 $ foldEvery [3,5] ((|*| speed "2") . (density 2)) $ iter 4 $ loopAt 8 $ chop 
 d5 $ jux (iter 8) $ s "amencutup*8" # n (irand 8)
   # shape "0.7"
 
-cps 1.05
