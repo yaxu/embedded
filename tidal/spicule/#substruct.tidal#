@@ -62,15 +62,18 @@ d5 $ jux (iter 8) $ s "amencutup*8" # n (irand 8)
 
 
 
-d2 $ superimpose ((# speed "1.2") . density ) $ sound "future(3,8,[2 4]/2)"
+d2 $ jux rev $ superimpose ((# speed "1.2") . density 2) $ sound "future(3,8,[2 4]/2)" # speed "1.5"
  
-d1 $ superimpose ((# speed "1.2") . density 2) $ sound "future:2(3,8,2)"
+d1 $ jux (iter 4) $ superimpose ((# speed "1.2") . density 2) $ sound "future:2(3,8,2)"
   # shape "0.5"
   # crush "4"
   # cutoff (slow 4 $ scale 4000 6000 sine1)
   # resonance "0.2"
+  |*| speed "2"
 
-
+d3 $ n "0 [~ 2] 3 1" # s "jvbass"
+  # shape "0.85"
+  
 
 
 
