@@ -1,2 +1,4 @@
-d1 $ sound "bd"
-hush
+x1 $ stack [sound "cp"
+           ]
+
+

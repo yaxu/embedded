@@ -1,6 +1,0 @@
-x1 $ stack [sound "sn"
-            # nudge "0.088"
-           ]
-
-
-hush
