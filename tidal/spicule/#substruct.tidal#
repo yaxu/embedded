@@ -96,7 +96,7 @@ d7 $ jux (rev . iter 4) $ loopAt 4 $ striate 16 $ sound "shakedown*2"
 
 d3 $ sound "[gabbaloud jungbass:5]*2"
 
-d1 $ jux rev $ weave 16 (n (palindrome $ run 8) # s "arpy")
+d1 $ degradeBy 0.7 $ jux rev $ weave 16 (n (palindrome $ run 8) # s "arpy")
   [vowel "a e [i o] u",
    vowel "i o u",
    speed "1 2 3 4",
@@ -106,6 +106,11 @@ d1 $ jux rev $ weave 16 (n (palindrome $ run 8) # s "arpy")
   # size "0.4"
   # orbit "0"
   
-d2 $ sound "[bd sd8:3*2, casio*3 casio:2*2]"
+d2 $ jux (iter 4)$  sound "[bd sd8:3*2, casio:1*1 casio:2*2]"
   # orbit "1"
   # gain "1.2"
+
+d3 $ sln "c8 a8 f8 e8" # s "xx"
+  # orbit "0"
+    # room "0.6"
+  # size "0.4"
