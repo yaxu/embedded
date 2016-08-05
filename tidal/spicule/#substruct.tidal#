@@ -88,7 +88,10 @@ d9 $ slow 2 $ jux rev $ sound "bd*3 bd*4"
 
 
 
-d1 $ iter 4 $ loopAt 8 $ chop 32 $ sound "atlast"
+d1 $ loopAt 8 $ chop 32 $ sound "atlast:1"
   # gain "1.3"
+  # cutoff "600"
+
   
-d2 $ sound "bd ~ bd 
+d2 $ jslow 2 $ substruct "[x ~ [x ~], x]" $ slow 2 $ off 0.125 (# speed "2") $ sound "bd ~ bd sn bd [~ sn] bd bd"
+  
