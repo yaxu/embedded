@@ -95,4 +95,11 @@ d2 $ jux (iter 4) $ slow 2 $ substruct "[x ~ [x ~], x]" $ slow 2 $ off 0.125 (# 
 d7 $ jux (rev . iter 4) $ loopAt 4 $ striate 16 $ sound "shakedown*2"
 
 d3 $ sound "[gabbaloud jungbass:5]*2"
+
+d1 $ weave 16 (n (palindrorun 8) # s "arpy")
+  [vowel "a e i o u",
+   vowel "i o u",
+   speed "1 2 3 4",
+   speed "2 1"
+  ]
   

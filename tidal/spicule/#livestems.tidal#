@@ -272,7 +272,7 @@ d4 $ slow 2 $ runWith 4 (slow 2) $ chop 16 $ sound "shakedown"
 d1 $ iter 4 $ jux rev $ n (offadd 0.25 7 $ slow 4 $ "f8(3,8) a8(5,8) c8(3,8) e8(5,8)") # s "xx"
   # cutoff (scale 1000 5000 sine1)
   # resonance "0.3"
-d
+
 d2 $ jux rev $ iter 4 $ loopAt 2 $ chop 16 $ sound "arc"
 
 
