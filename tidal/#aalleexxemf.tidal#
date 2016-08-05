@@ -1,5 +1,6 @@
-d1 $ sound "bd"
-hush
+x1 $ stack [sound "sn"
+            # nudge "0.088"
+           ]
 
-x1 $ sound "bd"
-   # pan "0"
+
+hush
