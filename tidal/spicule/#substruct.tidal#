@@ -46,8 +46,10 @@ d1 $ slow 2 $ substruct "x/4 x/8" $ every 4 (within (0,0.25) (density 2)) $ jux 
 d1 $ slow 4 $ "x [x/3 x/2]" ~~~ n "[0 4*2 6 3*2] [[4 5] 3]" # s "voodoo"
 
 
-d1 $ jux (0.25 <~) $ sound "[industrial(3,8,[0 2 4 6]/4), gabba [~ h:1]]"
+d1 $ jux (0.25 <~) $ sound "[drum(3,8,[0 2 4 6]/4), gabba [~ h:1]]"
   # cutoff "2000"
   # resonance "0.2"
 
-d2 $ slowspread (chop) [3,2] $sound "~ off"
+x2 $ jux (2 <~) $ slowspread (chop) [3,2,5,4] $ sound "~ off"
+
+d3 $ foldEvery [3,5] (|*| speed "2") $ iter 4 $ loopAt 8 $ chop 32 $ sound "paper"
