@@ -78,11 +78,13 @@ d3 $ off (0.25) (|*| up "12") $ slow 2 $ substruct "x [~ x/2]" $ n "0 [[3 5]/2 7
 d5 $ sometimes (# accelerate "-4") $ jux (0.5 <~) $ slowspread (chop) [3,6,2,1] $ s "sb*2" # n "[3 1]/2"
   # accelerate "-2"
 
-d7 $ jux (|*| speed "2") $ loopAt 4 $ striate 16 $ sound "shakedown*2"
+d7 $ jux (iter 4) $ always (|*| speed "2") $ loopAt 4 $ striate 16 $ sound "shakedown*2"
+  # 
+  
+d8 $ off 0.25 (# crush "2") $  slowspread (chop) [128,64,32] $ sound "[drum, wobble, future, bd8:3](3,8)"
+  
 
-
-
-
+cps 1.1
 
 
 
