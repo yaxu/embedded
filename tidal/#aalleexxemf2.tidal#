@@ -60,7 +60,12 @@ d5 $ jux (iter 4) $ loopAt 4 $ chop 16 $ sound "arc"
 d6 $ sometimes (# up "7") $ off 0.125 (# crush "4")$ slowspread (chop) [8,4,3,2] $ sound "~ off"
   # accelerate "-3"
 
-d7 $ jux (rev) $ slow 2 $ chop 8 $ sound "rave:6"
+d7 $ brak $ (jux (rev) $ slow 2 $ chop 8 $ sound "rave:6")
+  # cutoff (density 2 $ scale 1000 3000 saw1)
+  # resonance "0.2"
+  
 
-
+d8 $ juloopAt 8 $ chop 16 $ sound "liq"
+  # cutoff (density 2 $ scale 1000 3000 saw1)
+  # resonance "0.2"
 
