@@ -80,9 +80,9 @@ d1 $ slow 2 $ jux (rev . (# speed "-2")) $ substruct "x ~ [x/2] x" $ slow 2 $ so
 
 d2 $ sound "g(3,8)"
 
-d5 $ jux rev $ loopAt 32 $ chop 32 $ sound "bev"
+d5 $ slow 2 $ jux (iter 4) $ loopAt 32 $ striate 32 $ sound "bev*2"
   # gain "1.1"
-  
+
 
 d1 $ jux (iter 4) $ slow 2 $ sound "bd*2 ~ cp8 ~"
   # speed "2"
