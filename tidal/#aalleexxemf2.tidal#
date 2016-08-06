@@ -1,1 +1,2 @@
-
+d1 $ slowspread (chop) [8,4,2] $ s "bd8*2" # n (irand 8)
+  # speed "2"
