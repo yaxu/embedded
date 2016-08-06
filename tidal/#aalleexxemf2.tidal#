@@ -33,4 +33,5 @@ d2 $ iter 4 $ jux rev $ loopAt 8 $ chop 32 $ sound "paper"
   # gain "0.8"
 
 d2 silence
-
+hush
+d1 $ degrade $ every 2 (density 1.5) $ jux rev $ sound "gabba(3,8)"
