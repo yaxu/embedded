@@ -42,10 +42,13 @@ d1 $ degrade $ every 2 (density 1.5) $ jux rev $ sound "gabba(3,8)"
 
 d1 $ jux (iter 4) $ slow 2 $ sound "[bd(3,8), mt(5,8,2), sn:3*2 cp]"
 
-d2 $ jux (rev) $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c8(3,8) [~ g7]") # s "xx"
+d2 $ jux (rev) $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c8(3,8) [~ g7(3,4)]") # s "xx"
   # cutoff (slow 8 $ scale 1000 3000 sine1)
   # resonance "0.3"
 
 d3 $ every 2 (density 1.5) $ slowspread (chop) [8,16,32] $ sound "~ ravebass:12"
 
-d4 $ sound "~ sb:1"
+d4 $ slow 2 $ substruct "x [x/4 x/2]" $ sound "g*2 [mt8*2 sb:2]"
+  # gain "1.1"
+
+d5 $ sound "bd*4 h"
