@@ -37,3 +37,10 @@ d2 $ iter 4 $ jux rev $ loopAt 8 $ chop 32 $ sound "paper"
 d2 silence
 hush
 d1 $ degrade $ every 2 (density 1.5) $ jux rev $ sound "gabba(3,8)"
+
+
+
+d1 $ jux (iter 4) $ slow 2 $ sound "[bd(3,8), mt(5,8,2), ~ cp]"
+
+d2 $ jux (it) $ slow 4 $ n "c8 [~ g7]" # s "xx"
+  # cutoff "400"
