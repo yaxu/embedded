@@ -47,7 +47,7 @@ d2 $ jux (rev) $ slow 4 $ n (offadd 0.125 12 $ offadd 0.25 7 "c8(3,8) [~ g7(3,4)
   # resonance "0.3"
 
 d3 $ every 2 (density 1.5) $ slowspread (chop) [8,16,32] $ sound "~ ravebass:12"
-
+d4 silnece
 d4 $ slow 2 $ substruct "x [x/4 x/2]" $ sound "g*2 [mt8*2 sb:1]"
   # gain "1.1"
   # accelerate "-3"
@@ -64,11 +64,14 @@ d7 $ (jux (rev) $ slow 2 $ chop 8 $ sound "rave:6")
   # cutoff (density 2 $ scale 1000 3000 saw1)
   # resonance "0.2"
   
-
 d8 $ iter 4 $ jux (rev) $ loopAt 8 $ chop 16 $ sound "liq"
   # cutoff (slow 4 $ scale 7000 5000 saw1)
   # resonance "0.2"
 
 d9 $ slow 2 $ sound "~ [h h?]"
 
-d1 $ loopAsound "shackup"
+d1 $ jux (iter 4) $ rev $ loopAt 8 $ chop 16 $ sound "shackup"
+  # gain "1.1"
+
+d2 $ sound "vocobass(3,8)"
+  # shape "0.3"
