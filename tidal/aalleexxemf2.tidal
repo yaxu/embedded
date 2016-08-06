@@ -28,7 +28,8 @@ d1 $ whenmod 6 4 (# up "12 7") $ whenmod 8 6 (# up "7") $ sound "ravebass:10(3,8
   # orbit "0"
   # gain "0.8"
 
-d2 $ iter 4 $ loopAt 8 $ chop 32 $ sound "paper"
+
+d2 $ loopAt 8 $ chop 32 $ sound "paper"
   # gain "0.8"
 
 
