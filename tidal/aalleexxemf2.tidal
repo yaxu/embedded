@@ -16,13 +16,19 @@ d4 $ degrade $ echo 0.25 $ slow 4 $ jux rev $ off 0.125 (|+| n "12") $ off 0.25 
   # room "0.5"
   # size "0.7"
 
-d7 $ iter 4 $ jux rev $ slowspread (loopAt) [2,1,2,2] $ chop 16 $ sound "arc"
+d7 $ iter 4 $ jux rev $ slowspread (loopAt) [2,1,2,2] $ slow 2 $ striate 16 $ sound "arc*2"
   # gain "1.1"
-  # cutoff (slow 4 $ scale 300 5000 sine1)
-  # resonance "0.2"
+  # orbit "1"
 
-d1 $ whenmod 6 4 (# up "12") $ whenmod 8 6 (# up "7") $ sound "ravebass:10(3,8)"
+d1 $ whenmod 6 4 (# up "12 7") $ whenmod 8 6 (# up "7") $ sound "ravebass:10(3,8)"
   # delay "0.9"
   # delaytime "0.04"
   # delayfeedback "0.9"
   # accelerate "-3"
+  # orbit "0"
+  # gain "0.8"
+
+d2 $ iter 4 $ loopAt 8 $ chop 32 $ sound "paper"
+  # gain "0.8"
+
+
