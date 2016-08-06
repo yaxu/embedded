@@ -40,7 +40,9 @@ d1 $ degrade $ every 2 (density 1.5) $ jux rev $ sound "gabba(3,8)"
 
 
 
-d1 $ jux (iter 4) $ slow 2 $ sound "[bd(3,8), mt(5,8,2), ~ cp]"
+d1 $ jux (iter 4) $ slow 2 $ sound "[bd(3,8), mt(5,8,2), sn:3*2 cp]"
 
-d2 $ jux (it) $ slow 4 $ n "c8 [~ g7]" # s "xx"
-  # cutoff "400"
+d2 $ jux (iter 4) $ slow 4 $ n (offadd 0.25 7 "c8(3,8) [~ g7]") # s "xx"
+  # cutoff "900"
+
+d3 $ every 2 () $ slowspread (chop) [8,16,32] $ sound "~ ravebass:12"
