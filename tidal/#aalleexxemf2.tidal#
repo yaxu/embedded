@@ -51,4 +51,9 @@ d3 $ every 2 (density 1.5) $ slowspread (chop) [8,16,32] $ sound "~ ravebass:12"
 d4 $ slow 2 $ substruct "x [x/4 x/2]" $ sound "g*2 [mt8*2 sb:2]"
   # gain "1.1"
 
-d5 $ sound "bd*4 h"
+d5 $ sound "bd*4 [h]/2"
+
+d5 $ jux (iter 4) $ loopAt 4 $ chop 16 $ sound "arc"
+  # gain "1.3"
+
+d6 $ slowspread (chop) [8,4,3,2] $ sound "~ off"
