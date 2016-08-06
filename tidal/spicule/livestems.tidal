@@ -194,6 +194,7 @@ d4 $ jux rev $ off 0.125 (|*| up "[7 -5]/2") $ n ("[c3 d3 ds3 [a3 e3]]/8") # s "
   # speed "2"
   # room "0"
   # size "0.9"
+  # gain "0.8"
 
 d1 $ often (off 1 (|*| speed "1.5")) $ sometimes (off 0.125 (# up "[5 -7 12]/6")) $ struct "x [x x]" $ n ("[[c0,e0] d0 ds0 f0]/8") # s "xx"
   # room "1"
