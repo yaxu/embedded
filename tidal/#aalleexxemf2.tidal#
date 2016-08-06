@@ -1,2 +1,5 @@
-d1 $ slowspread (chop) [8,4,2] $ s "bd8*2" # n (irand 8)
-  # speed "2"
+d1 $ slow 2 $ substruct "x [~ x/2]" $ slowspread (chop) [8,4,2] $ s "lt8 mt8 ~ ht8" # n (irand 8)
+
+d2 $ jux (iter 4) $ chop 4 $ sound "feel feel:2"
+
+d3 $ gap 8sound "fm:10"
