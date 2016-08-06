@@ -78,6 +78,7 @@ d3 $ off 0.125 (# up "19") $ slow 2 $ sound "vocobass(3,8,[0 2]/2)"
 
 d1 $ slow 2 $ jux (rev . (# speed "-2")) $ substruct "x ~ [x/2] x" $ slow 2 $ sound "bd*4 cp8 bd*2 [~ mt8]"
 
+d1 $ sound "bd"
 d2 $ sound "g(3,8)"
 
 d5 $ slow 2 $ jux (iter 4) $ loopAt 32 $ striate 32 $ sound "bev*2"
