@@ -1,4 +1,4 @@
-
+solo $
 d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8))
   # shape "0.5"
   # delay "0.6"
@@ -16,6 +16,10 @@ d2 $ slow 2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10
   # speed "1.2"
   # vowel "[a e i o u]/5"
   # gain "0.6"
+
+d3 $ slow 4 $ up (offadd (1/16) 12 $ offadd 0.125 7 $ slow 2 $ "0 [~ 7] 4 0") # sound "bass3"
+  # gain "0.85"
+  
 
 d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
   # gain "0.7"
