@@ -23,7 +23,11 @@ d4 silence
 
  # gain "0.6"
 
-d1 $ iter 4 $ loopAt 16 $ chop 16 $ sound "bev"
+d1 $ jux (iter 4) $ slow 8 $ loopAt 16 $ striate 64 $ sound "bev*8"
+  # gain "0.9"
+
+d2 $ substruct "x x " sound "~ [bd ~ ~ bd]"
+  # speed "2"
 
 d3 $ brak $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # orbit "1"
