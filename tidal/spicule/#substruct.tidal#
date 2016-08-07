@@ -17,10 +17,12 @@ d2 $ slow 2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10
   # vowel "[a e i o u]/5"
   # gain "0.6"
 
-d3 $ slow 4 $ up (offadd (1/16) 12 $ offadd 0.125 7 $ slow 2 $ "0 [~ 7] 4 0") # sound "bass3"
+d3 $ slow 4 $ up (offadd (1/16) 12 $ offadd 0.125 7 $ slow 2 $ "0*2 [~ 7] 4(3,8) 0*2") # sound "bass3"
   # gain "0.85"
-  
 
+d4 $ slow 2 $ slowspread (chop) [8,6]
+                                 $ sound "~ cp"
+hush
 d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
   # gain "0.7"
 
