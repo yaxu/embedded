@@ -22,7 +22,7 @@ d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
 d4 silence
 
  # gain "0.6"
-d1 i
+
 d1 $ jux (iter 4) $ rev $ slow 8 $ loopAt 16 $ striate 64 $ sound "bev*4"
   # gain "0.9"
 
@@ -30,6 +30,11 @@ d1 $ jux (iter 4) $ rev $ slow 8 $ loopAt 16 $ striate 64 $ sound "bev*4"
 d2 $ jux (iter 4) $ slow 4 $ substruct "x [x/2 x x/4]" $ sound "bd8:2 [bd lt8 mt bd]"
   # speed "2"
   # gain "0.9"
+
+d3 $ sound "{~ [ravebass ravebass*2]/2, ~ ~ [~ ravebass:10]}"
+
+d4 $ sound "jungbass:1 jungbass:6/2"
+  # gain "0.8"
 
 d3 $ brak $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # orbit "1"
