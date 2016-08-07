@@ -10,12 +10,19 @@ d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [s
   # orbit "0"
   # gain "0.6"
   
-d2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10 [~ [sd8 sd8?]]")
+d2 $ slow 2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10 [~ [sd8 sd8?]]")
   # orbit "1"
   # shape "0.96"
   # speed "1.2"
   -- # vowel "[a e i o u]/5"
   # gain "0.6"
+
+
+d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
+  # gain "0.7"
+
+d4 $ loopAt 4 $ chop 8 $ sound "[narc narc:1]/2"
+  # gain "0.7"
 
 d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # orbit "1"
