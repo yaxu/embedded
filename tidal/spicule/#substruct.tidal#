@@ -19,6 +19,7 @@ d2 $ slow 2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10
 
 d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
   # gain "0.7"
+
 d4 silence
 
  # gain "0.6"
@@ -37,8 +38,11 @@ d4 $ sound "jungbass:1 jungbass:6/2"
   # gain "0.8"
 
 
-d5 $ jux rev $ slow 2 $ loopAt 4 $ striate 8 $ sound "[mef:2*2]"
+d5 $ jux rev $ slow 2 $ loopAt 4 $ striate 8 $ sound "[mef*2]"
+   # cutoff "4000"
+   # resonance "0.2"
 
+d3 $ iter 4 $ loopAt 4 $ chop 8 $ sound "arc"
 
 
 d3 $ brak $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
