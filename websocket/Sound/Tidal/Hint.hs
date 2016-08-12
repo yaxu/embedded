@@ -44,15 +44,15 @@ runJob job = do putStrLn $ "Parsing: " ++ job
                       Right p -> OK p
                 return response
 
-libs = [("Prelude", Nothing), 
-        ("Sound.Tidal.Context", Nothing),
-        -- ("Data.Map", "Map"),
-        ("Control.Applicative", Nothing)
+libs = ["Prelude",
+        "Sound.Tidal.Context",
+        "Data.Map", "Map",
+        "Control.Applicative"
        ]
 
 hintParamPattern  :: String -> IO (Either InterpreterError ParamPattern)
 hintParamPattern s = Hint.runInterpreter $ do
   Hint.set [languageExtensions := [OverloadedStrings]]
-  Hint.setImportsQ libs
+  Hint.setImports libs
   Hint.interpret s (Hint.as :: ParamPattern)
 
