@@ -37,7 +37,7 @@ data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
 
 runJob :: String -> IO (Response)
-runJob job = do result <- hintParamPattern
+runJob job = do result <- hintParamPattern job
                 let response = case result of
                       Left err -> Error (show err)
                       Right p -> OK p
