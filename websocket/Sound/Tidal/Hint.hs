@@ -52,5 +52,5 @@ hintParamPattern  :: String -> IO (Either InterpreterError ParamPattern)
 hintParamPattern s = Hint.runInterpreter $ do
   Hint.set [languageExtensions := [OverloadedStrings]]
   Hint.setImports libs
-  Hint.interpret s (Hint.as :: ParamPattern)
+  Hint.interpret s (Hint.as :: Pattern (Map Param (Maybe Value)))
 
