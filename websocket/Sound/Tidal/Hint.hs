@@ -38,7 +38,7 @@ import Data.Map
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
 
-instance (Show a) => Show (Response) where
+instance Show Response where
   show (OK p) = "Ok: " ++ show p
   show (Error s) = "Error: " ++ s
 
