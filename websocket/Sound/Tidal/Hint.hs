@@ -41,8 +41,8 @@ deriving instance Typeable Sound.OSC.FD.Datum
 
 data Job = OscJob String
 
-data Response = Err Job String
-              | OK Job
+data Response = OK Job
+              | Error Job String
 
 start :: MVar (ParamPattern) -> IO (MVar Job)
 start oscOut = do input <- newEmptyMVar
