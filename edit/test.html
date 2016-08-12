@@ -60,8 +60,12 @@ data Pattern a = Pattern {arc :: Arc -> [Event a]}
       );
       editor.setOption("extraKeys", {
         "Ctrl-Enter": function(cm) {
-          
           var selection;
+
+          if (!connected) {
+             return(false);
+          }
+
           if (cm.somethingSelected()) {
             selection = cm.getSelection();
           }
