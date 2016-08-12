@@ -40,13 +40,15 @@ deriving instance Typeable Sound.OSC.FD.Datum
 -}
 
 data Job = OscJob String
-         | ColourJob T.Type String
 
-start :: MVar (ParamPattern) -> MVar (Maybe (Pattern (Colour Double))) -> IO (MVar Job)
-start oscOut colourOut = do input <- newEmptyMVar
-                            forkIO $ loop input 
-                            return input
-  where loop input = 
+data Response = Err Job String
+              | OK Job
+
+start :: MVar (ParamPattern) -> IO (MVar Job)
+start oscOut = do input <- newEmptyMVar
+                  forkIO $ loop input 
+                  return input
+w  where loop input = 
           do r <- runInterpreter $ runI input oscOut colourOut
              case r of
                Left err -> printInterpreterError err
