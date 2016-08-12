@@ -33,6 +33,8 @@ deriving instance Typeable Param
 deriving instance Typeable Sound.OSC.FD.Datum
 -}
 
+import Data.Map
+
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
 
