@@ -5,12 +5,6 @@ import Sound.Tidal.Context
 
 import Language.Haskell.Interpreter as Hint
 
-hintParamPattern  :: String -> IO (Either InterpreterError ParamPattern)
-hintParamPattern x = Hint.runInterpreter $ do
-  Hint.set [languageExtensions := [OverloadedStrings]]
-  Hint.setImports ["Prelude","Sound.Tidal.Context"]
-  Hint.interpret x (Hint.as::ParamPattern)
-
 {-import Control.Monad
 import Control.Concurrent
 import Control.Concurrent.MVar
@@ -43,7 +37,7 @@ data Response = OK {job :: String, parsed :: ParamPattern}
               | Error {job :: String, errorMessage :: String}
 
 runJob :: String -> IO (Response)
-runJob job = do r <- runInterpreter $ runI job
+runJob job = do result <- parsePattern
                 let response = case r of
                       Left err -> Error job $ show err
                       Right p -> OK job p
@@ -54,6 +48,13 @@ libs = [("Prelude", Nothing),
         ("Data.Map", Nothing), ("Sound.OSC", Nothing),
         ("Control.Applicative", Nothing)
        ]
+
+hintParamPattern  :: String -> IO (Either InterpreterError ParamPattern)
+hintParamPattern s = Hint.runInterpreter $ do
+  Hint.set [languageExtensions := [OverloadedStrings]]
+  Hint.setImportsQ libs
+  Hint.Interpret s (Hint.as :: ParamPattern)
+
 
 runI :: Job -> Interpreter (ParamPattern)
 runI input oscOut colourOut =
