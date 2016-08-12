@@ -46,7 +46,7 @@ runJob job = do putStrLn $ "Parsing: " ++ job
 
 libs = ["Prelude",
         "Sound.Tidal.Context",
-        "Data.Map", "Map",
+        "Data.Map",
         "Control.Applicative"
        ]
 
