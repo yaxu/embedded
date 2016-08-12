@@ -60,7 +60,6 @@ runI input oscOut colourOut =
     do
       --loadModules ["Stream.hs"]
       --setTopLevelModules ["SomeModule"]
-      
       setImportsQ libs
       loop
   where loop = do 
