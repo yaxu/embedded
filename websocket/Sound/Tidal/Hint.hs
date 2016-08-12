@@ -45,7 +45,7 @@ runJob job = do result <- parsePattern
 
 libs = [("Prelude", Nothing), 
         ("Sound.Tidal.Context", Nothing),
-        ("Data.Map", Nothing), ("Sound.OSC", Nothing),
+        ("Data.Map", Nothing),
         ("Control.Applicative", Nothing)
        ]
 
