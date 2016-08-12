@@ -33,8 +33,8 @@ deriving instance Typeable Param
 deriving instance Typeable Sound.OSC.FD.Datum
 -}
 
-data Response = OK {job :: String, parsed :: ParamPattern}
-              | Error {job :: String, errorMessage :: String}
+data Response = OK {parsed :: ParamPattern}
+              | Error {errorMessage :: String}
 
 runJob :: String -> IO (Response)
 runJob job = do result <- hintParamPattern
