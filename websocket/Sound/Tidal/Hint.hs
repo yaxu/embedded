@@ -44,16 +44,12 @@ data Job = OscJob String
 data Response = OK {job :: Job, channel :: Int}
               | Error {job :: Job, errorMessage :: String}
 
-start :: IO (MVar Job)
-start = do input <- newEmptyMVar
-           forkIO $ loop input 
-           return input
-  where loop input = 
-          do r <- runInterpreter $ runI input oscOut colourOut
-             case r of
-               Left err -> printInterpreterError err
-               Right () -> putStrLn "Eh?"
-             loop input
+runJob :: Job -> IO (Response)
+runJob job = do r <- runInterpreter $ runI job
+                let response = case r of
+                      Left err -> Error job $ show err
+                      Right () -> OK job
+                return response
 
 libs = [("Prelude", Nothing), 
         ("Sound.Tidal.Context", Nothing),
