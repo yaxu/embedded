@@ -37,6 +37,8 @@ import Data.Map
 
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
+  deriving Showable
+
 
 runJob :: String -> IO (Response)
 runJob job = do putStrLn $ "Parsing: " ++ job
