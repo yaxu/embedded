@@ -38,8 +38,10 @@ import Show
 
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
-  deriving Show
 
+instance (Show a) => Show (Response) where
+  show (OK p) = "Ok: " ++ show p
+  show (Error s) = "Error: " ++ s
 
 runJob :: String -> IO (Response)
 runJob job = do putStrLn $ "Parsing: " ++ job
