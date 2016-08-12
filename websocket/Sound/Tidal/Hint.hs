@@ -38,7 +38,7 @@ import Show
 
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
-  deriving Showable
+  deriving Show
 
 
 runJob :: String -> IO (Response)
