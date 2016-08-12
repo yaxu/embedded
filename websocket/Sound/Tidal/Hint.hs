@@ -39,16 +39,14 @@ deriving instance Typeable Param
 deriving instance Typeable Sound.OSC.FD.Datum
 -}
 
-data Job = OscJob String
+data Response = OK {job :: String, parsed :: ParamPattern}
+              | Error {job :: String, errorMessage :: String}
 
-data Response = OK {job :: Job, channel :: Int}
-              | Error {job :: Job, errorMessage :: String}
-
-runJob :: Job -> IO (Response)
+runJob :: String -> IO (Response)
 runJob job = do r <- runInterpreter $ runI job
                 let response = case r of
                       Left err -> Error job $ show err
-                      Right () -> OK job
+                      Right p -> OK job p
                 return response
 
 libs = [("Prelude", Nothing), 
