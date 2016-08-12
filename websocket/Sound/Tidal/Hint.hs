@@ -48,7 +48,7 @@ start :: IO (MVar Job)
 start = do input <- newEmptyMVar
            forkIO $ loop input 
            return input
-w  where loop input = 
+  where loop input = 
           do r <- runInterpreter $ runI input oscOut colourOut
              case r of
                Left err -> printInterpreterError err
