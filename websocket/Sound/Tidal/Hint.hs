@@ -45,7 +45,7 @@ runJob job = do result <- hintParamPattern job
 
 libs = [("Prelude", Nothing), 
         ("Sound.Tidal.Context", Nothing),
-        ("Data.Map", "Map"),
+        ("Data.Map", Just "Map"),
         ("Control.Applicative", Nothing)
        ]
 
