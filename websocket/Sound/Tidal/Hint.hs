@@ -46,11 +46,7 @@ runJob job = do putStrLn $ "Parsing: " ++ job
                       Right p -> OK p
                 return response
 
-libs = ["Prelude",
-        "Sound.Tidal.Context",
-        "Data.Map",
-        "Control.Applicative"
-       ]
+libs = ["Prelude","Sound.Tidal.Context","Sound.OSC.Type","Sound.OSC.Datum","Data.Map"]
 
 hintParamPattern  :: String -> IO (Either InterpreterError ParamPattern)
 hintParamPattern s = Hint.runInterpreter $ do
