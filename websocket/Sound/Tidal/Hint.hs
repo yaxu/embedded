@@ -55,7 +55,7 @@ libs = [("Prelude", Nothing),
         ("Control.Applicative", Nothing)
        ]
 
-runI :: MVar Job -> MVar (ParamPattern) -> MVar (Maybe (Pattern (Colour Double))) -> Interpreter ()
+runI :: Job -> Interpreter (ParamPattern)
 runI input oscOut colourOut =
     do
       --loadModules ["Stream.hs"]
