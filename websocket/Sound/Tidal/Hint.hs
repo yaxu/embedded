@@ -44,10 +44,10 @@ data Job = OscJob String
 data Response = OK {job :: Job, channel :: Int}
               | Error {job :: Job, errorMessage :: String}
 
-start :: MVar (ParamPattern) -> IO (MVar Job)
-start oscOut = do input <- newEmptyMVar
-                  forkIO $ loop input 
-                  return input
+start :: IO (MVar Job)
+start = do input <- newEmptyMVar
+           forkIO $ loop input 
+           return input
 w  where loop input = 
           do r <- runInterpreter $ runI input oscOut colourOut
              case r of
