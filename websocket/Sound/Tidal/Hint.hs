@@ -34,6 +34,7 @@ deriving instance Typeable Sound.OSC.FD.Datum
 -}
 
 import Data.Map
+import Show
 
 data Response = OK {parsed :: ParamPattern}
               | Error {errorMessage :: String}
