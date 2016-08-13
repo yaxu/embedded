@@ -24,9 +24,8 @@ main = do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
     WS.forkPingThread conn 30
-    (cps,getNow) <- Tidal.bpsUtils
-    dss <- mapM (\_ -> Tidal.dirtStream) [0..8]
-    loop (cps,dss) conn
+    d <- Tidal.dirtStream
+    loop d conn
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
