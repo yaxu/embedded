@@ -26,7 +26,7 @@ main = do
         putStrLn "received new connection"
     WS.forkPingThread conn 30
     d <- Tidal.dirtStream
-    loop d mPatterns conn
+    loop (d, mPatterns) conn
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
