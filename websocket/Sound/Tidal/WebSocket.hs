@@ -20,12 +20,13 @@ port = 9162
 
 main = do
   putStrLn "TidalCycles websocket server, listening on port " ++ show 9162
+  mPatterns <- newMVar []
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
-    putStrLn "received new connection"
+        putStrLn "received new connection"
     WS.forkPingThread conn 30
     d <- Tidal.dirtStream
-    loop d conn
+    loop d mPatterns conn
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
