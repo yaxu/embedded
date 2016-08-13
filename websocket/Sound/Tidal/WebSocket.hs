@@ -30,7 +30,7 @@ main = do
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
-loop d conn = do
+loop s@(d, mPatterns) conn = do
   m <- try (WS.receiveData conn)
   case m of
     Right x -> do
