@@ -29,7 +29,7 @@ main = do
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
-loop s@(cps,dss) conn = do
+loop d conn = do
   m <- try (WS.receiveData conn)
   case m of
     Right x -> do
