@@ -16,8 +16,10 @@ import Sound.Tidal.Hint
 
 type TidalState = (Double -> IO (),[Tidal.ParamPattern -> IO()])
 
+port = 9162
+
 main = do
-  putStrLn "Tidal websocket server for Estuary, listening on port 9162"
+  putStrLn "Tidal websocket server, listening on port " ++ show 9162
   WS.runServer "0.0.0.0" 9162 $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
