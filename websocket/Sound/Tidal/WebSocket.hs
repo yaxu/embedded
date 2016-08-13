@@ -29,7 +29,7 @@ main = do
     loop d mPatterns conn
     )
 
-loop :: TidalState -> [ParamPattern] -> WS.Connection -> IO ()
+loop :: TidalState -> WS.Connection -> IO ()
 loop d conn = do
   m <- try (WS.receiveData conn)
   case m of
