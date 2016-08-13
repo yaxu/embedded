@@ -14,7 +14,7 @@ import Text.JSON
 import Request
 import Sound.Tidal.Hint
 
-type TidalState = (Double -> IO (),[Tidal.ParamPattern -> IO()])
+type TidalState = (Tidal.ParamPattern -> IO(), [ParamPattern])
 
 port = 9162
 
