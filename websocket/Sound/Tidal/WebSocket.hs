@@ -32,6 +32,7 @@ main = do
 loop :: TidalState -> WS.Connection -> IO ()
 loop s@(d, mPatterns) conn = do
   m <- try (WS.receiveData conn)
+  modifyMVar_ mPatterns (return . ((conn, silence):)) 
   case m of
     Right x -> do
       y <- processResult s (decode (T.unpack x))
