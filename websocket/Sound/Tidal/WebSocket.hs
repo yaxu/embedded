@@ -20,7 +20,7 @@ port = 9162
 
 main = do
   putStrLn "TidalCycles websocket server, listening on port " ++ show 9162
-  WS.runServer "0.0.0.0" 9162 $ (\pending -> do
+  WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
     WS.forkPingThread conn 30
