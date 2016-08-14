@@ -37,7 +37,9 @@ loop state@(d, mPatterns) conn = do
   putStrLn "loop"
   msg <- try (WS.receiveData conn)
   -- add to dictionary of connections -> patterns, could use a map for this
+  putStrLn "got msg"
   modifyMVar_ mPatterns (\ps -> return ((conn, Tidal.silence):ps))
+  putStrLn "modified mvar"
   case msg of
     Right s -> do
       act state conn (T.unpack s)
