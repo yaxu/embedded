@@ -49,7 +49,7 @@ close (cps,dss) msg = do
 
 -- hush = mapM_ ($ Tidal.silence)
 
-act :: TidalState -> WC.Connection -> String -> IO ()
+act :: TidalState -> WS.Connection -> String -> IO ()
 act state conn request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
