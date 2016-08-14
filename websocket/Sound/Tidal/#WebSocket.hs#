@@ -54,7 +54,9 @@ act :: TidalState -> String -> IO (Response)
 act state request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
-     p <- hintParamPattern code
+     res <- runJob code
+
+p <- hintParamPattern code
      return $ OK Tidal.silence
 
 {-
