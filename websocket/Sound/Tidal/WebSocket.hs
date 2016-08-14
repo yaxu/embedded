@@ -64,7 +64,7 @@ act state conn request | isPrefixOf "/eval " request =
                           putStrLn "updating"
                           updatePat state (conn, p)
                           putStrLn "updated"
-                          WS.sendTextData conn (T.pack "looping.")
+                          WS.sendTextData conn (T.pack "looping..")
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return ()
 
