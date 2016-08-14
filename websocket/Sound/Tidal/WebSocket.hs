@@ -54,6 +54,7 @@ hush = mapM_ ($ Tidal.silence)
 act :: TidalState -> Result Request -> IO (Response)
 act state request = do
   putStrLn (show request)
+  return $ OK silence
 
 
 {-
