@@ -25,6 +25,9 @@ main = do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
     WS.forkPingThread conn 30
+    (cps, getNow) <- Tidal.bpsUtils
+    (d,_) <- Tidal.superDirtSetters getNow
+
     d <- Tidal.superDirtStream
     loop (d, mPatterns) conn
     )
