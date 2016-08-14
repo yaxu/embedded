@@ -32,6 +32,7 @@ main = do
 loop :: TidalState -> WS.Connection -> IO ()
 loop state@(d, mPatterns) conn = do
   msg <- try (WS.receiveData conn)
+  -- could use a map for this
   modifyMVar_ mPatterns (return . ((conn, silence):)) 
   case msg of
     Right s -> do
@@ -50,7 +51,7 @@ close (cps,dss) msg = do
 
 hush = mapM_ ($ Tidal.silence)
 
-processResult :: TidalState -> Result Request -> IO (Maybe JSValue)
+processResult :: TidalState -> Result Request -> IO (Response)
 processResult _ (Error e) = do
   putStrLn ("Error: " ++ e)
   return Nothing
@@ -58,7 +59,7 @@ processResult state (Ok request) = do
   putStrLn (show request)
   processRequest state request
 
-processRequest :: TidalState -> Request -> IO (Maybe JSValue)
+processRequest :: TidalState -> Request -> IO (Maybe String)
 
 processRequest _ (Info i) = return Nothing
 
