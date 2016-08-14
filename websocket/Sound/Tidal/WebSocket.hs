@@ -23,6 +23,9 @@ main = do
   mPatterns <- newMVar []
   (cps, getNow) <- Tidal.bpsUtils
   (d,_) <- Tidal.superDirtSetters getNow
+  threadDelay $ floor (10 * 1000000)
+
+{-
   -- d <- Tidal.dirtStream
   d $ Tidal.sound (Tidal.p "bd sn")
   WS.runServer "0.0.0.0" port $ (\pending -> do
@@ -31,6 +34,7 @@ main = do
     WS.forkPingThread conn 30
     loop (d, mPatterns) conn
     )
+-}
 
 loop :: TidalState -> WS.Connection -> IO ()
 loop state@(d, mPatterns) conn = do
