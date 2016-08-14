@@ -63,6 +63,8 @@ act _ _ _ = return ()
 
 updatePat :: MVar [(WS.Connection, Tidal.ParamPattern)] -> (WS.Connection, Tidal.ParamPattern) -> IO ()
 updatePat mPatterns (conn, p) =
+  do pats <- mPatterns
+     
 {-
 processRequest (_,dss) (Pattern n p) = do
   x <- hintParamPattern p
