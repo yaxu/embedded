@@ -55,18 +55,8 @@ act :: TidalState -> Result Request -> IO (Response)
 act state request = do
   putStrLn (show request)
 
-processRequest :: TidalState -> Request -> IO (Maybe String)
 
-processRequest _ (Info i) = return Nothing
-
-processRequest (_,dss) Hush = do
-  hush dss
-  return Nothing
-
-processRequest (cps,_) (Cps x) = do
-  cps x
-  return Nothing
-
+{-
 processRequest (_,dss) (Pattern n p) = do
   x <- hintParamPattern p
   case x of (Left error) -> do
@@ -85,3 +75,4 @@ processRequest _ (Render patt cps cycles) = do
               let r = render paramPattern cps cycles
               putStrLn (encodeStrict r)
               return (Just (showJSON r))
+-}
