@@ -46,7 +46,7 @@ loop state@(d, mPatterns) conn = do
 close :: TidalState -> String -> IO ()
 close (cps,dss) msg = do
   putStrLn ("connection closed: " ++ msg)
-  hush dss
+  -- hush dss
 
 hush = mapM_ ($ Tidal.silence)
 
