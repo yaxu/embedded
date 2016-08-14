@@ -56,7 +56,7 @@ act state request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
      runJob code
-act _ _ = Error "unknown command"
+act _ _ = return $ Error "unknown command"
 
 {-
 processRequest (_,dss) (Pattern n p) = do
