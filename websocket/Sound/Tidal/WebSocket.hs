@@ -22,7 +22,7 @@ main = do
   mPatterns <- newMVar []
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
-        putStrLn "received new connection"
+    putStrLn "received new connection"
     WS.forkPingThread conn 30
     d <- Tidal.dirtStream
     loop (d, mPatterns) conn
