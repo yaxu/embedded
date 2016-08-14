@@ -27,8 +27,7 @@ main = do
     WS.forkPingThread conn 30
     (cps, getNow) <- Tidal.bpsUtils
     (d,_) <- Tidal.superDirtSetters getNow
-
-    d <- Tidal.superDirtStream
+    -- d <- Tidal.dirtStream
     loop (d, mPatterns) conn
     )
 
