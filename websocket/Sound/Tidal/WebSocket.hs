@@ -37,7 +37,7 @@ loop state@(d, mPatterns) conn = do
   case msg of
     Right s -> do
       r <- act state (T.unpack s)
-      case r of Just z -> WS.sendTextData conn (T.pack (encodeStrict z))
+      case r of Just z -> WS.sendTextData conn (T.pack z)
                 Nothing -> return ()
       loop state conn
     Left WS.ConnectionClosed -> close state "unexpected loss of connection"
