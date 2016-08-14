@@ -11,6 +11,7 @@ import Data.List
 import Data.Ratio
 
 import Sound.Tidal.Hint
+import Control.Concurrent.MVar
 
 type TidalState = (Tidal.ParamPattern -> IO(), [Tidal.ParamPattern])
 
