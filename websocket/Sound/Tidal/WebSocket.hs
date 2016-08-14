@@ -58,7 +58,7 @@ act state conn request | isPrefixOf "/eval " request =
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return ()
 
-act _ _ _ = return $ Error "unknown command"
+act _ _ _ = return ()
 
 {-
 processRequest (_,dss) (Pattern n p) = do
