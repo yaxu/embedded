@@ -10,7 +10,6 @@ import qualified Network.WebSockets as WS
 import Data.List
 import Data.Ratio
 
-import Request
 import Sound.Tidal.Hint
 
 type TidalState = (Tidal.ParamPattern -> IO(), [ParamPattern])
