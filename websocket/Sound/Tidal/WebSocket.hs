@@ -1,8 +1,8 @@
 module Sound.Tidal.WebSocket where
 
 import Control.Exception (try)
-import qualified Sound.Tidal.Context as Tidal
-import qualified Sound.Tidal.Stream as Tidal
+import qualified Sound.Tidal.Context
+-- import qualified Sound.Tidal.Stream as Tidal
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
