@@ -34,6 +34,7 @@ main = do
 
 loop :: TidalState -> WS.Connection -> IO ()
 loop state@(d, mPatterns) conn = do
+  putStrLn "loop"
   msg <- try (WS.receiveData conn)
   -- add to dictionary of connections -> patterns, could use a map for this
   modifyMVar_ mPatterns (\ps -> return ((conn, Tidal.silence):ps))
