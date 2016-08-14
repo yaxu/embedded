@@ -77,6 +77,7 @@ updatePat (d, mPatterns) (conn, p) =
          ps = map snd pats'
      putMVar mPatterns pats'
      -- d $ Tidal.stack ps
+     d $ sound "cp"
      return ()
      
 {-
