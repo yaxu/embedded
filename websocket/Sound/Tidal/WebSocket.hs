@@ -56,7 +56,7 @@ act state conn request | isPrefixOf "/eval " request =
      r <- runJob code
      case r of OK p -> WS.sendTextData conn (T.pack "good")
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
-     return
+     return ()
 
 act _ _ _ = return $ Error "unknown command"
 
