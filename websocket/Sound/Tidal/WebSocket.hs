@@ -77,6 +77,7 @@ updatePat (d, mPatterns) (conn, p) =
      putStrLn $ show $ length pats
      let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
          ps = map snd pats'
+     putStrLn "right then."
      putStrLn $ show ps
      putMVar mPatterns pats'
      -- d $ Tidal.stack ps
