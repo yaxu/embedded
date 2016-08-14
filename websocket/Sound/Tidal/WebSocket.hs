@@ -48,7 +48,7 @@ close (cps,dss) msg = do
   putStrLn ("connection closed: " ++ msg)
   -- hush dss
 
-hush = mapM_ ($ Tidal.silence)
+-- hush = mapM_ ($ Tidal.silence)
 
 act :: TidalState -> String -> IO (Response)
 act state request = do
