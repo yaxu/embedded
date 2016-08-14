@@ -75,6 +75,7 @@ updatePat (d, mPatterns) (conn, p) =
   do pats <- takeMVar mPatterns
      let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
          ps = map snd pats'
+     putStrLn $ show ps
      putMVar mPatterns pats'
      -- d $ Tidal.stack ps
      d $ Tidal.sound (Tidal.p "cp")
