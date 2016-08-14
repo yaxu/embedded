@@ -61,6 +61,8 @@ act state conn request | isPrefixOf "/eval " request =
 
 act _ _ _ = return ()
 
+updatePat :: MVar [(WS.Connection, Tidal.ParamPattern)] -> (WS.Connection, Tidal.ParamPattern) -> IO ()
+updatePat mPatterns (conn, p) =
 {-
 processRequest (_,dss) (Pattern n p) = do
   x <- hintParamPattern p
