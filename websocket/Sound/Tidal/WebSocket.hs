@@ -28,6 +28,7 @@ main = do
     (cps, getNow) <- Tidal.bpsUtils
     (d,_) <- Tidal.superDirtSetters getNow
     -- d <- Tidal.dirtStream
+    d $ Tidal.sound "bd sn"
     loop (d, mPatterns) conn
     )
 
