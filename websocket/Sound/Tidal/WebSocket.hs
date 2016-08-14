@@ -36,7 +36,7 @@ loop state@(d, mPatterns) conn = do
   modifyMVar_ mPatterns (\ps -> return ((conn, Tidal.silence):ps))
   case msg of
     Right s -> do
-      act state (T.unpack s)
+      act conn state (T.unpack s)
       loop state conn
     Left WS.ConnectionClosed -> close state "unexpected loss of connection"
     Left (WS.CloseRequest _ _) -> close state "by request from peer"
