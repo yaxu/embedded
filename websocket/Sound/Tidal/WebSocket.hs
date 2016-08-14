@@ -30,18 +30,19 @@ main = do
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
-loop s@(d, mPatterns) conn = do
-  m <- try (WS.receiveData conn)
+loop state@(d, mPatterns) conn = do
+  msg <- try (WS.receiveData conn)
+  -- add to dictionary of connections/patterns, could use a map for this
   modifyMVar_ mPatterns (return . ((conn, silence):)) 
-  case m of
-    Right x -> do
-      y <- processResult s (decode (T.unpack x))
+  case msg of
+    Right s -> do
+      y <- processResult state (decode (T.unpack s))
       case y of Just z -> WS.sendTextData conn (T.pack (encodeStrict z))
                 Nothing -> return ()
-      loop s conn
-    Left WS.ConnectionClosed -> close s "unexpected loss of connection"
-    Left (WS.CloseRequest _ _) -> close s "by request from peer"
-    Left (WS.ParseException e) -> close s ("parse exception: " ++ e)
+      loop state conn
+    Left WS.ConnectionClosed -> close state "unexpected loss of connection"
+    Left (WS.CloseRequest _ _) -> close state "by request from peer"
+    Left (WS.ParseException e) -> close state ("parse exception: " ++ e)
 
 close :: TidalState -> String -> IO ()
 close (cps,dss) msg = do
@@ -50,7 +51,7 @@ close (cps,dss) msg = do
 
 hush = mapM_ ($ Tidal.silence)
 
-processResult :: TidalState -> Result Request -> IO (Maybe JSValue)
+processResult :: TidalState -> Result Request -> IO (Response)
 processResult _ (Error e) = do
   putStrLn ("Error: " ++ e)
   return Nothing
@@ -58,7 +59,7 @@ processResult state (Ok request) = do
   putStrLn (show request)
   processRequest state request
 
-processRequest :: TidalState -> Request -> IO (Maybe JSValue)
+processRequest :: TidalState -> Request -> IO (Maybe String)
 
 processRequest _ (Info i) = return Nothing
 
