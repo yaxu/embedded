@@ -24,11 +24,12 @@ main = do
   mPatterns <- newMVar []
   (cps, getNow) <- Tidal.bpsUtils
   (d,_) <- Tidal.superDirtSetters getNow
+  d $ Tidal.sound (Tidal.p "bd sn")
   threadDelay $ floor (10 * 1000000)
 
 {-
   -- d <- Tidal.dirtStream
-  d $ Tidal.sound (Tidal.p "bd sn")
+
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
