@@ -51,7 +51,7 @@ close (cps,dss) msg = do
 
 hush = mapM_ ($ Tidal.silence)
 
-act :: TidalState -> Result Request -> IO (Response)
+act :: TidalState -> String -> IO (Response)
 act state request = do
   putStrLn (show request)
   return $ OK Tidal.silence
