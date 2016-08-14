@@ -55,7 +55,9 @@ act state conn request | isPrefixOf "/eval " request =
      let code = fromJust $ stripPrefix "/eval " request
      r <- runJob code
      case r of OK p -> do WS.sendTextData conn (T.pack "good.")
+                          putStrLn "updating"
                           updatePat state (conn, p)
+                          putStrLn "updated"
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return ()
 
