@@ -36,9 +36,7 @@ loop state@(d, mPatterns) conn = do
   modifyMVar_ mPatterns (\ps -> return ((conn, Tidal.silence):ps))
   case msg of
     Right s -> do
-      r <- act state (T.unpack s)
-      case r of OK p -> WS.sendTextData conn (T.pack "good")
-                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
+      act state (T.unpack s)
       loop state conn
     Left WS.ConnectionClosed -> close state "unexpected loss of connection"
     Left (WS.CloseRequest _ _) -> close state "by request from peer"
@@ -51,11 +49,15 @@ close (cps,dss) msg = do
 
 -- hush = mapM_ ($ Tidal.silence)
 
-act :: TidalState -> String -> IO (Response)
+act :: TidalState -> String -> IO ()
 act state request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
-     runJob code
+     r<- runJob code
+     case r of OK p -> WS.sendTextData conn (T.pack "good")
+               Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
+     return
+
 act _ _ = return $ Error "unknown command"
 
 {-
