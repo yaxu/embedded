@@ -75,7 +75,7 @@ updatePat :: TidalState -> (WS.Connection, Tidal.ParamPattern) -> IO ()
 updatePat (d, mPatterns) (conn, p) =
   do pats <- takeMVar mPatterns
      putStrLn $ show $ length pats
-     let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
+     let pats' = (filter ((/= conn) . fst) pats)
          ps = map snd pats'
      putStrLn "right then."
      putStrLn $ show $ length pats'
