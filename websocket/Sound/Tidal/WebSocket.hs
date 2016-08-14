@@ -75,10 +75,8 @@ updatePat (d, mPatterns) (conn, p) =
   do pats <- readMVar mPatterns
      let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
          ps = map snd pats'
-     {-
      putMVar mPatterns pats'
-     -}
-     d $ Tidal.stack ps
+     -- d $ Tidal.stack ps
      return ()
      
 {-
