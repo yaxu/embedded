@@ -28,6 +28,10 @@ main = do
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn "received new connection"
+    pats <- takeMVar mPatterns
+    putStrLn $ "pat count: " ++ show (length pats)
+    putMVar mPatterns ((conn, Tidal.silence):pats)
+    putStrLn "modified mvar"
     WS.forkPingThread conn 30
     loop (d, mPatterns) conn
     )
@@ -37,11 +41,6 @@ loop state@(d, mPatterns) conn = do
   putStrLn "loop"
   msg <- try (WS.receiveData conn)
   -- add to dictionary of connections -> patterns, could use a map for this
-  putStrLn "got msg"
-  pats <- takeMVar mPatterns
-  putStrLn $ "pat count: " ++ show (length pats)
-  putMVar mPatterns ((conn, Tidal.silence):pats)
-  putStrLn "modified mvar"
   case msg of
     Right s -> do
       act state conn (T.unpack s)
