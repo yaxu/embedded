@@ -67,7 +67,7 @@ updatePat (d, mPatterns) (conn, p) =
      let pats' = ((conn,p) : filter (/= conn) pats)
          ps = map snd pats'
      putMVar mPatterns pats'
-     d $ stack ps
+     d $ Tidal.stack ps
      return ()
      
 {-
