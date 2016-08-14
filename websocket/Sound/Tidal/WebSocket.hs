@@ -9,6 +9,7 @@ import qualified Data.Text.IO as T
 import qualified Network.WebSockets as WS
 import Data.List
 import Data.Ratio
+import Data.Maybe
 
 import Sound.Tidal.Hint
 import Control.Concurrent.MVar
