@@ -49,8 +49,8 @@ close (cps,dss) msg = do
 
 -- hush = mapM_ ($ Tidal.silence)
 
-act :: TidalState -> String -> IO ()
-act conn state request | isPrefixOf "/eval " request =
+act :: TidalState -> WC.Connection -> String -> IO ()
+act state conn request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
      r <- runJob code
