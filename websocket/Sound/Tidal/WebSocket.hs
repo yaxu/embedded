@@ -27,7 +27,7 @@ main = do
   d $ Tidal.sound (Tidal.p "bd sn")
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
-    putStrLn $  "received new connection" ++ show conn
+    putStrLn $  "received new connection" ++ (show $ conn == conn)
     pats <- takeMVar mPatterns
     putStrLn $ "pat count: " ++ show (length pats)
     putMVar mPatterns ((conn, Tidal.silence):pats)
