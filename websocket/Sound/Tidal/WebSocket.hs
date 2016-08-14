@@ -18,7 +18,7 @@ type TidalState = (Tidal.ParamPattern -> IO(), [Tidal.ParamPattern])
 port = 9162
 
 main = do
-  putStrLn $ "TidalCycles websocket server, listening on port " ++ show 9162
+  putStrLn $ "TidalCycles websocket server, listening on port " ++ show port
   mPatterns <- newMVar []
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
