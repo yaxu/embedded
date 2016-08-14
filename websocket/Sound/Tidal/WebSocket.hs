@@ -10,6 +10,7 @@ import qualified Network.WebSockets as WS
 import Data.List
 import Data.Ratio
 import Data.Maybe
+import Control.Concurrent
 
 import Sound.Tidal.Hint
 import Control.Concurrent.MVar
