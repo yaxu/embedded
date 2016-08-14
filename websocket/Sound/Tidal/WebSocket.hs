@@ -52,12 +52,8 @@ close (cps,dss) msg = do
 hush = mapM_ ($ Tidal.silence)
 
 act :: TidalState -> Result Request -> IO (Response)
-act _ (Error e) = do
-  putStrLn ("Error: " ++ e)
-  return Nothing
-act state (Ok request) = do
+act state request = do
   putStrLn (show request)
-  processRequest state request
 
 processRequest :: TidalState -> Request -> IO (Maybe String)
 
