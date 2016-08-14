@@ -9,7 +9,6 @@ import qualified Data.Text.IO as T
 import qualified Network.WebSockets as WS
 import Data.List
 import Data.Ratio
-import Text.JSON
 
 import Request
 import Sound.Tidal.Hint
@@ -37,7 +36,7 @@ loop state@(d, mPatterns) conn = do
   
   case msg of
     Right s -> do
-      y <- processResult state (decode (T.unpack s))
+      r <- act state (T.unpack s)
       case y of Just z -> WS.sendTextData conn (T.pack (encodeStrict z))
                 Nothing -> return ()
       loop state conn
@@ -52,11 +51,11 @@ close (cps,dss) msg = do
 
 hush = mapM_ ($ Tidal.silence)
 
-processResult :: TidalState -> Result Request -> IO (Response)
-processResult _ (Error e) = do
+act :: TidalState -> Result Request -> IO (Response)
+act _ (Error e) = do
   putStrLn ("Error: " ++ e)
   return Nothing
-processResult state (Ok request) = do
+act state (Ok request) = do
   putStrLn (show request)
   processRequest state request
 
