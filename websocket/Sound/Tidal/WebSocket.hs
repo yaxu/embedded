@@ -54,12 +54,19 @@ act state conn request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
      r <- runJob code
-     case r of OK p -> WS.sendTextData conn (T.pack "good")
+     case r of OK p -> do WS.sendTextData conn (T.pack "good.")
+                          
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return ()
 
 act _ _ _ = return ()
 
+updatePat :: MVar [(WS.Connection, Tidal.ParamPattern)] -> (WS.Connection, Tidal.ParamPattern) -> IO ()
+updatePat mPatterns (conn, p) =
+  do pats <- takeMVar mPatterns
+     let pats' = filter (/= conn) pats
+     putMVar mPatterns ((conn, p):pats')
+     
 {-
 processRequest (_,dss) (Pattern n p) = do
   x <- hintParamPattern p
