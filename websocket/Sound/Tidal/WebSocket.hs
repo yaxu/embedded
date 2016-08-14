@@ -50,7 +50,7 @@ close (cps,dss) msg = do
 -- hush = mapM_ ($ Tidal.silence)
 
 act :: TidalState -> String -> IO ()
-act state@(conn,_) request | isPrefixOf "/eval " request =
+act conn state request | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
      r <- runJob code
@@ -58,7 +58,7 @@ act state@(conn,_) request | isPrefixOf "/eval " request =
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return
 
-act _ _ = return $ Error "unknown command"
+act _ _ _ = return $ Error "unknown command"
 
 {-
 processRequest (_,dss) (Pattern n p) = do
