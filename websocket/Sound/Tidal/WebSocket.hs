@@ -20,7 +20,7 @@ type TidalState = (Tidal.ParamPattern -> IO(), MVar [(WS.Connection, Tidal.Param
 port = 9162
 
 main = do
-  putStrLn $ "TidalCycles websocket server, listening on port " ++ show port
+  -- putStrLn $ "TidalCycles websocket server, listening on port " ++ show port
   mPatterns <- newMVar []
   (cps, getNow) <- Tidal.bpsUtils
   (d,_) <- Tidal.superDirtSetters getNow
