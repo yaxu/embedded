@@ -72,10 +72,10 @@ act _ _ _ = return ()
 
 updatePat :: TidalState -> (WS.Connection, Tidal.ParamPattern) -> IO ()
 updatePat (d, mPatterns) (conn, p) =
-  do pats <- readMVar mPatterns
+  do pats <- takeMVar mPatterns
      let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
          ps = map snd pats'
-     -- putMVar mPatterns pats'
+     putMVar mPatterns pats'
      -- d $ Tidal.stack ps
      return ()
      
