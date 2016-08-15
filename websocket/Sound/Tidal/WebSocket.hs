@@ -91,7 +91,6 @@ updatePat (cid, d, mPatterns) (conn, p) =
      putStrLn $ show ps
      putMVar mPatterns pats'
      d $ Tidal.stack ps
-     d $ Tidal.sound (Tidal.p "cp")
      return ()
      
 {-
