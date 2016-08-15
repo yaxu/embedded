@@ -57,7 +57,8 @@ loop state conn = do
     Left (WS.ParseException e) -> close state ("parse exception: " ++ e)
 
 close :: TidalState -> String -> IO ()
-close (cps,dss) msg = do
+close (cid,d,pats) msg = do
+  -- TODO - silence + remove cid
   putStrLn ("connection closed: " ++ msg)
   -- hush dss
 
