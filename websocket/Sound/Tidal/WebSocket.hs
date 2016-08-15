@@ -80,7 +80,7 @@ act state conn request | isPrefixOf "/eval " request =
 act _ _ _ = return ()
 
 updatePat :: TidalState -> (WS.Connection, Tidal.ParamPattern) -> IO ()
-updatePat (d, mPatterns) (conn, p) =
+updatePat (cid, d, mPatterns) (conn, p) =
   do pats <- takeMVar mPatterns
      putStrLn $ show $ length pats
      let pats' = ((conn,p) : filter ((/= conn) . fst) pats)
