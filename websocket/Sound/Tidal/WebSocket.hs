@@ -31,11 +31,12 @@ main = do
     putStrLn $  "received new connection"
     -- putStrLn $ "pat count: " ++ show (length pats)
     -- putStrLn "modified mvar"
-    WS.sendTextData conn (T.pack $ "/welcome " ++ show cid)
-
     cid <- takeMVar mConnectionId
     let cid' = cid + 1
     putMVar mConnectionId cid'
+
+    WS.sendTextData conn (T.pack $ "/welcome " ++ show cid)
+
     
     pats <- takeMVar mPatterns
     putMVar mPatterns ((cid, Tidal.silence):pats)
