@@ -30,9 +30,9 @@ main = do
     conn <- WS.acceptRequest pending
     putStrLn $  "received new connection"
     pats <- takeMVar mPatterns
-    putStrLn $ "pat count: " ++ show (length pats)
+    -- putStrLn $ "pat count: " ++ show (length pats)
     putMVar mPatterns ((conn, Tidal.silence):pats)
-    putStrLn "modified mvar"
+    -- putStrLn "modified mvar"
     WS.forkPingThread conn 30
     loop (d, mPatterns) conn
     )
