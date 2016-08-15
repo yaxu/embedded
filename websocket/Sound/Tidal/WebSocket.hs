@@ -37,7 +37,7 @@ main = do
     pats <- takeMVar mPatterns
     putMVar mPatterns ((id, Tidal.silence):pats)
     WS.forkPingThread conn 30
-    loop (d, mPatterns) conn
+    loop (id, d, mPatterns) conn
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
