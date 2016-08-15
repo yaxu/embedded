@@ -15,7 +15,7 @@ import Control.Concurrent
 import Sound.Tidal.Hint
 import Control.Concurrent.MVar
 
-type TidalState = (Tidal.ParamPattern -> IO(), MVar [(Int, Tidal.ParamPattern)])
+type TidalState = (Int, Tidal.ParamPattern -> IO(), MVar [(Int, Tidal.ParamPattern)])
 
 port = 9162
 
