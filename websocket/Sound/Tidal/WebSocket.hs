@@ -31,11 +31,14 @@ main = do
     putStrLn $  "received new connection"
     -- putStrLn $ "pat count: " ++ show (length pats)
     -- putStrLn "modified mvar"
+
     id <- takeMVar mConnectionId
     let id' = id + 1
     putMVar mConnectionId id'
+    
     pats <- takeMVar mPatterns
     putMVar mPatterns ((id, Tidal.silence):pats)
+    
     WS.forkPingThread conn 30
     loop (id, d, mPatterns) conn
     )
