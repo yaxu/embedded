@@ -25,7 +25,6 @@ main = do
   mConnectionId <- newMVar 0
   (cps, getNow) <- Tidal.bpsUtils
   (d,_) <- Tidal.superDirtSetters getNow
-  d $ Tidal.sound (Tidal.p "bd sn")
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn $  "received new connection"
