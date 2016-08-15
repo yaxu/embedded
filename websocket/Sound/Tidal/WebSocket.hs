@@ -36,7 +36,6 @@ main = do
     putMVar mConnectionId cid'
 
     WS.sendTextData conn (T.pack $ "/welcome " ++ show cid)
-
     
     pats <- takeMVar mPatterns
     putMVar mPatterns ((cid, Tidal.silence):pats)
