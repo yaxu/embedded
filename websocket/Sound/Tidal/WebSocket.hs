@@ -29,13 +29,13 @@ main = do
   WS.runServer "0.0.0.0" port $ (\pending -> do
     conn <- WS.acceptRequest pending
     putStrLn $  "received new connection"
-    pats <- takeMVar mPatterns
     -- putStrLn $ "pat count: " ++ show (length pats)
-    putMVar mPatterns ((conn, Tidal.silence):pats)
     -- putStrLn "modified mvar"
     id <- takeMVar mConnectionId
     let id' = id + 1
     putMVar mConnectionId id'
+    pats <- takeMVar mPatterns
+    putMVar mPatterns ((id, Tidal.silence):pats)
     WS.forkPingThread conn 30
     loop (d, mPatterns) conn
     )
