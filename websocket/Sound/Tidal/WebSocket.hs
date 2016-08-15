@@ -32,19 +32,19 @@ main = do
     -- putStrLn $ "pat count: " ++ show (length pats)
     -- putStrLn "modified mvar"
 
-    id <- takeMVar mConnectionId
-    let id' = id + 1
-    putMVar mConnectionId id'
+    cid <- takeMVar mConnectionId
+    let cid' = cid + 1
+    putMVar mConnectionId cid'
     
     pats <- takeMVar mPatterns
-    putMVar mPatterns ((id, Tidal.silence):pats)
+    putMVar mPatterns ((cid, Tidal.silence):pats)
     
     WS.forkPingThread conn 30
-    loop (id, d, mPatterns) conn
+    loop (cid, d, mPatterns) conn
     )
 
 loop :: TidalState -> WS.Connection -> IO ()
-loop state@(d, mPatterns) conn = do
+loop state conn = do
   putStrLn "loop"
   msg <- try (WS.receiveData conn)
   -- add to dictionary of connections -> patterns, could use a map for this
