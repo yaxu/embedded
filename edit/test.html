@@ -58,6 +58,9 @@
       );
       editor.setOption("extraKeys", {
         "Ctrl-1": function(cm) {
+           ws.send("/eval silence");
+        },
+        "Ctrl-1": function(cm) {
            ws.send("/panic");
         },
         "Ctrl-Enter": function(cm) {
