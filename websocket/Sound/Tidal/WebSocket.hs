@@ -83,7 +83,7 @@ act state@(cid,d,mPatterns) conn request
      return ()
   | isPrefixOf "/panic" request =
   do putStrLn (show request)
-     replaceMVar mPatterns []
+     swapMVar mPatterns []
      d $ Tidal.silence
      
 
