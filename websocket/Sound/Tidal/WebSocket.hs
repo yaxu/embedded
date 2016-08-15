@@ -22,6 +22,7 @@ port = 9162
 main = do
   -- putStrLn $ "TidalCycles websocket server, listening on port " ++ show port
   mPatterns <- newMVar []
+  mConnectionId <- newMVar 0
   (cps, getNow) <- Tidal.bpsUtils
   (d,_) <- Tidal.superDirtSetters getNow
   d $ Tidal.sound (Tidal.p "bd sn")
