@@ -69,7 +69,8 @@ close (cid,d,mPatterns) msg = do
 -- hush = mapM_ ($ Tidal.silence)
 
 act :: TidalState -> WS.Connection -> String -> IO ()
-act state conn request | isPrefixOf "/eval " request =
+act state@(cid,d,mPatterns) conn request
+  | isPrefixOf "/eval " request =
   do putStrLn (show request)
      let code = fromJust $ stripPrefix "/eval " request
      r <- runJob code
@@ -80,6 +81,11 @@ act state conn request | isPrefixOf "/eval " request =
                           WS.sendTextData conn (T.pack "looping..")
                Error s -> WS.sendTextData conn (T.pack $ "bad: " ++ s)
      return ()
+  | isPrefixOf "/panic" request =
+  do putStrLn (show request)
+     replaceMVar mPatterns []
+     d $ silence
+     
 
 act _ _ _ = return ()
 
