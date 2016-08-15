@@ -58,8 +58,12 @@ loop state conn = do
     Left (WS.ParseException e) -> close state ("parse exception: " ++ e)
 
 close :: TidalState -> String -> IO ()
-close (cid,d,pats) msg = do
-  -- TODO - silence + remove cid
+close (cid,d,mPatterns) msg = do
+  pats <- takeMVar mPatterns
+  let pats' = filter ((/= cid) . fst) pats
+      ps = map snd pats'
+  putMVar mPatterns pats'
+  d $ Tidal.stack ps
   putStrLn ("connection closed: " ++ msg)
   -- hush dss
 
