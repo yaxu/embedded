@@ -43,7 +43,7 @@ d1 $ loopAt 8 $ gap 32 (sound "shackup")
 
 hush
 
-d1 $ sound "funky"
+d1 $ n (run 8) # s "funky"
 
 cps 0.8
 
