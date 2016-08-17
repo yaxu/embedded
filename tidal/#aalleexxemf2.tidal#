@@ -19,8 +19,10 @@ d2 $ sound "bd [~ cp8]"
 
 d1 $ sound "bd*8" # nudge "0 0.1"
 
-d1 $ offasubstruct "x x/2" $ s "ht mt lt" # n "{0 1 2 3}%1"
-  # speed "{1 2, 3 4 2}"
+d1 $ (chop 128 $ off 0.25 (|*| speed "0.8") $ substruct "x x/2" $ jux rev $ s "sd8 mt lt" # n "{0 1 2 3}%1"
+  # speed "{1 2, 3 4 2}")
+  # nudge (density 2 $ scale 0 0.02 sine1)
+
 
 d2 $ brak $ jux (iter 4) $ chop 2 $ sound "feel feel:2"
 
