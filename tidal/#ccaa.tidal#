@@ -22,9 +22,12 @@ d1 $ iter 4 $ jux rev $ (substruct "[~ x/2] x/2" $ sound "{tok*8, tok:2 mouth:3*
   # gain "0.65"
   # orbit "1"
 
-d2 $ (chop 128 $ sound "~ cp")
+d2 $ jux rev $ substruct "x [x/2]" $ (chop 32 $ sound "~ drum")
   # room "0.5"
   # size (slow 8 saw1)
   # orbit "2"
   # end "0.06"
-  # nudge (scale 0 0.1 sine1)
+  # nudge (slow 2 $ scale 0 0.4 sine1)
+  # gain "0.8" # speed "4"
+
+d3 $ sound "funky"
