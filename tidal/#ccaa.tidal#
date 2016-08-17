@@ -1,2 +1,4 @@
 
-d1 $ sound "arpy"
+d1 $ s (substruct "x [~ x]" $ struct "[x*2 x*3 x*4]/3" ("xx"))
+  # n "e7"
+  # end "0."
