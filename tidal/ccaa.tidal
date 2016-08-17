@@ -4,5 +4,7 @@ d1 $ (off 0.125 (|+| n "7") $ slow 2 $ s (substruct "x [~ x]" $ struct "[x*2 x*3
   # end "0.04"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 1000 3000 saw1)
-hush
+
+
+d2 $ sound "909" # shape "0.8"
 
