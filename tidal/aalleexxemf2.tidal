@@ -17,6 +17,14 @@ d4 $ echo 0.25 $ slow 4 $ jux rev $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7"
   # room "0.5"
   # size "0.7"
 
+
+d1 $ substruct "x/2 ~ [~ x/4] [~ x/8]" $ slow 2 $ (off 0.25 (|*| speed "[1.75 2 3]/6") $ off 0.125 (# speed "[1.5 2]/2") $ jux rev $ struct "~ [x*2 x*3 x*4]/3" $ sound "kurt:5"
+  # shape "0.9"
+  # gain "0.8"
+  # crush "3")
+  # resonance "0.2"
+  # cutoff (slow 8 $ scale 800 5000 tri1)
+
 d7 $ iter 4 $ jux rev $ slowspread (loopAt) [2,1,2,2] $ slow 2 $ striate 16 $ sound "arc*2"
   # gain "1.1"
   # orbit "1"
@@ -29,7 +37,10 @@ d1 $ whenmod 6 4 (# up "12 7") $ whenmod 8 6 (# up "7") $ sound "ravebass:10(3,8
   # orbit "0"
   # gain "0.8"
 
-d1 $ sound "bd"
+
+d1 $ sound "[kurt:10(3,8,[0 2]/2), [bd8*3 bd8*4]/2]"
+  # accelerate (slow 4 $ scale 1 2.5 sine1)
+  # shape "0.3"
 
 
 d2 $ iter 4 $ jux rev $ loopAt 8 $ chop 32 $ sound "paper"
