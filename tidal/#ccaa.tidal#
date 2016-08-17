@@ -1,4 +1,8 @@
 
-d1 $ s (substruct "x [~ x]" $ struct "[x*2 x*3 x*4]/3" ("xx"))
+d1 $ off 0.125 (|+| n "7") $ slow 2 $ s (substruct "x [~ x]" $ struct "[x*2 x*3 x*4]/3" ("xx")))
   # n "e7"
-  # end "0."
+  # end "0.04"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 1000 3000)
+
+
