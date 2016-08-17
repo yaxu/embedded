@@ -1,0 +1,21 @@
+
+d1 $ every 2 (slow 1.5) $ gap 16 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ slow 2 $ s (substruct "x [~ x]" $ struct "[x*2 x*3 x*4]/3" ("xx")))
+  # n (slow 4 "d7 e7 f7 g7")
+  # resonance "0.1"
+  # cutoff (slow 4 $ scale 1000 5000 saw1)
+  # speed "[4,4.05]"
+
+d2 $ every 2 (within (0,0.25) (rev . density 2)) $ jux rev $ loopAt 4 $ chop 16 $ sound "shakedown"
+  # shape "0.6"
+
+hush
+
+d1 $ every 2 (struct "x*2 [x ~ x*2]") $ sound "arpy arpy:2 arpy:4"
+
+d1 $ jux (slow 1.01) $ sound "arpy:0 arpy:2*2 arpy:3 arpy:4"
+
+d1 $ slow 3 $ sound "bd*2 bd*3 bd*4"
+
+d1 $ (substruct "[~ x/2] x/2" $ sound "{tok*8, tok:2 mouth:3*2 tok:3}")
+  # speed (slow 2 $ scale 1 2 saw1)
+  
