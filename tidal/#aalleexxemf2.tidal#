@@ -60,6 +60,9 @@ d1 $ do x <- discretise 1 $ choose [8,4,32]
         striate x $ sound "arpy arpy:2"
 
 
+d1 $ sound "bd sn:2"
+   # speed (choose [1,1.5,2,-1])
+
 d1 $ striate 2 $ sound "arpy arpy:2"
 
 hush
