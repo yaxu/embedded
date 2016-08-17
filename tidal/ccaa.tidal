@@ -51,7 +51,7 @@ d3 $ sound "cp"
   # size "0"
 
 
-d1 $ jux rev $ off (1/16) (|+| n "12") $ off (1/8) (|+| n "7") $ slow 2 $ sound ("dirty(5,8) dirty:3(3,8) dirty:1(3,8,2) dirty:8(3,8,4)")
+d1 $ slow 2 $ jux rev $ off (1/16) (|+| n "12") $ off (1/8) (|+| n "7") $ slow 2 $ sound ("dirty(5,8) dirty:3(3,8) dirty:1(3,8,2) dirty:8(3,8,4)")
   |+| n "g7"
   # resonance "0.3"
   # cutoff "1000"
@@ -59,4 +59,10 @@ d1 $ jux rev $ off (1/16) (|+| n "12") $ off (1/8) (|+| n "7") $ slow 2 $ sound 
 d3 $ every 2 (|+| speed "1") $ jux (rev) $ runWith 4 (density 2) $ n "0 1(3,8) 2 3 4 5 6*2 7" # s "funky"
   # orbit "1"
   # gain "0.9"
-  # speed "1"
+
+d1 $ jux rev $ runWith 4 (density 2) $ (chop 32 $ sound "glitch:5(3,8,[0]/3)")
+  # shape "0.5"
+  # crush "2"
+  # nudge (scale 0 0.1 sine1)
+
+hush
