@@ -8,4 +8,3 @@ d1 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ slow 2 $ s (substruct "x [~ x]" $ 
 
 d2 $ loopAt 4 $ chop 8 $ sound "arc"
 
-h
