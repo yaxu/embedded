@@ -11,3 +11,7 @@ d2 $ every 2 (within (0,0.25) (rev . density 2)) $ jux rev $ loopAt 4 $ chop 16 
 hush
 
 d1 $ every 2 (struct "x*2 [x ~ x*2]") $ sound "arpy arpy:2 arpy:4"
+
+d1 $ jux (slow 1.01) $ sound "arpy:0 arpy:2 arpy:3 arpy:4"
+
+d1 $ slow 3 $ sound "bd*2 bd*3 bd*4"
