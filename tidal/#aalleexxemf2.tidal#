@@ -35,9 +35,11 @@ d1 $ slow 16 $ gap 16 $ sound "bev"
 
 hush
 
-d1 $ (slow 4 $ up (offadd (1/16) 12 $ offadd 0.125 7 "0(3,8) 1*2 [~ 2*2] 3(3,8)") # s "moog" |*| speed "2"
+d1 $ (slow 4 $ up ("0(3,8) 1*2 [~ 2*2] 3(3,8)") # s "moog" |*| speed "2"
   # end "0.2")
   # vowel "a e"
+
+d1 $ runWith 4 (# speed "2") $ sound "arpy arpy:1 arpy:2 arpy:3"
 
 
 d3 $ runWith 4 (density 2) $ iter 4 $ chop 8 $ jux rev $ slow 2 $ n (palindrome $ run 8) # s "funky" # speed "1"
