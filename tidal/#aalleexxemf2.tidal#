@@ -23,7 +23,12 @@ d1 $ slow 2 $ runWith 4 (slow 2) $ (chop 128 $ off 0.25 (|*| speed "0.8") $ subs
   # speed "{1 2, 3 4 2}")
   # nudge (density 2 $ scale 0 0.02 sine1)
 
-d2 $ brak $ sound "feel feel:3"
+d2 $ runWith 4 (density 2) $ chop 8 $ brak $ sound "feel*2 leaf:3"
+  # shape "0.3"
+  # crush "5"
+
+
+d3 $ brslow 2 $ n (run 8) # s "funky"
 
 
 d2 $ brak $ jux (iter 4) $ chop 2 $ sound "feel feel:2"
