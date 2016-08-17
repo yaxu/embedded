@@ -47,9 +47,9 @@ d1 $ n (run 8) # s "funky"
 
 cps 0.8
 
-d1 $ loopAt 2 $ chop 16 $ n "7" # s "foo"
+d1 $ loopAt 2 $ chop 16 $ n "4" # s "foo"
 
-
+d2 $ jux rev $ iter' 4 $ loopAt 4 $ chop 32 $ sound "redflag"
 
 d3 $ runWith 4 (density 2) $ iter 4 $ chop 8 $ jux rev $ slow 2 $ n (palindrome $ run 8) # s "funky" # speed "1"
   # shape "0.4"
