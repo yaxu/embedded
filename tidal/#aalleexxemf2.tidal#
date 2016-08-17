@@ -1,7 +1,11 @@
 d1 $ slow 2 $ substruct "x [~ x/2]" $ slowspread (chop) [8,4,2] $ s "lt8 mt8 ~ ht8" # n (irand 8)
 
-d1 $ substruct "x " $ every 4 (rev) $ n (run 8) # s "tok"
-  # speed "4"
+d1 $ jux rev $ substruct "x/2 [x/4 x/3]" $ every 4 (rev) $ n (run 8) # s "tok"
+  # shape "0.8"
+  # speed (every 4 ((0-) <$>) $ "2")
+  # vowel "[a e i u]/2"
+
+d2 $ sound "m"
 
 d2 $ brak $ jux (iter 4) $ chop 2 $ sound "feel feel:2"
 
