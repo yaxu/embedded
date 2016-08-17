@@ -17,7 +17,7 @@ d1 $ jux (slow 1.01) $ sound "arpy:0 arpy:2*2 arpy:3 arpy:4"
 d1 $ slow 3 $ sound "bd*2 bd*3 bd*4"
 
 d1 $ jux rev $ (substruct "[~ x/2] x/2" $ sound "{tok*8, tok:2 mouth:3*2 tok:3}")
-  # speed (slow 2 $ scale 1 2 saw1)
+  # speed (sometimes (superimpose ((*2)<$>)) $ slow 2 $ scale 1 2 saw1)
   # shape (scale 0.99 0.8 sine1)
   # gain "0.7"
   
