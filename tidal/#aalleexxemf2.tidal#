@@ -9,11 +9,13 @@ d2 $ (iter 4 $ jux rev $ slowspread (gap) [64,32,50,128] $ sound "~ [drum !?]"
   # speed "[0.5,0.503]")
   # nudge (scale 0 0.03 sine1)
 
-d1 $ density 2 $ (slowspread (chop) [32,256,64,128] $ sound "tok*8")
+d1 $ (slowspread (chop) [32,256,64,128] $ sound "tok*8")
   # nudge sine1
 
 d2 $ sound "bd [~ cp8]"
 
+
+:t substruct
 
 d2 $ brak $ jux (iter 4) $ chop 2 $ sound "feel feel:2"
 
