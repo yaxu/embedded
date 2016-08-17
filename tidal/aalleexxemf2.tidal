@@ -18,12 +18,12 @@ d4 $ echo 0.25 $ slow 4 $ jux rev $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7"
   # size "0.7"
 
 
-d1 $ (jux rev $ off (1/16) (|+| up "[12 7 5]/3") $ off 0.125 (|+| n "[7 12]/2") $ substruct "x/2 ~ [~ x/4] [~ x/8]" $ struct "~ [x*2 x*3 x*4]/3" $ sound "[xx:32 ! xx:40 ! xx:47 ! xx:43]/8"
+d1 $ (off (1/16) (|+| up "[12 7 5]/3") $ off 0.125 (|+| n "[7 12]/2") $ substruct "x/2 ~ [~ x/4] [~ x/8]" $ struct "~ [x*2 x*3 x*4]/3" $ sound "[xx:32 ! xx:40 ! xx:47 ! xx:43]/8"
   # shape "0.9"
   # gain "0.8"
   # crush "3")
-  # resonance "0.2"
-  # cutoff (slow 8 $ scale 800 5000 tri1)
+  -- # resonance "0.2"
+  -- # cutoff (slow 8 $ scale 800 5000 tri1)
 
 d7 $ iter 4 $ jux rev $ slowspread (loopAt) [2,1,2,2] $ slow 2 $ striate 16 $ sound "arc*2"
   # gain "1.1"
