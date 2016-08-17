@@ -17,10 +17,11 @@ d4 $ echo 0.25 $ slow 4 $ jux rev $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7"
   # room "0.5"
   # size "0.7"
 
-d1 $ sound "~ drum:1"
+
+d1 $ brak $ off 0.125 (# speed "2") $ jux rev $ struct "~ [x*2 x*3 x*4]/3" $ sound "sd8:3"
   # shape "0.9"
   # gain "0.8"
-  # 
+  # crush "3"
 
 d7 $ iter 4 $ jux rev $ slowspread (loopAt) [2,1,2,2] $ slow 2 $ striate 16 $ sound "arc*2"
   # gain "1.1"
