@@ -18,7 +18,7 @@ d4 $ echo 0.25 $ slow 4 $ jux rev $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7"
   # size "0.7"
 
 
-d1 $ substruct "x/2 ~ [~ x/4] [~ x/8]" $ slow 2 $ (off 0.25 (|*| speed "[1.75 2 3]/6") $ off 0.125 (# speed "[1.5 2]/2") $ jux rev $ struct "~ [x*2 x*3 x*4]/3" $ sound "kurt:5"
+d1 $ (jux rev $ substruct "x/2 ~ [~ x/4] [~ x/8]" $ slow 2 $ off 0.25 (|*| speed "[1.75 2 3]/6") $ off 0.125 (# speed "[1.5 2]/2") $ struct "~ [x*2 x*3 x*4]/3" $ sound "kurt:5"
   # shape "0.9"
   # gain "0.8"
   # crush "3")
