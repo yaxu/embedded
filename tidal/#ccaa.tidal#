@@ -20,6 +20,11 @@ d1 $ iter 4 $ jux rev $ (substruct "[~ x/2] x/2" $ sound "{tok*8, tok:2 mouth:3*
   # speed (sometimes (superimpose ((*2)<$>)) $ slow 2 $ scale 1 2 saw1)
   # shape (scale 0.99 0.8 sine1)
   # gain "0.65"
-  # crush "1"
+  # orbit "1"
 
-d2 
+d2 $ (chop 128 $ sound "~ cp")
+  # room "0.5"
+  # size (slow 8 saw1)
+  # orbit "2"
+  # end "0.06"
+  # nudge (scale 0 0.1 sine1)
