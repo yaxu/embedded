@@ -56,6 +56,9 @@ d3 $ runWith 4 (density 2) $ iter 4 $ chop 8 $ jux rev $ slow 2 $ n (palindrome 
   -- # cutoff (slow 4 $ scale 300 6000 sine1)
   -- # resonance "0.2"
 
+d1 $ sloslowspread (striate) [32,64,16,8] $ sound "arpy arpy:4 arpy:3 arpy:2"
+
+hush
 
 d2 $ brak $ jux (iter 4) $ chop 2 $ sound "feel feel:2"
 
