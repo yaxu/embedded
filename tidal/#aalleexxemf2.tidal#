@@ -31,6 +31,8 @@ d2 $ jux rev $ iter 4 $ slow 2 $ loopAt 4 $ slowspread (chop) [128,64,256] $ sou
   # gain "1.4"
   |*| speed "[0.5]"
 
+d1 $ slow 16 $ gap 16 $ sound "bev"
+
 hush
 
 d3 $ runWith 4 (density 2) $ iter 4 $ chop 8 $ jux rev $ slow 2 $ n (palindrome $ run 8) # s "funky" # speed "1"
