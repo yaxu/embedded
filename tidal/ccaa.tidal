@@ -54,3 +54,8 @@ d3 $ sound "cp"
   # orbit "0"
   # room "0"
   # size "0"
+
+
+d1 $ jux rev $ slow 2 $ off (1/16) (|+| n "-12") $ off (1/8) (|+| n "7") $ sound ("dirty*2 dirty:3(3,8) dirty:1*2 dirty:4*2")
+  |+| n "[38]"
+  
