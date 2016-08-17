@@ -60,7 +60,11 @@ d1 $ do x <- discretise 1 $ choose [8,4,32]
         striate x $ sound "arpy arpy:2"
 
 
-d1 $ loopAt 2 $ sound "arc" |*| speed "2
+d1 $ sound "arpy" # vowel (choose $ words "a e i o u")
+
+["a", "e", "i", "o", "u"]
+
+words "asdf jdsaflkaj dsflkaj fdlaks jfdlaskdfj "
 
 d1 $ sound "bd sn:2"
    # speed (choose [1,1.5,2,-1])
