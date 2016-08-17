@@ -53,8 +53,8 @@ d2 $ jux rev $ iter' 4 $ loopAt 4 $ chop 32 $ sound "redflag"
 
 d3 $ runWith 4 (density 2) $ iter 4 $ chop 8 $ jux rev $ slow 2 $ n (palindrome $ run 8) # s "funky" # speed "1"
   # shape "0.4"
-  -- # cutoff (slow 4 $ scale 300 6000 sine1)
-  -- # resonance "0.2"
+  # cutoff (slow 4 $ scale 300 6000 sine1)
+  # resonance "0.3"
 
 d1 $ do x <- discretise 1 $ choose [8,4,32]
         striate x $ sound "arpy arpy:2"
