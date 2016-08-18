@@ -257,6 +257,3 @@ d3 $ jux rev $ weave 16 (shape $ scale 0 0.96 tri1)
   # end "0.1"
 
 d4 $ sound "arpy arpy:1 arpy:4 arpy:3"
-
-d4 $ sound "bd8*4 cp8"
-
