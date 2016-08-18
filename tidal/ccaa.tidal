@@ -173,6 +173,8 @@ d2 $ runWith 4 (|*| speed "1.5") $ jux rev $ chop 16 $ sound "~ bass3:3(3,8)" # 
 
 d3 $ every 4 (|*| speed "0.8") $ runWith 4 (density 1.5) $ jux (1 <~) $ loopAt 2 $ chop 16 $ sound "arc"
 
+
+
 d2 $ (jux rev $ n (offadd 0.25 12 $ (offadd 0.125 7 $ slow 4 $ "c7(3,8) a8(3,8,2) f7*3 e8(3,8)")) # s "xx"
   # end "0.1"
   # orbit "2"
