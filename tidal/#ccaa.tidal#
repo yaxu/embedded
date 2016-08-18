@@ -123,8 +123,10 @@ d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g
 d1 $ sound "bd"
   # speed (choose [1,2])
 
-d1 $ weave 16 (pan saw1)
-  [sound "bd8*8 bd8:4*4"
-   # shape (slow 8 $ scale 0 0.8 saw1),
-   sound "drum(3,8,[0,2)"
+d1 $ weave 16 (pan sine1)
+  [sound "bd8*3 bd8:4*4",
+   sound "drum(3,8,[0 2 4 7]/4)",
+   sound "~ bass3*2",
+   sound "~ sd8:2*3"
   ]
+  # shape (slow 8 $ scale 0 0.9 saw1)
