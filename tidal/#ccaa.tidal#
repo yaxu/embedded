@@ -137,6 +137,10 @@ d8 $ (jux (rev) $ chop 8  $ loopAt 4 $ sound "shakedown")
   # resonance "0.3"
   # cutoff (slow 4 $ scale 400 7000 saw1)
 
-m $ slow 4 $ n "c4(3,8) g4(3,8) f(3,8) a(3,8)"
+m $ slow 4 $ n (offadd 0.125 7 "c4(3,8) g4(3,8) f(3,8) a(3,8)")
   # ctf (slow 4 sine1)
-  # dur "0."
+  # dur (scale 0 0.2saw1
+
+d1 $ jux rev $ slow 4 $ n (offadd 0.125 7 "c4(3,8) g4(3,8) f(3,8) a(3,8)") # s "xx" |+| n "48"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 400 7000 saw1)
