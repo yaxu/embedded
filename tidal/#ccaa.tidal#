@@ -212,8 +212,14 @@ d1 $ jux (density 2 . (# speed "2")) $ every 4 (chop 32) $ sound "[tok*4, bd:3]"
 
 d2 $ every 2 (slow 4 . (# speed "0.5")) $ jux rev $ runWith 4 (density 2) $ n (run 8) # s "funky"
   # gain "0.9"
+  # orbit "1"
 
-d3 $ jux (iter 4) $ slowspread (chop) [8,64,32,64] $ sound "gabba:0 [[ind:9 [ind:9 ind:2]] ind:4]"
+d3 $ jux (rev) $ slowspread (chop) [8,64,32,64] $ sound "gabba:0 [[mt9:9 [ind:9 ind:2]] ind:4]"
+  # delay "0.9"
+  # delaytime "0.005 0.01"
+  # delayfeedback "0.9"
+  # gain "0.7"
+  # orbit "0"
 
 m $ runWith 4 (density 2) $ n (palindrome "d*2 e f*2 g")
   # ctf "[0.4 0.9]*4"
