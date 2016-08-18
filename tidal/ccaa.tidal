@@ -65,5 +65,11 @@ d2 $ runWith 4 (slowspread (density) [0.5,2]) $ (chop 32 $ sound "[glitch:5,bd](
 hush
 
 d1 $ sound "sn:2*8"
+  # pan "0 1"
 
-m1 $ sound ""
+d1 $ slow 2 $ sound "cp"
+
+m1 $ slow 2 $ n (offadd 0.125 12 "c(3,8) d e f")
+  # nudge "0.1"
+  # ctf sine1
+
