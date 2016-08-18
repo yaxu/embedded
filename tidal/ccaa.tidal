@@ -120,13 +120,15 @@ d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g
   # cutoff (slow 4 $ scale 1000 5000 sine1)
   # gain "0.75"
 
-d1 $ weave 16 (pan sine1)
+d1 $ runWith 4 (density 2) $ weave 16 (pan sine1)
   [sound "bd8*3 bd8:4*4",
    sound "drum(3,8,[0 2 4 7]/4)",
-   sound "~ bass3*2",
+   sound "~ bass3:2*2",
    sound "~ sd8:2*3"
   ]
   # shape (slow 8 $ scale 0 0.9 saw1)
 
-d2 $ loopAt 4 $ chop 32 $ s "repetition"
+d2 $ (jux rev $ iter 4 $ loopAt 4 $ chop 32 $ s "repetition"
   # n (irand 8)
+  # resonance "0.3")
+  # cutoff (slow 4 $ scale 400 5000 saw1)
