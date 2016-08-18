@@ -70,8 +70,19 @@ d1 $ sound "sn:2*8"
 d1 $ slow 2 $ sound "cp"
 
 
-m $ slow 2 $ n (offadd 0.125 12 "c(3,8) d e f")
-  # ctf sine1
+m $ slow 4 $ n (offadd 0.125 12 "c(3,8) d e f")
+  # ctf (scale 0 0.1 sine1)
+  # dur "0.2"
 
-hush
-let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,m1]
+d1 $ sound "bd"
+
+m $ off 0.125 (|+| n "12") $ n "[d3([6 7]/2,16)]/2"
+  # dur (slow 4 $ scale 0.01 0.02 sine1)
+  # ctf ((*) <$> scale 0 1 sine1 <*> (slow 8 $ sine1))
+
+
+
+d1 $ slow 2 $ sound "sn:2"
+
+let m p = m1 $ p |+| nudge "0.18"
+
