@@ -213,9 +213,9 @@ m $ slow 2 $ n (slowspread (offadd 0.125) [7,-5,12] $ "c4(3,8) e5*2 f4(3,8) [~ [
   # ctf (slow 4 sine1)
 
   
-d2 $ slow 2 $ n (offadd 0.25 12 $ slowspread (offadd 0.125) [7,12] $ "c4(3,8) e5*2 f4(3,8) [~ [g4(3,4,2) a4(3,4,2)]/2]")
-  # s "dirty" |+| n "60"
-
+d2 $ slow 2 $ n (slowspread (offadd 0.125) [7,-5,12] $ "c4(5,8) e5*3 f4(,8) [~ [g4(3,4,2) a4(3,4,2)]/2]")
+  # s "xx" |+| n "48"
+  # gain "0.9"
 
 
 
