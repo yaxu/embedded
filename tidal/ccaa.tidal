@@ -256,4 +256,9 @@ d3 $ jux rev $ weave 16 (shape $ scale 0 0.96 tri1)
   ]|*| up ("[0 7 5 3 5 7 0 3]/8")
   # end "0.1"
 
-d4 $ sound "arpy arpy:1 arpy:4 arpy:3"
+d4 $ jux rev $ weave 8 (palindrome $ sound "arpy arpy:1 arpy:2 arpy:3 arpy:4 arpy:5 arpy:6 arpy:7")
+  [vowel "a e i",
+   vowel "a i o*2 u",
+   speed "1 2*2 3",
+   speed "1 2 3 2"
+  ]
