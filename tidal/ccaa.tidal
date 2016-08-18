@@ -128,10 +128,10 @@ d1 $ runWith 4 (density 2) $ weave 16 (pan sine1)
   ]
   # shape (slow 8 $ scale 0 0.9 saw1)
 
-d2 $ (jux rev $ iter 4 $ loopAt 4 $ chop 32 $ s "repetition"
-  # n (irand 8)
-  # resonance "0.3")
-  # cutoff (slow 4 $ scale 400 5000 saw1)
+d2 $ (loopAt 4 $ chop 32 $ s "liq"
+      # n (irand 8)
+      # resonance "0.2")
+  # cutoff (palindrome $ slow 4 $ scale 400 5000 saw1)
 
 d8 $ runWith 4 (density 2) $ (jux (rev) $ chop 8  $ loopAt 4 $ sound "shakedown")
   # resonance "0.3"
