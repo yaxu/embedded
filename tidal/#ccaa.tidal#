@@ -263,6 +263,6 @@ d4 $ jux rev $ weave 8 (palindrome $ sound "arpy arpy:1 arpy:2 arpy:3 arpy:4 arp
    speed "1 2 3 2"
   ]
 
-d1 $ n "c8 e8 f8 e8" # sound "dirty"
+d1 $ n "d9 e9 [a9 f9]" # sound "dirty"
 
 hush
