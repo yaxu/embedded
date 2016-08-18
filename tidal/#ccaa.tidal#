@@ -214,8 +214,11 @@ d2 $ every 2 (slow 4 . (# speed "0.5")) $ jux rev $ runWith 4 (density 2) $ n (r
   # gain "0.9"
   # orbit "1"
 
-d3 $ slow 8 $ loopAt 4 $ striate 32 $ sound "liq*8"
-  # resonanc
+d3 $ ((slow 8 $ loopAt 4 $ rev $ striate 64 $ sound "liq*8")
+  # resonance "0.3"
+  # ctf (scale 1000 4000 saw1) |*| speed "1")
+  # vowel "a i o u e"
+  # gain "0.8"
 
 d3 $ every 2 (density 2) $ runWith 4 (# speed "2") $ jux (rev) $ slowspread (chop) [8,64,32,64] $ sound "sb:0 [[mt8:9 [ht8:9 ht3:2]] mt1:4]"
   # delay "0.9"
