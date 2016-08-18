@@ -128,12 +128,13 @@ d1 $ runWith 4 (density 2) $ weave 16 (pan sine1)
   ]
   # shape (slow 8 $ scale 0 0.9 saw1)
 
-d2 $ jux rev iter 4 $ (loopAt 4 $ chop 32 $ s "liq"
+d2 $ jux rev $ iter 4 $ (loopAt 8 $ chop 32 $ s "liq"
       # n (irand 8)
       # resonance "0.2")
   # cutoff (palindrome $ slow 4 $ scale 400 5000 saw1)
 
-d3 $ jux (|*| speed "-1") $ loopAt 2 $ sound "foo:12"
+d3 $ substruct "x/2 [x/2 x/4]" $ runWith 4 (density 2) $ jux (iter 4) $ loopAt 4 $ chop 16 $ sound "shakedown:12"
+  # gain "1.2"
 
 d8 $ runWith 4 (density 2) $ (jux (rev) $ chop 8  $ loopAt 4 $ sound "shakedown")
   # resonance "0.3"
