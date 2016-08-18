@@ -147,7 +147,11 @@ d4 $ jux rev $ slow 4 $ n (offadd 0.125 7 "c4(3,8) g4(3,8) f(3,8) a(3,8)") # s "
   # cutoff (slow 4 $ scale 400 7000 saw1)
 
 d1 $ sound "bd(3,8,[0 0 4 2]/4)"
-  # gain "1.1"
 
-d2 $ runWith 4 () $ n (run 8) # s "voodoo"
+d2 $ weave' 8 (jux (iter 4) $ runWith 4 (density 2) $ slow 2 $ n (run 8) # s "voodoo")
+  [struct "x*4" . (# speed "2"),
+   struct "x(3,8)" . (# vowel "a e i"),
+   struct "x*3",
+   struct "x*3" . (# s)
+   ]
   
