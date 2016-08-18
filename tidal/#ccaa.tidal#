@@ -103,8 +103,13 @@ d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd
   # gain "0.85"
   # orbit "1"
 
-d2 $ sound "odx [~ sd8:3] tok ~"
+d2 $ jux rev $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
   # orbit "0"
-  # delay "0.9"
-  # delaytime (slsine1
+  # delay "0.95"
+  # delaytime (slow 2 $ scale 0.01 0.02 sine1)
+  # delayfeedback "0.85"
   # gain "0.8"
+
+m $ n "[c4(3,8) c5(3,8,]/4"
+  # dur "0.2"
+  # ctf saw1
