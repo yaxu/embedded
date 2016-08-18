@@ -161,9 +161,14 @@ d2 $ weave' 8 (jux (iter 4) $ runWith 4 (density 2) $ slow 2 $ n (run 8) # s "ar
   # gain "0.8"
 
 
-d1 $ runWith 4 (density 2) $ sound "drum"
+d1 $ jux rev $ runWith 4 (density 2) $ sound "drum sd8:2*2"
   # delay "0.8"
-  # delaytime "0.02 0.01"
+  # delaytime (slow 4 $ scale 0.02 0.1 sine1)
   # delayfeedback "0.9"
+  # orbit "1"
+
+d2 $ slow n "c7 a7 f7 e7" # s "xx"
+  # end "0.4"
+  # orbit "2"
 
 cps 0.5
