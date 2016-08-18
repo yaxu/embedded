@@ -183,9 +183,12 @@ d4 $ jux ((|*| speed "-2") . (rev)) $ slow 8 $ (loopAt 4 $ striate 32 $ sound "l
   # vowel "e"
   # orbit "1"
 
-d5 $ sound "[bd sn:2] [bd mt8]"
+d5 $ jux rev $ runWith 4 (density 2) $ iter 4 $ sound "[[bd sn:2] [bd mt8], funky*8]" # n (run 8)
   # room "0"
   # orbit "2"
+  # gain "0.9"
+
+d6 $ sound "fm
 
 d2 $ (jux rev $ n (offadd 0.25 12 $ (offadd 0.125 7 $ slow 4 $ "c7(3,8) a8(3,8,2) f7*3 e8(3,8)")) # s "xx"
   # end "0.1"
