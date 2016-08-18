@@ -76,7 +76,8 @@ m $ slow 4 $ n (offadd 0.125 12 "c(3,8) d e f")
 
 d1 $ sound "bd"
 
-m $ n "d3(3"
+m $ off 0.125 (|+| n "12") $ n "[d3([6 7]/2,16)]/2"
+  # dur (slow 4 $ scale 0.01 0.02 sine1)
 
 
 let m p = m1 $ p |+| nudge "0.08"  
