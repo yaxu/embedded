@@ -114,6 +114,7 @@ m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c4(3,8) c5(3,8,2) g4*2 e4]/4")
   # dur "0.01 0.02"
   # ctf (scale 0 0.1 saw1)
 
-d1 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g8(5,8) e8(5,8)")) # s "xx"
+d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g8(5,8) e8(5,8)")) # s "xx"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 1000 5000 sine1)
+  # gain "0.8"
