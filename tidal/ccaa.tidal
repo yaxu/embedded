@@ -170,10 +170,26 @@ d1 $ jux rev $ runWith 4 (density 4) $ sound "drum sd8:2*2"
 d2 $ runWith 4 (|*| speed "1.5") $ jux rev $ chop 16 $ sound "~ bass3:3(3,8)" # up "[0 7 3 7]/4"
   # crush "[3 5 8]/16"
   |*| speed "[2 1 0.5]/3"
+  # gain "0.9"
 
-d3 $ every 4 (|*| speed "0.8") $ runWith 4 (density 1.5) $ jux (1 <~) $ loopAt 2 $ chop 16 $ sound "arc"
+d3 $ every 4 (|*| speed "0.8") $ runWith 4 (density 1.5) $ jux (0.5 <~) $ loopAt 2 $ chop 16 $ sound "arc"
 
+d4 $ jux ((|*| speed "-2") . (rev)) $ slow 8 $ (loopAt 4 $ striate 32 $ sound "liq*8")
+  # gain "0.75"
+  # resonance "0.25"
+  # cutoff (slow 8 $ scale 500 4000 sine1)
+  # room "0.7"
+  # size "0.96"
+  # vowel "e"
+  # orbit "1"
 
+d5 $ jux rev $ runWith 4 (density 2) $ iter 4 $ sound "[[bd sn:2] [bd mt8], funky*8]" # n (run 8)
+  # room "0"
+  # orbit "2"
+  # gain "0.9"
+
+d6 $ slow 4 $ gap 16 $ sound "fm:10"
+  # speed "0.95"
 
 d2 $ (jux rev $ n (offadd 0.25 12 $ (offadd 0.125 7 $ slow 4 $ "c7(3,8) a8(3,8,2) f7*3 e8(3,8)")) # s "xx"
   # end "0.1"
