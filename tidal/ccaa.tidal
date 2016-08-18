@@ -102,18 +102,17 @@ d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd
 
 d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~)) $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
             # delay "0.95"
-            # delaytime (slow 2 $ scale 0.01 0.02 sine1)
+            # delaytime (every 2 (slow 2) $ slow 2 $ scale 0.01 0.02 sine1)
             # delayfeedback "0.85"
             # gain "0.8"
            ]
   # orbit "2"
 
-
 d3 $ jux (iter 4) $ slow 2 $ rev $ slowspread (chop) [8,16,32] $ sound "[bd [bd*2 cp8]] cp8"
   # orbit "1"
 
 m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c3(3,8) f3(3,8,2) g3*2 e3]/4")
-  # dur "0.3"
+  # dur "0.04"
   # cutoff (scale 0 0.4 sine1)
 
 d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g8(5,8) e8(5,8)")) # s "xx"
@@ -124,4 +123,12 @@ d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g
 d1 $ sound "bd"
   # speed (choose [1,2])
 
-  hush
+d1 $ weave 16 (pan sine1)
+  [sound "bd8*3 bd8:4*4",
+   sound "drum(3,8,[0 2 4 7]/4)",
+   sound "~ bass3*2",
+   sound "~ sd8:2*3"
+  ]
+  # shape (slow 8 $ scale 0 0.9 saw1)
+
+d2 $ loopAt 4 $ chop 32 $ sound "repetition"
