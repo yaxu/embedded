@@ -104,14 +104,18 @@ d2 $ jux rev $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
   # delay "0.95"
   # delaytime (slow 2 $ scale 0.01 0.02 sine1)
   # delayfeedback "0.85"
-  # gain "0.8"
+  # gain "0.85"
 
-m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c4(3,8) c5(3,8,2) g4*2 e4]/4")
+m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c3(3,8) f3(3,8,2) g3*2 e3]/4")
   # dur "0.04 0.02"
-  # ctf (scale 0 0.1 saw1)
+  # ctf (scale 0 0.3 saw1)
 
 d4 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g8(5,8) e8(5,8)")) # s "xx"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 1000 5000 sine1)
   # gain "0.75"
 
+d1 $ sound "bd"
+  # speed (choose [1,2])
+
+  hush
