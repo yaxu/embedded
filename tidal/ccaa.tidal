@@ -100,11 +100,14 @@ d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd
   # speed "[1.5,5]"
   # gain "0.85"
 
-d2 $ runWith 4 (density 2) $ jux (# speed "2") $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
-  # delay "0.95"
-  # delaytime (slow 2 $ scale 0.01 0.02 sine1)
-  # delayfeedback "0.85"
-  # gain "0.85"
+d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~)) $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
+            # delay "0.95"
+            # delaytime (slow 2 $ scale 0.01 0.02 sine1)
+            # delayfeedback "0.85"
+            # gain "0.85",
+            sound "bd [~ cp]"
+           ]
+
 
 m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c3(3,8) f3(3,8,2) g3*2 e3]/4")
   # dur "0.3"
