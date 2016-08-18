@@ -69,7 +69,9 @@ d1 $ sound "sn:2*8"
 
 d1 $ slow 2 $ sound "cp"
 
-m1 $ slow 2 $ n (offadd 0.125 12 "c(3,8) d e f")
-  # nudge "0.1"
+
+m $ slow 2 $ n (offadd 0.125 12 "c(3,8) d e f")
   # ctf sine1
 
+hush
+let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,m1]
