@@ -67,6 +67,7 @@ hush
 d1 $ sound "sn:2*8"
   # pan "0 1"
 
-d1 $ sound "cp"
+d1 $ slow 2 $ sound "cp"
 
-m1 $ n "48"
+m1 $ slow 2 $ n "c(3,8) d e f"
+  # nudge "0.1"
