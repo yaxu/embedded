@@ -244,4 +244,9 @@ m $ n (offadd 0.25) 7 $ slow 2 $ "c4(3,8) a5*2 f4(3,8) [[e4(3,4,2)]]")
 
 
 
-d1 $ n "[4 [~ 1] 2 3, 2 3 ~]" # s "short"
+d1 $ jux rev $ slowspread ($) [(# vowel "a"), id, rev, (# speed "2")] $ n "[4 [~ 1] 2 3, [2 3] 4*2 ~]" # s "short"
+
+d2 $ sound "claus [~ claus:3]"
+
+d3 $ sound "ravebass:10 [~ ravebass:9 ravebass:12]"
+  # 
