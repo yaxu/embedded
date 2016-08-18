@@ -167,8 +167,11 @@ d1 $ jux rev $ runWith 4 (density 2) $ sound "drum sd8:2*2"
   # delayfeedback "0.9"
   # orbit "1"
 
-d2 $ slow n "c7 a7 f7 e7" # s "xx"
+d2 $ n (offadd 0.25 12 $ slow 4 $ (offadd 0.125 7 "c7(3,8) a7(3,8,2) f7*3 e7(3,8)")) # s "xx"
   # end "0.4"
   # orbit "2"
+  # delay "0"
+
+
 
 cps 0.5
