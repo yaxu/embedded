@@ -92,5 +92,5 @@ let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d
     solo p = hush >> p
 
 d1 $ sound "bd sn"
-  # speed ("[1 2]/2")
+  # speed (slow 3 "[1 2]")
 
