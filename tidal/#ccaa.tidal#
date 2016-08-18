@@ -209,8 +209,12 @@ d2 $ (jux rev $ n (offadd 0.25 12 $ (offadd 0.125 7 $ slow 4 $ "c7(3,8) a8(3,8,2
 d1 $ jux (density 2 . (# speed "2")) $ every 4 (chop 32) $ sound "[tok*4, bd:3]"
   # gain "1.3"
 
-d2 $ runWin (run 8) # s "funky"
+d2 $ every 4jux rev $ runWith 4 (density 2) $ n (run 8) # s "funky"
   # gain "0.9"
+
+m $ runWith 4 (density 2) $ n "d*2 e f*2 g"
+  # ctf "[0.4 0.9]*4"
+  # nudge "[0 0.04]*4"
 
 m $ n (offadd 0.25) 7 $ slow 2 $ "c4(3,8) a5*2 f4(3,8) [[e4(3,4,2)]]")
   # ctf (slow 4 sine1)
