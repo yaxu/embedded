@@ -248,5 +248,8 @@ d1 $ jux rev $ slowspread ($) [(# vowel "a"), id, rev, (# speed "2")] $ n "[4 [~
 
 d2 $ sound "claus [~ claus:3]"
 
-d3 $ sound "ravebass:10 [~ ravebass:9 ravebass:12]"
-  # 
+d3 $ weave 16 (shape $ scale 0 0.96 tri1)
+  [sound "ravebass:10 [~ ravebass:9 ravebass:12]",
+   jux rev $ sound "ravebass:10*2 [~ ravebass:14 ravebass:12]" # speed "2",
+   sound "bd [cp8 sd8:]"
+  ]
