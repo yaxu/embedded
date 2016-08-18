@@ -63,3 +63,7 @@ d2 $ runWith 4 (slowspread (density) [0.5,2]) $ (chop 32 $ sound "[glitch:5,bd](
 
 
 hush
+
+d1 $ sound "sn:2*8"
+
+m1 $ sound ""
