@@ -110,6 +110,9 @@ d2 $ jux rev $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
   # delayfeedback "0.85"
   # gain "0.8"
 
-m $ n "[c4(3,8) c5(3,8,]/4"
-  # dur "0.2"
+
+m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c4(3,8) c5(3,8,2) g4*2 e4]/4")
+  # dur "0.04 0.03"
   # ctf saw1
+
+d2 
