@@ -100,4 +100,11 @@ d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd
   # room "0.8"
   # size "0.9"
   # speed "[1.5,5]"
+  # gain "0.85"
+  # orbit "1"
+
+d2 $ sound "odx [~ sd8:3] tok ~"
+  # orbit "0"
+  # delay "0.9"
+  # delaytime (slsine1
   # gain "0.8"
