@@ -96,8 +96,8 @@ d1 $ sound (density 4 $ "{bd sn cp arpy}")
   
 hush
 
-t1 clutchIn 8 $ density 2 $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd8]"
+d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd8]"
   # room "0.8"
-  # size "0.95"
-
-:t 
+  # size "0.9"
+  # speed "[1.5,5]"
+  # gain "0.8"
