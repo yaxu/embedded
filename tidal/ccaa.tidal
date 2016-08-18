@@ -91,3 +91,30 @@ d2 $ sound "bd"
 let hush = mapM_ ($ silence) [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,m1]
     solo p = hush >> p
 
+d1 $ sound (density 4 $ "{bd sn cp arpy}")
+  # speed (slow 3.4 "1 2 3")
+  
+hush
+
+d1 $ jux rev $ slowspread (density) [1,2] $ sound "[bd8 ~ [~ bd8:3] bd8:2] [~ bd8]"
+  # room "0.8"
+  # size "0.9"
+  # speed "[1.5,5]"
+  # gain "0.85"
+  # orbit "1"
+
+d2 $ jux rev $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
+  # orbit "0"
+  # delay "0.95"
+  # delaytime (slow 2 $ scale 0.01 0.02 sine1)
+  # delayfeedback "0.85"
+  # gain "0.8"
+
+
+m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c4(3,8) c5(3,8,2) g4*2 e4]/4")
+  # dur "0.04 0.03"
+  # ctf (scale 0 0.1 saw1)
+
+d1 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 8 $ ("c8(3,8) c8(5,8) g8(5,8) e8(5,8)")) # s "xx"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 1000 5000 sine1)
