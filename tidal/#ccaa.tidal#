@@ -80,9 +80,12 @@ let m p = m1 $ p |+| nudge "0.18"
 
 
 
-m $ off 0.125 (|+| n "12") $ n "[d3([6 7]/2,16)]/2"
+m $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7") $ n "[[d3 g3]([6 7]/2,16)]/2"
   # dur (slow 4 $ scale 0.01 0.02 sine1)
-  # ctf ((*) <$> scale 0 1 sine1 <*> (slow 8 $ sine1))
+  # ctf ((*) <$> scale 0 1 sine1 <*> (slow 1 $ sine1))
 
 
-
+d2 $ sound "~ wobble"
+  # delay "0.9"
+  # delaytime "0.02"
+  # speed "2"
