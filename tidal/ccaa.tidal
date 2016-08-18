@@ -104,10 +104,13 @@ d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~)) $ sound "od
             # delay "0.95"
             # delaytime (slow 2 $ scale 0.01 0.02 sine1)
             # delayfeedback "0.85"
-            # gain "0.85",
-            sound "bd [~ cp]"
+            # gain "0.8"
            ]
+  # orbit "2"
 
+
+d3 $ jux (iter 4) $ slow 2 $ rev $ slowspread (chop) [8,16,32] $ sound "[bd [bd*2 cp8]] cp8"
+  # orbit "1"
 
 m $ iter 4 $ n (offadd 0.125 7 $ offadd 0.5 12 "[c3(3,8) f3(3,8,2) g3*2 e3]/4")
   # dur "0.3"
