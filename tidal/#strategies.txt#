@@ -16,3 +16,10 @@ d1 $ every 4 (0.25 <~) $ sound "bd mt*3 sn*2 lt"
 
 d1 $ foldEvery [3,5] (0.25 <~) $ sound "bd mt*3 sn*2 lt"
 
+d1 $ (sound "bd mt*3 sn*2 lt")
+
+-- step through different densities, reversals etc
+
+d1 $ slowspread ($) [density 1.5, slow 2] $ sound "bd mt*3 sn*2 lt"
+
+hush
