@@ -10,3 +10,6 @@ d1 $ every 2 (superimpose (0.25 <~)) $ sound "bd mt*3 sn*2 lt"
 
 d1 $ every 4 (density 1.5) $ sound "bd mt*3 sn*2 lt"
 
+-- Rotate
+
+d1 $ every 4 (0.25 <~) $ sound "bd mt*3 sn*2 lt"
