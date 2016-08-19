@@ -50,6 +50,8 @@ d1 $ weave 4 (sound "jvbass jvbass:1 jvbass:3 jvbass:4")
 
 -- Restructing patterns
 
+d1 $ struct "x*2 x*3" $ n (run 8) # s "arpy"
+
 d1 $ every 3 (struct "x*2 x*3") $ n (run 8) # s "arpy"
 
 -- Structures within structures
