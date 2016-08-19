@@ -72,4 +72,4 @@ d1 $ every 4 (const $ sound "cp") $ foldEvery [3,7] (0.25 <~) $ sound "drum [~ s
 d1 $ do x <- slow (12 * 12) $ run 12
         slow 2 $ jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"
 
-hush
+
