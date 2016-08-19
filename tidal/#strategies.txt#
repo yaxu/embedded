@@ -123,8 +123,8 @@ d1 $ weave 16 (speed (scale 1 1.2 sine1))
 
 
 d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~) . (every 2 rev)) $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
-            # delay "0.9"
-            # delaytime (every 2 (slow 2) $ slow 2 $ scale 0.01 0.02 sine1)
+            # delay "0.95"
+            -- # delaytime (every 2 (slow 2) $ slow 2 $ scale 0.01 0.02 sine1)
             # delayfeedback "0.85"
             # gain "0.8"
            ]
