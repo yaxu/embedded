@@ -68,3 +68,5 @@ t1 (histpan 4) $ iter 4 $ rev $ sound "[drum:3 drum] jvbass:2*2 [~ mt:8] sd8:2"
 
 d1 $ every 4 (const $ sound "cp") $ foldEvery [3,7] (0.25 <~) $ sound "drum [~ sn] sn:2*2 [~ mt] lt*3 ht lt mt"
 
+-- Phase pattern
+d1 $ slow 2 $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"
