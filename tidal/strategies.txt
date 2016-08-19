@@ -59,3 +59,9 @@ d1 $ every 3 (struct "x*2 x*3") $ n (run 8) # s "arpy"
 
 d1 $ slow 2 $ substruct "x [~ x/2] x ~" $ sound "bd sn sn:2 ~"
 
+-- Transitions
+-- http://tidalcycles.org/functions.html#transitions
+
+t1 (histpan 4) $ iter 4 $ rev $ sound "[drum:3 drum] jvbass:2*2 [~ mt:8] sd8:2"
+
+
