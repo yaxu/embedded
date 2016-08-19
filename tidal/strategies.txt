@@ -97,4 +97,3 @@ d1 $ slow 32 $ rev $ striate 64 $ sound "bev*8"
 
 -- apply function to part of a pattern
 d2 $ within (0,0.25) (density 4) $ loopAt 4 $ chop 16 $ sound "shakedown"
-
