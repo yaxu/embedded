@@ -49,6 +49,6 @@ d1 $ weave 4 (sound "jvbass jvbass:1 jvbass:3 jvbass:4")
   ]
 
 -- Structures within structures
+--  (each 'x' stands for the pattern given on the right)
 
--- each 'x' stands for the pattern given on the right
 d1 $ slow 2 $ substruct "x [~ x/2] x ~" $ sound "bd sn sn:2 ~"
