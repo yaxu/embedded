@@ -22,4 +22,9 @@ d1 $ every 4 ((0.25) ~>) (sound "bd sn*2 mt lt ~ sn:2 mt lt")
 
 d1 $ slowspread ($) [density 1.5, slow 2] $ sound "bd mt*3 sn*2 lt"
 
+-- Step through sections
+
+d1 $ runWith 4 (density 2) $ sound "bd arpy mt*2 arpy:2 sn*2 arpy:4 lt arpy:6"
+
+d1 $ slow 2 $ runWith 3 (density 2) $ sound "bd sn mt bd sn lt bd sn ht"
 
