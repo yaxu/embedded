@@ -87,3 +87,6 @@ d1 $ sound "[bd*2 cp, bd*3 [~ arpy]]"
   # delaytime (every 2 (density 2) "0.01 0.02 0.03")
   # delayfeedback "0.9"
 
+-- Euclidean rhythms with superimposed offset
+
+d1 $ slow 2 $ off 0.25 (# shape "0.5") $ sound "bd(3,8) mt:2(3,8,2)"
