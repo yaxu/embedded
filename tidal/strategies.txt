@@ -99,3 +99,4 @@ d1 $ slow 32 $ rev $ striate 64 $ sound "bev*8"
 d2 $ within (0,0.25) (density 2) $ loopAt 4 $ chop 16 $ sound "shakedown"
 
 d2 $ within (0,0.25) (density 2 . (|*| speed "2")) $ loopAt 4 $ chop 16 $ sound "shakedown"
+
