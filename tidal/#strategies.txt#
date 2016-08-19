@@ -93,5 +93,5 @@ d1 $ slow 2 $ off 0.25 (# shape "0.8") $ sound "bd(3,8) mt:2(3,8,2)"
 
 -- Striate for repeated grains
 
-d1 $ slow 32 $ rev $ striate 1 $ sound "bev*8"
+d1 $ slow 32 $ rev $ striate 64 $ sound "bev*8"
 
