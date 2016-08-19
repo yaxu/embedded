@@ -1,0 +1,83 @@
+-- Combine with self denser
+
+d1 $ superimpose (density 1.5) $ sound "bd mt sn lt"
+
+-- Combine with self shifted
+
+d1 $ every 2 (superimpose (0.25 <~)) $ sound "bd mt*3 sn*2 lt"
+
+-- Density step
+
+d1 $ every 4 (density 1.5) $ sound "bd mt*3 sn*2 lt"
+
+-- Beat rotation
+
+d1 $ every 4 (0.25 <~) $ sound "bd mt*3 sn*2 lt"
+
+d1 $ foldEvery [3,5] (0.25 <~) $ sound "bd mt*3 sn*2 lt"
+
+d1 $ every 4 ((0.25) ~>) (sound "bd sn*2 mt lt ~ sn:2 mt lt")
+
+-- step through different densities, reversals etc
+
+d1 $ slowspread ($) [density 1.5, slow 2] $ sound "bd mt*3 sn*2 lt"
+
+-- Step through sections
+
+d1 $ runWith 4 (density 2) $ sound "bd mt*2 sn*2 [lt mt]"
+
+d1 $ slow 2 $ runWith 3 (density 2) $ sound "bd sn ht bd sn mt bd sn lt"
+
+d1 $ slow 2 $ runWith 3 (# speed "2") $ sound "bd sn ht bd sn mt bd sn lt"
+
+d1 $ slow 2 $ sound "bd sn ht bd sn mt bd sn lt" # speed (runWith 3 (density 2) "1 1.5 2 3") -- can also be applied to effect parameters, seems buggy but interesting
+
+-- Weave parameters across patterns
+
+d1 $ weave 4 (speed (scale 1 2 sine1) # pan sine1)
+  [sound "bd sn",
+   sound "jvbass jvbass:1 jvbass:3",
+   sound "bd*2 sn:2"
+  ]
+
+-- Weave patterns across parameters
+
+d1 $ weave 4 (sound "jvbass jvbass:1 jvbass:3 jvbass:4")
+  [speed "2 0.5 1",
+   speed "1 3 2*2 1",
+   shape "0 0.8 0.2 0.9"
+  ]
+
+-- Restructing patterns
+
+d1 $ struct "x*2 x*3" $ n (run 8) # s "arpy"
+
+d1 $ every 3 (struct "x*2 x*3") $ n (run 8) # s "arpy"
+
+-- Structures within structures
+--  (each 'x' stands for the pattern given on the right)
+
+d1 $ slow 2 $ substruct "x [~ x/2] x ~" $ sound "bd sn sn:2 ~"
+
+-- Transitions
+-- http://tidalcycles.org/functions.html#transitions
+
+t1 (histpan 4) $ iter 4 $ rev $ sound "[drum:3 drum] jvbass:2*2 [~ mt:8] sd8:2"
+
+-- Swap a whole pattern with another using const
+
+d1 $ every 4 (const $ sound "cp") $ foldEvery [3,7] (0.25 <~) $ sound "drum [~ sn] sn:2*2 [~ mt] lt*3 ht lt mt"
+
+-- Clapping music
+d1 $ now ~> (do x <- slow (12 * 12) $ run 12
+                jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"
+            )
+
+-- Phase music
+m1 $ slow 2 $ superimpose (slow 1.01) $ n "e4 fs4 b4 cs5 d5 fs4 e4 cs5 b4 fs4 d5 cs5"
+  # dur "0.01"
+
+m1 $ slow 2 $ superimpose (slow 1.01) $ n "e4 fs4 b4 cs5 d5 fs4 e4 cs5 b4 fs4 d5 cs5" 
+  # dur "0.01"
+
+d1 $ n (((+60) <$>) "c5") # s "xx"
