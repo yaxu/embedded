@@ -6,4 +6,7 @@ d1 $ superimpose (density 1.5) $ sound "bd mt sn lt"
 
 d1 $ every 2 (superimpose (0.25 <~)) $ sound "bd mt*3 sn*2 lt"
 
--- 
+-- Density step
+
+d1 $ every 2 (density 2) $ sound "bd mt*3 sn*2 lt"
+
