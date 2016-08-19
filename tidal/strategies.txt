@@ -48,7 +48,12 @@ d1 $ weave 4 (sound "jvbass jvbass:1 jvbass:3 jvbass:4")
    shape "0 0.8 0.2 0.9"
   ]
 
+-- Restructing patterns
+
+d1 $ every 3 (struct "x*2 x*3") $ n (run 8) # s "arpy"
+
 -- Structures within structures
 --  (each 'x' stands for the pattern given on the right)
 
 d1 $ slow 2 $ substruct "x [~ x/2] x ~" $ sound "bd sn sn:2 ~"
+
