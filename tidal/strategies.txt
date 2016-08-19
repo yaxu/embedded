@@ -26,7 +26,7 @@ d1 $ slowspread ($) [density 1.5, slow 2] $ sound "bd mt*3 sn*2 lt"
 
 d1 $ runWith 4 (density 2) $ sound "bd mt*2 sn*2 [lt mt]"
 
-d1 $ slow 2 $ runWith 3 (density 2) $ sound "bd sn mt bd sn lt bd sn ht"
+d1 $ slow 2 $ runWith 3 (density 2) $ sound "bd sn ht bd sn mt bd sn lt"
 
-d1 $ slow 2 $ runWith 3 (# speed "2") $ sound "bd sn mt bd sn lt bd sn ht"
+d1 $ slow 2 $ runWith 3 (# speed "2") $ sound "bd sn ht bd sn mt bd sn lt"
 
