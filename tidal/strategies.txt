@@ -109,3 +109,13 @@ d1 $ stack [loopAt 2 $ sound "breaks125",
   # delay "[0 0.9]/2"
   # delaytime "0.02"
   # delayfeedback "0.9"
+
+-- Woven effects
+d1 $ weave 16 (speed (scale 1 1.2 sine1))
+  [chop 16 $ sound "breaks125",
+   sound "{arpy arpy:2*3}%1"
+   # speed "0.5"
+  ]
+  # delay "[0 0.7]/2"
+  # delaytime "0.02"
+  # delayfeedback "0.9"
