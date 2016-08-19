@@ -75,3 +75,4 @@ d1 $ now ~> (do x <- slow (12 * 12) $ run 12
 
 cps 0.5
 
+d1 $ now ~> do {x <- slow (12 * 12) $ run 12;jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
