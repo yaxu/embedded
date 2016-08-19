@@ -77,4 +77,5 @@ cps 0.5
 
 d1 $ now ~> do {x <- slow (12 * 12) $ run 12;jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
 
-m1 $ n "e4 fs4 b4 cs5 d5 fs4 e4 cs5 b4 fs4 d5 cs5"
+m1 $ slow 2 $ superimpose (slow 1.01) $ n "e4 fs4 b4 cs5 d5 fs4 e4 cs5 b4 fs4 d5 cs5"
+  # dur "0.01"
