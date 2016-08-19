@@ -120,7 +120,7 @@ d1 $ weave 16 (speed (scale 1 1.2 sine1))
   # delaytime "0.02"
   # delayfeedback "0.9"
 
-
+-- Patterning delaytime for melody
 
 d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~) . (every 2 rev)) $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
             # delay "0.95"
@@ -130,7 +130,3 @@ d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~) . (every 2 r
            ]
   # orbit "2"
 
-
-
-d1 $ sound "odx [bd:2 sd8:3] tok*2 bd*2"
-  # orbit "1"
