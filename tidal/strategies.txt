@@ -64,7 +64,7 @@ d1 $ slow 2 $ substruct "x [~ x/2] x ~" $ sound "bd sn sn:2 ~"
 
 t1 (histpan 4) $ iter 4 $ rev $ sound "[drum:3 drum] jvbass:2*2 [~ mt:8] sd8:2"
 
--- Replace a pattern with const
+-- Replace a whole pattern with another using const
 
 d1 $ every 4 (const $ sound "cp") $ foldEvery [3,7] (0.25 <~) $ sound "drum [~ sn] sn:2*2 [~ mt] lt*3 ht lt mt"
 
