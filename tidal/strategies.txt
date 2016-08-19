@@ -69,7 +69,12 @@ t1 (histpan 4) $ iter 4 $ rev $ sound "[drum:3 drum] jvbass:2*2 [~ mt:8] sd8:2"
 d1 $ every 4 (const $ sound "cp") $ foldEvery [3,7] (0.25 <~) $ sound "drum [~ sn] sn:2*2 [~ mt] lt*3 ht lt mt"
 
 -- Clapping music
-d1 $ do x <- slow (12 * 12) $ run 12
-        slow 2 $ jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"
+d1 $ now ~> (do x <- slow (12 * 12) $ run 12
+                jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"
+            )
 
+cps 0.5
 
+d1 $ now ~> do {x <- slow (12 * 12) $ run 12;jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
+
+m $ n "e4 fs4 b4 cs5 d5 fs4 e4 cs5 b4 fs4 d5 cs5"
