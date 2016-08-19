@@ -1,0 +1,18 @@
+-- Combine with self denser
+
+d1 $ superimpose (density 1.5) $ sound "bd mt sn lt"
+
+-- Combine with self shifted
+
+d1 $ every 2 (superimpose (0.25 <~)) $ sound "bd mt*3 sn*2 lt"
+
+-- Density step
+
+d1 $ every 4 (density 1.5) $ sound "bd mt*3 sn*2 lt"
+
+-- Rotate
+
+d1 $ every 4 (0.25 <~) $ sound "bd mt*3 sn*2 lt"
+
+d1 $ foldEvery [3,5] (0.25 <~) $ sound "bd mt*3 sn*2 lt"
+
