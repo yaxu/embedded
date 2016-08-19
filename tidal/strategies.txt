@@ -30,3 +30,5 @@ d1 $ slow 2 $ runWith 3 (density 2) $ sound "bd sn ht bd sn mt bd sn lt"
 
 d1 $ slow 2 $ runWith 3 (# speed "2") $ sound "bd sn ht bd sn mt bd sn lt"
 
+d1 $ slow 2 $ sound "bd sn ht bd sn mt bd sn lt" # speed (runWith 3 (density 2) "1 1.5 2 3") -- can also be applied to effect parameters, seems buggy but interesting
+
