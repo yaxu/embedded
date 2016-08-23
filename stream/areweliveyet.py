@@ -17,4 +17,4 @@ response = urllib2.urlopen(url)
 js = response.read()
 
 h = json.loads(js)
-len(h["items"])
+print len(h["items"])
