@@ -15,6 +15,16 @@ def is_live():
   else:
       return(0)
 
+def was_live():
+    f = open("livestate.txt")
+    value = f.read() 
+    f.close()
+    value = key.rstrip()
+    if value == "live":
+        return(True)
+    else:
+        return(False)
+
 def get_info():
     channel = "UC-id0vwQoAUYBNCm0nmaqQw"
     f = open("youtube.txt")
