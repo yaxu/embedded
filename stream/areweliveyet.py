@@ -24,6 +24,8 @@ if (("items" in h)):
         result = item["snippet"]["liveBroadcastContent"] == "live"
         if result:
             live = True
+            title = item["snippet"]["title"]
+            description = item["snippet"]["descriptoin"]
 
 if live:
   print "live"
