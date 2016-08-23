@@ -1,17 +1,23 @@
 #!/usr/bin/python
 
+# hacky script to show a stream on a raspberry pi while its live, and
+# an archive video at other times
+
 import json
 import urllib2
 import sys
 import re
+import time
+import os
 
 def is_live():
-  #url = "http://slab.org:9090/stat.xsl"
-  #response = urllib2.urlopen(url)
-  #x = response.read()
-  x= "blabber"
+  url = "http://slab.org:9090/stat.xsl"
+  response = urllib2.urlopen(url)
+  x = response.read()
+  s = "<name>yaxu</name>"
   f = open("livestate.txt", "w")
-  if "<name>yaxu</name>" in x and "<video>" in x:
+  # hack - todo parse properly
+  if s in x and "<video>" in x:
       f.write("live\n")
       result = True
   else:
@@ -59,23 +65,34 @@ def get_info():
         return("Live stream")
 
 def live_mode():
-    pass
+    print "live mode"
+    os.system("cp video-live.sh video.sh")
+    os.system("killall omxplayer.bin")
 
 def archive_mode():
-    pass
+    print "archive mode"
+    os.system("cp video-archive.sh video.sh")
+    os.system("killall omxplayer.bin")
 
-def write_srt():
+def write_live_srt(title):
+    f = open("../video/live.srt", "w")
+    f.write("1\n00:00:00,000 --> 01:00:00,000\nLooking screen\n%s\n\n" % (title,))
+    f.close()
 
+first = True
 
-livestate = was_live()
-
-if is_live():
+while True:
+  livestate = was_live()
+  if is_live():
     title = get_info()
     print(title)
-    if livestate == False:
-        live_mode()
-    write_srt(title)
-else:
+    if livestate == False or first:
+      live_mode()
+      first = False
+    write_live_srt(title)
+  else:
     print "Not live."
-    if livestate = True:
-        archive_mode()
+    if livestate == True or first:
+      first = False
+      archive_mode()
+  time.sleep(5)
