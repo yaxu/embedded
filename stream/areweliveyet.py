@@ -2,6 +2,7 @@
 
 import json
 import urllib2
+import sys
 
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
 
