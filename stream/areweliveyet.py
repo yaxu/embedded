@@ -28,7 +28,8 @@ if (("items" in h)):
             description = item["snippet"]["description"]
 
 if live:
-  print "live"
+  print title
+  print description
   sys.exit(0)
 else:
   print "offline"
