@@ -10,10 +10,15 @@ def is_live():
   response = urllib2.urlopen(url)
   x = response.read()
   s = "<name>yaxu</name>"
+  f = open("livestate.txt", "w")
   if s in x:
-      return(1)
+      f.write("live\n")
+      result = True
   else:
-      return(0)
+      f.write("offline\n")
+      result = False
+  f.close()
+  return(result)
 
 def was_live():
     f = open("livestate.txt")
