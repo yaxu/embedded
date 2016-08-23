@@ -17,4 +17,4 @@ response = urllib2.urlopen(url)
 js = response.read()
 
 json.loads(js)
-print json
+print json["items"]
