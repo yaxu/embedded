@@ -63,9 +63,9 @@ livestate = was_live()
 if is_live():
     title = get_info()
     print(title)
-    write_srt(title)
     if livestate == False:
         live_mode()
+    write_srt(title)
 else:
     print "Not live."
     if livestate = True:
