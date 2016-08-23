@@ -23,3 +23,9 @@ if ("items" in h) && (len(h["items"]) >= 1):
     if result:
       live = True
 
+if live:
+  print "live"
+  sys.exit(0)
+else:
+  print "offline"
+  sys.exit(1)
