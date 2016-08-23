@@ -7,10 +7,10 @@ import re
 
 url = "http://slab.org:9090/stat.xsl"
 response = urllib2.urlopen(url)
-
+x = response.read()
 s = "<name>yaxu</name>"
 
-if s in url:
+if s in x:
   print "live"
 else:
   print "offline.."
