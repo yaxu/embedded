@@ -10,9 +10,8 @@ def is_live():
   #response = urllib2.urlopen(url)
   #x = response.read()
   x= "blabber"
-  s = "<name>yaxu</name>"
   f = open("livestate.txt", "w")
-  if s in x:
+  if "<name>yaxu</name>" in x and "<video>" in x:
       f.write("live\n")
       result = True
   else:
@@ -64,6 +63,9 @@ def live_mode():
 
 def archive_mode():
     pass
+
+def write_srt():
+
 
 livestate = was_live()
 
