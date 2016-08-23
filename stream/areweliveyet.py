@@ -56,7 +56,7 @@ def get_info():
     if live:
         return("Live stream: " + title)
     else:
-        # It is probably live, just youtube api is slow to update
+        # It probably is live, just youtube api is slow to update
         return("Live stream")
 
 def live_mode():
