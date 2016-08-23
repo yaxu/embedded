@@ -58,6 +58,12 @@ def get_info():
     else:
         return("Live stream")
 
+def live_mode():
+    pass
+
+def archive_mode():
+    pass
+
 livestate = was_live()
 
 if is_live():
