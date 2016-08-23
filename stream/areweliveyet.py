@@ -8,3 +8,4 @@ key = f.read()
 f.close()
 key = key.rstrip()
 print key
+
