@@ -17,4 +17,9 @@ response = urllib2.urlopen(url)
 js = response.read()
 
 h = json.loads(js)
-print len(h["items"])
+live = False
+if ("items" in h) && (len(h["items"]) >= 1):
+    result = h["items"]["liveBroadCastContent"] == "live"
+    if result:
+      live = True
+
