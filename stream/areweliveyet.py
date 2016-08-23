@@ -8,6 +8,8 @@ f = open("/home/alex/Dropbox/keys/youtube.txt")
 key = f.read()
 f.close()
 key = key.rstrip()
-print key
 
-"https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&%s"
+
+url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&%s" % (channel, key)
+
+print url
