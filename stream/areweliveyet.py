@@ -38,7 +38,12 @@ def get_info():
                 description = item["snippet"]["description"]
 
     if live:
-        return(title,description)
+        return("Live stream: " + title)
     else:
-        return("","")
+        return("Live stream")
         
+if is_live():
+    title = get_info()
+    print(title)
+else:
+    print "Not live."
