@@ -5,7 +5,7 @@ import urllib2
 import sys
 import re
 
-def is_live:
+def is_live():
   url = "http://slab.org:9090/stat.xsl"
   response = urllib2.urlopen(url)
   x = response.read()
