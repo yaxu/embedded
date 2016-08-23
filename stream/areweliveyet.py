@@ -5,10 +5,23 @@ import urllib2
 import sys
 import re
 
-url = "http://slab.org:9090/stat.xsl"
-response = urllib2.urlopen(url)
-x = response.read()
-s = "<name>yaxu</name>"
+def is_live:
+  url = "http://slab.org:9090/stat.xsl"
+  response = urllib2.urlopen(url)
+  x = response.read()
+  s = "<name>yaxu</name>"
+  if s in x:
+      return(1)
+  else:
+      return(0)
+
+
+if is_live():
+    print("live!")
+else:
+    print("not live.")
+
+sys.exit(0)
 
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
 f = open("/home/alex/Dropbox/keys/youtube.txt")
