@@ -16,5 +16,5 @@ url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&ev
 response = urllib2.urlopen(url)
 js = response.read()
 
-json.load(js)
+json.loads(js)
 print json["items"]
