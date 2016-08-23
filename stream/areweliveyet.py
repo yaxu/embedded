@@ -15,40 +15,30 @@ def is_live():
   else:
       return(0)
 
+def get_info():
+    channel = "UC-id0vwQoAUYBNCm0nmaqQw"
+    f = open("/home/alex/Dropbox/keys/youtube.txt")
+    key = f.read()
+    f.close()
+    key = key.rstrip()
 
-if is_live():
-    print("live!")
-else:
-    print("not live.")
+    url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&key=%s" % (channel, key)
 
-sys.exit(0)
+    response = urllib2.urlopen(url)
+    js = response.read()
 
-channel = "UC-id0vwQoAUYBNCm0nmaqQw"
-f = open("/home/alex/Dropbox/keys/youtube.txt")
-key = f.read()
-f.close()
-key = key.rstrip()
+    h = json.loads(js)
+    live = False
+    if (("items" in h)):
+        for item in h["items"]:
+            result = item["snippet"]["liveBroadcastContent"] == "live"
+            if result:
+                live = True
+                title = item["snippet"]["title"]
+                description = item["snippet"]["description"]
 
-
-url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&key=%s" % (channel, key)
-
-response = urllib2.urlopen(url)
-js = response.read()
-
-h = json.loads(js)
-live = False
-if (("items" in h)):
-    for item in h["items"]:
-        result = item["snippet"]["liveBroadcastContent"] == "live"
-        if result:
-            live = True
-            title = item["snippet"]["title"]
-            description = item["snippet"]["description"]
-
-if live:
-  print title
-  print description
-  sys.exit(0)
-else:
-  print "offline"
-  sys.exit(1)
+    if live:
+        return(title,description)
+    else:
+        return("","")
+        
