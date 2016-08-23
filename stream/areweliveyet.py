@@ -25,7 +25,7 @@ def was_live():
     f = open("livestate.txt")
     value = f.read() 
     f.close()
-    value = key.rstrip()
+    value = value.rstrip()
     if value == "live":
         return(True)
     else:
