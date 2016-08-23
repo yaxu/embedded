@@ -25,7 +25,7 @@ if (("items" in h)):
         if result:
             live = True
             title = item["snippet"]["title"]
-            description = item["snippet"]["descriptoin"]
+            description = item["snippet"]["description"]
 
 if live:
   print "live"
