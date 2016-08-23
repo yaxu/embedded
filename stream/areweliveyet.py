@@ -3,6 +3,6 @@
 import json
 
 
-f = open("~/Dropbox/keys/youtube.txt")
+f = open("/home/alex/Dropbox/keys/youtube.txt")
 key = f.read()
 f.close()
