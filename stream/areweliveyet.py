@@ -59,7 +59,8 @@ def get_info():
         return("Live stream")
         
 if was_live():
-    title = get_info()
-    print(title)
+    #title = get_info()
+    #print(title)
+    print "live."
 else:
     print "Not live."
