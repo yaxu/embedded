@@ -3,6 +3,19 @@
 import json
 import urllib2
 import sys
+import re
+
+url = "http://slab.org:9090/stat.xsl"
+response = urllib2.urlopen(url)
+
+s = "<name>yaxu</name>"
+
+if s in url:
+  print "live"
+else:
+  print "offline.."
+
+sys.exit(0)
 
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
 
