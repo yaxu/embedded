@@ -18,7 +18,7 @@ js = response.read()
 
 h = json.loads(js)
 live = False
-if (("items" in h) && (len(h["items"]) >= 1)):
+if (("items" in h) and (len(h["items"]) >= 1)):
     result = h["items"]["liveBroadCastContent"] == "live"
     if result:
       live = True
