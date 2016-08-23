@@ -17,7 +17,7 @@ def is_live():
 
 def get_info():
     channel = "UC-id0vwQoAUYBNCm0nmaqQw"
-    f = open("/home/alex/Dropbox/keys/youtube.txt")
+    f = open("youtube.txt")
     key = f.read()
     f.close()
     key = key.rstrip()
