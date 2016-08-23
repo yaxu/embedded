@@ -60,7 +60,6 @@ def get_info():
         return("Live stream")
 
 def live_mode():
-
     pass
 
 def archive_mode():
