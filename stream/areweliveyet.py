@@ -10,15 +10,7 @@ response = urllib2.urlopen(url)
 x = response.read()
 s = "<name>yaxu</name>"
 
-if s in x:
-  print "live"
-else:
-  print "offline.."
-
-sys.exit(0)
-
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
-
 f = open("/home/alex/Dropbox/keys/youtube.txt")
 key = f.read()
 f.close()
