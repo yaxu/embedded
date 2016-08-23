@@ -6,9 +6,10 @@ import sys
 import re
 
 def is_live():
-  url = "http://slab.org:9090/stat.xsl"
-  response = urllib2.urlopen(url)
-  x = response.read()
+  #url = "http://slab.org:9090/stat.xsl"
+  #response = urllib2.urlopen(url)
+  #x = response.read()
+  x= "blabber"
   s = "<name>yaxu</name>"
   f = open("livestate.txt", "w")
   if s in x:
