@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import json
+import urllib2
 
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
 
@@ -12,4 +13,6 @@ key = key.rstrip()
 
 url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&key=%s" % (channel, key)
 
-print url
+response = urllib2.urlopen(url)
+html = response.read()
+print html
