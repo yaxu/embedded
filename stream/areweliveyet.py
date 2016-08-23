@@ -14,7 +14,7 @@ if s in url:
   print "live"
 else:
   print "offline.."
-
+        
 sys.exit(0)
 
 channel = "UC-id0vwQoAUYBNCm0nmaqQw"
