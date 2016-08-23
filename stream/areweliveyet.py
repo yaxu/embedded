@@ -14,5 +14,7 @@ key = key.rstrip()
 url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=%s&eventType=live&type=video&key=%s" % (channel, key)
 
 response = urllib2.urlopen(url)
-html = response.read()
-print html
+js = response.read()
+
+json.loads(js)
+print json
