@@ -20,7 +20,7 @@ h = json.loads(js)
 live = False
 if (("items" in h)):
     for item in h["items"]:
-        result = item["liveBroadCastContent"] == "live"
+        result = item["liveBroadcastContent"] == "live"
         if result:
             live = True
 
