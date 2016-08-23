@@ -65,3 +65,5 @@ if is_live():
     print(title)
 else:
     print "Not live."
+    if livestate = True:
+        archive_mode()
