@@ -1,2 +1,9 @@
 
 
+type IOPattern a = Pattern (IO (a))
+
+let x = pure (do {putStrLn "hello"; return "there."}) :: IOPattern String
+
+let i = arc x (0,1)
+
+:t i
