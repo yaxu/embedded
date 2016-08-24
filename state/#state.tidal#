@@ -2,8 +2,16 @@
 
 type IOPattern a = Pattern (IO (a))
 
-let x = pure (do {putStrLn "hello"; return "there."}) :: IOPattern String
+let x = pure (do {putStrLn "hello!"; return "there."}) :: IOPattern String
 
-let i = arc x (0,1)
+let i = unsafePerformIO <$> x
+
+i
+
+let es = arc i (0,1)
+
+es
+
+import System.IO.Unsafe
 
 :t i
