@@ -43,4 +43,4 @@ foreach my $subfolder (@subfolders) {
     print(join(", ", @averages));
     print("])")
 }
-print "\n]";
+print "\n ]";
