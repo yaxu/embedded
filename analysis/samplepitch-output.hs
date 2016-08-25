@@ -1,4 +1,4 @@
-let pitches = [
+pitches = [
   ("breaks157",
     [1461.99712741722]),
   ("moan",
