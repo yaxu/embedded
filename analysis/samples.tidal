@@ -1,4 +1,6 @@
+import Data.Map as Map
 
+Map.lookup "sound" <$> (sound "bd")
 
 let pitch_lookup = [
   ("breaks157",
