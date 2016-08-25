@@ -10,6 +10,8 @@ closedir($dh);
 
 my $first = 1;
 
+print "pitches = [\n";
+
 foreach my $subfolder (@subfolders) {
     if (!$first) {
 	print ",\n";
