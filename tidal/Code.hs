@@ -55,4 +55,4 @@ drawText description pat =
           restore
      rawSystem "inkscape" ["--without-gui", "--export-pdf=test.pdf", "test.svg"]
 
-main = drawText "\"red\"" ("red")
+main = drawText "p \"red\"" (p "red")
