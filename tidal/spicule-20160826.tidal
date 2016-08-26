@@ -5,9 +5,13 @@ d1 $ slow 2 $ weave 16 (pan tri1) [
   ]
   # speed "2"
   # delay "0.6" # delaytime "0.002" # delayfeedback "0.8"
+  # orbit "0"
 
 d2 $ juxBy 0.25 rev $ iter 4 $ substruct "x/4 x/2" $ n (run 8) # s "funky" 
   # gain "0.8"
   # speed "1.6"
   # delay "0.6" # delaytime "0.2" # delayfeedback "0.8"
+  # orbit "0"
 
+d3 $ sound "odx"
+  # orbit "1"
