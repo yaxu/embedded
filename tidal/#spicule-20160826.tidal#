@@ -3,3 +3,9 @@ d1 $ slow 2 $ weave 16 (pan tri1) [
   substruct "x/4 x/2" $ stut 3 0.9 0.5 $ substruct "x x*2" $ sound "tok(3,8)",
   substruct "x/8 x/4" $ stut 3 0.9 0.25 $ substruct "x x*2" $ sound "tok:2(5,16)/2"
   ]
+  # gai
+
+d2 $ n (run 8) # s "funky" 
+  # gain "0.8"
+  # speed "2"
+
