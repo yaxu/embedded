@@ -13,7 +13,7 @@ d2 $ juxBy 0.25 rev $ iter 4 $ substruct "x/4 x/2" $ n (run 8) # s "funky"
   # delay "0.6" # delaytime "0.2" # delayfeedback "0.8"
   # orbit "0"
 
-d3 $ delaytime "0.01 [~ [0.02 0.03] ~ [0.005 0.002]]" # sound "[odx odx:6 odx odx]/2"
-  # orbit "1"
+d3 $ every 3 (mask ("x ~" :: Pattern String)) $ delaytime "0.01 [~ [0.02 0.03] ~ [0.005 0.002]]" # sound "[odx odx:6 odx odx]/2"
+  # orbit "1" # speed "2"
   # delay "0.6" # delayfeedback "0.8"
   
