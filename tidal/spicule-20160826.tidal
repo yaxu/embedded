@@ -21,3 +21,5 @@ d3 $ runWith 4 (density 2 . (|*| speed "4")) $ (every 3 (mask ("x ~" :: Pattern 
   # resonance "0.3"
   
 d5 $ sound "~ wobble"
+
+-- ok falling asleep now, thanks for listening
