@@ -74,10 +74,9 @@ d1 $ (slow 4 $ substruct "x/2 [~ x/2] x/4 [x/2 ~]" $ jux rev $ runWith' 4 ((# sp
   # crush "6"
   # cut "-1"
   # speed "[1,2]"
-  # orbit "0"
+
 
 d2 $ jux rev $ sound "{bd mt8*2 ht8:3*2 drum*2}%3"
-  # orbit "1"
   # shape "0.6"
   # speed "1.2"
 
@@ -85,7 +84,13 @@ d3 $ sound "~ cp"
   # orbit "1"
   # speed "1.5" # end "0.2"
 
-d3 $ (jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "9(3,8) b9(3,8,2) a9(3,8) g8(3,8,4)") # s "xx")
+d3 $ (jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f9(3,8) a8(3,8,2) c9(3,8) g8(3,8,4)") # s "xx")
   # cutoff (slow 4 $ scale 3000 500 sine1)
   # resonance "0.2"
-  
+
+hmm.. something wrong there I think
+
+thanks for listening tho!
+
+
+
