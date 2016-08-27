@@ -82,8 +82,11 @@ d1 $ (slow 4 $ substruct "x/2 [~ x/2] x/4 [x/2 ~]" $ jux rev $ runWith' 4 ((# sp
   # speed "[1,2]"
   # orbit "0"
 
-
-d2 $ sound "{bd mt8*2 ht8:3*2}%3"
+d2 $ jux rev $ sound "{bd mt8*2 ht8:3*2 drum*2}%3"
   # orbit "1"
+  # shape "0.6"
+  # speed "1.2"
 
-
+d3 $ sound "~ cp"
+  # orbit "1"
+  # speed "1.5" # end "0.2"
