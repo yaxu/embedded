@@ -25,9 +25,10 @@ d4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes
   # dur "0.2"
   # vowel "[a e i o u]/5"
 
-d4 $ palindrome $ (chop 16 $ loopAt 4 $ sound "liq")
+d4 $ rarely (|*| speed "0.5") $  (jux rev $ palindrome $ (chop 16 $ loopAt 4 $ sound "liq")
   # cutoff (slow 8 $ scale 500 3500 sine1)
-  # resonance "0.2"
+  # resonance "0.2")
+  -- # vowel "a e i o u"
 
 d5 $ jux (0.25 <~) $ every 2 (0.5 <~) $ loopAt 4 $ chop 16 $ sound "arc" # gain "1.1" # speed "2"
 
