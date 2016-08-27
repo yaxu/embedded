@@ -91,5 +91,8 @@ d3 $ sound "~ cp"
   # orbit "1"
   # speed "1.5" # end "0.2"
 
-d3 $ n (offaddoffadd 0.25 7 $ slow 4 $ "g8(3,8) a8(3,8,2) e8(3,8,4)") # s "xx"
+d3 $ (jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "c9(3,8) b9(3,8,2) c9(3,8) b9(3,8,4)") # s "xx")
   # orbit "1"
+  # cutoff (density 4 $ scale 3000 500 saw1)
+  # resonance 
+  
