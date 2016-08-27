@@ -1,1 +1,12 @@
-d1 $ sound "tok"
+d1 $ sound "tok(3,8)"
+  # room (slow 16 saw1)
+  # size (slow 16 saw1)
+  # orbit "0"
+  # delay (slow 16 saw1)
+  # delaytime "0.25"
+  # delayfeedback (scale 0 0.9 $ slow 16 saw1)
+
+d2 $ chop 8 slow 4 $ n "es6" # s "xx"
+  # orbit "1"
+
+  
