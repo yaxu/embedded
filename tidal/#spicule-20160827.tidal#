@@ -43,5 +43,10 @@ d7 $ jux rev $ runWith 4 (density 4) $ chop 8 $ sound "[arpy:0 ! arpy:1 ! arpy:3
   # gain "0.9"
   # speed "0.5"
 
-d8 $ off 0.25 (|*| up "[7 12]/2") $ sound "[arpy ~ ~ [arpy:5 arpy:3]]"
+d8 $ slow 2 $ jux (rev) $ off 0.125 (|*| up "[-3 -5 12]/3") $ off 0.25 (|*| up "[7 12]/2") $ sound "[arpy ~ ~ [arpy:5 arpy:3]]"
   # orbit "1"
+  |*| speed "0.5"
+  # gain "0.9"
+
+d9 $ sound "fm:12"
+  d9 silence
