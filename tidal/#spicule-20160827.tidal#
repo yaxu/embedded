@@ -26,4 +26,13 @@ d4 $ iter 4 $ sound "funky*2" # n (slow 8 $ run 8)
   # gain "0.9"
   # speed "2"
 
-d5 $ runWitchop 8 $ sound "newnotes:1"
+d5 $ runWith 4 (density 4) $ chop 4 $ sound "newnotes:1"
+  # vowel "a"
+  # gain "1.2"
+
+d6 $ runWith' 4 (density 4) $ chop 4 $ sound "arpy"
+  # gain "0.9"
+  # speed "0.5"
+d6 $ runWith' 4 (density 4) $ chop 4 $ sound "arpy"
+  # gain "0.9"
+  # speed "0.5"
