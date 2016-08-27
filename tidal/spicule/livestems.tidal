@@ -176,7 +176,7 @@ let f = id
     never = flip const
     mute = const silence
   in 
-  do m1 $ f $ struct "x(3,8,[0 2]/2)" $ n "[d3 d3 as3 g3]/4"
+  do d1 $ f $ struct "x(3,8,[0 2]/2)" $ n "[d3 d3 as3 g3]/4"
        # velocity "1"
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
@@ -280,7 +280,7 @@ d1 $ iter 4 $ jux rev $ n (offadd 0.25 7 $ slow 4 $ "f8(3,8) a8(5,8) c8(3,8) e8(
 d2 $ jux rev $ iter 4 $ loopAt 2 $ chop 16 $ sound "arc"
 
 
-m1 $ iter 4 $ n (offadd 0.25 7 $ slow 4 $ "f(3,8) a(5,8) c7(3,8) e7(5,8)")
+d2 $ iter 4 $ n (offadd 0.25 7 $ slow 4 $ "f(3,8) a(5,8) c7(3,8) e7(5,8)")
   # velocity "0.9"
 
 
