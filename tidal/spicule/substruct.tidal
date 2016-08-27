@@ -21,7 +21,7 @@ d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # cutoff (slow 4 $ scale 1000 6000 saw1)
   # resonance "0.3"
 
-x4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
+d4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
   # dur "0.2"
   # vowel "[a e i o u]/5"
 
