@@ -6,7 +6,6 @@ d1 $ sound "tok(3,8)"
   # delaytime "0.25"
   # delayfeedback (scale 0 0.9 $ slow 16 saw1)
 
-d2 $ jux rev $ (off 0.125 (|*| speed "0.5") $ chop 16 $ slow 4 $ n (superimpose ((+7) <$>) $ "30") # s "xx") # nudge (slow 8 sine1)
+d2 $ jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[30 ~ 20 27]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
   # orbit "1"
 
-  
