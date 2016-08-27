@@ -9,5 +9,7 @@ d1 $ sound "tok(3,8)"
 d2 $ jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[30 ~ 20 ~]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
   # orbit "1"
 
-d3 $ slstut' 4 0.25 ((|+| speed "4")) $  n "gs7(3,8)" # s "xx"
+d3 $ juxBy 0.5 (0.25 <~) $ off 0.125 (# vowel "[a e i]/3") $ slow 4 $ stut' 4 0.25 ((|+| speed "2")) $  n "gs7(3,8)" # s "xx"
   # orbit "1"
+  # gain "0.5"
+  # shape ).9"
