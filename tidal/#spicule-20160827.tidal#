@@ -12,7 +12,7 @@ d2 $ jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[~ ~ 20 ~]/4" # 
   # size "0.4"
   # gain "0.9"
 
-d3 $ every 2 (superimpose (|+| speed "0.75")) $ juxBy 0.5 (0.25 <~) $ off 0.125 (# vowel "[a e i]/3") $ slow 4 $ stut' 4 0.25 ((|+| speed "2")) $  n "gs7(3,8)" # s "xx"
+d3 $ slow 2 $ every 2 (superimpose (|+| speed "0.75")) $ juxBy 0.5 (0.25 <~) $ off 0.125 (# vowel "[a e i]/3") $ slow 4 $ stut' 4 0.25 ((|+| speed "2")) $  n "gs7(3,8)" # s "xx"
   # orbit "1"
   # gain "0.6"
   # shape "0.7"
@@ -25,3 +25,5 @@ d3 $ every 2 (superimpose (|+| speed "0.75")) $ juxBy 0.5 (0.25 <~) $ off 0.125 
 d4 $ iter 4 $ sound "funky*2" # n (slow 8 $ run 8)
   # gain "0.9"
   # speed "2"
+
+d5 $ runWitchop 8 $ sound "newnotes:1"
