@@ -54,10 +54,11 @@ d9 $ jux rev $ chop 8 $ sound "fm:9"
   # speed "1.43"
   # orbit "1"
 
-d1 $ weave' 4 (sound "[sd8:1(3,8), mt8(5,8,2) lt8(3,8,2)]")
+d1 $ jux (# speed "0.9") $ weave' 4 (sound "[voodoo:4(3,8), mt8(5,8,[2 4]/2) lt8(3,8,[2 6]/2)]")
   [substruct "x/3 [x/2]",
    substruct "x/2 [~ x/4]" . (|*| speed "1.5"),
    substruct "x/4 [x/2 x/4]" . (|*| speed "1.2"),
    substruct "x/2 [~ [x/8 x/4]]" . (|*| speed "2")
   ]
-  
+
+d2 $ slow 2 $ sound "future:2 [s8: [~ sd8:4]]"
