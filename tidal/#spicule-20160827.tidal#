@@ -60,5 +60,11 @@ d1 $ jux (# speed "0.9") $ weave' 4 (sound "[voodoo:4(3,8), mt8(5,8,[2 4]/2) lt8
    substruct "x/4 [x/2 x/4]" . (|*| speed "1.2"),
    substruct "x/2 [~ [x/8 x/4]]" . (|*| speed "2")
   ]
-
-d2 $ slow 2 $ sound "future:2 [s8: [~ sd8:4]]"
+  # orbit "1"
+  
+d2 $ (stut 8 0.3 (-0.25) $ slow 2 $ sound "future:2 [sd8:3 [~ sd8:4]]")
+  # cut "-1"
+  # delay "0.8"
+  # delaytime (slow 4 $ scale 0.01 0.02 sine1)
+  # delayfeedback "0.9"
+  # orbit "0"
