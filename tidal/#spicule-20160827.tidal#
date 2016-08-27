@@ -90,3 +90,6 @@ d2 $ jux rev $ sound "{bd mt8*2 ht8:3*2 drum*2}%3"
 d3 $ sound "~ cp"
   # orbit "1"
   # speed "1.5" # end "0.2"
+
+d3 $ n (offaddoffadd 0.25 7 $ slow 4 $ "g8(3,8) a8(3,8,2) e8(3,8,4)") # s "xx"
+  # orbit "1"
