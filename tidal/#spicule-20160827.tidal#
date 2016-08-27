@@ -75,7 +75,8 @@ d9 $ sometimes (|+| speed "2") $
   # orbit "1"
   # room "0"
 
-d1 $ runWith 4 ((# speed "2") . density 2) $ sound "bd8:3*8"
-  # shape "0.3"
-  # crush "4"
-  # 
+d1 $ slow 4 $ substruct "x/2 [~ x/2] x/4 [x/2 ~]" $ runWith' 4 ((# speed "2") . density 2) $ sound "[bd8:4*8, sd8*4]"
+  # shape (scale 0.6 0.8 saw1)
+  # crush "6"
+  # cut "-1"
+  # speed "[1,2]"
