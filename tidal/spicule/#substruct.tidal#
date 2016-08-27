@@ -1,4 +1,4 @@
-solo $
+
 d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [sd8 [~ sd8]]" # n (slow 32 $ run 8))
   # shape "0.5"
   # delay "0.6"
@@ -8,56 +8,20 @@ d1 $ (chop 32 $ jux rev $ substruct "{x [x/3 x/2] x/4 x/3}%1" $ s "bd mt ht*2 [s
   # resonance "0.3"
   # cutoff (density 4 $ scale 100 4000 saw1)
   # orbit "0"
-  # gain "0.6"
-  
-d2 $ slow 2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10 [~ [sd8 sd8?]]")
+
+d2 $ (substruct "[x/4 x/3, x]" $ sound "future*2 [~ future:5] future:10 [~ [sd8 sd8?]]")
   # orbit "1"
   # shape "0.96"
   # speed "1.2"
-  # vowel "[a e i o u]/5"
-  # gain "0.6"
-
-d3 $ slow 4 $ up (offadd (1/16) 12 $ offadd 0.125 7 $ slow 2 $ "0*2 [~ 7] 4(3,8) 0*2") # sound "bass3"
-  # gain "0.85"
-
-d4 $ slow 2 $ slowspread (chop) [8,6]
-                                 $ sound "~ cp"
-hush
-d3 $ every 3 (# speed "0.4") $ sound "sd8:3 [cp sd8:3*2]"
-  # gain "0.7"
-
-d4 silence
-
- # gain "0.6"
-
-d1 $ jux (iter 4) $ rev $ slow 8 $ loopAt 16 $ striate 64 $ sound "bev*4"
-  # gain "0.9"
-
-
-d2 $ slow 2 $ jux (iter 4) $ slow 4 $ substruct "x [x/2 x x/4]" $ sound "bd8:2 [bd lt8 mt bd]"
-  # gain "0.9"
-
-d3 $ sound "{~ [ravebass ravebass*2]/2, ~ ~ [~ ravebass:10]}"
   # gain "0.8"
+  -- # vowel "[a e i o u]/5"
 
-d4 $ sound "jungbass:1 jungbass:6/2"
-  # gain "0.8"
-
-
-d5 $ jux rev $ slow 2 $ loopAt 4 $ striate 8 $ sound "[mef*2]"
-   # cutoff "4000"
-   # resonance "0.2"
-
-d3 $ iter 4 $ loopAt 4 $ chop 8 $ sound "arc"
-
-
-d3 $ brak $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
+d3 $ every 4 (density 2) $ density 2 $ brak $ sound "[drum drum:1, rs*4]"
   # orbit "1"
   # cutoff (slow 4 $ scale 1000 6000 saw1)
-  # resonance "0.1"
-  # gain "0.7"
+  # resonance "0.3"
 
-x4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
+d4 $ every 4 (# speed "1.2") $ foldEvery [3,5] (0.25 <~) $ jux (rev) $ sometimes (chop 8) $ sound "~ h"
   # dur "0.2"
   # vowel "[a e i o u]/5"
 
