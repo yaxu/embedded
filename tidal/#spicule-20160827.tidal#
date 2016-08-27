@@ -6,7 +6,7 @@ d1 $ sound "tok(3,8)"
   # delaytime "0.25"
   # delayfeedback (scale 0 0.9 $ slow 16 saw1)
 
-d2 $ chop 8 slow 4 $ n "es6" # s "xx"
+d2 $ off 0.125 (|*| speed "2") $ chop 16 $ slow 4 $ n (superimpose ((+24) <$>) $ "es7") # s "dirty" # nu
   # orbit "1"
 
   
