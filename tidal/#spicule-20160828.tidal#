@@ -57,7 +57,7 @@ d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offad
 
 d1 $ jux rev $ iter 4 $ sound "perc*8" # n (run 8)
 
-d2 $ slowspread (loopAt) [4,3,8,2] $ chop 32 $ sound "pad:3"
+d2 $ up "0 [~ 5 ~] ~ 8" # sound "pad:3"
+  # end "0.15"
 
-d3 $ n (offadd 0.25 (-12) "8(3,8)") # s "xx"
-  # vowel "a"
+d3 $ sound "[gabba(3,8), ~ [feel:2 feel:3*]]"
