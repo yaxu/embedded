@@ -28,4 +28,11 @@ d5 $ jux rev $ slowspread (chop) [8,8,16] $ slow 8 $ sound "[rave2:1 ~] rave2:4 
 d6 $ (every 4 (slow 2 . (# speed "0.5")) $ runWith 4 (density 2) $ slow 2 $ slowspread (chop) [16,32,64,8] $ sound "rave:6")
   # vowel "a i o u"
 
-d7 $ slown (run 8) # s "funky"
+d7 $ jux rev $ chop 2 $ iter 4 $ slow 2 $ n (run 8) # s "funky"
+  # speed "0.8"
+  # gain "1.1"
+
+d8 $ sound "~ [wobble ~ wobble]"
+  # shape "0.9"
+  # speed "2"
+  # resonance "0.3" # ctf (scale sine1
