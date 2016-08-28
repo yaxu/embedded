@@ -55,16 +55,24 @@ d1 $ jux rev $ iter 4 $ sound "perc*8" # n (run 8)
   # orbit 
   # orbit "0"
   
-d2 $ up (every 4 ((+ 3) <$>) $ "0 [~ 5 ~] ~ 8") # sound "pad:3"
+d2 $ (up (every 4 ((+ 3) <$>) $ "0 [~ 5 ~] ~ 8") # sound "pad:3")
   # end "0.15"
   # orbit "1"
-  # room saw1
+  # room (slow 4 saw1)
+  # size "0.9"
   # gain "0.9"
   
 d3 $ sound "[gabba(3,8), ~ [feel:2 feel:3]]"
+  # orbit "0"
+
+d4 $ whenmod 8 4 (iter 4) $ n (run 8) # s "gabba"
+  # speed "[2,1]"
+  # gain "1.1"
   # orbit "0"
 
 d7 $ jux rev $ chop 2 $ iter 4 $ slow 2 $ n (run 8) # s "funky"
   # speed "0.8"
   # gain "1"
   # orbit "0"
+
+d8
