@@ -1,0 +1,52 @@
+
+d1 $ (runWith 4 (density 2) $ substruct "[x/4 x] [x/2 x/4]" $ slow 2 $ n "1 [~ 2 ~] 1 [~ 6 2]" # s "gretsch")
+  # speed "0.9"
+  # vowel "a"
+  # orbit "1"
+  # delay "0"
+  -- # delay "0.99"
+  -- # delaytime "0.2"
+  # delayfeedback (slow 4 sine1)
+  # gain "1"
+
+d2 $ runWith 4 (density 2) $ jux rev $ slowspread ($) [id, chop 32, id, rev . chop 32] $ sound "odx ~ odx:3 ~"
+  # orbit "0"
+  # gain "1"
+  # speed "0.7"
+
+d3 $ (stut 4 0.7 0.5 $ jux (|+| n "12 7") $ slow 2 $ slowspread (\x -> off x (|+| n "[7 12]/3")) [0.125, 0.25] $ n "[[40 42]/2](5,16)" # sound "dirty")
+  # resonance "0.4"
+  # cutoff "[500 400 1200]/3"
+
+d4 $ runWith 4 (density 2) $ slow 8 $ n "12 0 12 0 2(3,8) 2 2(3,8) 2" # s "ravebass"
+  # resonance "0.5"
+  # cutoff "[500 400 1200]/3"
+  # speed "[1,2,4]"
+
+d5 $ jux rev $ slowspread (chop) [8,8,16] $ slow 8 $ sound "[rave2:1 ~] rave2:4 ~ ~"
+
+d6 $ (every 4 (slow 2 . (# speed "0.5")) $ runWith 4 (density 2) $ slow 2 $ slowspread (chop) [16,32,64,8] $ sound "rave:6")
+  # vowel "a i o u"
+
+d7 $ jux rev $ chop 2 $ iter 4 $ slow 2 $ n (run 8) # s "funky"
+  # speed "0.8"
+  # gain "1.1"
+
+d8 $ sound "~ [wobble ~ wobble]"
+  # shape "0.9"
+  # speed "2"
+  # resonance "0.3" # ctf (slow 4 $ scale 200 1000 sine1)
+
+
+(d4 $ (slow 4 $ chop 16 $ sound "paper"
+       # unit "c"
+       # speed "[0.25]"
+       # gain "0.8"))
+
+d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g8(3,8)"))
+  # gain "1" 
+  # resonance "0.3" # ctf (slow 4 $ scale 200 4000 sine1)
+
+d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]"
+
