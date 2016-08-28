@@ -9,11 +9,21 @@ d1 $ (runWith 4 (density 2) $ substruct "[x/4 x] [x/2 x/4]" $ slow 2 $ n "1 [~ 2
   # delayfeedback (slow 4 sine1)
   # gain "1"
 
-d2 $ jux rev $ slowspread ($) [id, chop 32, id, rev . chop 32] $ sound "odx ~ odx:3 ~"
+d2 $ runWith 4 (density 2) $ jux rev $ slowspread ($) [id, chop 32, id, rev . chop 32] $ sound "odx ~ odx:3 ~"
   # orbit "0"
   # gain "0.9"
+  # speed "0.7"
 
-d3 $ (stut 4 0.7 0.5 $ jux (|+| n "12 7") $ slow 2 $ slowspread (\x -> off x (|+| n "[7 12]/3")) [0.125, 0.25, 0.125] $ n "40(5,16)" # sound "dirty")
+d3 $ (stut 4 0.7 0.5 $ jux (|+| n "12 7") $ slow 2 $ slowspread (\x -> off x (|+| n "[7 12]/3")) [0.125, 0.25] $ n "[[40 42]/2](5,16)" # sound "dirty")
   # resonance "0.4"
   # cutoff "[500 400 1200]/3"
-  
+
+d4 $ runWith 4 (density 2) $ slow 8 $ n "12 0 12 0 1(3,8) 1 1(3,8) 1" # s "ravebass"
+  # resonance "0.5"
+  # cutoff "[500 400 1200]/3"
+  # speed "[1,2,4]"
+
+d5 $ jux rev $ slowspread (chop) [8,8,16] $ slow 8 $ sound "[rave2:1 ~] rave2:3 ~ ~"
+
+d6 $ (every 4 (slow 2 . (# speed "0.5")) $ runWith 4 (density 2) $ slow 2 $ slowspread (chop) [16,32,64,8] $ sound "rave:6")
+  # vowel "a i o u"
