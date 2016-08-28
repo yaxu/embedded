@@ -55,7 +55,7 @@ d1 $ jux rev $ iter 4 $ sound "perc*8" # n (run 8)
   # orbit 
   # orbit "0"
   
-d2 $ (up (every 4 ((+ 3) <$>) $ "0 [~ 5 ~] ~ 8") # sound "pad:3")
+d2 $ (whenmod 16 8 (jux rev) $ up (every 4 ((+ 3) <$>) $ "0 [~ 5 ~] ~ 8") # sound "pad:3")
   # end "0.15"
   # orbit "1"
   # room (slow 4 saw1)
