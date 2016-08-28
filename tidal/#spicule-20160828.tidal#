@@ -1,5 +1,6 @@
 
+d1 $ runWith 4 (density 2) $ substruct "[x/4 x] [x/2 x/4]" $ slow 2 $ n "1 [~ 2 ~] 1 [~ 6 2]" # s "gretsch"
+  # speed "0.9"
+  # vowel "a"
 
-d1 $ substruct "x x/2" $ slow 2 $ n "1 [~ 2 ~] 1 [~ 6 2]" # s "gretsch"
-
-
+d2 $ slowspread ($) [id, chop 32] $ sound "odx"
