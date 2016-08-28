@@ -79,7 +79,7 @@ d8 $ runWith 4 (|*| speed "2") $ jux rev $ sound "jvbass:1(5,8)"
   # speed "2"
   # resonance "0.4"
   # cutoff (slow 4 $ every 4 rev $ scale 300 2000 saw1)
-
+hush
 d9 $ whenmod 4 1 (const silence) $ (jux rev $ zoom (0,0.5) $ chop 32 $ sound "redflag")
   # gain "0.9"
   # speed ((*2) <$> "0.9")
@@ -115,4 +115,7 @@ d3 $ sound "~ [arpy,arpy:3]"
   # resonance "0.2"
   # cutoff (scale 1000 5000 rand)
   # speed "0.5"
-  
+
+-- thanks for staying locked in
+-- hope you enjoyed yourselves
+-- goodnight
