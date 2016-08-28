@@ -75,7 +75,6 @@ d7 $ jux rev $ chop 2 $ iter 4 $ slow 2 $ n (run 8) # s "funky"
   # gain "1"
   # orbit "0"
 
-
 d8 $ runWith 4 (|*| speed "2") $ jux rev $ sound "jvbass:1(5,8)"
   # gain "1.2"
   # speed "2"
