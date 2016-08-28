@@ -22,6 +22,7 @@ d4 $ runWith 4 (density 2) $ slow 8 $ n "12 0 12 0 2(3,8) 2 2(3,8) 2" # s "raveb
   # resonance "0.5"
   # cutoff "[500 400 1200]/3"
   # speed "[1,2,4]"
+  # gain "1.1"
 
 d5 $ jux rev $ slowspread (chop) [8,8,16] $ slow 8 $ sound "[rave2:1 ~] rave2:4 ~ ~"
 
@@ -36,4 +37,20 @@ d8 $ sound "~ [wobble ~ wobble]"
   # shape "0.9"
   # speed "2"
   # resonance "0.3" # ctf (slow 4 $ scale 200 1000 sine1)
-  
+
+d9 silence
+
+(d9 $ jux rev $ sometimes (|*| speed "2 0.5") $ (slow 4 $ chop 16 $ sound "paper"
+       # unit "c"
+       # speed "[0.25]"
+       # gain "0.8"))
+
+d1 $ jux rev $ slow 4 $ sound (samples' "[xx]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g8(3,8)"))
+  # gain "1" 
+  # resonance "0.3" # ctf (slow 4 $ scale 200 4000 sine1)
+
+d2 $ foldEvery [5,7] (|*| up "7") $  jux (iter 4) $ stut' 7 (- (1/32)) ((|+| crush "3") . (|*| gain "0.9")) $ sound (samples' "arpy" (slow 2 $ "0 [5 3]"))
+  # speed "[1,2]"
+
+d3 $ sometimes (|*| up "12") $ jux rev $ slow 4 $ sound (samples' "[aid]" (offadd (-0.125) 12 $ "c8(3,8) e8(3,8) f8(3,8) g8(3,8)")) # up "3"
+
