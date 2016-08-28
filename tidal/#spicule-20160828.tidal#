@@ -109,4 +109,10 @@ d2 $ struct "x(3,8)" $ sound "bd"
 
 d3 $ sound "~ [arpy,arpy:3]"
   # orbit "1"
-  # delay "0.4"
+  # delay "0.8"
+  # delaytime "0.4"
+  # delayfeedback "0.7"
+  # resonance "0.2"
+  # cutoff (scale 1000 5000 rand)
+  # speed "0.5"
+  
