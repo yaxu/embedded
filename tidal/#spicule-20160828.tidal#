@@ -9,7 +9,7 @@ d1 $ (runWith 4 (density 2) $ substruct "[x/4 x] [x/2 x/4]" $ slow 2 $ n "1 [~ 2
   # delayfeedback (slow 4 sine1)
   # gain "1"
 
-d2 $ jux rev $ slowspread ($) [id, chop 32, id, rev . chop 32] $ sound "odx ~ odx:3 ~"
+d2 $ runWith 4 (density 2) $ jux rev $ slowspread ($) [id, chop 32, id, rev . chop 32] $ sound "odx ~ odx:3 ~"
   # orbit "0"
   # gain "0.9"
   # speed "0.7"
@@ -22,3 +22,6 @@ d4 $ runWith 4 (density 2) $ slow 8 $ n "10 0 12 0 1(3,8) 1 1(3,8) 1" # s "raveb
   # resonance "0.5"
   # cutoff "[500 400 1200]/3"
   # speed "[1,2,4]"
+
+d5 $ chop 8 $ slow 8 $ sound "[rave2:1 ~] rave2:1 ~ ~"
+  
