@@ -37,8 +37,9 @@ d8 $ sound "~ [wobble ~ wobble]"
   # speed "2"
   # resonance "0.3" # ctf (slow 4 $ scale 200 1000 sine1)
 
+d9 silence
 
-(d4 $ jux rev $ iter 4 $ (slow 4 $ chop 16 $ sound "paper"
+(d9 $ jux rev $ sometimes (|*| speed "2 0.5") $ (slow 4 $ chop 16 $ sound "paper"
        # unit "c"
        # speed "[0.25]"
        # gain "0.8"))
