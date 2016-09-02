@@ -1,3 +1,5 @@
+d1 $ sound "numbers numbers:1"
+  # pan "0 1"
 
 d1 $ (runWith 4 (density 2) $ substruct "[x/4 x] [x/2 x/4]" $ slow 2 $ n "1 [~ 2 ~] 1 [~ 6 2]" # s "gretsch")
   # speed "0.9"
