@@ -88,7 +88,8 @@ d9 $ whenmod 4 1 (const silence) $ (jux rev $ zoom (0,0.5) $ chop 32 $ sound "re
   # cutoff (slow 4 $ every 4 rev $ scale 3000 4000 saw1)
   # vowel "a"
 
-d1 $ sound "re
+d1 $ loopAt 8 $ chop 16 $ sound "redflag" 
+  # room "0"
 
 d6 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
