@@ -48,6 +48,7 @@ d8 $ slow 2 $ jux (rev) $ off 0.125 (|*| up "[-3 -5 12]/3") $ off 0.25 (|*| up "
   |*| speed "0.5"
   # gain "0.9"
 
+
 d1 $ jux (# speed "0.9") $ weave' 4 (sound "[voodoo:4(3,8), mt8(5,8,[2 4]/2) lt8(3,8,[2 6]/2)]")
   [substruct "x/3 [x/2]",
    substruct "x/2 [~ x/4]" . (|*| speed "1.5"),
@@ -79,7 +80,7 @@ d1 $ (slow 4 $ substruct "x/2 [~ x/2] x/4 [x/2 ~]" $ jux rev $ runWith' 4 ((# sp
 d2 $ jux rev $ sound "{bd mt8*2 ht8:3*2 drum*2}%3"
   # shape "0.6"
   # speed "1.2"
-
+hush
 d3 $ sound "~ cp"
   # orbit "1"
   # speed "1.5" # end "0.2"
