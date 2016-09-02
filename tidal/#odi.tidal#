@@ -1,3 +1,9 @@
-d1 $ jux (iter 4) $ every 3 (rev . chop 8) $ every 2 (# speed "2") $ sound "[claus claus:2 arpy claus:3, claus:4*3]"
+d1 $ jux (iter 4) $ (rev . slowspread (chop) [8,64]) $ every 2 (# speed "2") $ sound "[claus claus:2 arpy claus:3, claus:4*3]"
 
 d2 $ sound "bd*3"
+
+
+d1 $ weave 16 (n (run 8) # s "arpy")
+  [vowel "a i o u e",
+   vowle "i o u"
+   ]
