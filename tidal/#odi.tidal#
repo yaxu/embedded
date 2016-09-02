@@ -1,5 +1,0 @@
-
-
-d1 $ substruct "x x/2" $ (slowspread (chop) [4,8,64]) $ sound "claus [drum claus:2] claus:1 arpy"
-  # speed "2"
-  
