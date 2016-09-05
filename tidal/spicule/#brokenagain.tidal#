@@ -1,5 +1,7 @@
 
-d4 $ never (off 0.25 (# (crush "3" # gain "0.9" # speed "4"))) $ (juxBy 0.5 (4 <~)) $ n (slow 8 $ scan 8) # sound "[voodoo,casio]"
+d4 $ (slowspread (\x -> off 0.25 (# (crush "3" # gain "0.9" # speed "4"))) $ (juxBy 0.5 (4 <~)) $ n ((+8) <$> (slow 8 $ scan 8)) # sound "[voodoo,future]"
   # gain "0.9"
   # orbit "1"
   # speed "1"
+  # resonance "0.3"
+
