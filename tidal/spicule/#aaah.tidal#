@@ -50,10 +50,10 @@ do cps 1.1
            (12,32, orb1 funky),
            (16,32, orb1 gab1),
            (16,17, orb1 wyatt),
-           (32,33, orb1 wyatt),
+           -- (32,33, orb1 wyatt),
            -- (32,64, orb1 bd),
-           (32,64, orb1 wob),
-           (33,64, orb1 funky)
+           (32,64, orb1 $ when ((< 1) . `mod` 16 (const wyatt) funky),
+           (32,64, orb1 wob)
           ]
 
 d1 $ P.fadeIn 4 $ sound "bd*8"
