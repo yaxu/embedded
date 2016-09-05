@@ -61,7 +61,7 @@ do cps 1.2
            (64,128, orb1 bl),
            (64,64+32, orb0 off),
            (64,128, orb0 bd),
-           (64+32,128, orb0 wyatt)
+           (64+32,64+48, orb0 wyatt)
           ]
 
 d1 $ P.fadeIn 4 $ sound "bd*8"
