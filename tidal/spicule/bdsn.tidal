@@ -31,6 +31,9 @@ let orb0 = (# (room (slow 16 saw1)
     br = brak $ (chop 64 $ sound "[sd8:3@3 sd8:5, sd8*4, drum cp8:2, {~ xx:20 ~ xx:40*2}%2]")
          # orbit "0"
          # gain "0.9"
+    updown = slow 2 $ juxBy 0.5 (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
+             # shape "0.5"
+
 
 let now'' = now'
 
@@ -44,9 +47,9 @@ do cps 1.05
            (32,32+16, orb1 $ sqr),
            (32+16,64, orb1 $ off 0.5 (|*| speed "2") $ rev sqr),
            (64,96, orb1 $ off 0.25 (|*| speed "2") $ sqr),
-           (32+16,96, orb0 $ br)
+           (32+16,96, orb0 $ br),
+           (64,96, orb1 updown)
           ]
-
 
 
 
