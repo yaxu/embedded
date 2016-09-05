@@ -64,8 +64,6 @@ do cps 1.2
            (64+32,64+48, orb0 wyatt)
           ]
 
-d1 $ P.fadeIn 4 $ sound "bd*8"
-
 now
 -- aaah
 cps 1.1
