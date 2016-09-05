@@ -7,6 +7,9 @@ let orb0 = (# orbit "0")
             # resonance "0.3"
     b = slow 2 $ sound "[beack(5,16), beack:1*16?]" 
     runslow = runWith 4 (density 0.5 . (# speed "1.5"))
+    strange = jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
+              # vowel "[a e]*4" # speed (scale 1 1.5 rand)
+              # gain "1.1"
 
 let now'' = now
 
