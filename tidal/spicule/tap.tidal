@@ -7,16 +7,15 @@ let orb0 = (# orbit "0")
             # resonance "0.3"
     b = slow 2 $ sound "[beack(5,16), beack:1*16?]" 
     runslow = runWith 4 (density 0.5 . (# speed "1.5"))
-    strange = jux (iter 4) $ rev $ loopAt 8 $ (chop 32 $ s "[sometimes]")
+    strange = loopAt 8 $ (chop 32 $ often (const silence) $ s "[sometimes]")
               # vowel "[a e]*4" # speed (scale 1 1.5 rand)
               # gain "1.1"
-
-let now'' = now
-
-do cps 1.2
-   let between s e = when (\t -> t >= s && t < e)
+    in
+do let between s e = when (\t -> t >= s && t < e)
    solo $ d10 $ (nextSam (now''+1)) ~>
      seqP [(0, 128, between 16 128 runslow $ orb0 b),
            (16, 128, orb0 a),
            (16, 128, orb0 strange)
            ]
+
+let now'' = now
