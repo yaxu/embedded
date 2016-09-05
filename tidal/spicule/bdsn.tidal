@@ -30,6 +30,7 @@ let orb0 = (# (room (slow 16 saw1)
           # orbit "1"
     br = brak $ (chop 64 $ sound "[sd8:3@3 sd8:5, sd8*4, drum cp8:2, {~ xx:20 ~ xx:40*2}%2]")
          # orbit "0"
+         # gain "0.9"
 
 let now'' = now'
 
@@ -41,6 +42,7 @@ do cps 1.05
            (48,128, orb1 $ kickpan),
            (16,32, orb1 $ sqr),
            (32,64, orb1 $ off 0.25 (|*| speed "2") $ rev sqr),
+           (64+32,128, orb1 $ off 0.25 (|*| speed "2") $ rev sqr),
            (64,128, orb0 $ br)
           ]
 
