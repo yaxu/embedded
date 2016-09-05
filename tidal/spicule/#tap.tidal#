@@ -8,7 +8,7 @@ let orb0 = (# orbit "0")
     b = slow 2 $ sound "[beack(5,16), beack:1*16?]" 
     runslow = runWith 4 (density 0.5 . (# speed "1.5"))
     strange = loopAt 4 $ (chop 32 $ s "[sometimes]")
-              -- # vowel "[a e]*4" # speed (scale 1 1.5 rand)
+              # vowel "[a e]*4" # speed (scale 1 1.5 rand)
               # gain "1.1"
     in
 do let between s e = when (\t -> t >= s && t < e)
@@ -18,4 +18,4 @@ do let between s e = when (\t -> t >= s && t < e)
            (16, 128, orb0 strange)
            ]
 
-cps 1.1
+let now'' = now
