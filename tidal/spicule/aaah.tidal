@@ -41,7 +41,7 @@ let orb0 = (# (orbit "0"
           # resonance "0.2"
           # cutoff (scale 1000 5000 rand)
           # speed (slow 4 $ scale 0.524 0.7 $ rev saw1)
-          # gain "1.3"
+          # gain "1.1"
   
 let now'' = now' - 28
 
@@ -59,7 +59,8 @@ do cps 1.2
            (48,128, orb1 gab1),
            (64,128, orb1 gab),
            (64,128, orb1 bl),
-           (64,128, orb0 off)
+           (64,128, orb0 off),
+           (64,128, orb0 bd)
           ]
 
 d1 $ P.fadeIn 4 $ sound "bd*8"
