@@ -10,17 +10,18 @@ let orb0 = (# orbit "0")
     strange = loopAt 8 $ (chop 32 $ often (const silence) $ s "[sometimes]")
               # vowel "[a e]*4" # speed (scale 1 1.5 rand)
               # gain "1.1"
+    round = (off 0.25 (|+| n "[12]") $ struct "x(3,8,[0 4]/2)" $ n "[41 42 45]/3" # s "dirty")
+            # resonance "0.3"
+            # cutoff "[500 800]*4"
     in
 do let between s e = when (\t -> t >= s && t < e)
-   solo $ d10 $ (nextSam (now''+1)) ~>
-     seqP [(0, 128, between 16 128 runslow $ orb0 b),
+   d10 $ (nextSam (now''+1)) ~>
+     seqP [(0, 64, between 16 128 runslow $ orb0 b),
            (16, 128, orb0 a),
-           (16, 128, orb0 strange)
+           (16, 128, orb0 strange),
+           (64, 128, orb0 round),
+           (64+32, 128, orb0 b)
            ]
-
-d1 $ (off 0.25 (|+| n "[12]") $ struct "x(3,8,[0 4]/2)" $ n "[41 42 45]/3" # s "dirty")
-  # resonance "0.3"
-  # cutoff "[500 800]*4"
 
 
 
