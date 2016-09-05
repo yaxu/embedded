@@ -18,6 +18,10 @@ do let between s e = when (\t -> t >= s && t < e)
            (16, 128, orb0 strange)
            ]
 
-d1 $ offadd 0.25 () $ struct "x(3,8,[0 2]/2)" $ n "[41 42 45]/3" # s "xx"
+d1 $ (off 0.25 (|+| n "[12]") $ struct "x(3,8,[0 4]/2)" $ n "[41 42 45]/3" # s "dirty")
+  # resonance "0.3"
+  # cutoff "[500 600]/"
+
+
 
 let now'' = now
