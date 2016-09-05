@@ -24,7 +24,6 @@ do cps 1.2
            (64+32, 128, orb0 b)
            ]
 
-now - now''
 
 let now'' = now
 
