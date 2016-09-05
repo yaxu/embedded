@@ -7,10 +7,25 @@ let bdbuild = sound "tok(3,8)"
               # delaytime "0.25"
               # delayfeedback (scale 0 0.9 $ slow 16 saw1)
               # gain "1.1"
+    distxx = jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[~ ~ 20 ~]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
+             # orbit "1"
+             # room "0.9"
+             # size "0.4"
+             # gain "0.9"
+    kickpan = (slow 4 $ substruct "x/2 [~ x/2] x/4 [x/2 ~]" $ juxBy 0.5 rev $ runWith' 4 ((# speed "2") . density 2) $ sound "[bd8:4*8, sd8*4]")
+              # shape (slow 4 $ scale 0.6 0.8 saw1)
+              # crush "6"
+              # cut "-1"
+              # speed "[1,2]"
+              # orbit "1"
+              # gain "0.9"
+
+
 
 do cps 1.05
-   d1 $ (nextSam (now'-1.01)) ~>
-     (bdbuild
-     )
+   d1 $ (nextSam (now'+1)) ~>
+     seqP [(0,128, bdbuild),
+           (16,32, kickpan)
+          ]
 
 
