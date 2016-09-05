@@ -23,7 +23,7 @@ do cps 1.1
 
 d1 $ fadeIn 4 $ sound "bd*8"
 
-
+now
 -- aaah
 cps 1.1
 
