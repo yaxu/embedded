@@ -19,7 +19,7 @@ do let between s e = when (\t -> t >= s && t < e)
      seqP [(0, 64, between 16 128 runslow $ orb0 b),
            (16, 128, orb0 a),
            (16, 128, orb0 strange),
-           (64, 128, orb0 round),
+           (64, 128, superimpose (# speed "1.5") $ orb0 round),
            (64+32, 128, orb0 b)
            ]
 
