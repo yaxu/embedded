@@ -1,0 +1,5 @@
+
+d4 $ never (off 0.25 (# (crush "3" # gain "0.9" # speed "4"))) $ (juxBy 0.5 (4 <~)) $ n (slow 8 $ scan 8) # sound "[voodoo,casio]"
+  # gain "0.9"
+  # orbit "1"
+  # speed "1"
