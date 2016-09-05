@@ -1,4 +1,12 @@
+
+let now'' = now'
   
+do cps 1.1
+   d10 $ (nextSam (now''+1)) ~>
+     seqP [
+          ]
+
+
 -- aaah
 cps 1.1
 
