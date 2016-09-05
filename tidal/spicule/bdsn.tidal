@@ -19,9 +19,12 @@ let bdbuild = sound "tok(3,8)"
               # speed "[1,2]"
               # orbit "1"
               # gain "0.8"
-    mel = (jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f9(3,8) a8(3,8,2) c9(3,8) g8(3,8,4)") # s "xx")
-          # cutoff (slow 4 $ scale 3000 500 sine1)
-          # resonance "0.2"
+    sqr = juxBy 0.25 ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
+          # cutoff "300 400 2000 500"
+          -- # up "[[0 5 7] ! [0 5 7 12] !]/4"
+          # up "[[0 12 7] ! [0 5 19 12] !]/4"
+          |*| speed "0.25"
+          # crush "2"
           # gain "0.8"
           # orbit "1"
 
@@ -29,10 +32,15 @@ let bdbuild = sound "tok(3,8)"
 let now'' = now'
 
 do cps 1.05
-   d1 $ (nextSam (now''+1)) ~>
-     seqP [(0,128, bdbuild),
-           (16,128, kickpan)
+   d10 $ (nextSam (now''+1)) ~>
+     seqP [(0,32, bdbuild),
+           (64,128, bdbuild),
+           (16,128, kickpan),
+           (16,32, sqr),
+           (32,64, rev sqr)
           ]
+
+
 
 
 
