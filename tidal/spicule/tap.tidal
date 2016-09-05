@@ -14,7 +14,8 @@ let orb0 = (# orbit "0")
             # resonance "0.3"
             # cutoff "[500 800]*4"
     in
-do let between s e = when (\t -> t >= s && t < e)
+do cps 1.2
+   let between s e = when (\t -> t >= s && t < e)
    d10 $ (nextSam (now''+1)) ~>
      seqP [(0, 64, between 16 128 runslow $ orb0 b),
            (16, 128, orb0 a),
