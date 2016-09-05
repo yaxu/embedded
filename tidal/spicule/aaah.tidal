@@ -37,11 +37,11 @@ let orb0 = (# (orbit "0"
          # size "0.8"
          # resonance "0.2"
          # cutoff (scale 1000 5000 rand)
-    off = sound "~ [arpy,arpy:3]"
-          # resonance "0.2"
-          # cutoff (scale 1000 5000 rand)
-          # speed (slow 4 $ scale 0.524 0.7 $ rev saw1)
-          # gain "1.1"
+    offy = sound "~ [arpy,arpy:3]"
+           # resonance "0.2"
+           # cutoff (scale 1000 5000 rand)
+           # speed (slow 4 $ scale 0.524 0.7 $ rev saw1)
+           # gain "1.1"
   
 let now'' = now'
 
@@ -59,7 +59,7 @@ do cps 1.2
            (48,128, orb1 gab1),
            (64,128, orb1 gab),
            (64,128, orb1 bl),
-           (64,64+32, orb0 off),
+           (64,64+32, orb0 offy),
            (64,128, orb0 bd),
            (64+32,64+48, orb0 wyatt)
           ]
