@@ -1,4 +1,11 @@
-cps 1.05
+
+
+do cps 1.05
+   d1 $ (nextSam now) ~>
+     (bdbuild
+     )
+
+
 
 let bdbuild = sound "tok(3,8)"
               # room (slow 16 saw1)
