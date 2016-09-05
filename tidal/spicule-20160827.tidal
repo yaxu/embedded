@@ -1,11 +1,13 @@
-d1 $ sound "tok(3,8)"
-  # room (slow 16 saw1)
-  # size (slow 16 saw1)
-  # orbit "0"
-  # delay (slow 16 saw1)
-  # delaytime "0.25"
-  # delayfeedback (scale 0 0.9 $ slow 16 saw1)
-  # gain "1.1"
+cps 1.05
+
+let bdbuild = sound "tok(3,8)"
+              # room (slow 16 saw1)
+              # size (slow 16 saw1)
+              # orbit "0"
+              # delay (slow 16 saw1)
+              # delaytime "0.25"
+              # delayfeedback (scale 0 0.9 $ slow 16 saw1)
+              # gain "1.1"
 
 
 d2 $ jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[~ ~ 20 ~]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
