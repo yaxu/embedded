@@ -8,5 +8,5 @@ let orb0 = (# orbit "0")
 
 do cps 1.2
    solo $ d10 $ (nextSam (now''+1)) ~>
-     seqP [(orb0 $ a, 32, 0)
+     seqP [(orb0 a, 32, 0)
            ]
