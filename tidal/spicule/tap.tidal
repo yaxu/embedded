@@ -12,5 +12,5 @@ do cps 1.2
    let now'' = now
    solo $ d10 $ (nextSam (now''+1)) ~>
      seqP [(0, 128, orb0 b),
-           (16, 128, orb0 a),
+           (16, 128, orb0 a)
            ]
