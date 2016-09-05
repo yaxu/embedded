@@ -6,7 +6,11 @@ let orb0 = (# orbit "0")
     b = slow 2 $ sound "[beack(5,16), beack:1*16?]" 
 
 
+let 
+
 do cps 1.2
+   let now'' = now
    solo $ d10 $ (nextSam (now''+1)) ~>
-     seqP [(orb0 a, 32, 0)
+     seqP [(0, 128, orb0 b),
+           (16, 128, orb0 a),
            ]
