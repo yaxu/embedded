@@ -1,5 +1,5 @@
 
-let slowscan n = slow (toRational n) . scan n
+let slowscan n = (slow (toRational n)) . scan n
 
 d4 $ (slowspread (\x -> off x (# (crush "3" # gain "0.9" # speed "4"))) [0.125,0.25]) $ (juxBy 0.5 (4 <~)) $ n ((+8) <$> (slow 8 $ scan 8)) # sound "[voodoo,future,arpy]"
   # gain "0.9"
