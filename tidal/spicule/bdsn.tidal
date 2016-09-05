@@ -18,14 +18,20 @@ let bdbuild = sound "tok(3,8)"
               # cut "-1"
               # speed "[1,2]"
               # orbit "1"
-              # gain "0.9"
+              # gain "0.8"
+    mel = (jux rev $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 4 $ "f9(3,8) a8(3,8,2) c9(3,8) g8(3,8,4)") # s "xx")
+          # cutoff (slow 4 $ scale 3000 500 sine1)
+          # resonance "0.2"
+          # gain "0.8"
+          # orbit "1"
 
 
+let now'' = now'
 
 do cps 1.05
-   d1 $ (nextSam (now'+1)) ~>
+   d1 $ (nextSam (now''+1)) ~>
      seqP [(0,128, bdbuild),
-           (16,32, kickpan)
+           (16,128, kickpan)
           ]
 
 
