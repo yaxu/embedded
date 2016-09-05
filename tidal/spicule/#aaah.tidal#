@@ -41,9 +41,9 @@ let orb0 = (# (orbit "0"
 
 
   
-let now'' = now' - 18
+let now'' = now' - 28
 
-do cps 1.1
+do cps 1.2
    solo $ d10 $ (nextSam (now''+1)) ~>
      seqP [(0, 32, orb1 bl),
            (4,8, orb1 funky),
@@ -52,8 +52,11 @@ do cps 1.1
            (16,17, orb1 wyatt),
            -- (32,33, orb1 wyatt),
            -- (32,64, orb1 bd),
-           (32,64, orb1 $ when ((< 1) . `mod` 16 (const wyatt) funky),
-           (32,64, orb1 wob)
+           (32,64, orb1 $ when ((< 1) . (`mod` 16)) (const wyatt) funky),
+           (32,128, orb1 wob),
+           (48,128, orb1 gab1),
+           (64,128, orb1 gab),
+           (64,128, orb1 bl)
           ]
 
 d1 $ P.fadeIn 4 $ sound "bd*8"
@@ -85,5 +88,6 @@ d3 $ sound "~ [arpy,arpy:3]"
   # delayfeedback "0.7"
   # resonance "0.2"
   # cutoff (scale 1000 5000 rand)
-  # speed "0.5"
+  # speed "0.53"
+  # gain "1.3"
 
