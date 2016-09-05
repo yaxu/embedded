@@ -1,27 +1,27 @@
 let orb0 = (# (orbit "0"
-            # room (slow 4 saw1)
+               # room (slow 4 saw1))
            )
-
+    orb1 = (# orbit "1")
     pad = (whenmod 16 8 (jux rev) $ up (every 4 ((+ 3) <$>) $ "0 [~ 5 ~] ~ 8") # sound "pad:3")
           # end "0.15"
           # size "0.9"
           # gain "0.9"
 
-
 let now'' = now'
   
 do cps 1.1
    d10 $ (nextSam (now''+1)) ~>
-     seqP [
+     seqP [(0, 32, orb0 pad)
           ]
+
+d3 $ sound "[gabba(3,8), ~ [feel:6 feel:3]]"
+
 
 
 -- aaah
 cps 1.1
 
 
-d3 $ sound "[gabba(3,8), ~ [feel:6 feel:3]]"
-  # orbit "0"
 
 d4 $ whenmod 8 4 (iter 4) $ n (run 8) # s "gabba"
   # speed "[2,1]"
