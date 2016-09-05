@@ -1,10 +1,11 @@
 
-let bdbuild = sound "tok(3,8)"
-              # room (slow 16 saw1)
-              # size (slow 16 saw1)
-              # orbit "0"
-              # delay (slow 16 saw1)
-              # delaytime "0.25"
+let orb0 = (# (room (slow 16 saw1)
+               # size (slow 16 saw1)
+               # orbit "0"
+               # delay (slow 16 saw1)
+               # delaytime "0.25"))
+    orb1 = id
+    bdbuild = orb0 $ sound "tok(3,8)"              
               # delayfeedback (scale 0 0.9 $ slow 16 saw1)
               # gain "1.1"
     distxx = jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[~ ~ 20 ~]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
@@ -34,8 +35,8 @@ let now'' = now'
 
 do cps 1.05
    d10 $ (nextSam (now''+1)) ~>
-     seqP [(0,32, bdbuild),
-           (64,128, bdbuild),
+     seqP [(0,32, orb0 $ bdbuild),
+           (64,128, orbdbuild),
            (16,32, kickpan),
            (48,128, kickpan),
            (16,32, sqr),
