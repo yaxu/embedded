@@ -26,7 +26,7 @@ let orb0 = (# (orbit "0"
 do cps 1.1
    let now'' = now'
    solo $ d10 $ (nextSam (now''+1)) ~>
-     seqP [(0, 32, orb0 pad),
+     seqP [(0, 32, orb1 bl),
            (8,32, orb1 gab),
            (16,32, orb1 gab1)
           ]
