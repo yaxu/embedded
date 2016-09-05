@@ -17,5 +17,6 @@ do cps 1.2
    let between s e = when (\t -> t >= s && t < e)
    solo $ d10 $ (nextSam (now''+1)) ~>
      seqP [(0, 128, between 16 128 runslow $ orb0 b),
-           (16, 128, orb0 a)
+           (16, 128, orb0 a),
+           (16, 128, orb0 strange)
            ]
