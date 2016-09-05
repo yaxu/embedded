@@ -35,9 +35,10 @@ do cps 1.05
    d10 $ (nextSam (now''+1)) ~>
      seqP [(0,32, bdbuild),
            (64,128, bdbuild),
-           (16,128, kickpan),
+           (16,32, kickpan),
+           (48,128, kickpan),
            (16,32, sqr),
-           (32,64, rev sqr)
+           (32,64, off 0.25 (|*| speed "2") $ rev sqr)
           ]
 
 
