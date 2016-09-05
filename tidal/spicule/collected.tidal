@@ -62,7 +62,7 @@ d2 $ jux ((0.125 <~) . iter 4) $ (chop 8 $ loopAt 2 $ sound "sqrpad")
   |*| speed "0.25"
   # crush "5"
   # gain "0.8"
-  
+
 
 d1 $ jux rev $ slow 4 $ note (offadd (-0.125) (7) $ (+60) <$> "c3(3,8) [g3(3,8) a3(3,8)]") # s "dirty"
   # cutoff (slow 3 $ scale 1000 3000 sine1)
@@ -87,18 +87,18 @@ d1 $ jux (iter 4) $ every 2 (chop 16) $ s "amencutup*8" # n (slow 16 $ scan 16)
 d2 $ slow 2 $ jux rev $ iter 4 $ loopAt 4 $ chop 128 $ sound "[shackup]"
   # gain "0.8"
 
-d9 $ sometimes (|+| speed "2") $
+d1 $ sometimes (|+| speed "2") $
   jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
   # nudge "[0 0.04]*4" # shape "0.2"
 
 d1 $ jux rev $ slow 4 $ off (1/4) (|*| speed (scale 0.5 1 sine1)) $ ((chop 16 $ sound "arc")
   # speed (scale 1.5 2 sine1))
 
-d9 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
+d1 $ jux (rev) $ slow 2 $ ghost $ sound "drum [feel:1 ~ ~ mt8:5] [~ drum] [~ [voodoo ~ voodoo:4 mt8:3]]" # resonance (scale 0.4 0.5 tri1) # cutoff "3000"  # shape "0.6"
 
-d9 $ jux rev $ runWith 2 (density 2) $ iter 4 $ loopAt 8 $ chop 32 $ sound "shakedown"
+d1 $ jux rev $ runWith 2 (density 2) $ iter 4 $ loopAt 8 $ chop 32 $ sound "shakedown"
 
-d9 $ (inside 0.5 (jux rev) $ slowcat [jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[bd8:6(3,8), ht8([5 2]/2,8,4)]",
+d1 $ (inside 0.5 (jux rev) $ slowcat [jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[bd8:6(3,8), ht8([5 2]/2,8,4)]",
                                      jux (iter 4 . rev) $ slowspread (chop) [8,16,32,64] $ sound "[future:2(3,8) voodoo*2]"
                                      ])
 
