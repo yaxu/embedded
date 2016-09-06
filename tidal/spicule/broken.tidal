@@ -29,3 +29,15 @@ d6 $ slow 2 $ chop 8 $ s "[lt8*2 lt8*4]/2 mt8*3"
   # crush "5" # speed "4"
 
 
+
+d7 $ slow 2 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] mt8] [sd8:3 sd8:5*2] lt8:4} [sd8:3 ~ sd8:4] {lt ht, rs8*2 ch ch:3}"
+  # orbit "1"
+  # gain "1.1"
+
+
+d1 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound "[drum future]/2([3 5]/2,8)"
+  # gain "1.1"
+  # crush "7"
+  # vowel "a i o u"
+
+d3 $ n "0 [1 ~ 2]" # s "[wobble,drum,future]"
