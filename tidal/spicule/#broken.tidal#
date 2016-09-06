@@ -1,9 +1,9 @@
 
-d4 $ stut' 4 0.5 ((|*| speed "[0.9 1.1]/8") . (|*| gain "0.9")) $ jux rev $ off 0.25 (# (gain "0.9" # speed "2")) $ jux (4 <~) $ n (slow 4 $ scan 4) # sound "[ht8]"
+d4 $ stut' 4 0.5 ((|*| speed "[0.9 1.1]/8") . (|*| gain "0.9")) $ off 0.25 (# (gain "0.9" # speed "2")) $ jux (4 <~) $ n (slow 16 $ scan 8) # sound "[ht8]"
   # gain "0.9"
   # orbit "0"
   # speed "1.5"
-  # begin "0.01"
+  # begin "0.02"
 
 d1 $ slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
   # speed "4"
