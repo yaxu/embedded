@@ -2,6 +2,6 @@
 d4 $ off 0.25 (# (gain "0.9" # speed "2")) $ jux (4 <~) $ n (slow 4 $ scan 4) # sound "[mt8,ht8]"
   # gain "0.9"
   # orbit "1"
-  # speed "1"
-
+  # speed "1.5"
+  # begin "0.01"
 
