@@ -22,6 +22,8 @@ d3 $ (slow 4 $ up "0 [[5 7 [0 12]/2 ~] [7 5 3]]/2" # sound "[bass3:3, future]")
 d5 $ jux rev $ (n (offadd 0.25 12 $ offadd 0.125 (-5) $ slow 8 $ "0*2 [5*2 ~ 7 0] -12(3,8) [7*2 5*2 3*2]") # s "xx" |+| n "cs9")
   # cutoff (slow 4 $ scale 1000 2000 sine1)
   # resonance "0.3"
+  # begin "0.3"
+  # crush "3"
 
 d6 $ slow 2 $ chop 8 $ s "[lt8*2 lt8*4]/2 mt8*3"
   # crush "5" # speed "4"
