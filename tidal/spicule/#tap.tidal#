@@ -1,0 +1,28 @@
+
+let orb0 = (# orbit "0")
+    a = iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+            # speed "[1,[1.5 2]/2]"
+            # shape "0.8"
+            # cutoff "2000"
+            # resonance "0.3"
+    b = slow 2 $ sound "[odx(5,16), beack:1*16?]" 
+    runslow = runWith 4 (density 0.5 . (# speed "1.5"))
+    strange = loopAt 8 $ (chop 32 $ often (const silence) $ s "[sometimes]")
+              # vowel "[a e]*4" # speed (scale 1 1.5 rand)
+              # gain "1.1"
+    round = (off 0.25 (|+| n "[12]") $ struct "x(3,8,[0 4]/2)" $ n "[41 42 45]/3" # s "dirty")
+            # resonance "0.3"
+            # cutoff "[500 800]*4"
+    in
+do cps 1.2
+   let between s e = when (\t -> t >= s && t < e)
+   d10 $ (nextSam (now''+1)) ~>
+     seqP [(0, 64, between 16 128 runslow $ orb0 b),
+           (16, 128, orb0 a),
+           (16, 128, orb0 strange),
+           (64, 96, superimpose (# speed "1.5") $ orb0 round),
+           (64+32, 128, orb0 b)
+           ]
+
+let now'' = now
+
