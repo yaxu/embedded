@@ -5,7 +5,7 @@ d4 $ stut' 4 0.5 ((|*| speed "[0.9 1.1]/8") . (|*| gain "0.9")) $ off 0.25 (# (g
   # speed "1.5"
   # begin "0.04"
 
-d1 $ slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
+d10 $ slow 2 $ jux (rev . chop 8) $ slow 4 $ sound "future:3*3 ~ future:6*2 ~"
   # speed "4"
   # room "0.7"
   # size "0.8"
