@@ -20,7 +20,9 @@ d3 $ (slow 4 $ up "0 [[5 7 [0 12]/2 ~] [7 5 3]]/2" # sound "[bass3:3, future]")
   # resonance "0.3"
   |*| speed "4"
 
-d4 $ n "a8" # s "xx"
+
+
+d4 $ n (offadd 0.125 12 $ offadd 0.125 7 $ slow 2 $ "0 [5 7 0]") # s "xx" |+| n "cs8"
 
 d3 $ slow 2 $ chop 8 $ s "[lt8*2 lt8*4]/2 mt8*3"
   # crush "5" # speed "4"
