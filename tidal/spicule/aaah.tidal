@@ -64,7 +64,7 @@ do cps 1.2
            (64+32,64+48, orb0 wyatt)
           ]
 
-now
+
 -- aaah
 cps 1.1
 
