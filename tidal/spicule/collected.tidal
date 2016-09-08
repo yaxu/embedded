@@ -139,7 +139,7 @@ d1 $ palindrome $ chop 2 $ loopAt (1/2) $ sound "bd8:3 wobble"
   # speed "[4 5]/5"
   # gain "1.1"
 
-d2 $ jux rev $ runWith 4 (rev . chop 4) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
+d1 $ jux rev $ runWith 4 (rev . chop 4) $ off 0.25 (# crush "4") $ off 0.125 (# speed "2") $ s "claus [~ claus]" # n (irand 16)
 
 d1 $ jux rev $ every 4 (slow 1.5) $ off 0.25 (|*| speed "2") $ sound "gabba [[gabba ht lt] gabba]@3"
   # speed "2" # end "0.2" # gain "0.8" # delay "0.4" # delaytime (slow 2 $ scale 0.01 0.02 sine1)
@@ -241,14 +241,14 @@ d1 $ (n (-- offadd 0.125 7 $ offadd 0.125 3 $
   # cutoff (slow 4 $ scale 1000 3000 sine1)
   # crush "6"
 
-d2 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
+d1 $ off 0.125 (|*| up "7") $ off 0.25 (# up "3") $ sound "sb*2 [sb*2@3] sb"
   |*| up "[0 [1 [3 -1]/2]]/4"
   # gain "1.1"
   |*| speed "[1,0.5]"
 
 -- compound
 
-d2 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
+d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # cutoff (scale 1000 3000 saw1)
                      # resonance "0.3",
                      jux rev $ slow 4 $ chop 16 $ sound "paper"
@@ -258,7 +258,7 @@ d2 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
                      # hcutoff "2000"
                     ]
 
-d2 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
+d1 $ stack [runWith 4 ((# shape "0.4") . (# vowel "a") . density 2) $ slow 2 $ sound "[[mt8 ~ mt8] bd8:4] [[~ ht8] bd8:4]"
             # cutoff "1000" # gain "1.1"
             # resonance "0.3" # crush "3" # end "0.4"
             # speed "2",
@@ -281,7 +281,7 @@ d5 $ jux (|*| speed "-1") $ off 0.125 (# speed "1.5") $ off 0.25 (# speed "1.5")
 
 -- basslines
 
-d2 $ stack [iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
+d1 $ stack [iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd8:4 [~ lt8:3] ~"
             # speed "[1,2]"
             # shape "0.8"
             # orbit "0",
@@ -289,7 +289,7 @@ d2 $ stack [iter 4 $ jux (0.5 <~) $ slow 2 $ ghost $ sound "bd8:4 ~ ~ bd8:4 ~ sd
             # orbit "0"
            ]
 
-(d4 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
+(d1 $ never (|*| up "[12,7]") $ rarely (stut 3 0.5 1.75) $ every 3 (struct "x [x x] x") $ sound "ravebass*8" # n (slow 4 $ run 4)
   # shape "0.6"
   # speed "[1 2 3 2]/3"
   # cutoff (slow 8 $ scale 1000 3000 saw1)
