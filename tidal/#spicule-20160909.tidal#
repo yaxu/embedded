@@ -1,5 +1,7 @@
--- 9/09 = 909 day
+-- happy 909 day
 
--- getting ready..
+d1 $ (runWith 4 (density 1.5) $ sound "[bd9*4, rs9*2]")
+  # speed (slow 4 $ scale 1 2 saw1)
+  # n (slow 12 $ run 8)
 
-d1 $ sound "bd9"
+d2 $ sound "~ oh9"
