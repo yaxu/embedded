@@ -43,4 +43,9 @@ d5 $ slow 2 $ (jux rev $ up (offadd (1/8) 12 $ offadd (1/16) 7 $ slow 4 $ palind
 
 
 
-d1 $ sound "bd9"
+
+cps 0.7
+
+d1 $ sound "[[bd9 ht9 ~] [lt9:3 [~ lt9:2]], bd9!3 bd9:1*3]"
+
+d2 $ sound "~ cp9"
