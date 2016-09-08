@@ -4,7 +4,10 @@ d1 $ (runWith 4 (density 1.5) $ chop 8 $ sound "[bd9*4, rs9*2]")
   # speed (slow 4 $ scale 1 2 sine1)
   # n (slow 12 $ run 8)
 
-d2 $ juxcut (rev) $ every 2 (density 2) $ sound "hh9*2 oh9"
+d2 $ every 2 (density 2) $ sound "hh9*2 oh9"
   # speed "1.5"
-  # cutoff "2000"
-  # resonance "0.2"
+  # cutoff "4000"
+  # cut "-1"
+
+d3 $ runWith 4 ((# crush "5") . density 0.5) $ sound "bd9:6(3,8)"
+  # shape "0.8"
