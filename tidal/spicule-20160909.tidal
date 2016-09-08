@@ -1,5 +1,7 @@
 -- happy 909 day
 
+-- thanks for listening, iwll likely have another go later on see you
+
 d1 $ (runWith 4 (density 1.5) $ stut 2 0.9 0.5 $ slowspread (chop) [8,64,32] $ sound "[bd9*4, rs9*2]")
   -- # speed (slow 4 $ scale 1 0.5 sine1)
   # n (slow 12 $ run 8)
