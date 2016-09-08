@@ -30,6 +30,10 @@ d4 $ sound "bd9*4? [cr9 [~ cr9]]/2"
            )
   # resonance "0.2"
  
-d5 $ jux rev $ up (offadd 0.25 7 $ slow 4 $ "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9:2"
-  # gain "1.1" |*| speed "0.5"
+d5 $ slow 2 $ (jux rev $ up (offadd 0.25 7 $ slow 4 $ "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9")
+  # gain "0.9" |*| speed "0.5"
+  # orbit "1"
+  # room "0.3"
+  # resonance "0.3"
+  # cutoff (slow 4 $ scale 1000 3000 sine1)
 
