@@ -1,8 +1,8 @@
-d8 $ stack  [slow 2 $ n (slowspread (offadd 0.25) [7,12,-5] "d3 ~ [e2 g3? e2] ~ ") # s "xx"
+d8 $ stack  [slow 2 $ n (slowspread (offadd 0.25) [7,12,-5] "d9 ~ [e8 g9? e8] ~ ") # s "xx"
              # room "0.8"
              # size "0.7"
              # orbit "1",
-             slow 4 $ 0.5 <~ (slow 4 $ jux rev $ n (slowspread (offadd 0.125) [12,-5] ((+12) <$> "d2 ~ [e2 g3? e2] ~")) # s "xx"
+             slow 4 $ 0.5 <~ (slow 4 $ jux rev $ n (slowspread (offadd 0.125) [12,-5] ((+12) <$> "d8 ~ [e8 g9? e8] ~")) # s "xx"
              # room "0.8"
              # size "0.7"
              # orbit "1"
