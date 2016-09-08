@@ -4,9 +4,10 @@ d1 $ (runWith 4 (density 1.5) $ stut 2 0.9 0.5 $ slowspread (chop) [8,64,32] $ s
   -- # speed (slow 4 $ scale 1 0.5 sine1)
   # n (slow 12 $ run 8)
   # orbit "1"
-  # room "0.3"
-  # size "0.6"
+  # room "0.8"
+  # size "0.8"
   # gain "0.9"
+
 
 d2 $ stack [whenmod 16 8 (const silence) $ every 4 (density 1.5) $ sound "{hh9*2 oh9}"
             # speed "1.5"
@@ -29,10 +30,12 @@ d4 $ sound "bd9*4? [cr9 [~ cr9]]/2"
            )
   # resonance "0.2"
 
-d5 $ slow 2 $ (jux rev $ up (offadd 0.25 7 $ slow 4 $ palindrome "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9")
+d5 silence
+
+d5 $ slow 2 $ (jux rev $ up (offadd (1/8) 12 $ offadd (1/16) 7 $ slow 4 $ palindrome "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9")
   # gain "0.9" |*| speed "[0.25,0.5,1.5]"
   # orbit "1"
   # room "0.6"
   # resonance "0.3"
-  # cutoff (slow 4 $ scale 1000 3000 sine1)
+  # cutoff (slow 4 $ scale 1000 7000 sine1)
 
