@@ -8,7 +8,7 @@ d1 $ (runWith 4 (density 1.5) $ stut 4 0.9 0.5 $ slowspread (chop) [8,64,128] $ 
   # size "0.6"
   # gain "0.9"
 
-d2 $ stack [every 4 (density 1.5) $ sound "{hh9*2 oh9}"
+d2 $ stack [whenmod 16 8 (const silence) $ every 4 (density 1.5) $ sound "{hh9*2 oh9}"
             # speed "1.5"
             # cut "1" # gain "0.9",
             every 2 (density 2) $ sound "{lt9*2 mt9 ht9*3}%2"
