@@ -7,7 +7,7 @@ let orb0 = (# orbit "0")
             # resonance "0.3"
     b = slow 2 $ sound "[odx(5,16), beack:1*16?]" 
     runslow = runWith 4 (density 0.5 . (# speed "1.5"))
-    strange = loopAt 8 $ (chop 32 $ often (const silence) $ s "[sometimes]")
+    strange = loopAt 8 $ (chop 32 $ s "[sometimes]")
               # vowel "[a e]*4" # speed (scale 1 1.5 rand)
               # gain "1.1"
     round = (off 0.25 (|+| n "[12]") $ struct "x(3,8,[0 4]/2)" $ n "[41 42 45]/3" # s "dirty")
