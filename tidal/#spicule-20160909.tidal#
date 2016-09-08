@@ -51,11 +51,12 @@ d1 $ slowspread (stut 2 0.25) [0.25,0.5,0.75] $ sound "[[bd9 ht9 ~] [lt9:3 [~ lt
    # gain "0.9"
   # orbit "0"
 
-d2 $ sound "cp9(3,8,[0 2 4 6]/4)"
-  # speed "4 3"
+d2 $ sometimes (rev . chop 128) $ foldEvery [5,7] (density 2) $ sound "rs9(3,8,[0 2 4 6]/4)"
+  # speed "4 0.9"
   # orbit "1"
   # room "0.4"
-  # size "0.95"
+  # size "0.3"
+  # gain "0.7"
 
 
 d3 $ juxBy 0.5 rev $ off 0.25 (|*| up "{7 12 -5}%1") $ sound "bass3:6(3,8)" |*| up "[0 3 7 5]/4"
