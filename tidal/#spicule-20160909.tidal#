@@ -1,0 +1,30 @@
+-- happy 909 day
+
+d1 $ (runWith 4 (density 1.5) $ stut 4 0.9 0.5 $ slowspread (chop) [8,64,128] $ sound "[bd9*4, rs9*2]")
+  -- # speed (slow 4 $ scale 1 0.5 sine1)
+  # n (slow 12 $ run 8)
+  # orbit "1"
+  # room "0.3"
+  # size "0.6"
+  # gain "0.9"
+
+d2 $ stack [whenmod 16 8 (const silence) $ every 4 (density 1.5) $ sound "{hh9*2 oh9}"
+            # speed "1.5"
+            # cut "1" # gain "0.9",
+            every 2 (density 2) $ sound "{lt9*2 mt9 ht9*3}%2"
+            # speed "1.5"
+            # orbit "0"
+            # shape "0.5"
+           ]
+  # orbit "0"
+
+d3 $ runWith 4 ((# crush "5") . density 0.5) $ sound "bd9:6(3,8)"
+  # shape "0.8"
+  # orbit "0"
+
+d4 $ jux (|*| speed "[2 1.5]/2") $ sound "bd9*4? [cr9 [~ cr9]]/2"
+  # crush "2"
+  # speed "0.8"
+  # cutoff (do n <- slow 4 $ scale 600 1000 saw1)
+  # resonance "0.4"
+ 
