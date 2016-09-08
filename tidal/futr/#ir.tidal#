@@ -16,14 +16,15 @@ d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4
             # orbit "1"
            ]
 
-solo $ 
-d2 $ ((slow 4 $ n (offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "[-12 -10 -5]/8")
+d2 $ jux rev $ ((slow 4 $ n (offadd (1/32) (-12) $ offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "xx") |+| n "[-12 -10 -5]/8")
   # vowel "a e i o u"
   # cutoff (slow 4 $ scale 1000 6000 sine1)
   # resonance "0.2"
 
+
+
 d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
-  # cutoff "30000"
+  # cutoff "500"
   # resonance "0.3"
   # shape "0.5"
   # orbit "2") |+| pan (slow 8 saw1)
