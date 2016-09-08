@@ -25,8 +25,9 @@ d7 $ runWith' 4 ((# speed "2") . density 2) $ jux rev $ begin "0 0.02*3 0.04*2 [
   # cut "-1"
   # gain "1.2"
 
-
-
+d9 $ ghost $ sound "bd9:2*3"
+  # gain "1.4"
+  |*| speed "1.01"
 
 d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
   # cutoff "1000"
