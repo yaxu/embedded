@@ -16,16 +16,23 @@ d1 $ slow 2 $ stack [jux' [rev, iter 4, density 2, id] $ palindrome $ n "[[4 ~ 4
             # orbit "1"
            ]
 
-d2 $ jux rev $ ((slow 4 $ n (offadd (1/32) (-12) $ offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "[xx,dirty]") |+| n "[-12 -10 -5]/8")
+d2 $ slow 2 $ jux rev $ ((slow 4 $ n (offadd (1/32) (-12) $ offadd 0.125 7 "c4*3 f3(3,8) g4*3 e3(3,8)") # s "[xx,dirty]") |+| n "[-12 -10 -5]/8")
   # vowel "a e i o u"
   # cutoff (slow 4 $ scale 500 6000 sine1)
   # resonance "0.2"
 
+d7 $ runWith' 4 ((# speed "2") . density 2) $ jux rev $ begin "0 0.02*3 0.04*2 [0.01 0.002]" # sound "claus claus:2"
+  # cut "-1"
+  # gain "1.2"
+
+
 d6 $ (jux' [rev, iter 4, id, (# speed "2") . (density 2)] $ slow 2 $ chop 8 $ sound "[breaks165]" # unit "c" # speed "0.5"
-  # cutoff "500"
+  # cutoff "1000"
   # resonance "0.3"
   # shape "0.5"
   # orbit "2") |+| pan (slow 8 saw1)
+
+
 
 d7 $ (superimpose ((# speed "4") . density 2) $ every 4 (density 2) $ every 3 (# speed "0.75") $ (sound "wobble off*2")
   # gain "0.9") |+| pan rand
