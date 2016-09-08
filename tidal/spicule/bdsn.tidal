@@ -7,7 +7,7 @@ let orb0 = (# (room (slow 16 saw1)
     orb1 = id
     bdbuild = orb0 $ sound "tok(3,8)"              
               # delayfeedback (scale 0 0.9 $ slow 16 saw1)
-              # gain "1.1"
+              # gain "1.2"
     distxx = jux rev $ (off 0.125 (# crush "5") $ chop 16 $ slow 4 $ n "[~ ~ 20 ~]/4" # s "xx") # nudge (slow 8 sine1) # crush "3" 
              # orbit "1"
              # room "0.9"
@@ -35,7 +35,6 @@ let orb0 = (# (room (slow 16 saw1)
              # shape "0.5"
 
 
-let now'' = now'
 
 do cps 1.05
    d10 $ (nextSam (now''+1)) ~>
@@ -48,10 +47,14 @@ do cps 1.05
            (32+16,64, orb1 $ off 0.5 (|*| speed "2") $ rev sqr),
            (64,96, orb1 $ off 0.25 (|*| speed "2") $ sqr),
            (32+16,96, orb0 $ br),
-           (64,96, orb1 updown)
+           (64,96, orb1 updown),
+           (96,128+32, orb1 bdbuild),
+           (96,128+32, orb1 $ off 0.25 (|*| speed "1") $ sqr),
+           (128,128+32, orb1 $ off 0.25 (|*| speed "1") $ distxx)
           ]
 
 
 
 
 
+let now'' = now'
