@@ -1,6 +1,6 @@
 -- happy 909 day
 
-d1 $ (runWith 4 (density 1.5) $ stut 2 0.9 0.5 $ slowspread (chop) [8,64,128] $ sound "[bd9*4, rs9*2]")
+d1 $ (runWith 4 (density 1.5) $ stut 2 0.9 0.5 $ slowspread (chop) [8,64,32] $ sound "[bd9*4, rs9*2]")
   -- # speed (slow 4 $ scale 1 0.5 sine1)
   # n (slow 12 $ run 8)
   # orbit "1"
@@ -29,7 +29,7 @@ d4 $ sound "bd9*4? [cr9 [~ cr9]]/2"
            )
   # resonance "0.2"
  
-d5 $ slow 2 $ (jux rev $ up (offadd 0.25 7 $ slow 4 $ "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9")
+d5 $ slow 2 $ (jux rev $ up (offadd 0.25 7 $ slow 4 $ palindrome "0(5,8) 5(3,8) 7(3,8) 12(5,8)") |*| sound "rs9")
   # gain "0.8" |*| speed "0.5"
   # orbit "1"
   # room "0.3"
