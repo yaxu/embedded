@@ -7,6 +7,5 @@ d1 $ slow 4 $
 
 loopTime t p =
 
-letloopFirst p = Pattern f
-  where f a@(s,e) -> arc p (mapArc a (subtract (sam s)))
-          
+let loopFirst p = Pattern f
+      where f a@(s,e) = mapFst' $ arc p (mapArc (subtract (sam s)) a)
