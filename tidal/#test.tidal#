@@ -7,4 +7,6 @@ d1 $ slow 4 $
 
 loopTime t p =
 
-loopFirst p = Pattern $ \(s,e) -> arc (cyclepos s, e - (s - (cyclepos s))) p
+letloopFirst p = Pattern f
+  where f a@(s,e) -> arc p (mapArc a (subtract (sam s)))
+          
