@@ -7,4 +7,4 @@ d1 $ slow 4 $
 
 loopTime t p =
 
-loopFirst p = 
+loopFirst p = \t -> 
