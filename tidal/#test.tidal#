@@ -12,6 +12,8 @@ loopTime t p =
 let loopFirst p = Pattern f
       where f a@(s,e) = mapSnds' (mapArc (+ (sam s))) $ mapFsts' (mapArc (+ (sam s))) $ arc p (mapArc (subtract (sam s)) a)
 
+
+
 let s = 4.1
     e = 4.5
 
