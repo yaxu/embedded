@@ -39,6 +39,8 @@ d5 $ stack [slow 2 $ (jux rev $ up (offadd (1/8) 12 $ offadd (1/16) 7 $ slow 4 $
              # gain "0.9"
             ]
 
+-- goodnight internet
+
 {-
 clockedTick 1 f
 let f tempo tick = putStrLn "ping"
