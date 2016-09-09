@@ -15,7 +15,7 @@ let loopFirst p = splitQueries $ Pattern f
                     plus = mapArc (+ (sam s))
     outside n = inside (1/n)
     timeLoop n = outside n loopFirst
-    seqPLoop ps = mapSnds'
+    seqPLoop ps = timeLoop (maximum map (\_ x _ -> x) ) ps $ seqP ps
 
 :t seqP
 
