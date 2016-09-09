@@ -7,14 +7,16 @@ d1 $ slow 4 $
 
 loopTime t p =
 
- import Sound.Tidal.Utils
+import Sound.Tidal.Utils
 
 let loopFirst p = splitQueries $ Pattern f
       where f a@(s,e) = mapSnds' plus $ mapFsts' plus $ arc p (minus a)
               where minus = mapArc (subtract (sam s))
                     plus = mapArc (+ (sam s))
     outside n = inside (1/n)
-    loopTime n p = outside n $ loopFirst p
+    timeLoop n = outside n loopFirst
+    seqPLoop ps = timeLoop (maximum $ map (\(_,x,_) -> x) ps) $ seqP ps
+
 
 
 let p = "[1 2 3 4 5 6 7 8]/8" :: Pattern Int
