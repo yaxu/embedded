@@ -10,7 +10,12 @@ loopTime t p =
  import Sound.Tidal.Utils
 
 let loopFirst p = Pattern f
-      where f a@(s,e) = splitQumapSnds' (mapArc (+ (sam s))) $ mapFsts' (mapArc (+ (sam s))) $ arc p (mapArc (subtract (sam s)) a)
+      where f a@(s,e) = mapSnds' (mapArc (+ (sam s))) $ mapFsts' (mapArc (+ (sam s))) $ arc p (mapArc (subtract (sam s)) a)
+
+let s = 4.1
+    e = 4.5
+
+let p = Patter arc ("[1 2 3]/3" :: Pattern Int) (mapArc (subtract (sam s)) (s,e)) 
 
 subtract (sam 3.3) (3.3)
 
