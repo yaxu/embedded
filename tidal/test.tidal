@@ -17,6 +17,8 @@ let loopFirst p = splitQueries $ Pattern f
     timeLoop n = outside n loopFirst
     seqPLoop ps = timeLoop (maximum $ map (\(_,x,_) -> x) ps) $ seqP ps
 
+:t seqPLoop
+
 
 d1 $ seqPLoop [(0,2,sound "bd*2"),
                (2,4, sound "cp arpy"),
