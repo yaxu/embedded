@@ -7,5 +7,11 @@ d1 $ slow 4 $
 
 loopTime t p =
 
+ import Sound.Tidal.Utils
+
 let loopFirst p = Pattern f
-      where f a@(s,e) = mapFst' $ arc p (mapArc (subtract (sam s)) a)
+      where f a@(s,e) = splitQumapSnds' (mapArc (+ (sam s))) $ mapFsts' (mapArc (+ (sam s))) $ arc p (mapArc (subtract (sam s)) a)
+
+subtract (sam 3.3) (3.3)
+
+density 3 $ loopFirst "[1 2 3]/3"
