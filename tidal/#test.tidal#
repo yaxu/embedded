@@ -15,7 +15,7 @@ let loopFirst p = Pattern f
 let s = 4.1
     e = 4.5
 
-let p = Pattern $ \(s,e) -> arc ("[1 2 3]/3" :: Pattern Int) (mapArc (subtract (sam s)) (s,e)) 
+let p = Pattern $ \(s,e) -> arc (slow 4 $ run 4) (mapArc (subtract (sam s)) (s,e)) 
 
 density 2 $ p
 
