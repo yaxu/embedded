@@ -5,3 +5,24 @@ d1 $ slow 4 $
 
   
 
+loopTime t p =
+
+ import Sound.Tidal.Utils
+
+let loopFirst p = splitQueries $ Pattern f
+      where f a@(s,e) = mapSnds' plus $ mapFsts' plus $ arc p (minus a)
+              where minus = mapArc (subtract (sam s))
+                    plus = mapArc (+ (sam s))
+
+
+
+let s = 4.1
+    e = 4.5
+
+let p = Pattern $ \(s,e) -> arc (slow 4 $ run 4) (mapArc (subtract (sam s)) (s,e)) 
+
+density 2 $ p
+
+subtract (sam 3.3) (3.3)
+
+density 3 $ loopFirst "[1 2 3]/3"
