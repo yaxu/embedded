@@ -44,3 +44,11 @@ density 2 $ p
 subtract (sam 3.3) (3.3)
 
 density 3 $ loopFirst "[1 2 3]/3"
+
+let loopFirst p = splitQueries $ Pattern f
+      where f a@(s,e) = mapSnds' plus $ mapFsts' plus $ arc p (minus a)
+              where minus = mapArc (subtract (sam s))
+                    plus = mapArc (+ (sam s))
+    outside n = inside (1/n)
+    timeLoop n = outside n loopFirst
+    seqPLoop ps = timeLoop (maximum $ map (\(_,x,_) -> x) ps) $ seqP ps
