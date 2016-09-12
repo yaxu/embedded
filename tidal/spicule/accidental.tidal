@@ -19,5 +19,5 @@ d1 $ every 2 (slow 1.5) $ gap 16 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ slow
   # cutoff (slow 4 $ scale 1000 5000 saw1)
   # speed "[4,4.05]"
 
-d2 $ every 2 (within (0,0.25) (rev . density 2)) $ jux rev $ loopAt 4 $ chop 16 $ sound "shakedown"
+d4 $ every 2 (within (0,0.25) (rev . density 2)) $ jux rev $ loopAt 4 $ chop 16 $ sound "shakedown"
   # shape "0.6"
