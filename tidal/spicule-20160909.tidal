@@ -1,4 +1,4 @@
-
+solo $ 
 d1 $ (runWith 4 (density 1.5) $ stut 2 0.9 0.5 $ slowspread (chop) [8,64,32] $ sound "[bd9*4, rs9*2]")
   -- # speed (slow 4 $ scale 1 0.5 sine1)
   # n (slow 12 $ run 8)
@@ -39,7 +39,6 @@ d5 $ stack [slow 2 $ (jux rev $ up (offadd (1/8) 12 $ offadd (1/16) 7 $ slow 4 $
              # gain "0.9"
             ]
 
--- goodnight internet
 
 {-
 clockedTick 1 f
