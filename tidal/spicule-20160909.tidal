@@ -40,11 +40,6 @@ d5 $ stack [slow 2 $ (jux rev $ up (offadd (1/8) 12 $ offadd (1/16) 7 $ slow 4 $
             ]
 
 
-{-
-clockedTick 1 f
-let f tempo tick = putStrLn "ping"
--}
-
 cps 0.6
 
 d1 $ slowspread (stut 2 0.25) [0.25,0.5,0.75] $ sound "[[bd9 ht9 ~] [lt9:3 [~ lt9:2]], bd9!3 bd9:1*3]"
