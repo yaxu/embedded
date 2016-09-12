@@ -36,3 +36,19 @@ d3 $ every 2 (|+| speed "1") $ jux (rev) $ runWith 4 (density 2) $ n "0 1(3,8) 2
 d2 $ runWith 4 (slowspread (density) [0.5,2]) $ (chop 32 $ sound "[glitch:5,bd](3,8,0)")
   # shape "0.6"
   # crush (choose [1,2,3,4])
+
+--
+
+d3 $ jux rev $ weave 16 (shape $ scale 0 0.96 tri1)
+  [sound "ravebass:10 [~ ravebass:9 ravebass:12]",
+   sound "ravebass:10*2 [~ ravebass:14 ravebass:12]" # speed "2",
+   sound "bd [cp8 sd8:3*2]"
+  ]|*| up ("[0 7 5 3 5 7 0 3]/8")
+  # end "0.3"
+
+d4 $ jux rev $ weave 8 (palindrome $ sound "arpy arpy:1 arpy:2 arpy:3 arpy:4 arpy:5 arpy:6 arpy:7")
+  [vowel "a e i",
+   vowel "a i o*2 u",
+   speed "1 2*2 3",
+   speed "1 2 3 2"
+  ]
