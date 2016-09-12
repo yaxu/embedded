@@ -1,3 +1,5 @@
+-- just plugging things in..
+
 d1 $ seqPLoop [(0,2,sound "bd"),
                (2,4,sound "sn")
               ]
