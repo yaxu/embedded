@@ -52,3 +52,6 @@ let loopFirst p = splitQueries $ Pattern f
     outside n = inside (1/n)
     timeLoop n = outside n loopFirst
     seqPLoop ps = timeLoop (maximum $ map (\(_,x,_) -> x) ps) $ seqP ps
+
+seqPLoop [(2,3, "a"), (3, 4, "b" :: Pattern String)]
+
