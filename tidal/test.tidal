@@ -55,3 +55,4 @@ let loopFirst p = splitQueries $ Pattern f
 
 density 3 $ seqPLoop [(2,4, "a"), (3, 5, "b" :: Pattern String)]
 
+d1 $ sound "bd"
