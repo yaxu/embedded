@@ -1,0 +1,17 @@
+-- hope you're receiving ok there internet
+
+-- seqPLoop is a new thing, you just give start and stop cycle numbers
+-- for each pattern, a way of sequencing patterns in a repeating structure
+
+d1 $ jux rev $ seqPLoop [(0,4,sound "bd8:3 ~ bd8:3"),
+                         (4,8,sound "sd8:2(3,8)"),
+                         (0,8,sound "~ [~ sd8:3]"),
+                         (1,3,sound "tok(5,8)")
+                        ]
+
+d2 $ seqPLoop [(0, 3, jux rev $ chop 8 $ n "c8" # s "xx"
+                      # cutoff "200"
+                      # resonance "0.3"
+               ),
+               (3,5, s "cp8")
+              ]
