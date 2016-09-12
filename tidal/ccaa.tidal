@@ -110,7 +110,7 @@ d2 $ stack [runWith 4 (density 2) $ jux ((# speed "1.5") . (0.5 <~) . (every 2 r
             # gain "0.8"
            ]
   # orbit "2"
-b
+
 d3 $ jux (iter 4) $ slow 2 $ rev $ slowspread (chop) [8,16,32] $ sound "[bd [bd*2 cp8]] cp8"
   # orbit "1"
 
