@@ -15,10 +15,12 @@ d2 $ seqPLoop [(0, 8, jux rev $ (chop 8 $ n ((+) <$> "c8 e9" <*> "{0 5 7 5}%1") 
                (0, 8, jux rev $ (chop 4 $ n ((+) <$> "c9 e10 g9" <*> "{0 5 7 5}%1") # s "xx")
                       # cutoff (slow 4 $ scale 2000 200 saw1)
                       # resonance "0.2"
-               ),
+               )
+               ]
+
+d3 $ seqPLoop [
                (8,32, sound "rs8([3 5]/2,8)"),
-               (8,32, juxBy 0.25 rev $ off 0.75 (# up "{12 3 5 7}%1") $ off 0.25 (# up "7") $ sound "jvbass:4 ~ jvbass:9"
-                      # shape "0.6"
+               (8,32, slow 2 $ juxBy 0.25 rev $ off 0.75 (|*| up "{12 3 5 7}%1") $ off 0.25 (|*| up "7") $ sound "casio:0(3,8) casio:1*2" |*| speed "0.25" |*| gain "0.9"
                )
               ]
 
