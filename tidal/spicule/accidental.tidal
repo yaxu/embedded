@@ -5,10 +5,11 @@ d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0
   # size "0.5" |*| speed "0.25"
   # room "0.65"
 
+--
+
 d2 $ jux (2 <~)$ slowspread (loopAt) [2,1,4,4] $ chop 12 $ sound "shakedown"
 
-
-d2 $ substruct "x/2 [~ x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f7(3,8) a7(3,8) c7(3,8) e8*2") # s "xx"
+d3 $ substruct "x/2 [~ x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f7(3,8) a7(3,8) c7(3,8) e8*2") # s "xx"
   # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
   # resonance "0.3"
 
