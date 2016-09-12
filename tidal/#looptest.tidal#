@@ -1,0 +1,6 @@
+
+d1 $ jux rev $ seqPLoop [(0,4,sound "bd8:3 ~ bd8:3"),
+                         (4,8,sound "sd8:2(3,8)"),
+                         (0,8,sound "~ [~ sd8:3]"),
+                         (1,3,sound "tok(5,8)")
+                        ]
