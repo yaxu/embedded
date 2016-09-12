@@ -150,6 +150,7 @@ m $ slow 4 $ n (offadd 0.25 12 $ offadd 0.125 7 "c4(3,8) g4(3,8) f(3,8) a(3,8)")
   # ctf (slow 4 sine1)
   # dur (slow 6 $ scale 0.1 0.2 saw1)
 
+solo $ 
 d4 $ jux rev $ slow 4 $ n (offadd 0.125 7 "c4(3,8) g4(3,8) f(3,8) a(3,8)") # s "xx" |+| n "48"
   # resonance "0.3"
   # cutoff (slow 4 $ scale 400 7000 saw1)
