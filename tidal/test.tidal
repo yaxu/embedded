@@ -55,3 +55,9 @@ let loopFirst p = splitQueries $ Pattern f
 
 density 3 $ seqPLoop [(2,4, "a"), (3, 5, "b" :: Pattern String)]
 
+(map density [1.1,1.2 .. 2.7]) <*> sound "cp"
+
+
+d1 $ slowspread density [1.1, 1.2 .. 2.7] $ sound "cp"
+
+hush
