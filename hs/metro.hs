@@ -1,5 +1,4 @@
-
-include Sound.Tidal.Tempo
+import Sound.Tidal.Tempo
 
 main = do putStrLn "cycle:"
           clocked onTick
