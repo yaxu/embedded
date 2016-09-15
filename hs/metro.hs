@@ -1,4 +1,5 @@
 
 include Sound.Tidal.Tempo
 
-main = clocked $ \(tempo tick) -> putStr $ show tick ++ "\r"
+main = do putStrLn "cycle:"
+          clocked $ \(tempo tick) -> putStr $ show tick ++ "\r"
