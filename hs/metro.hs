@@ -1,6 +1,5 @@
 import Sound.Tidal.Tempo
 
-main = do putStr "\n"
-          clocked onTick
+main = clocked onTick
 
-onTick tempo tick = putStr $ show (cps tempo) ++ " " ++ show tick ++ "   \r"
+onTick tempo tick = putStr $ "cps: " ++ show (cps tempo) ++ " tick: " ++ show tick ++ "   \r"
