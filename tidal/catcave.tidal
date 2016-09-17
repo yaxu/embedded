@@ -1,2 +1,4 @@
-d1 $ sound "bd"
+d1 $ jux (rev) $ n "e7 e8 [g8 g7]" # s "jx"
+  # gain "1.4"
+
 
