@@ -23,7 +23,9 @@ d6 $ substruct "x [x/2 x/2]" $ vowel "{a e i o u}%2" # n "e7" # s "jx"
   # speed "0.8"
 
 
-d7 $ chop 2 $ s "40(3,8)" # s "jvrav
+d7 $ jux (# nudge (slow 4 sine1)) $ slow 2 $ every 4 (|+| n "2") $ chop 16 $ n "40(3,8) 52 70(3,8) 40" # s "jvrave"
+  # speed "0.25"
+  
 
 d8 $ stack [brak $ n "[0 4, [5 7] ~]"  # sound "jvrave", sound "jvrave:0*2"]
   # shape "0.99"
