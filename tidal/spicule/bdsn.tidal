@@ -34,6 +34,7 @@ let orb0 = (# (room (slow 16 saw1)
     updown = slow 2 $ juxBy 0.5 (rev . (|*| speed "1.5")) $ every 4 (# speed "1.5") $ sound "[bd8:5,bd8:4](3,8,2) bd8:2*2"
              # shape "0.5"
 
+let now'' = now'
 
 do cps 1.05
    d10 $ (nextSam (now''+1)) ~>
@@ -50,7 +51,3 @@ do cps 1.05
            (96,128+32, orb1 bdbuild),
            (96,128+32, orb0 $ off 0.25 (|*| speed "1") $ sqr)
           ]
-
-
-
-let now'' = now'
