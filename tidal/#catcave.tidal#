@@ -1,4 +1,0 @@
-d1 $ (jux (rev) $ n "e7 e8 [g8 g7]" # s "jx")
-  # gain "1.4"
-  # cutoff (slow 4 $ scale 100 1000 saw1)
-
