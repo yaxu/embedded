@@ -32,10 +32,17 @@ d8 $ stack [brak $ n "[0 4, [5 7] ~]"  # sound "jvrave", sound "jvrave:0*2"]
   # shape "0.99"
   # gain "0.7"
   # vowel "o"
+  # room sine1
 
 
 d9 $ do c <- (slow 4 $ scale 2 16 $ run 8)
         juxBy 0.25 rev $ chop c $ n "21(3,8)" # s "jvrave"
      # gain "1.2"
 
+-- thanks for listening, have been trying to build up a track, turned
+-- out a bit trance-y, makes it haard to work on when you keep
+-- trancing.
+-- anyway hope you are having a nice weekend. I am going to finish this beer and get some sleep
+
+hush
 
