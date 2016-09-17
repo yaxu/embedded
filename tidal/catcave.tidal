@@ -22,9 +22,6 @@ d5 $ runWith 4 (density 2) $ n "0*4" # s "jvrave"
 d6 $ substruct "x [x/2 x/2]" $ vowel "{a e i o u}%2" # n "e7" # s "jx"
   # gain "1.4"
 
-d7 $ jux rev $ n (offadd 0.25 7 $ slow 2 "~ e7(3,8) ~ b7(3,8)") # s "jx"
-  # gain "1.4"
-
 
 d8 $ stack [brak $ n "[0 4, [5 7] ~]"  # sound "jvrave", sound "jvrave:0*2"]
   # shape "0.99"
