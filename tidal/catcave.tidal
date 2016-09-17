@@ -28,4 +28,8 @@ d8 $ stack [brak $ n "[0 4, [5 7] ~]"  # sound "jvrave", sound "jvrave:0*2"]
   # gain "0.7"
   # vowel "o"
 
+d9 $ do c <- (slow 4 $ scale 2 16 $ run 8)
+        juxBy 0.25 rev $ chop c $ n "21(3,8)" # s "jvrave"
+     # gain "1.2"
+
 cps 1.1
