@@ -1,5 +1,6 @@
 -- stand by.. one moment..
 
-d1 $ do x <- sine1
-        off x (# crush "4") $ n ("c5 [e5 c6]") # s "pulse"
-        # cutoff "1000"
+d1 $ do x <- slow 4 $ sine1
+        off (toRational x) (# crush "7") $ n ("c5 [e5 c6]") # s "rash"
+
+d2 $ n "21(4,6)" # s "jvrave"
