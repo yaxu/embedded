@@ -22,10 +22,9 @@ d5 $ runWith 4 (density 2) $ n "0*4" # s "jvrave"
 
 d6 silence
 
-d6 $ substruct "x [x/2 x/2]" $ vowel "{a e i o u}%2" # n "e7" # s "jx"
+d6 $ substruct "x [x/2 x/2]" $ vowel "{a e i o u}%2" # n "e7 g8" # s "jx"
   # gain "1.5"
   # speed "0.8"
-
 
 d7 $ jux (# nudge (slow 4 sine1)) $ slow 2 $ every 4 (|+| n "2") $ chop 16 $ n "40(3,8) 52 70(3,8) 40" # s "jvrave"
   
