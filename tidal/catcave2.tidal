@@ -18,3 +18,5 @@ d5 $ whenmod 8 4 rev $ chop 4 $ n "{c7 e8}%1 [{d8 g7}%1 e7]" # s "rash"
 d3 $ runWith' 4 (density 2) $ n "40 [~ 0] ~ 0" # s "jvrave"
   # speed "2"
 
+d1 $ slow 2 $ n "0 [55 [~ 53] 55 56]" # s "jvrave"
+  # speed "2"
