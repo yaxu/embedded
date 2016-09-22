@@ -28,3 +28,7 @@ d2 $ n "0 [3 [2 3]]" # sound "jvrave"
 d6 $ sound "bd [sd8:4 bd*2 sd8:2]"
 
 -- thanks for listening catfans
+
+
+d1 $ n "0 1 2 3" # sound "jvbass"
+
