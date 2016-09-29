@@ -63,3 +63,12 @@ d1 $ slowspread density [1.1, 1.2 .. 2.7] $ sound "cp"
 d1 $ rev $ slow 4 $ chop 64 $ sound "bev"
 
 cps 2
+
+import Sound.Tidal.MIDI.Context
+import Sound.Tidal.MIDI.CC
+displayOutputDevices >>= putStrLn
+devices <- midiDevices
+m1 <- midiStream devices "Midi Through Port-0" 1 ccallController
+m1 $ n "50" # cc0 "3"
+
+hush
