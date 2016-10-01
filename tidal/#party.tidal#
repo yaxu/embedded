@@ -2,8 +2,11 @@ d1 $ sound "[sn:1 drum, jvbass*2, cp*2]"
 
 d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "3"
 |+| end "0.5"
+|+| gain "0.9"
 
 d3 $ sound "casio blip"
 
-d4 $ sound 
+d4 $ slow 2 $ stut 8 1.2 0.75 $ sound "hh:1" # speed "-0.7"
+
+
 cps (1)
