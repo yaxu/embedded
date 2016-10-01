@@ -4,12 +4,16 @@ d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "3"
 |+| end "0.5"
 |+| gain "0.9"
 
+d2 silence
+
+
 d3 $ weave 12 (sound "arpy  blip")
   [speed "0.4 0.6",
-  speed "1 0.6 0.8 ]
-|+| gain "1.2"
+  speed "1 0.6 0.8 0.4"]
+|+| gain "1"
 
-d4 $ slow 4 $ stut 8 1.2 0.75 $ chop 2 $ sound "hh:1" # speed "-0.7"
+d4 $ slow 8 $ stut 8 1.2 0.75 
+|+| begin "0.25"
 
 
 cps (1)
