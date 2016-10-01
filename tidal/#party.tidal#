@@ -3,6 +3,6 @@ d1 $ sound "[sn:1 drum, jvbass*2, cp]"
 d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "2"
 |+| accelerate "-1"
 
-d3 $ s "casio" # n "0"
+d3 $ palindrome $ echo (1/2) $  s "casio*4" # n "1 0 0 1" # speed "-0.4 -0.7"
 
 cps (1)
