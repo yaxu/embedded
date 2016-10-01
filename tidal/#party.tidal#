@@ -1,8 +1,8 @@
 d1 $ sound "[sn:1 drum, jvbass*2, cp]"
 
-d2 $ slow 8 $ striate 8 $ every 2 (density 2 . (|+| speed "4")) $ sound "moog*2" # speed "3 2"
+d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "2"
 |+| accelerate "-1"
 
-d3 
+d3 $ s "casio" # n "0"
 
 cps (1)
