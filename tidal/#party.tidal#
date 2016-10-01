@@ -1,12 +1,15 @@
-d1 $ sound "[sn:1 drum, jvbass*2, cp*2]"
+d1 $ rev $ sound "[sn:1 drum, jvbass*2, cp*2]"
 
 d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "3"
 |+| end "0.5"
 |+| gain "0.9"
 
-d3 $ sound "casio blip"
+d3 $ weave 12 (sound "arpy  blip")
+  [speed "0.4 0.6",
+  speed "1 0.6 0.8 ]
+|+| gain "1.2"
 
-d4 $ slow 2 $ stut 8 1.2 0.75 $ sound "hh:1" # speed "-0.7"
+d4 $ slow 4 $ stut 8 1.2 0.75 $ chop 2 $ sound "hh:1" # speed "-0.7"
 
 
 cps (1)
