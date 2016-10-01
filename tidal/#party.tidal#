@@ -8,14 +8,16 @@ d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "3"
 d2 silence
 
 
-d3 $ weave 12 (sound "arpy  blip")
+d3 $ weave 16 (sound "arpy  blip")
   [speed "0.4 0.6",
   speed "1 0.6 0.8 0.4",
-  slow 4 $ stut  0.75 0.6 $ speed "0.5 1"]
-|+| gain "1"
+  slow 12 $ stut 8 0.75 0.6 $ speed "0.5 1"]
+|+| gain "0.6"
 
 d4 $ slow 2 $ sound "[sn sn:1 drum:1*2, hh*4]"
 |+| pan "-1 1"
 
+hush
 
-cps (1)
+
+cps (0.5)
