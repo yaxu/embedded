@@ -12,8 +12,8 @@ d3 $ weave 12 (sound "arpy  blip")
   speed "1 0.6 0.8 0.4"]
 |+| gain "1"
 
-d4 $ slow 8 $ stut 8 1.2 0.75 
-|+| begin "0.25"
+d4 $ slow 2 $ sound "[sn sn:1 drum:1*2, hh*4]"
+
 
 
 cps (1)
