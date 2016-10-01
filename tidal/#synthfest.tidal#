@@ -1,14 +1,14 @@
-
+hush
 d1 $ (jux (iter 4 . rev) $ chop 16 $ sound "bd sn:3")
   # vowel "a e i"
   # speed (slow 4 $ scale 0.5 2 sine1)
   
-d2 $ weave 16 (n (run 8) # s "arpy")
+d2 $ jux rev $ weave 16 (n (run 8) # s "arpy")
   [vowel "a e [i u] o",
    speed "1 2 3",
-   v
+   vowel "a i u*3",
+   speed "1 [0.5 1]"
   ]
-
-
-
+  # cutoff (slow 4  $ scale 100 2000 sine1)
+  # resonance "0.3"
 
