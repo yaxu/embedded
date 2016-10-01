@@ -1,2 +1,4 @@
-d1 $ sound "bd sn:2"
+d1 $ every 2 (within (0,0.5) (density 2)) $ iter 4 $ jux (rev . chop 2) $ sound "bd [jvrave sd8:2]"
+  # speed "1 2"
 
+  d2 $ n "f8" # sound "xx"
