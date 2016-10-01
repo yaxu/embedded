@@ -1,3 +1,5 @@
-d1 $ sound "[sn:1 drum, [jvbass*2]]"
+d1 $ sound "[sn:1 drum, jvbass*2, cp]"
+
+d2 $ slow 4 $ striate 4 $ sound "moog" # speed "3"
 
 cps (1)
