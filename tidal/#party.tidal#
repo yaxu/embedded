@@ -1,8 +1,8 @@
-d1 $ sound "[sn:1 sn, jvbass*2, cp*2]"
+d1 $ sound "[sn:1 drum, jvbass*2, cp*2]"
 
 d2 $ jux (stut 4 0.6 0.75) $ slow 8 $ striate 12 $ sound "moog" # speed "3"
 |+| begin "0.5"
 
-d3 $ whenmod 8 4 (0.25 ~> ) $ palindrome $ echo (1/2) $  s "casio*4" # n "1 0 0 1" # speed "-0.4 -0.7 0.5 -0.7"
+d3 $ sometimesBy 0.25 (|+| vowel "a e") $ whenmod 8 4 (0.25 ~> ) $ palindrome $ echo (1/2) $  s "casio*4" # n "1 0 0 1" # speed "-0.4 -0.7 0.5 -0.7"
 
 cps (1)
