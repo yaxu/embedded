@@ -1,2 +1,7 @@
-d1 $ sound "bd*8"
+
+d1 $ sound "[bd sn:5*2, arpy [arpy:4 bd arpy:5] arpy:5]"
+
+
+
+
 
