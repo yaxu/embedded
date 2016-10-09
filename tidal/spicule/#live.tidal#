@@ -22,10 +22,14 @@ d4 $ jux ((1 <~) . (|*| speed "2") . density 2) $ iter 4 $ loopAt 4 $ chop 8 $ s
 
 -- comb delay drop
 
-d1 $ sound "{pulse:40 [pulse:38 pulse:37 pulse:36]/ ~}%2"
+d1 $ stack [sound "{pulse:40 {pulse:38 pulse:37 pulse:36 pulse:35}%1 ~}%2",
+            brak $ sound "[feel feel:3, feel:1*]"
+            # gain "0.9"
+           ]
   # delay "0.9"
   # delaytime (slow 4 $ scale 0 0.5 saw1)
   # delayfeedback "0.99"
+
 
 -- sine nudge chop
 
