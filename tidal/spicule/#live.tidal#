@@ -40,7 +40,9 @@ d3 $ jux rev $ slowspread (chop) [8,4,2] $ sound "feel:2 bd8:6*8"
 
 -- sine nudge chop
 
-d1 $ (chop 32 $ n "0 ~ [4 3 3" # sound "voodoo")
+d1 $ stack [(jux rev $ (slowspread (chop) [32,64,128,16] $ n "0 5 [4 3] 3" # sound "feel")),
+            chop 62 $ sound "drum:0 [drum:3 drum:2] drum:1"
+           ]
   # orbit "1" # delay "0"
   # nudge (slow 4 sine1)
 
