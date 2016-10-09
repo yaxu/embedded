@@ -46,9 +46,9 @@ d1 $ stack [brak $ ((slowspread (chop) [32,64,128,16] $ n "0 5 [~ 5] 3" # sound 
            ]
   # orbit "1" # delay "0"
 
-d2 $ n "d7" # sound "rash"
+d2 $ every 3 (within)$ n "d7 [f8 d8]" # sound "rash"
   # shape "0.4" # crush "5"
-  # speed
+  # speed "[1,[1.02 1.07]/2]"
 
 
 -- arpy weave II
