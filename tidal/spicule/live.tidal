@@ -50,7 +50,7 @@ d2 $ jux rev $ every 3 (within (0,0.5) (density 2)) $ n "[d7 ~ g8] [f8 d8]" # so
   # shape "0.4" # crush "5"
   # speed "[1,[1.02 1.07]/2]"
 
-d3 $ sound "funky(3,8,[2 0 6]/4)" # n (slow 4 $ run 8)
+d3 $ jux (iter 4) $ sound "funky(3,8,[2 0 6]/4)" # n (slow 4 $ run 8)
   # gain "1.3"
 
 -- arpy weave II
