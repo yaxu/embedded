@@ -27,13 +27,16 @@ d1 $ stack [sound "{pulse:40 {pulse:38 pulse:37 pulse:36 pulse:35}%1 ~}%2",
             # gain "0.9"
            ]
   # delay "0.9"
-  # delaytime (slow 4 $ scale 0 0.5 saw1)
+  # delaytime (slow 4 $ scale 0 0.25 saw1)
   # delayfeedback "0.99"
   # orbit "1"
+  # speed "[[0.5 0.75]/2,1]"
 
 d2 $ jux (iter 4) $ sound "pulse:11(3,8)"
   # orbit "0"
   # shape "0.5"
+
+d3 $ jux rev $ slowspread (chop) [8,4,2] $ sound "feel:2 bd8:6*8"
 
 -- sine nudge chop
 
