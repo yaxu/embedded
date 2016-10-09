@@ -2,10 +2,10 @@ cps 0.9
 
 
 -- face arpeggio
--- sorry level problems..
-one minute
 
-d1 $ n "f8" # sound "jx"
+d1 $ n (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 "f8(3,8) a7(3,8) c7*2 e8(3,8,2)") # sound "jx"
+  # cutoff (scale 100 2000 sine1)
+  
 
 -- comb delay drop
 
