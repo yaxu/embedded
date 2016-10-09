@@ -3,7 +3,7 @@ cps 0.8
 
 -- face arpeggio
 
-d1 $ degradeBy 0.7 $ sometimes (# speed "2") $ jux rev $ n ((subtract 0) <$> (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 $ "f8(3,8) a7(3,8) c7*2 e8(3,8,2)")) # sound "[jx,xx]"
+d5 $ sometimes (# speed "2") $ jux rev $ n ((subtract 0) <$> (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 $ "f8(3,8) a7(3,8) c7*2 e8(3,8,2)")) # sound "[jx,xx]"
   # cutoff (slow 4 $ scale 400 2000 sine1)
   # resonance "0.2"
   # end "0.05"
@@ -14,7 +14,7 @@ d2 $ substruct "x x/2" $ (jux (iter 4) $ sound "[bd8(3,8) ~, ~ sd8]")
   # speed "[2]"
 
 
-d3 $ degradeBy 0.8 $ jux rev $ (every 4 (density 2) $ sound "rash([5 3]/2,8,[0 2 3 4]/4)") # n ( "[f8 a7 c7 e7]/4")
+d3 $ degradeBy 0 $ jux rev $ (every 4 (density 2) $ sound "rash([5 3]/2,8,[0 2 3 4]/4)") # n ( "[f8 a7 c7 e7]/4")
   # cutoff (slow 4 $ scale 400 2000 sine1)
   # resonance "0.2"
 
@@ -55,6 +55,24 @@ d3 $ jux (iter 4) $ sound "funky(3,8,[2 0 6]/4) bd*4" # n (slow 4 $ run 8)
   # speed "1"
 
 -- arpy weave II
+
+d1 $ jux rev $ weave 16 (palindrome $ n (run 8) # sound "arpy")
+  [vowel "a e i o",
+   speed "1 [2 0.5]/2",
+   crush "3 5"
+   -- vowel "i o [~ u*2] [~ a]"
+  ]
+  # cutoff (slow 4 $ scale 200 1000 sine1)
+  # resonance "0.2"
+  |*| speed "[0.5,2]"
+  # orbit "0"
+
+d2 $ (substruct "x x/2" $ juxBy 0.5 rev $ sound "[bd8 ~ cp8] [sd8:4 mt8 ht lt8]")
+  # room "0.5"
+  # size (slow 4 sine1)
+  # orbit "1"
+
+d3 $ sound "feel*4 sd8:2"
 
 -- slow tabla
 
