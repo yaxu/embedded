@@ -1,15 +1,17 @@
-cps 0.9
+cps 0.8
 
 
 -- face arpeggio
 
-d1 $ jux rev $ n ((subtract 12) <$> (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 $ palindrome "f8(3,8) a7(3,8) c7*2 e8(3,8,2)")) # sound "jx"
+d1 $ sometimes (# speed "2") $ jux rev $ n ((subtract 0) <$> (offadd 0.25 12 $ slow 8 $ offadd 0.125 7 $ palindrome "f8(3,8) a7(3,8) c7*2 e8(3,8,2)")) # sound "[jx,xx]"
   # cutoff (slow 4 $ scale 400 2000 sine1)
   # resonance "0.2"
+  # end "
+  # gain "0.85"
 
-d2 $ (jux (iter 4) $ sound "[bd8(3,8) jx:48*2, ~ sd8]")
+d2 $ substruct "x x/2" $ (jux (iter 4) $ sound "[bd8(3,8) ~, ~ sd8]")
   # delay "0.3" # delaytime "0.06"
-  # vowel "a e i o u "
+  # speed "[2]"
 
 -- comb delay drop
 
