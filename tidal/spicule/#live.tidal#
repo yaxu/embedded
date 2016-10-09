@@ -3,9 +3,12 @@ cps 0.9
 
 -- face arpeggio
 
-d1 $ n (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 "f8(3,8) a7(3,8) c7*2 e8(3,8,2)") # sound "jx"
-  # cutoff (scale 100 2000 sine1)
-  
+d1 $ jux rev $ n ((subtract 12) <$> (offadd 0.25 12 $ slow 4 $ offadd 0.125 7 $ palindrome "f8(3,8) a7(3,8) c7*2 e8(3,8,2)")) # sound "jx"
+  # cutoff (slow 4 $ scale 400 2000 sine1)
+  # resonance "0.2"
+
+
+d2 $ sound "bd8(3,8) jx:60*2"
 
 -- comb delay drop
 
