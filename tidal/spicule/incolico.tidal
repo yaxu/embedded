@@ -1,7 +1,7 @@
 cps 0.8
 
 
--- face arpeggio
+-- face arpeggio silent gap on build?
 
 -- comb delay drop
 
@@ -9,17 +9,15 @@ cps 0.8
 
 -- arpy weave II
 
--- slow tabla
-
 -- mismatch step tempo
 
 -- gabba 2s
 
-d1 $ iter 4 $ jux rev $ n ((offadd 0.125 12) $ offadd 0.25 7 $ slow 4 $ "f6(3,8) a6(5,8,2) c6(3,8) e6(5,8,4)") # sound "[rash, jx]"
+d1 $ whenmod 8 4 (const silence) $ jux rev $ n ((offadd 0.125 12) $ offadd 0.25 7 $ slow 4 $ "f6(3,8) a6(5,8,2) c6(3,8) e6(5,8,4)") # sound "[rash, jx]"
   # cutoff (scale 100 3000 sine1)
   # resonance "[0.1 0.3]"
 
 d1 $ jux rev $ substruct "x/2 x/4" $ iter 4 $ sound "jvrave*8" # n (floor <$> (scale 52 60 $ saw1))
 
-d2 $ slow 2 $ n "0 0(3,8) [1 ~ 6] [1 2]" # sound "jvrave"
-  # shape "0.9"
+d2 $ stut 3 0.9 2 $ slow 2 $ n "0 0(3,8) [1 ~ 6] [1 2]" # sound "jvrave"
+  |*| speed (slow 4 $ scale 2 4 sine1)
