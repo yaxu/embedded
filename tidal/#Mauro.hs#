@@ -1,0 +1,13 @@
+module Mauro where
+
+import Sound.Tidal.Context
+
+pBd f = [
+  f "[c ~ ~ c][c ~ ~ c][~ ~ c ~][c ~ ~ c]",
+  f "[c ~ ~ c][~ ~ ~ ~][c ~ ~ c][~ ~ c ~]"
+  ]
+        pSn f = [
+  f "[~ ~ ~ ~][c ~ ~ c][~ c ~ c][~ c ~ c]",
+  f "[~ ~ ~ ~][c ~ ~ c][~ c ~ c][c ~ ~ ~]"
+      ]
+    pCh f = f "c(15,16)"
