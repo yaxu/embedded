@@ -73,4 +73,6 @@ m1 $ n "50" # cc0 "3"
 
 hush
 
+import Sound.Tidal.Draw
 
+:t drawText
