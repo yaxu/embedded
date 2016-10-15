@@ -75,6 +75,5 @@ hush
 
 import Sound.Tidal.Draw
 
-:t drawText
 
 drawText ("out.pdf") ("sound \"bd sn\"\ntest") (dirtToColour (sound "bd sn"))
