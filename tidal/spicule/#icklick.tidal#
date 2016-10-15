@@ -1,0 +1,23 @@
+cps (-1)
+
+cps (2.16666666666/2)
+
+cps (130/120)
+
+-- face arpeggio
+
+d1 $ every 4 (density 2) $ jux (rev . chop 16) $ sound "drum(3,8,[0 4]/2) drum:2"
+  # shape "0.8"
+
+
+d1 $ every 2 jux (iter 4) $ sound "bd sn:2"
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- arpy weave II
+
+-- mismatch step tempo
+
+-- gabba 2s
