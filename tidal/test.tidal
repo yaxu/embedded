@@ -76,10 +76,11 @@ hush
 import Sound.Tidal.Draw
 
 
-drawText ("out.pdf") ("sound \"bd sn\"\ntest") (dirtToColour (sound "bd sn"))
+drawLines ("out.pdf") (dirtToColour (sound "bd sn"))
 
 
 d1 $ sound "newnotes" # n "4"
 
 
 
+drawNoText "out.pdf" (dirtToColour (sound "bd sn"))
