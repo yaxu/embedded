@@ -6,6 +6,13 @@ cps (130/120)
 
 -- face arpeggio
 
+d1 $ jux (rev . chop 16) $ sound "drum(3,8,[0 4]/2) drum:2"
+  # shape "0.8"
+
+d2 $ jux rev $ slow 2 $ off 0.125 (|+| n "12") $ off 0.25 (|+| n "7") $ slow 2 $ n "f6(3,8) a6 g6 e6" # s "rash"
+  # gain "1.1"
+  # shape "0.8"
+
 d1 $ every 2 jux (iter 4) $ sound "bd sn:2"
 
 -- comb delay drop
