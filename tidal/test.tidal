@@ -72,3 +72,9 @@ m1 <- midiStream devices "Midi Through Port-0" 1 ccallController
 m1 $ n "50" # cc0 "3"
 
 hush
+
+import Sound.Tidal.Draw
+
+:t drawText
+
+drawText ("out.pdf") ("sound \"bd sn\"") (dirtToColour (sound "bd sn"))
