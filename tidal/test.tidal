@@ -73,7 +73,6 @@ m1 $ n "50" # cc0 "3"
 
 hush
 
-import Sound.Tidal.Draw
 
 
 drawLines ("out.pdf") (dirtToColour (sound "bd sn"))
@@ -82,5 +81,6 @@ drawLines ("out.pdf") (dirtToColour (sound "bd sn"))
 d1 $ sound "newnotes" # n "4"
 
 
+import Sound.Tidal.Draw
 
 drawNoText "out.pdf" (dirtToColour (sound "bd sn"))
