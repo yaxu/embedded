@@ -32,7 +32,7 @@ drawLines pat cyclesPerLine nLines =
 drawText description pat =
   do let w = 136
          h = 566
-     withSVGSurface ("test.svg") w h $ \surf -> do
+     withSVGSurface (".svg") w h $ \surf -> do
         renderWith surf $ do
           C.save 
           C.scale (w-20) (h)
@@ -53,6 +53,6 @@ drawText description pat =
           textPath description
           fill
           restore
-     rawSystem "inkscape" ["--without-gui", "--export-pdf=test.pdf", "test.svg"]
+     rawSystem "inkscape" ["--without-gui", "--export-pdf=.pdf", ".svg"]
 
-main = drawText "p \"red\"" (p "red")
+main = drawText "sound \"bd\"" (sound "bd")
