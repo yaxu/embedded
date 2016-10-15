@@ -79,5 +79,7 @@ import Sound.Tidal.Draw
 drawText ("out.pdf") ("sound \"bd sn\"\ntest") (dirtToColour (sound "bd sn"))
 
 
-d1 $ sound "numbers:1 numbers:2"
-  # pan "0 1"
+d1 $ sound "newnotes" # n "4"
+
+
+
