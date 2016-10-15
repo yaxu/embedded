@@ -6,7 +6,7 @@ cps (130/120)
 
 -- face arpeggio
 
-d1 $ jux (iter 4) $ sound "bd sn:2"
+d1 $ every 2 jux (iter 4) $ sound "bd sn:2"
 
 -- comb delay drop
 
