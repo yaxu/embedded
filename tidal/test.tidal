@@ -83,4 +83,4 @@ d1 $ sound "newnotes" # n "4"
 
 import Sound.Tidal.Draw
 
-drawNoText "out.pdf" (dirtToColour (sound "bd sn"))
+
