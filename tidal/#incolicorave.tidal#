@@ -46,9 +46,12 @@ d1 $ iter 4 $ sound "[bd, {arpy arpy:2 arpy:3}%2 sd8:2 ~ drum]"
    # orbit "2"
 
 
-d1 $ slow 2 $ n (offadd 0.25 7 "d7 [~ g7] e7 a9") # sound "xx"
+d1 $ every 4 (rev) $ slow 2 $ n (offadd 0.25 7 "d7 [~ g7] e7 a9") # sound "xx"
   # orbit "2"
   # resonance "0.3"
   # cutoff (scale 100 2000 sine1)
 
-d2 $ slowschop 8 $ n "g8 a8" # sound "xx"
+d2 $ jux rev $ slowspread (chop) [8,16,32,64] $ n "g8 a8" # sound "xx"
+
+d3 $ jux (# speed "2")$ sound "{drum bd*2, bd pulse:50 [~ sn:2]}"
+  |+| speed sine1
