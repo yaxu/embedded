@@ -84,5 +84,12 @@ d3 $ every 4 (# speed "0.5") $ sound "pulse"
 
 cps (137/120)
 
-d1 $ stut 3 0.8 4 $ n "e8 [~ a8]" # sound "jx"
+d1 $ jux rev $ stut 3 0.8 4 $ n "e8 [~ a8]" # sound "jx"
    # gain "1.3"
+   # orbit "1"
+   # delay "0.4"
+   # delaytime (scale 0.001 0.002 sine1)
+   # delayfeedback "0.8"
+   |*| up "{0 3 7 -2}%1"
+
+d2 $ sound ""
