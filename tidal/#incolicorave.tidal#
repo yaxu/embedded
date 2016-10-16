@@ -1,9 +1,9 @@
 
-d3 $ jux rev $ n (sometimes ((+12) <$>) $ slow 2 $ offadd 0.125 12 $ offadd 0.25 7 $ slow 2 "f6(3,8) a6(3,8) c7(3,8) e6(5,8)") # sound "rash"
+d3 $ degrade $ jux rev $ n (sometimes ((+12) <$>) $ slow 2 $ offadd 0.125 12 $ offadd 0.25 7 $ palindrome $ slow 2 "f6(3,8) a6(3,8) c7(3,8) e6(5,8)") # sound "rash"
    # gain "1.2"
    # speed "[1,1.5]"
-
-d2 $ (chop 4 $ jux (iter 4) $ runWith 4 (density 2) $ n (slow 4 $ run 16) # sound "funky*8")
+d3 s
+d2 $ slow 2 $ (chop 4 $ jux (iter 4) $ runWith 4 (density 2) $ n (slow 4 $ run 16) # sound "funky*8")
   # gain "0.96"
   # cutoff (scale 100 3000 saw1)
   # speed "2"
@@ -14,4 +14,8 @@ d4 $ runWith 4 (density 2) $ jux (rev . chop 4) $ sound "odx(3,4,[0 2]/2)"
 d6 $ iter 4 $ loopAt 4 $ chop 16 $ sound "arc"
   # gain "1.2"
 
-d7 $ sou
+d7 $ sound "~ [~ wobble]"
+  # speed "[1,2]"
+  # shape "0.5"
+
+d8 $ loopAt 4 $ chop 16 $ sound "liq"
