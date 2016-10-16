@@ -34,10 +34,14 @@ d4 $ iter 4 $ rev $ loopAt 4 $ chop 8 $ sound "repetition" # n (irand 8)
 d6 $ slowspread (chop) [4,3,2] $ sound "off off*2"
   # speed "[1 2 3]/3"
 
-d1 $ iter 4 $ sound "[bd sn(3,8), arpy sd8:2 ~ drum]"
+d1 $ iter 4 $ sound "[bd, {arpy arpy:2 arpy:3}%2 sd8:2 ~ drum]"
   # delay "0.8"
   # delaytime sine1
-  # delayfeedback (slow 8 saw1)
-  # room sine1
-  # f
+  # delayfeedback (slow 16 saw1)
+  # room (slow 4 sine1)
+  # size (slow 4 saw1)
   # orbit "1"
+
+ d2 $ n "0 1 4 2" # sound "jvrave"
+   # orbit "2"
+   
