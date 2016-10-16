@@ -69,3 +69,9 @@ d3 $ runWith 4 (|*| speed "2") $ jux (iter 4) $ slow 2 $ n (every 4 rev $ run 4)
 
 
 
+d1 $ jux rev $ runWith 4 (density 2) $ sound "amencutup*4"
+  # n (run 8)
+  # speed "2"
+
+
+d2 $ sound "gab(3,8)
