@@ -22,7 +22,9 @@ d8 $ jux (|*| speed "-2") $ iter 4 $ loopAt 8 $ chop 16 $ sound "liq"
 
 d9 $ sound "fm:11"
 
-d1 $ (chop 32 $ sound "drum")
-  # nudge sine1
+d1 $ jux rev $ (slowspread (chop) [64,128,256] $ sound "drum [drum:2 sd8:3] jx:50 rash:50")
+
+d2 $ sound "drum*2 gabba"
+
   
    
