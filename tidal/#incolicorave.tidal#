@@ -45,8 +45,6 @@ d1 $ iter 4 $ sound "[bd, {arpy arpy:2 arpy:3}%2 sd8:2 ~ drum]"
  d2 $ every 4 (slow 1.5) $ jux rev $ n "0 [~ 1] 4 2" # sound "jvrave"
    # orbit "2"
 
-cps (-1)
-
 cps (137/60)
 
 d1 $ degrade $ every 4 (rev) $ slow 2 $ n (offadd 0.25 7 "d7 [~ g7] e7 a9") # sound "xx"
@@ -58,4 +56,7 @@ d2 $ jux rev $ slowspread (chop) [8,16,32,64] $ n "g8 a8" # sound "xx"
 
 d3 $ jux (# speed "2")$ sound "{drum bd*2, bd pulse:50 [~ sn:2]}"
   |+| speed (slow 4 $ scale 0 0.5 sine1)
-d1 $ sound "cp"
+
+d1 $ sound "bd8:3(3,8)"
+
+d2 $ every 3 (# speed "2")$ slowspread (chop) [4,3,4,8] $ slow 2 $ sound "bd [bd*2 sn:2]"
