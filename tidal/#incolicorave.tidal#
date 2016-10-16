@@ -46,5 +46,9 @@ d1 $ iter 4 $ sound "[bd, {arpy arpy:2 arpy:3}%2 sd8:2 ~ drum]"
    # orbit "2"
 
 
-d1 $ slow 2 $ n "d7 g7 e7 a8" # sound "xx"
+d1 $ slow 2 $ n (offadd 0.25 7 "d7 [~ g7] e7 a9") # sound "xx"
   # orbit "2"
+  # resonance "0.3"
+  # cutoff (scale 100 2000 sine1)
+
+d2 $ slowschop 8 $ n "g8 a8" # sound "xx"
