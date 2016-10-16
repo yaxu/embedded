@@ -105,4 +105,3 @@ d4 $ iter 4 $ runWith 4 (speed 2 . (|*| speed "2")) $ every 4 (slow 2) $ loopAt 
 d5 $ loopAt 32 $ rev $ striate 64 $ sound "atlast:1"
   # gain "1.1"
 
-hush
