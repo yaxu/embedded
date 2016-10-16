@@ -60,3 +60,11 @@ d3 $ jux (# speed "2")$ sound "{drum bd*2, bd pulse:50 [~ sn:2]}"
 d1 $ sound "bd8:3(3,8)"
 
 d2 $ every 3 (# speed "2")$ slowspread (chop) [4,3,4,8] $ slow 2 $ sound "bd [bd*2 sn:2]"
+  # orbit "1"
+
+  s
+d3 $ jux (iter 4) $ slow 2 $ n (run 4) # sound "arpy" # up "[0 7]/2"
+  # room "0.87"
+  # size "0.9"
+  # orbit "2"
+  
