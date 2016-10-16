@@ -84,14 +84,17 @@ d3 $ every 4 (# speed "0.5") $ sound "pulse"
 
 cps (137/120)
 
-d1 $ stut 3 0.8 4 $ n "e8 a9 c9 ~" # sound "jx"
-   # gain "1.3"
-   # orbit "1"
-   # delay "0.4"
-   # delaytime (scale 0.001 0.002 sine1)
-   # delayfeedback "0.8"
-   -- |*| up "{0 3 7 -2}%1"
-   |*| speed "0.5"
-   # resonance "0.3"
 
-d1 $ 
+
+
+
+
+
+
+
+d1 $ sound "tok ~ tok:2"
+  # gain "1.1"
+
+d2 $ jux (# speed "2") $ n (run 8) # sound "[~ jvrave drum feel]/2"
+
+d3 $ sound "voodoo"
