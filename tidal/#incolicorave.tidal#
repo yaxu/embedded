@@ -1,7 +1,10 @@
 
 d3 $ n (offadd 0.25 7 $ slow 2 "f6(3,8) ~ ~ e6(5,8)") # sound "rash"
    # gain "1.2"
+   # speed "[1,1.5]"
 
-d2 $ n (run 4) # sound "funky*4"
-  # gain 
+d2 $ runWith 4 (density 2) $ n (slow 4 $ run 8) # sound "funky(5,8,[0 2]/2)"
+  # gain "0.96"
+
+d4 $ sound "odx(3,4,[])"
 
