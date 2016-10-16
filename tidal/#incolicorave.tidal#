@@ -28,9 +28,10 @@ d2 $ jux (iter 4 . rev) $ sound "[drum*2 drum*2 drum:1*2]/3 gabba"
 
 d5 $ runWith 4 (|*| speed "2") $ loopAt 2 $ sound "breaks165"
 
-d4 $ jux rev $ loopAt 4 $ chop 4 $ sound "repetition" # n (irand 8)
+d4 $ iter 4 $ rev $ loopAt 4 $ chop 8 $ sound "repetition" # n (irand 8)
   # gain "1.1"
 
-d6 $ sound "~ off*2"
-  # delay "0.0
-   
+d6 $ slowspread (chop) [4,3,2] $ sound "off off*2"
+  # speed "[1 2 3]/3"
+
+d1 $ sound "bd sn(3,"
