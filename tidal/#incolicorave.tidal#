@@ -3,5 +3,11 @@ d1 $ runWith 4 (density 2) $ jux (rev . chop 4) $ slow 2 $ sound (permstep 8 ["b
 d2 $ jux (iter 4) $ (slow 2 $ rev $ sound (permstep 8 ["arpy", "arpy:2", "arpy:4", "feel"] (slow 8 sine1)))
   # vowel "[a e i o u]"
 
-d3 $ n "f6 a6" # sound "rash"
-   # gain "1.1"
+d3 $ n (offadd 0.25 7 "f6 ~ ~ a6") # sound "rash"
+   # gain "1.2"
+
+d2 $ slowcat [sound "drum feel",
+              sound (weave 16 (n (run 8) # s "arpy") [vowel "a e i] )
+              sound "bd*6"
+             ]
+
