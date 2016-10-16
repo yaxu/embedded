@@ -69,9 +69,17 @@ d3 $ runWith 4 (|*| speed "2") $ jux (iter 4) $ slow 2 $ n (every 4 rev $ run 4)
 
 
 
-d1 $ jux rev $ runWith 4 (density 2) $ sound "amencutup*4"
+d1 $ jux rev $ iter 4 $ runWith 4 (density 2) $ sound "amencutup*4"
   # n (run 8)
   # speed "2"
 
+d2 $ jux (rev . chop 4 . (# speed "0.5")) $ slow 2 $ sound "gabba(3,8,[0 2]/2)"
+  # speed "[1.5 2 3]/5"
 
-d2 $ sound "gab(3,8)
+d3 $ every 4 (# speed "0.5") $ sound "pulse"
+  # n "d3 {~ a3, f2 a1 c1}"
+  # cutoff (scale 100 4000 $ slow 4 $ saw1)
+
+
+
+cps (137/120)
