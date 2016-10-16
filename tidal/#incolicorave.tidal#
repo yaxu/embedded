@@ -22,9 +22,14 @@ d8 $ jux (|*| speed "-2") $ iter 4 $ loopAt 8 $ chop 16 $ sound "liq"
 
 d9 $ sound "fm:11"
 
-d1 $ jux rev $ (slowspread (chop) [64,128,256] $ sound "drum [drum:2 sd8:3] jx:50 rash:50")
+d1 $ jux rev $ (slowspread (chop) [64,128,256] $ sound "drum [drum:2 sd8:3] jx:50 [rash:50 rash:52]/2")
 
-d2 $ sound "drum*2 gabba"
+d2 $ jux (iter 4 . rev) $ sound "[drum*2 drum*2 drum:1*2]/3 gabba"
+
+d5 $ loopAt 2 sound "breaks165"
+
+d4 $ loopAt 4 $ sound "repetition"
+  # gain "1.1"
 
   
    
