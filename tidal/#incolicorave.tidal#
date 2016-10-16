@@ -1,4 +1,7 @@
-d1 $ slow 2 $ sound (permstep 8 ["bd", "future", "bd8:4", "feel"] (slow 4 sine1))
+d1 $ runWith 4 (density 2) $ jux (rev . chop 4) $ slow 2 $ sound (permstep 8 ["bd", "future", "bd8:4", "feel"] (slow 4 sine1))
 
-d2 $ slow 2 $ rev $ sound (permstep 8 ["arpy", "arpy:2", "bd8:4", "feel"] (slow 4 sine1))
+d2 $ jux (iter 4) $ (slow 2 $ rev $ sound (permstep 8 ["arpy", "arpy:2", "arpy:4", "feel"] (slow 8 sine1)))
+  # vowel "[a e i o u]"
 
+d3 $ n "f6 a6" # sound "rash"
+   # gain "1.1"
