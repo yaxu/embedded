@@ -84,3 +84,7 @@ d1 $ sound "newnotes" # n "4"
 import Sound.Tidal.Draw
 
 
+d1 $ slow 2 $ n (permstep 16 [0 .. 4] (slow 16 sine1)) # sound "arpy"
+  # speed "0.5"
+
+:t permstep
