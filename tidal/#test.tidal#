@@ -84,6 +84,6 @@ d1 $ sound "newnotes" # n "4"
 import Sound.Tidal.Draw
 
 
-d1 $ n (permstep 4 [0, 3", "5", "7") sine1) # sound "arpy"
+d1 $ n (permstep 16 [0, 3, 5, 7] (slow 8 sine1)) # sound "arpy"
 
 :t permstep
