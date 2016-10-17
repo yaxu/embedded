@@ -87,12 +87,14 @@ import Sound.Tidal.Draw
 let permeate steps ns p = (n (permstep steps ns (slow 16 sine1)) # sound p)
   in
  d1 $ slow 4 $ jux' [permeate 16 [2..7],
-                     permeate 16 [7,5,2],
+                     permeate 12 [7,5,2],
                      permeate 8 [0,3]
                     ] "latibro"
   # speed "2"
   # room "0.7"
   # size "0.6"
+  # cutoff "1000"
+  # resonance (slow 16 0.3 0.4 saw1)
 
 d2 $ slow 2 $ n (permstep 16 [3 .. 9] (slow 16 sine1)) # sound "arpy"
   # speed "0.5"
