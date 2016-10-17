@@ -91,10 +91,10 @@ let permeate steps ns p = (n (permstep steps ns (slow 16 sine1)) # sound p)
                      permeate 8 [0,3]
                     ] "latibro"
   # speed "2"
-  # room "0.7"
-  # size "0.6"
-  # cutoff (slow 16 1000 2000 saw1)
-  # resonance (slow 16 0.3 0.4 saw1)
+  # room "0.9"
+  # size "0.9"
+  # cutoff (slow 16 $ scale 1000 2000 saw1)
+  # resonance (slow 16 $ scale 0.3 0.4 saw1)
 
 d2 $ slow 2 $ n (permstep 16 [3 .. 9] (slow 16 sine1)) # sound "arpy"
   # speed "0.5"
