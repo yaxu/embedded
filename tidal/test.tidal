@@ -88,9 +88,9 @@ let permeate steps ns p = (n (permstep steps ns (slow 16 sine1)) # sound p)
   in
  d1 $ slow 4 $ jux' [permeate 16 [2..7],
                      permeate 12 [7,5,2],
-                     permeate 8 [0,3]
+                     permeate 8 [0,3,7]
                     ] "latibro"
-  # speed "2"
+  # speed "4"
   # room "0.9"
   # size "0.9"
   # cutoff (slow 16 $ scale 1000 2000 saw1)
