@@ -84,9 +84,13 @@ d1 $ sound "newnotes" # n "4"
 import Sound.Tidal.Draw
 
 
-let permeate n = (n (permstep 16 ns (slow 16 sine1)) #) 
-  # speed "0.5"
-  # pan "1"
+let permeate steps ns p = (n (permstep steps ns (slow 16 sine1)) # sound p)
+  in
+ d1 $ slow 2 $ jux' [permeate 16 [2..7],
+                     permeate 8 [2..4],
+                     permeate 8 [3,5,],
+                    ] "arpy"
+    # speed "0.5"
 
 d2 $ slow 2 $ n (permstep 16 [3 .. 9] (slow 16 sine1)) # sound "arpy"
   # speed "0.5"
