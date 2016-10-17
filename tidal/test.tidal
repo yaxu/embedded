@@ -86,5 +86,10 @@ import Sound.Tidal.Draw
 
 d1 $ slow 2 $ n (permstep 16 [0 .. 4] (slow 16 sine1)) # sound "arpy"
   # speed "0.5"
+  # pan "1"
+
+d2 $ slow 2 $ n (permstep 16 [0 .. 5] (slow 16 sine1)) # sound "arpy"
+  # speed "0.5"
+  # pan "0"
 
 :t permstep
