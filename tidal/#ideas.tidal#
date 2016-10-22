@@ -1,0 +1,20 @@
+-- mismatch step tempo
+
+d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "2")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "voodoo*8"
+
+d1 $ sound "off"
+
+d2 $ sound "feel ~ feel:2"
+  # orbit "2"
+
+-- face arpeggio
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- arpy weave II
+
+-- step frenzy
+
+-- gabba 2s
