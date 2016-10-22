@@ -3,8 +3,13 @@
 d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "2")) $ jux (4 <~) $ n (slow 8 $ scan 8) # sound "voodoo*8"
 
 d1 $ sound "off"
+  # orbit "1"
 
-d2 $ sound "feel ~ feel:2"
+d2 $ sound "feel ~ feel:3 ~"
+  # room "0.9"
+  # delay "0.9"
+  # delaytime "[0.25 0.125 0.5]/3"
+  # delayfeedback "0.6"
   # orbit "2"
 
 -- face arpeggio
