@@ -18,9 +18,16 @@ d3 $ jux rev $ slowspread (chop . (# speed "2")) [8,16,32] $ sound "~ h"
   # orbit "2"
 
 d4 $ (jux rev $ slowspread (chop) [32,64,128] $ sound "drum . sn:2 arpy:4 ht8 mt8:2 . future bd*2 . drum arpy")
+  # nudge "[0 0.02]*4"
   
 
-d2 $ sound "gabba"
+d2 $ jux (# speed "{2 1.5 3 [4 5]}%1") $ foldEvery [3,7] (within (0,0.25) (density 2)) $ sound "gabba [sd8:3 ravebass:10*2]"
+  # shape "0.4"
   
+d3 $ every 2 (|*| speed "0.75") $ smash 4 [1,2,3,4] $ sound "onoff*4" # n (irand 4)
+  # gain "0.8"
 
- 
+
+d1 $ slowspread (stut 2 0.9) [0.125, 0.5] $ substruct "x x/2" $ sound "bd arpy sn:2 arpy:4*2"
+  # speed "0.
+  
