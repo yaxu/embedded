@@ -78,9 +78,14 @@ d1 $ brak $ n (slow 4 $ scan 4) # sound "ht8 lt8"
 d2 $ jux (|*| speed "0.75") $ slow 4 $ off 0.25 (# vowel "i o") $ n "d8 a7 . d8 d6 d8 . d8 e8 . d2 c9 d9" # sound "rash"
 
 
+
 d3 $ within (0.5,1) (|*| speed "-1") $ iter 4 $ rev $ loopAt 8 $ chop 16 $ sound "shackup"
   # gain "0.8"
 
-d4 $ sometimes (density 2) $ sound "ravebass:10(3,8)"
+d4 $ sometimes (density 0.5) $ sound "[ravebass:10 ravebass:13](3,8)"
   # accelerate "-1.5"
   # hcutoff "150"
+
+d5 $ sound "[wobble,drum,future]*2"
+
+d4 $ slowca

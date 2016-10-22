@@ -60,3 +60,17 @@ d10 $ weave' 16 ((slow 8 $ striate' 128 (1/64) $ sound "bev*2") |+| pan (scale 0
              density 2 . (vowel "p p u o" |+|) . (|+| cut "-1"),
              density 3 . (vowel "p p o" |+|) . (|+| cut "-3")
             ] |+| gain "1.3"
+
+
+
+
+d1 $ every 4 (density 1.5) $ every 3 (# speed "2")$ jux rev $ chop 8 $ n "d8 [a8 c9]" # sound "vocobass"
+
+d2 $ jux rev $ loopAt 4 $ chop 16 $ sound "repetition" # n (irand 4)
+  # shape "0.5"
+  # gain "1.2"
+
+d3 $ sound "gab*2"
+
+cps (1.2/2)
+
