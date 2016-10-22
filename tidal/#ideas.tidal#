@@ -18,8 +18,13 @@ d3 $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 "f7(3,8) a7(
   # orbit "1"
   # shape "0.4"
 
-d4 $ sound "funky*8"
-  # g
+solo $ 
+d4 $ jux rev $ slow 2 $ iter 4 $ slow 2 $ n (run 16) # sound "funky"
+  # gain "1.1"
+  # shape "0.3"
+  # speed "1.2"
+
+
 
 -- face arpeggio
 
