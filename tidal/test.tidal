@@ -142,3 +142,4 @@ d2 $ jux (iter 4) $ sound "funky*4" # n (irand 8)
 
 hush
 
+d1 $ sound "bd"
