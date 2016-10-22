@@ -106,6 +106,6 @@ d1 $ sound "bd [<2> sn:4 bd, <2/3> newnotes:3 sn:2]@3"
 
 cps 0.5
 
-d1 $ slow 2 $ sound "bd [sn sd8:2] . sd8:4 arpy pulse:40 . bd*4 . arpy:4 arpy:3"
+d1 $ sound "bd [sn sn:1] . sn:2 arpy arpy:3 . bd ~ bd . arpy:4 [arpy:3 arpy:5]"
 
 hush
