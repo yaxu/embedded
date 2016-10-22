@@ -68,8 +68,19 @@ d8 $ jux (iter 4) $ substruct "x x/2" $ n "[d7 ~ d8] a7*2" # sound "rash"
   # shape "0.3"
 
 
-d9 $ n (slow 4 $ rev $ scan 4) # sound "mt8"
+d9 $ slowspread (stut 4 0.2) [(0.25), 0.5,0.125] $ n (slow 4 $ rev $ scan 4) # sound "mt8"
+  # speed "2"
   # pan "1"
   
-d1 $ n (slow 4 $ scan 4) # sound "ht8 lt8"
+d1 $ brak $ n (slow 4 $ scan 4) # sound "ht8 lt8"
   # pan "0"
+
+d2 $ jux (|*| speed "0.75") $ slow 4 $ off 0.25 (# vowel "i o") $ n "d8 a7 . d8 d6 d8 . d8 e8 . d2 c9 d9" # sound "rash"
+
+
+d3 $ within (0.5,1) (|*| speed "-1") $ iter 4 $ rev $ loopAt 8 $ chop 16 $ sound "shackup"
+  # gain "0.8"
+
+d4 $ sometimes (density 2) $ sound "ravebass:10(3,8)"
+  # accelerate "-1.5"
+  # hcutoff "150"
