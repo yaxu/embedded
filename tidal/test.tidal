@@ -110,4 +110,7 @@ d1 $ jux rev $ iter 4 $ sound "bd [sn sn:1] . sn:2 arpy arpy:3 . bd ~ bd . arpy:
   # cutoff (scale 1000 3000 sine1)
   # resonance "0.2"
 
-hush
+solo $
+  d2 $ jux rev $ (loopAt 1 $ chop 16 $ sound "breaks125")
+
+
