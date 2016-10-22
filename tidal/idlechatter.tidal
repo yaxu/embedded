@@ -3,7 +3,14 @@
 -- remember to press record
 
 
-d1 $ sound "bd(3,8)"
+d1 $ jux (rev . (# speed "1.2")) $ (slow 4 $ sound "bd(3,8) . sd8(3,8,2) . bd8:3(3,8) . sn:2 cp8 sn:5")
   # room (slow 8 saw1)
   # size (slow 16 saw1)
+  # orbit "1"
+  # vowel "[a e i o u,p]/5"
 
+d2 $ every 4 (|+| n "12") $ every 3 (|+| n "7") $ (jux rev $ slow 2 $ n (offadd 0.25 7 "f6(3,8) a7(5,8) c6(3,8) e8*3") # sound "pulse")
+  # orbit "2"
+  # cutoff (slow 2 $ scale 100 2000 sine1)
+  # resonance "0.2"
+  

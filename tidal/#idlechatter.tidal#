@@ -3,10 +3,24 @@
 -- remember to press record
 
 
-d1 $ jux (rev . (# speed "1.2")) $ (slow 4 $ sound "bd(3,8) . sd8(3,8,2) . bd(3,8) . sn:2 cp8 sn:5")
+d1 $ degrade $ jux (rev . (# speed "1.2")) $ (slow 4 $ sound "bd(3,8) . sd8(3,8,2) . bd8:3(3,8) . sn:2 cp8 sn:5")
   # room (slow 8 saw1)
   # size (slow 16 saw1)
   # orbit "1"
+  # vowel "[a e i o u,p]/5"
 
-d2 $ slow 2 $ n (offadd 0.25 7 "f6(3,8) a7(5,8) c6*2 e8*") # sound "pulse"
+d2 $ degrade $ every 2 (slow 2) $ every 4 (|+| n "12") $ every 3 (|+| n "7") $ (jux rev $ slow 2 $ n (offadd 0.25 7 "f6(3,8) a7(5,8) c6(3,8) e8*3") # sound "[pulse, rash]")
   # orbit "2"
+  # cutoff (slow 2 $ scale 100 5000 sine1)
+  # resonance "0.2"
+
+d3 $ jux rev $ slowspread (chop . (# speed "2")) [8,16,32] $ sound "~ h"
+  # orbit "2"
+
+d4 $ (jux rev $ slowspread (chop) [32,64,128] $ sound "drum . sn:2 arpy:4 ht8 mt8:2 . future bd*2 . drum arpy")
+  
+
+d2 $ sound "gabba"
+  
+
+ 
