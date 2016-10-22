@@ -106,6 +106,8 @@ d1 $ sound "bd [<2> sn:4 bd, <2/3> newnotes:3 sn:2]@3"
 
 cps 0.5
 
-d1 $ slow 2 $ sound "bd sn sn:2 . cp"
+d1 $ jux rev $ iter 4 $ sound "bd [sn sn:1] . sn:2 arpy arpy:3 . bd ~ bd . arpy:4 [arpy:3 arpy:5]"
+  # cutoff (scale 1000 3000 sine1)
+  # resonance "0.2"
 
 hush
