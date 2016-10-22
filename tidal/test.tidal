@@ -111,10 +111,18 @@ d1 $ jux rev $ iter 4 $ sound "bd [sn sn:1] . sn:2 arpy arpy:3 . bd ~ bd . arpy:
   # resonance "0.2"
 
 d2 $ within (0,0.5) (density 0.5) $ jux rev $ (loopAt 1 $ chop 16 $ sound "breaks125")
+  # orbit "1"
 
 
 d3 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd (1/32) (7) $ (subtract 12) <$> "g8(3,8) e7(3,8) . f7(3,8) e7(3,8) a6(3,8) g7*2 . d8(3,8,2) g8(3,8) . a8(5,8) e7(3,8) a7(3,8) g6*2") # sound "rash"
   # cutoff (scale 1000 5000 sine1)
   # resonance "0.2"
   # shape "0.4"
+  # orbit "1"
+
+d4 $ sound "future feel . cp sd8:4 sd8:4"
+  # delay "0.8"
+  # delaytime (slow 2 $ scale 0.01 0.02 sine1)
+  # delayfeedback "0.9"
+  # orbit "2"
 
