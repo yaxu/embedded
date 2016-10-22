@@ -2,3 +2,8 @@
 
 -- remember to press record
 
+
+d1 $ sound "bd(3,8)"
+  # room (slow 8 saw1)
+  # size (slow 16 saw1)
+
