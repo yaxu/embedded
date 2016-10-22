@@ -97,7 +97,7 @@ let permeate steps ns p = (n (permstep steps ns (slow 16 sine1)) # sound p)
   # resonance (slow 16 $ scale 0.3 0.4 saw1)
 
 d2 $ slow 2 $ n (permstep 16 [3 .. 9] (slow 16 sine1)) # sound "arpy"
-  # speed "0.5"
+b  # speed "0.5"
   # pan "0"
 
 :t permstep
@@ -113,6 +113,7 @@ d1 $ jux rev $ iter 4 $ sound "bd [sn sn:1] . sn:2 arpy arpy:3 . bd ~ bd . arpy:
 d2 $ within (0,0.5) (density 0.5) $ jux rev $ (loopAt 1 $ chop 16 $ sound "breaks125")
   # orbit "1"
 
+cps 0.5
 
 d3 $ jux rev $ slow 4 $ n (offadd (1/16) 12 $ offadd (1/32) (7) $ (subtract 12) <$> "g8(3,8) e7(3,8) . f7(3,8) e7(3,8) a6(3,8) g7*2 . d8(3,8,2) g8(3,8) . a8(5,8) e7(3,8) a7(3,8) g6*2") # sound "rash"
   # cutoff (scale 1000 5000 sine1)
@@ -128,4 +129,6 @@ d4 $ substruct "x x/2" $ sound "future feel . cp sd8:4 sd8:4"
 
 d3 $ brak $ sound "drum feel feel:3 ~"
   # orbit "1"
+
+
 
