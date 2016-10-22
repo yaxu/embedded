@@ -8,16 +8,18 @@ d1 $ sound "off"
 
 d2 $ (jux rev $ sound "feel(3,8) . feel [drum bd8:5]")
   # room "0"
-  # delay "1"
-  # delaytime "[0.25 0.125 0.5]/6"
   # delayfeedback "0.9"
   # orbit "2"
   -- # hcutoff (slow 1 $ rev $ scale 5000 0 saw1)
   # shape "0.6"
 
-d3 $ slow 2 $ n (offaddoffadd 0.25 7 "f8(3,8) a8(3,8) d8(3,8) e8(3,8)") # sound "rash"
+d3 $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 "f7(3,8) a7(3,8,2) [d7 c7]/2(3,8) e7(3,8)") # sound "rash"
   # gain "1.1"
   # orbit "1"
+  # shape "0.4"
+
+d4 $ sound "funky*8"
+  # g
 
 -- face arpeggio
 
