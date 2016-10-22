@@ -18,13 +18,15 @@ d3 $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 "f7(3,8) a7(
   # orbit "1"
   # shape "0.4"
 
-solo $ 
+
 d4 $ jux rev $ slow 2 $ iter 4 $ slow 2 $ n (run 16) # sound "funky"
   # gain "1.1"
   # shape "0.3"
   # speed "1.2"
 
+d5 $ slowspread (chop) [2,3,4] $ sound "~ off"
 
+d6 $ sound "{bd sn . bd sn sn . cp sn:2 . feel future voodoo*2, arpy:2 ~ ~ arpy:2 ~ ~ arpy}"
 
 -- face arpeggio
 
