@@ -168,7 +168,7 @@ d1 $ off 0.25 (# (crush "3" # gain "0.9" # speed "4")) $ jux (4 <~) $ n (slow 8 
 
 d2 $ runWith' 4 (density 2) $ off 0.25 (# crush "3") $ off 0.125 (# speed "2") $ sound "drum bd*4"
 
-d1 $ sound "chin*8"
+d1 $ sound "rash:50*2"
   # pan "0 1"
 
 -- rave
