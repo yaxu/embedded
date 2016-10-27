@@ -36,5 +36,25 @@ d7 $ degrade $ jux rev $ weave 16 (rev $ n (run 8) # sound "arpy")
 d8 $ sound "drum ~ cp*2"
 
 d2 $ runWith 4 (density 2) $ sound "amencutup*8" # n (irand 8)
+
+d1 $ jux rev $ iter 4 $ loopAt 32 $ striate 32 $ sound "bev*4"
+  |*| speed "[1,2]"
+  # orbit "1"
   
-d3 $ loopAt 32 $ striate 32 $ sound "bev*4"
+d2 $ jux (rev) $ substruct "x x/2" $ sound "bd ~ [sn:1 mt] lt"
+  # end "0.7"
+  # speed "2"
+  # orbit "1"
+  
+d3 $ jux rev $ iter 4 $ loopAt 4 $ slowspread (chop) [16, 32] $ sound "shackup"
+  # gain "0.9"
+  # orbit "1"
+  
+d4 $ jux (|*| speed "2") $ stut 3 0.6 (0.25) $ n "[d6 g6] a7(3,8)" # sound "jx"
+  # gain "1.4"
+  # speed "[1,2,1.5]"
+  # orbit "1"
+  
+d5 $ runWith 4 (|*| speed "2") $ sound "g(3,8,[0 2]/2)"
+  # room "0."
+  # orbit "2"
