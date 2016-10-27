@@ -1,4 +1,4 @@
-cps 0.45
+cps 0.56
 
 d1 $ (jux rev $ sound "jvrave(3,8)")
   # end "0.25"
@@ -14,6 +14,23 @@ d3 $ jux rev $ every 2 (within (0,0.25) (density 2)) $ loopAt 2 $ chop 16 $ soun
 
 d4 $ (jux rev $ slowspread (chop) [128,16,64,128] $ sound "drum*2 . claus:5 [claus claus:4] claus:2 . kurt . arpy:3")
   # orbit "2"
+  # cutoff (slow 4 $ scale 2000 100 saw1)
 
-d3 $ n (run 8) $ sound "voodoo"
-  # gain "1.1
+d3 $ jux (iter 4) $ (n (run 16) # sound "voodoo")
+  # gain "1.1"
+
+d5 $ sound "jvbass*2 [bass3 ~ casio*2]"
+
+d6 $ jux (2 <~) $ sound "funky(7,8)" # n (irand 16)
+  # cutoff "1000"
+
+
+d7 $ jux rev $ weave 16 (n (run 8) # sound "arpy")
+  [vowel "a [i o] u i",
+   vowel "i o u",
+   speed "1 2*2 1.5(3,8) 1",
+   speed "0.5 1 2*2"
+  ]
+  |*| speed "0.5"
+  #
+  
