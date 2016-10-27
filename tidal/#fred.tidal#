@@ -1,4 +1,4 @@
-cps 0.56
+cps 0.7
 
 d1 $ (jux rev $ sound "jvrave(3,8)")
   # end "0.25"
@@ -22,15 +22,19 @@ d3 $ jux (iter 4) $ (n (run 16) # sound "voodoo")
 d5 $ sound "jvbass*2 [bass3 ~ casio*2]"
 
 d6 $ jux (2 <~) $ sound "funky(7,8)" # n (irand 16)
-  # cutoff "1000"
+  # gain "0.8"
 
-
-d7 $ jux rev $ weave 16 (n (run 8) # sound "arpy")
-  [vowel "a [i o] u i",
+d7 $ degrade $ jux rev $ weave 16 (rev $ n (run 8) # sound "arpy")
+  [vowel "a [i o] u e",
    vowel "i o u",
-   speed "1 2*2 1.5(3,8) 1",
+   speed "1 2*2 2 1",
    speed "0.5 1 2*2"
   ]
   |*| speed "0.5"
-  #
+
+
+d8 $ sound "drum ~ cp*2"
+
+d2 $ runWith 4 (density 2) $ sound "amencutup*8" # n (irand 8)
   
+d3 $ loopAt 32 $ striate 32 $ sound "bev*4"
