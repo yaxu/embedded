@@ -1,0 +1,12 @@
+cps 0.45
+
+d1 $ (jux rev $ sound "jvrave(3,8)")
+  # end "0.25"
+  # room (slow 4 saw1)
+  # size (slow 4 saw1)
+  # orbit "1"
+
+d2 $ off 0.25 (|+| n "7") $ runWith 4 (density 2) $ slow 2 $ n "[f5(3,8) a6(3,8,2) c6(3,8) e7(3,8)]/2" # sound "pulse"
+  # orbit "2"
+  # shape "0.3"
+ 
