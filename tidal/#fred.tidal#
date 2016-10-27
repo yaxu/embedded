@@ -1,0 +1,6 @@
+cps 0.6
+
+
+  
+d1 $ n (run 8) #sound "jvrave"
+hush
