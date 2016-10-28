@@ -141,10 +141,18 @@ d1 $ slow 2 $ jux rev $ (loopAt 2 $ chop 16 $ sound "atlast:2")
 d2 $ jux (iter 4) $ sound "funky*4" # n (irand 8)
 
 hush
+cps 1
 
-d1 $ sound "bd"
+c1 $ sound "bd"
+
 
 d1 $ n "0 1" # sound "numbers"
   # pan "0 1"
 
- 
+
+hush
+
+(cps, nudger, getNow) <- cpsUtils'
+
+nudger (0.1)
+
