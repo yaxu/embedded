@@ -156,3 +156,6 @@ hush
 
 nudger (0.1)
 
+d1 $ sound "bd [sn sd8:3*2] bd*3 bd"
+
+hush
