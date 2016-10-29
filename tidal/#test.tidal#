@@ -156,6 +156,6 @@ hush
 
 nudger (0.1)
 
-d1 $ sound "cp bd bd bd"
+d1 $ sound "cp"
 
 hush
