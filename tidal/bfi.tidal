@@ -4,4 +4,5 @@ d1 $ slowspread (stut 4 0.7) [-0.25,-0.5,-0.125] $ slow 2 $ (jux rev $ n (palind
   # cutoff (scale 500 3000 sine1)
   # resonance "0.25"
 
-d2 $ slow 2 $ chop 16 $ sound "arc"
+d2 $ jux rev $ iter 4 $ slow 2 $ chop 16 $ sound "arc"
+
