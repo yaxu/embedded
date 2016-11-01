@@ -4,3 +4,6 @@ d1 $ density 2 $ (slowspread (stut 4 0.7) [-0.25,-0.5,-0.125] $ slow 2 $ (jux re
   # cutoff (slow 4 $ scale 500 1000 sine1)
   # resonance "0.15"
 
+d2 $ sound "{bd bd . sd8:5 sd8:4 sn:1, mt ~ [ht lt]}"
+  # vowel "a i"
+  
