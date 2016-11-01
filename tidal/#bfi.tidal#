@@ -1,3 +1,4 @@
 cps 0.8
 
-d1 $ jux rev $ n (offadd 0.125 12 $ offadd 0.25 (5) $ slow 4 $ "f7(3,8) a7(3,8,2) f7(3,8,4) g6(3,8,6)") # sound "rash"
+d1 $ (jux rev $ n (offadd 0.125 12 $ offadd 0.25 (5) $ slow 4 $ "f7(3,8) a7(3,8,2) c7(3,8,4) e7(3,8,6)") # sound "rash")
+  # cutoff (scale 500 3000 sine1)
