@@ -1,0 +1,8 @@
+cps 0.8
+
+d1 $ (slowspread (stut 4 0.7) [-0.25,-0.5,-0.125] $ slow 2 $ (jux rev $ n (palindrome $ offadd 0.125 12 $ slowspread (offadd 0.25) [7,5] $ slow 4 $ "f7(3,8) a7(3,8,2) c7(3,8,4) e7(3,8,6)") # sound "[rash,pulse]"))
+  # cutoff (slow 2 $ scale 500 3000 sine1)
+  # resonance "0.25"
+
+d2 $ jux rev $ iter 4 $ slow 2 $ chop 16 $ sound "arc"
+
