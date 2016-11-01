@@ -4,6 +4,8 @@ d1 $ stack [superimpose ((stut 3 0.5 (-0.25)) . (n "12 0*2 7 -24(3,8)" |+|) . (#
             # resonance "0.15",
             runWith 4 (density 0.5) $ sound "{bd bd . sn:6 sn sn:1, mt ~ [ht lt]}"
             # vowel "a i"
-            # shape "0.95"
+            # shape "0.99"
             # cutoff "1200"
            ]
+
+
