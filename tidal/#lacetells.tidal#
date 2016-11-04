@@ -41,3 +41,8 @@ cps (67.45/60)
 d3 $ loopAt 3 $ sound "arc"
 
 hush
+
+cps 0.5
+
+d1 $ sound "bd*4"
+  # nudge "-0.06"
