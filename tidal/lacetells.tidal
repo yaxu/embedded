@@ -19,3 +19,12 @@ d2 $ sound "~ wobble"
 d3 $ stut 32 0.25 (- (1)) $  n "c7(3,8)" # sound "pulse"
   # end "0.01"
 
+
+d4 $ slow 4 $ n "d8 f8" # sound "xx"
+  # gain "0.7"
+
+cps (160/60/2)
+
+d1 $ brak $ runWith 3 (density 2) $ sound "feel mt8 [sd8:2 cp8:2]"
+  # gain "0.6"
+  # shape "0.9"
