@@ -42,7 +42,11 @@ d3 $ loopAt 3 $ sound "arc"
 
 hush
 
+
 cps 0.5
 
-d1 $ sound "bd*4"
-  # nudge "-0.06"
+cps (-1)
+
+d1 $ sound "bd*4 bd*3"
+
+hush
