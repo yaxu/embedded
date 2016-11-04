@@ -43,10 +43,11 @@ d3 $ loopAt 3 $ sound "arc"
 hush
 
 
-cps 0.5
+cps (1/3)
 
 cps (-1)
 
-d1 $ sound "bd*4 bd*3"
+d1 $ sound "bd ~ [bd*16 bd*3] ~"
+  # gain "0
 
 hush
