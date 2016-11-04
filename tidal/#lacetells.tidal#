@@ -47,7 +47,7 @@ cps (1/2)
 
 cps (-1)
 
-d1 $ every 3 (density 2) $ every 2 (density 2) $ stut 8 0.5 (-0.25) $ slow 4 $ jux rev $ chop 2 $ (density 2 $ weave 16 (palindrome $ n (run 16) # sound "gabba")
+d1 $ (density 2) $ every 2 (density 2) $ stut 8 0.5 (-0.25) $ slow 4 $ jux rev $ chop 2 $ (density 2 $ weave 16 (palindrome $ n (run 16) # sound "gabba")
   [vowel "a ~ . ~ e",
    vowel "e i . o u",
    speed "1 ~ . 0.25 0.5",
@@ -59,7 +59,13 @@ d1 $ every 3 (density 2) $ every 2 (density 2) $ stut 8 0.5 (-0.25) $ slow 4 $ j
   |*| speed "8"
   # nudge "0.5"
 
+
 d2 $ loopAt 4 $ chop 16 $ sound "liq"
   # gain "0.7"
+
+d3 $ jux rev $ n (offadd (1/6) 12 $ slow 2 $ "d7(3,8) g8(3,8,2) a7(3,8,4) e8(3,8,6)") # sound "xx"
+  # gain "0.87"
+  # room "0.99"
+  # begin "0.1"
 
 hush
