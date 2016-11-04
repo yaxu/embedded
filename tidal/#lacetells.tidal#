@@ -31,8 +31,12 @@ d1 $ brak $ runWith 3 (density 2) $ sound "feel mt8 [sd8:2 cp8:2]"
   # gain "0.6"
   # shape "0.97"
 
-d2 $ sound "funky*4" # n (irand 32)
-  # gain "0.75"
+d2 $ sound "[[can*2 can] can,bd:2]" # n (irand 32)
+
+
+cps (-1)
+
+cps (67.45/60)
 
 d3 $ loopAt 3 $ sound "arc"
 
