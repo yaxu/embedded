@@ -47,16 +47,19 @@ cps (1/2)
 
 cps (-1)
 
-d1 $ stut 4 0.5 (-0.25) $ slow 4 $ jux rev $ chop 2 $ (density 2 $ weave 16 (palindrome $ n (run 8) # sound "gabba")
+d1 $ every 3 (density 2) $ every 2 (density 2) $ stut 8 0.5 (-0.25) $ slow 4 $ jux rev $ chop 2 $ (density 2 $ weave 16 (palindrome $ n (run 16) # sound "gabba")
   [vowel "a ~ . ~ e",
    vowel "e i . o u",
    speed "1 ~ . 0.25 0.5",
    speed "0.5 . 0.5 2"
    ])
-  # gain "0.75"
-  # cutoff (slow 2 $ scale 200 900 saw1)
+  # gain "0.7"
+  # cutoff (slow 2 $ scale 200 2000 sine1)
   # resonance "0.1"
-  |*| speed "-2"
-  # nudge "0.1"
+  |*| speed "8"
+  # nudge "0.5"
+
+d2 $ loopAt 4 $ chop 16 $ sound "liq"
+  # gain "0.7"
 
 hush

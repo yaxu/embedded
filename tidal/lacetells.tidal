@@ -43,17 +43,22 @@ d3 $ loopAt 3 $ sound "arc"
 hush
 
 
-cps (1/3)
+cps (1/2)
 
 cps (-1)
 
-d1 $ jux rev $ density 2 $ weave 16 (palindrome $ n (run 8) # sound "arpy")
-  [vowel "a ~ . ~ i e",
-   vowel "e i . o ~ u",
-   speed "1 ~ . 0.25 ~ 0.5",
-   speed "0.5 . 0.5 1 2"
-   ]
-  # gain "0.85"
-  # cutoff "2000"
+d1 $ every 3 (density 2) $ every 2 (density 2) $ stut 8 0.5 (-0.25) $ slow 4 $ jux rev $ chop 2 $ (density 2 $ weave 16 (palindrome $ n (run 16) # sound "gabba")
+  [vowel "a ~ . ~ e",
+   vowel "e i . o u",
+   speed "1 ~ . 0.25 0.5",
+   speed "0.5 . 0.5 2"
+   ])
+  # gain "0.7"
+  # cutoff (slow 2 $ scale 200 2000 sine1)
+  # resonance "0.1"
+  |*| speed "8"
+  # nudge "0.5"
+
+
 
 hush
