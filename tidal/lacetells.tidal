@@ -73,3 +73,14 @@ d3 $ jux rev $ n (offadd (1/6) 7 $ slow 2 $ "d7 ~ ~ ~") # sound "xx"
   
 
 hush
+
+
+d1 $ slowspread slow [1,1.5,1.125] $ slowspread density [12,6,3,1.5] $ s "cp"
+  # pan "1"
+
+d1 $ do jimmy <- "{1 1.5 1.125}%1"
+        bob <- "{12 6 3 1.5}%1"
+        slow jimmy $ density bob $ s "cp"
+        
+
+
