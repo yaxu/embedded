@@ -82,5 +82,5 @@ d2 $ do jimmy <- "{1 1.5 1.125}%1"
         slow jimmy $ density bob $ s "cp"
         
 
-"{ -3 -b}" :: Pattern Int
+"{ -3 3, 3}" :: Pattern Int
 
