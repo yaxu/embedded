@@ -1,8 +1,10 @@
 cps (-1)
+
 cps 0.5
 
 
-
+d1 $ off 0.25 (|*|) $ off 0.125 (|*| speed "2") $ slow 2 $ sound "[bd8 ~ bd8] wobble ~ ~"
+  # end "0.3"
 
 
 
