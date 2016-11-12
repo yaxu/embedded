@@ -2,7 +2,10 @@ cps (-1)
 cps 0.5
 
 
-
+d1 $ degrade $ sometimes (|*| speed "0.5") $ (jux rev $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 "c8 ~ c8 . g8 e8") # sound "[rash,xx]")
+  # cutoff (slow 2 $ scale 100 2000 sine1)
+  # resonance "0.2"
+  
 
 
 
