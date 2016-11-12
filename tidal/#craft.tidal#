@@ -16,7 +16,8 @@ d3 $ sound "~ [~ wobble]"
   # shape "0.4"
   # speed "2"
 
-d4 $ jux (iter) $ chop 8 $ sound "ind ind:4"
+d4 $ every 2 (density 2) $ density 2 $ jux (rev . iter 4) $ slowspread (chop) [8,16,32] $ sound "ind*2 [gabba*2 off]"
+  # speed "[1]"
 
 
   
@@ -39,3 +40,5 @@ d2 $ sound "drum(3,8,[2 4])"
 
 
 d3 $ sound "~ wobble"
+
+d4 $ sound "bd sn*"
