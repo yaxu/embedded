@@ -3,16 +3,9 @@ cps (-1)
 cps 0.5
 
 
-d1 $ jux (rev) $ sometimes (off 0.25 (|*| shape "0.25")) $ off 0.125 (|*| speed "2") $ slow 2 $ sound "[bd8 ~ bd8, sd8:3] wobble ht8:5 ~"
-  # end "0.4"
 
 
-d2 $ slow 8 $ every 4 (density 2 . (|*| speed "0.5"))$ jux rev $ weave 16 ((sound "voodoo*8") # n (run 8))
-  [vowel "a e*2 i o",
-   speed "1 2 3",
-   speed "1 2 3 1",
-   vowel "a i"
-   ] |*| speed "2" # end "0.05"
+
 
 
 
