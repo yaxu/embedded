@@ -16,29 +16,6 @@ d3 $ sound "~ [~ wobble]"
   # shape "0.4"
   # speed "2"
 
-d4 $ every 2 (density 2) $ density 2 $ jux (rev . iter 4) $ slowspread (chop) [8,16,32] $ sound "ind*2 [gabba*2 off]"
-  # speed "[1]"
+d4 $ every 2 (density 2) $ density 2 $ jux (rev . iter 4) $ slowspread (chop) [8,16,32] $ sound "ind*2
 
 
-  
-
-   
-
-
-
-
-
-
-
-
-
-
-
-d1 $ every 2 (density 1.5)$  every 3 ((|*| speed "2") . density 2) $ jux rev $ slowspread (chop) [4,8,128,16] $ sound "claus [~ claus:1*2]" # n (irand 8)
-
-d2 $ sound "drum(3,8,[2 4])"
-
-
-d3 $ sound "~ wobble"
-
-d4 $ sound "bd sn*"
