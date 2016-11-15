@@ -19,3 +19,4 @@ d3 $ sound "~ [~ wobble]"
 d4 $ every 2 (density 2) $ density 2 $ jux (rev . iter 4) $ slowspread (chop) [8,16,32] $ sound "ind*2
 
 
+Belisha Beacon uses the coding language ixi lang to program her beats. She explores the limitations of this highly accessible livecoding environment with what has been described as ‘polyrhythmic techno’. 
