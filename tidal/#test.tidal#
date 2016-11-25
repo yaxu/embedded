@@ -156,31 +156,8 @@ hush
 
 nudger (0.1)
 
-d1 $ sound "bd [sn sd8:3*2] bd*3 bd"
+c1 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
 hush
-
-
-d1 $ stack [sound "~ arpy:5" # orbit "1" # delay "1"
-            # delaytime "0.01"
-            # delayfeedback "0.9" # room "1" # size "1"
-           ]
-hush
-d2 $ sound "bd(3,8)"
-  # gain "1.2"
-
-
-
-
-
-
-d1 $ every 2 rev $ chop 8 $ sound "{bd sn:2*2 sn:2 bd}"
-  # vowel "i o u"
-  # speed "[1 2]/2"
-
-
-
-
-
 
 
