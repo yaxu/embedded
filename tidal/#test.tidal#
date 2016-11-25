@@ -168,3 +168,19 @@ d1 $ stack [sound "~ arpy:5" # orbit "1" # delay "1"
 hush
 d2 $ sound "bd(3,8)"
   # gain "1.2"
+
+
+
+
+
+
+d1 $ sound "{bd sn:2*2 sn:2 bd, arpy*2 arpy:2 arpy:3}"
+  # vowel "i"
+  # room "0.9"
+
+
+
+
+
+
+
