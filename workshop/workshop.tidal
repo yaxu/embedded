@@ -1,0 +1,233 @@
+-- * Make a sound
+
+d1 $ sound "can"
+
+-- * Stop making a sound by replacing with silence
+
+d1 silence
+
+-- * Pick a different sound from a named set, with ':'
+
+d1 $ sound "can:1"
+
+-- * Explore:
+
+-- flick sid can metal future gabba sn mouth co gretsch mt arp h cp cr
+-- newnotes bass hc tabla bass0 hh bass1 bass2 oc bass3 ho odx
+-- diphone2 house off ht tink perc bd industrial pluck trump
+-- printshort jazz voodoo birds3 procshort blip drum jvbass psr wobble
+-- drumtraks koy rave bottle kurt latibro rm sax lighter lt arpy feel
+-- less stab ul
+
+-- * Where do these sounds come from? How do I add more?
+
+-- Quarks.folder in SuperCollider can help you find them
+
+-- * Make a sequence
+
+d1 $ sound "bd hh sn hh"
+
+-- * The longer the sequence, the faster it runs
+
+d1 $ sound "bd bd hh bd sn bd hh bd"
+
+-- * Play more than one sequence at once with d1 ... d9
+
+d2 $ sound "sn [sn:2 sn] bd sn"
+
+-- * Hush stops all
+
+hush
+
+-- * Add a silence/rest with '~'
+
+d1 $ sound "bd ~ ~ bd ~ ~ bd bd"
+
+-- * Effects
+
+-- ** vowel
+
+d1 $ sound "cp [cp cp] cp cp" # vowel "a o e i"
+
+-- ** gain
+
+d1 $ sound "bd hh sn hh" # gain "1.2 0.8"
+
+d1 $ sound "bd*32" # gain sine1
+
+-- ** 'speed' and up
+
+d1 $ sound "bass [bass bass] ~ [bass ~ bass]"
+
+d1 $ sound "bass [bass bass] ~ [bass ~ bass]" # up "1 5 12 7"
+
+d1 $ sound "numbers:1 numbers:2 numbers:3 numbers:4"
+
+d1 $ sound "numbers:1 numbers:2 numbers:3 numbers:4" # speed "1 1.5 2 0.5"
+
+-- ** pan
+d1 $ sound "numbers:1 numbers:2 numbers:3 numbers:4" # pan "1"
+
+d1 $ sound "numbers:1 numbers:2 numbers:3 numbers:4" # pan saw1
+
+-- ** shape - distortion
+
+d1 $ sound "kurt" # shape "0.98"
+
+-- * feeling brave ?
+
+-- http://tidalcycles.org/patterns.html#effects
+
+-- delay / delaytime / delayfeedback
+-- cutoff / resonance
+-- room / size
+
+-- * Polymetric / polyrhythmic sequences
+
+-- 4 Polyrhythm: 
+
+d1 $ sound "[drum sn:2 sn:5 sn:2, arpy arpy:4 arpy:2]"
+
+d1 $ sound "[drum bd hh bd, can can:2 can:3 can:4 can:2]"
+
+d1 $ sound "[bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5]"
+
+-- Polymeter
+
+d1 $ sound "{drum sn:2 sn:5 sn:2, arpy arpy:4 arpy:2}"
+
+d1 $ sound "{drum bd hh bd, can can:2 can:3 can:4 can:2}"
+
+d1 $ sound "{bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5}"
+
+-- * What is pattern, anyway?
+
+-- ** cyclic / repetitive
+
+d1 $ n "0 1 2 3" # sound "arpy"
+
+d1 $ n (run 4) # sound "arpy"
+
+-- ** symmetry
+
+-- compare these:
+
+d1 $ slow 2 $ n "0 1 2 3 3 2 1 0" # sound "arpy"
+
+d1 $ palindrome $ n (run 4) # sound "arpy"
+
+-- ** self similarity
+
+d1 $ slow 4 $ n "[0 1 2 3] [0 1 2 3]*2 [0 1 2 3]*4 [0 1 2 3]*8" # sound "arpy"
+
+d1 $ slowspread (density) [1,2,4,8] $ n "0 1 2 3" # sound "arpy"
+
+-- ** interference
+
+d1 $ sound "{arpy arpy:2 arpy:4, arpy:5 arpy:0}"
+
+-- A canon / round
+d1 $ weave 16 (n (run 8) # sound "arpy")
+  [vowel "a e i",
+   vowel "e i*2 o u",
+   speed "1 2 3 1",
+   speed "2 1 0.5"
+  ]
+
+-- transforming sequences
+
+-- slow
+
+d1 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+d1 $ slow 2 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+
+d1 $ rev $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- Changing the cycles per second
+
+cps 0.9
+
+-- density
+
+d1 $ density 2 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- iter
+
+d1 $ iter 4 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- every
+
+d1 $ every 4 (density 2) $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- Feeling brave? More than one transformation
+
+d1 $ jux (rev . (slow 1.5)) $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- slowspread
+
+d1 $ slowspread (density) [2, 1.5, 4, 16] $ sound "bd sn:2 hh sn:1"
+
+-- slowcat
+
+d1 $ slowcat [sound "bd sn:3",
+              sound "arpy can arpy:3 can"
+             ]
+
+-- stack
+
+d1 $ stack [sound "bd sn:3",
+            sound "arpy can arpy:3 can"
+           ]
+  
+-- * Transforming effect sequences
+
+-- Everything is a pattern!
+
+d1 $ sound (density 2 "arpy arpy:1 arpy:2 arpy:3")
+  # speed (every 2 (density 2) "1 2 3 4")
+
+-- * Longer samples and 'granular synthesis'
+
+-- ** chop
+
+d1 $ sound "bev"
+
+hush
+
+d1 $ chop 128 $ sound "bev"
+
+d1 $ slow 8 $ chop 128 $ sound "bev"
+
+-- ** transform the grain pattern:
+
+d1 $ rev $ slow 8 $ chop 128 $ sound "bev"
+
+-- ** striate vs chop
+
+d1 $ slow 4 $ chop 4 $ sound "arpy:1 arpy:3 arpy:2 arpy:4"
+
+d1 $ slow 4 $ striate 4 $ sound "arpy:1 arpy:3 arpy:2 arpy:4"
+
+-- * Arbitrariness and 'random numbers'
+
+-- ** randslice
+
+d1 $ randslice 32 $ sound "bev"
+
+-- ** random sample
+
+d1 $ sound "arpy*8" # n (irand 16)
+
+-- ** sometimes
+
+d1 $ sometimes (# speed "2") $ sound "drum*8"
+
+-- ** often
+
+d1 $ often (# speed "2") $ sound "drum*8"
+
+-- ** degrade
+
+d1 $ degrade $ sound "bd sn cp sn:2"
