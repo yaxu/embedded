@@ -160,9 +160,8 @@ d1 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
 hush
 
-
-do let ratio = 3000 -- 33333
-       classic = 0.01
+do let ratio = 44100 -- 33333
+       classic = 0.0
        super = classic * ratio
    d1 $ sound "cp"
      # cutoff (pure super)
