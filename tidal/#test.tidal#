@@ -161,14 +161,18 @@ d1 $ sound "bd [sn sd8:3*2] bd*3 bd"
 hush
 
 
+do let ratio = 33333
+       classic = 0.1
+       super = classic * rat
 d1 $ sound "cp"
-  # cutoff "5000"
+  # cutoff "300"
 
 c1 $ sound "~ cp"
   # nudge "0.0624"
-  # cutoff "0.06"
+  # cutoff "0.01"
   # resonance "0.1"
 
-1300 / 0.03
-300 / 0.0091
+1300 / 0.035
+300 / 0.01
 2000 / 0.06
+
