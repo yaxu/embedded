@@ -162,6 +162,11 @@ hush
 
 
 d1 $ sound "bd"
+  # cutoff "300"
 
-c1 $ sound "bd"
+c1 $ sound "~ bd"
   # nudge "0.0624"
+  # cutoff "0.001"
+  # resonance "0.1"
+
+1300 / 0.03
