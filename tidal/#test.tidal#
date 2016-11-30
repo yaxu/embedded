@@ -163,14 +163,13 @@ hush
 
 do let ratio = 33333
        classic = 0.1
-       super = classic * rat
-d1 $ sound "cp"
-  # cutoff "300"
-
-c1 $ sound "~ cp"
-  # nudge "0.0624"
-  # cutoff "0.01"
-  # resonance "0.1"
+       super = classic * ratio
+   d1 $ sound "cp"
+     # cutoff (pure super)
+   c1 $ sound "~ cp"
+     # nudge "0.0624"
+     # cutoff (pure classic)
+     # resonance "0.1"
 
 1300 / 0.035
 300 / 0.01
