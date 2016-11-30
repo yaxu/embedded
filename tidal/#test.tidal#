@@ -161,12 +161,14 @@ d1 $ sound "bd [sn sd8:3*2] bd*3 bd"
 hush
 
 
-d1 $ sound "bd"
-  # cutoff "300"
+d1 $ sound "cp"
+  # cutoff "5000"
 
-c1 $ sound "~ bd"
+c1 $ sound "~ cp"
   # nudge "0.0624"
-  # cutoff "0.001"
+  # cutoff "0.06"
   # resonance "0.1"
 
 1300 / 0.03
+300 / 0.0091
+2000 / 0.06
