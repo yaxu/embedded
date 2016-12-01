@@ -160,3 +160,5 @@ c1 $ jux rev $ chop 8 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
 hush
 
+d1 $ sound "[bd hh]*2"
+
