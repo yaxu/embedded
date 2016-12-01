@@ -162,3 +162,5 @@ hush
 
 d1 $ sound "[bd hh]*2"
 
+hush
+  
