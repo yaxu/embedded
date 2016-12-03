@@ -11,3 +11,4 @@ d1 $ jux rev $ n "d6 e6 f6 g6" # sound "jx"
 d2 $ sound "bd bd" # pan "0 1"
 
 cps 0.9
+
