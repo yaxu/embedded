@@ -8,7 +8,6 @@ click1 $ n "0 1 1 1" # sound "casio"
 
 d1 $ jux rev $ n "d6 e6 f6 g6" # sound "jx"
 
-solo $ 
-d2 $ sound "wobble"
+d2 $ sound "bd8"
 
 cps 0.9
