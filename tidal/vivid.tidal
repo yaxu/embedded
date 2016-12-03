@@ -3,4 +3,3 @@
 click1 $ n "0 1 1 1" # sound "casio"
   # orbit "2"
 
-d1 $ sound
