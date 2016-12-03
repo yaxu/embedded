@@ -163,7 +163,7 @@ hush
 
 
 d10 $ sound "casio:0 casio:1 casio:1 casio:1"
-  # orbit "2"
+
 
 
   
