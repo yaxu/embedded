@@ -6,6 +6,9 @@ click1 $ n "0 1 1 1" # sound "casio"
   # orbit "2"
   # gain "1.3"
 
+d1 $ jux rev $ n "d6 e6 f6 g6" # sound "jx"
 
+solo $ 
+d2 $ sound "wobble"
 
 cps 0.9
