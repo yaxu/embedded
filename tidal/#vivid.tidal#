@@ -44,9 +44,14 @@ d5 $ every 2 ((|*| speed "2")) $ jux (rev) $ every 2 (|+| up "12") $ up "0 7 ~ 3
 
 d2 $ brak $ sound "bd*2 mt ~ mt bd rs ~ sn:2"
 
-d3 $ jux rev $ iter 4 $ loopAt 8 $ chop 32 $ sound "liq"
+d3 $ (jux rev $ iter 4 $ loopAt 8 $ chop 32 $ sound "liq")
   # gain "0.9"
-  # cutoff (scale 100 8000 sine1)
-  # res 
+  # cutoff (slow 4 $ scale 2000 4000 sine1)
+  # resonance "0.2"
+d3  sil
+d4 $ jux rev $ sound "{bd bd*4, sn:3 gabba*2}"
 
-d4 $ jux rev $ sound "{bd bd*4, sn:3 gabba*2 kurt*2}"
+d5 $ smash 4 [1,2,3,4] $ sound "~ off"
+  # gain "1.1"
+
+cps 1.48
