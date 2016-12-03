@@ -163,5 +163,5 @@ hush
 d1 $ sound "[bd hh]*2"
 
 d1 $ sound "bd sn"
-  # orbit "1"
+  # orbit "2"
   
