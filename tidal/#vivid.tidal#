@@ -87,5 +87,4 @@ d2 $ jux rev $ iter 4 $ sound "voodoo*8" # n (run 8)
   # speed "0.5"
 
 
-d5 $ sound "ravebass:10(3,8)"
-  # 
+
