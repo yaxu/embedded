@@ -26,7 +26,7 @@ d1 $ runWith 4 (density 2) $ every 4 (# speed "0.5") $ slowspread (chop) [128, 6
   
 d2 $ sound "drum(3,8)"  
 
-d3 $ jux rev $ weave 16 (n (run 8) # palindromsound "arpy*8")
+d3 $ every 2 (slow 2) $ jux rev $ weave 16 (n (run 8) # sound "arpy*8")
   [vowel "a i u i",
    vowel "a o u",
    speed "1 2 3",
@@ -36,6 +36,8 @@ d3 $ jux rev $ weave 16 (n (run 8) # palindromsound "arpy*8")
   # gain "1.2"
   |*| speed "[0.5,1]"
 
-
+d4 $ every 4 (# speed ) $ iter 4 $ jux rev $ loopAt 2 $ chop 8 $ sound "arc"
+  # shape "0.6"
+  
 
 
