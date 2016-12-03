@@ -55,6 +55,11 @@ d5 $ every 2 (slow 2) $ jux rev $ smash 4 [1,2,3,4] $ sound "~ off"
   # gain "1.1"
   # speed "[2 4]/4"
 
-d6 $ every 2 (0.25 <~)$ every 4 (# n "2") $ slow 2 $ sound "onoff(3,8)"
+d6 $ jux rev $ chop 16 $ every 2 (0.25 <~) $ every 4 (# n "2") $ slow 2 $ sound "onoff(3,8)"
+
+d7 $ jux rev $ sound "funky*8" # n (irand 8)
+
+
+
 
 cps 1.48
