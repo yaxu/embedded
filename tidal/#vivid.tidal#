@@ -42,7 +42,8 @@ d4 $ every 4 (# speed "0.5") $ iter 4 $ jux rev $ loopAt 2 $ chop 8 $ sound "arc
 d5 $ every 2 ((|*| speed "2")) $ jux (rev) $ every 2 (|+| up "12") $ up "0 7 ~ 3" # sound "bass3"
   # shape "0.3"
 
-d6 $ (stut 4 0.9 0.04 $ sound "[gabba,arpy](5,8,[0 4]/2)")
-  # speed (slow 4 $ scale 0.5 0.25 sine1)
+d1 $ loopAt 4 $ chop 16 4 sound "repetition"
+  # gain "1.2"
 
-d1 $ sound "repetitio"
+d2 $ jux rev $ sound "bd mt ~ mt bd rs ~ sn:2"
+  # shape (scalesine1
