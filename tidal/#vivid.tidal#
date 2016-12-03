@@ -9,7 +9,9 @@ click1 $ n "0 1 1 1" # sound "casio"
 d1 $ runWith 4 (density 2) $ sound "bd mt . cp sn lt"
   # gain "1.1"
 
-d2 $ runWith 4 () $ n "d7 e8" # sound "rash"
+d2 $ (runWith 4 (density 2) $ slow 2 $ n "f7(3,8) a8(3,8) c7(3,8) e7(3,8)" # sound "rash")
+  # cutoff (slow 4 $ scale 100 1000 sine1)
+  # resonance "0.2"
 
 
 cps 1.2
