@@ -61,5 +61,10 @@ d7 $ jux rev $ sound "funky*8" # n (irand 8)
 
 
 
+d9 $ slow 4 $ n (offadd 0.25 7 $ slow 2 $ "f8(3,8) a8(3,8) c8(3,8 e8") # sound "xx"
+  # room (slow 8 sine1)
+  # size (slow 8 sine1)
+  # gain "0.8"
+
 
 cps 1.48
