@@ -48,10 +48,13 @@ d3 $ (jux rev $ iter 4 $ loopAt 8 $ chop 32 $ sound "liq")
   # gain "0.9"
   # cutoff (slow 4 $ scale 2000 4000 sine1)
   # resonance "0.2"
-d3  sil
+
 d4 $ jux rev $ sound "{bd bd*4, sn:3 gabba*2}"
 
-d5 $ smash 4 [1,2,3,4] $ sound "~ off"
+d5 $ every 2 (slow 2) $ jux rev $ smash 4 [1,2,3,4] $ sound "~ off"
   # gain "1.1"
+  # speed "[2 4]/4"
+
+d6 $ every 2 (0.25 <~)$ every 4 (# n "2") $ slow 2 $ sound "onoff(3,8)"
 
 cps 1.48
