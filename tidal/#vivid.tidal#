@@ -84,4 +84,8 @@ d1 $ every 4 (density 2) $ sometimes (# speed "2") $ every 4 (const (sound "bd*4
 
 d2 $ jux rev $ iter 4 $ sound "voodoo*8" # n (run 8)
   # gain "1.2"
+  # speed "0.5"
 
+
+d5 $ sound "ravebass:10(3,8)"
+  # 
