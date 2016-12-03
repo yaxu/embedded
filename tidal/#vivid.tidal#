@@ -36,8 +36,10 @@ d3 $ every 2 (slow 2) $ jux rev $ weave 16 (n (run 8) # sound "arpy*8")
   # gain "1.2"
   |*| speed "[0.5,1]"
 
-d4 $ every 4 (# speed ) $ iter 4 $ jux rev $ loopAt 2 $ chop 8 $ sound "arc"
+d4 $ every 4 (# speed "0.5") $ iter 4 $ jux rev $ loopAt 2 $ chop 8 $ sound "arc"
   # shape "0.6"
   
+d5 $ every 2 ((|*| speed "2") . ) $ jux (rev) $ every 2 (|+| up "12") $ up "0 7 ~ 3" # sound "bass3"
+  # shape "0.3"
 
 
