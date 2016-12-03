@@ -78,5 +78,9 @@ hush
 cps 1.18
 
 
-d1 $ every 4 (const (sound "bd*4")) $ n "d6 a6" # sound "jx
-  # cutoff "300"
+d1 $ every 4 (density 2) $ sometimes (# speed "2") $ every 4 (const (sound "bd*4")) $ n "d6 ~ a6 d7" # sound "[jx, xx]"
+  # cutoff "3000"
+  # resonance "0.1"
+
+d2 $ jux rev $ iter 4 $ sound "voodoo*8" # n (run 8)
+  # gain "1.2"
