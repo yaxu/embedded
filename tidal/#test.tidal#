@@ -163,8 +163,11 @@ hush
 putStrLn "hello"
 putStrLn "world"
 
+
+
 d1 $ jux rev $ chop 16 $ sound "bd sn:2"
-d2
+d2 $ sound "bd"
+
 d10 $ n  "1 0 0 0" # sound "casio"
   # orbit "2"
 
