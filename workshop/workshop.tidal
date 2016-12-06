@@ -91,7 +91,7 @@ d1 $ sound "kurt" # shape "0.98"
 
 -- * Polymetric / polyrhythmic sequences
 
--- 4 Polyrhythm: 
+-- 4 Polyrhythm:
 
 d1 $ sound "[drum sn:2 sn:5 sn:2, arpy arpy:4 arpy:2]"
 
@@ -187,7 +187,7 @@ d1 $ slowcat [sound "bd sn:3",
 d1 $ stack [sound "bd sn:3",
             sound "arpy can arpy:3 can"
            ]
-  
+
 -- * Transforming effect sequences
 
 -- Everything is a pattern!
