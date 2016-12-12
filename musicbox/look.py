@@ -209,40 +209,40 @@ def runloop():
     while True:
         print "Grab"
         ret,grab = cap.read()
-        if len(things) == 0:
-            orig = grab
-            im = cv2.GaussianBlur(orig, (0,0), 3)
-            gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
-            ret,thresh = cv2.threshold(gray,threshold,255,0)
-            contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-            for (i, c) in enumerate(contours):
-                area = cv2.contourArea(c)
-                if area < 100:
-                    continue
-                #print "area %i: %f" % (i, area)
-                thing = {}
-                thing['area'] = area
-                # centroid
-                m = cv2.moments(c)
-                thing['x'] = m['m10'] / m['m00']
-                thing['y'] = m['m01'] / m['m00']
-                thing['rect'] = rect = cv2.boundingRect(c)
-                thing['hull'] = hull = cv2.convexHull(c)
-                thing['hull_area'] = abs(cv2.contourArea(hull))
-            
-                thing['perimeter'] = perimeter = cv2.arcLength(c, True)
-                thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
-                (centre, axes, orientation) = cv2.fitEllipse(c)
-                thing['orientation'] = orientation / 180
-                print "orientation: %f" % orientation
-                # TODO - check these are width and height
-                thing['aspect'] = float(rect[1]) / float(rect[3])
-                thing['contour'] = [c]
-                # TODO - brightness
-                cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
-                things.append(thing)
 
-            loops = loops + 1
+        orig = grab
+        im = cv2.GaussianBlur(orig, (0,0), 3)
+        gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+        ret,thresh = cv2.threshold(gray,threshold,255,0)
+        contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        for (i, c) in enumerate(contours):
+            area = cv2.contourArea(c)
+            if area < 100:
+                continue
+            #print "area %i: %f" % (i, area)
+            thing = {}
+            thing['area'] = area
+            # centroid
+            m = cv2.moments(c)
+            thing['x'] = m['m10'] / m['m00']
+            thing['y'] = m['m01'] / m['m00']
+            thing['rect'] = rect = cv2.boundingRect(c)
+            thing['hull'] = hull = cv2.convexHull(c)
+            thing['hull_area'] = abs(cv2.contourArea(hull))
+            
+            thing['perimeter'] = perimeter = cv2.arcLength(c, True)
+            thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
+            (centre, axes, orientation) = cv2.fitEllipse(c)
+            thing['orientation'] = orientation / 180
+            print "orientation: %f" % orientation
+            # TODO - check these are width and height
+            thing['aspect'] = float(rect[1]) / float(rect[3])
+            thing['contour'] = [c]
+            # TODO - brightness
+            cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
+            things.append(thing)
+
+        loops = loops + 1
       
         frame = orig.copy()
         for thing in things:
