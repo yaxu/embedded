@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from graph_tool.all import *
+#from graph_tool.all import *
 from numpy.linalg import norm
 from numpy.random import random
 import pygame
