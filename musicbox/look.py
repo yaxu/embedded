@@ -207,6 +207,7 @@ def runloop():
     
     things = []
     while True:
+        print "Grab"
         ret,grab = cap.read()
         if len(things) == 0:
             orig = grab
