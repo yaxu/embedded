@@ -248,7 +248,7 @@ def runloop():
             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
 
         im2 = Image.fromarray(numpy.array(frame))
-        pg_img = pygame.image.frombuffer(im2.tostring(), im2.size, im2.mode)
+        pg_img = pygame.image.frombuffer(im2.tobytes(), im2.size, im2.mode)
 	screen.blit(pg_img, (0,0))
         pygame.display.flip()
 
