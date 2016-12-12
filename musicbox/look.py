@@ -205,10 +205,10 @@ def runloop():
     cap = cv2.VideoCapture(0)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     
-    things = []
     while True:
         print "Grab"
         ret,grab = cap.read()
+        things = []
 
         orig = grab
         im = cv2.GaussianBlur(orig, (0,0), 3)
