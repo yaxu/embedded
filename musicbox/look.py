@@ -248,6 +248,12 @@ def runloop():
 	screen.blit(pg_img, (0,0))
         pygame.display.flip()
 
+        while 1:
+            ev = pygame.event.poll()
+            if ev.type == pygame.QUIT:
+                sys.exit("bye")
+            elif ev.type == pygame.NOEVENT:
+                break
 
         time.sleep(0.1)
 
