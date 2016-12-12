@@ -202,7 +202,7 @@ threshold = 127
 def runloop():
     global loops
     loops = 0
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     
     while True:
