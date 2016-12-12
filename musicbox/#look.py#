@@ -239,28 +239,9 @@ def runloop():
 
             loops = loops + 1
       
-#         now = time.time()
-#         frame = orig.copy()
+        for thing in things:
+            cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
 
-#         #print "now: %f %f" % (now, things[0]['startt'])
-#         while len(things) > 0 and things[0]['startt'] <= now:
-#             thing = things.pop(0)
-#             play(thing)
-#             lightup.append((thing, thing['startt'] + 0.2))
-#             if 'prev' in thing.keys():
-#                 del thing['prev'] # avoid circular refs
-#             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
-
-#         for thing in things:
-#             if 'prev' in thing.keys():
-#                 p = thing['prev']
-#                 if p['startt'] < now:
-#                     pc = (now - p['startt']) / (thing['startt'] - p['startt'])
-#                     x = int(p['x'] + ((thing['x'] - p['x']) * pc))
-#                     y = int(p['y'] + ((thing['y'] - p['y']) * pc))
-#                     cv2.circle(frame, (x,y), 3, (255,0,0), -1)
-
-#         remove = []
 #         for x in lightup:
 #             (thing, end) = x
 #             if end <= now:
