@@ -248,6 +248,9 @@ def runloop():
 	screen.blit(pg_img, (0,0))
         pygame.display.flip()
 
+
+        time.sleep(0.1)
+
         
 #         for x in lightup:
 #             (thing, end) = x
