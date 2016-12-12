@@ -305,12 +305,12 @@ import sys
 
 # lightup = []
 
-# pygame.init()
-# height = 800
-# width = 800
-# screen = pygame.display.set_mode((width,height))
-# pygame.display.set_caption("acid sketch")
+pygame.init()
+height = 800
+width = 800
+screen = pygame.display.set_mode((width,height))
+pygame.display.set_caption("musicbox")
 
 
-# runloop()
-# pygame.quit()
+runloop()
+pygame.quit()
