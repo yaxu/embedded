@@ -196,81 +196,53 @@ import sys
 #         note = 30
 #     triggerOn(note, 0, duration)
 
-# def runloop():
-#     global loops
-#     cap = cv2.VideoCapture(0)
-# #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
+def runloop():
+    global loops
+    cap = cv2.VideoCapture(0)
+#    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     
-#     things = []
-#     while True:
-#         ret,grab = cap.read()
-#         if len(things) == 0:
-#             orig = grab
-#             im = cv2.GaussianBlur(orig, (0,0), 3)
-#             gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
-
-#             ret,thresh = cv2.threshold(gray,threshold,255,0)
-#             contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-# 4            for (i, c) in enumerate(contours):
-#                 area = cv2.contourArea(c)
-#                 if area < 100:
-#                     continue
-#                 #print "area %i: %f" % (i, area)
-#                 thing = {}
-#                 thing['area'] = area
-#                 # centroid
-#                 m = cv2.moments(c)
-#                 thing['x'] = m['m10'] / m['m00']
-#                 thing['y'] = m['m01'] / m['m00']
-
-#                 thing['rect'] = rect = cv2.boundingRect(c)
-#                 thing['hull'] = hull = cv2.convexHull(c)
-#                 thing['hull_area'] = abs(cv2.contourArea(hull))
+    things = []
+    while True:
+        ret,grab = cap.read()
+        if len(things) == 0:
+            orig = grab
+            im = cv2.GaussianBlur(orig, (0,0), 3)
+            gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+            ret,thresh = cv2.threshold(gray,threshold,255,0)
+            contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+            for (i, c) in enumerate(contours):
+                area = cv2.contourArea(c)
+                if area < 100:
+                    continue
+                #print "area %i: %f" % (i, area)
+                thing = {}
+                thing['area'] = area
+                # centroid
+                m = cv2.moments(c)
+                thing['x'] = m['m10'] / m['m00']
+                thing['y'] = m['m01'] / m['m00']
+                thing['rect'] = rect = cv2.boundingRect(c)
+                thing['hull'] = hull = cv2.convexHull(c)
+                thing['hull_area'] = abs(cv2.contourArea(hull))
             
-#                 thing['perimeter'] = perimeter = cv2.arcLength(c, True)
-#                 thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
-#                 (centre, axes, orientation) = cv2.fitEllipse(c)
-#                 thing['orientation'] = orientation / 180
-#                 print "orientation: %f" % orientation
-#                 # TODO - check these are width and height
-#                 thing['aspect'] = float(rect[1]) / float(rect[3])
-#                 thing['contour'] = [c]
-#                 # TODO - brightness
-#                 cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
-#                 things.append(thing)
-#             tree = makeTree(things)
-#             travel(things, tree)
+                thing['perimeter'] = perimeter = cv2.arcLength(c, True)
+                thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
+                (centre, axes, orientation) = cv2.fitEllipse(c)
+                thing['orientation'] = orientation / 180
+                print "orientation: %f" % orientation
+                # TODO - check these are width and height
+                thing['aspect'] = float(rect[1]) / float(rect[3])
+                thing['contour'] = [c]
+                # TODO - brightness
+                cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
+                things.append(thing)
 
-#             things = sorted(things, key=lambda k: k['timepc'])
-#             for (i, thing) in enumerate(things):
-#                 t = start + ((loops + thing['timepc']) * secs_per_loop)
-#                 thing['startt'] = t
-#                 #print "%d: %f" % (i, t)
-#             startloop = start + (loops * secs_per_loop)
-#             loops = loops + 1
-        
-#         now = time.time()
-#         frame = orig.copy()
+            loops = loops + 1
+      
+        frame = orig.copy()
+        for thing in things:
+            cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
 
-#         #print "now: %f %f" % (now, things[0]['startt'])
-#         while len(things) > 0 and things[0]['startt'] <= now:
-#             thing = things.pop(0)
-#             play(thing)
-#             lightup.append((thing, thing['startt'] + 0.2))
-#             if 'prev' in thing.keys():
-#                 del thing['prev'] # avoid circular refs
-#             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
-
-#         for thing in things:
-#             if 'prev' in thing.keys():
-#                 p = thing['prev']
-#                 if p['startt'] < now:
-#                     pc = (now - p['startt']) / (thing['startt'] - p['startt'])
-#                     x = int(p['x'] + ((thing['x'] - p['x']) * pc))
-#                     y = int(p['y'] + ((thing['y'] - p['y']) * pc))
-#                     cv2.circle(frame, (x,y), 3, (255,0,0), -1)
-
-#         remove = []
 #         for x in lightup:
 #             (thing, end) = x
 #             if end <= now:
