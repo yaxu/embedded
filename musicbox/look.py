@@ -15,25 +15,7 @@ import subprocess
 import sys
 
 # threshold = 127
-
-
 # secs_per_loop = 4
-# p = subprocess.Popen('./neko.pl', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-# nekoport = int(p.stdout.readline())
-
-# p.wait()
-# print "port: %d" % nekoport
-# tb303 = liblo.Address(nekoport)
-
-# TB_WAVE = 1
-# TB_TUNING = 2
-# TB_CUTOFF = 3
-# TB_RESONANCE = 4
-# TB_ENVMOD = 5
-# TB_DECAY = 6
-# TB_ACCENT = 7
-# TB_VOLUME = 8
-
 
 # def mintest():
 #     g, pos = triangulation(random((400, 2)) * 10, type="delaunay")
