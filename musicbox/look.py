@@ -198,6 +198,7 @@ import sys
 
 def runloop():
     global loops
+    loops = 0
     cap = cv2.VideoCapture(0)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     
@@ -256,41 +257,6 @@ def runloop():
                 break
 
         time.sleep(0.1)
-
-        
-#         for x in lightup:
-#             (thing, end) = x
-#             if end <= now:
-#                 remove.append(x)
-#             else:
-#                 thing['contour']
-#         for x in remove:
-#             lightup.remove(x)
-        
-#         im2 = Image.fromarray(numpy.array(frame))
-#         pg_img = pygame.image.frombuffer(im2.tostring(), im2.size, im2.mode)
-# 	screen.blit(pg_img, (0,0))
-#         pygame.display.flip()
-#         do_noteoffs()
-
-#         while 1:
-#             ev = pygame.event.poll()
-#             if ev.type == pygame.QUIT:
-#                 sys.exit("bye")
-#             elif ev.type == pygame.NOEVENT:
-#                 break
-#         time.sleep(0.1)
-
-#         #cv2.imshow('video test',im)
-#         #key = cv2.waitKey(100)
-#         #if key == 27:
-#         #    break
-
-# start = time.time()
-# loops = 0
-# noteoffs = []
-
-# lightup = []
 
 pygame.init()
 height = 800
