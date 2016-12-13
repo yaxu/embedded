@@ -166,7 +166,9 @@ d1 $ jux rev $ chop 16 $ sound "bd sn:2"
 d10 $ n  "1 0 0 0" # sound "casio"
   # orbit "2"
 
+d1 $ sound "chin"
 
+hush
 
 let pp = [sound "gabba sn:2", sound "cp cp"]
   in 
