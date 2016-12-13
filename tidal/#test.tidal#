@@ -167,5 +167,8 @@ d10 $ n  "1 0 0 0" # sound "casio"
   # orbit "2"
 
 
-clocked (\_ _ -> putStrLn "tick")
-  
+
+let pp = [sound "gabba sn:2", sound "cp cp"]
+  in 
+    d1 $ do {n <- "{0 0 1 [0,1]}%1"; pp!!n}
+
