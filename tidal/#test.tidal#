@@ -160,17 +160,12 @@ c1 $ jux rev $ chop 8 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
 hush
 
-putStrLn "hello"
-putStrLn "world"
-
-
 
 d1 $ jux rev $ chop 16 $ sound "bd sn:2"
-d2 $ sound "bd"
 
 d10 $ n  "1 0 0 0" # sound "casio"
   # orbit "2"
 
 
-
+clocked (\_ _ -> putStrLn "tick")
   
