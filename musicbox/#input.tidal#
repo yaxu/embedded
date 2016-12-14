@@ -6,7 +6,12 @@ sql <- S.open "tidalvalues.db"
 
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
 
-let mp = newMVar silence :: MVar Pattern D
+mp <- newMVar (silence :: Pattern Double)
 
-clocked (\tempo tick ->
-          )
+clocked (\tempo tick -> do p <- readMVar mp
+                           let values = arc p (toRational tick, toRational (tick+1))
+                           return ()
+        )
+
+p <- readMVar mp
+arc p  (1,2)
