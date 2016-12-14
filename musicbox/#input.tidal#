@@ -26,7 +26,8 @@ p <- readMVar mp
 arc (filterOnsets p)  (1,2)
 
 let readdb :: Arc -> IO [Event a]
-    readdb (s, e) = do r <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (TimeValueQuery (fromRational s) (fromRational e)) :: T
+    readdb (s, e) = do rs <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (TimeValueQuery (fromRational s) (fromRational e)) :: IO [TimeValueField]
+                       let es = map (\(TimeValueField s e v -> ((toRational s, toRational e), v)) rs
                        return []
     
 
