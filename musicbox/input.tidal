@@ -10,16 +10,16 @@ sql <- S.open "tidalvalues.db"
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
 mp <- newMVar (silence :: Pattern Double)
 
-clocked (\tempo tick ->
-          do p <- readMVar mp
+forkIO $ clocked (\tempo tick ->
+          do putStrLn "tick"
+             p <- readMVar mp
              let values = arc (filterOnsets p) (toRational tick, toRational (tick+1))
              mapM_ (\((s,e),_,v) -> S.execute sql "INSERT INTO timevalue (begin,end,value) VALUES (?,?,?)" (TimeValueField (fromRational s) (fromRational e) v)) values
              return ()
         )
 
-swapMVar mp ("0.5 0.75")
+swapMVar mp ("4 3 2")
 
 p <- readMVar mp
 arc (filterOnsets p)  (1,2)
 
-1+1
