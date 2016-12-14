@@ -29,9 +29,8 @@ let readdb :: Arc -> IO [Event Double]
     readdb (s, e) = do rs <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (TimeValueQuery (fromRational s) (fromRational e)) :: IO [TimeValueField]
                        let es = map (\(TimeValueField s e v) -> ((toRational s, toRational e), (toRational s, toRational e), v)) rs
                        return es
-    
 
-r <- 
+import System.IO.Unsafe
+let iopat = Pattern (\a -> unsafePerformIO (readdb a))
 
-r
       
