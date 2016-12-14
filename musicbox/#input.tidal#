@@ -1,6 +1,7 @@
 import qualified Database.SQLite.Simple as S
 import qualified Database.SQLite.Simple.FromRow as SFR
 
-sql <- S.open "tidalio.db"
+sql <- S.open "tidalvalues.db"
 
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
+
