@@ -4,6 +4,7 @@ import Control.Concurrent.MVar
 
 data TimeValueField = TimeValueField Double Double Double deriving (Show)
 instance SFR.FromRow TimeValueField where fromRow = TimeValueField <$> S.field <*> S.field <*> S.field
+instance S.ToRow TimeValueField where toRow (TimeValueField s e v) = S.toRow (s, e, v)
 
 sql <- S.open "tidalvalues.db"
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
