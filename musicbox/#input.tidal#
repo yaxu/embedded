@@ -1,0 +1,39 @@
+import qualified Database.SQLite.Simple as S
+import qualified Database.SQLite.Simple.FromRow as SFR
+import Control.Concurrent.MVar
+
+data TimeValueField = TimeValueField Double Double Double deriving (Show)
+instance SFR.FromRow TimeValueField where fromRow = TimeValueField <$> S.field <*> S.field <*> S.field
+instance S.ToRow TimeValueField where toRow (TimeValueField s e v) = S.toRow (s, e, v)
+data TimeValueQuery = TimeValueQuery Double Double deriving (Show)
+instance S.ToRow TimeValueQuery where toRow (TimeValueQuery s e) = S.toRow (s, e)
+
+sql <- S.open "tidalvalues.db"
+S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
+mp <- newMVar (silence :: Pattern Double)
+
+forkIO $ clocked (\tempo tick ->
+          do putStrLn "tick"
+             p <- readMVar mp
+             let values = arc (filterOnsets p) (toRational tick, toRational (tick+1))
+             mapM_ (\((s,e),_,v) -> S.execute sql "INSERT INTO timevalue (begin,end,value) VALUES (?,?,?)" (TimeValueField (fromRational s) (fromRational e) v)) values
+             return ()
+        )
+
+swapMVar mp ("4 3 2")
+
+
+p <- readMVar mp
+arc (filterOnsets p)  (1,2)
+
+let readdb :: Arc -> IO [Event Double]
+    readdb (s, e) = do rs <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (TimeValueQuery (fromRational s) (fromRational e)) :: IO [TimeValueField]
+                       let es = map (\(TimeValueField s e v) -> ((toRational s, toRational e), (toRational s, toRational e), v)) rs
+                       return es
+
+import System.IO.Unsafe
+let iopat = Pattern (\a -> unsafePerformIO (readdb a))
+
+d1 $ sound "bd" # speed (~> iopat
+
+rev $ (4426 <~ iopat )
