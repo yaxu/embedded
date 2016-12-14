@@ -206,7 +206,6 @@ def runloop():
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     
     while True:
-        print "Grab"
         ret,grab = cap.read()
         things = []
 
@@ -234,7 +233,6 @@ def runloop():
             thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
             (centre, axes, orientation) = cv2.fitEllipse(c)
             thing['orientation'] = orientation / 180
-            print "orientation: %f" % orientation
             # TODO - check these are width and height
             thing['aspect'] = float(rect[1]) / float(rect[3])
             thing['contour'] = [c]
