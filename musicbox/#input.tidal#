@@ -8,14 +8,15 @@ S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, 
 
 mp <- newMVar (silence :: Pattern Double)
 
+swapMVar mp ("0.5 0.75")
+
 clocked (\tempo tick ->
           do p <- readMVar mp
-             let values = arc p (toRational tick, toRational (tick+1))
+             let values = arc (filterOnsets p) (toRational tick, toRational (tick+1))
              
              return ()
         )
-swapMVar mp ("0.5 0.75")
 p <- readMVar mp
-arc p  (1,2)
+arc (filterOnsets p)  (1,2)
 
 1+1
