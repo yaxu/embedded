@@ -11,7 +11,8 @@ S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, 
 mp <- newMVar (silence :: Pattern Double)
 
 clocked (\tempo tick ->
-          do p <- readMVar mp
+          do putStrLn "tick"
+             p <- readMVar mp
              let values = arc (filterOnsets p) (toRational tick, toRational (tick+1))
              mapM_ (\((s,e),_,v) -> S.execute sql "INSERT INTO timevalue (begin,end,value) VALUES (?,?,?)" (TimeValueField (fromRational s) (fromRational e) v)) values
              return ()
