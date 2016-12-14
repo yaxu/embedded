@@ -247,7 +247,7 @@ def runloop():
         frame = orig.copy()
         for thing in things:
             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
-            cv2.line(frame, (thing['centre'][0]-5, thing['centre'][1]), (thing['centre'][0]+5, thing['centre'][1]), (0,0,255), 2)
+            cv2.line(frame, (int(thing['centre'][0]-5), int(thing['centre'][1])), (int(thing['centre'][0]+5), int(thing['centre'][1])), (0,0,255), 2)
         im2 = Image.fromarray(numpy.array(frame))
         pg_img = pygame.image.frombuffer(im2.tobytes(), im2.size, im2.mode)
 	screen.blit(pg_img, (0,0))
