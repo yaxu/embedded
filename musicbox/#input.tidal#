@@ -20,7 +20,7 @@ forkIO $ clocked (\tempo tick ->
              return ()
         )
 
-swapMVar mp ("4 3 2")
+swapMVar mp ("5 2 3*2 3")
 
 
 p <- readMVar mp
@@ -34,6 +34,6 @@ let readdb :: Arc -> IO [Event Double]
 import System.IO.Unsafe
 let iopat = Pattern (\a -> unsafePerformIO (readdb a))
 
-d1 $ sound "bd" # speed (~> iopat
+d1 $ sound "bd*4" # speed (1 ~> iopat)
 
 rev $ (4426 <~ iopat )
