@@ -1,3 +1,5 @@
 import qualified Database.SQLite.Simple as S
 import qualified Database.SQLite.Simple.FromRow as SFR
 
+sql <- S.open "tidalio.db"
+
