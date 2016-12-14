@@ -25,10 +25,10 @@ swapMVar mp ("4 3 2")
 p <- readMVar mp
 arc (filterOnsets p)  (1,2)
 
-let readdb :: IO (Arc -> [Event a])
-    readdb = do
+let readdb :: Arc -> IO [Event a]
+    readdb s e = do S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (TimeValueQuery 1 2000) ::  IO [TimeValueField]
 
-r <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (S.toRow (1::Double, 2::Double))
+r <- 
 
-
+r
       
