@@ -24,10 +24,7 @@ p <- readMVar mp
 arc (filterOnsets p)  (1,2)
 
 let readdb :: IO (Arc -> [Event a])
-    readdb = do
-  executeNamed conn "UPDATE test SET str = :str WHERE id = :id" [":str" := ("updated str" :: T.Text), ":id" := rowId]
-
-      r <- query_ conn "SELECT * from timevalue where begin >= ? and end <= ?" :: IO [TestField]
+    readdb = do r <- query_ conn "SELECT * from timevalue where begin >= ? and end <= ?" ()
 
 
       
