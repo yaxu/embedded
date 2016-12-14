@@ -5,6 +5,8 @@ import Control.Concurrent.MVar
 data TimeValueField = TimeValueField Double Double Double deriving (Show)
 instance SFR.FromRow TimeValueField where fromRow = TimeValueField <$> S.field <*> S.field <*> S.field
 instance S.ToRow TimeValueField where toRow (TimeValueField s e v) = S.toRow (s, e, v)
+data TimeValueQuery = TimeValueQuery Double Double deriving (Show)
+instance S.ToRow TimeValueQuery where toRow (TimeValueQuery s e) = S.toRow (s, e)
 
 sql <- S.open "tidalvalues.db"
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
@@ -25,5 +27,8 @@ arc (filterOnsets p)  (1,2)
 
 let readdb :: IO (Arc -> [Event a])
     readdb = do
+
+r <- S.query sql "SELECT * from timevalue where begin >= ? and end <= ?" (1,2)
+
 
       
