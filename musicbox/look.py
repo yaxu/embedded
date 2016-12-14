@@ -232,7 +232,7 @@ def runloop():
             thing['perimeter'] = perimeter = cv2.arcLength(c, True)
             thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
             (centre, axes, orientation) = cv2.fitEllipse(c)
-            thing['centre'] = center
+            thing['centre'] = centre
             print "centre: " + centre
             thing['orientation'] = orientation / 180
             # TODO - check these are width and height
