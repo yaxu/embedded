@@ -1,7 +1,12 @@
 import qualified Database.SQLite.Simple as S
 import qualified Database.SQLite.Simple.FromRow as SFR
+import Control.Concurrent.MVar
 
 sql <- S.open "tidalvalues.db"
 
 S.execute_ sql "CREATE TABLE IF NOT EXISTS timevalue (begin DOUBLE, end DOUBLE, value DOUBLE)"
 
+let mp = newMVar silence :: MVar Pattern D
+
+clocked (\tempo tick ->
+          )
