@@ -23,3 +23,7 @@ swapMVar mp ("4 3 2")
 p <- readMVar mp
 arc (filterOnsets p)  (1,2)
 
+let readdb :: IO (Arc -> [Event a])
+    readdb = do
+
+      
