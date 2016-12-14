@@ -12,7 +12,7 @@ mp <- newMVar (silence :: Pattern Double)
 clocked (\tempo tick ->
           do p <- readMVar mp
              let values = arc (filterOnsets p) (toRational tick, toRational (tick+1))
-             S.execute sql "INSERT INTO timevalue (begin,end,value) VALUES (?,?,?)" (TimeValueField s e v)
+             mapM_ (\((s,e),v) -> S.execute sql "INSERT INTO timevalue (begin,end,value) VALUES (?,?,?)" (TimeValueField s e v)) values
              return ()
         )
 
