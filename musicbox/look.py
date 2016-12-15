@@ -13,6 +13,7 @@ import liblo
 import time
 import subprocess
 import sys
+from OSC import OSCClient, OSCMessage
 
 
 threshold = 250
