@@ -204,7 +204,9 @@ def runloop():
     loops = 0
     cap = cv2.VideoCapture(1)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
-    
+    ret,grab = cap.read()
+    cv2.imwrite('save.png',grab)
+
     while True:
         ret,grab = cap.read()
         things = []
