@@ -215,9 +215,10 @@ def runloop():
         ret,thresh = cv2.threshold(gray,threshold,255,0)
         contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
-        edges = cv2.Canny(gray,50,200,apertureSize = 3)
+        edges = cv2.Canny(gray,50,100,apertureSize = 3)
         cv2.imshow('edges',edges)
         cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
         lines = cv2.HoughLines(edges,1,np.pi/180,200)
         if lines:
