@@ -1,7 +1,7 @@
 import Sound.OSC.FD
 import Control.Concurrent.MVar
 
-do p <- newMVar silence
+do p <- newMVar (silence Pattern Int)
    let oscport = 9000
        listen = do s <- udpServer "127.0.0.1" oscport
                    oscLoop s
