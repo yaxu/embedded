@@ -268,6 +268,7 @@ def runloop():
       
         frame = orig.copy()
         for thing in things:
+            print "draw thing."
             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
             x = thing['x']
             y = thing['y']
