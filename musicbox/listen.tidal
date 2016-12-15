@@ -62,10 +62,3 @@ cps (-1)
 
 cps 0.8
 
-
-d1 $ sound "{[bd,drum] mt8 ~ lt8 ~ sd8}%8"
-  # gain "1.7"
-
-
-d2 $ slow (6/8) $ sound "drum*6"
-  # gain "1.1"
