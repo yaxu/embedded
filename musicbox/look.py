@@ -216,8 +216,10 @@ def runloop():
     highest = 290.5
     lowest = 23.6
 
-    note_names =
-    ['c0','d0','e0','f0','g0','a1','b1','c1','d1','e1','f1','g1','a2','b2','c2']
+    note_names = ['c0','d0','e0','f0','g0','a1','b1',
+                  'c1','d1','e1','f1','g1','a2','b2',
+                  'c2'
+    ]
     
     while True:
         ret,grab = cap.read()
