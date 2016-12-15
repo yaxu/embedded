@@ -216,9 +216,9 @@ def runloop():
         contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
         print len(contours)
         edges = cv2.Canny(gray,50,100,apertureSize = 3)
-        #cv2.imshow('threshold',thresh)
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
+        cv2.imshow('threshold',thresh)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
         #lines = cv2.HoughLines(edges,1,np.pi/180,25,np.pi/2)
         
@@ -264,7 +264,8 @@ def runloop():
             thing['contour'] = [c]
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
-            if area > 100 and area < 300 and roundness < 1.1:
+            if area > 100 and area < 30
+            0 and roundness < 1.1:
               things.append(thing)
 
         loops = loops + 1
