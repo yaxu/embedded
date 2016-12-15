@@ -301,7 +301,7 @@ def runloop():
 
         loops = loops + 1
 
-        things = sort(things, key=lambda thing: thing['y']) 
+        things = sorted(things, key=lambda thing: thing['y']) 
 
         frame = orig.copy()
         for thing in things:
