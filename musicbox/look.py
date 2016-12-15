@@ -18,8 +18,6 @@ from OSC import OSCClient, OSCMessage
 
 threshold = 250
 
-current_notes = []
-
 port = 9000
 osc = OSCClient()
 osc.connect( ("localhost", port) )
