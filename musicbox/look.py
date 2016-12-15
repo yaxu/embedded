@@ -221,19 +221,10 @@ def runloop():
         cv2.destroyAllWindows()
 
         lines = cv2.HoughLinesP(edges, 1, math.pi/2, 2, None, 30, 1);
-        if lines:
-            for rho,theta in lines[0]:
-                a = np.cos(theta)
-                b = np.sin(theta)
-                x0 = a*rho
-                y0 = b*rho
-                x1 = int(x0 + 1000*(-b))
-                y1 = int(y0 + 1000*(a))
-                x2 = int(x0 - 1000*(-b))
-                y2 = int(y0 - 1000*(a))
-                cv2.line(orig,(x1,y1),(x2,y2),(0,0,255),2)
-        else:
-            print "no lines."
+        for line in lines[0]:
+            pt1 = (line[0],line[1])
+            pt2 = (line[2],line[3])
+            cv2.line(orig, pt1, pt2, (0,0,255), 3)
 
         for (i, c) in enumerate(contours):
             area = cv2.contourArea(c)
