@@ -16,7 +16,7 @@ import sys
 from OSC import OSCClient, OSCMessage
 
 
-threshold = 250
+threshold = 200
 
 port = 9000
 osc = OSCClient()
@@ -298,8 +298,8 @@ def runloop():
             if note < 0:
                 note = 0
             thing['note'] = note
-            
-            if area > 100 and area < 300 and roundness < 1.1:
+            #print "area: " + str(area) + " roundness: " + str(roundness)
+            if area > 100 and area < 600 and roundness < 1.1:
                 if thing['x'] < low:
                     low = thing['x']
                     print "highest " + str(high) + " lowest: " + str(low)
