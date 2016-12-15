@@ -219,7 +219,7 @@ def runloop():
     high = 0
 
     highest = 290.5
-    lowest = 23.6
+    lowest = 24.6
 
     current_notes = []
     
