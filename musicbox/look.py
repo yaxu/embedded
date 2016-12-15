@@ -15,7 +15,7 @@ import subprocess
 import sys
 
 
-threshold = 144
+threshold = 160
 
 # threshold = 127
 # secs_per_loop = 4
