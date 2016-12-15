@@ -239,14 +239,14 @@ def runloop():
             #thing['aspect'] = float(rect[1]) / float(rect[3])
             thing['contour'] = [c]
             # TODO - brightness
-            cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
+            #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
             things.append(thing)
 
         loops = loops + 1
       
         frame = orig.copy()
         for thing in things:
-            #cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
+            cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
             x = thing['x']
             y = thing['y']
             cv2.line(frame, (int(x-4),int(y)), (int(x+4),int(y)), (0,255,0), 1)
