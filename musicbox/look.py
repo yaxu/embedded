@@ -312,6 +312,9 @@ def runloop():
             y = thing['y']
             cv2.line(frame, (int(x-4),int(y)), (int(x+4),int(y)), (0,255,0), 1)
             cv2.line(frame, (int(x),int(y-4)), (int(x),int(y+4)), (0,255,0), 1)
+            cv2.putText(img,note_names(note),((int(x+4),int(y-4)), cv2.FONT_HERSHEY_SIMPLEX, 4,(255,255,255),2,cv2.LINE_AA)
+
+
         im2 = Image.fromarray(np.array(frame))
         pg_img = pygame.image.frombuffer(im2.tobytes(), im2.size, im2.mode)
 	screen.blit(pg_img, (0,0))
