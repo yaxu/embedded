@@ -216,9 +216,6 @@ def runloop():
         contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
         edges = cv2.Canny(gray,50,100,apertureSize = 3)
-        cv2.imshow('edges',edges)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
 
         lines = cv2.HoughLinesP(edges, 1, math.pi/2, 2, None, 30, 1);
         for line in lines[0]:
