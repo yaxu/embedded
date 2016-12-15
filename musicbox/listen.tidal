@@ -22,8 +22,20 @@ let start = do mp <- newMVar (silence :: Pattern Int)
                        )
 
 p <- start
-hush
 
-d1 $ n ((+8) <$> p) # sound "rash"
 
-"c6" :: Pattern Int
+
+
+
+
+
+
+
+d1 $ superimpose (rev) $ superimpose (slow 1.5) $ sometimes (# up "12") $  n (offadd 0.125 12 $ offadd 0.25 7 $ (+8) <$> p) # sound "gabba"
+  # shape "0.4"
+
+
+
+
+
+
