@@ -227,6 +227,8 @@ def runloop():
                   'c1','d1','e1','f1','g1','a2','b2',
                   'c2'
     ]
+
+    midi = [0,2,4,5,7,9,11,12,14,16,17,19,21,23,24]
     
     while True:
         ret,grab = cap.read()
