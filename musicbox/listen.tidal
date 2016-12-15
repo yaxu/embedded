@@ -1,6 +1,7 @@
 import Sound.OSC.FD
 import Control.Concurrent.MVar
 import Data.Maybe
+import System.IO.Unsafe
 
 let start = do mp <- newMVar (silence :: Pattern Int)
                let oscport = 9000
@@ -16,8 +17,9 @@ let start = do mp <- newMVar (silence :: Pattern Int)
                    act _ = return ()
                forkIO listen
                return $ cheat mp
-    cheat mp = Pattern $ \a -> unsafePerformIO $ do p <- mp
-                                                    arc p a
+    cheat mp = Pattern (\a -> unsafePerformIO $ do p <- mp
+                                                   return $ arc p a
+                       )
 
 p <- start
 
