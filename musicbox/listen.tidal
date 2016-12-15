@@ -1,8 +1,8 @@
 import Sound.OSC.FD
 
 let oscport = 9000
-    start = do s <- udpServer "127.0.0.1" oscport
-               oscLoop s
+    listen = do s <- udpServer "127.0.0.1" oscport
+                oscLoop s
     oscLoop s = do m <- recvMessage s
                    act m
                    oscLoop s
