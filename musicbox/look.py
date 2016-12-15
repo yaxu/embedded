@@ -206,8 +206,9 @@ def runloop():
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     ret,grab = cap.read()
     grab = grab[170:270,140:440]
+    roi = grab[170:270,140:440]
     cv2.imwrite('save.png',grab)
-    cv2.imwrite('doi.png',grab)
+    cv2.imwrite('roi.png',grab)
 
     while True:
         ret,grab = cap.read()
