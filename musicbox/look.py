@@ -316,6 +316,11 @@ def runloop():
             cv2.line(frame, (int(x),int(y-4)), (int(x),int(y+4)), (0,255,0), 1)
             cv2.putText(frame,note_names[note],(int(x+6),int(y-6)), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0,0,255),2)
 
+        new_notes = list(map (lambda thing: thing['note'],things))
+
+        if new_notes != current_notes:
+            current_notes = new_notes
+            
 
         im2 = Image.fromarray(np.array(frame))
         pg_img = pygame.image.frombuffer(im2.tobytes(), im2.size, im2.mode)
