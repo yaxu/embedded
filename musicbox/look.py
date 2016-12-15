@@ -217,6 +217,7 @@ def runloop():
 
         edges = cv2.Canny(gray,50,200,apertureSize = 3)
         cv2.imshow('edges',edges)
+        cv2.waitKey(0)
 
         lines = cv2.HoughLines(edges,1,np.pi/180,200)
         if lines:
