@@ -247,8 +247,8 @@ def runloop():
         frame = orig.copy()
         for thing in things:
             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
-            x = thing['centre'][0]
-            y = thing['centre'][1]
+            x = thing['x']
+            y = thing['y']
             cv2.line(frame, (int(x-4),int(y)), (int(x+4),int(y)), (0,255,0), 1)
             cv2.line(frame, (int(x),int(y-4)), (int(x),int(y+4)), (0,255,0), 1)
         im2 = Image.fromarray(numpy.array(frame))
