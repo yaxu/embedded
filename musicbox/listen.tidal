@@ -17,9 +17,11 @@ let start = do mp <- newMVar (silence :: Pattern Int)
                    act _ = return ()
                forkIO listen
                return $ cheat mp
-    cheat mp = Pattern (\a -> unsafePerformIO $ do p <- mp
+    cheat mp = Pattern (\a -> unsafePerformIO $ do p <- readMVar mp
                                                    return $ arc p a
                        )
 
 p <- start
+
+d1 $ n ((+32) <$> p) # sound "rash"
 
