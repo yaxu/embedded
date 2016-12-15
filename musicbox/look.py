@@ -251,8 +251,9 @@ def runloop():
             #thing['hull'] = hull = cv2.convexHull(c)
             #thing['hull_area'] = abs(cv2.contourArea(hull))
             
-            #thing['perimeter'] = perimeter = cv2.arcLength(c, True)
-            #thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
+            thing['perimeter'] = perimeter = cv2.arcLength(c, True)
+            thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
+            print "roundness: " + roundness
             #(centre, axes, orientation) = cv2.fitEllipse(c)
             #thing['centre'] = centre
             #print ("centre: " + str(centre))
