@@ -223,7 +223,7 @@ def runloop():
     
     while True:
         ret,grab = cap.read()
-        grab = grab[170:270,140:470]
+        grab = grab[170:270,140:465]
         things = []
 
         orig = grab
