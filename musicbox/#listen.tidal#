@@ -42,4 +42,8 @@ cps (-1)
 
 cps 0.5
 
-d1 $ sound "bd can can can"
+d1 $ sometimes (# up "-12") $ every 2 (# vowel "a") $jux rev $ runWith 4 (density 2) $ chop 8 $ n "c7 e8" # sound "[jx,rash]" # gain "1"
+
+d2 $ degradeBy 0.6 $ jux rev $ every 2 (chop 3) $ sound "bd*2 ~" # shape "0.9" # gain "1" # speed "4"
+
+d3 $ slow 2 $ sound "funky" # gain "0.9"
