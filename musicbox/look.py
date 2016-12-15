@@ -325,7 +325,9 @@ def runloop():
 
         if new_notes != current_notes:
             current_notes = new_notes
-            
+            message = OSCMessage("/notes")
+            message.append(current_notes)
+            osc.send( message )
 
         im2 = Image.fromarray(np.array(frame))
         pg_img = pygame.image.frombuffer(im2.tobytes(), im2.size, im2.mode)
