@@ -210,8 +210,8 @@ def runloop():
     cv2.imwrite('save.png',grab)
     cv2.imwrite('roi.png',grab)
 
-    low = 0
-    high = 1000
+    low = 1000
+    high = 0
     
     while True:
         ret,grab = cap.read()
