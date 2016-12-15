@@ -220,7 +220,7 @@ def runloop():
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
 
-        lines = cv2.HoughLines(edges,1,np.pi/180,50)
+        lines = cv2.HoughLines(edges,1,np.pi/180,50,np.pi/2)
         
         for rho,theta in lines[0]:
             #print theta
