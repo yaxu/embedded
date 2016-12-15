@@ -38,6 +38,8 @@ d1 $ every 2 (rev . chop 8) $ jux rev $ every 2 (# up "-12") $ every 3 (slow 2) 
   # gain "1.2"
 
 
+cps (-1)
 
+cps 0.5
 
-
+d1 $ sound "bd can can can"
