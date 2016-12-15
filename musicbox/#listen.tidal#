@@ -35,3 +35,8 @@ d1 $ every 3 (slow 1.5) $ sometimes (# up "12") $  n (offadd 0.125 12 $ offadd 0
   # cutoff (palindrome $ scale 300 5000 saw1)
   # resonance "0.2"
 
+
+
+
+
+
