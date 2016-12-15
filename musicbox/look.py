@@ -225,7 +225,7 @@ def runloop():
             #cv2.THRESH_BINARY,11,2)
         ret,thresh = cv2.threshold(gray,threshold,255,0)
         contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-        print len(contours)
+        #print len(contours)
         edges = cv2.Canny(gray,50,100,apertureSize = 3)
         #cv2.imshow('threshold',thresh)
         #cv2.waitKey(0)
