@@ -218,6 +218,7 @@ def runloop():
         orig = grab
         im = cv2.GaussianBlur(orig, (0,0), 3)
         gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+        gray = cv2.medianBlur(gray,5)
         thresh = cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_MEAN_C,\
                                        cv2.THRESH_BINARY,11,2)
         #ret,thresh = cv2.threshold(gray,threshold,255,0)
