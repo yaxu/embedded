@@ -224,6 +224,7 @@ def runloop():
         
         for rho,theta in lines[0]:
             #print theta
+            next
             if theta > 0.1:
               next
             a = np.cos(theta)
