@@ -223,7 +223,7 @@ def runloop():
         lines = cv2.HoughLines(edges,1,np.pi/180,50)
         
         for rho,theta in lines[0]:
-            print theta
+            #print theta
             if theta > 2:
               next
             a = np.cos(theta)
