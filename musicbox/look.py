@@ -252,7 +252,7 @@ def runloop():
             #thing['hull_area'] = abs(cv2.contourArea(hull))
             
             thing['perimeter'] = perimeter = cv2.arcLength(c, True)
-            thing['roundness'] = (perimeter * 0.282) / math.sqrt(area)
+            thing['roundness'] = roundness = (perimeter * 0.282) / math.sqrt(area)
             #print "roundness: " + str(thing['roundness'])
             #(centre, axes, orientation) = cv2.fitEllipse(c)
             #thing['centre'] = centre
@@ -263,7 +263,7 @@ def runloop():
             thing['contour'] = [c]
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
-            if area > 100 and area < 170:
+            if area > 100 and area < 170 and roundness < 1.1:
                 things.append(thing)
 
         loops = loops + 1
