@@ -263,6 +263,7 @@ def runloop():
             thing['contour'] = [c]
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
+            if area > 100 and area < 170
             things.append(thing)
 
         loops = loops + 1
