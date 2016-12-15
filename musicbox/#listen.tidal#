@@ -1,15 +1,18 @@
 import Sound.OSC.FD
+import Control.Concurrent.MVar
 
-let oscport = 9000
-    listen = do s <- udpServer "127.0.0.1" oscport
+do p <- newVAR silence
+   let oscport = 9000
+       listen = do s <- udpServer "127.0.0.1" oscport
                 oscLoop s
-    oscLoop s = do m <- recvMessage s
-                   act m
-                   oscLoop s
-    act (Just (Message "/notes" xs)) =
-      do putStrLn $ show xs
-         return ()
-    act _ = return ()
-
+       oscLoop s = do m <- recvMessage s
+                      act m
+                      oscLoop s
+       act (Just (Message "/notes" xs)) =
+         do putStrLn $ show xs
+            map (\Int32
+            return ()
+       act _ = return ()
+   
 
 listen
