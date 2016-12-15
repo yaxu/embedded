@@ -8,7 +8,7 @@ from pygame.locals import *
 import math
 import cv2
 import Image
-import numpy
+import numpy as np
 import liblo
 import time
 import subprocess
