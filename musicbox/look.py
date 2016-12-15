@@ -20,6 +20,10 @@ threshold = 250
 
 current_notes = []
 
+port = 9000
+osc = OSCClient()
+osc.connect( ("localhost", port) )
+
 # threshold = 127
 # secs_per_loop = 4
 
