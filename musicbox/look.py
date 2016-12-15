@@ -220,7 +220,7 @@ def runloop():
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-        lines = cv2.HoughLines(edges,1,np.pi/180,200)
+        lines = cv2.HoughLinesP(edges, 1, math.pi/2, 2, None, 30, 1);
         if lines:
             for rho,theta in lines[0]:
                 a = np.cos(theta)
