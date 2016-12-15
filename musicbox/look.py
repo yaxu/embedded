@@ -210,6 +210,9 @@ def runloop():
     cv2.imwrite('save.png',grab)
     cv2.imwrite('roi.png',grab)
 
+    low = 0
+    high = 1000
+    
     while True:
         ret,grab = cap.read()
         grab = grab[170:270,140:440]
