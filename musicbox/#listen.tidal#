@@ -23,4 +23,4 @@ let start = do mp <- newMVar (silence :: Pattern Int)
 
 p <- start
 
-p 
+d1 $ sound "arpy" # n p 
