@@ -288,7 +288,7 @@ def runloop():
                 note = 15
             if note < 0:
                 note = 0
-            print("note: " + str(note) + " (" + note_names[note] + ")"
+            print("note: " + str(note) + " (" + note_names[note] + ")")
             
             if area > 100 and area < 300: # and roundness < 1.1:
                 if thing['x'] < low:
