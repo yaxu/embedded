@@ -13,6 +13,7 @@ do p <- newVAR silence
             swapMVar p $ listToPat (map (\(Int32 i) -> i) xs)
             return ()
        act _ = return ()
-   
+   forkIO listen
+   return p
 
 listen
