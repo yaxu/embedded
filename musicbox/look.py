@@ -328,7 +328,7 @@ def runloop():
         if new_notes != current_notes:
             current_notes = new_notes
             message = OSCMessage("/notes")
-            message.append(current_notes)
+            message.append(map(lambda n: midi[n],current_notes))
             osc.send( message )
 
         im2 = Image.fromarray(np.array(frame))
