@@ -276,6 +276,12 @@ def runloop():
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
             if area > 100 and area < 300: # and roundness < 1.1:
+                if thing[x] < low:
+                    low = thing[x]
+                    print "highest " + str(high) + lowest: " + str(low)
+                if thing[x] > high:
+                    high = thing[x]
+                    print "highest " + str(high) + lowest: " + str(low)
                 things.append(thing)
 
         loops = loops + 1
