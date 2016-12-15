@@ -28,7 +28,7 @@ p <- start
 
 
 
-
+p
 
 
 d1 $ every 2 (rev . chop 8) $ jux rev $ every 2 (# up "-12") $ every 3 (slow 2) $ n (offadd 0.125 12 $ offadd 0.25 7 $ ((+24) . (+8)) <$> p) # sound "gabba"
