@@ -288,7 +288,7 @@ def runloop():
                 note = 14
             if note < 0:
                 note = 0
-            print("note: " + str(note) + " (" + note_names[note] + ")")
+            thing['note'] = note
             
             if area > 100 and area < 300: # and roundness < 1.1:
                 if thing['x'] < low:
@@ -300,7 +300,9 @@ def runloop():
                 things.append(thing)
 
         loops = loops + 1
-      
+
+        things = sort(things, key=lambda thing: thing['y']) 
+
         frame = orig.copy()
         for thing in things:
             cv2.drawContours(frame,thing['contour'],-1, (255,0,0), -1)
