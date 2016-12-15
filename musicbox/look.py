@@ -17,6 +17,8 @@ import sys
 
 threshold = 250
 
+current_notes = []
+
 # threshold = 127
 # secs_per_loop = 4
 
