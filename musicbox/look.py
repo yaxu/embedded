@@ -312,7 +312,7 @@ def runloop():
             y = thing['y']
             cv2.line(frame, (int(x-4),int(y)), (int(x+4),int(y)), (0,255,0), 1)
             cv2.line(frame, (int(x),int(y-4)), (int(x),int(y+4)), (0,255,0), 1)
-            cv2.putText(frame,note_names[note],(int(x+4),int(y-4), cv2.FONT_HERSHEY_SIMPLEX, 4,(255,255,255),2)
+            cv2.putText(frame,note_names[note],(int(x+4),int(y-4)), cv2.FONT_HERSHEY_SIMPLEX, 4,(255,255,255),2)
 
 
         im2 = Image.fromarray(np.array(frame))
