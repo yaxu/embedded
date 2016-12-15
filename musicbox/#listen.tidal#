@@ -1,0 +1,35 @@
+import Sound.OSC.FD
+import Control.Concurrent.MVar
+import Data.Maybe
+import System.IO.Unsafe
+
+let start = do mp <- newMVar (silence :: Pattern Int)
+               let oscport = 9000
+                   listen = do s <- udpServer "127.0.0.1" oscport
+                               oscLoop s
+                   oscLoop s = do m <- recvMessage s
+                                  act m
+                                  oscLoop s
+                   act (Just (Message "/notes" xs)) =
+                     do putStrLn $ show xs
+                        swapMVar mp $ listToPat $ catMaybes $ map (datum_integral) xs
+                        return ()
+                   act _ = return ()
+               forkIO listen
+               return $ cheat mp
+    cheat mp = Pattern (\a -> unsafePerformIO $ do p <- readMVar mp
+                                                   return $ arc p a
+                       )
+
+p <- start
+
+
+
+
+
+
+
+
+
+d1 $ n ((+8) <$> p) # sound "rash"
+
