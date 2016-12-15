@@ -205,7 +205,7 @@ def runloop():
     cap = cv2.VideoCapture(1)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     ret,grab = cap.read()
-    grab = grab[140:440,170:270]
+    grab = grab[170:270,140:440]
     cv2.imwrite('save.png',grab)
 
     while True:
