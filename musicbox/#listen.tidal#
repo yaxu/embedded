@@ -1,0 +1,20 @@
+let oscport = 9000
+    startcps = do s <- udpServer "127.0.0.1" oscport
+                  oscLoop s
+    oscLoop s cps = do m <- recvMessage s
+                       act m cps
+                       oscLoop s cps
+    act (Just (Message "/notes" xs@[Int x])) cps =
+      do putStrLn $ show 
+         return ()
+    act _ _ = return ()
+    cpsShape = OscShape {path = "/setcps",
+                 Sound.Tidal.Context.params = [ S "cps" Nothing],
+                 cpsStamp = False,
+                 timestamp = NoStamp,
+                 Sound.Tidal.Context.latency = 0,
+                 namedParams = False,
+                 preamble = []
+                }
+    cpsp = makeF cpsShape "cps"
+    cpsStream = stream "127.0.0.1" oscport cpsShape
