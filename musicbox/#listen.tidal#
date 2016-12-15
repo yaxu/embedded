@@ -31,7 +31,7 @@ p <- start
 
 
 
-d1 $ sometimes (# up "12") $  n (offadd 0.125 12 $ offadd 0.25 7 $ (+8) <$> p) # sound "rash"
+d1 $ every 3 (slow 1.5) $ sometimes (# up "12") $  n (offadd 0.125 12 $ offadd 0.25 7 $ (+8) <$> p) # sound "rash"
   # cutoff (palindrome $ scale 300 5000 saw1)
   # resonance "0.2"
 
