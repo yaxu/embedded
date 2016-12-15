@@ -212,6 +212,8 @@ def runloop():
 
     low = 1000
     high = 0
+    highest = 290.5
+    lowest = 23.6
     
     while True:
         ret,grab = cap.read()
