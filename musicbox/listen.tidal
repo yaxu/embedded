@@ -22,6 +22,7 @@ let start = do mp <- newMVar (silence :: Pattern Int)
                        )
 
 p <- start
+hush
+d1 $ n ((subtract 5) <$> p) # sound "rash"
 
-d1 $ n ((+32) <$> p) # sound "rash"
-
+"c6" :: Pattern Int
