@@ -347,7 +347,7 @@ def runloop():
 
 pygame.init()
 height = 100
-width = 300
+width = 325
 screen = pygame.display.set_mode((width,height))
 pygame.display.set_caption("musicbox")
 
