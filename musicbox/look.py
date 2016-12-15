@@ -283,9 +283,9 @@ def runloop():
             thing['contour'] = [c]
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
-            note = int(round((thing['x'] - lowest) / (highest - lowest) * 15))
-            if note > 15:
-                note = 15
+            note = int(round((thing['x'] - lowest) / (highest - lowest) * 14))
+            if note > 14:
+                note = 14
             if note < 0:
                 note = 0
             print("note: " + str(note) + " (" + note_names[note] + ")")
