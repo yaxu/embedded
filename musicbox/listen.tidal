@@ -9,5 +9,5 @@ let oscport = 9000
     act (Just (Message "/notes" xs)) =
       do putStrLn $ show xs
          return ()
-    act _ _ = return ()
+    act _ = return ()
 
