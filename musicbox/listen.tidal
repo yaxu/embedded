@@ -23,6 +23,7 @@ let start = do mp <- newMVar (silence :: Pattern Int)
 
 p <- start
 hush
-d1 $ n ((+7) <$> p) # sound "rash"
+
+d1 $ n ((+8) <$> p) # sound "rash"
 
 "c6" :: Pattern Int
