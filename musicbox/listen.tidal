@@ -4,7 +4,7 @@ let oscport = 9000
     oscLoop s cps = do m <- recvMessage s
                        act m cps
                        oscLoop s cps
-    act (Just (Message "/setcps" [Float x])) cps =
+    act (Just (Message "/notes" [Float x])) cps =
       do cps $ float2Double x
          return ()
     act _ _ = return ()
