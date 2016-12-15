@@ -299,7 +299,7 @@ def runloop():
                 note = 0
             thing['note'] = note
             print "area: " + str(area) + " roundness: " + str(roundness)
-            if roundness < 1.1: #area > 100 and area < 600 and roundness < 1.1:
+            if roundness < 1.1 and area < 800: #area > 100 and area < 600 and roundness < 1.1:
                 if thing['x'] < low:
                     low = thing['x']
                     print "highest " + str(high) + " lowest: " + str(low)
