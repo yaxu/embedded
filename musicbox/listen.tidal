@@ -10,7 +10,7 @@ do p <- newMVar silence
                       oscLoop s
        act (Just (Message "/notes" xs)) =
          do show xs
-            swapMVar p $ listToPat (map (\(Int32 i) -> i) xs)
+            swapMVar p $ listToPat xs
             return ()
        act _ = return ()
    forkIO listen
