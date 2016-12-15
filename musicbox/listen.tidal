@@ -1,7 +1,6 @@
 let oscport = 9000
     startcps = do s <- udpServer "127.0.0.1" oscport
-                  (cps, _) <- bpsUtils
-                  forkIO $ oscLoop s cps
+                  oscLoop s
     oscLoop s cps = do m <- recvMessage s
                        act m cps
                        oscLoop s cps
