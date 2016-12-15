@@ -1,0 +1,15 @@
+import Sound.OSC.FD
+
+let oscport = 9000
+    listen = do s <- udpServer "127.0.0.1" oscport
+                oscLoop s
+    oscLoop s = do m <- recvMessage s
+                   act m
+                   oscLoop s
+    act (Just (Message "/notes" xs)) =
+      do putStrLn $ show xs
+         return ()
+    act _ = return ()
+
+
+listen
