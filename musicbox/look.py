@@ -243,6 +243,7 @@ def runloop():
             #print "area %i: %f" % (i, area)
             thing = {}
             thing['area'] = area
+            print "area: " + area
             # centroid
             m = cv2.moments(c)
             thing['x'] = m['m10'] / m['m00']
