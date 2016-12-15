@@ -2,7 +2,7 @@ import Sound.OSC.FD
 import Control.Concurrent.MVar
 import Data.Maybe
 
-let start = do p <- newMVar (silence :: Pattern Int)
+let start = do mp <- newMVar (silence :: Pattern Int)
                let oscport = 9000
                    listen = do s <- udpServer "127.0.0.1" oscport
                                oscLoop s
@@ -11,10 +11,13 @@ let start = do p <- newMVar (silence :: Pattern Int)
                                   oscLoop s
                    act (Just (Message "/notes" xs)) =
                      do putStrLn $ show xs
-                        swapMVar p $ listToPat $ catMaybes $ map (datum_integral) xs
+                        swapMVar mp $ listToPat $ catMaybes $ map (datum_integral) xs
                         return ()
                    act _ = return ()
                forkIO listen
-               return p
+               return $ cheat mp
+    cheat mp = Pattern $ \a -> unsafePerformIO $ do p <- mp
+                                                    arc p a
 
+p <- start
 
