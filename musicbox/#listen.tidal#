@@ -60,4 +60,6 @@ d2 $ off 0.5 (|*| speed "2") $ degradeBy 0.2 $ (jux rev $ iter 4 $ loopAt 2 $ ch
 
 cps (-1)
 
-cps 0.5
+cps 0.8
+
+d1 $ sound "{bd sd8:2 sd8 sd8 sd8 sd8}%8"
