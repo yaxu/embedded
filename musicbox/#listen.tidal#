@@ -65,7 +65,7 @@ cps 0.8
 d1 $ sound "arpy*8" # speed (scale 1 2 (1 ~> rand))
 
 
-d1 $ sound "bd sn"
-  # pan "0"
+d1 $ sound "bd cp"
+  # pan "0 1"
 
 
