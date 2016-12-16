@@ -1,0 +1,7 @@
+
+d1 $ runWith 4 (density 2) $ jux (rev) $ chop 8 $ sound "[bd arpy:3] cp [sn arpy] ~"
+  # speed (scale 1 2 sine1)
+
+
+
+  
