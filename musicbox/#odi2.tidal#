@@ -2,6 +2,8 @@
 d2 $ degrade $ jux rev $ slowspread (chop) [16,8,4] $ runWith 4 (density 2) $ sound "[bd8:4(3,8), ~ [mt8 ht8:3]]"
   # orbit "1" # gain "1.2" # speed "[2 3]/2"
 
-d3 $ sound "~ [~ cp8]"
+d3 $ sound "mt8 [lt*2 cp8]"
 
-d4 $ sound "funky"
+d4 $ runWith 4 (density 2) $ jux rev $ sound "funky [funky funky*2]" # n (irand 4)
+
+d7 $ n ((+12) <$> p # sound "pulse"
