@@ -1,1 +1,1 @@
-d1 $ n ((+8) <$> p) # sound "rash"
+d1 $ n (((+8) . (+12)) <$> p) # sound "rash"
