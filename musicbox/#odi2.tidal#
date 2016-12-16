@@ -1,5 +1,4 @@
 
-d1 $ jux ((|*| speed "2") . rev . density 2) $ chop 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ (+20) <$> p) # sound "gabba"
 
-hush
-  
+d1 $ jux reslow 2 $ n (offadd 0.25 12 $ offadd 0.25 7 $ slow 2 $ (+12) <$> p) # sound "xx" # gain "0.9"
+
