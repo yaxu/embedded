@@ -62,7 +62,7 @@ cps (-1)
 
 cps 0.8
 
-d1 $ sound "arpy*8" # speed (scale 1 2 (1 ~> rand))
+
 
 
 
