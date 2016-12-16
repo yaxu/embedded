@@ -16,7 +16,7 @@ import sys
 from OSC import OSCClient, OSCMessage
 
 
-threshold = 200
+threshold = 240
 
 port = 9000
 osc = OSCClient()
