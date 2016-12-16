@@ -1,5 +1,5 @@
 
-d1 $ jux ((|*| speed "2") . rev . density 2) $ chop 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ (+20) <$> p) # sound "rash"
+d1 $ jux ((|*| speed "2") . rev . density 2) $ chop 4 $ n (offadd 0.125 12 $ offadd 0.25 7 $ (+20) <$> p) # sound "gabba"
 
-
+hush
   
