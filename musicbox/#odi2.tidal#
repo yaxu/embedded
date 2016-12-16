@@ -4,6 +4,11 @@ d2 $ degrade $ jux rev $ slowspread (chop) [16,8,4] $ runWith 4 (density 2) $ so
 
 d3 $ sound "mt8 [lt*2 cp8]"
 
-d4 $ runWith 4 (density 2) $ jux rev $ sound "funky [funky funky*2]" # n (irand 4)
 
-d7 $ n ((+12) <$> p # sound "pulse"
+d4 $ degradeBy 0.8 $ runWith 4 (density 2) $ jux rev $ sound "funky [funky funky*2]" # n (irand 4)
+
+d7 $ jux rev $ runWith 4 (density 4) $ n ((+24) <$> p) # sound "pulse"
+  # cutoff "1000"
+  # resonance "0.2"
+
+  hush
