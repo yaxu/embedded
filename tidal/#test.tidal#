@@ -177,5 +177,6 @@ d1 $ slow 4 $ sound "cp sn sn sn"
 
 hush
 
-d1 $ sound "arpy:0" # n (irand 4)
+d1 $ sound "arpy:0(3,8)" # speed "1"
 
+t1
