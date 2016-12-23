@@ -179,4 +179,8 @@ hush
 
 d1 $ sound "arpy:0(3,8)" # speed "1"
 
-t1
+d1 $ sound "arpy:0(3,8)" # speed "2"
+
+t1 (interpolateIn 4) $ sound "arpy:0(3,8)" # speed "4"
+
+t1 (interpolateIn 4) $ sound "arpy:0(3,8)" # speed "3"
