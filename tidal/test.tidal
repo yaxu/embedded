@@ -179,8 +179,9 @@ hush
 
 d1 $ sound "arpy:0(3,8)" # speed "1"
 
-d1 $ sound "arpy:0(3,8)" # speed "2"
-
+d1 $ sound "arpy:0(3,8)" # orbit "2"
+  # pan "0 1"
+hush
 t1 (interpolateIn 4) $ sound "arpy:2(3,8)" # speed "4" # shape "0"
 
 t1 (interpolateIn 4) $ sound "arpy:0(3,8)" # speed "1" # shape "0.2"
