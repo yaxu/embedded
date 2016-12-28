@@ -190,7 +190,7 @@ hush
 
 import Sound.Tidal.MIDI.Context
 
-import Sound.Tidal.MIDI.SimpleSynth
+import Sound.Tidal.MIDI.Synth
 
 devices <- midiDevices
 
