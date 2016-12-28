@@ -23,3 +23,8 @@ d3 $ seqPLoop [
                )
               ]
 
+
+import Sound.Tidal.MIDI.Context
+
+m <- midiDevices
+
