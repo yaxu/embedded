@@ -190,12 +190,13 @@ hush
 
 import Sound.Tidal.MIDI.Context
 
-import Sound.Tidal.MIDI.Synth
+import Sound.Tidal.MIDI.CC
 
 devices <- midiDevices
 
-m1 <- midiStream devices "USB Uno MIDI Interface MIDI 1" 1 synthController
+m1 <- midiStream devices "USB Uno MIDI Interface MIDI 1" 1 ccallController
 
 m1 $ midinote "[33(3,5),32*10,34(5,8)]"
    |=| cc12 "3"
-Add Comment
+
+<- ccall
