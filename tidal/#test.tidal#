@@ -194,7 +194,7 @@ import Sound.Tidal.MIDI.Synth
 
 devices <- midiDevices
 
-m1 <- midiStream devices "USB Uno MIDI Interface MIDI 1" 1 synth
+m1 <- midiStream devices "USB Uno MIDI Interface MIDI 1" 1 synthController
 
 m1 $ midinote "[33(3,5),32*10,34(5,8)]"
    |=| cc12 "3"
