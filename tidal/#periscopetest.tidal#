@@ -1,2 +1,5 @@
-d1 $ n (slowspread (offadd 0.25) [5,7,-12] "{d3 [d2 d1], d3 [~ f3] g4}%1") # s "jx" |*| speed "0.5"
-
+d1 $ (jux rev $ off 0.125 (|*| speed "2") $ n (slowspread (offadd 0.25) [5,7,-12] "{d3 [d2 d1], d3 [~ f3] a4}%1") # s "jx" |*| speed "0.5")
+  # cutoff (slow 4 $ scale 150 2000 sine1)
+  # resonance "0.3"
+  # room "0.3"
+  # size "0.3"
