@@ -204,7 +204,7 @@ import Control.Concurrent
 threadDelay 
 
 let visualise p = clocked (visTick p)
-    visTick p tempo tick = mapM_ (\(t,v) -> forkIO $ do {(show t); threadDelay (floor $ 1000000 * t); putStrLn "x"}) values 
+    visTick p tempo tick = mapM_ (\(t,v) -> forkIO $ do {threadDelay (floor $ 1000000 * t); putStrLn (show v)}) values 
      where 
        values = map (\(t, _, v) -> (toSecs t, v)) $ seqToRelOnsetDeltas (toRational tick, toRational (tick+1)) p
        toSecs t = t / (Sound.Tidal.Tempo.cps tempo)
