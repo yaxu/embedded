@@ -204,4 +204,3 @@ let visualise p = clocked (visTick p)
     visTick p tempo tick = putStrLn $ show tick ++ show (arc p (toRational tick, toRational (tick+1)))
 
 visualise $ sound "bd sn"
-
