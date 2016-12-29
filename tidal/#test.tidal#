@@ -218,3 +218,4 @@ vis <- makeVisualiser
 
 vis $ sound "bd sn*2"
 
+d1 $ sound (listToPat $ cycle ["bd"])
