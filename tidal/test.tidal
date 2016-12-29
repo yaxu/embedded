@@ -200,13 +200,17 @@ m1 $ midinote "[33(3,5),32*10,34(5,8)]"
    |=| cc12 "3"
 
 import Control.Concurrent
+import Control.Concurrent.MVar
 
 threadDelay 
 
-let visualise p = clocked (visTick p)
-    visTick p tempo tick = mapM_ (\(t,v) -> forkIO $ do {threadDelay (floor $ 1000000 * t); putStrLn (show v)}) values 
+let makeVisualiser = do mv <- newMVar silence
+                        forkIO $ clocked (visTick mv)
+                        return mv
+    visTick mv tempo tick = do p <- readMVar mv
+                               mapM_ (\(t,v) -> forkIO $ do {threadDelay (floor $ 1000000 * t); putStrLn (show v)}) values p
      where 
-       values = map (\(t, _, v) -> (toSecs t, v)) $ seqToRelOnsetDeltas (toRational tick, toRational (tick+1)) p
+       values p = map (\(t, _, v) -> (toSecs t, v)) $ seqToRelOnsetDeltas (toRational tick, toRational (tick+1)) p
        toSecs t = t / (Sound.Tidal.Tempo.cps tempo)
 
 
