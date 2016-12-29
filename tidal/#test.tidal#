@@ -200,4 +200,6 @@ m1 $ midinote "[33(3,5),32*10,34(5,8)]"
    |=| cc12 "3"
 
 
-let visualise p = clocked (\tempo tick -> putStrLn $ show tick ++ show (Sound.Tidal.Tempo.cps tempo))
+let visualise p = clocked (vis p)
+    vis p tempo tick = putStrLn $ show tick ++ show  (arc p (toRational tick, toRational (tick+1)))
+
