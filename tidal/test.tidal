@@ -199,4 +199,10 @@ m1 <- midiStream devices "USB Uno MIDI Interface MIDI 1" 1 ccallController
 m1 $ midinote "[33(3,5),32*10,34(5,8)]"
    |=| cc12 "3"
 
-<- ccall
+
+let visualise p = clocked (visTick p)
+    visTick p tempo tick = putStrLn $ show tick ++ show  (arc p (toRational tick, toRational (tick+1)))
+    
+
+visualise $ sound "bd sn"
+
