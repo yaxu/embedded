@@ -204,8 +204,7 @@ import Control.Concurrent.MVar
 
 threadDelay 
 
-let makeVisualiser :: Show a => IO (Pattern a -> IO (Pattern a))
-    makeVisualiser = do mv <- newMVar silence
+let makeVisualiser = do mv <- newMVar (silence :: ParamPattern)
                         forkIO $ clocked (visTick mv)
                         return (swapMVar mv)
     visTick mv tempo tick = do p <- readMVar mv
@@ -216,6 +215,6 @@ let makeVisualiser :: Show a => IO (Pattern a -> IO (Pattern a))
 
 
 vis <- makeVisualiser
-:t vis
+
 vis $ sound "bd sn*2"
 
