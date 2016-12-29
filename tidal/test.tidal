@@ -201,6 +201,8 @@ m1 $ midinote "[33(3,5),32*10,34(5,8)]"
 
 
 let visualise p = clocked (visTick p)
-    visTick p tempo tick = putStrLn $ show tick ++ show (arc p (toRational tick, toRational (tick+1)))
+    visTick p tempo tick = putStrLn $ show tick ++
+    values p tempo tick = seqToRelOnsetDeltas (toRational tick, toRational (tick+1)) p
+    toSecs tempo t = t / (Sound.Tidal.Tempo.cps tempo)
 
 visualise $ sound "bd sn"
