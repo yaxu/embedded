@@ -211,5 +211,5 @@ let visualise p = clocked (visTick p)
 
 
 
-visualise $ sound "bd sn"
+visualise $ sound "bd sn*2"
 
