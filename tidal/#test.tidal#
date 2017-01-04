@@ -204,18 +204,20 @@ import Control.Concurrent.MVar
 
 threadDelay 
 
-let makeVisualiser = do mv <- newMVar (silence :: ParamPattern)
+let makeVisualiser = do mv <- newMVar silence
                         forkIO $ clocked (visTick mv)
-                        return (swapMVar mv)
+                        return mv
     visTick mv tempo tick = do p <- readMVar mv
-                               mapM_ (\(t,v) -> forkIO $ do {threadDelay (floor $ 1000000 * t); putStrLn (show v)}) (values p)
+                               mapM_ (\(t,v) -> forkIO $ do {threadDelay (floor $ 1000000 * t); putStrLn (show v)}) values p
      where 
        values p = map (\(t, _, v) -> (toSecs t, v)) $ seqToRelOnsetDeltas (toRational tick, toRational (tick+1)) p
        toSecs t = t / (Sound.Tidal.Tempo.cps tempo)
 
 
-vis <- makeVisualiser
 
-vis $ sound "bd sn*2"
+visualise $ sound "bd sn*2"
 
-d1 $ sound (listToPat $ cycle ["bd"])
+d1 $ sound "bd"
+
+d1 $ sound "bd*32" # speed ((+) <$> sine1 <*> slow 4 saw1)
+
