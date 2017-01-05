@@ -221,4 +221,6 @@ d1 $ sound "bd"
 
 d1 $ sound "bd*32" # speed ((+) <$> sine1 <*> slow 4 saw1)
 
-(\x -> ) <$> sound "bd:3"
+import Data.Map.Strict as Map
+
+(\x -> Map.filterWithKey (\k _ -> k == n_p) x) <$> sound "bd:3"
