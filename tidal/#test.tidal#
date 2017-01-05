@@ -229,7 +229,7 @@ let copyParam:: Param -> Param -> ParamPattern -> ParamPattern
             updateValue m v = Map.union m (Map.fromList [(toParam,v)])
     nToOrbit = copyParam n_p orbit_p
 
-nToOrbit $ n sound "bd"
+ nToOrbit $ n "0 1" # sound "bd"
 
 -- type ParamMap = Map.Map Param (Maybe Value)
 
