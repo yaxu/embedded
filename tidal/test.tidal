@@ -253,9 +253,6 @@ d1 $ jux rev$superimpose((#speed(scale 2 4 sine1)).iter 4.(#sound"sn [mt jungbas
 
 d1 $ jux rev $ off (1/8) (# sound "sn:2 mt lt") $ n "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4" # sound "bd ht:3*4"
 
-
-
-
 let pat = "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4"
 
 d1 $ stack [
