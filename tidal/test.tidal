@@ -244,3 +244,14 @@ d1 $ randcat [sound "bd*8", sound "sn*8"]
 
 hush
 
+let pat = "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4"
+
+d1 $ stack [
+  superimpose ((# s "sn") . ((1/8) <~)) $ n "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4" # s "bd"]
+
+let pat = "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4"
+
+d1 $ stack [
+  n pat # s "bd",
+  (0.125 <~) $ n pat # s "sn" ]```
+
