@@ -232,3 +232,15 @@ let copyParam:: ParamPattern -> Param -> Param -> ParamPattern
    
 (copyParam n_p orbit_p) <$> (sound "bd:3")
 
+d1 $ do a <- slow 2 tri1
+        b <- slow 4 tri1
+        within (toRational a, toRational b) (density 8) $ sound "bd arpy:1 arpy:2 arpy:5"
+
+let a = sound "bd sn*2"
+    b = sound "cp"
+in
+
+d1 $ randcat [sound "bd*8", sound "sn*8"]
+
+hush
+
