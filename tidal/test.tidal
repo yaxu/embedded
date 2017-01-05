@@ -221,3 +221,11 @@ d1 $ sound "bd"
 
 d1 $ sound "bd*32" # speed ((+) <$> sine1 <*> slow 4 saw1)
 
+import Data.Map.Strict as Map
+
+let copyParam pat fromParam toParam =
+      do v <- Map.lookup fromParam pat
+         return Map.union pat Map.fromList [(toParam,v)]
+
+   
+(\x -> Map.lookup n_p x) <$> sound "bd:3"
