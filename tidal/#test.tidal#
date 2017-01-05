@@ -222,12 +222,14 @@ d1 $ sound "bd"
 d1 $ sound "bd*32" # speed ((+) <$> sine1 <*> slow 4 saw1)
 
 import Data.Map.Strict as Map
-import Data.Maybe
 
-let copyParam:: ParamPattern -> Param -> Param -> ParamPattern
-    copyParam pat fromParam toParam = (fromJust . f) <$> pat
-      where f m = maybe m (Map.lookup fromParam m)
-                     \v -> Map.union m (Map.fromList [(toParam,v)])
+let copyParam:: Param -> Param -> ParamPattern -> ParamPattern
+    copyParam fromParam toParam pat = f <$> pat
+      where f m = maybe m (updateValue m) (Map.lookup fromParam m)
+            updateValue m v = Map.union m (Map.fromList [(toParam,v)])
+    nToOrbit = copyParam n_p orbit_p
+
+nToOrbit $ n sound "bd"
 
 -- type ParamMap = Map.Map Param (Maybe Value)
 
