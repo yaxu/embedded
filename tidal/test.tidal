@@ -217,3 +217,7 @@ let makeVisualiser = do mv <- newMVar silence
 
 visualise $ sound "bd sn*2"
 
+d1 $ sound "bd"
+
+d1 $ sound "bd*32" # speed ((+) <$> sine1 <*> slow 4 saw1)
+
