@@ -243,7 +243,7 @@ in
 d1 $ randcat [sound "bd*8", sound "sn*8"]
 
 hush
-
+hush
 let pat = "{0 0*2 0*2 ~ 0 ~ 0 0 0*2}%4"
 
   
@@ -259,3 +259,5 @@ d1 $ stack [
   n pat # s "bd",
   (0.125 <~) $ n pat # s "sn" ]```
 
+
+d1 $ n "0 1" # sound "numbers" # pan "0 1"
