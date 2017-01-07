@@ -260,4 +260,3 @@ d1 $ stack [
   (0.125 <~) $ n pat # s "sn" ]```
 
 
-d1 $ n "0 1" # sound "numbers" # pan "0 1"
