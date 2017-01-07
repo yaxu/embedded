@@ -260,3 +260,5 @@ d1 $ stack [
   (0.125 <~) $ n pat # s "sn" ]```
 
 
+d1 $ rev $ off 0.25 (# sound "mt ht") $ sound "bd sn(3,8)"
+
