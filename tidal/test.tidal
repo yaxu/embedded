@@ -260,10 +260,13 @@ d1 $ stack [
   (0.125 <~) $ n pat # s "sn" ]```
 
 
-d2 $ slow 2 $ jux rev $ off 0.25 (# sound "mt ht") $ sound "bd sn(3,8)"
+d2 $ chop 8 $ slow 2 $ jux rev $ off 0.25 (# sound "mt ht") $ sound "bd sn(3,8)"
   # gain "1.2"
 
-d1 $ jux rev $ n (offadd 0.25 7 "40(3,8)") # sound "xx"
+d1 $ (jux rev $ n (offadd 0.25 7 "40(3,8,[0 2]/2)") # sound "xx")
+  # gain "1 0.4"
+  # cutoff (slow 4 $ scale 100 1000 sine1)
+  # resonance "0.3"
 
 let off t f p = superimpose ((t ~>) . f) p
 
