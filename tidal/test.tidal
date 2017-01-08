@@ -271,3 +271,6 @@ d1 $ (jux rev $ n (offadd 0.25 7 "40(3,8,[0 2]/2)") # sound "xx")
 let off t f p = superimpose ((t ~>) . f) p
 
 let off t f p = superimpose (f . (t ~>)) p
+
+
+[(Param, Value, Param, Value)] -> ParamPattern  -> ParamPattern
