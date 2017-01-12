@@ -274,3 +274,9 @@ let off t f p = superimpose (f . (t ~>)) p
 
 
 [(Param, Value, Param, Value)] -> ParamPattern  -> ParamPattern
+
+fromNote $ choose ["a","bs"]
+
+ slow 0.09$(s$randcat$"808":(parsePat.("808"++)<$>words "bd cy hc ht lc lt mc mt oh sd"))#n(irand 24)#cut(irand 3)
+
+:t Prelude.map
