@@ -277,4 +277,4 @@ let off t f p = superimpose (f . (t ~>)) p
 
 fromNote $ choose ["a","bs"]
 
- slow 0.09$(s$randcat["808 808bd 808cy 808hc 808ht 808lc 808lt","808mc","808mt","808oh","808sd"])#n(irand 24)#cut(irand 3)
+ slow 0.09$(s$randcat$map (parsePat .("808"++))$words "bd cy hc ht lc lt mc 808mt 808oh 808sd")#n(irand 24)#cut(irand 3)
