@@ -282,4 +282,4 @@ fromNote $ choose ["a","bs"]
 :t Prelude.map
 
 
-density 4 $ struct "x" $ choose [0 .. 10]
+density 4 $ struct "x x" $ choose [0 .. 10]
