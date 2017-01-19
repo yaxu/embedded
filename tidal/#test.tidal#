@@ -282,4 +282,4 @@ fromNote $ choose ["a","bs"]
 :t Prelude.map
 
 
-d1 $ sound "bd sn"
+
