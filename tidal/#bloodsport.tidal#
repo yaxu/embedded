@@ -14,6 +14,8 @@ d1 $ sound "hh bd bd"
 
 d2 $ sound "bshihat bd [{bsperc:5 bsperc:3}%1 bd] ~"
 
-d3 $ sound "bsvocals"
+d3 $ slow 2 $ rev $ loopAt 2 $ slowspread (striate) [8,64] $ sound "bsvocals:10*2"
+
+
 
 hush
