@@ -5,4 +5,10 @@ d1 $
   # unit "c"
   # speed "4"
 
-  hush
+d1 $ n (run 1) # sound "bsbass"
+  # unit "c"
+
+
+d1 $ sound "hh bd bd"
+
+hush
