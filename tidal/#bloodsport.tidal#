@@ -1,0 +1,8 @@
+d1 $
+  struct "[x x] x"
+  $ slow 2 $ n (run 8)
+  # sound "bsperc"
+  # unit "c"
+  # speed "4"
+
+  hush
