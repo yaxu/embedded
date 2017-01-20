@@ -11,4 +11,9 @@ d1 $ n (run 1) # sound "bsbass"
 
 d1 $ sound "hh bd bd"
 
+
+d2 $ sound "bshihat bd [{bsperc:5 bsperc:3}%1 bd] ~"
+
+d3 $ sound "bsvocals"
+
 hush
