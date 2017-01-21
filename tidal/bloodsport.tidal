@@ -20,3 +20,4 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # gain "0.8"
   # vowel "i"
 
+hush
