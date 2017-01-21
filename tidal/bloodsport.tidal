@@ -16,12 +16,7 @@ d4 $ (struct "[x x . [x x x . x x . ~ x . x*4]/4]" $ n "0 1 2 3" # sound "bskick
   # speed (scale 1 2 sine1)
 
 d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 ~"
-  # cutoff (slow 4 $ scale 400 4000 saw1)
-  # resonance "0.2"
   |*| speed "[1,0.9]"
   # gain "0.8"
+  # vowel "i"
 
-d4 $ sound "bskick:1"
-
-
-hush
