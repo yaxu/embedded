@@ -12,12 +12,15 @@ d1 $ n (run 1) # sound "bsbass"
 d1 $ sound "hh bd bd"
 
 
-d2 $ sound "bshihat:2 bd [{bsperc:5 bsperc:5}%1 bd] ~"
+
+d2 $ every 4 (chop 4) $ sound "bshihat:2 bskick [{bsperc:5 bsperc:5}%1 bskick] ~"
+  # gain "1.8"
 
 d3 $ jux (4 <~) $ slow 2 $ rev $ loopAt 4 $ slowspread (striate) [8,12] $ sound "bsvocals:11*2"
   # cutoff (slow 4 $ scale 400 4000 saw1)
   # resonance "0.2"
 
+d4 $ sound "bskick:1"
 
 
 hush
