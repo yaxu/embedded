@@ -1,0 +1,23 @@
+d1 $
+  struct "[x x] x"
+  $ slow 2 $ n (run 8)
+  # sound "bsperc"
+  # unit "c"
+  # speed "4"
+
+d1 $ n (run 1) # sound "bsbass"
+  # unit "c"
+  # gain "0.9"
+
+d2 $ every 4 (chop 4) $ sound "{bshihat:2 bskick [{bsperc:5 bsperc:5}%1 bskick] ~, ~  ~ bsperc}"
+  # gain "1"
+
+d4 $ (struct "[x x . [x x x . x x . ~ x . x*4]/4]" $ n "0 1 2 3" # sound "bskick")
+  # speed (scale 1 2 sine1)
+
+d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 ~"
+  |*| speed "[1,0.9]"
+  # gain "0.8"
+  # vowel "i"
+
+hush
