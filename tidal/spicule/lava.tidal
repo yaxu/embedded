@@ -1,0 +1,9 @@
+d2 $ do runWith 4 (density 2) $ sound "[bskick(3,8) bssnare(3,8,4)]/2"
+        # n (slow 2 $ floor <$> scale 0 5 sine1)
+        # speed "2"
+
+
+d1 $ loopAt 2 $ sound "bsbass"
+  
+  
+
