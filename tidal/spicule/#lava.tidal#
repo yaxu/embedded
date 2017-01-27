@@ -1,4 +1,6 @@
-d1 $ do runWith 4 (density 2) $ chop 16 $ sound "bskick(3,8)"
+d1 $ do runWith 4 (density 2) $ sound "[bskick(3,8) bssnare(3,8)]/2"
         # n (slow 2 $ floor <$> scale 1 4 sine1)
 
-        
+d2 $ sound "bs"
+
+d1 $ sound "bssnare:1"
