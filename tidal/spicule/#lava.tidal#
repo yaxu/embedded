@@ -1,0 +1,4 @@
+d1 $ do runWith 4 (density 2) $ chop 16 $ sound "bskick(3,8)"
+        # n (slow 2 $ floor <$> scale 1 4 sine1)
+
+        
