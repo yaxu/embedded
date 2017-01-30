@@ -1,9 +1,11 @@
 
+d1 $ sound "bd sn"
+
 d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ struct "x(3,8) x*2 x*3 x*4]" "[[f3 a3 c3 e3] ! ! ! [c3 d3 e3 g3] ! ! !]/8") # s "xx"
   # cutoff "3000"
   # resonance "0.3"
-  # size "0.5" |*| speed "0.25"
-  # room "0.65"
+  -- # size "0.5" |*| speed "0.25"
+  -- # room "0.65"
 
 --
 
@@ -52,3 +54,4 @@ d4 $ jux rev $ weave 8 (palindrome $ sound "arpy arpy:1 arpy:2 arpy:3 arpy:4 arp
    speed "1 2*2 3",
    speed "1 2 3 2"
   ]
+
