@@ -286,3 +286,21 @@ d1 $ struct "[x x] [x x x]" $ iter 4 $ n (run 8) # sound "voodoo"
 
 
 ((\a b c -> a ++ " "++ b ++ " " ++ c) <$> "a e b f g" <*> "{0.5 0.7 0.4}%5" <*> "{0.3 0.2}%5") :: Pattern String
+
+
+
+d1 $ sometimes (|*| speed "-1") $ jux rev $ n (superimpose ((0.25 <~) . ((+12) <$>)) $ superimpose ((0.125 <~) . ((+7) <$>)) $ slow 4 $ "[[c7 g7]/2](3,8) a7*2 f6(3,8) e5*2") # sound "rash"
+  # cutoff "1000"
+  # orbit "1"
+  # resonance "0.2"
+  # room "0.9"
+  # size "0.9"
+  # gain "0.8"
+
+d2 $ jux rev $ runWith 4 (density 2) $ slow 2 $ sound "bd8 [~ mt8] sd8:2*2 [~ sd8]"
+  # gain "1.2"
+  # shape "0.7"
+
+d3 $ runWith 4 (density 2) $ jux (rev) $ iter 4 $ slow 2 $ n (run 16) # sound "funky"
+  # orbit "1"
+
