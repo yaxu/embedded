@@ -289,5 +289,5 @@ d1 $ struct "[x x] [x x x]" $ iter 4 $ n (run 8) # sound "voodoo"
 
 
 
-d1 $ n $ (off slow 4 $ "f8(3,8) a7 c6 e5") # sound "rash"
+d1 $ sometimes (|*| spe) $ jux rev $ n (superimpose ((0.25 <~) . ((+12) <$>)) $ superimpose ((0.125 <~) . ((+7) <$>)) $ slow 4 $ "f8(3,8) a7*2 c6(3,8) e5*2") # sound "rash"
   # pan "0.5"
