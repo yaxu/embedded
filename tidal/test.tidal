@@ -311,3 +311,9 @@ d2 $ n "50(3,8)" # sound "rash(3,8)"
 
 d1 $ every 4 (|*| speed "-1") $ jux rev $ slowspread (chop) [4,3] $ s "{ravebass:12 mt:1, bd sn [ravebass:10 sn:2]}"
 
+
+
+d1 $ jux rev $ slowspread (chop) [16,8] $ slow 2 $ sound "[~ bsperc [~ bsperc] ~, bd*4, bskick ~ bskick:2 ~]"
+  # resonance (scale 0.2 0.4 $ slow 8 saw1)
+  # cutoff (slow 2 $ scale 200 1000 sine1)
+
