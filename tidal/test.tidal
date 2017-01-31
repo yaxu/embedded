@@ -309,3 +309,5 @@ d1 $ jux rev $ slowspread (chop) [3,4] $ sound "bssnare bssnare"
 
 d2 $ n "50(3,8)" # sound "rash(3,8)"
 
+d1 $ every 4 (|*| speed "-1") $ jux rev $ slowspread (chop) [4,3] $ s "{ravebass:12 mt:1, bd sn [ravebass:10 sn:2]}"
+
