@@ -304,3 +304,8 @@ d2 $ jux rev $ runWith 4 (density 2) $ slow 2 $ sound "bd8 [~ mt8] sd8:2*2 [~ sd
 d3 $ runWith 4 (density 2) $ jux (rev) $ iter 4 $ slow 2 $ n (run 16) # sound "funky"
   # orbit "1"
 
+d1 $ jux rev $ slowspread (chop) [3,4] $ sound "bssnare bssnare"
+  # pan "0 1"
+
+d2 $ n "50(3,8)" # sound "rash(3,8)"
+
