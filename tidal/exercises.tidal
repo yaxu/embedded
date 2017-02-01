@@ -1,5 +1,6 @@
 
-d1 $ do always (# speed "[-1.5 [1 4] 2 1]/4") $ runWith 3 (density 2) $ n (slowspread (offadd (2/3)) [12,7,3] $ slowspread (\x -> offadd x 7) [(1%6), (3%6)] "d7 d5 [d7 d6]") # sound "rash"
-          # crush "8"
+d1 $ do always (# speed "[-1.5 [1 4] 2 1]/4") $ runWith 3 (density 2) $ n (slowspread (offadd (2/12)) [12,7,3] $ slowspread (\x -> offadd x 7) [(1%6), (3%6)] "d7 d5 [d7 d6]") # sound "rash"
+          # crush "5"
 
-d2 $ every 3 (# vowel "a") $ runWith 3 (density 2) $ n "0 [3 4] 3" # sound "bsperc"
+d2 $ every 3 (# vowel "a") $ runWith 3 (density 2) $ n "0 [3 4*2] 3" # sound "[bsperc, bssnare]"
+
