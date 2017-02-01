@@ -31,6 +31,8 @@ d9 $ slow (2/3) $ jux (|*| speed (slow 2 $ scale 1 1.1 sine1)) $ (slow 4 $ loopA
   # room (scale 0.5 1 saw1)
   # size "0.9"
 
+--
+
 d1 $ slow 4 $ (runWith 4 (density 2) $ sound "bd*2 . ~ mt8 . sd8:2 ~ sd8:4 . ~ [ht8 mt8]")
   # shape (scale 0 0.9 sine1)
 
@@ -38,3 +40,4 @@ d2 $ (off 0.25 (# vowel "a i o") $ jux rev $ (every 3 (density 2) $ every 2 (slo
   # cutoff ((+) <$> scale 100 1000 sine1 <*> (scale 0 1000 $ slow 8 saw1)))
   # resonance (slow 4 $ scale 0 0.3 saw1)
   # crush "4"
+
