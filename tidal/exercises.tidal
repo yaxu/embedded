@@ -31,4 +31,8 @@ d8 $ slowspread (chop) [3,7,2] $ sound "~ off"
 d9 $ jux (|*| speed (slow 2 $ scale 1 1.1 sine1)) $ (slow 4 $ loopAt 8 $ slowspread (striate) [64,32] $ sound "bsvocals*4")
   # shape "0.4"
   # crush "[8 3 7 2]"
+  # vowel "a i o u e"
+  # orbit "1"
+  # room (scale 0.5 1 saw1)
+  # size "0.9"
 
