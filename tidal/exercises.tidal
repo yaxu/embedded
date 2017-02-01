@@ -28,7 +28,7 @@ d7 $ sound "[bd,drum,future,bskick](3,8,[0 2]/2)"
 
 d8 $ slowspread (chop) [3,7,2] $ sound "~ off"
 
-d9 $ (loopAt 8 $ chop 16 $ someCycles (const silence) $ sound "bsvocals")
+d9 $ (slow 4 $ loopAt 8 $ striate 64 $ sound "bsvocals*4")
   # shape "0.4"
-  # crush "[0 5]*4"
+  # crush "[8 3 7]*4"
 
