@@ -27,3 +27,6 @@ d7 $ sound "[bd,drum,future,bskick](3,8,[0 2]/2)"
   # crush "3"
 
 d8 $ slowspread (chop) [3,7,2] $ sound "~ off"
+
+d9 $ loopAt 4 $ chop 16 $ someCycles (const silence) $ sound "bsvocal"
+
