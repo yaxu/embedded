@@ -22,7 +22,7 @@ d6 $ degrade $ slow 2 $ jux rev $ someCycles (|+| n "-12") $ n (offadd 0.125 (12
   # resonance "0.3"
   # vowel "a e i o u"
 
-d7 $ sound "[bd,drum,future,bskick](3,8,[0 2]/2)"
+d7 $ jux rev $ runWith 4 ((# crush "3") . (density 2)) $ sound "[bd,drum,future,bskick](3,8,[0 2]/2)"
   # shape "0.6"
   # crush "3"
 
