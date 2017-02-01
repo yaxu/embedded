@@ -1,1 +1,4 @@
--- one moment
+
+d1 $ do x <- scale 4 8 sine1
+        density (x $ jux (# speed "-1") $ runWith 3 (density 2) $ n "d7 d5 [d7 d6]" # sound "rash"
+          # crush "4"
