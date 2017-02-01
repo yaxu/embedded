@@ -41,3 +41,7 @@ d2 $ (off 0.25 (# vowel "a i o") $ jux rev $ (every 3 (density 2) $ every 2 (slo
   # resonance (slow 4 $ scale 0 0.3 saw1)
   # crush "4"
 
+d3 $ sound "~ [sid:3 sid:3*2]/2"
+  # gain "1.2"
+  # cutoff ((+) <$> scale 100 1000 sine1 <*> (scale 0 1000 $ slow 8 saw1))
+  # resonance (slow 4 $ scale 0 0.3 saw1)
