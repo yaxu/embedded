@@ -46,3 +46,9 @@ d3 $ density 2 $ sound "~ [sid:3 . sid:3 ~ sid:3]/2"
   # speed (stack ["1", slow 4 $ scale 1 1.03 sine1, slow 6 $ scale 1.01 1.04 tri1])
   # cutoff ((+) <$> scale 100 1000 sine1 <*> (scale 0 3000 $ slow 8 saw1))
   # resonance (slow 4 $ scale 0 0.4 saw1)
+
+d4 $ (jux rev $ loopAt 2 $ iter 4 $ chop 16 $ sound "breaks165")
+  # shape "0.4"
+  # vowel "[a e i o u]/2"
+
+cps 1.1
