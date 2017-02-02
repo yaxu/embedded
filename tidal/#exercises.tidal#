@@ -81,5 +81,6 @@ d4 $ do x <- "{1 2 1 4 2}%1"
         # size "0.8"
         # orbit "1"
         # cut "-1"
-
-d1 $ sound "jvrave:38"
+hush
+d1 $ runWith 4 (density 2) $ n "52 [53 ~] ~ [55]" # sound "jvrave"
+  # cut "-1"
