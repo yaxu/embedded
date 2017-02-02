@@ -59,3 +59,10 @@ cps 1.1
 
 --
 
+d2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f7(3,8) a7(3,8) c7(3,8) e9*2") # s "rash"
+  # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
+  # resonance "0.3"
+
+d3 $ slow 2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f9(3,8) a9(3,8) c9(3,8) e9*2") # s "rash"
+  # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
+  # resonance "0.3"
