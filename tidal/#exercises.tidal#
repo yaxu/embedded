@@ -62,11 +62,15 @@ cps 1.1
 d2 $ jux rev $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "f7(3,8) a7(3,8) c7(3,8) e9*2") # s "rash"
   # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
   # resonance "0.3"
-
-d3 $ superimpose (|-| n "12") $ someCycles (slow 2) $ jux (1 <~) $ slow 2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "[c9 bs9 a8 g9](3,8) g9(3,8) c9(3,8) a9*2") # s "xx"
-  # orbit "1"
-  
   # room "0.8"
-  
+  # orbit "1"
+
+d3 $ density 4 $ superimpose ((|+| n "[-7 -12]/8") . slow 2 . (# shape "0.9")) $ someCycles (slow 2) $ jux (1 <~) $ slow 2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "[c9 bs9 a8 g9](3,8) g9(3,8) c9(3,8) a9*2") # s "xx"
   # cutoff (slow 8 $ rev $ scale 1000 7000 saw1)
-  # resonance "0.3"
+  # resonance "0.1"
+  # end "0.125"
+
+d1 $ loopAt 2 $ runWith 2 (density 2 . (# speed "-2")) $ chop 8 $ sound "arc"
+  # gain "1.4"
+
+d4 $ n () # sound "jvrave"
