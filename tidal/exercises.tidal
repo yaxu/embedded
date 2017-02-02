@@ -1,6 +1,6 @@
 -- thanks for listening ! 
 
-d6 $ do slow 2 $ stut 3 0.8 ((1/6)) $ always (# speed "[-1.5 [1 4] 2 1]/4") $ runWith 3 (density 2) $ n (slowspread (offadd (2/12)) [12,7,3] $ slowspread (\x -> offadd x 7) [(1%6), (3%6)] "d7 d5 [d7 d6]") # sound "rash"
+d6 $ do stut 3 0.8 ((1/6)) $ sometimes (# speed "[-1.5 [1 4] 2 1]/4") $ runWith 3 (density 2) $ n (slowspread (offadd (2/12)) [12,7,3] $ slowspread (\x -> offadd x 7) [(1%6), (3%6)] "d7 d5 [d7 d6]") # sound "rash"
           # crush "5"
           # room (slow 16 saw1)
           # orbit "1"
@@ -56,3 +56,6 @@ d4 $ (jux rev $ loopAt 2 $ iter 4 $ chop 16 $ sound "breaks165")
   # vowel "[a e i o u]/2"
 
 cps 1.1
+
+--
+
