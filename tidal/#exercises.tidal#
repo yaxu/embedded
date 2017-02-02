@@ -82,4 +82,4 @@ d4 $ do x <- "{1 2 1 4 2}%1"
         # orbit "1"
         # cut "-1"
 
-d1 $ sound "jvrave:11"
+d1 $ sound "jvrave:38"
