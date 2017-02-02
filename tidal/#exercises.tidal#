@@ -63,8 +63,9 @@ d2 $ jux rev $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ 
   # cutoff (slow 4 $ rev $ scale 1000 7000 saw1)
   # resonance "0.3"
 
-d3 $ someCycles (slow 2) $ jux (1 <~) $ slow 2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "[c9 bs9 a8 g9](3,8) g9(3,8) c9(3,8) a9*2") # s "xx"
+d3 $ superimpose (|-| n "12") $ someCycles (slow 2) $ jux (1 <~) $ slow 2 $ substruct "x/2 [x/8 x/4]" $ n (offadd 0.25 12 $ offadd 0.125 7 $ slow 4 $ "[c9 bs9 a8 g9](3,8) g9(3,8) c9(3,8) a9*2") # s "xx"
   # orbit "1"
+  
   # room "0.8"
   
   # cutoff (slow 8 $ rev $ scale 1000 7000 saw1)
