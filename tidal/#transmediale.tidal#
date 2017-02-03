@@ -25,8 +25,10 @@ d3 $ jux rev $ sound "[wobble](3,8)"
   # gain "1"
   # shape "0.3"
 
-d1 $ n (run 3) # sound "bsperc"
+d1 $ iter 4 $ chop 4 $ n ("{0 3 2*2 [3 ~ 3], 4 3 ~ 2}") # sound "voodoo"
 
-d2 $ loopAt 2 $ chop 16 $ sound "[os os:2]/2"
+d3 $ jux rev $ iter 4 $ sound "{bd*2 [mt8:3 sd8:3] mt8*2 bd, bd*3 ~ drum:2}"
 
-d3 $ sound "bd sn:3 sn:2*2"
+d4 $ slowspread (chop) [4,3] $ sound "~ off"
+
+d5 $ n "" #sound "rash"
