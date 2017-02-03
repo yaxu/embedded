@@ -25,10 +25,15 @@ d3 $ jux rev $ sound "[wobble](3,8)"
   # gain "1"
   # shape "0.3"
 
-d1 $ iter 4 $ chop 4 $ n ("{0 3 2*2 [3 ~ 3], 4 3 ~ 2}") # sound "voodoo"
+d1 $ every 3 (const silence) $ iter 4 $ chop 4 $ n ("{0 3 2*2 [3 ~ 3], 4 3 ~ 2}") # sound "voodoo"
 
-d3 $ jux rev $ iter 4 $ sound "{bd*2 [mt8:3 sd8:3] mt8*2 bd, bd*3 ~ drum:2}"
+d3 $ slow 2 $ every 2 (const silence) $ jux rev $ iter 4 $ sound "{bd*2 [mt8:3 sd8:3] mt8*2 bd, bd*3 ~ drum:2}"
 
-d4 $ slowspread (chop) [4,3] $ sound "~ off"
+d4 $ every 4 (# vowel "a")$ slowspread (chop) [4,3] $ sound "~ off"
 
-d5 $ n "" #sound "rash"
+d5 $ slow 2 $ sometimes (jux rev) $ off 0.125 (|+| n "7") $ every 2 (off 0.25 (# vowel "[e i]/2"))
+  $ slowspread (chop) [4,3] $ n "c6 ~ [e6 e7] c6" # sound "rash"
+  # gain "1.2"
+
+
+
