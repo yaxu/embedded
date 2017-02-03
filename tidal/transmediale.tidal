@@ -1,3 +1,18 @@
+d1 $ jux ((# speed "2") . rev)
+  $ sound "{bd ~ bd bd, sn:2 ~ sd8:3*2}"
 
+d2 $ jux (0.25 <~) $ n "{d7 ~ e7? a6}" # sound "jx"
+  # vowel "[a i e]/3"
 
+d3 $ runWith 4 ((# speed "2") . density 2) $ every 4 (0.25 <~) $ jux rev $ chop 8 $ n "0 ~ [3 3?] 4" # sound "bsperc"
+  # gain "1.1"
 
+d4 $ jux rev $ slowspread (chop) [8,64,128,96,32] $ sound "~ . wobble ~ wobble"
+  # shape (slow 16 $ scale 0.45 0.9 saw1)
+
+d5 $ runWith 4 (density 2) $ sound "drum(3,8,[2 4 0]/3)"
+  # shape "0.8"
+
+d6 $ every 2 (slow 2) $ iter 4 $ jux rev $ loopAt 4 $ slowspread (chop) [16,8,4] $ sound "repetition"
+  # gain "1.2"
+  # n (irand 16)
