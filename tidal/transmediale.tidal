@@ -13,6 +13,13 @@ d4 $ jux rev $ slowspread (chop) [8,64,128,96,32] $ sound "~ . wobble ~ wobble"
 d5 $ runWith 4 (density 2) $ sound "drum(3,8,[2 4 0]/3)"
   # shape "0.8"
 
-d6 $ every 2 (slow 2) $ iter 4 $ jux rev $ loopAt 4 $ slowspread (chop) [16,8,4] $ sound "repetition"
-  # gain "1.2"
+d6 $ slow 4 $ jux rev $ loopAt 16 $ slowspread (striate) [16,8,4,64] $ sound "bev*4"
+  # gain "1.3"
   # n (irand 16)
+  |*| speed "[-0.5,1]"
+
+d5 $ jux rev $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks165"
+  # shape "0.3"
+
+d3 $ jux rev $ sound "[wobble](3,8)"
+  # gain "0.9"
