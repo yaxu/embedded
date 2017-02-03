@@ -1,18 +1,2 @@
 
-d1 $ jux rev $ slow 2 $ loopAt 4 $ striate 16 $ sound "liq*2"
 
-d2 $ jux rev $ sound "bsperc([3 5]/2,8,4)"
-
-d3 $ jux rev $ chop 8 $ sound "[drum,drum]*2"
-
-d1 $ sound "wobble"
-
-d2 $ every 2 (slow 2) $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "c6(3,8) a7(5,8) f7(3,8) e7(3,8)") # sound "rash"
-  # cutoff (slow 4 $ scale 100 8000 sine1)
-  # resonance "0.3"
-
-
-d3 $ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ sound "arc"
-  # shape "0.8"
-
-d4 $ sound "fm:10"
