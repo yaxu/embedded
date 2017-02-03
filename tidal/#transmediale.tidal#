@@ -8,7 +8,12 @@ d2 $ off 0.25 (# vowel "a [e i]") $ up "0(3,8) [7 3]" # n "0" # sound "bass3"
   # shape "0.3"
   # gain "0.9"
 
-d3 $ every 2 (off 0.25 ((# shape "0.2") . (# speed "1.5") )) $ sound "drum ~ arpy:2*2 arpy"
-  # cutoff (slow 4 $ scale 1000 5000 sine1)
-
 d4 $ every 2 (density 2) $ jux (iter 4) $ slow 2 $ sound "bd ~ mt8 bd . bd sd8:2 bd"
+
+d1 $ jux rev $ n (run 16) $ sound "voodoo"
+  # speed "[1,1.1,2]"
+  # gain "1.1"
+
+d1 $ jux (|+| n "[7 3]/2") $ every 4 (slow 1.5) $ off 0.25 (|+| n "12") $ slow 2 $ n "d7(3,8)" # sound "rash(3,8)"
+  # vowel "a"
+  # cutof
