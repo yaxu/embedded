@@ -1,3 +1,0 @@
-
-d1 $ slow 2 $ loopAt 4 $ striate 32 $ sound "liq*2"
-
