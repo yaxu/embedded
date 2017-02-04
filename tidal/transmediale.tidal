@@ -49,6 +49,8 @@ let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "
 
 let x = 1; y = 2 in x + y
 
+(\x y -> x + y) 1 2
+
 let replicator = replicate 3000
 
 flood "yo ´`*~-_ "
