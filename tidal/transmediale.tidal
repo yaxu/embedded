@@ -42,3 +42,14 @@ d2 $ every 2 (# speed "2") $slowspread (chop) [16,12,8] $ sound "~ wobble"
   # shape "0.4"
 
 d3 $ runWith 4 (density 2) $ jux (rev . slow 2 . (|*| speed "2")) $ iter 4 $ off 0.25 (# speed "1.2") $ slow 2 $ n "0 ~ 1 . 0 ~ ~ 1" # sound "odx"
+
+let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"]
+
+(\p -> stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"]) $ n (run 8) # s "voodoo"
+
+let x = 1; y = 2 in x + y
+
+let replicator = replicate 3000
+
+flood "yo ´`*~-_ "
+
