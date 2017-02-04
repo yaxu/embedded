@@ -45,8 +45,7 @@ d3 $ runWith 4 (density 2) $ jux (rev . slow 2 . (|*| speed "2")) $ iter 4 $ off
 
 let x = (let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"])
 
-let replicator text1 = [putStr (text1) | x <- replicate 3000 text1]    
-    flood text2 = sequence_(replicator text2) 
+let replicator = replicate 3000
 
 flood "yo ´`*~-_ "
 
