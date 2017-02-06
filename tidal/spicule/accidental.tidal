@@ -1,7 +1,6 @@
-
 d1 $ sound "bd sn"
 
-d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ struct "x(3,8) x*2 x*3 x*4]" "[[f3 a3 c3 e3] ! ! ! [c3 d3 e3 g3] ! ! !]/8") # s "xx"
+d1 $ jux rev $ sometimes (|+| n "-12") $ slow 4 $ n (offadd (1/16) 12 $ offadd 0.125 7 $ struct "x(3,8) x*2 x*3 x*4]" "[[f7 a7 c7 e7] ! ! ! [c7 d7 e7 g7] ! ! !]/8") # s "xx"
   # cutoff "3000"
   # resonance "0.3"
   -- # size "0.5" |*| speed "0.25"
