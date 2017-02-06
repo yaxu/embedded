@@ -13,7 +13,5 @@ $ sound "[bd8:2 mt8](3,8)"
 d4 $ every 4 (density 2) $ slow 2 $ chop 4 $ sound "~ jungbass:10"
    # speed "4"
 
-d5 $ runWith 4 (density 2) $ jux (rev . slow 2 . (|*| speed "2")) $ iter 4 $ off 0.25 (# speed "1.2") $ slow 2 $ n "0 ~ 1 . 0 ~ ~ 1" # sound "odx"
-
-d6 $ let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"]
+d6 $ slow 2 $ let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"]
 
