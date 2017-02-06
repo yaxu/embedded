@@ -3,6 +3,10 @@ d1 $ sometimes (off 0.125 (|+| n "7")) $ slow 2 $ rev $ jux (|+| n "[7 3 12]/2")
   # cutoff (slow 16 $ (scale 8000 9000 saw1))
   # resonance "[0.1 0.2]*3"
   |*| speed "0.5"
+  # orbit "1"
+  # room "0.8"
+  # size "0.8"
+  # gain "0.75"
 
 d2 $ jux rev $ every 4 (chop 128) $ n "0 1 ~ 1" # sound "{bd8, lt8 ht8 mt8 ~}"
 
