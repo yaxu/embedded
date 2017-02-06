@@ -16,4 +16,6 @@ d1 $ slowspread (\x -> off x (# crush "4")) [1/3,2/3] $ seqPLoop [
   )
   ]
 
-d2 $ sound ""
+d2 $ off (1/6) (# crush "{4 3 2}%1") $ slow 2 $ n "e6 ~ g6 [~ a5] ~ ~" # sound "pulse"
+  
+
