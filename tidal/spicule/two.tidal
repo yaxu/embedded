@@ -6,7 +6,7 @@ d1 $ slowspread (\x -> off x (# crush "4")) [1/3,2/3] $ seqPLoop [
   (0, 32,
    sound "jvrave([6 2]/4,9,{0 2 4}%1)" # n "37 2"
   ),
-  (0, 32,
-   sound "jvrave([5 3]/4,9,{0 2 4}%1)" # n "17"
+  (16, 32,
+   sound "jvrave([5 3]/4,9,{0 2 4}%1)" # n "41"
   )
   ]
