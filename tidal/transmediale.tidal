@@ -8,7 +8,7 @@ d2 $ off 0.25 (# vowel "a [e i]") $ up "0(3,8) [7 3]" # n "0" # sound "bass3"
 
 d4 $ every 2 (density 2) $ jux (iter 4) $ slow 2 $ sound "bd ~ mt8 bd . bd sd8:2 bd"
 
-d1 $ jux rev $ n (run 16) $ sound "voodoo"
+d1 $ jux rev $ n (run 8) # sound "voodoo"
   # speed "[1,1.1,2]"
   # gain "1.1"
 

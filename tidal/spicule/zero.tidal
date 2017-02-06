@@ -1,2 +1,7 @@
 
 
+
+d1 $ slow 2 $ rev $ jux (|+| n "[7 3 12]/2") $ every 4 (slow 1.5) $ off (0.125) (|+| n "7") $ off 0.25 (|+| n "12") $ slow 2 $ n "[d7(3,8) a7(3,8) f7(3,8) e7(3,8)]/4" # sound "rash(3,8)"
+  # cutoff (slow 16 $ (scale 8000 9000 saw1))
+  # resonance "[0.1 0.2]*3"
+  |*| speed "0.5"
