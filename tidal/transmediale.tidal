@@ -53,5 +53,3 @@ let x = 1; y = 2 in x + y
 
 let replicator = replicate 3000
 
-flood "yo ´`*~-_ "
-
