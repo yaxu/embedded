@@ -1,7 +1,5 @@
 cps 1.1
 
--- this is aalleexx
-
 d1 $ jux rev $ every 4 (chop 128) $ n "0 1 ~ 1" # sound "{bd8, lt8 ht8 mt8 ~}"
 
 d2 $ off 0.25 (# vowel "a [e i]") $ up "0(3,8) [7 3]" # n "0" # sound "bass3"
