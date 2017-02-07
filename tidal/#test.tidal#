@@ -330,4 +330,4 @@ d3 $ stut 3 0.9 0.25 $ sometimes (|+| n "12") $ n (superimpose ((((+7) <$>)) . (
   # vowel "a i o u"
   # gain "0.8"
 
-density 16 $ 
+struct "x x" $ choose [1..5]
