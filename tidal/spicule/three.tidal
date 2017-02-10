@@ -27,3 +27,10 @@ d5 $ stut 2 0.25 (-1) $
 d7 $ stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # orbit "1")) $ iter 4 $ n "~ [4 4 4 16]/4 ~ [0 12 24]/3" # sound "pulse"
   # gain "0.9"
 
+--
+
+d1 $ every 6 (0.25 <~) $ sometimes (stut 2 0.25 (-0.25)) $ slow 2 $ n "{4 5 4 5, 8 ~ ~} . [1, 7] . {7 [4 ~ 4 ~], 8 ~ {~ ~ ~ 9}%1} . [1,7] 5" # sound "jvr"
+  # crush "4"
+
+d2 $ every 2 (superimpose (struct "x . x" . (|+| n "12") . (# (orbit "1" # room "0.8")))) $ n (slowspread (offadd 0.125) [7,9,12,24] "5 5 . 8 12") # sound "pulse"
+  # crush "5"
