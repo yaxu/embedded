@@ -25,6 +25,7 @@ d5 $ runWith 4 (density 2) $ 1 <~ (every 4 (density 16) $ sound "bd(3,8,[0 2]/2)
   # gain "0.86"
 
 
+
 d4 $ off 0.25 (|+| n "7") $ slow 2 $ struct "x(5,12)" $ n "c7 a7" # s "dirty"
   # shape "0.7"
   # resonance "0.3"
