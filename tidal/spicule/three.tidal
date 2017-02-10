@@ -23,8 +23,7 @@ let jvrabs = whenmod 8 4 (substruct "x/2 x/4") $ struct "x ~ [x x?]" $ n (slow 4
     pulse1 = stut 2 0.25 (-1) $
              every 3 (# (cutoff "10000" # resonance "0.3")) $ n "~ [16 4 4*2 16]/4 ~ {0 12 24*2 [24 36] 0}%1" # sound "pulse"
              # gain "0.9"
-    pulse2 = stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # orbit "1")) $ iter 4 $ n "~ [4 4 4 16]/4 ~ [0 12 24]/3" # sound "pulse"
-    # gain "0.9"
+    pulse2 = stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # orbit "1")) $ iter 4 $ n "~ [4 4 4 16]/4 ~ [0 12 24]/3" # sound "pulse" # gain "0.9"
 in
 d1 $ ((now+1) ~>) $ seqP
   [(0,64, jvrabs),
@@ -45,11 +44,6 @@ d3 $ sometimes (chop 16) $ every 4 (off 0.125 (|+| n "7") . off 0.25 (|+| n "12"
   # cutoff (slow 8 $ scale 100 3000 saw1)
   # resonance "0.3"
 
-
--- hello people on the internet
--- tweet @yaxu if you are locked in
-
--- sorry messing about a bit, focus
 
 -- maybe some deconstructed gabba
 
