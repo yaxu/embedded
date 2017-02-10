@@ -32,7 +32,7 @@ d7 $ stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # o
 d1 $ every 6 (0.25 <~) $ sometimes (stut 2 0.25 (-0.25)) $ slow 2 $ n "{4 5 4 5, 8 ~ ~} . [1, 7] . {7 [4 ~ 4 ~], 8 ~ {~ ~ ~ 9}%1} . [1,7] 5" # sound "jvr"
   # crush "4"
 
-d2 $ every 2 (superimpose (struct "x . x" . (|+| n "12") . (# (orbit "1" # room "0.8")))) $ n (slowspread (offadd 0.125) [7,9,12,24] "5 5 . 8 12") # sound "pulse"
+d2 $ every 2 (superimpose (struct "x . x ~ ~ x" . (|+| n "0 12") . (# (orbit "1" # room "0.9" # size "0.7")))) $ n (slowspread (offadd 0.125) [7,9,12,24] "5 5 . 8 12") # sound "pulse"
   # crush "5"
 
 d3 $ superimpose (iter 4) $ slow 2 $ n "c9 [~ ~ ~ f8]" # sound "rash"
