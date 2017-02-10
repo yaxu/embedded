@@ -17,4 +17,5 @@ d3 $ density 2 $ brak $ n "58 [2 2?]" # s "jvrave"
 
 d4 $ sound "funky"
 
-d5 $ sound "~ ~ ~ pulse"
+d5 $ stut 4 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9")) $ iter 4 $ n "~ 4 ~ 0" # sound "pulse"
+  
