@@ -1,4 +1,3 @@
-
 d4 $ stut' 4 0.5 ((|*| speed "[0.9 1.1]/8") . (|*| gain "0.9")) $ off 0.25 (# (gain "0.9" # speed "2")) $ juxBy 0.5 (4 <~) $ n (slow 8 $ scan 4) # sound "[ht8]"
   # gain "0.9"
   # orbit "0"
