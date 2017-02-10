@@ -47,7 +47,10 @@ d3 $ sometimes (chop 16) $ every 4 (off 0.125 (|+| n "7") . off 0.25 (|+| n "12"
 
 -- maybe some deconstructed gabba
 
-d1 $ sound "gabba(3,8)"
+d1 $ runWith 4 (density 2) $ sound "gabba"
   # orbit "1"
-  # room saw1
-  #  saw1
+  # room (slow 2 $ sine1)
+  # size (slow 2 $ sine1)
+  # delaytime (whenmod 8 4 (slow 2) $ scale 0.01 0.04 saw1)
+  # delay "0.5"
+  # delayfeedback "0.9"
