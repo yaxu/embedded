@@ -5,7 +5,7 @@ d2 $ do runWith 4 (density 2) $ sound "[bskick(3,8) bssnare(3,8,4)]/2"
         # speed "2"
         # shape "0.2"
 
-d3 $ n "11 [9*2 0]/2" # sound "BSGuitar"
+d3 $ n "11 [9*2 0]/2" # sound "bsguitar"
 
 d4 $ (jux rev $ runWith 4 (density 0.5 . (|*| speed "0.5")) $ slow 2 $ loopAt 2 $ rev $ striate 8 $ sound "bsvocals:1*2"
   # resonance "0.2")
