@@ -1,0 +1,11 @@
+
+d1 $ (runWith 4 (density 2) $ jux rev $ slow 2 $ n "{5 [11 12] . 5 17 . 5 19 . 5 16}" # sound "jvr")
+  # speed (scale 1 1.1 saw1)
+
+d2 $ juxBy 0.2 (density 2 . (# speed "1.5")) $ foldEvery [3,5] (0.25 <~) $ n "{3 ~ 4 5, ~ 11 ~}" # sound "ind"
+  # end "0.1"
+  # speed "2"
+  # orbit "1" # size "0.5" # room "0.4"
+  # accelerate "1"
+
+d3 $ slow 2 $ sound "(5,12)"
