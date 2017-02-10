@@ -31,7 +31,6 @@ d7 $ slow 2 $ runWith 8 (density 2) $ sound "bd8:3*2 {~ [mt ht8:3], [[lt rs8*2] 
   # orbit "1"
   # gain "1.1"
 
-
 d1 $ jux (iter 4) $ slowspread ($) [id,rev,density 2, iter 4] $ chop 16 $ sound "[drum future]/2([3 5]/2,8)"
   # gain "1.1"
   # crush "7"
