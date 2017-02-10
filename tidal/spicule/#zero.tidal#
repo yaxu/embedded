@@ -1,0 +1,23 @@
+let x = (sometimes (off 0.125 (|+| n "7")) $ slow 2 $ rev $ jux (|+| n "[7 3 12]/2") $ every 4 (slow 1.5) $ off (0.125) (|+| n "7") $ off 0.25 (|+| n "12") $ slow 2 $ n "[d7(3,8) a7(3,8) f7(3,8) e7(3,8)]/4" # sound "rash(3,8)")
+        # cutoff (slow 16 $ (scale 1000 3000 saw1))
+        # resonance "[0.3 0.4]"
+        |*| speed "0.5"
+        # orbit "1"
+        # room "0.8"
+        # size "0.8"
+        # gain "0.75"
+in
+d1 $ stack [x,
+            0.25 <~ (struct "x(3,8)" x # s "pulse") |+| n "12",
+            off 0.25 (|+| n "12") $ (0.125 ~> (struct "[x(5,16)]/2" x # s "xx") |+| n "12" # end "0.1")
+           ]
+
+d2 $ jux rev $ every 4 (chop 128) $ n "0 1 ~ 1" # sound "{bd8, lt8 ht8 mt8 ~}"
+
+d3 $ every 2 (slow 2) $ jux (density 2) $ off 0.25 (# crush "8") 
+$ sound "[bd8:2 mt8](3,8)"
+  # speed "2"
+
+d6 $ rarely (off 0.125 (# speed "1.5")) $ slow 2 $ let p = n (run 8) # s "voodoo" in stack [p # vowel "a i o", slow 2 $ p # crush "4", slow 3 $ p # speed "2"] # speed "0.8"
+  # hcutoff "1000"
+
