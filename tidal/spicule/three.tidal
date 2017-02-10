@@ -18,14 +18,20 @@ d3 $ (density 2 $ brak $ n "58 [2 2?]" # s "jvrave")
 
 d4 $ sound "funky"
 
-d6 $ whenmod 8 4 (substruct "x/2 x/4") $ struct "x ~ [x x?]" $ n (slow 4 $ run 16) # sound "jvr"
 
-d5 $ stut 2 0.25 (-1) $
-  every 3 (# (cutoff "10000" # resonance "0.3")) $ n "~ [16 4 4*2 16]/4 ~ {0 12 24*2 [24 36] 0}%1" # sound "pulse"
+let jvrabs = whenmod 8 4 (substruct "x/2 x/4") $ struct "x ~ [x x?]" $ n (slow 4 $ run 16) # sound "jvr"
+    pulse1 = stut 2 0.25 (-1) $
+             every 3 (# (cutoff "10000" # resonance "0.3")) $ n "~ [16 4 4*2 16]/4 ~ {0 12 24*2 [24 36] 0}%1" # sound "pulse"
+             # gain "0.9"
+    pulse2 = stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # orbit "1")) $ iter 4 $ n "~ [4 4 4 16]/4 ~ [0 12 24]/3" # sound "pulse"
   # gain "0.9"
+in
+d1 $ ((now+1) ~>) $ seqP
+  [(0,64, jvrabs),
+   (16,64, pulse1),
+   (24,64, pulse2)
+  ]
 
-d7 $ stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # orbit "1")) $ iter 4 $ n "~ [4 4 4 16]/4 ~ [0 12 24]/3" # sound "pulse"
-  # gain "0.9"
 
 --
 
