@@ -29,4 +29,4 @@ d7 $ stut 6 0.25 1 $ every 2 (# (cutoff "200" # resonance "0.2" # room "0.9" # o
 
 --
 
-d1 $ slow 2 $ n "0" # sound "jvr"
+d1 $ slow 2 $ n "4 5 [4 5] 5 . 1 7 . 7 [4 5 4 ~] . [1,7] 5" # sound "jvr"
