@@ -3,5 +3,6 @@
 d1 $ sound "lt ~ ht . mt ht"
   # n (slow 16 $ run 16)
 
-d2 $ 16 <~ (sound "lt ~ ht . mt ht")
+d2 $ stut 4 0.9 2 $ (density 2) $ (sound "lt ~ ht8 . mt8 ht8")
   # n (slow 16 $ run 16)
+  # speed "1.5"
