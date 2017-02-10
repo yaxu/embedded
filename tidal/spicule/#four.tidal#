@@ -1,2 +1,2 @@
 
-d1 $ n "{0 . ~ 0 . 0 . 0}" # sound "jvr"
+d1 $ slow 4 $ n "5 . 5 11 .  5  13 . 5 14" # sound "jvr"
