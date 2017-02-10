@@ -76,3 +76,4 @@ d3 $ (loopAt 8 $ striate 8 $ sound "atlast(3,8,[0 2])")
 d5 $ jux (1 <~) $ iter 4 $ loopAt 2 $ chop 16 $ sound "[os:1,os:2]"
   # gain "1.2"
 
+-- cps 1.6
