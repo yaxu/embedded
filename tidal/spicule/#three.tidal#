@@ -65,7 +65,11 @@ d4 $ sometimes (off 0.125 (|*| up "-12")) $ runWith 4 (density 2) $ up "0 ~ 12 7
   # cut "-1"
   |*| speed "2"
   # crush "2"
-  
-d3 $ sound "atlast:11(3,8)"
+
+d3 $ loopAt 4 $ striate 16 $ sound "atlast(3,8,[0 2 3]/3)"
   # cut "-2"
   # speed "1"
+  # gain "1.2"
+
+d5 $ loopAt 2 $ chop 16 $ sound "os"
+  # gain "1
