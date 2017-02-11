@@ -35,7 +35,9 @@ d1 $ ((now+1) ~>) $ seqP
 
 let brk = every 6 (0.25 <~) $ sometimes (stut 2 0.25 (-0.25)) $ slow 2 $ n "{4 5 4 5, 8 ~ ~} . [1, 7] . {7 [4 ~ 4 ~], 8 ~ {~ ~ ~ 9}%1} . [1,7] 5" # sound "jvr" # crush "4"
     pulse1 = every 2 (superimpose (struct "x . x ~ ~ x" . (|+| n "0 12") . (# (orbit "1" # room "0.9" # size "0.7")))) $ n (slowspread (offadd 0.125) [7,9,12,24] "5 5 . 8 12") # sound "pulse" # crush "5"
+             |*| gain "0.9"
     pulse2 = sometimes (chop 16) $ every 4 (off 0.125 (|+| n "7") . off 0.25 (|+| n "12")) $ superimpose (iter 4) $ slow 2 $ n "c9 [~ e7 ~ f8]" # sound "rash" # cutoff (slow 8 $ scale 100 3000 saw1) # resonance "0.3"
+             |*| gain "0.9"
   in
 d1 $ (nw ~>) $ seqP
     [(0,128,brk),
