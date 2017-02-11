@@ -12,7 +12,7 @@ d3 $ jux rev $ off 0.125 (|+| n "-12") $ off 0.25 (|+| n "7") $ foldEvery [5,7] 
   n "d6 f6*2" # sound "rash"
   # resonance "0.3"
   # cutoff "{500 1000 3000}%2"
-  # vowel "a"
+  -- # vowel "a"
 
 d4 $ jux rev $ every 4 rev $ slowspread (loopAt) [2,4] $ striate 64 $ sound "arc*2"
   # shape "0.95"
