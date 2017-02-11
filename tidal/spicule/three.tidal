@@ -18,7 +18,6 @@ d3 $ (density 2 $ brak $ n "58 [2 2?]" # s "jvrave")
 
 d4 $ sound "funky"
 
-
 let jvrabs = whenmod 8 4 (substruct "x/2 x/4") $ struct "x ~ [x x?]" $ n (slow 4 $ run 16) # sound "jvr"
     pulse1 = stut 2 0.25 (-1) $
              every 3 (# (cutoff "10000" # resonance "0.3")) $ n "~ [16 4 4*2 16]/4 ~ {0 12 24*2 [24 36] 0}%1" # sound "pulse"
