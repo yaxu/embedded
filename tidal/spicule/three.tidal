@@ -61,7 +61,7 @@ d2 $ off 0.25 (# vowel "a") $ sound "[bd8:7 bd8:5 bd8:8 bd8:2]/5 sd8:5*2"
   # gain "1"
   # speed "1.5"
 
-d4 $ slow 2 $ sometimes (off 0.125 (|*| up "-12")) $ runWith 4 (density 2) $ up "0 ~ 5 7" # sound "jungbass:6"
+d4 $ slow 4 $ sometimes (off 0.125 (|*| up "-12")) $ runWith 4 (density 2) $ up "0 ~ 5 7" # sound "jungbass:6"
   # cut "-1"
   |*| speed "2"
   # crush "2"
