@@ -8,7 +8,7 @@ let x = (sometimes (off 0.125 (|+| n "7")) $ slow 2 $ rev $ jux (|+| n "[7 3 12]
         # gain "0.75"
 in
 d1 $ stack [x
-            ,0.25 <~ (struct "x(3,8,[0 4]/2)" x # s "pulse") |+| n "12" # hcutoff "1000"
+            ,0.5 <~ (struct "x(3,8,[0 4]/2)" x # s "pulse") |+| n "12" # hcutoff "1000"
             ,off 0.25 (|+| n "12") $ (0.125 ~> (struct "[x(5,16)]/2" x # s "pulse") |+| n "-12" # end "0.5")
            ]
 
