@@ -12,6 +12,7 @@ d2 $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ a6" # sound "xx"
   # accelerate "-2.5"
   # gain "0.9"
 
-d3 $ off 0.25 (|*| up "7") $ sound "feel ~ <feel:2 [feel:2 ~ feel:2] feel:3>"
+d3 $ slowspread (\x -> off x (|*| up "<7 5>")) [0.25, 0.25, 0.25, 0.125] $ sound "feel ~ <feel:2 [feel:2 ~ feel:2] feel:3>"
   # speed "2"
+  
   
