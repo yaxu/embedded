@@ -10,4 +10,5 @@ d1 $ do t <- "<0.5 1 0.125>"
 d2 $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ a6" # sound "xx"
   # cut "1"
   # accelerate "-2.5"
+  # gain "0.9"
 
