@@ -8,4 +8,6 @@ d1 $ do t <- "<0.5 1 0.125>"
   # cut "-1"
 
 
-d2 $ n "c6" # sound "xx"
+d2 $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ c6" # sound "xx"
+  # cut "1"
+  # accelerate "-2.5"
