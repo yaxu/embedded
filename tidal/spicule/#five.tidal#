@@ -1,0 +1,35 @@
+
+cps 0.9
+
+d4 $ do t <- "<0.5 1 0.125>"
+        jux ((t <~) . (|+| cut "-1")) $ off 0.25 (# crush "4") $ runWith 4 (density 2) $ slowspread (stut 2 0.7) [0.125, 1/16] $ slow 4 $ sound "bd8:4 ht8 ~ ~ . bd8:3 ht8:4 ~ ~ . bd8:2 mt8:3 ~ ~ . bd8:1 ~ lt8:3 [~ lt8]"
+  # speed "1"
+  # cut "-1"
+
+d $ every 4 (off 0.125 (# up "12") . (# accelerate "0") . (|+| n "12") . (# vowel "<a e i o u>")) $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ a6" # sound "xx"
+  # cut "1"
+  # accelerate "-2.5"
+  # gain "0.9"
+  # end (scale 0.15 0.75 $ slow 4 sine1)
+
+d3 $ slowspread (\x -> off x (|*| up "<7 5>")) [0.25, 0.25, 0.25, 0.125] $ sound "feel ~ <feel:2 [feel:2 ~ feel:2] feel:3>"
+  # speed "2"
+
+  
+-- let me know if you're watching twitter.com/yaxu
+
+-- ok back to some live coding
+
+d1 $ do x <- ("<4 3 8 2>")
+        y <- (slow 8 $ run 4)
+        (off 0.25 (|+| speed "2") $ struct "x([3 5]/2,8)" $ n ((+y) <$> run x) # sound "jvr")
+          # speed "2"
+          # cutoff (slow 8 $ scalex 1000 10000 $ saw1)
+          # resonance "0.21"
+
+d2 $ juxBy 0.5 rev $ sometimes (off 0.125 ((|+| n "7") . (# crush "0"))) $ slow 2 $ n "c5*2 [~ <c6 [~ c7] c5 [~ c5]>] c5*2 ~" # sound "pulse"
+  # crush "6"
+  # cutoff (slow 8 $ scalex 1000 10000 $ saw1)
+  # resonance "0.21"
+  
+
