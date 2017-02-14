@@ -11,7 +11,7 @@ d2 $ every 4 (off 0.125 (# up "12") . (# accelerate "0") . (|+| n "12")) $ off 0
   # cut "1"
   # accelerate "-2.5"
   # gain "0.9"
-  # end (scale 0.25 0.75 $ slow 4 sine1)
+  # end (scale 0.15 0.75 $ slow 4 sine1)
 
 d3 $ slowspread (\x -> off x (|*| up "<7 5>")) [0.25, 0.25, 0.25, 0.125] $ sound "feel ~ <feel:2 [feel:2 ~ feel:2] feel:3>"
   # speed "2"
