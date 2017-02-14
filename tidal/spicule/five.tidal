@@ -30,3 +30,4 @@ d2 $ juxBy 0.5 rev $ sometimes (off 0.125 ((|+| n "7") . (# crush "0"))) $ slow 
   # resonance "0.21"
   
 
+ok that's it thanks for dropping by
