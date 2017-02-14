@@ -20,4 +20,7 @@ d3 $ slowspread (\x -> off x (|*| up "<7 5>")) [0.25, 0.25, 0.25, 0.125] $ sound
 
 -- ok back to some live coding
 
-d1 $ n (slowspread (run) [4]) # sound "jvr"
+d1 $ do x <- ("<4 3 8 2>")
+        y <- (slow 8 $ run 4)
+        offadd 0.25 struct "x([3 5]/2,8)" $ n ((+y) <$> run x) # sound "jvr"
+          # speed "2"
