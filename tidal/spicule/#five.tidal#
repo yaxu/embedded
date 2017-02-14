@@ -1,8 +1,5 @@
--- is this thing on? @yaxu
--- sorry having some troubles with the softwares
--- getting there..
--- one moment please
+-- ok giving up trying to get this working on periscope for now.. Greetings facebook and youtube watchers
 
-
-d1 $ sound "bd"
+d1 $ sound "bd8(3,8)"
+  # speed "2"
 
