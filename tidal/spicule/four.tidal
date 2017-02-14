@@ -1,4 +1,6 @@
 
+-- reviewing yesterday's patterns..
+
 d1 $ (runWith 4 (density 2) $ jux rev $ slow 2 $ n "{5 [11 12] . 5 17 . 5 19 . 5 16}" # sound "jvr")
   # speed (scale 1 1.1 saw1)
 
