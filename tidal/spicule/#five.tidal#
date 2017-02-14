@@ -1,4 +1,4 @@
 -- is this thing on? @yaxu
 
-d1 $ spin 2 $ sound "bd . <sn sn:1 sn:2>"
+d1 $ sound "bd"
 
