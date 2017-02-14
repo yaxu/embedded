@@ -16,9 +16,6 @@ d3 $ slowspread (\x -> off x (|*| up "<7 5>")) [0.25, 0.25, 0.25, 0.125] $ sound
   # speed "2"
 
   
--- let me know if you're watching twitter.com/yaxu
-
--- ok back to some live coding
 
 d1 $ do x <- ("<4 3 8 2>")
         y <- (slow 8 $ run 4)
