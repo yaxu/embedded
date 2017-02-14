@@ -7,7 +7,7 @@ d1 $ do t <- "<0.5 1 0.125>"
   # speed "1"
   # cut "-1"
 
-d2 $ off (1/8) (|+| n "7") $ n "[<0*2 12*2> 7 . <11 12*2 16> ~ <12 24> 16]/2" # sound "pulse"
-  # cutoff (slow 4 $ scalex 500 5000 saw1)
-  # resonance "0.3"
 
+d2 $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ c6" # sound "xx"
+  # cut "1"
+  # accelerate "-2.5"
