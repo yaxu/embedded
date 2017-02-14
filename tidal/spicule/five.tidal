@@ -1,12 +1,12 @@
 
 cps 0.9
 
-d1 $ do t <- "<0.5 1 0.125>"
+d4 $ do t <- "<0.5 1 0.125>"
         jux ((t <~) . (|+| cut "-1")) $ off 0.25 (# crush "4") $ runWith 4 (density 2) $ slowspread (stut 2 0.7) [0.125, 1/16] $ slow 4 $ sound "bd8:4 ht8 ~ ~ . bd8:3 ht8:4 ~ ~ . bd8:2 mt8:3 ~ ~ . bd8:1 ~ lt8:3 [~ lt8]"
   # speed "1"
   # cut "-1"
 
-d2 $ every 4 (off 0.125 (# up "12") . (# accelerate "0") . (|+| n "12") . (# vowel "<a e i o u>")) $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ a6" # sound "xx"
+d5 $ every 4 (off 0.125 (# up "12") . (# accelerate "0") . (|+| n "12") . (# vowel "<a e i o u>")) $ off 0.25 ((|+| cut "1") . (# crush "5")) $ n "c7 ~ a6" # sound "xx"
   # cut "1"
   # accelerate "-2.5"
   # gain "0.9"
