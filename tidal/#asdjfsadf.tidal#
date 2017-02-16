@@ -10,7 +10,9 @@ http://is.gd/tidalworksheet
 
 d1 $ sound "[bd sn:3, mt ht*4 lt*3]"
 
-d1 $ sound "[bd bd] [bd bd bd]"
+d1 $ sound "bd sn ! !"
+  # vowel "a e*2 i"
+
 
 d2 $ sound "arpy ~ arpy:2"
 
