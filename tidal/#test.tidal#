@@ -392,5 +392,5 @@ in
 hush
 
 
-d1 $ do y <- "8 3"
-        every 2 (stut y 0.9 0.25) $ sound "jvbass(3,8)"
+d1 $ do y <- "0.25 0.1"
+        every 2 (trunc y) $ sound "jvbass(3,8)"
