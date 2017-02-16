@@ -17,10 +17,13 @@ d1 $ within (0,0.5) (density 2) $ every 2 (slow 2) $ jux rev $ chop 8 $ sound "b
 d1 $ jux rev $ slow 2 $ n (offadd 0.25 7 "f(3,8) a(3,8) c(5,8) e(3,8)") # sound "supersaw"
   # end "0.4"
   # room (slow 4 saw1)
-  # size
+  # size "0.5"
   # cutoff "1000"
   # resonance "0.3"
 
+d1 $ sound 
+
+d2 $ every 2 (rev) $ loopAt 4 $ chop 32 $ sound "arc"
 
 d2 $ sound "arpy ~ arpy:2"
 
