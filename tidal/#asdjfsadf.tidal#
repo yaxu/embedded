@@ -8,9 +8,11 @@ t-- TidalCycles workshop worksheet
 http://is.gd/tidalworksheet
 
 
-d1 $ sound "[bd sn:1, mt ht lt]"
+d1 $ sound "[bd sn:3, mt ht*4 lt*3]"
 
+d1 $ sound "[bd bd] [bd bd bd]"
 
+d2 $ sound "arpy ~ arpy:2"
 
 
 -- * Make a sound
