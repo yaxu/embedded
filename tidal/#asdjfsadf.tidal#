@@ -21,7 +21,7 @@ d1 $ jux rev $ slow 2 $ n (offadd 0.25 7 "f(3,8) a(3,8) c(5,8) e(3,8)") # sound 
   # cutoff "1000"
   # resonance "0.3"
 
-d1 $ sound 
+
 
 d2 $ every 2 (rev) $ loopAt 4 $ chop 32 $ sound "arc"
 
