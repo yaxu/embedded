@@ -10,8 +10,11 @@ http://is.gd/tidalworksheet
 
 d1 $ sound "[bd sn:3, mt ht*4 lt*3]"
 
-d1 $ sound "bd sn ! !"
-  # vowel "a e*2 i"
+d1 $ within (0,0.5) (density 2) $ every 2 (slow 2) $ jux rev $ chop 8 $ sound "bd sn ! !"
+  # vowel "[a e*2 i]/2"
+  # n "[0 3 4]/2"
+
+d1 $ n "f a c " # sound "supersaw"
 
 
 d2 $ sound "arpy ~ arpy:2"
