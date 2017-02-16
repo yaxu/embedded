@@ -375,3 +375,12 @@ d1 $ do x <- (slow 4 "2 3 4")
 d1 $ do x <- (slow 4 "8 3 4")
         y <- (slow 2 "3 4")
         every x (chop y) $ sound "arpy:4 arpy:3"
+
+d1 $ sound "bd"
+
+d2 $ sound "cp"
+
+d1 $ stack [sound "bd",
+            density 2 $ sound "cp"
+           ]
+  # speed "2"
