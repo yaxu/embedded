@@ -353,7 +353,10 @@ d1 $ slowspread (density) [1,2,3] $
 d1 $ slowspread (density) [1,2,3] $
   slowspread (chop) [4,12,6,8] $ sound "sn:5"
 
-d1 $ slowspread ($) [density 2, rev, chop 8] $
+d1 $ slowspread ($) [density 2, density 4, density 3] $
+  sound "bd sn cp"
+
+d1 $ slowspread ($) [2, 4, density 3] $
   sound "bd sn cp"
 
 d1 $ slow 2 $ sound "bd sn"
