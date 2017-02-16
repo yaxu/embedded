@@ -338,4 +338,16 @@ d1 $ sound "bd {bd!3 ~}%1"
 
 d1 $ sound "bd <arpy ! ! ~ >"
 
+
 hush
+
+
+
+
+d1 $ sound "bd sn"
+
+
+d1 $ density 2 sound "numbers:0 numbers:1 numbers:2"
+
+
+
