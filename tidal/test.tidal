@@ -353,8 +353,45 @@ d1 $ slowspread (density) [1,2,3] $
 d1 $ slowspread (density) [1,2,3] $
   slowspread (chop) [4,12,6,8] $ sound "sn:5"
 
-d1 $ slowspread ($) [density 2, rev, chop 8] $
+d1 $ slowspread ($) [slowspread (density) [2,3,4], slowspread (density) [4,8], slowspread (density) [3,5]] $
+  sound "bd sn cp"
+
+
+d1 $ slowspread (density) [2, 4, 3] $
   sound "bd sn cp"
 
 d1 $ slow 2 $ sound "bd sn"
 
+-- accessspacelabs
+-- beansandchipsyum
+
+-- http://is.gd/tidalworksheet
+
+
+
+d1 $ do x <- (slow 4 "2 3 4")
+        chop x $ sound "arpy:4 arpy:3"
+
+d1 $ do x <- (slow 4 "8 3 4")
+        y <- (slow 2 "3 4")
+        every x (chop y) $ sound "arpy:4 arpy:3"
+
+d1 $ sound "bd"
+
+d2 $ sound "cp"
+
+d1 $ stack [sound "bd",
+            density 2 $ sound "cp"
+           ]
+  # speed "2"
+
+let x = [1,2,3,4]
+in
+ d1 $ slowspread (slow) x $ sound "arpy:0 arpy:3"
+
+hush
+
+
+d1 $ do y <- "0.25 0.1"
+        every 2 (trunc y) $ sound "jvbass(3,8)"
+hush
