@@ -390,3 +390,7 @@ in
  d1 $ slowspread (slow) x $ sound "arpy:0 arpy:3"
 
 hush
+
+
+d1 $ do y <- "7 3"
+        every 2 (# up ("7 3")) $ sound "jvbass(3,8)"
