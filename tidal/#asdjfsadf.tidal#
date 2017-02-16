@@ -14,7 +14,12 @@ d1 $ within (0,0.5) (density 2) $ every 2 (slow 2) $ jux rev $ chop 8 $ sound "b
   # vowel "[a e*2 i]/2"
   # n "[0 3 4]/2"
 
-d1 $ n "f a c " # sound "supersaw"
+d1 $ jux rev $ slow 2 $ n (offadd 0.25 7 "f(3,8) a(3,8) c(5,8) e(3,8)") # sound "supersaw"
+  # end "0.4"
+  # room (slow 4 saw1)
+  # size
+  # cutoff "1000"
+  # resonance "0.3"
 
 
 d2 $ sound "arpy ~ arpy:2"
