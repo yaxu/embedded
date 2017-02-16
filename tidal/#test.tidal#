@@ -384,3 +384,9 @@ d1 $ stack [sound "bd",
             density 2 $ sound "cp"
            ]
   # speed "2"
+
+let x = [1,2,3,4]
+in
+ d1 $ slowspread (slow) x $ sound "arpy:0 arpy:3"
+
+hush
