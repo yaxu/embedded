@@ -349,7 +349,6 @@ d1 $ sound "bd sn"
 
 d1 $ slowspread (density) [1,2,3] $ sound "numbers:0 numbers:1 numbers:2"
 
-d1 $ slowspread (chop) [4,12,6] $ sound "sn:5"
+d1 $ slowspread (density) [1,2,3] $ slowspread (chop) [4,12,6,8] $ sound "sn:5"
 
-
-
+d1 $ slowspread ($) [density 2, rev, chop 8] $ sound "bd sn cp"
