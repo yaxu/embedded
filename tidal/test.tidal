@@ -429,3 +429,4 @@ d1 $ (\x -> x ! s_p) <$> (sound "bd")
 d1 $ jux ((|*| begin "0.125") . density 0.5 . (# cut "2")) $ begin "[0.5 0.25 ~ 0.125] [0.125 0.5]" # (loopAt 16 $ sound "bev")
   |+| begin "[0 0.125 0.25]/3"
   # cut "1"
+
