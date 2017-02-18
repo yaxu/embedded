@@ -395,3 +395,17 @@ hush
 d1 $ do y <- "0.25 0.1"
         every 2 (trunc y) $ sound "jvbass(3,8)"
 hush
+
+let interfere ps =
+
+import Data.Fixed (mod')
+
+let g i n t | x >= 1 = 0
+            | otherwise = x
+      where x = (t - i) `mod'` n
+
+
+
+g 3 4 4
+
+:t mod'
