@@ -400,10 +400,11 @@ let interfere ps =
 
 import Data.Fixed (mod')
 
-let g i n t = (t `mod'` n) 
+let g i n t = if x >= 1 then 0 else x
+      where x = (t - i) `mod'` n
 
 
 
-g 2.5 4.0
+g 3 4 0.5
 
 :t mod'
