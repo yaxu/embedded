@@ -398,6 +398,12 @@ hush
 
 let interfere ps =
 
-let g x n = fmod
+import Data.Fixed (mod')
+
+let g i n t = (t `mod'` n) 
+
+
+
+g 2.5 4.0
 
 :t mod'
