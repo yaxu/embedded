@@ -419,3 +419,7 @@ hush
 g 3 4 4
 
 :t mod'
+
+import qualifi Data.Map.Strict as Map
+
+d1 $ (! s_p) <$> (sound "bd")
