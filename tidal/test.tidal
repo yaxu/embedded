@@ -403,12 +403,14 @@ import Sound.Tidal.Utils
 
 let g i n t | x < 1 = x
             | otherwise = 0
-      where x = (t - i) `mod'` n
+      where x = (t - (fromIntegral i)) `mod'` (fromIntegral n)
 
-let interfere :: Pattern Double -> [ParamPattern] -> [ParamPattern]
-    interfere p ps = map (\(i, p') -> p' |*| gain ((g i (fromIntegral $ length ps)) <$> p)) $ enumerate ps
+let interfere :: Pattern Double -> [ParamPattern] -> ParamPattern
+    interfere p ps = stack $ map (\(i, p') -> p' |*| gain ((g i (length ps) . (* (fromIntegral $ length ps))) <$> p)) $ enumerate ps
 
-
+d1 $ interfere (slow 4 sine1) [sound "bd sn sn",
+                               sound "mt(3,8)"
+                              ]
 
       
 g 3 4 4
