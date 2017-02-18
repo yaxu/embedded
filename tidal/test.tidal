@@ -396,16 +396,21 @@ d1 $ do y <- "0.25 0.1"
         every 2 (trunc y) $ sound "jvbass(3,8)"
 hush
 
-let interfere ps =
 
 import Data.Fixed (mod')
+import Sound.Tidal.Utils
 
-let g i n t | x >= 1 = 0
-            | otherwise = x
+
+let g i n t | x < 1 = x
+            | otherwise = 0
       where x = (t - i) `mod'` n
 
+let interfere :: Pattern Double -> [ParamPattern] -> [ParamPattern]
+    interfere p ps = map (\(i, p') -> p' |*| gain ((g i (fromIntegral $ length ps)) <$> p)) $ enumerate ps
 
 
+
+      
 g 3 4 4
 
 :t mod'
