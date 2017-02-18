@@ -408,11 +408,13 @@ let g i n t | x < 1 = x
 let interfere :: Pattern Double -> [ParamPattern] -> ParamPattern
     interfere p ps = stack $ map (\(i, p') -> p' |*| gain ((g i (length ps)) <$> p)) $ enumerate ps
 
-d1 $ interfere ("05") [sound "bd sn*2 sn",
-                         sound "mt(3,8)",
-                         sound "mt8(5,8)"
-                        ]
+d1 $ sound "bd sn*2 sn"
 
+d1 $ interfere ("0.99999") [sound "bd sn*2 sn",
+                            sound "mt(3,8)",
+                            sound "mt8(5,8)"
+                           ]
+hush
       
 g 3 4 4
 
