@@ -401,7 +401,7 @@ import Data.Fixed (mod')
 import Sound.Tidal.Utils
 
 
-let g i n t | x < 1 = x
+let g i n t | x < 1 = 1-x
             | otherwise = 0
       where x = (t - (fromIntegral i)) `mod'` (fromIntegral n)
 
@@ -410,11 +410,11 @@ let interfere :: Pattern Double -> [ParamPattern] -> ParamPattern
 
 d1 $ sound "bd sn*2 sn"
 
-d1 $ interfere ("0.99999") [sound "bd sn*2 sn",
-                            sound "mt(3,8)",
-                            sound "mt8(5,8)"
-                           ]
-hush
+d1 $ interfere ("0 1 2") [sound "bd*2 sn:2*2 sn",
+                          sound "mt(3,8)",
+                          sound "mt8(5,8)"
+                         ]
+
       
 g 3 4 4
 
@@ -424,7 +424,6 @@ import Data.Map.Strict
 import Data.Maybe
 
 d1 $ (\x -> x ! s_p) <$> (sound "bd")
-
 
 d1 $ jux ((|*| begin "0.125") . density 0.5 . (# cut "2")) $ begin "[0.5 0.25 ~ 0.125] [0.125 0.5]" # (loopAt 16 $ sound "bev")
   |+| begin "[0 0.125 0.25]/3"
