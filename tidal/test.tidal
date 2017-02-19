@@ -429,3 +429,17 @@ d1 $ jux ((|*| begin "0.125") . density 0.5 . (# cut "2")) $ begin "[0.5 0.25 ~ 
   |+| begin "[0 0.125 0.25]/3"
   # cut "1"
 
+
+
+cp -r Embrace\ -\ The\ Good\ Will\ Out\ \(1998\)\ \[V0\]/ /media/alex/0F33-890B/
+cp -r Meat\ Beat\ Manifesto\ -\ Subliminal\ Sandwich.V0/ /media/alex/0F33-890B/
+  cp -r M.I.A./ /media/alex/0F33-890B/
+  cp -r Spiritualized\ -\ Ladies\ And\ Gentlemen\ We\ Are\ Floating\ In\ Space\ \[V0\]/ /media/alex/0F33-890B/
+  cp -r Tango\ n\'\ Vectif/ /media/alex/0F33-890B/
+  cp -r Underworld\ -\ Barbara\ Barbara\,\ we\ face\ a\ shining\ future\ \(2016\ \[MP3\ 320kbps\]/ /media/alex/0F33-890B/
+  ls
+  cp -r The\ xx\ -\ I\ See\ You\ \(2017\)\ -\ CD\ V0/ /media/alex/0F33-890B/
+  cp -r Holly\ Herndon\ -\ * /media/alex/0F33-890B/
+  cp -r Speedy\ J\ -\ * /media/alex/0F33-890B/
+  cp -r Queen\ -\ Absolute\ Greatest\ Hits-\[V0\]-2009/ /media/alex/0F33-890B/
+  cp -r Speedy_J-Loudboxer-\(NOMU93CD\)-FLAC-2002/ /media/alex/0F33-890B/
