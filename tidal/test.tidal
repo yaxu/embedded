@@ -443,3 +443,8 @@ cp -r Meat\ Beat\ Manifesto\ -\ Subliminal\ Sandwich.V0/ /media/alex/0F33-890B/
   cp -r Speedy\ J\ -\ * /media/alex/0F33-890B/
   cp -r Queen\ -\ Absolute\ Greatest\ Hits-\[V0\]-2009/ /media/alex/0F33-890B/
   cp -r Speedy_J-Loudboxer-\(NOMU93CD\)-FLAC-2002/ /media/alex/0F33-890B/
+
+"has" ++ "kell" :: String
+
+d1 $ slow 4 $ n (wedge (4%13) "0 [~!! 1] ~ [~ 0 0]" "[[0 ~! 1] ~ [~ 0 0]]!!") # s "drum"
+
