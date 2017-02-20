@@ -443,7 +443,7 @@ g 3 4 4
 5 4 5 4 5 4 5 4 
 6 3 6 3 6 3 6 3 
 7 2 7 2 7 2 7 2 
-8 1 8 1 8 1 8 1 
+8 1 8 1 8 1 8 1 .
 
 let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
     warp = transpose . weft
@@ -451,12 +451,15 @@ let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
     warpP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ warp n)
     maskedWarp n p = mask (every 2 rev $ density (n%1) "1 ~" :: Pattern Int) $ warpP n p
     maskedWeft n p = mask (every 2 rev $ density (n%1) "~ 1" :: Pattern Int) $ weftP n p
-    interfere = stack [maskedWarp 8 (n (run 16) # sound "arpy"),
-                       maskedWeft 8 (n (run 8) # sound "arpy")
-                      ]
+    interfere n p p' = stack [maskedWarp n p,
+                              maskedWeft n p'
+                             ]
 
-d1 $ stack [
-           ]
+d1 $ interfere 8
+  (n (run 8) # sound "jvr" # pan "0.75")
+  (density 2 $ n (run 8) # sound "voodoo" # pan "0.25")
+  # speed "1"
+  |+| pan (slow 8 $ saw1)
 
 
 p:t transpose
