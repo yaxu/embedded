@@ -526,7 +526,10 @@ d1 $ jux' [runWith 4 (density 2) . (# n "6"),
   # room "0.5"
   # orbit "2"
 
-let (splay, splay_p)                     = pF "spread" Nothing
+let (span, span_p)               = pF "splay" Nothing
+    (splay, splay_p)             = pF "splay" Nothing
+    (panWidth, panWidth_p)       = pF "panwidth" Nothing
+    (orientation, orientation_p) = pF "orientation" Nothing
 
 d1 $ sound "hh*8"
   # splay "0"
