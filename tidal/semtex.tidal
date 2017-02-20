@@ -1,0 +1,11 @@
+d1 $ runWith 4 (density 2) $ jux rev $ n "8(3,8) [~ 5] 0 7" # sound "jvr"
+  # room "0.5"
+  # size "0.7"
+  # orbit "1"
+
+d2 $ jux rev $ sometimes (|*| speed "2") $ off 0.125 (|*| up "7") $ n "10(3,8)" #  sound "ravebass"
+  # shape "0.6"
+
+d3 $ every 3 (0.5 <~) $ n (offadd 0.25 7 "d7(3,8) a7") # sound "rash"
+  # speed "2"
+  # shape "0.8"
