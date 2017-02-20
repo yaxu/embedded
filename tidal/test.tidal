@@ -404,8 +404,7 @@ import Sound.Tidal.Utils
 let g i n t | x < 1 = 1-x
             | otherwise = 0
       where x = (t - (fromIntegral i)) `mod'` (fromIntegral n)
-
-let interfere :: Pattern Double -> [ParamPattern] -> ParamPattern
+    interfere :: Pattern Double -> [ParamPattern] -> ParamPattern
     interfere p ps = stack $ map (\(i, p') -> p' |*| gain ((g i (length ps)) <$> p)) $ enumerate ps
 
 d1 $ sound "bd sn*2 sn"
@@ -449,3 +448,13 @@ cp -r Meat\ Beat\ Manifesto\ -\ Subliminal\ Sandwich.V0/ /media/alex/0F33-890B/
 d1 $ slow 4 $ n (wedge (4%13) "0 [~!! 1] ~ [~ 0 0]" "[[0 ~! 1] ~ [~ 0 0]]!!") # s "drum"
 
 d1 $ juxcut' [(begin "0.1 0.5*2" #), (begin "0.25 0.7*3" #), (begin "0.5 0.25 0 0.25" #) . (|*| up "0 5"), (begin "0.25 0.55 0.75" #)] $ sound "pulse:20"
+
+
+d1 $ jux' [runWith 4 (density 2) . (# n "6"),
+           runWith 2 (density 2) . (substruct "x x/2")  . (# n "6"),
+           runWith 4 (density 2) . (substruct "x/2 x/4") . (# n "3")
+           ] $ sound "jvr:1(3,8)"
+  # speed "0.75"
+  # room "0.5"
+  # orbit "2"
+
