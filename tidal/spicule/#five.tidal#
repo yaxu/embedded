@@ -30,5 +30,5 @@ d2 $ juxBy 0.5 rev $ sometimes (off 0.125 ((|+| n "7") . (# crush "0"))) $ slow 
   # resonance "0.21"
   
 
-d1 $ sound "claus:1*4"
+d1 $ sound "claus:0*4"
   # pan saw1
