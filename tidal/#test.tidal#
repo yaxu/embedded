@@ -456,8 +456,9 @@ let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
                              ]
 
 d1 $ interfere 8
-  (n (run 8) # sound "jvr" # pan "0")
-  (n (run 8) # sound "jvr" # pan "0.5")
+  (n (run 8) # sound "numbers" # pan "0.75")
+  (n (run 8) # sound "numbers" # pan "0.25")
+  # speed "1"
 
 
 p:t transpose
