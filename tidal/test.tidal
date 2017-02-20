@@ -526,3 +526,4 @@ d1 $ jux' [runWith 4 (density 2) . (# n "6"),
   # room "0.5"
   # orbit "2"
 
+(splay, splay_p)                     = pF "pan" (Just 0.5)
