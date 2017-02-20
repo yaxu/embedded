@@ -418,13 +418,32 @@ d1 $ inside 8 (every 2 (const silence)) $ n (run 8) # sound "arpy"
 
 d2 $ (1/8) ~> (inside 8 (when (\x -> x%2 == 1) (const silence)) $ (1/8) <~ n (run 8) # sound "arpy")
 
-d2 $ when (\x -> x%2 == 1) (const silence) (n (run 8) # sound "arpy")
+d2 $ when (\x -> ((x`mod`2) == 0)) (const silence) (n (run 8) # sound "arpy")
 
 
-
+932 % 2
 g 3 4 4
 
 :t mod'
+
+1 2 3 4 5 6 7 8
+8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8
+8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8
+8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8
+8 7 6 5 4 3 2 1
+
+
+1 8 1 8 1 8 1 8 
+2 7 2 7 2 7 2 7 
+3 6 3 6 3 6 3 6 
+4 5 4 5 4 5 4 5 
+5 4 5 4 5 4 5 4 
+6 3 6 3 6 3 6 3 
+7 2 7 2 7 2 7 2 
+8 1 8 1 8 1 8 1 
 
 import Data.Map.Strict
 import Data.Maybe
