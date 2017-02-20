@@ -31,4 +31,3 @@ d2 $ juxBy 0.5 rev $ sometimes (off 0.125 ((|+| n "7") . (# crush "0"))) $ slow 
   
 
 d1 $ sound "hh*8"
-  # pan saw1
