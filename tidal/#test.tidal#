@@ -432,5 +432,7 @@ d1 $ jux ((|*| begin "0.125") . density 0.5 . (# cut "2")) $ begin "[0.5 0.25 ~ 
 
 
 
-d1 $ sound "sd:1*8"
-  # pan saw1
+d1 $ sound "cp8*4"
+  # pan (slow 4 saw1)
+
+  hush
