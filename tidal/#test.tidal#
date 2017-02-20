@@ -447,8 +447,12 @@ g 3 4 4
 
 let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
     warp = transpose . weft
-    
-weft 8
+    weftP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ weft n)
+    warpP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ warp n)
+    maskedWarp n p = mask (struct (dens(n`div`2)%1) "1 ~") # warpP n p
+
+d1 $ weftP 8 (n (run 8) # sound "arpy")
+
 
 p:t transpose
 :t repeat

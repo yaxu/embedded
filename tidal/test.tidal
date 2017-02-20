@@ -445,6 +445,17 @@ g 3 4 4
 7 2 7 2 7 2 7 2 
 8 1 8 1 8 1 8 1 
 
+let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
+    warp = transpose . weft
+    
+let warpP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ warp n)
+
+d1 $ warpP 8 (n (run 8) # sound "arpy")
+
+
+p:t transpose
+:t repeat
+    
 import Data.Map.Strict
 import Data.Maybe
 
