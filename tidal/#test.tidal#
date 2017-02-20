@@ -445,8 +445,9 @@ g 3 4 4
 7 2 7 2 7 2 7 2 
 8 1 8 1 8 1 8 1 
 
-let warp n = map () [0 .. 7]
+let weft n = map () [0 .. 7]
 
+p:t transpose
 :t repeat
     
 import Data.Map.Strict
