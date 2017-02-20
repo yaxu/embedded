@@ -418,7 +418,7 @@ d1 $ inside 8 (every 2 (const silence)) $ n (run 8) # sound "arpy"
 
 d2 $ (1/8) ~> (inside 8 (when (\x -> x%2 == 1) (const silence)) $ (1/8) <~ n (run 8) # sound "arpy")
 
-d2 $ when (\x -> x%2 == 1) (const silence) (n (run 8) # sound "arpy")
+d2 $ whenT (\x -> (frominx%2 == 0) (const silence) (n (run 8) # sound "arpy")
 
 
 
