@@ -1,2 +1,12 @@
+d1 $ (jux rev $ slowspread (chop) [8,128] $ sound "bd ~ sn:2 c8")
 
+d2 $ jux rev $ weave 16 (n (run 8) # sound "arpy")
+  [vowel "a e*2 i",
+   vowel "a i",
+   speed "1 2 3",
+   speed "1 2 0.5 2"
+   ]
 
+hush
+
+cps (90/120)
