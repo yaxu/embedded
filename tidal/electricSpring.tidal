@@ -12,7 +12,7 @@ d1 $ do x <- "<8 4 8>"
            # cutoff (slow 4 $ scale 100 2000 saw1)
            # resonance "0.3"
           )
-          (n (run 4) # sound "jvr"
+          (n (run 8) # sound "jvr"
            # cutoff (slow 4 $ scale 4000 8000 saw1)
            # resonance "0.2"
           ) # speed "2"
