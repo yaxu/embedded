@@ -4,6 +4,8 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- mismatch step tempo
 
+-- tabby
+
 -- comb delay drop
 
 -- sine nudge chop
