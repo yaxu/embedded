@@ -52,4 +52,6 @@ d5 $ jux rev $ (slowspread (loopAt) [2,4,2,8] $ iter 4 $ chop 16 $ sound "arc")
 d6 $ iter 4 $ jux' [id,rev] $ loopAt 16 $ slowspread (chop) [64,256] $ sound "atlast:1"
   # room "0.7"
 
+-- thank you for listening
+
 -- deconstructed gabba jungbass 6 at last
