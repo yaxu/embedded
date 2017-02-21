@@ -13,8 +13,9 @@ d1 $ slow 2 $ jux rev $ off (1%4) (# speed "0.75") $ off (1%8) ((# speed "1.2") 
 
 d2 $ tabby 8
   (n (run 8) # sound "psr" # speed "0.5" # cutoff "1000" # resonance "0.3")
-  (n (run 8) # sound "jvr" # orbit "1" # size "0.3" # room "0.3")
+  (n (run 8) # sound "jvr" # orbit "1" # size "0.3" # room "0.3" |+| n "[6 4]/2")
 
+d3 $ slow 4 $ off 0.25 (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
 
 -- comb delay drop
 
