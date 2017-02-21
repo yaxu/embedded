@@ -6,6 +6,8 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- tabby
 
+d1 $ tabby 4 (n "c d a g" # sound "pulse") (n "c a7 f6 e7" # sound "pulse")
+
 -- comb delay drop
 
 -- sine nudge chop
