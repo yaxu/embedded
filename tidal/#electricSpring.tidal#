@@ -48,6 +48,8 @@ d3 $ jux' [(# up "7"), id, rev] $ runWith 4 (density 2) $ tabby 4
 
 d5 $ jux rev $ (slowspread (loopAt) [2,4,2,8] $ iter 4 $ chop 16 $ sound "arc")
   |*| pan (slow 4 saw1)
+
+d6 $ jux' [id,rev,density 2 . (# crush "5")] $ loopAt 8 $ chop 16 $ sound "atlast:1"
   # gain "1.2"
 
 -- deconstructed gabba jungbass 6 at last
