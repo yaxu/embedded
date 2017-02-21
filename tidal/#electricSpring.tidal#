@@ -21,7 +21,7 @@ d3 $ do x <- "<1%4 1%8 1%16>"
 
 d4 $ jux' [id, rev, (0.5 <~)] $ runWith 4 (slow 2 . (|*| speed "0.5")) $ iter 4 $ loopAt 8 $ chop 32 $ sound "shackup"
 
-d5 $ slow 4 $ n "f7 a7 c7 e7" # sound "xx"
+d5 $ slow 4 $ off 0off 0.125 (|+| n "7") $ struct "<x(3,8) x(5,8)>" $ slow 2 $ (n "c7 a7 <g7 f7> e7" # sound "xx")
 
 -- comb delay drop
 
