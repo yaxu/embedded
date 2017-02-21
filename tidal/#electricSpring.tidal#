@@ -1,0 +1,17 @@
+let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
+
+-- number 9
+
+-- mismatch step tempo
+
+-- tabby
+
+d1 $ tabby 4 (n "c d a g" # sound "pulse") (sound "arpy")
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- repetition
+
+-- deconstructed gabba jungbass 6 at last
