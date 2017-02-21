@@ -15,7 +15,8 @@ d2 $ tabby 8
   (n (run 8) # sound "psr" # speed "0.5" # cutoff "1000" # resonance "0.3")
   (n (run 8) # sound "jvr" # orbit "1" # size "0.3" # room "0.3" |+| n "[6 4]/2")
 
-d3 $ slow 4 $ off 0.25 (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
+d3 $ do x <- "<1%4 1%8 1%16>"
+        jux' [id, rev. (|*| speed "2") . iter 4] $ slow 4 $ off x (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
 
 -- comb delay drop
 
