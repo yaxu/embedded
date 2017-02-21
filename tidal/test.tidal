@@ -540,8 +540,12 @@ let (span, span_p)               = pF "splay" Nothing
 
 d1 $ sound "hh(3,8)"
 
-  
+let jux = jux4
 
+d1 $ sound "bd(3,8)"
+  # gain "0.6"
+  # pan "0.5"
+  |+| pan "-0.05"
 
 
 d1 $ jux rev $ sound "bd(3,8)"
