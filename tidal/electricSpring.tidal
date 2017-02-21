@@ -20,8 +20,13 @@ d1 $ seqPLoop [
   # room (slow 8 saw1)
   # size "0.3"
 
-d2 $ off 0.25 (# crush "4") $ jux' [id,rev, (# (hcutoff "0" # speed "<1.5 2 1.5>")), iter 4] $ stut 4 0.25 3 $ every 3 ((1/3) <~) $ sound "bd . sd8:5*2 . mt8"
+d2 $ off (1/3) (# crush "4") $ jux' [id,rev, (# (hcutoff "0" # speed "<1.5 2 1.5>")), iter 4] $ stut 4 0.25 3 $ every 3 ((1/3) <~) $ sound "bd . sd8:5*2 . mt8"
   # hcutoff "400"
+
+d3 $ jux rev $ off (1/3) (|+| n "12") $ off (1/6) (|+| n "7") $ slow 2 $ n "c6(3,8) <a7*2 c6> e6" # sound "rash"
+  # cutoff (slow 2 $ scale 1000 3000 sine1)
+  # resonance "0.2"
+  # gain "0.9"
 
 -- deconstructed gabba jungbass 6 at last
 
