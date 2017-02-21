@@ -11,8 +11,10 @@ d1 $ slow 2 $ jux rev $ off (1%4) (# speed "0.75") $ off (1%8) ((# speed "1.2") 
 
 -- tabby
 
-solo $ 
-d2 $ tabby 8 (n (run 8) # sound "voodoo" # shape "0.3") (n (run 4) # sound "arpy")
+d2 $ tabby 8
+  (n (run 8) # sound "psr" # speed "0.5" # cutoff "1000" # resonance "0.3")
+  (n (run 8) # sound "jvr" # orbit "1" # size "0.3" # room "0.3")
+
 
 -- comb delay drop
 
