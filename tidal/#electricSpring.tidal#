@@ -1,0 +1,28 @@
+let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
+
+-- number 9
+
+-- mismatch step tempo
+
+-- tabby
+
+d1 $ do x <- "<8 4 8>"
+        off 0.25 (# crush "4") $ jux' [id, rev, (0.125 <~)] $ tabby x
+          (n (run 8) # sound "voodoo"
+           # cutoff (slow 4 $ scale 100 2000 saw1)
+           # resonance "0.3"
+          )
+          (n (run 8) # sound "jvr"
+           # cutoff (slow 4 $ scale 4000 8000 saw1)
+           # resonance "0.2 0.1"
+           # room "0.1" # orbit "1"
+          ) # speed "2"
+
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- repetition
+
+-- deconstructed gabba jungbass 6 at last
