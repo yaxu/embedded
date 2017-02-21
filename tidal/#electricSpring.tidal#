@@ -12,11 +12,16 @@ d1 $ slow 2 $ jux rev $ off (1%4) (# speed "0.75") $ off (1%8) ((# speed "1.2") 
 -- tabby
 
 d2 $ tabby 8
-  (n (run 8) # sound "psr" # speed "0.5" # cutoff "1000" # resonance "0.3")
+  (n (run 8) # sound "voodoo" # speed "0.5" # cutoff "1000" # resonance "0.3")
   (n (run 8) # sound "jvr" # orbit "1" # size "0.3" # room "0.3" |+| n "[6 4]/2")
 
+
 d3 $ do x <- "<1%4 1%8 1%16>"
-        jux' [id, rev. (|*| speed "2") . iter 4] $ slow 4 $ off x (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
+        jux' [id, rev. (|*| speed "2") . iter 4, density 1.5] $ slow 4 $ off x (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
+          # delaytime (scale 0.01 0.02 saw1)
+          # delay "0.9"
+          # delayfeedback "0.9"
+          
 
 -- comb delay drop
 
