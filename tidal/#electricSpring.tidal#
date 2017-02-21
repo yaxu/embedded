@@ -7,7 +7,16 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 -- tabby
 
 d1 $ do x <- "<8 4 8>"
-        tabby x (n (run 8) # sound "voodoo") (n (run 8) # sound "")
+        jux rev $ tabby x
+          (n (run 8) # sound "voodoo"
+           # cutoff (slow 4 $ scale 100 2000 saw1)
+           # resonance "0.3"
+          )
+          (n (run 4) # sound "jvr"
+           # cutoff (slow 4 $ scale 100 2000 saw1)
+           # resonance "0.3"
+          )
+
 
 -- comb delay drop
 
