@@ -10,11 +10,17 @@ d1 $ jux (|*| speed "0.5") $ slowspread (chop) [1] $ jux' [id, ((|+| n "5") . (0
                   n "4 [7 4] 5" # sound "jvr"
                  ),
                  (0,8,
-                  n "3(<4 2 6 2>,9)" # sound "jvr"
+                  n "9(<4 2 6 2>,9)" # sound "jvr"
+                  # end (slow 2 saw1)
+                  # cut "-1"
+                  # speed "2"
+                  # accelerate "-0.1"
+                  # cutoff (slow scale 1000 10000 sine1)
                  )
                 ]
   # orbit "1"
-  # 
+  # room (slow 8 saw1)
+  # size "0.3"
 
 -- deconstructed gabba jungbass 6 at last
 
