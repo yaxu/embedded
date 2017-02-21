@@ -34,7 +34,7 @@ d5 $ jux' [id, rev, (# speed "2 4")] $ slow 2 $ off 0.25 (|+| n "12") $ off 0.12
 
 d1 $ jux' [id, rev . (|+| speed "2"), (0.25 <~), iter 4] $
   do x <- "<3 6 2>"
-     stut x 0.5 0.5 $ n "0 [6 7]" # sound "jvr"
+     stut x 0.5 0.5 $ n "1 [6 <7 8>]" # sound "[jvr,bd]"
      # speed "1 2 3"
 
 d2 $ sound "future(3,8)"
