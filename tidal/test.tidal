@@ -542,7 +542,7 @@ d1 $ sound "hh(3,8)"
 
 let jux = jux4
 
-d1 $ sound "bd(<3 3 5>,8,[0 2]/2)"
+d1 $ sound "bd8:2(<3 3 5>,8,[0 2]/2)"
   # gain "0.6"
   # pan "0.5"
   |+| pan "-0.05"
