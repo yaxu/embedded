@@ -19,8 +19,9 @@ d2 $ tabby 8
 d3 $ do x <- "<1%4 1%8 1%16>"
         jux' [id, rev. (|*| speed "2") . iter 4, density 1.5] $ slow 4 $ off x (|+| n "7") $ n "c6 ~ . ~ c7 . [~ e7] d6 . a7 c7" # sound "rash"
 
-d4 $ runWith 4 (density 2 . (# speed "0.5")) $ iter 4 $ loopAt 4 $ chop 8 $ sound "shackup"
+d4 $ jux' [id, rev, (0.5 <~)] $ runWith 4 (slow 2 . (|*| speed "0.5")) $ iter 4 $ loopAt 8 $ chop 32 $ sound "shackup"
 
+d5 $ slow 4 $ n "f7 a7 c7 e7" # sound "xx"
 
 -- comb delay drop
 
