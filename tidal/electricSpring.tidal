@@ -41,12 +41,13 @@ d2 $ sound "future(3,8)"
   # shape "0.4"
 
 d3 $ tabby 4
-  (sound "jvr:3 gab off gabba:1")
+  (sound "jvr:3 ~ off gabba:1")
   (sound "jvr:6 gabba" # speed "<1 2 1.5>")
   # shape "0.4" # crush "5"
   # pan saw1 # vowel "<a a e a i u>"
 
-d4 $ loopAt 4 $ chop 32 $ n "0" # sound "repetition"
+d5 $ jux rev $ (slowspread (loopAt) [2,4,2,8] $ iter 4 $ chop 16 $ sound "arc")
+  |*| pan (slow 4 saw1)
   # gain "1.2"
 
 -- deconstructed gabba jungbass 6 at last
