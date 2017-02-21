@@ -455,22 +455,28 @@ let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2)]
                               maskedWeft n p'
                              ]
 
-let weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])]) [0 .. (n `div` 2) - 1]
-    warp = transpose . weft
-    weftP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ weft n)
-    warpP n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat $ warp n)
-    maskedWeft n p = mask (every 2 rev $ density ((n)%1) "~ 1" :: Pattern Int) $ weftP n p
-    maskedWarp n p = mask (every 2 rev $ density ((n)%1) "1 ~" :: Pattern Int) $ warpP n p
-    interfere n p p' = stack [maskedWarp n p,
-                              maskedWeft n p'
-                             ]
-                       
-d1 $ slow 8 $ interfere 8
-  (n (run 8) # sound "numbers")
-  (silence)
 
+tabby n p p' = stack [maskedWarp n p,
+                      maskedWeft n p'
+                     ]
+  where weft n = concatMap (\x -> [[0..n-1],(reverse [0..n-1])])
+                 [0 .. (n `div` 2) - 1]
+        warp = transpose . weft
+        thread xs n p = slow (n%1) $ cat $ map (\i -> zoom (i%n,(i+1)%n) p) (concat xs)
+        weftP n p = thread (weft n) n p
+        warpP n p = thread (warp n) n p
+        maskedWeft n p = mask (every 2 rev $ density ((n)%2) "~ 1" :: Pattern Int)
+                         $ weftP n p
+        maskedWarp n p = mask (every 2 rev $ density ((n)%2) "1 ~" :: Pattern Int)
+                         $ warpP n p
 
+mask ((density (4%2) "1 ~") :: Pattern String) $ warpP 4 (run 4)
 
+d1 $ interfere 8
+  (n (run 8) # sound "arpy")
+  (n (run 8) # sound "arpy")
+  # room "0.6"
+  # size "0.4"
 
 d1 $ jux' [id,(# speed "2 1.5"), slow 2, (# crush "5")]
   $ slowspread (stut 4 0.4) [0.125, -0.125, 0.5] $ interfere 8
