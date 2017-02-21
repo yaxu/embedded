@@ -9,3 +9,5 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 -- comb delay drop
 
 -- sine nudge chop
+
+-- repetition
