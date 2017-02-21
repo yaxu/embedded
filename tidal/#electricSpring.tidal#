@@ -6,7 +6,8 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- tabby
 
-d1 $ tabby 4 (n "c d a g" # sound "arpy") (n "0 3 [5 7] 10" # sound "ar")
+d1 $ do x <- "<8 4 8>"
+        tabby x (n (run 8) # sound "voodoo") (n (run 8) # sound "")
 
 -- comb delay drop
 
