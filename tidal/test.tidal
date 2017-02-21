@@ -472,11 +472,12 @@ tabby n p p' = stack [maskedWarp n p,
 
 mask ((density (4%2) "1 ~") :: Pattern String) $ warpP 4 (run 4)
 
-d1 $ interfere 8
+d1 $ slow 2 $ tabby 8
   (n (run 8) # sound "arpy")
-  (n (run 8) # sound "arpy")
+  (n (run 16) # sound "arpy")
   # room "0.6"
   # size "0.4"
+  # speed "0.5"
 
 d1 $ jux' [id,(# speed "2 1.5"), slow 2, (# crush "5")]
   $ slowspread (stut 4 0.4) [0.125, -0.125, 0.5] $ interfere 8
