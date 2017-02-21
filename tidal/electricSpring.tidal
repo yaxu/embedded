@@ -6,5 +6,3 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- deconstructed gabba jungbass 6 at last
 
-  
-
