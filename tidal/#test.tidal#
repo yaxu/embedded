@@ -544,6 +544,6 @@ d1 $ sound "hh(3,8)"
 
 
 
-d1 $ sound "bd*8"
+d1 $ sound "hh*8"
   # pan saw1
   # gain "0.5"
