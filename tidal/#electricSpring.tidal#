@@ -1,0 +1,23 @@
+let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
+
+-- number 9
+
+d1 $ slow 2 $ jux rev $ off (1%4) (# speed "0.75") $ off (1%8) ((# speed "1.2") . (# cutoff "1000")) $
+  n "<5 7 [5 9] 8>(<2 3 4 5>,8)" # sound "jvr"
+  # crush "5"
+  # cut "-1"
+
+d3 $ sometimes (|+| n "0 12") $ off (1/4) (struct "x(3,9)". (|*| up "7")) $ n "<c7 c7*2 c7*3>" # sound "xx"
+  # cutoff (scale 500 1000 sine1) # resonance "0.3"
+
+-- mismatch step tempo
+
+-- tabby
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- repetition
+
+-- deconstructed gabba jungbass 6 at last
