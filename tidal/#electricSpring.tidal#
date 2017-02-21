@@ -6,8 +6,15 @@ d1 $ jux (|*| speed "0.5") $ slowspread (chop) [1] $ jux' [id, ((|+| n "5") . (0
 
 -- seqPLoop no 9
 
-  d1 $ seqPLoop [(0,4,sound "jvr")
+  d1 $ seqPLoop [(0,8,
+                  n "4 [7 4] 5" # sound "jvr"
+                 ),
+                 (0,8,
+                  n "3(<4 2 6 2>,9)" # sound "jvr"
+                 )
                 ]
+  # orbit "1"
+  # 
 
 -- deconstructed gabba jungbass 6 at last
 
