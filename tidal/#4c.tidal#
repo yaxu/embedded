@@ -1,0 +1,5 @@
+d1 $ jux' [every 2 (0.25 <~),rev,slow 2 . (# n "3"), (|*| speed "0.75"), brak, off 0.25 (|*| up "7")] $ begin "[0 0.7] [0.5 ~ 0.25]" # sound "[cc,bd mt8*]"
+  # gain "[1 0.8]*4"
+  # speed "4"
+  # vowel "<a e i o u>"
+  

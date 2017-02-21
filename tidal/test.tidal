@@ -531,7 +531,9 @@ let (span, span_p)               = pF "splay" Nothing
     (panWidth, panWidth_p)       = pF "panwidth" Nothing
     (orientation, orientation_p) = pF "orientation" Nothing
 
-d1 $ sound "hh*8"
-  # splay "0"
-  # pan saw1
+d1 $ sound "hh(3,8)"
+
+  
+
+  
 
