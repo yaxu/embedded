@@ -1,9 +1,8 @@
 let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
-d1 $ sound "bd*8"
-  # pan saw1
-
 -- stut pan
+
+d1 $ jux' [] $slow 4 $ off 0.125 (# crush "4") $ n "0 ~ 3" # sound "leaf"
 
 -- number 9
 
