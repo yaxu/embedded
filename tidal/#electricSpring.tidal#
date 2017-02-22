@@ -44,5 +44,13 @@ d2 $ degradeBy 0.7 $ runWith 4 (slow 2 . (# speed "0.5")) $ tabby 8 (n (run 8) #
   # room (slow 4 $ scale 0.6 0.7 saw1)
   # size "0.3"
 
-d3 $ jux rev $ chop 8 substruct "x x/2" $ (sound "bd [~ sn:2] bd8 bd*2")
+d3 $ every 4 (0.5 <~) $ jux rev $ every 4 (chop 16) $ substruct "x x/2" $ (sound "bd [rash:30 sn:2] bd8 bd*2")
   # pan saw1
+  # cutoff "1000"
+
+d4 $ jux' [id, ((|+| n "7") . (0.25 <~)), ((|+| n "<12 24>") . (0.125 <~))] $ slow 2 $ palindrome $ n "d5 ~ d6 . d7 <a7 f6>" # sound "jx"
+  # vowel "a"
+
+d5 $ slowspread (\x -> stut' 4 x ((|+| pan "0.125") . (|+| n "7"))) [0.5,0.25,0.125] $ iter 4 $ n (run 8) # sound "voodoo"
+
+d6 $ runWith 4 (slow 2 . (# speed "0.5")) $ jux' [id, rev, (0.25 <~)] $ slowspread (loopAt) [8,2,4] $ chop 8 $ sound "shackup"
