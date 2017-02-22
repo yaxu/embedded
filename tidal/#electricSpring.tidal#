@@ -32,17 +32,17 @@ d3 $ degradeBy 0.7 $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev 
 
 -- sine nudge chop
 
-d1 $ runWith 4 (density 2) $ (jux' [id,rev, (0.25 <~), iter 4] $ (slowspread (chop) [32,128] $ sound "feel*2 future [sn:2 arpy] kurt"))
-  
-
-
-d3 $ jux' [id,rev] $ sound "bd bd8:3*2 !? !"
-
-d5 $ slow 2 $ jux rev $ iter 4 $ loopAt 4 $ striate 64 $ sound "repetition*2"
-  # gain "1.2"
-  # n (irand 8)
-  # accelearete 
-
 -- repetition
 
 -- deconstructed liquid gabba
+
+
+d1 $ slow 2 $ jux' [id,rev, iter 4] $ n "{0 ~ [~ 6] 8, 4 4*2 ~}" # sound "jvr"
+
+d2 $ degradeBy 0.7 $ runWith 4 (slow 2 . (# speed "0.5")) $ tabby 8 (n (run 8) # sound "arpy" # pan "0.25") (n (run 8) # sound "arpy*2" # pan "0.75")
+  # orbit "1"
+  # room (slow 4 $ scale 0.6 0.7 saw1)
+  # size "0.3"
+
+d3 $ jux rev $ chop 8 substruct "x x/2" $ (sound "bd [~ sn:2] bd8 bd*2")
+  # pan saw1
