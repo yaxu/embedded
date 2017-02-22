@@ -1,13 +1,8 @@
 let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
+-- stut pan
+
 -- number 9
-
-d1 $ runWith 4 (density 2) $ off 0.25 (# crush "<3 4 5>") $ iter 4 $ stut' 4 (1%32) ((|+| pan (slow 8 sine1)) . (|+| speed "[0.1 0.3]*4")) $ n "0(3,8)" # s "jvr:4 mt8"
-      # speed "4"
-
-d2 $ jux' [id, density 0.5, rev] $ every 4 ((# pan (density 2 saw1)) . slowspread (chop) [128,64,16]) $ sound "drum(3,8,<0 4 2>)"
-  # speed "2"
-  # shape "0.9"
 
 -- tabby
 
