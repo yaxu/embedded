@@ -33,9 +33,15 @@ d3 $ degradeBy 0.7 $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev 
 -- sine nudge chop
 
 d1 $ runWith 4 (density 2) $ (jux' [id,rev, (0.25 <~), iter 4] $ (slowspread (chop) [32,128] $ sound "feel*2 future [sn:2 arpy] kurt"))
-  -- # nudge (slow 4 sine1)
+  
 
-d2 $ sound "bd(3,8)"
+
+d3 $ jux' [id,rev] $ sound "bd bd8:3*2 !? !"
+
+d5 $ slow 2 $ jux rev $ iter 4 $ loopAt 4 $ striate 64 $ sound "repetition*2"
+  # gain "1.2"
+  # n (irand 8)
+  # accelearete 
 
 -- repetition
 
