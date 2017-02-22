@@ -23,5 +23,10 @@ d1 $ off 0.25 ((# crush "5") . (|+| pan "0.25")) $ jux' [id, rev] $ sound "jungb
 
 
 
-d1 $ sound "leaf"
-  # pan "0.9"
+d1 $ jux (|+| speed "2") $ off 0.25 (|+| up "7") $ (runWith 4 (density 2) $ every 2 rev $ slowspread (chop) [128,32] $ sound "leaf" # n (irand 8))
+  # pan saw1
+
+
+d1 $ jux' [id,(0.25 <~),rev] $ n (offadd 0.25 7 $ slow 2 "c7(3,8) e6*2") # sound "rash"
+
+d2 $ jux rev $ runWith 4 (density 1.5 . (|*| speed "1.5")) $ loopAt 4 $ chop 8 $ sound "shackup"
