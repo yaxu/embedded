@@ -1,0 +1,18 @@
+let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
+
+d1 $ sound "bd*8"
+  # pan saw1
+
+-- stut pan
+
+-- number 9
+
+-- tabby
+
+-- comb delay drop
+
+-- sine nudge chop
+
+-- repetition
+
+-- deconstructed liquid gabba
