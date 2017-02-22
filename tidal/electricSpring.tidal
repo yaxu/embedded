@@ -21,7 +21,7 @@ d2 $ runWith 4 (density 2) $ brak $ (slowspread (chop) [8,16,128] $ sound "feel 
   # room (slow 4 saw1)
   # orbit "1"
 
-d3 $ degrade $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "f6(3,8) a6 [e6*2 c7] e8(3,8,4)") # sound "rash"
+d3 $ degradeBy 0.7 $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "f6(3,8) a6 [e6*2 c7] e8(3,8,4)") # sound "rash"
   # cutoff (slow 4 $ scale 1000 2000 sine1)
   # resonance "0.3"
   # orbit "0"
@@ -35,3 +35,27 @@ d3 $ degrade $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev $ slow
 -- repetition
 
 -- deconstructed liquid gabba
+
+
+d1 $ slow 2 $ jux' [id,rev, iter 4] $ n "{0 ~ [~ 6] 8, 4 4*2 ~}" # sound "jvr"
+
+d2 $ degradeBy 0.7 $ runWith 4 (slow 2 . (# speed "0.5")) $ tabby 8 (n (run 8) # sound "arpy" # pan "0.25") (n (run 8) # sound "arpy*2" # pan "0.75")
+  # orbit "1"
+  # room (slow 4 $ scale 0.6 0.7 saw1)
+  # size "0.3"
+
+d3 $ every 4 (0.5 <~) $ jux rev $ every 4 (chop 16) $ substruct "x x/2" $ (sound "bd [rash:30 sn:2] bd8 bd*2")
+  # pan saw1
+  # cutoff "1000"
+
+d4 $ jux' [id, ((|+| n "7") . (0.25 <~)), ((|+| n "<12 24>") . (0.125 <~))] $ slow 2 $ palindrome $ n "d5 ~ g6 . d7 <a7 f6>" # sound "jx"
+  # vowel "a"
+
+d5 $ slowspread (\x -> stut' 4 x ((|+| pan "0.125") . (|+| n "7"))) [0.5,0.25,0.125] $ iter 4 $ n (run 8) # sound "voodoo"
+
+d6 $ runWith 4 (slow 2 . (# speed "0.5")) $ jux' [id, rev, (0.25 <~), (|+| speed "2")] $ slowspread (loopAt) [8,2,4] $ chop 8 $ sound "shackup"
+
+d7 $ degrade $ jux' [id,rev, (0.5 <~)] $ iter 4 $ slow 2 $ loopAt 4 $ striate 16 $ sound "liq"
+  # gain "1.1"
+  # cutoff "1000"
+
