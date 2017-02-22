@@ -2,9 +2,19 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- stut pan
 
-d1 $ jux' [] $slow 4 $ off 0.125 (# crush "4") $ n "0 ~ 3" # sound "leaf"
+d1 $ degrade $ (jux' [id,rev, (0.25 <~), iter 4] $ slow 4 $ off 0.125 (# crush "4") $ slowspread (chop) [8,16,128] $ n "0 2 [3 5] <4 5>" # sound "leaf")
+  |+| pan saw1
+  # speed "<2>"
+
+d2 $ degrade $ every 2 (|+| speed "0.2") $ spin 4 $ sound "<bd8 bd8:2 bd8:3>(3,8,<0 4 6>)"
+  # speed "1"
+
+d3 $ every 3 (slow 2 . (|*| speed "0.5")) $ stut' 4 0.25 (|+| pan "0.15") $ substruct "x x/2" $ sound "bd8:2 ~ [mt8 ~]"
+  # pan rand
 
 -- number 9
+
+
 
 -- tabby
 
