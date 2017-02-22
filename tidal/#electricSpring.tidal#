@@ -16,4 +16,4 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 
 d1 $ slow 8 $ n ((+1) <$> run 8) # sound "numbers"
-  # pan "0.5"
+  # pan saw1
