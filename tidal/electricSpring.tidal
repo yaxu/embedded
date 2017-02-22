@@ -2,7 +2,29 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 
 -- stut pan
 
+d1 $ degrade $ (jux' [id,rev, (0.25 <~), iter 4] $ slow 4 $ off 0.125 (# crush "4") $ slowspread (chop) [8,16,128] $ n "0 2 [3 5] <4 5>" # sound "leaf")
+  |+| pan saw1
+  # speed "<2>"
+
+d2 $ degrade $ every 2 (|+| speed "0.2") $ spin 4 $ sound "<bd8 bd8:2 bd8:3>(3,8,<0 4 6>)"
+  # speed "1"
+
+d3 $ every 3 (slow 2 . (|*| speed "0.5")) $ stut' 4 0.25 (|+| pan "0.15") $ substruct "x x/2" $ sound "bd8:2 ~ [mt8 ~]"
+  # pan rand
+
 -- number 9
+
+d1 $ slow 4 $ stut' 4 (1/4) (|*| speed "1.5") $  jux' [id,rev,iter 4] $ slowspread (\x -> off x ((|*| speed "2") . (|+| pan "0.25"))) [(1/3), (1/6)] $ n "4(<3 5 7>,8)" # sound "voodoo"
+
+d2 $ runWith 4 (density 2) $ brak $ (slowspread (chop) [8,16,128] $ sound "feel feel:2")
+  |+| pan (density 2 saw1)
+  # room (slow 4 saw1)
+  # orbit "1"
+
+d3 $ degrade $ sometimes (|+| n "-12") $ off 0.25 (# crush "5") $ jux rev $ slow 2 $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "f6(3,8) a6 [e6*2 c7] e8(3,8,4)") # sound "rash"
+  # cutoff (slow 4 $ scale 1000 2000 sine1)
+  # resonance "0.3"
+  # orbit "0"
 
 -- tabby
 
