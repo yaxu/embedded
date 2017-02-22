@@ -19,6 +19,9 @@ d1 $ slow 4 $ n (run 8) # sound "wobble"
   # pan saw1
 
 d1 $ off 0.25 ((# crush "5") . (|+| pan "0.25")) $ jux' [id, rev] $ sound "jungbass:8(3,8,<2,4>)"
+  # pan "0 0.5"
 
 
 
+d1 $ sound "leaf"
+  # pan "0.9"
