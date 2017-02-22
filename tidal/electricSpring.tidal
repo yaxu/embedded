@@ -13,3 +13,7 @@ let jux f p = stack [p |+| pan (pure (5/8)), f $ p |+| pan (pure (1/8))]
 -- repetition
 
 -- deconstructed liquid gabba
+
+
+d1 $ slow 4 $ n (run 8) # sound "numbers"
+  # pan saw1
