@@ -551,4 +551,8 @@ d1 $ jux rev $ sound "bd(3,8)"
   # pan saw1
   # gain "0.6"
 
-d1 $ sound "bd"
+d1 $ sound "~ bd ~ ~ ~"
+
+cps 1
+
+hush
