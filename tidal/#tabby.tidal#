@@ -32,9 +32,12 @@ let s = n (run 16) # sound "arpy"
 
 import Sound.Tidal.Scales as Scales
 
-d1 $ n ((\x -> x * (Scales.majPent !!! x)) <$> run 5) # sound "rash"
+d1 $ slow 2 $ n ((\x -> x `mod` (length Scales.majPent) * (Scales.majPent !!! x)) <$> run 12) # sound "rash"
 
+Scales.majPent
 
+(\x -> x `mod` (length Scales.majPent)) * (Scales.majPent !!! ) 3
+ 
 -- stop
 cps (-1)
 
