@@ -556,3 +556,23 @@ d1 $ sound "bd sn cp cp"
 cps 1
 
 hush
+
+let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
+      where getrand s xs = xs!!(floor $ (r s) * (l xs))
+            r s = timeToRand $ fromIntegral $ floor s
+            l xs = fromIntegral $ length xs
+
+d1 $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
+
+
+let spreadPat f valuepat pat = valuepat >>= \v -> f v pat
+
+d1 $ spreadPat (density) "<2 3 4>" $ sound "ht8:4 lt8:3*2"
+
+d1 $ spreadPat (density) (discretise 1 $ choose [2,3,4]) $ sound "ht8:4 lt8:3*2"
+
+
+slowchoose (density) [2,3,4] $ 
+      
+  Pattern $ \r -> concatMap (\(_,r', x) -> (arc (f x pat) r')) (rs r)
+  where rs r = arc (filterOnsetsInRange timepat) r
