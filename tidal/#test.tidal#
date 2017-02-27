@@ -557,5 +557,12 @@ cps 1
 
 hush
 
+let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
+      where getrand s xs = xs!!(floor $ (r s) * (l xs))
+            r s = timeToRand $ fromIntegral $ floor s
+            l xs = fromIntegral $ length xs
 
-d1 $ sound "
+d1 $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
+
+d1 $ spread' (density) "<2 3 4>" $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
+
