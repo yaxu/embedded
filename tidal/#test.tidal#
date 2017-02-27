@@ -581,3 +581,8 @@ slowchoose (density) [2,3,4] $
   where rs r = arc (filterOnsetsInRange timepat) r
 
 d1 $ sound "cyclo16(3,8)" # legato "0.4"
+
+class Patternable a where
+  toPattern :: a -> Pattern a
+
+instance Patternable 
