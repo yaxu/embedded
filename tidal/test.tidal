@@ -571,6 +571,9 @@ d1 $ spreadPat (density) "<2 3 1,1 0.5>" $ sound "ht8:4 lt8:3"
 
 d1 $ spreadPat (density) (every 2 (density 2) $ cycleChoose [2,3,4]) $ sound "ht8:4 lt8:3*2"
 
+d1 $ spread' slow "2 4%3" $ sound "ho ho:2 ho:3 hc"
+
+d1 $ spreadPat slow "2 4%3" $ sound "ho ho:2 ho:3 hc"
 
 slowchoose (density) [2,3,4] $ 
       
