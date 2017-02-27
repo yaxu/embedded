@@ -567,9 +567,9 @@ d1 $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
 
 let spreadPat f valuepat pat = valuepat >>= \v -> f v pat
 
-d1 $ spreadPat (density) "<2 3 4>" $ sound "ht8:4 lt8:3*2"
+d1 $ spreadPat (density) "<2 3 1,1 0.5>" $ sound "ht8:4 lt8:3"
 
-d1 $ spreadPat (density) (cycleChoose [2,3,4]) $ sound "ht8:4 lt8:3*2"
+d1 $ spreadPat (density) (every 2 (density 2) $ cycleChoose [2,3,4]) $ sound "ht8:4 lt8:3*2"
 
 
 slowchoose (density) [2,3,4] $ 
