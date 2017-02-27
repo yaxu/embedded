@@ -17,5 +17,8 @@ d1 $ tabby 8 silence s
 d1 $ tabby 8 s silence
 
 
+-- stop
 cps (-1)
+
+-- start from the beginning
 cps 1
