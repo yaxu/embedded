@@ -564,5 +564,13 @@ let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
 
 d1 $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
 
-d1 $ spread' (density) "<2 3 4>" $ slowchoose (density) [2,3,4] $ sound "ht8:4 lt8:3*2"
 
+let spreadpat f valuepat pat = do v <- valuepat
+                                density v pat
+
+d1 $ spread' (density) "<2 3 4>" $ sound "ht8:4 lt8:3*2"
+
+slowchoose (density) [2,3,4] $ 
+      
+  Pattern $ \r -> concatMap (\(_,r', x) -> (arc (f x pat) r')) (rs r)
+  where rs r = arc (filterOnsetsInRange timepat) r
