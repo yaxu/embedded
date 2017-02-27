@@ -1,0 +1,33 @@
+-- Start with a simple scale
+
+let s = n (run 8) # sound "arpy"
+
+-- listen to it
+
+d1 $ s
+
+-- what does it sound like on the weft? (with a silent warp)
+-- you hear every other note, going back and forth
+
+d1 $ tabby 8 silence s
+
+-- how about the warp? (with a silent weft)
+-- the warp is going up and down, but as we scan across the wefts we alternate between hearing the download
+-- and upward movements. Unlike with the weft, we do eventually hear all the notes, though.
+d1 $ tabby 8 s silence
+
+-- how about with the same scale on both the warp and weft?
+-- a nice folk tune!
+d1 $ tabby 8 s s
+  # room "0.3"
+
+-- lets separate the warp and weft between left and right speakers
+d1 $ tabby 8 (s # pan "0") (s # pan "1"
+  # room "0.3"
+
+
+-- stop
+cps (-1)
+
+-- start from the beginning
+cps 1
