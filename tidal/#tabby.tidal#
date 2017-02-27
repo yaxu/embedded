@@ -31,13 +31,13 @@ let s = n (run 16) # sound "arpy"
  d1 $ tabby 16 (s # pan "0") (s # pan "1")
 
 import Sound.Tidal.Scales as Scales
+let toScale scale x = ((x `div` length scale) * 12) + (scale !! (x `mod` length scale))
 
-d1 $ slow 2 $ n ((\x -> x `mod` (length Scales.majPent) * (Scales.majPent !!! x)) <$> run 12) # sound "rash"
+d1 $ slow 2 $ n (toScale Scales.majPent <$> run 16) # sound "rash"
 
-Scales.majPent
 
-let toScale scale x = (x `div` (length Scales.majPent)) * 12) + (Scales.majPent !!! x)
- 
+
+toScale Scales.majPent 5
 -- stop
 cps (-1)
 
