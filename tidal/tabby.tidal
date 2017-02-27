@@ -16,6 +16,10 @@ d1 $ tabby 8 silence s
 -- and upward movements. Unlike with the weft, we do eventually hear all the notes, though.
 d1 $ tabby 8 s silence
 
+-- how about with the same scale on both the warp and weft?
+-- a nice folk tune!
+d1 $ tabby 8 s s
+
 
 -- stop
 cps (-1)
