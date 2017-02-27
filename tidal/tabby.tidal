@@ -34,11 +34,6 @@ let s = n ((+12) . toScale Scales.majPent <$> run 16) # sound "rash"
  d1 $ tabby 16 (s # pan "0") (s # pan "1")
 
 
-d1 $ slow 2 $ 
-
-
-
-toScale Scales.majPent 5
 -- stop
 cps (-1)
 
