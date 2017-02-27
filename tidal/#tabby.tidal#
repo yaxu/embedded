@@ -11,5 +11,6 @@ d1 $ s
 
 d1 $ tabby 8 silence s
 
--- how a
-d1 $ tabby 8 silence s
+-- how about the warp?
+d1 $ tabby 8 s silence
+
