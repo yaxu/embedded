@@ -1,5 +1,15 @@
 -- Start with a simple scale
 
-d1 $ n (run 8) # sound "arpy"
+let s = n (run 8) # sound "arpy"
 
+-- listen to it
 
+d1 $ s
+
+-- what does it sound like on the weft?
+-- you hear every other note, going back and forth
+
+d1 $ tabby 8 silence s
+
+-- how a
+d1 $ tabby 8 silence s
