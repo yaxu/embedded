@@ -30,6 +30,9 @@ let s = n (run 16) # sound "arpy"
   in
  d1 $ tabby 16 (s # pan "0") (s # pan "1")
 
+d1 $ n (\x -> x * (scal!!! x) <$> run 12) # sound "rash"
+
+
 -- stop
 cps (-1)
 
