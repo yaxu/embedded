@@ -19,6 +19,11 @@ d1 $ tabby 8 s silence
 -- how about with the same scale on both the warp and weft?
 -- a nice folk tune!
 d1 $ tabby 8 s s
+  # room "0.3"
+
+-- lets separate the warp and weft between left and right speakers
+d1 $ tabby 8 (s # pan "0") (s # pan "1")
+  # room "0.3"
 
 
 -- stop
