@@ -13,7 +13,7 @@ d1 $ tabby 8 silence s
 
 -- how about the warp? (with a silent weft)
 -- the warp is going up and down, but as we scan across the wefts we alternate between hearing the download
--- or upward movement 
+-- and upward movements
 d1 $ tabby 8 s silence
 
 hush
