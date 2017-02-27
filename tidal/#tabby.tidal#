@@ -6,11 +6,14 @@ let s = n (run 8) # sound "arpy"
 
 d1 $ s
 
--- what does it sound like on the weft?
+-- what does it sound like on the weft? (with a silent warp)
 -- you hear every other note, going back and forth
 
 d1 $ tabby 8 silence s
 
--- how about the warp?
+-- how about the warp? (with a silent weft)
+-- the warp is going up and down, but as we scan across the wefts we alternate between hearing the download
+-- or upward movement 
 d1 $ tabby 8 s silence
 
+hush
