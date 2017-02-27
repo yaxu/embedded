@@ -1,3 +1,6 @@
+import Sound.Tidal.Scales as Scales
+let toScale scale x = ((x `div` length scale) * 12) + (scale !! (x `mod` length scale))
+
 -- Start with a simple scale
 
 let s = n (run 8) # sound "arpy"
@@ -25,7 +28,17 @@ d1 $ tabby 8 s s
 d1 $ tabby 8 (s # pan "0") (s # pan "1")
   # room "0.3"
 
+-- and experiment a bit with a bigger weave..
+let s = n ((+12) . toScale Scales.majPent <$> run 16) # sound "rash"
+  in
+ d1 $ tabby 16 (s # pan "0") (s # pan "1")
 
+
+d1 $ slow 2 $ 
+
+
+
+toScale Scales.majPent 5
 -- stop
 cps (-1)
 
