@@ -592,6 +592,9 @@ class Foo a where
 instance Foo Int where
   toS = show
 
+instance Foo Integer where
+  toS = show
+
 toS 4
 
 class Temporal a where
@@ -600,12 +603,15 @@ class Temporal a where
 instance Temporal Time where
   toTimePattern = pure
 
-instance Temporal (Pattern Time) where
-  toTimePattern = id
+instance Temporal (String) where
+  toTimePattern = id . parsePat
 
 let density' :: Temporal a => a -> Pattern b -> Pattern b
     density' t p = do t' <- toTimePattern t
                       density t' p
+
+
+d1 $ density' ("<2 1 1%2>" :: Pattern Time) $ sound "bd sn"
 
 d1 $ density' 2 $ sound "bd sn"
 
