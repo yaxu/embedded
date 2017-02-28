@@ -584,7 +584,6 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 
 density :: Patternable a -> Pattern a
 
-:set -XTypeSynonymInstances -XFlexibleInstances
 
 class Foo a where
   toS :: a -> String
@@ -597,23 +596,25 @@ instance Foo Integer where
 
 toS 4
 
+:set -XTypeSynonymInstances -XFlexibleInstances
+
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
-instance Temporal (Ration Integer) where
+instance Temporal (Ratio Integer) where
   toTimePattern = pure
 
-instance Temporal (String) where
-  toTimePattern = id . parsePat
+instance Temporal (Pattern Time) where
+  toTimePattern = id 
 
 let density' :: Temporal a => a -> Pattern b -> Pattern b
     density' t p = do t' <- toTimePattern t
                       density t' p
 
 
-d1 $ density' ("<2 1 1%2>" :: Pattern Time) $ sound "bd sn"
+d1 $ density' "<2 1 1%2>" $ sound "bd sn"
 
-d1 $ density' (2%1) $ sound "bd sn"
+d1 $ density' (2) $ sound "bd sn"
 
 d1 $ density' "2 3%2" $ sound "bd sn"
 
