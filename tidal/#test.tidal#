@@ -641,6 +641,16 @@ let foo :: (forall a. a -> a) -> (Char,Bool)
 
 :t foo
 
+let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
+      where getrand s xs = xs!!(floor $ (r s) * (l xs))
+            r s = timeToRand $ fromIntegral $ floor s
+            l xs = fromIntegral $ length xs
+
+
+d1 $ slowchoose (density) [1,2,3] $ sound "bd sn"
+
+let spreadrand f vs = choose vs
+
 
 :t sinerat
 
