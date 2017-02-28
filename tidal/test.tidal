@@ -653,3 +653,4 @@ spreadChoose :: (t -> t1 -> Pattern b) -> [t] -> t1 -> Pattern b
 spreadChoose f vs p = do v <- discretise 1 (choose vs)
                          f v p
 
+spreadr = spreadChoose
