@@ -596,6 +596,8 @@ instance Foo Integer where
 instance Foo String where
   testA = show
 
+show (0.5)
+
 class Bar a where
   testB :: a -> String
 
