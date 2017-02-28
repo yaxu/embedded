@@ -599,6 +599,9 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
     density' t p = do t' <- toTimePattern t
                       density t' p
 
-d1 $ density' "2%1" $ sound "bd sn"
+d1 $ density' 2 $ sound "bd sn"
 
-:t density
+d1 $ density' ("2 1 0.5" :: Pattern Time) $ sound "bd sn"
+
+
+
