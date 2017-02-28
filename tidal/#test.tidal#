@@ -586,6 +586,17 @@ density :: Patternable a -> Pattern a
 
 :set -XTypeSynonymInstances -XFlexibleInstances
 
+class Foo a where
+  toS :: a -> String
+
+instance Foo String where
+  toS = id
+
+instance Foo Int where
+  toS = show
+
+toS (4 :: Int)
+
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
