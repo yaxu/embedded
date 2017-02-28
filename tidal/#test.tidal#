@@ -589,9 +589,6 @@ density :: Patternable a -> Pattern a
 class Foo a where
   toS :: a -> String
 
-instance Foo String where
-  toS = id
-
 instance Foo Int where
   toS = show
 
