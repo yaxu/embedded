@@ -579,3 +579,13 @@ slowchoose (density) [2,3,4] $
       
   Pattern $ \r -> concatMap (\(_,r', x) -> (arc (f x pat) r')) (rs r)
   where rs r = arc (filterOnsetsInRange timepat) r
+
+d1 $ sound "cyclo16(3,8)" # legato "0.4"
+
+density :: Patternable a -> Pattern a
+
+class Temporal a where
+  toTimePattern :: a -> Pattern Time
+
+
+:t density
