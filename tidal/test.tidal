@@ -585,7 +585,7 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 density :: Patternable a -> Pattern a
 
 
-:set -XTypeSynonymInstances -XFlexibleInstances
+:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Foo a where
   testA :: a -> String
@@ -593,13 +593,18 @@ class Foo a where
 instance Foo Integer where
   testA = show
 
+instance Foo String where
+  testA = show
+
+show (0.5)
+
 class Bar a where
   testB :: a -> String
 
 instance Bar Int where
   testB = show
 
-testA 4 -- this works
+testA "4" -- this works
 
 testB 4 -- this doesn't
 
@@ -625,6 +630,27 @@ d1 $ density' (2) $ sound "bd sn"
 d1 $ density' "2 3%2" $ sound "bd sn"
 
 d1 $ sound "bd*8"
+
+foo :: (forall a. a -> a) -> (Bool, Char)
+
+
+
+let foo :: (forall a. a -> a) -> (Char,Bool)
+    foo f = (f 'c', f True)
+
+
+:t foo
+
+let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
+      where getrand s xs = xs!!(floor $ (r s) * (l xs))
+            r s = timeToRand $ fromIntegral $ floor s
+            l xs = fromIntegral $ length xs
+
+
+d1 $ jux rev $ spreadrand (density) [1,2,3] $ sound "bd sn:1*2"
+
+let spreadchoose f vs p = do v <- discretise 1 (choose vs)
+                             f v p
 
 
 :t sinerat
