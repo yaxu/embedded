@@ -595,9 +595,10 @@ instance Temporal Time where
 instance Temporal (Pattern Time) where
   toTimePattern = id
 
-let density' t p = do t' <- toTimePattern t
-                      density t p
+let density' :: Temporal a => a -> Pattern b -> Pattern b
+    density' t p = do t' <- toTimePattern t
+                      density t' p
 
-d1 $ density' "12 $ sound "bd sn"
+d1 $ density' "2%1" $ sound "bd sn"
 
 :t density
