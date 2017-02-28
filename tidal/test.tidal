@@ -585,6 +585,24 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 density :: Patternable a -> Pattern a
 
 
+:set -XTypeSynonymInstances -XFlexibleInstances
+
+class Foo a where
+  testA :: a -> String
+
+instance Foo Integer where
+  testA = show
+
+class Bar a where
+  testB :: a -> String
+
+instance Bar Int where
+  testB = show
+
+testA 4 -- this works
+
+testB 4 -- this doesn't
+
 
 class Temporal a where
   toTimePattern :: a -> Pattern Time
