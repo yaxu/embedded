@@ -587,5 +587,10 @@ density :: Patternable a -> Pattern a
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
+instance Temporal Time where
+  toTimePattern = pure
+
+instance Temporal (Pattern Time) where
+  toTimePattern = const
 
 :t density
