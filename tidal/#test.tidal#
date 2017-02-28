@@ -595,7 +595,7 @@ instance Foo String where
 instance Foo Int where
   toS = show
 
-toS (4 :: Int)
+toS 4
 
 class Temporal a where
   toTimePattern :: a -> Pattern Time
