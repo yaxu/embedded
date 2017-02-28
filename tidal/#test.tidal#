@@ -662,5 +662,3 @@ let spreadChoose :: (t -> t1 -> Pattern b) -> [t] -> t1 -> Pattern b
                              f v p
 
 
-d1 $ spreadr density [2,3,4] $ sound "bd sn"
-
