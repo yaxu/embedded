@@ -601,7 +601,10 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
 
 d1 $ density' 2 $ sound "bd sn"
 
-d1 $ density' ("2 1 0.5" :: Pattern Time) $ sound "bd sn"
+d1 $ density' (slow 4 $discretise 8 $ sinerat1) $ sound "bd*8"
 
+
+
+:t sinerat
 
 
