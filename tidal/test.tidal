@@ -615,7 +615,7 @@ d1 $ density' ("<2 1 1%2>" :: Pattern Time) $ sound "bd sn"
 
 d1 $ density' 2 $ sound "bd sn"
 
-d1 $ density' "2" $ sound "bd sn"
+d1 $ density' "2 3%2" $ sound "bd sn"
 
 d1 $ sound "bd*8"
 
