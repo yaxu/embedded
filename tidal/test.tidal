@@ -649,10 +649,11 @@ let slowchoose f xs p = Pattern $ \(s,e) -> arc (f (getrand s xs) p) (s,e)
 
 d1 $ jux rev $ spreadrand (density) [1,2,3] $ sound "bd sn:1*2"
 
-let spreadchoose f vs p = do v <- discretise 1 (choose vs)
-                             f v p
+spreadChoose :: (t -> t1 -> Pattern b) -> [t] -> t1 -> Pattern b
+spreadChoose f vs p = do v <- discretise 1 (choose vs)
+                         f v p
 
-
+:t spreadChoose
 :t sinerat
 
 
