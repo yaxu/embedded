@@ -601,6 +601,8 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
 
 d1 $ density' 2 $ sound "bd sn"
 
+d1 $ density' "2" $ sound "bd sn"
+
 d1 $ sound "bd*8"
 
 
