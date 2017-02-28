@@ -590,7 +590,7 @@ density :: Patternable a -> Pattern a
 class Foo a where
   testA :: a -> String
 
-instance Foo Int where
+instance Foo Integer where
   testA = show
 
 testA 4
@@ -598,7 +598,7 @@ testA 4
 class Bar a where
   testB :: a -> String
 
-instance Bar Integer where
+instance Bar Int where
   testB = show
 
 testB 4
