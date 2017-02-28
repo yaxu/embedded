@@ -585,7 +585,7 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 density :: Patternable a -> Pattern a
 
 
-:set -XTypeSynonymInstances -XFlexibleInstances
+:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Foo a where
   testA :: a -> String
@@ -633,6 +633,13 @@ d1 $ sound "bd*8"
 
 foo :: (forall a. a -> a) -> (Bool, Char)
 
+
+
+let foo :: (forall a. a -> a) -> (Char,Bool)
+    foo f = (f 'c', f True)
+
+
+:t foo
 
 
 :t sinerat
