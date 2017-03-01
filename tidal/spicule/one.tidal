@@ -29,5 +29,6 @@ import Sound.Tidal.Utils ((!!!))
 let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
 
 
+
 d1 $ repattern 4 "[2 4,3]" $ [a,b,c,d]
 
