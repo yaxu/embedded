@@ -23,3 +23,10 @@ let a = every 2 (slow 1.5) $ gap 16 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ s
         # gain "0.8"
     d = every 2 (within (0,0.25) (rev . density 2)) $ juxBy 0.6 rev $ loopAt 4 $ chop 16 $ sound "shakedown"
         # shape "0.6"
+
+import Sound.Tidal.Utils ((!!!))
+
+let repattern t p ps = (!!!) <$>
+
+d1 $ repattern 128 "0" $ [a,b,c,d]
+
