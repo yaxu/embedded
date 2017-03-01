@@ -32,9 +32,8 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let repattern t p ps = 1
-      where ps' = map patx ps
-            (pat, pat_p) = pS "pat" Nothing
+let repattern t p ps = 
+      where (pat, pat_p) = pS "pat" Nothing
             (tx, tx_p) = pS "tx" Nothing
             patx = grp [pat_p, tx_p]
            
