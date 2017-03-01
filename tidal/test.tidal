@@ -575,6 +575,12 @@ d1 $ spread' slow "2 4%3" $ sound "ho ho:2 ho:3 hc"
 
 d1 $ spreadPat slow "2 4%3" $ sound "ho ho:2 ho:3 hc"
 
+spread' :: (a -> Pattern b -> Pattern c) -> Pattern a -> Pattern b -> Pattern c
+spread' f vpat pat = do v <- vpat
+                        f v pat
+
+d1 $ spread' density "<3 4 5>" $ sound "bd sn"
+
 slowchoose (density) [2,3,4] $ 
       
   Pattern $ \r -> concatMap (\(_,r', x) -> (arc (f x pat) r')) (rs r)
@@ -654,3 +660,5 @@ spreadChoose f vs p = do v <- discretise 1 (choose vs)
                          f v p
 
 spreadr = spreadChoose
+
+d1 $ sound "bd sn"
