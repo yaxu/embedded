@@ -39,5 +39,5 @@ let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmo
         |+| vowel "a"
     c = (spread' (striate' 4) ((+0.2) <$> slow 8 sine1)) $ jux rev $ sound (samples "[latibro*6,bd]/2" "0 7 4") |+| speed "[1 2 1.5]/4"
     in
-d1 $ repattern 8 "[0 [1 0], 2 ! ! ~]" $ [a,b,c]
+d1 $ repattern 16 "[0 [1 0], 2 ! ! ~]*4 [0, ~ 1]" $ [a,b,c]
 
