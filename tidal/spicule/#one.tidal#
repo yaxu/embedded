@@ -32,7 +32,14 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-patx 
+let repattern t p ps = 1
+      where ps' = map patx ps
+            (pat, pat_p) = pS "pat" Nothing
+            (tx, tx_p) = pS "tx" Nothing
+            patx = grp [pat_p, tx_p]
+           
+let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
+
 
 let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmod 4 2 (density 2) $ slow 2 $ sound (pick <$> "future*8" <*> (slow 4 $ run 32))
                    |+| speed ((+1) <$>sine1))
