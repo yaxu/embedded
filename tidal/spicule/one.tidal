@@ -30,5 +30,14 @@ let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
 
 
 
-d1 $ repattern 4 "[2 4,3]" $ [a,b,c,d]
+let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmod 4 2 (density 2) $ slow 2 $ sound (pick <$> "future*8" <*> (slow 4 $ run 32))
+                   |+| speed ((+1) <$>sine1))
+                  (sound "~ bleep:9"
+                   |+| speed (slow 8 sine1))
+    b = slow 2 $ every 3 (slow 2) $ every 4 (density 2) $ superimpose (iter 4) $ jux (every 2 rev) $ sound "bd ~ sn*16 ~ bd*8 ~ sn*6 ~"
+        |+| speed "2"
+        |+| vowel "a"
+    c = (spread' (striate' 4) ((+0.2) <$> slow 8 sine1)) $ jux rev $ sound (samples "[latibro*6,bd]/2" "0 7 4") |+| speed "[1 2 1.5]/4"
+    in
+d1 $ repattern 8 "[0 [1 0], 2 ! ! ~]" $ [a,b,c]
 
