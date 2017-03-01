@@ -32,11 +32,14 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let repattern t p ps = 
+let repattern t p ps = p'
       where (pat, pat_p) = pS "pat" Nothing
             (tx, tx_p) = pS "tx" Nothing
             patx = grp [pat_p, tx_p]
-           
+            p' = patx p
+
+((\(VS s) -> s) . fromJust . Data.Map.lookup s_p) <$> sound "bd"
+
 let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
 
 
