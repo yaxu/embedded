@@ -26,7 +26,8 @@ let a = every 2 (slow 1.5) $ gap 16 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ s
 
 import Sound.Tidal.Utils ((!!!))
 
-let repattern t p ps = (!!!) <$>
+let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
+
 
 d1 $ repattern 128 "0" $ [a,b,c,d]
 
