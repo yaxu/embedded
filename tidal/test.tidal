@@ -661,4 +661,6 @@ spreadChoose f vs p = do v <- discretise 1 (choose vs)
 
 spreadr = spreadChoose
 
-d1 $ sound "bd sn"
+
+
+
