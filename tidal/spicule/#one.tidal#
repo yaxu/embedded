@@ -67,4 +67,6 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             transform' "in" = adjust (fadeIn 1)
             transform' "out" = adjust (fadeOut 1)
             transform' _ = fmap snd
-            adjust f p = (\((s,e), v) -> v) <$> p
+            adjust f p = (\((s,e), v) -> slow (e-s) $ s ~> (f (s <~ density (e-s) v))) <$> p
+
+:t ur
