@@ -32,8 +32,9 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let repattern t p ps = split <$> p
+let ur t p ps = split <$> p
       where split s = wordsBy (==':') s
+            
             
 
 
