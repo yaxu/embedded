@@ -24,7 +24,7 @@ let a = every 2 (slow 1.5) $ gap 16 $ jux (0.25 <~) $ (off 0.125 (|+| n "7") $ s
     d = every 2 (within (0,0.25) (rev . density 2)) $ juxBy 0.6 rev $ loopAt 4 $ chop 16 $ sound "shakedown"
         # shape "0.6"
 
-import Sound.Tidal.Utils ((!!!))
+import Sound.Tidal.Utils
 
 let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
 
@@ -32,10 +32,14 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let repattern t p ps = split s <$> p
+let ur t p ps = (getPat . split) <$> p
       where split s = wordsBy (==':') s
-            
-import Sound.Tidal.Utils
+            getPat (n:xs) = (transform xs) (ps' !!! read n)
+            ps' = map density t ps
+            transform (x:[]) = transform' x
+            transform _ = id
+            transform' "in" = fadeIn 1
+            transform' "out" = fadeOut 1
 
 
 
