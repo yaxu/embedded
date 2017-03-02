@@ -61,9 +61,9 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
     ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
     ur t p ps = slow t $ unwrap $ (getPat . split) <$> p
       where split s = wordsBy (==':') s
-            -- turn pattern of numbers into transformed pattern of patterns
-            getPat (n:xs) = (transform xs) (ps' !!! read n)
+            getPat (n:xs) = (ps' !!! read n)
             ps' = map (density t) ps
+            
             transform (x:_) = transform' x
             transform _ = id
             transform' "in" = adjust (fadeIn 1)
