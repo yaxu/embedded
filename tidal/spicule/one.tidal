@@ -50,7 +50,7 @@ let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmo
         |+| vowel "a"
     c = (spread' (striate' 4) ((+0.2) <$> slow 8 sine1)) $ jux rev $ sound (samples "[latibro*6,bd]/2" "0 7 4") |+| speed "[1 2 1.5]/4"
     in
-d1 $ ur 32 "2:out" $ [a,b,c]
+d1 $ ur 32 "2:in" $ [a,b,c]
 
 hush
 
@@ -65,10 +65,11 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             ps' = map (density t) ps
             transform (x:_) a = transform' x a
             transform _ _ = id
-            transform' "in" (s,e) p = s <~ (fadeIn (e-s) p)
+            transform' "in" (s,e) p = (trace (show s ++ "\n") s) ~> (fadeIn (e-s) p)
             -- transform' "out" = adjust (fadeOut 1)
             transform' _ _ p = p
             adjust (a, (p, f)) = f a p
             -- adjust f p = (\((s,e), v) -> slow (e-s) $ s ~> (f (s <~ density (e-s) v))) <$> timedValues p
 
 :t ur
+import Debug.Trace
