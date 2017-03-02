@@ -32,13 +32,24 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let repattern t p ps = p'
-      where (pat, pat_p) = pS "pat" Nothing
-            (tx, tx_p) = pS "tx" Nothing
-            patx = grp [pat_p, tx_p]
-            p' = patx p
+let repattern t p ps = split s <$> p
+      where split s = wordsBy (==':') s
+            
+import Sound.Tidal.Utils
 
-((\(VS s) -> s) . fromJust . Data.Map.lookup s_p) <$> sound "bd"
+grp :: [Param] -> Pattern String -> ParamPattern
+grp [] _ = silence
+grp params p = (fmap lookupPattern p)
+  where lookupPattern :: String -> ParamMap
+        lookupPattern s = Map.fromList $ map (\(param,s') -> toPV param s') $ zip params $ (split s)
+        split s = wordsBy (==':') s
+        toPV :: Param -> String -> (Param, Value)
+        toPV param@(S _ _) s = (param, (VS s))
+        toPV param@(F _ _) s = (param, (VF $ read s))
+        toPV param@(I _ _) s = (param, (VI $ read s))
+
+
+((\(VS s) -> s) . fromJust . Data.Map.lookup s_p) <$> (sound "bd" # n "0")
 
 let repattern t p ps = slow t $ unwrap $ ((map (density t) ps) !!!) <$> p
 
