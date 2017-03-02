@@ -59,7 +59,7 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
     timedValues :: Pattern a -> Pattern (Arc, a)
     timedValues = withEvent (\(a,a',v) -> (a,a',(a,v)))
     ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
-    ur t ur_p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> ur_p)
+    ur t outer_p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> outer_p)
       where split s = wordsBy (==':') s
             getPat (n:xs) = (ps' !!! read n, transform xs)
             ps' = map (density t) ps
