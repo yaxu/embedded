@@ -35,7 +35,7 @@ let (pat, pat_p) = pS "pat" Nothing
 let ur t p ps = (getPat . split) <$> p
       where split s = wordsBy (==':') s
             getPat (n:xs) = (transform xs) (ps' !!! read n)
-            ps' = map density t ps
+            ps' = map (density t) ps
             transform (x:_) = transform' x
             transform _ = id
             transform' "in" = fadeIn 1
