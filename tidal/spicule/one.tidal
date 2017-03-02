@@ -37,6 +37,8 @@ let repattern t p ps = split s <$> p
             
 import Sound.Tidal.Utils
 
+
+
 grp :: [Param] -> Pattern String -> ParamPattern
 grp [] _ = silence
 grp params p = (fmap lookupPattern p)
