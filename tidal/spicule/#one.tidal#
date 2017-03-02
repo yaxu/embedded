@@ -32,7 +32,7 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let ur t p ps = (getPat . split) <$> p
+let ur t p ps = unwrap $ slow t $ (getPat . split) <$> p
       where split s = wordsBy (==':') s
             getPat (n:xs) = (transform xs) (ps' !!! read n)
             ps' = map (density t) ps
@@ -41,19 +41,6 @@ let ur t p ps = (getPat . split) <$> p
             transform' "in" = fadeIn 1
             transform' "out" = fadeOut 1
             transform' _ = id
-
-
-
-grp :: [Param] -> Pattern String -> ParamPattern
-grp [] _ = silence
-grp params p = (fmap lookupPattern p)
-  where lookupPattern :: String -> ParamMap
-        lookupPattern s = Map.fromList $ map (\(param,s') -> toPV param s') $ zip params $ (split s)
-        split s = wordsBy (==':') s
-        toPV :: Param -> String -> (Param, Value)
-        toPV param@(S _ _) s = (param, (VS s))
-        toPV param@(F _ _) s = (param, (VF $ read s))
-        toPV param@(I _ _) s = (param, (VI $ read s))
 
 
 ((\(VS s) -> s) . fromJust . Data.Map.lookup s_p) <$> (sound "bd" # n "0")
