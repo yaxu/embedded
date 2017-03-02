@@ -42,6 +42,8 @@ let ur t p ps = slow t $ unwrap $ (getPat . split) <$> p
             transform' "out" = fadeOut 1
             transform' _ = id
 
+let annotateTime p = 
+
 
 ((\(VS s) -> s) . fromJust . Data.Map.lookup s_p) <$> (sound "bd" # n "0")
 
@@ -60,3 +62,8 @@ let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmo
 d1 $ ur 32 "2:out" $ [a,b,c]
 
 hush
+
+let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
+    withEvent f p = Pattern $ \a -> map f $ arc p a
+    timedValues :: Pattern a -> Pattern (Arc, a)
+    timedValues = withEvent (\(a,a',v) -> (a,a',(a,v)))
