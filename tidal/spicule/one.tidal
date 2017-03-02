@@ -58,8 +58,8 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
     withEvent f p = Pattern $ \a -> map f $ arc p a
     timedValues :: Pattern a -> Pattern (Arc, a)
     timedValues = withEvent (\(a,a',v) -> (a,a',(a,v)))
-    -- ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
-    ur t p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> p)
+    ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
+    ur t ur_p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> ur_p)
       where split s = wordsBy (==':') s
             getPat (n:xs) = (ps' !!! read n, transform xs)
             ps' = map (density t) ps
@@ -72,7 +72,8 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             -- adjust f p = (\((s,e), v) -> slow (e-s) $ s ~> (f (s <~ density (e-s) v))) <$> timedValues p
 
 :t ur
-import Debug.Trace
 
+import Debug.Trace
+import Sound.Tidal.Utils
 
 arc (timedValues ("a b" :: Pattern String)) (4,50)
