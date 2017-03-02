@@ -32,15 +32,6 @@ let (pat, pat_p) = pS "pat" Nothing
     (tx, tx_p) = pS "tx" Nothing
     patx = grp [pat_p, tx_p]
 
-let ur t p ps = slow t $ unwrap $ (getPat . split) <$> p
-      where split s = wordsBy (==':') s
-            getPat (n:xs) = (transform xs) (ps' !!! read n)
-            ps' = map (density t) ps
-            transform (x:_) = transform' x
-            transform _ = id
-            transform' "in" = fadeIn 1
-            transform' "out" = fadeOut 1
-            transform' _ = id
 
 let annotateTime p = 
 
@@ -67,3 +58,12 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
     withEvent f p = Pattern $ \a -> map f $ arc p a
     timedValues :: Pattern a -> Pattern (Arc, a)
     timedValues = withEvent (\(a,a',v) -> (a,a',(a,v)))
+    ur t p ps = slow t $ unwrap $ (getPat . split) <$> p
+      where split s = wordsBy (==':') s
+            getPat (n:xs) = (transform xs) (ps' !!! read n)
+            ps' = map (timedValues . density t) ps
+            transform (x:_) = transform' x
+            transform _ = fmap snd
+            transform' "in" = fadeIn 1 . fmap snd
+            transform' "out" = fadeOut 1 . fmap snd
+            transform' _ = fmap snd
