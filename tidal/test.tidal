@@ -700,8 +700,7 @@ d1 $ (sound "sn:3")
 
 g <- newMVar id
 
-let globaltx :: MVar (ParamPattern -> ParamPattern) $ (ParamPattern -> IO ()) -> ParamPattern -> IO ()
+let globaltx :: MVar (ParamPattern -> ParamPattern) -> (ParamPattern -> IO ()) -> ParamPattern -> IO ()
     globaltx g d p = do f <- readMVar g
                         d $ f p
-
---    d1 p = globaltx g x1 p
+    d1 p = globaltx g x1 p
