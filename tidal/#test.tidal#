@@ -679,6 +679,6 @@ let pat = "0 0 1 1 0 1 1 1 0 1"
     mask' p p' = mask (filterValues (==True) p) p'
 
 d1 $ mask' pat $ sound "bd*10"
-d2 sile
+
 d2 $ mask' (inverse pat) $ sound "sn*10"
 
