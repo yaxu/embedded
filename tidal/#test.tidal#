@@ -687,7 +687,7 @@ let conditional :: Pattern Bool -> Pattern a -> Pattern a -> Pattern a
     conditional p pa pb = (\a b c -> if a then b else c) <$> p <*> pa <*> pb
     mask' p pa = conditional p silence pa
 
-d1 $ conditional "{1 0 0 1 0}%4" (sound "bd") (sound "sn")
+d1 $ sound $ conditional "{1 0 0 1 0}%4" ("bd") ("voodoo:3 voodoo:4")
 
 d1 $ mask' "1 1 1 1" (sound "bd")
 
