@@ -685,8 +685,11 @@ d1 $ ur 1 "{0 0 1 1 0 1 1 1 0 1}%8" [sound "bd", sound "sn:3"]
 
 let conditional :: Pattern Bool -> Pattern a -> Pattern a -> Pattern a
     conditional p pa pb = (\a b c -> if a then b else c) <$> p <*> pa <*> pb
+    mask' p pa = conditional p silence pa
 
-conditional "{1 0 0 1 0}%4" (sound "bd") (sound "sn")
+d1 $ conditional "{1 0 0 1 0}%4" (sound "bd") (sound "sn")
 
-d1 $ conditional "{t f t f*2 t f t t f t}%8" (sound "bd") (sound "sn:3")
+d1 $ mask' "1 1 1 1" (sound "bd")
+
+(sound "sn:3")
 
