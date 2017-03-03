@@ -675,6 +675,10 @@ d1 $ ur 16 (every 2 (density 2) $ "[0:out, 1 [2 3:out], 4:in]")
   
 
 let pat = "0 0 1 1 0 1 1 1 0 1"
-    inverse = not
+    inverse = (not <$>)
+    mask' p p' = mask (filterValues (==True) p) p'
 
-mask (filterValues (== True) pat) $ sound "bd*10"
+d1 $ mask' pat $ sound "bd*10"
+d2 sile
+d2 $ mask' (inverse pat) $ sound "sn*10"
+
