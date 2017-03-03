@@ -54,10 +54,6 @@ d1 $ ur 32 "2:in 3:in 4:in" $ [a,b,c]
 
 hush
 
-let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
-    withEvent f p = Pattern $ \a -> map f $ arc p a
-    timedValues :: Pattern a -> Pattern (Arc, a)
-    timedValues = withEvent (\(a,a',v) -> (a,a',(a,v)))
     ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
     ur t outer_p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> outer_p)
       where split s = wordsBy (==':') s
