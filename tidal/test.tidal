@@ -679,5 +679,5 @@ let pat = "0 0 1 1 0 1 1 1 0 1"
     mask' p p' = mask (filterValues id p) p'
     sew p pa pb = overlay (mask' p pa) (mask' (inverse p) pb)
 
-d1 $ sew (iter 4 pat) (sound "bd*10") (sound "sn:3*10")
+d1 $ sew (palindrome $ iter 4 pat) (sound "bd*10") (sound "sn:3*10")
 
