@@ -683,4 +683,6 @@ d1 $ sew (iter 4 pat) (sound "bd*10") (sound "sn:3*10")
 
 d1 $ ur 1 "{0 0 1 1 0 1 1 1 0 1}%8" [sound "bd", sound "sn:3"]
 
-let sew' p pa pb = () <*> p <*> pa <*> pb
+let conditional p pa pb = \a b c -> if a then b else c <*> p <*> pa <*> pb
+
+d1 $ conditional "{1 0 0 1 0}%4" (sound "bd") (sound "sn")
