@@ -698,6 +698,9 @@ d1 $ (sound "sn:3")
 (x2,_) <- superDirtSetters getNow
 (x3,_) <- superDirtSetters getNow
 
-global <- newMVar const
+g <- newMVar id
 
-let globaltx mv p = do <-
+let glo
+    globaltx d p = do f <- readMVar g
+                      d $ f p
+    d1 p = globaltx g x1 p
