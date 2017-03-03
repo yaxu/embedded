@@ -65,11 +65,15 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             ps' = map (density t) ps
             transform (x:_) a = transform' x a
             transform _ _ = id
-            transform' "in" (s,e) p = (traceShow (s) s) ~> (fadeIn (e-s) p)
+            transform' "in" (s,e) p = (traceShow (s*t) s*t) ~> (fadeIn (e*t - s*t) p)
             -- transform' "out" = adjust (fadeOut 1)
             transform' _ _ p = p
             adjust (a, (p, f)) = f a p
             -- adjust f p = (\((s,e), v) -> slow (e-s) $ s ~> (f (s <~ density (e-s) v))) <$> timedValues p
+
+
+0               1               2
+012345678901234567890123456789012
 
 :t ur
 
