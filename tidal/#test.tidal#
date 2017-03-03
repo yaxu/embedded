@@ -698,9 +698,17 @@ d1 $ (sound "sn:3")
 (x2,_) <- superDirtSetters getNow
 (x3,_) <- superDirtSetters getNow
 
-g <- newMVar id :: (ParamPattern -> ParamPattern)
+g <- newMVar (id :: ParamPattern -> ParamPattern)
 
 let globaltx :: MVar (ParamPattern -> ParamPattern) -> (ParamPattern -> IO ()) -> ParamPattern -> IO ()
     globaltx g d p = do f <- readMVar g
                         d $ f p
-    foo1 p = globaltx g x1 p
+    g1 p = globaltx g d1 p
+    g2 p = globaltx g d2 p
+    g3 p = globaltx g d3 p
+    setg = swapMVar g
+
+g1 $ sound "bd sn"
+
+g2 $ sound "arpy(3,8)"
+
