@@ -71,10 +71,7 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             adjust (a, (p, f)) = f a p
 
 
-d1 $ Sound.Tidal.Pattern.fadeIn 4 $ sound "bd*8"
-
-
-d1 $ ur 16 "[0:in 0] 1:in" [sound "bd*8", sound "sn*8"]
+d1 $ ur 16 "[0:in 0:out] 1:in" [sound "bd*16", sound "sn*8"]
 
 let bug p = Pattern $ \a -> arc p (trace ("bug: " ++ show a) a)
 
