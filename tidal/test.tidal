@@ -676,7 +676,7 @@ d1 $ ur 16 (every 2 (density 2) $ "[0:out, 1 [2 3:out], 4:in]")
 
 let pat = "0 0 1 1 0 1 1 1 0 1"
     inverse = (not <$>)
-    mask' p p' = mask (filterValues (==True) p) p'
+    mask' p p' = mask (filterValues id p) p'
     sew p pa pb = overlay (mask' p pa) (mask' (inverse p) pb)
 
 d1 $ sew (iter 4 pat) (sound "bd*10") (sound "sn:3*10")
