@@ -683,4 +683,4 @@ d1 $ sew (iter 4 pat) (sound "bd*10") (sound "sn:3*10")
 
 d1 $ ur 1 "{0 0 1 1 0 1 1 1 0 1}%8" [sound "bd", sound "sn:3"]
 
-let sew' p pa pb = 
+let sew' p pa pb = () <*> p <*> pa <*> pb
