@@ -681,3 +681,4 @@ let pat = "0 0 1 0 1 1 0 1"
 in
 d1 $ sew (iter 4 pat) (sound "bd*10") (sound "sn:3*10")
 
+d1 $ ur 1 "0 0 1 0 1 1 0 1" [sound "bd*10", sound "sn:3*10"]
