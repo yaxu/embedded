@@ -673,3 +673,8 @@ d1 $ ur 16 (every 2 (density 2) $ "[0:out, 1 [2 3:out], 4:in]")
    stut' 4 0.125 (|*| speed "2") $ sound "bd sn:3*2" # speed "1"
   ]
   
+
+let pat = "0 0 1 1 0 1 1 1 0 1"
+    inverse = not
+
+mask (filterValues (== True) pat) $ sound "bd*10"
