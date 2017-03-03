@@ -65,17 +65,15 @@ let withEvent :: (Event a -> Event b) -> Pattern a -> Pattern b
             ps' = map (density t) ps
             transform (x:_) a = transform' x a
             transform _ _ = id
-            transform' "in" (s,e) p = (fadeIn (e*t - s*t) ((traceShow (s*t) s*t) <~ bug p))
-            -- transform' "out" = adjust (fadeOut 1)
+            transform' "in" (s,e) p = (traceShow (s) s) ~> (Sound.Tidal.Pattern.fadeIn (e - s) (bug p))
             transform' _ _ p = p
             adjust (a, (p, f)) = f a p
-            -- adjust f p = (\((s,e), v) -> slow (e-s) $ s ~> (f (s <~ density (e-s) v))) <$> timedValues p
 
 
-d1 $ fadeIn 4 $ sound "bd*8"
+d1 $ Sound.Tidal.Pattern.fadeIn 4 $ sound "bd*8"
 
 
-d1 $ ur 2 "0:in 1:in" [sound "bd*4", sound "sn*4"]
+d1 $ ur 16 "[0:in 0] 1:in" [sound "bd*8", sound "sn*8"]
 
 let bug p = Pattern $ \a -> arc p (trace ("bug: " ++ show a) a)
 
