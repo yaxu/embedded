@@ -731,3 +731,7 @@ setg $ density 2
 let am7c = "[a4, c4, e4, g5]"
 
 d1 $ density 5 $ rarely (iter 3) $ every 2 ( # n am7c) $ struct "[x(5,8,2) x(3,8)]/5" $ n gm7
+
+
+inhabit :: Pattern String -> [(String, Pattern a)] -> Pattern a
+inhabit p ps = lookup <$>
