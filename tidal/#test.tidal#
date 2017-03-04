@@ -634,6 +634,9 @@ instance Show2 Int where
   show2 i = "int"
 
 show2 (3  :: Int)
+{-# LANGUAGE CPP, NoImplicitPrelude, BangPatterns, StandaloneDeriving,
+             MagicHash, UnboxedTuples #-}
+:set -XStandaloneDeriving, -XMagicHash
 
 d1 $ density' (2 :: Rational) $ sound "bd sn"
 
