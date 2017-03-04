@@ -735,6 +735,8 @@ d1 $ density 5 $ rarely (iter 3) $ every 2 ( # n am7c) $ struct "[x(5,8,2) x(3,8
 import Data.Maybe
 
 let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
-    inhabit ps p = unwrap $ (\s -> fromMaybe silence $ lookup s ps) <$> p
+    inhabit ps p = unwrap' $ (\s -> fromMaybe silence $ lookup s ps) <$> p
 
+
+d1 $ s $ inhabit [("a", "bd"), ("b", "sn(3,8)")] "a b"
 
