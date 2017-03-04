@@ -627,6 +627,13 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
     density' t p = do t' <- toTimePattern t
                       density t' p
 
+class Show2 a where
+  show2 :: a -> String
+
+instance Show2 Int where
+  show2 i = "int"
+
+show2 (3  :: Int)
 
 d1 $ density' (2 :: Rational) $ sound "bd sn"
 
