@@ -746,12 +746,9 @@ d1 $ n (every 2 ((+ 12) <$>) $ inhabit chords "am7c ~ gm7") # s "rash"
 let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
     inhabit ps p = unwrap' $ (\s -> fromMaybe silence $ lookup s ps) <$> p
 
-let chords = [("am7c", "[a6, c6, e6, g7]"),
-              ("gm7", "[g6, bf6, d7, f7]")
-             ]
-    arps = [("am7c", "[a6 c6 e6 g7*2]"),
-            ("gm7", "[g6 bf6 d7 f7]")
+let arps = [("am7c", "[a6 c6 e6 g7]"),
+            ("gm7", palindrome "[g6 bf6 d7 f7]")
            ]
 in
-d1 $ n (every 2 ((+ 12) <$>) $ inhabit chords "am7c [gm7 ~] gm7 [~ am7c]") # s "rash"
+d1 $ n (every 2 ((+ 12) <$>) $ inhabit arps "am7c [gm7 ~] gm7 [~ am7c]") # s "rash"
 
