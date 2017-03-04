@@ -633,6 +633,7 @@ d1 $ density' (2 :: Rational) $ sound "bd sn"
 hush
 d1 $ density' 2 $ sound "bd sn"
 
+show 3.2
 
 d1 $ density' (2) $ sound "bd sn"
 
