@@ -602,8 +602,6 @@ instance Foo Integer where
 instance Foo String where
   testA = show
 
-show (0.5)
-
 class Bar a where
   testB :: a -> String
 
@@ -618,7 +616,8 @@ testB 4 -- this doesn't
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
-instance Temporal (Ratio Integer) where
+instance Temporal (Rational) where
+  {-# SPECIALISE instance Temporal Rational #-}
   toTimePattern = pure
 
 instance Temporal (Pattern Time) where
@@ -629,7 +628,8 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
                       density t' p
 
 
-d1 $ density' "<2 1 1%2>" $ sound "bd sn"
+d1 $ density' (2 :: Rational) $ sound "bd sn"
+d1 $ density' (2 :: Rational) $ sound "bd sn"
 
 d1 $ density' (2) $ sound "bd sn"
 
@@ -716,6 +716,4 @@ setg $ density 2
 
 let am7c = "[a4, c4, e4, g5]"
 
-`,  I tried to use the notes as letters and it gives me an error,
- I’m sure some of you can help me to find a way to do that, I want then to make something like this - 
-`m1 $ density 5 $ rarely (iter 3) $ every 2 ( # n "am7c") $ struct "[x(5,8,2) x(3,8)]/5" $ n "gm7"`
+d1 $ density 5 $ rarely (iter 3) $ every 2 ( # n am7c) $ struct "[x(5,8,2) x(3,8)]/5" $ n gm7
