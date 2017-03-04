@@ -753,11 +753,10 @@ in
 d1 $ n (every 2 ((+ 12) <$>) $ inhabit arps "am7c [gm7 ~] gm7 [~ am7c]") # s "rash"
 
 let funcs :: [(String, (ParamPattern -> ParamPattern))]
-    funcs = [("id", id)
+    funcs = [("id", id),
              ("chipmunk", (|*| speed "2") . density 2),
              ("slurp", rev . chop 8)
             ]
-            
     tx ps p = unwrap $ (\f -> f p) <$> (inhabit' funcs ps)
     inhabit' :: [(String, a)] -> Pattern String -> Pattern a
     inhabit' ps p = (\s -> fromMaybe silence $ lookup s ps) <$> p
