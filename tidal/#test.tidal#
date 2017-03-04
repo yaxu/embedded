@@ -752,8 +752,9 @@ let arps = [("am7c", "[a6 c6 e6 g7]"),
 in
 d1 $ n (every 2 ((+ 12) <$>) $ inhabit arps "am7c [gm7 ~] gm7 [~ am7c]") # s "rash"
 
-let funcs = [("id", id)
-             ("chipmunk", ((|*| speed "2") . density 2)),
+let funcs :: [(String, (ParamPattern -> ParamPattern))]
+    funcs = [("id", id)
+             ("chipmunk", (|*| speed "2") . density 2),
              ("slurp", rev . chop 8)
             ]
             
