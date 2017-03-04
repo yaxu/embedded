@@ -714,3 +714,8 @@ g2 $ sound "arpy(3,8)"
 
 setg $ density 2
 
+let am7c = "[a4, c4, e4, g5]"
+
+`,  I tried to use the notes as letters and it gives me an error,
+ I’m sure some of you can help me to find a way to do that, I want then to make something like this - 
+`m1 $ density 5 $ rarely (iter 3) $ every 2 ( # n "am7c") $ struct "[x(5,8,2) x(3,8)]/5" $ n "gm7"`
