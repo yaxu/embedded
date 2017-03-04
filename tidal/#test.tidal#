@@ -616,8 +616,8 @@ testB 4 -- this doesn't
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
-instance Temporal (Rational) where
-  {-# SPECIALISE instance Temporal Rational #-}
+instance Temporal Time where
+  {-# SPECIALISE instance Temporal Time #-}
   toTimePattern = pure
 
 instance Temporal (Pattern Time) where
@@ -630,6 +630,7 @@ let density' :: Temporal a => a -> Pattern b -> Pattern b
 
 d1 $ density' (2 :: Rational) $ sound "bd sn"
 
+hush
 d1 $ density' 2 $ sound "bd sn"
 
 
