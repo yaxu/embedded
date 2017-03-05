@@ -762,4 +762,4 @@ let funcs = [("id", pure $ id),
 d1 $ tx "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
 
 d1 $ slow 2 $ tx' "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
-
+hush
