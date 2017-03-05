@@ -752,7 +752,7 @@ let arps = [("am7c", "[a6 c6 e6 g7]"),
             ("gm7", palindrome "[g6 bf6 d7 f7]")
            ]
 in
-d1 $ n (every 2 ((+ 12) <$>) $ inhabit arps "am7c [gm7 ~] gm7 [~ am7c]") # s "rash"
+d1 $ n (every 2 ((+ 12) <$>) $ fromIntegral <$> inhabit arps "am7c [gm7 ~] gm7 [~ am7c]") # s "arpy"
 
 let funcs = [("id", pure $ id),
              ("chipmunk", pure $ (|*| speed "2") . density 2),
@@ -777,7 +777,7 @@ let chords = [("am7", "[a5 c5 e5 g5]"),
               ("cmaj6", "[c4 e4 g4 a4]")
            ]
 in
-d1 $ slow 4 $ rarely ((within (0.25, 0.75) (density 1.5))) $ struct "x(7,12,4)" $ up ((floor) <$> inhabit chords "cmaj7 d7b5 dm7 gmaj7 cmaj6") # s "arpy"
+d1 $ slow 1 $ rarely ((within (0.25, 0.75) (density 1.5))) $ struct "x(7,12,4)" $ up (fromIntegral <$> inhabit chords "cmaj7 d7b5 dm7 gmaj7 cmaj6") # s "arpy"
 
 
 
