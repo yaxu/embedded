@@ -801,3 +801,6 @@ let ur :: Time -> Pattern String -> [(String, Pattern a)] -> Pattern a
 
 let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
     inhabit ps p = unwrap' $  <$> p
+
+t1 $ sound "bd"
+
