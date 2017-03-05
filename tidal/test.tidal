@@ -748,11 +748,11 @@ import Data.Maybe
 let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
     inhabit ps p = unwrap' $ (\s -> fromMaybe silence $ lookup s ps) <$> p
 
-let chords = [("am7c", "[a3 c4, e4, g3]"),
-              ("gm7", "[g4, bf3, d3, f4]")
+let chords = [("am7c", "[a3 c4, e4, g3 g4]"),
+              ("gm7", "[g4, bf3, d3 d4, f4]")
              ]
 in
-d1 $ n (every 2 ((+ 12) <$>) $ fromIntegral <$> inhabit chords "am7c [gm7 ~] gm7 [~ am7c]") # s "arpy"
+d1 $ up (every 2 ((+ 12) <$>) $ fromIntegral <$> inhabit chords "am7c [gm7 ~] gm7 [~ am7c]") # s "arpy"
 
 
 let funcs = [("id", pure $ id),
