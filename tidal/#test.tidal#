@@ -766,11 +766,11 @@ d1 $ tx "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
 d1 $ slow 2 $ tx' "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
 hush
 
-"a4" :: Pattern Int
+"a" :: Pattern Int
 
 let chords = [("am7", "[a5 c5 e5 g5]"),
               ("gm7", "[g4 bf4 d4 f5]"),
-              ("cmaj7","[c4 e4 g4 bf4]"),
+              ("cmaj7","[c5 e5 g5 bf4]"),
               ("d7b5", "[d4 gf4 af4 c5]"),
               ("dm7", "[d4 f4 a4 c5]"),
               ("gmaj7", "[g4 b4 d5 f5]"),
