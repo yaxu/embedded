@@ -759,6 +759,7 @@ let funcs = [("id", pure $ id),
     tx ps p = unwrap $ (\f -> f p) <$> (inhabit funcs ps)
     tx' ps p = unwrap' $ (\f -> f p) <$> (inhabit funcs ps)
 
-d1 $ tx "id <chipmunk ~ id>" $ sound "bd ~ mt*2 ht:2"
+d1 $ tx "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
 
-d1 $ tx' "id <chipmunk ~ id>" $ sound "{bd ~ mt*2 ht:2, kurt ~ ~}"
+d1 $ slow 2 $ tx' "{id chipmunk slurp}%4" $ sound "bd ~ mt*2 ht:2"
+
