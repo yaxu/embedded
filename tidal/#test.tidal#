@@ -854,8 +854,9 @@ you can just do
 instead of 
 <code>d1 $ sound "bass3*4" # speed (scale 1.2 3.2 $ ((+) <$> (slow 4 tri1) <*> sine1))</code>
 you can just do:
-<code>d1 $ sound "bass3*4" # speed ((slow 4 tri1) + sine1 * 2 + 1.2)</code>
+d1 $ sound "bass3*4" # speed (slow 4 tri1 + sine1 * 2 + 1.2)
 
+hush
 instead of
 <code>d1 $ up (every 3 ((+12) <$>) "1 8 [7 ~ 4]") # sound "bd"</code>
 it's simply:
