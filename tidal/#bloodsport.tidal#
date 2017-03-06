@@ -82,4 +82,6 @@ instance Integral a => Integral (Pattern a) where
 
     
 d1 $ sound "bd sn"
-  # speed pi
+  # speed 
+
+
