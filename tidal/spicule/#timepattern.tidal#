@@ -1,0 +1,22 @@
+
+instance Num a => Num (Pattern a) where
+      negate      = fmap negate
+      (+)         = liftA2 (+)
+      (*)         = liftA2 (*)
+      fromInteger = pure . fromInteger
+      abs         = fmap abs
+      signum      = fmap signum
+
+instance (Fractional a) => Fractional (Pattern a) where
+  fromRational = pure . fromRational
+  (/) = liftA2 (/)
+
+let density' :: Pattern Time -> Pattern b -> Pattern b
+    density' tp p = unwrap $ (\tv -> density tv p) <$> tp
+    slow' tp p = density (1/tp) p
+
+
+
+-- one moment..
+
+d1 $ sound "bd"
