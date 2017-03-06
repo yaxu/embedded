@@ -805,5 +805,5 @@ let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
 t1 $ sound "bd"
 
 
-ur :: Time -> ParamPattern -> [Pattern a] -> Pattern a
+ur :: Time -> (ParamPattern -> Pattern a) -> ParamPattern -> [Pattern a] -> Pattern a
 
