@@ -807,3 +807,4 @@ t1 $ sound "bd"
 
 ur :: Time -> (ParamPattern -> Pattern a) -> ParamPattern -> [Pattern a] -> Pattern a
 
+:t density
