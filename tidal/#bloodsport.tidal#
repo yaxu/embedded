@@ -1,0 +1,102 @@
+d1 $
+  struct "[x x] x"
+  $ slow 2 $ n (run 8)
+  # sound "bsperc"
+  # unit "c"
+  # speed "4"
+
+d1 $ n (run 1) # sound "bsbass"
+  # unit "c"
+  # gain "0.9"
+
+d2 $ every 4 (chop 4) $ sound "{bshihat:2 bskick [{bsperc:5 bsperc:5}%1 bskick] ~, ~  ~ bsperc}"
+  # gain "1"
+
+d4 $ (struct "[x x . [x x x . x x . ~ x . x*4]/4]" $ n "0 1 2 3" # sound "bskick")
+  # speed (scale 1 2 sine1)
+
+d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 ~"
+  |*| speed "[1,0.9]"
+  # gain "0.8"
+  # vowel "i"
+
+let txs = [("rev", rev),
+           ("in", fadeIn 1),
+           ("out", fadeOut 1),
+           ("chop", rev . chop 128),
+           ("drop", (chop' ((floor <$>) $ saw1 * 100)))
+           ("erk", (# vowel "a e i o u")),
+           ("urp", (# speed (saw1 + 1)))
+          ]
+    pats =   [("hook",
+               loopAt 2 $ chop 16 $ s "bsbass"
+              ),
+              ("kick",
+               n (off 0.125 (+1) $ off 0.25 (+2) "0(3,8)") # s "bskick"
+               # crush (every 4 (subtract 3) 7)
+              ),
+              ("perc",
+               n "<0 0 1 2(3,8)>"
+               # s "bsperc"
+               # cutoff (3000 * (slow 2 tri1) + 1000)
+               # resonance 0.3
+               # orbit 1 # room 0.5
+              ),
+              ("kick2",
+               off 0.125 (# speed 2) $ off 0.25 (# crush 4) $ n "[0 1 ~ 2*2, 3]" # sound "bskick"
+               # cutoff (slow 8 $ saw1 * 8000 + 100)
+              ),
+              ("snare",
+               density' "<1 2 4>" $ jux ("<0.5 0.25>" <<<~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
+               # orbit 1
+               # room 0.4
+               # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
+               # crush "<4 3>"
+              ),
+              ("voc",
+               off 0.125 ((|*| speed 2) . (density 2)) $ loopAt 2 $ chop 32 $ s "<bsvocals:2 bsvocals:1>"
+               # shape 0.3
+              )
+             ]
+in
+d1 $ ur' 16 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop]" pats txs
+
+
+let txs = [("rev", rev),
+           ("in", fadeIn 1),
+           ("out", fadeOut 1),
+           ("chop", rev . chop 128),
+           ("drop", (chop' ((floor <$>) $ saw1 * 100))),
+           ("erk", (# vowel "a e i o u")),
+           ("urp", (# speed (saw1 + 1)))
+          ]
+    pats = [("kick2",
+             off 0.125 (# speed 2) $ off 0.25 (# crush 4) $ n "[0 1 ~ 2*2, 3]" # sound "bskick"
+             # cutoff (slow 8 $ saw1 * 8000 + 100)
+            ),
+            ("snare",
+             density' "<1 2 4>" $ jux ("<0.5 0.25>" <<<~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
+             # orbit 1
+             # room 0.4
+             # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
+             # crush "<4 3>"
+             ),
+            ("voc",
+             off 0.125 ((|*| speed 2) . (density 2)) $ loopAt 2 $ chop 32 $ s "<bsvocals:2 bsvocals:1>"
+             # shape 0.3
+            )
+           ]
+in
+d1 $ ur' 16 "[kick2 ! ! [kick2 kick2:drop], snare:out, [voc:erk ~] ~ [~ voc] ~]" pats txs
+
+
+
+let (<<<~) :: Pattern Time -> Pattern a -> Pattern a
+    (<<<~) tp p = unwrap $ (\tv -> tv <~ p) <$> tp
+
+let (~>>>) :: Pattern Time -> Pattern a -> Pattern a
+    (~>>>) tp p = unwrap $ (\tv -> tv ~> p) <$> tp
+
+
+let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
+    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp
