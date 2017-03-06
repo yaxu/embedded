@@ -847,7 +847,14 @@ negate <$> x
 
 d1 $ sound "bass3"
 
-d1 $ n 3 # sound "bass3"
+d1 $ sound "bass3" # speed "1.2"
+you can just do
+d1 $ sound "bass3" # speed 1.2
+
+or even better:
+
+d1 $ sound "bass3*4" # speed (tri1 +sine1 * 2 + 1.2)
+
 
 d1 $ (up (every 2 (+12) $ "3 4 7 0" + "<12 0 24>") # sound "bass3") # cutoff (sine1 * (slow 3 sine1) * 3000 + 400) # resonance (slow 4 $ sine1 * 0.3 + 0.1)
 
