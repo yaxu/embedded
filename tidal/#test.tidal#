@@ -824,7 +824,7 @@ instance (Fractional a) => Fractional (Pattern a) where
   (/) = liftA2 (/)
 
 
-
+density' 0 "bd sn"
 
 
 ("2 3" + "3") :: Pattern Int
@@ -832,8 +832,8 @@ instance (Fractional a) => Fractional (Pattern a) where
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
 
-d1 $ density' 1.5 $ sound "bd sn"
-hush
+d1 $ density' (1/4 :: Pattern Rational) $ sound "bd sn"
+
 sine1 + sine1 + sine1
 
 let x = "2" :: Pattern Time
