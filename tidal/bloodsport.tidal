@@ -65,7 +65,7 @@ let txs = [("rev", rev),
              # crush "<4 3>"
              ),
             ("voc",
-             loopAt 2 $ chop 32 $ s "bsvocals:2"
+             loopAt 2 $ chop 32 $ s "<bsvocals:2 bsvocals:1>"
              # shape 0.3
             )
            ]
