@@ -822,7 +822,7 @@ instance Num a => Num (Pattern a) where
       signum      = fmap signum
 
 
-("2 3" :: Pattern Time) + ("3" :: Pattern Time)
+("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' t p = do t' <- t
