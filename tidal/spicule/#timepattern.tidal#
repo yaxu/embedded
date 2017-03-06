@@ -13,14 +13,12 @@ instance (Fractional a) => Fractional (Pattern a) where
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
-    slow' tp p = density (1/tp) p
+    slow' tp p = density' (1/tp) p
     chop' tp p = unwrap $ (\tv -> chop tv p) <$> tp
 
-n
 
 
-
-d1 $ every 4 (# (speed 2 # room 0.9 # size 0.9)) $ jux rev $ density' "1 2 [3 1.5]" $ sound "mt lt mt ht"
+d1 $ slow' "<2 4 1>" $ every 4 (# (speed 2 # room 0.9 # size 0.9)) $ jux rev $ density' "1 2 [3 1.5]" $ sound "mt lt mt ht"
   # cutoff (every 4 (const 5000) $ (slow 8 saw1) * 400 + 500)
   # resonance (slow 4 $ tri1 * 0.2 + 0.1)
   # orbit 1
@@ -28,6 +26,7 @@ d1 $ every 4 (# (speed 2 # room 0.9 # size 0.9)) $ jux rev $ density' "1 2 [3 1.
 d2 $ jux ((1 <~) . (|*| speed 1.5)) $ chop' "<2 64 128 32 2>" $ density' "1 2" $ sound "drum(3,8,[0 4]/2)"
   # shape 0.8
 
+d3 $ n "d7" # s "rash"
 
 
 
