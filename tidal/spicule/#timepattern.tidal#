@@ -17,6 +17,18 @@ let density' :: Pattern Time -> Pattern b -> Pattern b
 
 
 
--- one moment..
 
-d1 $ sound "bd"
+
+
+d1 $ jux rev $ density' "1 2 [3 1.5]" $ sound "mt lt mt ht"
+  # cutoff (saw1 * 400 + 500)
+
+
+
+
+
+
+
+
+
+
