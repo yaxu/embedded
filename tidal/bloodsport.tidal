@@ -21,30 +21,30 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # vowel "i"
 
 
+d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc ! ! perc:drop]" pats txs
+
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
            ("chop", rev . chop 128),
            ("drop", (chop' ((floor <$>) $ saw1 * 100)))
           ]
-in 
-d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc ! ! perc:drop]"
-  [("hook",
-    loopAt 2 $ chop 16 $ s "bsbass"
-   ),
-   ("kick",
-    n (off 0.125 (+1) $ off 0.25 (+2) "0(3,8)") # s "bskick"
-    # crush (every 4 (subtract 3) 7)
-   ),
-   ("perc",
-    n "<0 0 1 2(3,8)>"
-    # s "bsperc"
-    # cutoff (3000 * (slow 2 tri1) + 1000)
-    # resonance 0.3
-    # orbit 1 # room 0.5
-   )
-  ]
-  txs
+    pats =   [("hook",
+               loopAt 2 $ chop 16 $ s "bsbass"
+              ),
+              ("kick",
+               n (off 0.125 (+1) $ off 0.25 (+2) "0(3,8)") # s "bskick"
+               # crush (every 4 (subtract 3) 7)
+              ),
+              ("perc",
+               n "<0 0 1 2(3,8)>"
+               # s "bsperc"
+               # cutoff (3000 * (slow 2 tri1) + 1000)
+               # resonance 0.3
+               # orbit 1 # room 0.5
+              )
+             ]
+
 
 ur' :: Time -> Pattern String -> [(String, Pattern a)] -> [(String, Pattern a -> Pattern a)] -> Pattern a
 ur' t outer_p ps fs = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> outer_p)
