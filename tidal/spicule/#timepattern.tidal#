@@ -33,7 +33,7 @@ d3 $ jux rev $ (n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 $ "<d7 g6>(3,8) ~ a6
 
 d4 $ sound "gabba(3,8)"
 
--- it
+-- it works!
 
 
 
