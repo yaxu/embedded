@@ -65,7 +65,6 @@ d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop
 
 
 
-
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
