@@ -821,6 +821,9 @@ instance Num a => Num (Pattern a) where
       abs         = fmap abs
       signum      = fmap signum
 
+instance (Real a, Ord a) => Real (Pattern a)
+
+
 ("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
