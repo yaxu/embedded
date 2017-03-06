@@ -857,9 +857,15 @@ d1 $ sound "bass3*4" # speed (scale 1.2 3.2 $ ((+) <$> (slow 4 tri1) <*> sine1))
 you can just do:
 d1 $ sound "bass3*4" # speed ((slow 4 tri1) + sine1 * 2 + 1.2)
 
+and with a quick re-jig of the definition of <code>density</code> et al:
 
+<code>
+density tp p = unwrap $ (\tv -> density' tv p) <$> tp
+  where density' :: Time -> Pattern a -> Pattern a
+        density' r p = withResultTime (/ r) $ withQueryTime (* r) p
+</code>
 
-
+let density tp p = unwrap $ (\tv -> withResultTime (/ r) $ withQueryTime (* r) p) <$> tp
 
 d1 $ (up (every 2 (+12) $ "3 4 7 0" + "<12 0 24>") # sound "bass3") # cutoff (sine1 * (slow 3 sine1) * 3000 + 400) # resonance (slow 4 $ sine1 * 0.3 + 0.1)
 
