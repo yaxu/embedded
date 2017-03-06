@@ -57,7 +57,7 @@ let ur' :: Time -> Pattern String -> [(String, Pattern a)] -> [(String, Pattern 
             transform' _ _ p = p
             twiddle f (s,e) p = s ~> (f (e-s) p)
 
-instance (Floating a =>) Floating (Pattern a) where
+instance Floating a => Floating (Pattern a) where
   pi = pure pi
   exp = liftA2 (exp)
   log = liftA2 (log)
