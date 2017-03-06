@@ -827,7 +827,7 @@ instance Num a => Num (Pattern a) where
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
 
-
+hush
 d1 $ density' "4 3" $ sound "bd sn"
 
 let x = "2" :: Pattern Time
