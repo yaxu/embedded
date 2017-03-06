@@ -808,4 +808,4 @@ ur :: Time -> (ParamPattern -> Pattern a) -> ParamPattern -> [Pattern a] -> Patt
 
 density' (p "2 3" :: Pattern Time) "bd sn"
 
-density' (2 :: Time) "bd sn"
+density' (2) "bd sn"
