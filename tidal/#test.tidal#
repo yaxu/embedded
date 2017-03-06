@@ -591,7 +591,6 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 density :: Patternable a -> Pattern a
 
 
-:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Foo a where
   testA :: a -> String
@@ -612,12 +611,12 @@ testA "4" -- this works
 
 testB 4 -- this doesn't
 
+:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
 instance Temporal Time where
-  {-# SPECIALISE instance Temporal Time #-}
   toTimePattern = pure
 
 instance Temporal (Pattern Time) where
@@ -807,4 +806,6 @@ t1 $ sound "bd"
 
 ur :: Time -> (ParamPattern -> Pattern a) -> ParamPattern -> [Pattern a] -> Pattern a
 
-:t density
+density' (p "2 3" :: Pattern Time) "bd sn"
+
+density' (2 :: Time) "bd sn"
