@@ -835,3 +835,11 @@ sine1 + sine1 + sine1
 let x = "2" :: Pattern Time
 
 negate <$> x
+
+d1 $ sound "bass3"
+
+d1 $ n 3 # sound "bass3"
+
+d1 $ n ("3 4" + "<12 0 24>") # sound "bass3"
+
+
