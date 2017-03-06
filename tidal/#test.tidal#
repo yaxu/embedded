@@ -825,8 +825,8 @@ instance Num a => Num (Pattern a) where
 ("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
-    density' t p = do t' <- t
-                      density t' p
+    density' tp p = unwrap $ (\tv -> density tv p) <$> tp
+
 
 d1 $ density' "4 3" $ sound "bd sn"
 
