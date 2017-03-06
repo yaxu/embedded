@@ -20,8 +20,9 @@ let density' :: Pattern Time -> Pattern b -> Pattern b
 
 
 
-d1 $ jux rev $ density' "1 2 [3 1.5]" $ sound "mt lt mt ht"
-  # cutoff (saw1 * 400 + 500)
+d1 $ every 4 (# speed 2 # room 0.8) $ jux rev $ density' "1 2 [3 1.5]" $ sound "mt lt mt ht"
+  # cutoff (every 4 (const 5000) $ (slow 8 saw1) * 400 + 500)
+  # resonance (slow 4 $ tri1 * 0.2 + 0.1)
 
 
 
