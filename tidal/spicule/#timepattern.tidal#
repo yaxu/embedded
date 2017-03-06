@@ -37,7 +37,13 @@ d4 $ sound "gabba(3,8)"
 
 d1 $ n (off 0.125 (+ "<12 7>") "d6 . d7 f6") # sound "pulse"
   # crush "<5 4 3>"
+  # cutoff 400
 
-let x = [("a", "bd(3,8)")]
+d1 $ slow 4 $ sound "bd ~ sn:1 ~ bd ~ sn:1 bd bd ~ sn:1 ~ cr bd bd bd"
+  # cutoff 1000
+
+
+let x = [("a", "bd sn ")
+        ]
 in
-d2 $ sound (inhabit x"a"
+d2 $ sound (inhabit x "a a/2")
