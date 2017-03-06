@@ -57,26 +57,3 @@ let ur' :: Time -> Pattern String -> [(String, Pattern a)] -> [(String, Pattern 
             transform' _ _ p = p
             twiddle f (s,e) p = s ~> (f (e-s) p)
 
-instance Enum a => Enum (Pattern a) where
-  toEnum = pure . toEnum
-  fromEnum p = fromEnum $ thd' $ head $ arc p (0,1)
-
-instance Real a => Real (Pattern a) where
-  toRational p = toRational $ thd' $ head $ arc p (0,1)
-
-instance Integral a => Integral (Pattern a) where
-  toInteger p = toInteger $ thd' $ head $ arc p (0,1)
-
-    
-d1 $ sound "bd sn"
-  # speed 
-
-
-d1 $ stack [slow 77  $ striate' 4029 (30/100) $ sound "numbers" # slow 7 (pan (sine1)),
-            slow 66 $ striate' 2029 (25/100) $ sound "numbers:1? numbers:4?" # slow 5 (pan (sine1)),
-            slow 35 $ striate' 6029 (15/100) $ sound "numbers:3" # slow 25 (pan (sine1))]
-
-d8 $ sound "numbers:1*5 numbers*21" # cutoff (scale (-20) 3000 $ slow 99 $ sine1)
-  # resonance "0.3" # speed (slow 4 $ scale (-1) 99 $ tri1) # pan (scale (-1) 1 $ slow 11 $ sine1) # delay (run 4) # gain (scale 0.4 0.8 sine1)
-  # orbit "1"
-
