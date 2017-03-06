@@ -52,7 +52,7 @@ let txs = [("rev", rev),
            ("drop", (chop' ((floor <$>) $ saw1 * 100)))
           ]
     pats = [("kick",
-             off 0.125 (# speed 2) $ off 0.25 (# crush 4) $ n "0 1 ~ 2*2" # sound "bskick"
+             off 0.125 (# speed 2) $ off 0.25 (# crush 4) $ n "[0 1 ~ 2*2, 3]" # sound "bskick"
              # cutoff (slow 8 $ saw1 * 8000 + 100)
             )
            ]
