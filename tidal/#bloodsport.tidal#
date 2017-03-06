@@ -51,7 +51,8 @@ let txs = [("rev", rev),
            ("chop", rev . chop 128),
            ("drop", (chop' ((floor <$>) $ saw1 * 100)))
           ]
-    pats = [("kick", sound "bskick")
+    pats = [("kick", off 0.25 (# crush 4) $ n "0 1 ~ 2*2" # sound "bskick")
            ]
 in
-d1 $ ur' 16 "kick" pats txs
+d1 $ ur' 16 "kick ! ! [kick kick:drop]" pats txs
+
