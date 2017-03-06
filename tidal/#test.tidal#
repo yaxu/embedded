@@ -811,4 +811,15 @@ density' (p "2 3" :: Pattern Time) "bd sn"
 
 density' (2) "bd sn"
 
+instance Num b => Pattern Time where
+      negate p = negate <$> p
 
+      (+)         = liftA2 (+)
+      (*)         = liftA2 (*)
+      fromInteger = pure . fromInteger
+      abs         = fmap abs
+      signum      = fmap signum
+
+let x = "2" :: Pattern Time
+
+negate <$> x
