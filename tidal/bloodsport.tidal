@@ -24,10 +24,11 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
-           ("chop", rev . chop 128)
+           ("chop", rev . chop 128),
+           ("drop", (chop' ((floor <$>) $ saw1 * 100)))
           ]
 in 
-d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc]"
+d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc ! ! perc:drop]"
   [("hook",
     loopAt 2 $ chop 16 $ s "bsbass"
    ),
