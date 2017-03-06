@@ -821,7 +821,6 @@ instance Num a => Num (Pattern a) where
       abs         = fmap abs
       signum      = fmap signum
 
-
 ("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
@@ -840,7 +839,8 @@ d1 $ sound "bass3"
 
 d1 $ n 3 # sound "bass3"
 
-d1 $ n ("3 4" + "<12 0 24>") # sound "bass3"
-  # cutoff (scale 1 3000 $ sine1 * (slow 2 sine1))
+d1 $ n ("{3 4 7 0}" + "<12 0 24>") # sound "bass3"
+  # cutoff (scale 100 3000 $ sine1 * (slow 2 sine1))
+  # resonance "0.3"
 
 
