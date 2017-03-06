@@ -68,6 +68,11 @@ d1 $ ur' 16 "[kick ! ! [kick kick:drop], snare]" pats txs
 
 
 
+let (<<<~) :: Pattern Time -> Pattern a -> Pattern a
+    (<<<~) tp p = unwrap $ (\tv -> tv <~ p) <$> tp
+
+let (~>>>) :: Pattern Time -> Pattern a -> Pattern a
+    (~>>>) tp p = unwrap $ (\tv -> tv ~> p) <$> tp
 
 
 let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
