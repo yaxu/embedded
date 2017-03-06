@@ -612,7 +612,7 @@ instance Bar Int where
 
 testB 4
 
-:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
+:set -XFlexibleInstances
 
 class Temporal a where
   toTimePattern :: a -> Pattern Time
@@ -812,12 +812,16 @@ density' (p "2 3" :: Pattern Time) "bd sn"
 density' (2) "bd sn"
 
 instance Num (Pattern Time) where
-      negate p    = fmap negate
+      negate      = fmap negate
       (+)         = liftA2 (+)
       (*)         = liftA2 (*)
       fromInteger = pure . fromInteger
       abs         = fmap abs
       signum      = fmap signum
+
+("2 3" :: Pattern Time) + ("3" :: Pattern Time)
+
+
 
 let x = "2" :: Pattern Time
 
