@@ -591,7 +591,6 @@ d1 $ sound "cyclo16(3,8)" # legato "0.4"
 density :: Patternable a -> Pattern a
 
 
-:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Foo a where
   testA :: a -> String
@@ -602,22 +601,23 @@ instance Foo Integer where
 instance Foo String where
   testA = show
 
+testA "4"
+testA 4
+
 class Bar a where
   testB :: a -> String
 
 instance Bar Int where
   testB = show
 
-testA "4" -- this works
+testB 4
 
-testB 4 -- this doesn't
-
+:set -XTypeSynonymInstances -XFlexibleInstances -XRankNTypes
 
 class Temporal a where
   toTimePattern :: a -> Pattern Time
 
 instance Temporal Time where
-  {-# SPECIALISE instance Temporal Time #-}
   toTimePattern = pure
 
 instance Temporal (Pattern Time) where
@@ -804,3 +804,21 @@ let inhabit :: [(String, Pattern a)] -> Pattern String -> Pattern a
 
 t1 $ sound "bd"
 
+
+ur :: Time -> (ParamPattern -> Pattern a) -> ParamPattern -> [Pattern a] -> Pattern a
+
+density' (p "2 3" :: Pattern Time) "bd sn"
+
+density' (2) "bd sn"
+
+instance Num (Pattern Time) where
+      negate p    = fmap negate
+      (+)         = liftA2 (+)
+      (*)         = liftA2 (*)
+      fromInteger = pure . fromInteger
+      abs         = fmap abs
+      signum      = fmap signum
+
+let x = "2" :: Pattern Time
+
+negate <$> x
