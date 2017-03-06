@@ -823,6 +823,7 @@ instance Num a => Num (Pattern a) where
 
 instance (Real a, Ord a) => Real (Pattern a)
 
+:t 3.4 
 
 ("2 3" + "3") :: Pattern Int
 
