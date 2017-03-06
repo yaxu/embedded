@@ -877,3 +877,17 @@ while still supporting the original syntax:
 d1 $ n ((+) <$> ((+) <$> "1 2 3" <*> slow 3 "0 1") <*> slow 2 "3 1") # sound "voodoo"
 
 d1 $ n ("1 2 3" + slow 3 "0 1" + slow 2 "3 1") # sound "voodoo"
+
+
+instance Enum a => Enum (Pattern a) where
+  toEnum = pure . toEnum
+  fromEnum p = fromEnum $ thd' $ head $ arc p (0,1)
+
+instance Real a => Real (Pattern a) where
+  toRational p = toRational $ thd' $ head $ arc p (0,1)
+
+instance (Ord a) => Ord (Pattern a) where
+  compare p1 p2 = compare (thd' $ head $ arc p1 (0,1)) (thd' $ head $ arc p2 (0,1))
+
+instance Integral a => Integral (Pattern a) where
+  toInteger p = toInteger $ thd' $ head $ arc p (0,1)
