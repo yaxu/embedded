@@ -61,6 +61,9 @@ instance Enum a => Enum (Pattern a) where
   toEnum = pure . toEnum
   fromEnum p = fromEnum $ thd' $ head $ arc p (0,1)
 
+instance Real a => Real (Pattern a) where
+  toRational p = toRational $ thd' $ head $ arc p (0,1)
+
 instance Integral a => Integral (Pattern a) where
   toInteger p = toInteger $ thd' $ head $ arc p (0,1)
 
