@@ -51,11 +51,17 @@ let txs = [("rev", rev),
            ("chop", rev . chop 128),
            ("drop", (chop' ((floor <$>) $ saw1 * 100)))
           ]
-    pats = [("kick", off 0.25 (# crush 4) $ n "0 1 ~ 2*2" # sound "bskick")
+    pats = [("kick",
+             off 0.125 (# spe) $ off 0.25 (# crush 4) $ n "0 1 ~ 2*2" # sound "bskick"
+             # cutoff (slow 8 $ saw1 * 8000 + 100)
+            )
            ]
 in
 d1 $ ur' 16 "kick ! ! [kick kick:drop]" pats txs
 
 
+
+
+
 let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
-    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>))) <$> tp
+    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp
