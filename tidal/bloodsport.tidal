@@ -54,12 +54,12 @@ let txs = [("rev", rev),
                # crush "<4 3>"
               ),
               ("voc",
-               off 0.125 ((|*| speed 2) . (density 2)) $ loopAt 2 $ chop 32 $ s "<bsvocals:2 bsvocals:1>"
+               loopAt 2 $ chop 32 $ s "<bsvocals:2>"
                # shape 0.3
               )
              ]
 in
-d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop] [kick2 ! ! kick2:drop, kick, ~ ~ [~ voc] ~]" pats txs
+d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop] [kick2 ! ! kick2:drop, kick, ~ ~ [~ voc] ~, snare]" pats txs
 
 
 let txs = [("rev", rev),
