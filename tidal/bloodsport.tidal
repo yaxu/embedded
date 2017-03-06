@@ -20,6 +20,8 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # gain "1.1"
   # vowel "i"
 
+d3 silence
+
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
