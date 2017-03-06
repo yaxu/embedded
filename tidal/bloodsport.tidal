@@ -59,7 +59,7 @@ let txs = [("rev", rev),
               )
              ]
 in
-d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop] [kick2 ! ! kick2:drop, kick, ~ ~ [~ voc] ~, snare]" pats txs
+d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare]" pats txs
 
 
 let txs = [("rev", rev),
