@@ -56,7 +56,7 @@ let txs = [("rev", rev),
              # cutoff (slow 8 $ saw1 * 8000 + 100)
             ),
             ("snare",
-             jux (0.5 <~)$ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
+             jux ("<0.5 0.25>" <<<~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
              # orbit 1
              # room 0.4
              # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
