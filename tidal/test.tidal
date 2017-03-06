@@ -811,8 +811,6 @@ density' (p "2 3" :: Pattern Time) "bd sn"
 
 density' (2) "bd sn"
 
-:set -XFlexibleInstances
-
 instance Num a => Num (Pattern a) where
       negate      = fmap negate
       (+)         = liftA2 (+)
@@ -821,15 +819,21 @@ instance Num a => Num (Pattern a) where
       abs         = fmap abs
       signum      = fmap signum
 
+instance (Fractional a) => Fractional (Pattern a) where
+  fromRational = pure . fromRational
+  (/) = liftA2 (/)
+
+
+
+
 
 ("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
 
+d1 $ density' 1.5 $ sound "bd sn"
 hush
-d1 $ density' "4 3" $ sound "bd sn"
-
 sine1 + sine1 + sine1
 
 let x = "2" :: Pattern Time
@@ -840,6 +844,10 @@ d1 $ sound "bass3"
 
 d1 $ n 3 # sound "bass3"
 
-d1 $ n ("3 4" + "<12 0 24>") # sound "bass3"
+d1 $ up (every 2 (+ 12) $ "{3 4 7 0}" + "<12 0 24>") # sound "bass3"
+  # cutoff (scale 100 3000 $ sine1 * (slow 2 sine1))
+  # resonance "0.3"
 
-
+d1 $ up (every 2 ((+ 12) <$>) $ (+) <$> "{3 4 7 0}" <*> "<12 0 24>") # sound "bass3"
+  # cutoff (scale 100 3000 $ (*) <$> sine1 <*> (slow 2 sine1))
+  # resonance "0.3"
