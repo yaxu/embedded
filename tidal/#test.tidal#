@@ -830,6 +830,8 @@ let density' :: Pattern Time -> Pattern b -> Pattern b
 hush
 d1 $ density' "4 3" $ sound "bd sn"
 
+sine1 + sine1 + sine1
+
 let x = "2" :: Pattern Time
 
 negate <$> x
