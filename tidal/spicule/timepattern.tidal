@@ -35,4 +35,6 @@ d4 $ sound "gabba(3,8)"
 
 
 
+d1 $ n (off 0.125 (+ "<12 7>") "d6 . d7 f6") # sound "pulse"
+  # crush "<5 4 3>"
 
