@@ -28,7 +28,7 @@ d2 $ jux ((1 <~) . (|*| speed 1.5)) $ chop' "<2 64 128 32 2>" $ density' "1 2" $
 
 d3 $ jux rev $ (n (off 0.125 (+12) $ off 0.125 (+7) $ slow 2 $ "d7(3,8) ~ a6*2 d6*2") # s "rash")
   # shape 0.4
-  # cutoff (saw1 * 2000 + 300)
+  # cutoff (every 2 (*2) $ saw1 * 2000 + 300)
   # resonance (every 3 (+0.2) 0.2)
 
 
