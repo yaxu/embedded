@@ -847,7 +847,3 @@ d1 $ n 3 # sound "bass3"
 d1 $ up (every 2 (+ 12) $ "{3 4 7 0}" + "<12 0 24>") # sound "bass3"
   # cutoff (100 + 3000 * sine1 * (slow 2 sine1))
   # resonance "0.3"
-
-d1 $ up (every 2 ((+ 12) <$>) $ (+) <$> "{3 4 7 0}" <*> "<12 0 24>") # sound "bass3"
-  # cutoff ( $ (*) <$> sine1 <*> (slow 2 sine1))
-  # resonance "0.3"
