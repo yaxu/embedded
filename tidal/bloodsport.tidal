@@ -27,7 +27,7 @@ let txs = [("rev", rev),
            ("chop", rev . chop 128)
           ]
 in 
-d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev kick:chop, perc]"
+d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc]"
   [("hook",
     loopAt 2 $ chop 16 $ s "bsbass"
    ),
