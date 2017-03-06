@@ -38,6 +38,9 @@ d1 $ ur' 16 "[~ hook ! !, kick:in kick ! !, perc]"
       )
     ]
 
+import Data.Maybe
+import Sound.Tidal.Utils
+
 let ur' :: Time -> Pattern String -> [(String, Pattern a)] -> [(String, Pattern a -> Pattern a)] -> Pattern a
     ur' t outer_p ps fs = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> outer_p)
       where split s = wordsBy (==':') s
