@@ -73,4 +73,3 @@ d8 $ sound "numbers:1*5 numbers*21" # cutoff (scale (-20) 3000 $ slow 99 $ sine1
   # resonance "0.3" # speed (slow 4 $ scale (-1) 99 $ tri1) # pan (scale (-1) 1 $ slow 11 $ sine1) # delay (run 4) # gain (scale 0.4 0.8 sine1)
   # orbit "1"
 
-hush
