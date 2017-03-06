@@ -14,9 +14,9 @@ instance (Fractional a) => Fractional (Pattern a) where
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
     slow' tp p = density (1/tp) p
+    chop' tp p = unwrap $ (\tv -> chop tv p) <$> tp
 
-
-
+n
 
 
 
@@ -25,7 +25,7 @@ d1 $ every 4 (# (speed 2 # room 0.9 # size 0.9)) $ jux rev $ density' "1 2 [3 1.
   # resonance (slow 4 $ tri1 * 0.2 + 0.1)
   # orbit 1
 
-d2 $ jux (rev . chop 2) $ density' "1 2" $ sound "drum(3,8,[0 4]/2)"
+d2 $ jux ((1 <~) . (|*| speed 1.5)) $ chop' "<2 64 128 32 2>" $ density' "1 2" $ sound "drum(3,8,[0 4]/2)"
   # shape 0.8
 
 
