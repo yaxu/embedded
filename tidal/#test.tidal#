@@ -832,7 +832,7 @@ density' 0 "bd sn"
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
 
-d1 $ density' (0.5 :: Pattern Rational) $ sound "bd sn"
+d1 $ sound "bd sn"
 
 1/3 :: Pattern Rational
 (1%3) :: Pattern Rational
