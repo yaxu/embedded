@@ -20,9 +20,6 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # gain "0.8"
   # vowel "i"
 
-
-d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc ! ! perc:drop]" pats txs
-
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
@@ -44,6 +41,8 @@ let txs = [("rev", rev),
                # orbit 1 # room 0.5
               )
              ]
+in
+d1 $ ur' 16 "[~ hook ! !, kick:in kick kick:rev [kick kick:chop], perc ! ! perc:drop]" pats txs
 
 
 ur' :: Time -> Pattern String -> [(String, Pattern a)] -> [(String, Pattern a -> Pattern a)] -> Pattern a
