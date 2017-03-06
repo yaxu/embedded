@@ -60,6 +60,7 @@ let txs = [("rev", rev),
              # orbit 1
              # room 0.4
              # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
+             # crush "<4 3>"
              )
            ]
 in
