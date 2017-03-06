@@ -841,6 +841,8 @@ sine1 + sine1 + sine1
 
 let x = "2" :: Pattern Time
 
+d1 $ sound $ density' (5/3) "bd sn"
+
 negate <$> x
 
 d1 $ sound "bass3"
