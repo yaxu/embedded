@@ -21,6 +21,12 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # vowel "i"
 
 
-d1 $ ur' 16 "[hook, ]" $ [("main", loopAt 2 $ chop 16 $  "bsbass"),
-                          ("drum", s "bsdrum")
-                         ]
+d1 $ ur' 16 "[hook, kick]"
+  $ [("hook",
+      loopAt 2 $ chop 16 $ s "bsbass"
+     ),
+     ("kick",
+      n 0 # s "bskick(3,8)"
+      # crush (every 2 (+2) 5)
+     )
+    ]
