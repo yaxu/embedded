@@ -45,3 +45,23 @@ in
 d1 $ ur' 16 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop]" pats txs
 
 
+let txs = [("rev", rev),
+           ("in", fadeIn 1),
+           ("out", fadeOut 1),
+           ("chop", rev . chop 128),
+           ("drop", (chop' ((floor <$>) $ saw1 * 100)))
+          ]
+    pats = [("kick",
+             off 0.125 (# speed 2) $ off 0.25 (# crush 4) $ n "0 1 ~ 2*2" # sound "bskick"
+             # cutoff (slow 8 $ saw1 * 8000 + 100)
+            )
+           ]
+in
+d1 $ ur' 16 "kick ! ! [kick kick:drop]" pats txs
+
+
+
+
+
+let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
+    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp
