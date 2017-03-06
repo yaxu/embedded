@@ -65,3 +65,6 @@ d1 $ sound "bd sn"
   # speed 
 
 
+d1 $ stack [slow 77  $ striate' 4029 (30/100) $ sound "numbers" # slow 7 (pan (sine1)),
+            slow 66 $ striate' 2029 (25/100) $ sound "numbers:1? numbers:4?" # slow 5 (pan (sine1)),
+            slow 35 $ striate' 6029 (15/100) $ sound "numbers:3" # slow 25 (pan (sine1))]
