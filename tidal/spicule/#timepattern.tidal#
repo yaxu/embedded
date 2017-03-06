@@ -35,12 +35,15 @@ d4 $ sound "gabba(3,8)"
 
 
 
-d1 $ n (off 0.125 (+ "<12 7>") "d6 . d7 f6") # sound "pulse"
-  # crush "<5 4 3>"
-  # cutoff 400
 
-d1 $ slow 4 $ sound "bd ~ sn:1 ~ bd ~ sn:1 bd bd ~ sn:1 ~ cr bd bd bd"
+d1 $ runWith 4 (density 2 . (|*| speed 1.2)) $ slow 4 $ jux (rev . (# speed 1.5)) $ sound "bd ~ sn:1 ~ bd ~ sn:1 bd bd ~ sn:1 ~ cr bd bd bd"
   # cutoff 1000
+  # resonance 0.3
+  # crush 5
+
+d2 $ n (off 0.125 (+ "<12 7>") "d6 . d7 f6") # sound "pulse"
+  # crush "<5 4 3>"
+  # cutoff (saw1 )
 
 
 let x = [("a", "bd sn ")
