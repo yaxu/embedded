@@ -56,3 +56,6 @@ let txs = [("rev", rev),
 in
 d1 $ ur' 16 "kick ! ! [kick kick:drop]" pats txs
 
+
+let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
+    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>))) <$> tp
