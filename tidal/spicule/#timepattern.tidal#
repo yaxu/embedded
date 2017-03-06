@@ -26,7 +26,10 @@ d1 $ slow' "<2 4 1>" $ every 4 (# (speed 2 # room 0.9 # size 0.9)) $ jux rev $ d
 d2 $ jux ((1 <~) . (|*| speed 1.5)) $ chop' "<2 64 128 32 2>" $ density' "1 2" $ sound "drum(3,8,[0 4]/2)"
   # shape 0.8
 
-d3 $ n "d7" # s "rash"
+d3 $ n (off 0.125 (+7) $ slow 2 $ "d7(3,8) ~ a6 d6") # s "rash"
+  # shape 0.5
+  # cutoff (saw1 * 300)
+  # resonance 0.4
 
 
 
