@@ -821,18 +821,21 @@ instance Num a => Num (Pattern a) where
       abs         = fmap abs
       signum      = fmap signum
 
-instance (Real a, Ord a) => Real (Pattern a)
+instance (Fractional a) => Fractional (Pattern a) where
+  fromRational = pure . fromRational
+  (/) = liftA2 (/)
 
-:t 3.4 
+
+
+
 
 ("2 3" + "3") :: Pattern Int
 
 let density' :: Pattern Time -> Pattern b -> Pattern b
     density' tp p = unwrap $ (\tv -> density tv p) <$> tp
 
+d1 $ density' 1.5 $ sound "bd sn"
 hush
-d1 $ density' "4 3" $ sound "bd sn"
-
 sine1 + sine1 + sine1
 
 let x = "2" :: Pattern Time
