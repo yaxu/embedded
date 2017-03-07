@@ -927,7 +927,7 @@ d2 $ jux rev $ n (discretise 16 $ choose [35,36,37,38,39,39,41,42,80,81,83
 d1 $ sound "bd sd8:2 sn:2"
 
 
-d2 $ n "[f6 a7 c6 e7, g8 g7]"
+d2 $ jux rev $ n (offadd 0.25 7 $ slow 2 "[f6(3,8) a7(3,8) c6*2 e7*2]")
   # sound "rash"
   # gain "1.1"
 
