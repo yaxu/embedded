@@ -900,11 +900,12 @@ instance Integral a => Integral (Pattern a) where
 
 
 
+cps 0.5
 
+d1 $ sound "arpy"
+  # speed 0.
 
-d1 $ sound "arpy arpy:2 cp:1 arpy:3"
-
-d2 $ sound "bd bd bd bd bd bd bd bd bd bd"
+d2 $ sound "cp sn:2"
 
 
 
