@@ -902,9 +902,9 @@ instance Integral a => Integral (Pattern a) where
 
 
 
-d1 $ sound "bd sn lt mt"
+d1 $ sound "arpy arpy:2 cp:1 arpy:3"
 
-
+d2 $ sound "bd bd bd bd bd bd bd bd bd bd"
 
 
 
