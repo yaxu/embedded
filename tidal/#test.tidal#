@@ -924,3 +924,8 @@ d2 $ jux rev $ n (discretise 16 $ choose [35,36,37,38,39,39,41,42,80,81,83
   # cutoff (slow 4 $ saw1 * 2000 + 500)
   # resonance 0.2
 
+d1 $ sound "bd*32"
+
+d1 $ sound "[feel feel:2]*4"
+  # vowel "e i o u"
+  # gain "1.2"
