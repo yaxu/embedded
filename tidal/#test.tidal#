@@ -918,4 +918,10 @@ d1 $ iter 4 $ loopAt 8 $ slow 4 $ striate 64 $ sound "bev*4"
   # gain "1.3"
 
 
-d2 $ n (discretise 16 $ choose [35,36,37,38,39,39]) # sound "pulse"
+d2 $ jux rev $ n (discretise 16 $ choose [35,36,37,38,39,39,41,42,80,81,83
+                                         ]
+                 ) # sound "pulse"
+  # cutoff (slow 4 $ saw1 * 2000 + 500)
+  # resonance 0.2
+
+  hush
