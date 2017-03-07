@@ -891,3 +891,7 @@ instance (Ord a) => Ord (Pattern a) where
 
 instance Integral a => Integral (Pattern a) where
   toInteger p = toInteger $ thd' $ head $ arc p (0,1)
+
+
+c1 $ sound "bd"
+  
