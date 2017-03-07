@@ -929,9 +929,9 @@ d1 $ sound "bd sd8:2 sn:2"
 d1 $ n "e8*2"
   # sound "rash"
   # gain "1"
-  # crush "7"
-  # room "0.96"
-  # size "0.99"
+  # crush "5 3"
+
+
   
 d2 $ jux rev $ n (offadd 0.25 7 $ slow 2 "[f6(3,8) a7(3,8) c6*2 e7*2]")
   # sound "rash"
