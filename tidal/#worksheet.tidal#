@@ -10,7 +10,7 @@ d1 $ sound "bd bd hh bd sn bd hh bd"
 
 -- * Play more than one sequence at once with d1 ... d9
 
-d2 $ rev sound "arpy arpy:1 arpy:2 arpy:3"
+d2 $ palindrome $ sound "arpy arpy:1 arpy:2 arpy:3"
 
 -- * Change the global cycles per second (equivalent to BPM)
 
