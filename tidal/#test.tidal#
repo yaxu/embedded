@@ -894,3 +894,4 @@ instance Integral a => Integral (Pattern a) where
 
 
 c1 $ sound "bd"
+  
