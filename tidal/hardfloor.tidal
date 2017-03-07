@@ -15,4 +15,3 @@ d3 $ every 4 (runWith 2 ((|*| speed "2") . density 2)) $ (loopAt 2 $ chop 16 $ s
   # cutoff 2000
 
 
-
