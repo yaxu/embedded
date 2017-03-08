@@ -30,4 +30,7 @@ d1 $ ur 32 "[0,1 ~,2:in 2:out, 3:out]"
   ]
 
 d2 $ do x <- "<7 7 5 5>"
-        n (offadd 0.25 x $ slow 2 $ "d9(3,8) [a8 c9]") # sound "rash"
+        jux (rev . (|+| n "-)) $ n (sometimes (offadd 0.125 12) $ offadd 0.25 x $ slow 2 $ "d9(3,8) [a8 c9*2]" - 12) # sound "rash"
+          # cutoff (sine1 * 2000 + 1000)
+          # resonance 0.3
+          # end "0.6"
