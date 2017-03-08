@@ -52,4 +52,3 @@ d2 $ iter 4 $ loopAt 2 $ chop 16 $ sound "arc"
 d3 $ jux (iter 4) $ spread (chop) [32,64,16] $ sound "gabba off"
   # speed 2
   # shape 0.8
-  
