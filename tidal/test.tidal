@@ -901,7 +901,8 @@ arc (irand 4) (0,4)
 
 :t choose
 
-loop(fromInteger <$> irand 3)
+irand 3 :: Pattern Double
 
 let irand :: Num a => Int -> Pattern a
     irand i = (fromIntegral . floor . (* (fromIntegral i))) <$> rand
+
