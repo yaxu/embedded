@@ -901,4 +901,4 @@ arc (irand 4) (0,4)
 
 :t choose
 
-loop(floor $ rand * 3)
+loop(fromInteger <$> irand 3)
