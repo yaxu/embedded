@@ -12,7 +12,7 @@ d1 $ do n (sometimes (+ 12) $ offadd 0.125 12 $ spread (\t -> off t (+12)) [0.25
           # gain "0.9"
 
 
-d2 $ jux (0.125 <~) $ off 0.125 (# crush 4) $ off 0.25 (# (speed 2 # vowel "a e")) $ runWith 4 (density 2) $ sound "drum future:1*2"
+d2 $ off 0.5 (slow 2 . spread (chop) [32,64,128,16]) $ jux (0.125 <~) $ off 0.125 (# crush 4) $ off 0.25 (# (speed 2 # vowel "a e")) $ runWith 4 (density 2) $ sound "drum future:1*2"
   # speed 1.5
   # shape 0.7
 
