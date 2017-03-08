@@ -6,4 +6,4 @@ d2 $ jux ((0.5 <~)) $ slow 2 $ off 0.25 (|*| up 7) $ substruct "x x/2" $ up (off
   # resonance 0.3
   |*| speed 0.5
 
-e3 
+d3 $ off 0.125 (|*| (speed 2 # cru) $ off 0.25 ((|*| (gain 0.8 # speed 1.5)) . (density 2)) $ sound "drum <drum:1 [~ drum:1]>"
