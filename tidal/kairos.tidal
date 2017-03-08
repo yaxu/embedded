@@ -28,3 +28,4 @@ d4 $ every 4 (rev) $ (juxBy 0.3 (iter 4) $ substruct "x/4 x/2" $ loopAt 2 $ chop
   # crush 6
   # cutoff "[3000 500]*4"
   # resonance 0.3
+
