@@ -903,6 +903,6 @@ arc (irand 4) (0,4)
 
 irand 3 :: Pattern Double
 
-let irand :: Num a => Int -> Pattern a
-    irand i = (fromIntegral . floor . (* (fromIntegral i))) <$> rand
+irand :: Num a => Int -> Pattern a
+irand i = (fromIntegral . floor . (* (fromIntegral i))) <$> rand
 
