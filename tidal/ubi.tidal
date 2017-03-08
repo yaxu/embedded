@@ -17,6 +17,8 @@ d2 $ jux (0.125 <~) $ off 0.125 (# crush 4) $ off 0.25 (# (speed 2 # vowel "a e"
   # shape 0.7
 
 
+
+-- not cycling properly
 let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
     off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp
     
