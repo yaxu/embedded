@@ -2,6 +2,11 @@
 
 d1 $ sound "rash"
 
-d1 $ n (off 0.125 (+12) $ inhabit [("hm", "d7 [a7 ~ g6 d6]")] "hm") # sound "rash"
+d1 $ n (off' "<0.125 0.5>" (+12) $ inhabit [("hm", "d7 [a7 ~ g6 d6]")] "hm") # sound "rash"
   # lpf 1000
   # lpq (slow 4 $ sine1 * 0.3)
+
+
+let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
+    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp
+    
