@@ -21,3 +21,10 @@ d2 $ (runWith 4 (density 2) $ sound "[future(7,16)]/2")
 d3 $ do x <- (slow 2 (sine1 * 0.01 + 0.03))
         stut 8 0.5 (toRational x) $ every 2 (|*| speed (sine1 * 0.5 + 0.5)) $ sound "bd(7,8)"
           |*| cut "-1"
+
+d4 $ every 4 (rev) $ (juxBy 0.3 (iter 4) $ substruct "x/4 x/2" $ loopAt 2 $ chop 16 $ sound "kurt:5")
+  # gain "1.2"
+  # shape 0.4
+  # crush 6
+  # cutoff "[3000 500]*4"
+  # resonance 0.3
