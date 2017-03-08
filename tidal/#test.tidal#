@@ -907,4 +907,6 @@ irand :: Num a => Int -> Pattern a
 irand i = (fromIntegral . floor . (* (fromIntegral i))) <$> rand
 
 
-d1 $ every 3 ((|*| speed "0.5") . density 0.5) $ every 2 (0.5 <~) $ chop 16 $ loopAt 4 $ sound "breaks152"
+d1 $ iter 4 $ every 2 (0.5 <~) $ chop 16 $ loopAt 4 $ sound "breaks152"
+
+hush
