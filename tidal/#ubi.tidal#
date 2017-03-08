@@ -2,9 +2,9 @@
 
 d1 $ sound "rash"
 
-d1 $ n (off' "<0.125 0.5>" (+12) $ inhabit [("hm", "d7 [a7 ~ g6 d6]")] "hm") # sound "rash"
-  # lpf 1000
-  # lpq (slow 4 $ sine1 * 0.3)
+d1 $ do n (slowspread (\t -> off t (+1)) [0.25,0.125,0.5] $ inhabit [("hm", "d7 [a7 ~ g6 d6]")] "hm") # sound "rash"
+          # lpf 1000
+          # lpq (slow 4 $ sine1 * 0.3)
 
 
 let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
