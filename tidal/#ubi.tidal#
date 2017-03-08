@@ -1,0 +1,5 @@
+
+
+d1 $ sound "rash"
+
+d1 $ n (inhabit [("hm", "d7")] "hm) # sound "rash"
