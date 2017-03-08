@@ -29,6 +29,7 @@ d1 $ ur 32 "[0,1 ~,2:in 2:out, 3:out]"
    # resonance 0.3
   ]
 
+
 d2 $ do x <- "<7 7 5 5>"
         slow 4 $ jux (rev . (|+| n "12") . (# sound "xx")) $ n (always (offadd 0.125 12) $ offadd 0.25 x $ slow 2
                                                                 $ "d9(3,8) [a8(3,8) c9*2]" - 12) # sound "rash"
