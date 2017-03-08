@@ -2,10 +2,14 @@
 
 d1 $ sound "rash"
 
-d1 $ do n (slowspread (\t -> off t (+12)) [0.25,0.125,0.5] $ "c7 a6 <f5 ! g5 ! e6 !> ~") # sound "rash"
+d1 $ do n (offadd 0.125 12 $ spread (\t -> off t (+12)) [0.25,0.125,0.5] $ "c7 a6 <f5 ! g5 ! e6 !> ~") # sound "rash"
           # lpf (slow 8 $ sine1 * 1000 + 1000)
           # lpq (slow 4 $ sine1 * 0.3)
           # crush 6
+          # end 0.3
+          # room (slow 2 $ saw1 * 0.5 + 0.5)
+          # size 0.5
+          # orbit 1
 
 
 
