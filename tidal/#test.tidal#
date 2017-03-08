@@ -900,3 +900,5 @@ arc (choose [0..3]) (0,4)
 arc (irand 4) (0,4)
 
 :t choose
+
+loop(floor $ rand * 3)
