@@ -9,5 +9,7 @@ d2 $ runWith 4 (const silence) $ jux ((0.5 <~)) $ slow 2 $ off 0.25 (|*| up 7) $
 d3 $ jux rev $ runWith 4 (density 2) $ off 0.125 (|*| (speed 2 # crush 3)) $ off 0.25 ((|*| (gain 0.8 # speed 1.5)) . (density 2)) $ sound "drum <drum:1 [~ drum:1]>"
   # bpf (slow 4 $ tri1 * 2000 + 2000) # bpq 0.4
 
+d1 $ sound "{bsguitar <~ ~ ~ bsguitar:1> ~ bssnare}"
 
-d1 $ sound "{bsguitar <~ ~ ~ bsgu> bssnare}"
+d1 $ n "0 [~ 9]" # sound "bsguitar"
+  # speed 0.7
