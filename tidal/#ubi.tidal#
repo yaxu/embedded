@@ -2,6 +2,6 @@
 
 d1 $ sound "rash"
 
-d1 $ n (inhabit [("hm", "d7 a7")] "hm") # sound "rash"
+d1 $ n (off 0.125 (+12) $ inhabit [("hm", "d7 [a7 ~ g6 d6]")] "hm") # sound "rash"
   # lpf 1000
   # lpq (slow 4 $ sine1 * 0.3)
