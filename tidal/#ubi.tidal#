@@ -2,10 +2,12 @@
 
 d1 $ sound "rash"
 
-d1 $ do n (slowspread (\t -> off t (+12)) [0.25,0.125,0.5] $ "d7 [a7 ~ g6 <d6 e6>]" + 12) # sound "xx"
+d1 $ do n (slowspread (\t -> off t (+12)) [0.25,0.125,0.5] $ "c7 a6 <f5 ! g5 ! e6 !> ~") # sound "rash"
           # lpf (slow 8 $ sine1 * 1000 + 1000)
           # lpq (slow 4 $ sine1 * 0.3)
           # crush 6
+
+
 
 
 let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
