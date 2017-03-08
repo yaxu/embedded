@@ -895,3 +895,13 @@ instance Integral a => Integral (Pattern a) where
 
 c1 $ sound "bd"
   
+arc (choose [0..3]) (0,4)
+
+arc (irand 4) (0,4)
+
+:t choose
+
+loop(fromInteger <$> irand 3)
+
+let irand :: Num a => Int -> Pattern a
+    irand i = (fromIntegral . floor . (* (fromIntegral i))) <$> rand
