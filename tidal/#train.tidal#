@@ -1,2 +1,2 @@
-d1 $ density' "<2 1%2>" $ sound "bd*2"
+d1 $ density' (1.4) $ sound "bd*2"
 
