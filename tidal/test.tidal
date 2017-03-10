@@ -923,5 +923,22 @@ import Sound.Tidal.MIDI.CC
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
 
-m1 <- midiStream devices "Midi Through Port-0" 1 ccallController
+m1 <- midiStream devices "USB Audio Quattro MIDI 1" 1 ccallController
+
+m2 <- midiStream devices "USB Audio Quattro MIDI 1" 0 ccallController
+
+m1 $ 
+  stack [slow 4 $ n (runWith 4 (density 2) $ sometimes (subtract 12) $ offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "c6(3,8) a6(3,8) f7(3,8) e7(3,8)")
+         # dur (slow 4 $ sine1 * (slow 2 sine1) * 0.3 + 0.1)
+         # velocity saw1
+         # cc1 (slow 4 sine1),
+         every 3 (0.25 <~) $ runWith 4 (density 2) $ n "c2(3,8)"
+        ]
+
+d2 $ iter 4 $ loopAt 2 $ chop 8 $ sound "os"
+  # nudge "0.2"
+
+let x = ((toScale Scales.majPent) <$> run 5)
+in
+m1 $ n (tabby 8 x x)
 
