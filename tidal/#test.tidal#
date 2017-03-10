@@ -922,4 +922,6 @@ let numDigits b n = 1 + fst (ilog b n) where
                       in  if r < b then (2*e, r) else (2*e+1, r `div` b)
 
 
-(fromRational ("3 4" :: Pattern Time)) :: Pattern Int
+
+
+discretise 16 $  exp sine1
