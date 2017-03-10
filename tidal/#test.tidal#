@@ -924,4 +924,4 @@ let numDigits b n = 1 + fst (ilog b n) where
 
 
 
-discretise 16 $  exp sine1
+pred ("1 2 3" :: Pattern Int)
