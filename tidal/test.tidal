@@ -959,10 +959,10 @@ let filterJust p = fromJust <$> (filterValues (isJust) p)
     fromVI _ = Nothing
     fromVF (VF f) = Just f
     fromVF _ = Nothing
-    extract from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
-    extractS = extract fromVS
-    extractI = extract fromVI
-    extractF = extract fromVF
+    getFrom from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
+    getS = extract fromVS
+    getI = extract fromVI
+    getF = extract fromVF
     crushNote p = p # crush ((fromIntegral <$> extractI n_p p) + 5)
   in
 extractS s_p (s "bd sn" # n (run 4))
