@@ -963,4 +963,8 @@ let
 
 :t extract
 
-follow :: ParamPattern -> Param -> Param -> (Pattern a -> Pattern a) -> Param Pattern
+follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
+
+d1 $ follow n_p crush_p (+(2 :: Pattern Int)) $ n (run 4) # sound "arpy"
+
+:t follow
