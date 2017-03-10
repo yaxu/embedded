@@ -954,26 +954,6 @@ import Data.Maybe
 
 let
 
-filterJust :: Pattern (Maybe a) -> Pattern a
-filterJust p = fromJust <$> (filterValues (isJust) p)
-
-getFrom :: (Value -> Maybe a) -> Param -> ParamPattern -> Pattern a
-getFrom from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
-
-getS :: Param -> ParamPattern -> Pattern String
-getS = getFrom fromVS
-  where fromVS (VS s) = Just s
-        fromVS _ = Nothing
-
-getI :: Param -> ParamPattern -> Pattern String
-getI = getFrom fromVI
-  where fromVI (VI i) = Just i
-        fromVI _ = Nothing
-
-getF :: Param -> ParamPattern -> Pattern String
-getF = getFrom fromVF
-  where fromVF (VF f) = Just f
-        fromVF _ = Nothing
 
 
 
