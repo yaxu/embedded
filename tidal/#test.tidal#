@@ -921,6 +921,5 @@ let numDigits b n = 1 + fst (ilog b n) where
         | otherwise = let (e, r) = ilog (b*b) n
                       in  if r < b then (2*e, r) else (2*e+1, r `div` b)
 
-d1 $ density' "
 
-("100" :: Pattern Int) `div` 2
+(run 16) `mod` "3 4"
