@@ -950,5 +950,6 @@ follow fromParam toParam f = dup <$> pat
         updateValue m v = Map.union m (Map.fromList [(toParam,v)])
 
 import qualified Data.Map.Strict as Map
+import Data.Maybe
 
-:t (Map.lookup n_p <$> (s "bd sn" # n (run 4)))
+:t fromJust <$> (filterValues (isJust) $ Map.lookup n_p <$> (s "bd sn" # n (run 4)))
