@@ -967,3 +967,4 @@ follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPatt
 
 get n_p $ sound "bd rash:40" :: Pattern Int
 
+:t s_p
