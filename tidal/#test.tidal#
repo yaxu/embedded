@@ -937,3 +937,6 @@ m1 $
 
 d2 $ iter 4 $ loopAt 2 $ chop 8 $ sound "os"
   # nudge "0.2"
+
+m1 $ weave 16 "0"
+
