@@ -913,6 +913,6 @@ d1 $ slow 2 $ n (offadd (1/16) (-12) $ offadd 0.125 7 $ "d7 a7 f8 g7") # sound "
 
 
 
-d1 $ sound "ho ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~"
+d1 $ sound "ho"
 
 hush
