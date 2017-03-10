@@ -965,6 +965,6 @@ let
 
 follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
 
-get n_p $ sound "bd rash:40" :: Pattern Int
+d1 $ sound "bd 
 
-:t s_p
+
