@@ -952,20 +952,32 @@ follow fromParam toParam f = dup <$> pat
 import qualified Data.Map.Strict as Map
 import Data.Maybe
 
-let filterJust p = fromJust <$> (filterValues (isJust) p)
-    fromVS (VS s) = Just s
-    fromVS _ = Nothing
-    fromVI (VI i) = Just i
-    fromVI _ = Nothing
-    fromVF (VF f) = Just f
-    fromVF _ = Nothing
-    getFrom from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
-    getS = extract fromVS
-    getI = extract fromVI
-    getF = extract fromVF
-    crushNote p = p # crush ((fromIntegral <$> extractI n_p p) + 5)
-  in
-extractS s_p (s "bd sn" # n (run 4))
+let
+
+filterJust :: Pattern (Maybe a) -> Pattern a
+filterJust p = fromJust <$> (filterValues (isJust) p)
+
+getFrom :: Ord k => (a1 -> Maybe a) -> k -> Pattern (Map.Map k a1) -> Pattern a
+getFrom from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
+
+getS :: Param -> ParamPattern -> Pattern String
+getS = getFrom fromVS
+  where fromVS (VS s) = Just s
+        fromVS _ = Nothing
+
+getI :: Param -> ParamPattern -> Pattern String
+getI = getFrom fromVI
+  where fromVI (VI i) = Just i
+        fromVI _ = Nothing
+
+getF :: Param -> ParamPattern -> Pattern String
+getF = getFrom fromVF
+  where fromVF (VF f) = Just f
+        fromVF _ = Nothing
+
+
+
+:t filterJust
 
 :t crush
 
