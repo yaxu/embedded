@@ -927,7 +927,7 @@ m1 <- midiStream devices "USB Audio Quattro MIDI 1" 1 ccallController
 
 m2 <- midiStream devices "USB Audio Quattro MIDI 1" 0 ccallController
 
-m1 $ n (slow 4 $ (run 40) + 12)
-  # velocity (irand 127)
+m1 $ velocity 120
+  # n "c7(3,8)"
   # dur "0.7"
-  # 
+  
