@@ -963,5 +963,6 @@ let
 
 :t extract
 
-follow :: ParamPattern -> Param -> Param -> (Pattern a -> Pattern a) -> Param Pattern
+follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
 
+get n_p $ sound "bd rash:40" :: Pattern Int
