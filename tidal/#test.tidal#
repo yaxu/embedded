@@ -951,4 +951,4 @@ follow fromParam toParam f = dup <$> pat
 
 import qualified Data.Map.Strict as Map
 
-Map.lookup n_p $ s "bd sn" # n (run 4)
+:t (Map.lookup n_p <$> (s "bd sn" # n (run 4)))
