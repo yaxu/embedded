@@ -942,6 +942,5 @@ let x = ((toScale Scales.majPent) <$> run 5)
 in
 m1 $ n (tabby 8 x x)
 
-d1 $ copyParam n_p crush_p $ n ((run 4) ) # sound "arpy"
+d1 $ (copyParam n_p crush_p $ n ((run 4) + 3) # sound "arpy") 
 
-:t copyParam
