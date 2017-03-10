@@ -923,4 +923,4 @@ let numDigits b n = 1 + fst (ilog b n) where
 
 d1 $ density' "
 
-floor sine1
+("100" :: Pattern Int) `div` 2
