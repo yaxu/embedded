@@ -955,7 +955,10 @@ import Data.Maybe
 let filterJust p = fromJust <$> (filterValues (isJust) p)
     fromVS (VS s) = Just s
     fromVS _ = Nothing
-    extractS param p = filterJust $ fromVS <$> (filterJust $ Map.lookup param <$> p)
+    extract from param p = filterJust $ from <$> (filterJust $ Map.lookup param <$> p)
+    extractS = extract fromVS
+    extractI = extract fromVI
+    extractF = extract fromVF
   in
 extractS s_p (s "bd sn" # n (run 4))
 
