@@ -957,3 +957,5 @@ let extract param p = fromJust <$> (filterValues (isJust) $ Map.lookup param <$>
 extract n_p (s "bd sn" # n (run 4))
 
 :t extract
+
+follow :: ParamPattern -> Param -> Param -> (Pattern a -> Pattern a) -> Param Pattern
