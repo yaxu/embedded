@@ -965,6 +965,6 @@ let
 
 follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
 
-d1 $ followI n_p crush_p (+2) $ n (run 4) # sound "arpy"
+d1 $ superimpose (+2) $ n (run 4) # sound "arpy"
 
-:t follow
+
