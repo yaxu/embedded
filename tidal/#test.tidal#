@@ -952,8 +952,8 @@ follow fromParam toParam f = dup <$> pat
 import qualified Data.Map.Strict as Map
 import Data.Maybe
 
-let exctract :: 
-    extract param p = fromJust <$> (filterValues (isJust) $ Map.lookup param <$> p)
+let filterJust p = fromJust <$> (filterValues (isJust) p
+    extract param p = filterJust $ Map.lookup param <$> p
   in
 extract n_p (s "bd sn" # n (run 4))
 
