@@ -942,3 +942,16 @@ let x = ((toScale Scales.majPent) <$> run 5)
 in
 m1 $ n (tabby 8 x x)
 
+d1 $ (copyParam n_p crush_p $ n ((run 4) + 3) # sound "arpy") 
+
+follow:: Param -> Param -> (ParamPattern -> ParamPattern) ParamPattern -> ParamPattern
+follow fromParam toParam f = dup <$> pat
+  where dup m = maybe m (updateValue m) (Map.lookup fromParam m)
+        updateValue m v = Map.union m (Map.fromList [(toParam,v)])
+
+import qualified Data.Map.Strict as Map
+import Data.Maybe
+
+let extract p = fromJust <$> (filterValues (isJust) $ Map.lookup n_p <$> p)
+  in
+extract $ n_p (s "bd sn" # n (run 4))
