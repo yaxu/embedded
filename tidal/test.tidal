@@ -925,4 +925,3 @@ devices <- midiDevices
 
 m1 <- midiStream devices "Midi Through Port-0" 1 ccallController
 
-midiDevices
