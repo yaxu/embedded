@@ -911,14 +911,18 @@ d2 $ iter 4 $ every 2 (0.5 <~) $ chop 16 $ loopAt 4 $ sound "breaks152"
 
 d1 $ slow 2 $ n (offadd (1/16) (-12) $ offadd 0.125 7 $ "d7 a7 f8 g7") # sound "rash"
 
-hush
+
+
+d1 $ sound "ho ~ ~~~~~~~~~~~~" # legato "0"
 
 hush
 
-let numDigits b n = 1 + fst (ilog b n) where
-      ilog b n
-        | n < b     = (0, n)
-        | otherwise = let (e, r) = ilog (b*b) n
-                      in  if r < b then (2*e, r) else (2*e+1, r `div` b)
+import Sound.Tidal.MIDI.Context
+import Sound.Tidal.MIDI.CC
 
-d1 $ density' "
+displayOutputDevices >>= putStrLn
+devices <- midiDevices
+
+m1 <- midiStream devices "Midi Through Port-0" 1 ccallController
+
+midiDevices
