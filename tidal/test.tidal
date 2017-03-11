@@ -228,6 +228,7 @@ let copyParam:: ParamPattern -> Param -> Param -> ParamPattern
       where f = do v <- Map.lookup fromParam pat
                    return $ Map.union pat (Map.fromList [(toParam,v)])
 
+   
 (copyParam n_p orbit_p) <$> (sound "bd:3")
 
 d1 $ do a <- slow 2 tri1
