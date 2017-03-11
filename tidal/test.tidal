@@ -968,8 +968,16 @@ follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPatt
 d1 $ follow n_p (crush) $ n (run 4) # sound "arpy"
 import Data.Map.Strict
 
-let coerce :: Param -> ParamPattern -> ParamPattern
-    coerce par@(S _ _) p = (update f par) <$> p
-      where f (VS s) = Just (VS s)
-            f (VI i) = Just (VS $ show i)
-            f (VF f) = Just (VS $ show f)
+coerce :: Param -> ParamPattern -> ParamPattern
+coerce par@(S _ _) p = (update f par) <$> p
+  where f (VS s) = Just (VS s)
+        f (VI i) = Just (VS $ show i)
+        f (VF f) = Just (VS $ show f)
+coerce par@(I _ _) p = (update f par) <$> p
+  where f (VS s) = Just (VI $ read s)
+        f (VI i) = Just (VI i)
+        f (VF f) = Just (VI $ floor f)
+coerce par@(F _ _) p = (update f par) <$> p
+  where f (VS s) = Just (VF $ read s)
+        f (VI i) = Just (VF $ fromIntegral i)
+        f (VF f) = Just (VF f)
