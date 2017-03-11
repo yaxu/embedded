@@ -958,6 +958,9 @@ let
 
 follow :: ParamType a -> Param -> Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
 
-d1 $ follow n_p (crush . (floor <$>)) $ n (run 4) # sound "arpy"
+let f ::Pattern Int -> Pattern Double
+    f p = (fromIntegral <$> p)
+in
+d1 $ followI n_p (crush . f) $ n (run 4) # sound "arpy"
 
 import Data.Map.Strict
