@@ -963,7 +963,6 @@ let f ::Pattern Int -> Pattern Double
 in
 
 
-d1 $ follow' n_p n (# crush "5") $ n (off 0.125 (+7) $ slow 2 $ "c6(3,8) e5(3,8)") # sound "rash"
-  # legato "3"
+d1 $ slow 2 $ sound "oc ~ ~ ~ . oc"
 
-  :t follow
+hush
