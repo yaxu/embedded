@@ -8,5 +8,6 @@ d3 $ runWith 4 (slow 2) $ n "9 [5 9] [9 ~ 5 ~] 5" # sound "jvr"
   # speed 2
   # crush "2"
 
-d4 $ n "{c6 [~ a5], ~ dc6*2}" # sound "pulse"
-  
+d4 $ n "{c6 [~ a5], c5 c5*2 c5*3}" # sound "pulse"
+  # lpq 0.3
+  # lpf 1000
