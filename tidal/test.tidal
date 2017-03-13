@@ -969,6 +969,3 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 
 
 
-d1 $ off "<0.25 0.125 0.5>" (# (crush 5 # speed "0.75")) $ n ("{7 ~, 2 5 6}") # sound "micron"
-  # cutoff 2500
-  
