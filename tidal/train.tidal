@@ -1,1 +1,1 @@
-d1 $ jux rev $ chop "<4 16 2>" $ n (offadd "<0.25 0.125 0.5>" "<7 12>" $ slow 2 $ "c6(3,8) a6(3,8)") # sound "rash"
+d1 $ n (off "<0.25 0.125 0.5>" (+ "<7 12>") $ slow 2 $ "c6(3,8) a6(3,8)") # sound "rash"
