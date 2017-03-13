@@ -963,8 +963,8 @@ let f ::Pattern Int -> Pattern Double
 in
 
 
-d1 $ slow 2 $ sound "oc ~ ~ ~ . oc"
-  # legato "2"
+d1 $ slow 2 $ sound "supersaw" # n "60"
+
 
 hush
 
