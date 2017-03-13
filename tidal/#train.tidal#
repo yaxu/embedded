@@ -1,0 +1,5 @@
+d1 $ juxBy 0.25 (rev) $ n (off "<0.25 0.125 0.5>" (+ "<7 12>") $ slow 2 $ "c6(3,8) <a6 e5>(3,8)") # sound "rash"
+
+d2 $ juxBy 0.25 (rev) $ n (off "<0.25 0.125 0.5>" (+ "<7 12>") $ slow 2 $ "c6(3,8) <a6 e5>(3,8)") # sound "supermandolin"
+  # su
+
