@@ -970,3 +970,4 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 hush
 
 
+d1 $ sound "micron"
