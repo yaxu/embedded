@@ -969,6 +969,5 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 
 
 
-d1 $ n "9 ~ . 2 5 " # sound "micron"
-
-  # legato 1
+d1 $ off "<0.125 1/8>" (# (crush 5 # speed)) $ n (off "<0.125 0.25>" (+4) "{9 6, 2 5 6}") # sound "micron"
+  
