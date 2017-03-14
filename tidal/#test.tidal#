@@ -969,4 +969,4 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 
 
 
-d1 $ up (off 0.25 (+7) $ slow 2 "0*2 7(3,8)" + "<0 3>") # s "latibro"
+d1 $ off 0.25 (# crush 5) $ up (off 0.125 (+12)$off 0.25 (+7)$slow 2"0(3,8) 4(3,8,2)" + "<0 3 5>") # s "sid:1"
