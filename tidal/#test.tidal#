@@ -974,7 +974,8 @@ d1 $ (rev $ zoom (0,0.5) $ chop 16 $ sound "arc")
 d2 $ (zoom (0.5,1) $ chop 16 $ sound "arc")
   # pan (scale 0.5 1 saw1)
 
-d1 $ loopAt 2 $ chop 16 $ sound "arc"
+d1 $ islow 4 $ loopAt 2 $ striate 8 $ sound "arc*4"
+  # gain "1.2"
 
 hush
 
