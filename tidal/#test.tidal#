@@ -967,11 +967,13 @@ import Data.Maybe
 
 let
 
-d2 $ (zoom (0.5,1) $ chop 16 $ sound "arpy")
+
+d1 $ (rev $ zoom (0,0.5) $ chop 16 $ sound "kurt")
+  # pan (scale 0.5 0 saw1)
+
+d2 $ (zoom (0.5,1) $ chop 16 $ sound "kurt")
   # pan (scale 0.5 1 saw1)
 
-d1 $ (rev $ zoom (0,0.5) $ chop 16 $ sound "arpy")
-  # pan (ssaw1)
 
 
 :t filterJust
