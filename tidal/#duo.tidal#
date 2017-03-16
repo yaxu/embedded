@@ -9,7 +9,11 @@ d4 $ sound "micro"
 d1 $ iter 4 $ sound "arpy:0 arpy:1 arpy:2 arpy:3"
 
 d1 $ do t <- slow 8 (sine1 * 0.05)
-        off 0.125 (|*| up "<7>") $ off 0.25 (|*| up 12) $ sound "arpy:0*2 arpy:2? arpy:3 ~"
+        off 0.125 (|*| up "<7 0 -5 -12>") $ off 0.25 (|*| up 12) $ sound "rash:40*2 arpy:2? arpy:3 ~"
   # speed "[0.75,0.5]"
   # hcutoff (slow 4 $ sine1 * 1000 + 1000)
   # hresonance 0.3
+
+d1 $ off 0.25 (|*| up 12) $ sound "rash:40 arpy:2 arpy:3 ~"
+
+hush
