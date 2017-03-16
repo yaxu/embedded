@@ -25,8 +25,10 @@ d1 $ (jux rev $ n ("0 2 [5 3] 2" + (slow 2 "4 2")) # sound "arpy")
 
 
 
-d1 $ n "0 1 2 3 4 5 6 7 8 " # sound "jazz"
+d1 $ jux (rev) $ n "0 1 2*2 3 4*2 5 6 7" # sound "jazz"
 
-d1 $ sound "jazz:1 jazz:2 jaz"
+d1 $ jux rev $ sound "jazz:1 jazz:2 drum:3 jazz:4"
 
 d1 $ n "1 2 3 4" # sound "jazz"
+
+hush
