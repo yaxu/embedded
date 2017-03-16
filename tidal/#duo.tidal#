@@ -19,5 +19,6 @@ d1 $ off 0.125 (|*| up 7) $ off 0.25 (|*| up 12) $ sound "rash:40 arpy:2 arpy:3 
 d1 $ off 0.25 (|+| n "12 7") $ sound "rash:40 rash:47"
   
 
-d1 $ n ("0 2 [5 3] 2" + (slow 2 "4 2")) # sound "arpy"
-hush
+d1 $ (jux rev $ n ("0 2 [5 3] 2" + (slow 2 "4 2")) # sound "arpy")
+  # cutoff (slow 4 $ saw1 * 2000 + 1000)
+  # resonance 0.3
