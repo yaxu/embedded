@@ -29,6 +29,8 @@ d1 $ jux (rev) $ n "0 1 2*2 3 4*2 5 6 7" # sound "jazz"
 
 d1 $ jux rev $ sound "jazz:1 jazz:2 drum:3 jazz:4"
 
-d1 $ n "{1 2 3*2 4, 0 1*2 2}" # sound "voodoo"
+d1 $ slow 2 $ n "{1 2 3*2 4, 0 1*2 2}" # sound "voodoo"
 
+
+d4 $ sound "voodoo(3,8)"
 
