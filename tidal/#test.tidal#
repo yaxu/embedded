@@ -73,6 +73,9 @@ displayOutputDevices >>= putStrLn
 devices <- midiDevices
 m1 <- midiStream devices "X18/XR18 MIDI 1" 1 volcabassController
 
+c1 $ silence
+  
+
 slide
 expression
 octave
