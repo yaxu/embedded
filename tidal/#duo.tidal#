@@ -8,9 +8,10 @@ d4 $ sound "micro"
 
 d1 $ iter 4 $ sound "arpy:0 arpy:1 arpy:2 arpy:3"
 
-d1 $ off 0.125 (|*| up 12) $ off 0.25 (|*| up 7) $ sound "arpy:0*2 arpy:2? arpy:3 ~"
+d1 $ do t <- slow 8 (sine1 * 0.05)
+        stut 3 0.5 (toRational t) $ off 0.125 (|*| up 12) $ off 0.25 (|*| up 7) $ sound "arpy:0*2 arpy:2? arpy:3 ~"
   # speed "[0.75,0.5]"
-  # 
+  # hcutoff (sine1 * 1000 + 1000)
   
 0 1 2 3
 1 2 3 0
