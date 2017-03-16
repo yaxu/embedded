@@ -1,0 +1,3 @@
+-- hello this is a test of the live stream
+
+d1 $ n "3 4" # s "numbers" # pan "0 1"
