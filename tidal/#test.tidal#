@@ -71,9 +71,20 @@ import Sound.Tidal.MIDI.VolcaBass
 
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
-m1 <- midiStream devices "X18/XR18 MIDI 1" 1 ccallController
+m1 <- midiStream devices "X18/XR18 MIDI 1" 1 volcabassController
 
-
+slide
+expression
+octave
+lfo
+lfoint
+pitch1
+pitch2
+pitch3
+attack
+decay
+cutoff
+gate
 
 m1 $ n "50"
 
