@@ -32,5 +32,5 @@ d1 $ jux rev $ sound "jazz:1 jazz:2 drum:3 jazz:4"
 d1 $ slow 2 $ n "{1 2 3*2 4, 0 1*2 2}" # sound "voodoo"
 
 
-d4 $ sound "voodoo(3,8)"
+d4 $ every 4 (density 2) $ off "<0.125 0.25>" (# speed 4) $ sound "micron(3,8)" # n "<[1 2] [2 3]>"
 
