@@ -1,5 +1,2 @@
-d1 $ sound "sn bd"
+d1 $ jux (rev . chop 8) $ sound "micron(3,8)" # n (slow 4 $ run 8)
 
-nudger (-0.005)
-
-hush
