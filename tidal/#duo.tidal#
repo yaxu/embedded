@@ -14,6 +14,9 @@ d1 $ do t <- slow 8 (sine1 * 0.05)
   # hcutoff (slow 4 $ sine1 * 1000 + 1000)
   # hresonance 0.3
 
-d1 $ off 0.25 (|*| up 12) $ sound "rash:40 arpy:2 arpy:3 ~"
+d1 $ off 0.125 (|*| up 7) $ off 0.25 (|*| up 12) $ sound "rash:40 arpy:2 arpy:3 ~"
+
+d1 $ sound "rash:40"
+  # up "3"
 
 hush
