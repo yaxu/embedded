@@ -967,7 +967,7 @@ import Data.Maybe
 
 let
 
-
+d1 $ loopAt 16 $ chop 32 $ sound "bev"
 
 
 :t filterJust
@@ -991,3 +991,5 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 d1 $ off 0.25 (# crush 5) $ up (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "0(3,8) 4(3,8,2)" + "<0 3 5>") # s "sid:1"
 
 hush
+
+
