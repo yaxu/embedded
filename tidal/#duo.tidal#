@@ -4,3 +4,6 @@ d2 $ jux rev $ chop 8 $ struct "x(3,8)" $ slow 4 $ n (run (8)) # sound "claus"
 
 d1 $ n "0 4 2 5" # sound "micron"
 
+d1 $ sound "bd sn"
+
+d1 silence
