@@ -1,1 +1,5 @@
-d1 $ sound "bd"
+d1 $ sound "sn bd"
+
+nudger (-0.005)
+
+hush
