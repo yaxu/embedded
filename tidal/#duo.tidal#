@@ -31,6 +31,7 @@ d1 $ sound "jazz:1 jazz:2 jazz:4"
 
 
 
+
 d1 $ slow 2 $ n "{1 2 3*2 4, 0 1*2 2}" # sound "voodoo"
 
 
