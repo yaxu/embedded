@@ -19,4 +19,4 @@ d1 $ off 0.125 (|*| up 7) $ off 0.25 (|*| up 12) $ sound "rash:40 arpy:2 arpy:3 
 d1 $ off 0.25 (|+| n "12 7") $ sound "rash:40 rash:47"
   
 
-d1 $ sound ""
+d1 $ n ("0 2 5 3" + "4 2") # sound "arpy"
