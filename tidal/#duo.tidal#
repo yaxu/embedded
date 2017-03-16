@@ -2,7 +2,7 @@ d1 $ jux (rev . chop 8) $ sound "micron(3,8)" # n (slow 4 $ run 8)
 
 d2 $ jux rev $ chop 8 $ struct "x(3,8)" $ slow 4 $ n (run (8)) # sound "claus"
 
-d1 $ n "0 ~ ~ ~ 6 ~ 5 ~" # sound "micron"
+d1 $ jux rev $ n "0 ~ ~ 5 6 ~ 5 ~" # sound "micron"
 
 d1 $ sound "bd sn"
 
