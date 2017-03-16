@@ -13,7 +13,8 @@ let loopFirst p = splitQueries $ Pattern f
       where f a@(s,e) = mapSnds' plus $ mapFsts' plus $ arc p (minus a)
               where minus = mapArc (subtract (sam s))
                     plus = mapArc (+ (sam s))
-    outside n = inside (1/n)
+    outside n = inside (1Platform.systemExtensionDir
+/n)
     timeLoop n = outside n loopFirst
     seqPLoop ps = timeLoop (maximum $ map (\(_,x,_) -> x) ps) $ seqP ps
 
@@ -65,10 +66,28 @@ d1 $ rev $ slow 4 $ chop 64 $ sound "bev"
 cps 2
 
 import Sound.Tidal.MIDI.Context
-import Sound.Tidal.MIDI.CC
+
+import Sound.Tidal.MIDI.VolcaBass
+
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
-m1 <- midiStream devices "X18/XR18 MIDI 1" 1 ccallController
+m1 <- midiStream devices "X18/XR18 MIDI 1" 1 volcabassController
+
+c1 $ sound "bd sn:3"
+
+
+slide
+expression
+octave
+lfo
+lfoint
+pitch1
+pitch2
+pitch3
+attack
+decay
+cutoff
+gate
 
 m1 $ n "50"
 
@@ -949,6 +968,16 @@ import Data.Maybe
 let
 
 
+d1 $ (rev $ zoom (0,0.5) $ chop 16 $ sound "arc")
+  # pan (scale 0.5 0 saw1)
+
+d2 $ (zoom (0.5,1) $ chop 16 $ sound "arc")
+  # pan (scale 0.5 1 saw1)
+
+d1 $ iter 4 $ slow 2 $ loopAt 2 $ striate 8 $ sound "arc*2"
+  # gain "1.2"
+
+hush
 
 
 :t filterJust
@@ -972,3 +1001,5 @@ d1 $ slow 2 $ sound "supersaw" # n "60"
 d1 $ off 0.25 (# crush 5) $ up (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "0(3,8) 4(3,8,2)" + "<0 3 5>") # s "sid:1"
 
 hush
+
+
