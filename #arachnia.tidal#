@@ -1,5 +1,7 @@
 
-d1 $ sound "bd"
+d1 $ chop 8 $ n (every 4 (+2) $ struct "x(3,8)" $ run 4) # sound "micron"
+  # delay 0.4
+
 
 
 
