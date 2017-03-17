@@ -19,7 +19,10 @@ d4 $ degrade $ slow 2 $ jux rev $ substruct "x x/2" $ n (every 2 (+7) $ off 0.25
 d5 $ iter 4 $ loopAt 2 $ chop 8 $ sound "arc"
   # gain "1.6"
 
-solo $
 d6 $ iter 4 $ loopAt 4 $ chop 16 $ sound "repetition"
   # gain "1.4"
   # n (irand 16)
+
+d7 $ stut 3 0.7 0.03 $every 3 (0.25 <~) $ every 2 (density 2) $ sound "odx(3,8,[0 2]/2)"
+  # gain "1.4"
+  # cutoff
