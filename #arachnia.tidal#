@@ -8,10 +8,12 @@ d1 $ every 2 (|*| speed "0.5") $ jux ((# speed "2")) $ chop "<8 4 2>" $ n (every
 d2 $ degradeBy 0.7 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
   # gain "0.9"
 
-solo $
-d3 $ runWith 4 (density 2) $ density "1 <0.5 2>" $ jux rev $ n "0 3(3,8) 1 ~" # sound "future"
-  # gain "1.1"
-  # vowel "<a e i o u>"
 
+d3 $ jux (0.25 <~) $ runWith 4 (density 2) $ density "1 <0.5 2>" $ jux rev $ n "0 3(3,8) 1 ~" # sound "future"
+  # gain "1.1"
+
+d4 $ substruct "x x/2" $ n "c7 a8" # sound "pulse"
+  # cutoff (sine1 * 1000 500)
+  # resonance 0.2
 
 
