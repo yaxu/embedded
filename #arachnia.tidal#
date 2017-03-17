@@ -1,0 +1,5 @@
+d1 $ iter 4 $ n (run 8) # sound "micron"
+  # gain "0.7"
+  # speed 2
+  # pan "0 1"
+
