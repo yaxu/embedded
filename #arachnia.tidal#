@@ -3,9 +3,15 @@ d1 $ every 2 (|*| speed "0.5") $ jux ((# speed "2")) $ chop "<8 4 2>" $ n (every
   # delay 0.8
   # delaytime (sine1 * 0.01)
   # delayfeedback "0.7"
+  # orbit "1"
 
 d2 $ degradeBy 0.7 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
   # gain "0.9"
-  
-d3 $ n "0 3 1 ~" # sound "future"
+
+solo $
+d3 $ runWith 4 (density 2) $ density "1 <0.5 2>" $ jux rev $ n "0 3(3,8) 1 ~" # sound "future"
+  # gain "1.1"
+  # vowel "<a e i o u>"
+
+
 
