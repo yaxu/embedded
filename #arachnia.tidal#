@@ -37,7 +37,13 @@ d9 $ jux rev $ loopAt 2 $ chop 16 $ sound "shackup"
 
 d1 $ up (off 0.125 (+12) $ off 0.25 (+7) $ "0 [7 2] 2 12") # sound "latibro"
   # gain 1.2
-  # crush "6"
+
 
 d2 $ jux rev $ off "<0.25 0.5>" (# crush 5) $ n "0 [4 5]" # sound "micron"
   # gain 1.5
+
+
+d3 $ sound "gab([3 5]/2,8,[0 2 3]/3)"
+  # gain "1.3"
+
+  
