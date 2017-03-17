@@ -1,3 +1,10 @@
 d1 $ runWith 4 (# speed 2) $ n (struct "x(5,8)" $ iter 4 $ run 8) # s "micron"
   # pan "0 1"
   # gain "0.6"
+
+
+d1 $ n (off 0.125 (+12) $ off 0.25 (+7) $
+   slow 2 $ "c(3,8) a(3,8) f(3,8) e(3,8)") # sound "rash"
+
+
+0.25 <~
