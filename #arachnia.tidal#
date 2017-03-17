@@ -1,6 +1,8 @@
 
-d1 $ chop 8 $ n (every 4 (+2) $ struct "x(3,8)" $ run 4) # sound "micron"
-  # delay 0.4
+d1 $ jux (rev . (# speed "2")) $ chop "<8 4 2>" $ n (every 4 (+2) $ struct "x(3,8)" $ run 4) # sound "micron"
+  # delay 0.8
+  # delaytime (sine1 * 0.01)
+  # delayfeedback "0.7"
 
 
 
