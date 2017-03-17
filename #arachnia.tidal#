@@ -5,16 +5,17 @@ d1 $ every 2 (|*| speed "0.5") $ jux ((# speed "2")) $ chop "<8 4 2>" $ n (every
   # delayfeedback "0.7"
   # orbit "1"
 
-d2 $ degradeBy 0.7 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
+d2 $ brak $ degradeBy 0.7 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
   # gain "0.9"
-
 
 d3 $ jux (0.25 <~) $ runWith 4 (density 2) $ density "1 <0.5 2>" $ jux rev $ n "0 3(3,8) 1 ~" # sound "future"
   # gain "1.1"
 
-d4 $ jux rev $ substruct "x x/2" $ n (off 0.25 ("c6 a6(3,8) f6 e7") # sound "pulse"
+d4 $ jux rev $ substruct "x x/2" $ n (every 2 (+7) $ off 0.25 (+12) $ "c6 a6(3,8) f6 e7") # sound "pulse"
   # cutoff (slow 4 $ sine1 * 5000 + 700)
   # resonance 0.2
   # gain "1.1"
 
 
+d5 $ iter 4 $ loopAt 2 $ chop 8 $ sound "arc"
+  # gain "1.6"
