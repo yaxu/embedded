@@ -1,11 +1,11 @@
 
-d1 $ jux ((# speed "2")) $ chop "<8 4 2>" $ n (every 4 (+2) $ struct "x(3,8,[0 2])" $ run 4) # sound "micron"
+d1 $ every 2 (|*| speed "0.5") $ jux ((# speed "2")) $ chop "<8 4 2>" $ n (every 4 (+2) $ struct "x(3,8,[0 2])" $ run 4) # sound "micron"
   # delay 0.8
   # delaytime (sine1 * 0.01)
   # delayfeedback "0.7"
 
-d2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
+d2 $ degradeBy 0.7 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d7(3,8) a7(3,8) f6*2 e7*2") # sound "rash"
   # gain "0.9"
   
-
+d3 $ n "0 3 1 ~" # sound "future"
 
