@@ -1,3 +1,3 @@
-d1 $ runWith 4 (# speed 2) $ n (run 8) # s "micron"
+d1 $ runWith 4 (# speed 2) $ n (struct "x(5,8)" $ iter 4 $ run 8) # s "micron"
   # pan "0 1"
   # gain "0.6"
