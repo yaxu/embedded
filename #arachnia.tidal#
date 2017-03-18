@@ -1,6 +1,10 @@
 
-d1 $ every 2 (density 2) $ sound (slow 2 "[arpy] [bd sn]")
+d1 $ every 2 (# speed 2) $ sound (slow 2 "arpy . bd sn")
   # pan "0"
+hush
+d2 $ slow 2 $ s "arpy [bd sn] . bd sn"
+  # pan "1"
+
 
 x bd sn bd sn
 
