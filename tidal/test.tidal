@@ -1013,5 +1013,6 @@ d1 $ sound "bd"
 d1 $ s "supersquare*8" # release "0.3" 
      # bandf (density 3 $ sine1 * ((discretise 1 $ rand * 3600)) + 400)
      # bandq "5.5"
+     # n "0 7 3"
 
 let cycleRand n = Pattern $ \(s,e) -> [((s,e),(s,e),timeToRand $ fromIntegral $ (floor $ sam s) `mod` n)]
