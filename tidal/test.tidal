@@ -1016,3 +1016,6 @@ d1 $ s "supersquare*8" # release "0.3"
      # n "0 7 3"
 
 let cycleRand n = Pattern $ \(s,e) -> [((s,e),(s,e),timeToRand $ fromIntegral $ (floor $ sam s) `mod` n)]
+
+d1 $ sound "bd sn"
+
