@@ -695,7 +695,7 @@ spreadChoose f vs p = do v <- discretise 1 (choose vs)
 spreadr = spreadChoose
 
 d1 $ sound "bd sn"
-
+hush
 
 
 d1 $ ur 16 (every 2 (density 2) $ "[0:out, 1 [2 3:out], 4:in]")
