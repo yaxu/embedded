@@ -1028,5 +1028,4 @@ d1 $ n "c5*8" # s "supersquare" # release "0.3"
 d1 $ n (run 8) # sound "voodoo"
   # delay 0.9
   # delayfb 0.9
-  # delayt (0.03 * rand)
-  
+  # delayt (density 2 $ 0.02 * rand)
