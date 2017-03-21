@@ -697,7 +697,6 @@ spreadr = spreadChoose
 d1 $ sound "bd sn"
 hush
 
-
 d1 $ ur 16 (every 2 (density 2) $ "[0:out, 1 [2 3:out], 4:in]")
   [jux rev $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks125",
    sound "arpy ~ arpy:3 arpy:2" # crush "3",
