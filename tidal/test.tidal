@@ -1019,3 +1019,21 @@ let cycleRand n = Pattern $ \(s,e) -> [((s,e),(s,e),timeToRand $ fromIntegral $ 
 
 d1 $ sound "bd sn"
 
+d1 $ n "c5*8" # s "supersquare" # release "0.3"
+   # bandf (density 3 $ saw1 * (4500 * rand) + (100 * (density 1.0001 rand)))
+   # bandq "5.5"
+   # delay "0.9" # delaytime "0.15" # delayfeedback "0.5" -- some sonic sugar
+
+
+d1 $ n (run 8) # sound "voodoo"
+  # delay 0.9
+  # delayfb 0.9
+  # delayt (density 2 $ 0.02 * rand)
+
+d1 $ slow "<2 4 8>" $ n (every 2 (+7) $ "[c,e,g,b]*8") # s "supersaw"
+  # bandf (slow 2 $ saw1 * (4500 * rand) + (300 * (density 1.0001 rand)))
+  # bandq 5.5
+  # room 0.3
+  # size 0.3
+  # legato 0.5
+
