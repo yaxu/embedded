@@ -1030,10 +1030,11 @@ d1 $ n (run 8) # sound "voodoo"
   # delayfb 0.9
   # delayt (density 2 $ 0.02 * rand)
 
-d1 $ n "[c5,e5,g5,b5]*8?" # s "supersquare" # release "0.3"
+d1 $ n "[c,e,g,b]*8" # s "supersquare"
   # bandf (slow 2 $ saw1 * (4500 * rand) + (300 * (density 1.0001 rand)))
   # bandq 5.5
   # room 0.3
   # size 0.3
-  # legato 
+  # legato 1
 
+cps 0
