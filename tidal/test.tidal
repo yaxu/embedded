@@ -1034,4 +1034,4 @@ d1 $ n "a4" # s "supersaw"
 
 
 
-d1 $ ur' 16 "hello" [("hello", sound "bd sn"), ("voo", n (run 8) # sound "voodoo")] [("louder", (|*| gain "1.1")), ("fade", gain (rev saw1))]
+d1 $ ur' 16 "hello:fade voo voo:louder hello" [("hello", sound "bd sn"), ("voo", n (run 8) # sound "voodoo")] [("louder", (|*| gain "1.1")), ("fade", (|*| gain (rev saw1)))]
