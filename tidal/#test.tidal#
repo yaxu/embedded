@@ -1030,14 +1030,11 @@ d1 $ n (run 8) # sound "voodoo"
   # delayfb 0.9
   # delayt (density 2 $ 0.02 * rand)
 
-d1 $ slow "<2 4 8>" $ n (every 2 (+7) $ "[c,e,g,b]*8") # s "[supersaw]"
+d1 $ slow "<2 4 8>" $ n (every 2 (+7) $ "[c,e,g,b]*8") # s "[supersaw,supersquare]"
   # bandf (slow 2 $ saw1 * (4500 * rand) + (300 * (density 1.0001 rand)))
   # bandq 5.5
   # room 0.3
   # size 0.3
   # legato 0.5
-  # delay 0.6
-  # delayt s
-  # delayfb 0.9
 
 
