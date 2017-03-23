@@ -12,4 +12,17 @@ d2 $ degrade $ jux rev $ off 0.25 (# (s "pulse" # speed "0.5")) $ slow 2 $ n (of
   # lpq 0.2
   # room 0.4
   # orbit 1
-  
+
+d1 $ jux (density 2 . rev . (# speed "2")) $ sound "feel(3,8,[0 2 4]/3)"
+  |+| pan (slow 2 saw1)
+
+d2 $ every 4 ((|*| speed "2") . density 2)$ jux rev $ substruct "x(3,8) x*4" $ sound "claus" # n (slow 3 $ run 16)
+  # crush "<4 5>"
+  # shape "0.3"
+  # orbit "2"
+  # room "0.7 0.8"
+  # size (slow 4 $ saw1 *0.8)
+  # up "<0 6>"
+
+
+d6 $
