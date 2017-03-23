@@ -1,4 +1,0 @@
-
-d1 $ jux (rev) $ off 0.25 (# vowel "a") $ sound "micron(3,8,[0 2]/2)" # n (slow 4 $ run 8)
-
-d2 $ slow 2 $ n ("c7 a7 ") # sound "rash"
