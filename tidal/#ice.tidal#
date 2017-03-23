@@ -12,4 +12,6 @@ d2 $ jux rev $ iter 4 $ loopAt 1 $ chop 16 $ sound "os:1"
   # lpq 0.2
   # shape 0.6
 
-d3 $ sound "feel(3,8)"
+d3 $ slow 4 $ n (off 0.125 (+12) $ off 0.25 (+3) sl "d4(3,8) a4(3,8) f4(3,8,2) e3(3,8,4)") # sound "superhammond"
+  # crush 5
+
