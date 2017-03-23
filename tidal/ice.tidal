@@ -7,7 +7,7 @@ d1 $ (jux rev $ off 0.5 (# (s "supermandolin" # speed "2")) $ off 0.25 (rev . (#
   # lpf (slow 4 $ sine1 * 3000 + 1000)
   # lpq 0.2
   # orbit 1
-  # legato 4
+
 
 d2 $ jux rev $ iter 4 $ loopAt 1 $ chop 16 $ sound "os:1"
   # lpf (slow 4 $ sine1 * 6000 + 2000)
