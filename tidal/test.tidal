@@ -1076,6 +1076,6 @@ let with :: (ParamType a) => Param -> (Pattern a -> Pattern a) -> ParamPattern -
     withS :: Param -> (Pattern String -> Pattern String) -> ParamPattern -> ParamPattern
     withS = with
     
-d1 $ with n_p (slow 2) $ p
+d1 $ withI n_p (slow 2) $ p
 
-d1 p
+
