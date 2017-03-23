@@ -187,7 +187,7 @@ let f = id
        # dur "0.1"
        # decay (scale 0 0.5 $ slow 4 sine1)
        # ctf (scale 0.8 1 $ slow 16 sine1)
-     d3 $ f $ loopAt 4 $ chop 32 $ sound "liq"
+     d3 $ mute $ f $ loopAt 4 $ chop 32 $ sound "liq"
        # cutoff "1000"
        # resonance "0.3"
 
@@ -303,3 +303,9 @@ d4 $ jux (iter 4) $ chop 3 $ sound "{bd*2 arpy sn:2*2 ~}"
 d8 $ slow 2 $ sometimes (rev . chop 8) $ sometimes (|+| speed "2") $
     jux (0.25 <~) $ sound (samples "[ifdrums*8, future*8]" (run 8))
     # nudge "[0 0.04]*4"
+
+cp
+d1 $ jux rev $ (off 0.25 (# (s "rash" # speed "2")) $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "d6(3,8) [~ a5*2] e6(3,8) es6(3,8)") # sound "pulse")
+  # lpf (saw1 * 3000 + 500)
+  # resonance 0.2
+  |+| n "<0 0 7 -5 12 7>"
