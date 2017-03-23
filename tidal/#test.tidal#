@@ -1060,3 +1060,5 @@ d1 $ jux rev $ off 0.125 (|*| up "[3 5]/8") $ sound "ravebass:10(3,8)" # vowel "
 
 
 let with param f p = get param p
+
+:t pF
