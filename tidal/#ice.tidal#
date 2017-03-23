@@ -12,7 +12,7 @@ d2 $ jux rev $ iter 4 $ loopAt 1 $ chop 16 $ sound "os:1"
   # lpq 0.2
   # shape 0.6
 
-d3 $ off 0.5 (str(# (s "supermandolin" # gain "1.2")) . (|+| n "-24")) $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+3) $ slow 2 "d7(3,8) a7(3,8) f7(3,8,2) e7(3,8,4)") # sound "xx"
+d3 $ off 0.125 ((# (s "supermandolin" # gain "1.2" # legato 4)) . (|+| n "-24")) $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+3) $ slow 2 "d7(3,8) a7(3,8) f7(3,8,2) e7(3,8,4)") # sound "xx"
   # legato 1
 
-
+let withP 
