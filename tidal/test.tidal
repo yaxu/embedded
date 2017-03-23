@@ -1078,8 +1078,5 @@ let with :: (ParamType a) => Param -> (Pattern a -> Pattern a) -> ParamPattern -
     
 
 
-
-let subtime f p = struct p $ f p
-
-
-d1 $ subtime (slow 1.5) $ n (off 0.25 (+4) $ "0 [3 4] [6 2] 4") # sound "amencutup"
+d1 $ runWith 4 (density 2)
+     $ subtime (slow 1.5) $ n (off 0.25 (+4) $ "0 [3 4] [6 2] 4") # sound "amencutup"
