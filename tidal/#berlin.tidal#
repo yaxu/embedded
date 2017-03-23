@@ -70,8 +70,8 @@ d3 $ degradeBy 0.8 $ runWith 4 ((|*| speed "0.5") . slow 2)$ jux rev $ iter 4 $ 
 
 cps 0.715
 
-d1 $ off 0.5 (# (s "pulse" # speed "0.5")) $ off 0.25 (# s "rash") $ n (off 0.125 (+ 7) $ slow 2 $ "f7*3 d6*2 [c6 d5] a5") #  sound "supermandolin"
-  |+| n "<0 7 12>"
+d1 $ off 0.125 (# (s "pulse" # speed "0.5")) $ off 0.25 (# s "rash") $ n (off 0.125 (+ 7) $ slow 2 $ "f7*3 d6*2 [c6 d5] a5") #  sound "supermandolin"
+  |+| n "<0 7 12 3>"
 
 d2 $ jux rev $ iter 4 $ runWith 4 (density 2) $ slow 2 $ n (run 16) # sound "amencutup"
   # orbit 1
@@ -79,3 +79,23 @@ d2 $ jux rev $ iter 4 $ runWith 4 (density 2) $ slow 2 $ n (run 16) # sound "ame
 
 d3 $ off 0.25 (# crush 5) $ jux rev $ runWith 4 (# speed 2) $ n (run 8) # sound "voodoo"
   # gain 1.4
+
+d4 $ jux rev $ off 0.125 (# speed "<1.5 1 3 2>") $ n "0 7 12 2" # sound "jvbass"
+  # gain 1.2
+  # shape 0.6
+  # cutoff "<1000 2000 3000>"
+  # resonance "<0.3 0.2>"
+  |*| speed "2"
+
+d6 $ runWith 4 (density 2) $ sound "feel*4"
+  # gain 1.5
+  # cutoff "<1000 2000 3000>"
+  # resonance "<0.3 0.2>"
+  # shape 0.6
+  # speed "2"
+
+
+cps 0.8 >>
+
+  (d $ (loopAt 4 $ chop 16 $ sound "paper"
+        # gain "1.2"))
