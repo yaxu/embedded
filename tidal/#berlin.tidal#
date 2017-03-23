@@ -75,7 +75,8 @@ d1 $ off 0.125 (# (s "pulse" # speed "0.5")) $ off 0.25 (# s "rash") $ n (off 0.
 
 d2 $ jux rev $ iter 4 $ runWith 4 (density 2) $ slow 2 $ n (run 16) # sound "amencutup"
   # orbit 1
-  # room 0.6
+  # room 0.8
+  # size 0.7
 
 d3 $ off 0.25 (# crush 5) $ jux rev $ runWith 4 (# speed 2) $ n (run 8) # sound "voodoo"
   # gain 1.4
@@ -95,7 +96,30 @@ d6 $ runWith 4 (density 2) $ sound "feel*4"
   # speed "2"
 
 
-cps 0.8 >>
+cps 0.8
 
-  (d $ (loopAt 4 $ chop 16 $ sound "paper"
-        # gain "1.2"))
+d1 silence
+
+d1 $ jux rev $ iter 4 $ (loopAt 4 $ slow 2 $ striate 8 $ sound "paper*2"
+                         # gain "1.2")
+
+
+d1 $ iter 4 $ stack [(loopAt 4 $ jux (0.5 <~) $ chop 64 $ s "shakedown")
+                    # cutoff (scale 1000 3000 saw1)
+                    # resonance "0.3",
+                    jux rev $ slow 4 $ chop 16 $ sound "paper"
+                    # unit "c"
+                    # speed "[0.2]"
+                    # gain "1.2"
+                   ]
+
+
+d5 $ jux rev $ off 0.25 (|+| speed "4") $ slowspread (gap) [8,16,8,100] $ sound "jungbass:3" |*| speed "2"
+
+d1 $ off 0.25 (# vowel "a")$ n "0(3,8) 3" # sound "bssnare"
+  # gain 1.6
+
+
+
+
+d6 silence
