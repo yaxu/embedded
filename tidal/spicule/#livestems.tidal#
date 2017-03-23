@@ -224,7 +224,7 @@ d3 $ jux rev $ iter 8 $ slow 2 $ chop 16 $ sound "arc"
 
 d4 $ palindrome $
   stack [slow 4 $ n (offadd 0.125 7 "[c7(8,16) b7(7,16), [a8 e7 g7](17,32)]" + 12) # s "xx"
-         # gain "0.9"2                                                                                                                                                                                                                
+         # gain "0.9"2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         ]
 
 d2 $ slowspread (\x -> off x (|*| speed "2")) [0.125,0.25,0.25,-(1/16)] $ (whenmod 8 4 (jux rev) $ (slow 2 $ n "0 [0 2] [2 0] 0 [2 0] 0 [2 1] [0 !?]" # s "drum")) # speed (slow 4 $ scale 0.9 1.5 sine1)
