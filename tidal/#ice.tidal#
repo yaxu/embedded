@@ -1,0 +1,5 @@
+
+cps 0.7
+
+d1 $ off 0.25 (# s "rash") $ n (offadd 0.125 12 $ offadd 0.25 7 $ slow 2 $ "d6(3,8) [~ a5*2] e6(3,8) es6(3,8)") # sound "pulse"
+  
