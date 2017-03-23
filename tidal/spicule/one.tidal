@@ -52,7 +52,7 @@ let a = interlace (smash 8 [1,2,1,4] $ every 2 (density 2) $ jux (brak) $ whenmo
     in
 d1 $ ur 16 "[2 1, 0]" $ [a,b,c]
 
-hush
+
 
     ur :: Time -> Pattern String -> [Pattern a] -> Pattern a
     ur t outer_p ps = slow t $ unwrap $ adjust <$> (timedValues $ (getPat . split) <$> outer_p)
