@@ -1063,5 +1063,5 @@ let with param f p = get param p
 
 let p = sound "arpy:2 arpy:3" # cutoff 1000
 
-get s_p p :: Pattern Str
+density 2 (getI n_p p)
 
