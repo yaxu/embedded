@@ -64,10 +64,18 @@ d2 $ slowspread (\x -> stut x 0.9 3) [4,3] $ sound "bd8:3(3,8)"
   # shape "0.8"
   # speed "<1.5 2>"
 
-d3 $ degrade $ runWith 4 ((|*| speed "0.5") . slow 2)$ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ sound "shackup"
+
+d3 $ degradeBy 0.8 $ runWith 4 ((|*| speed "0.5") . slow 2)$ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ sound "shackup"
 
 
 cps 0.715
 
-  
-d1 
+d1 $ off 0.5 (# (s "pulse" # speed "0.5")) $ off 0.25 (# s "rash") $ n (off 0.125 (+ 7) $ slow 2 $ "f7*3 d6*2 [c6 d5] a5") #  sound "supermandolin"
+  |+| n "<0 7 12>"
+
+d2 $ jux rev $ iter 4 $ runWith 4 (density 2) $ slow 2 $ n (run 16) # sound "amencutup"
+  # orbit 1
+  # room 0.6
+
+d3 $ off 0.25 (# crush 5) $ jux rev $ runWith 4 (# speed 2) $ n (run 8) # sound "voodoo"
+  # gain 1.4
