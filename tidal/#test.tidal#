@@ -1063,5 +1063,10 @@ let with param f p = get param p
 
 let p = sound "arpy:2 arpy:3" # cutoff 1000
 
-density 2 (getI n_p p)
+let withI
 
+let with param f p = p # (makeP n_p) ((\x -> slow 2 (getI n_p x)) p)
+
+d1 $ 
+
+d1 p
