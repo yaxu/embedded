@@ -1056,3 +1056,4 @@ d1 $ off 0.25 ((# (crush "4" # cut "-3" |*| speed "0.5" # orbit "1" # room "0.9"
   # cutoff (slow 16 $ scale 1000 10000 saw1)
   # resonance "0.2"
 
+d1 $ jux rev $ off 0.125 (|*| up "[3 5]/8") $ sound "ravebass:10(3,8)" # vowel "[a e i o u]/5" |*| speed "[1,1.5,2]" # gain "0.9"
