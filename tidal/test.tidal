@@ -1041,3 +1041,7 @@ d1 $ jux rev $ (off 0.25 (# (s "rash" # speed "2")) $ n (offadd 0.125 12 $ offad
   # resonance 0.2
   |+| n "<0 0 7 -5 12 7>"
 
+
+d1 $ iter 4 $ jux rev $ off 0.25 (|+| n "<7 12>") $ struct "x(3,8) x*2" $ n "<0 7 12>" # sound "supermandolin"
+  # legato 1
+  
