@@ -1064,9 +1064,16 @@ let with param f p = get param p
 let p = sound "arpy:2 arpy:3" # cutoff 1000
 
 let withI
+:t with
 
-let with param f p = p # (makeP n_p) ((\x -> slow 2 (getI n_p x)) p)
 
-d1 $ 
+let with :: (ParamType a) => Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
+    with param f p = p # (makeP param) ((\x -> f (get param x)) p)
+    withI :: Param -> (Pattern String -> Pattern String) -> ParamPattern -> ParamPattern
+    withI = with
+    withF = with
+    withS = with
+    
+d1 $ with n_p (slow 2) $ p
 
 d1 p
