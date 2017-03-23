@@ -4,7 +4,7 @@ d1 $ jux rev $ sound "drum [[mt mt?] [ht sd8:3]]"
   # resonance "0.3"
 
 d2 $ sound "[drum:6*4 ! ! [drum:6*8 drum:6*3]/2]/4"
-
+hush
 d3 $ slowspread (loopAt) [2,3,4] $ chop 12 $ sound "breaks125"
 
 hush
