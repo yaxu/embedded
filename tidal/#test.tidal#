@@ -1087,4 +1087,6 @@ let invert 1 = 0
 
 d1 $ do let x = "1 0 0 1 1 0 1 0" :: Pattern Double
         gain x # sound "cp"
-        gain (invert <$> x) # sound "bd"
+        gain (invert <$> x) # sound "cp"
+
+        hush
