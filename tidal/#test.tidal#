@@ -1082,11 +1082,12 @@ d1 $ runWith 4 (density 2)
      $ subtime (slow 1.5) $ n (off 0.25 (+4) $ "0 [3 4] [6 2] 4") # sound "amencutup"
 
 
-let invert 1 = 0
-    invert 0 = 1
+let invert = ((1-) <$>
 
-d1 $ do let x = "1 0 0 1 1 0 1 0" :: Pattern Double
-        gain x # sound "cp"
-        gain (invert <$> x) # sound "cp"
+invert ("1 0 2" :: Pattern Double)
+
+do let x = "1 0 0 1 1 0 1 0" :: Pattern Double
+   -- d1 $ gain x # sound "arpy"
+   d2 $ gain (invert x) # sound "arpy:3"
 
         hush
