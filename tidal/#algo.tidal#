@@ -43,4 +43,10 @@ d1 $ runWith 4 (# speed 2) $ off 0.25 (# crush 5) $ jux rev $
   # speed 2
 
 
-d2 $ jux (density 2) $ n "9 5 . [4 ~ 4, ~ 5]" # sound "micron"
+d2 $ jux ((# speed 2) . rev) $ n "9 5 . [4 ~ 4, ~ 5]" # sound "micron"
+
+d3 $ stut 16 0.8 (1/32) $ n "a8 ~ a7" # sound "rash"
+  # cutoff (slow 4 $ saw1 * 1000 + 1000)
+  # resonance 0.4
+  # cut (-1)
+  # 
