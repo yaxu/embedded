@@ -16,14 +16,18 @@ d2 $ jux (rev) $ runWith 4 (density 2) $ jux (|*| speed 2) $ off 0.5 (rev . (# c
 -- sorry to spoil the vibe!
 :t (ur')
 
+-- I have a bug somewhere
+-- good job this never happens live
+
 d1 $ ur' 16 "[x, y]"
-  [("x", off 0.5 (# speed 2) $ jux rev $ iter 4 $ n (run 8) # sound "micron")
+  [("x", off 0.5 (# speed 2) $ jux rev $ iter 4 $ n (run 8) # sound "micron"
          # crush 4
-  ,
-   ("y", n (off 0.25 (+7) "d6 e6 g7") # s "rash"
+         # shape 0.3
+   ),
+   ("y", n (off 0.125 (+12) $ off 0.25 (+7) "d6 e6 [g7") # s "rash"
          # cutoff 2500
          # resonance 0.2
-         # shape 0.5
+         # shape 0.3
    )
   ]
   []
