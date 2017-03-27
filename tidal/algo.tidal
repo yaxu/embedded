@@ -34,3 +34,4 @@ d1 $ ur' 16 "[x ~, y:echo y:up]"
   [("echo", (# (room saw1 # size saw1 # orbit 1))),
    ("up", ((# speed "2") . rev))
   ]
+hush
