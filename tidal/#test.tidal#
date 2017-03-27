@@ -1080,4 +1080,6 @@ let with :: (ParamType a) => Param -> (Pattern a -> Pattern a) -> ParamPattern -
 
 d1 $ runWith 4 (density 2)
      $ subtime (slow 1.5) $ n (off 0.25 (+4) $ "0 [3 4] [6 2] 4") # sound "amencutup"
-cps 0.7
+
+
+cps 0.65
