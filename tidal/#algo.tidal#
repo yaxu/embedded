@@ -37,8 +37,10 @@ d1 $ ur' 16 "[x ~, y:echo y:up]"
 hush
 
 
-d1 $ off 0.25 (# crush 5) $ jux rev $
+d1 $ runWith 4 (# speed 2) $ off 0.25 (# crush 5) $ jux rev $
   chop "<4 8(3,8) 16 32(3,8) 64 128(3,8)>" $ sound "sn:2"
   # unit "c"
   # speed 2
-  
+
+
+d2 $ jux (density 2) $ n "9 5 . [4 ~ 4, ~ 5]" # sound "micron"
