@@ -16,19 +16,21 @@ d2 $ jux (rev) $ runWith 4 (density 2) $ jux (|*| speed 2) $ off 0.5 (rev . (# c
 -- sorry to spoil the vibe!
 :t (ur')
 
--- I have a bug somewhere
--- good job this never happens live
+-- ur' == longer form patterning..
 
-d1 $ ur' 16 "[x ~, y:echo]"
+d1 $ ur' 16 "[x ~, y:echo y:up]"
   [("x", off 0.5 (# speed 2) $ jux rev $ iter 4 $ n (run 8) # sound "micron"
          # crush 4
          # shape 0.3
    ),
-   ("y", jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $
+   ("y", off 0.25 (# (s "xx" # gain "0.8")) $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $
             slow 2 $ "d6(3,8) e6 [g7 f6] a6") # s "rash"
          # cutoff 2500
          # resonance 0.2
          # shape 0.3
+         # end 0.2
    )
   ]
-  [("echo", (# (room saw1 # orbit 1)))]
+  [("echo", (# (room saw1 # size saw1 # orbit 1))),
+   ("up", ((# speed "2") . rev))
+  ]
