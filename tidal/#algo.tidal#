@@ -1,5 +1,6 @@
 
-d1 $ jux rev $ n (off 0.125 (subtract 12) $ off 0.25 (subtract 5) $ "[d6(3,8) g6(3,8) a6(3,8,2) f7(3,8,4)]/4") # sound "supermandolin"
+d1 $ off 0.25 ( (# s "pulse") . (|+| n "24") ) $runWith 4 (zoom (0,0.25)) $ jux rev $ n (off 0.125 (subtract 12) $ off 0.25 (subtract 5) $ "[d6(3,8) g6(3,8) a6(3,8,2) f7(3,8,4)]/4") # sound "supermandolin"
   # legato 4
   # room 0.4
   # size (slow 4 saw1)
+  |+| n "<0 -5 -12>"
