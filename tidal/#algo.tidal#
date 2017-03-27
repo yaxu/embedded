@@ -1,0 +1,35 @@
+
+d1 $ off 0.25 ((# (s "xx" # gain "0.6")) . (|+| n "24")) $ slow 2 $ off 0.125 ( (# s "rash") . (|+| n "24") . (|*| gain "0.6")) $runWith 4 (zoom (0,0.25)) $ jux rev $ n (off 0.125 (subtract 12) $ off (1/3) (subtract 5) $ "[d6(3,8) g6(3,8) a6(3,8,2) f7(3,8,4)]/4") # sound "supermandolin"
+  # legato 4
+  -- # room 0.99
+  -- # size (slow 4 saw1)
+  |+| n "<0 -5 -12>"
+  # orbit 1
+  # cutoff 1000
+  # resonance 0.3
+
+d2 $ jux (rev) $ runWith 4 (density 2) $ jux (|*| speed 2) $ off 0.5 (rev . (# crush 5)) $ n (run 8) # sound "micron"
+  # shape 0.3
+  # speed 2
+
+-- just need to remember how to use ur'
+-- sorry to spoil the vibe!
+:t (ur')
+
+-- longer form patte
+
+d1 $ ur' 16 "[x ~, y:echo y:up]"
+  [("x", off 0.5 (# speed 2) $ jux rev $ iter 4 $ n (run 8) # sound "micron"
+         # crush 4
+         # shape 0.3
+   ),
+   ("y", jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $
+            slow 2 $ "d6(3,8) e6 [g7 f6] a6") # s "rash"
+         # cutoff 2500
+         # resonance 0.2
+         # shape 0.3
+   )
+  ]
+  [("echo", (# (room saw1 # orbit 1))),
+   ("up", ((# speed "2") . rev))
+  ]
