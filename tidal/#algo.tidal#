@@ -13,5 +13,9 @@ d2 $ jux (rev) $ runWith 4 (density 2) $ jux (|*| speed 2) $ off 0.5 (rev . (# c
   # speed 2
 
 -- just need to remember how to use ur'
+-- s
 :t (ur')
-d1 $ sound 
+
+d1 $ ur' 16 "x"
+  []
+  []
