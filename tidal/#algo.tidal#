@@ -1,3 +1,5 @@
 
-d1 $ n "[d6(3,8) g6(3,8) a6(3,8,2) f7(3,8)]/4" # sound "supermandolin"
+d1 $ jux rev $ n (off 0.125 (subtract 12) $ off 0.25 (subtract 5) $ "[d6(3,8) g6(3,8) a6(3,8,2) f7(3,8,4)]/4") # sound "supermandolin"
   # legato 4
+  # room 0.4
+  # size (slow 4 saw1)
