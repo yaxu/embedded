@@ -38,15 +38,15 @@ hush
 
 
 d1 $ runWith 4 (# speed 2) $ off 0.25 (# crush 5) $ jux rev $
-  chop "<4 8(3,8) 16 32(3,8) 64 128(3,8)>" $ sound "sn:2"
+  chop "<4 8(3,8) 16 32(3,8) 64 128(3,8)>" $ sound "sd8:2"
   # unit "c"
   # speed 2
 
-
 d2 $ jux ((# speed 2) . rev) $ n "9 5 . [4 ~ 4, ~ 5]" # sound "micron"
 
-d3 $ stut 16 0.8 (1/32) $ n "a8 ~ a7" # sound "rash"
+d3 $ slowspread (\x -> stut 16 0.8 x) [(1/32), (1/8), (1/32), (1/4)]
+  $ n "[a8 g7] ~ a7 f6" # sound "rash"
   # cutoff (slow 4 $ saw1 * 1000 + 1000)
   # resonance 0.4
   # cut (-1)
-  # 
+  # shape 0.6
