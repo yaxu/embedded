@@ -57,3 +57,6 @@ d3 $ degradeBy 0.96 $ slow "[2 [4 1]]/2" $ off 0.25 (# (s "xx" # gain "0.8")) $ 
   # shape 0.6
 
 -- right better go thanks for dropping by 
+
+
+d1 $ rev $ off 0.25 (# speed 2) $ sound "arpy arpy:2"
