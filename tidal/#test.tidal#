@@ -1087,6 +1087,6 @@ cps 0.65
 :set -XTypeSynonymInstances -XFlexibleInstances
 
 instance Show ParamMap
-  where show pm = "aha"
+  where show pm = "test"
 
 s "bd"
