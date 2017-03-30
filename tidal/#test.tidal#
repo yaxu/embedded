@@ -1094,5 +1094,5 @@ s "bd"
 cps 0.65
 
 d1 $ sound "[bd sn]*16" $£%£$^ speed (sine1 + 0.5)
-
+d
                
