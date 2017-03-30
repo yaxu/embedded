@@ -1065,7 +1065,7 @@ let p = sound "arpy:2 arpy:3" # cutoff 1000
 
 let withI
 :t with
-
+cps 0.65
 
 let with :: (ParamType a) => Param -> (Pattern a -> Pattern a) -> ParamPattern -> ParamPattern
     with param f p = p # (makeP param) ((\x -> f (get param x)) p)
