@@ -1106,7 +1106,7 @@ in
 d1 $ s (spread' degradeCyclesBy 16 (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~")
 
 
-temporalP
+temporalParam f v p = unwrap $ (\tv -> f tv p) <$> tp
 
 fast tp p = unwrap $ (\tv -> _density tv p) <$> tp
 
