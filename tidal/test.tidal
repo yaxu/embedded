@@ -1101,12 +1101,12 @@ d2 $ sound "rash:50"
 
 
 let repeatCycles n p = cat (replicate n p)
-    degradeCyclesBy i x p = unMaybe $ (\a f -> toMaybe (f > x) a) <$> p <*> repeatCycles i rand
+    degradeCyclesBy i x p = fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand
     toMaybe False _ = Nothing
     toMaybe True a  = Just a
     unMaybe = (fromJust <$>) . filterValues isJust
 d1 $ s (spread' degradeBy (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~")
 
-let degradeBy x p = fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> rand
+let 
 
 
