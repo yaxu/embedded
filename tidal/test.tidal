@@ -1106,8 +1106,6 @@ let repeatCycles n p = cat (replicate n p)
 let temporalParam :: (a -> Pattern b -> Pattern c) -> (Pattern a -> Pattern b -> Pattern c)
     temporalParam f tv p = unwrap $ (\v -> f v p) <$> tv
 
-
-
 :t temporalParam
 
 
