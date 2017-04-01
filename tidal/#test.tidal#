@@ -1102,3 +1102,4 @@ d2 $ sound "rash:50"
 
 d1 $ s $ spread' degradeBy (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~"
 
+repeatCycles n p = cat (replicate n p)
