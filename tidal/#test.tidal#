@@ -1107,4 +1107,4 @@ let repeatCycles n p = cat (replicate n p)
     unMaybe = (fromJust <$>) . filterValues isJust
 d1 $ s (spread' degradeBy (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~")
 
-:t (,)
+let degradeBy x p = filterValues (> . snd) $ (,) <$> p <*> rand
