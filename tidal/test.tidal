@@ -1106,10 +1106,11 @@ let repeatCycles n p = slowcat (replicate n p)
 d1 $ degradeOverBy 8 saw1 (n (run 8) # s "voodoo")
 
 degradeOverBy i tx p = unwrap $ (\x -> (fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand)) <$> (slow (fromIntegral i) tx)
+:t degradeOverBy
 
 repeatCycles 2 $ struct "x*2" rand
 
-d1 $ sound "arpy*8" # n (repeatCycles 2 $ irand 8)
+d1 $ sound "jvbass*8" # up (repeatCycles 2 $ choose [0, 9])
 
 let temporalParam :: (a -> Pattern b -> Pattern c) -> (Pattern a -> Pattern b -> Pattern c)
     temporalParam f tv p = unwrap $ (\v -> f v p) <$> tv
