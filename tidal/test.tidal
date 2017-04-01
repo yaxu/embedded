@@ -1102,11 +1102,14 @@ d2 $ sound "rash:50"
 
 let repeatCycles n p = cat (replicate n p)
     degradeCyclesBy i x p = fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand
+    temporalParam f tv = unwrap . (\v -> f v p) <$> tv
+    degradeCyclesBy' = temporalParam degradeCyclesBy
+    
 in
 d1 $ s (spread' degradeCyclesBy 16 (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~")
 
 
-temporalParam f = unwrap $ (\tv -> f tv p) <$> tp
+let 
 
 fast tp p = unwrap $ (\tv -> _density tv p) <$> tp
 
