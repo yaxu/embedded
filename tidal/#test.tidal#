@@ -1101,5 +1101,10 @@ d2 $ sound "rash:50"
 
 
 d1 $ s $ spread' degradeBy (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~"
+  where repeatCycles n p = cat (replicate n p)
 
-repeatCycles n p = cat (replicate n p)
+degradeBy :: Int -> Double -> Pattern a -> Pattern a
+degradeBy i x p = unMaybe $ (\a f -> toMaybe (f > x) a) <$> p <*> rand
+    where toMaybe False _ = Nothing
+          toMaybe True a  = Just a
+          unMaybe = (fromJust <$>) . filterValues isJust
