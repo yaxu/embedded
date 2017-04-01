@@ -1109,3 +1109,4 @@ d1 $ s (spread' degradeBy (slow 16 saw1) "bd bd [bd bd] ~ ~ bd ~ ~")
 
 let degradeBy x p = fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> rand
 
+
