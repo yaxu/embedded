@@ -1100,12 +1100,12 @@ d1 $ sound "wobble"
 d2 $ sound "rash:50"
 
 
-let repeatCycles n p = cat (replicate n p)
+let repeatCycles n p = slowcat (replicate n p)
     degradeOverBy i tx p = unwrap $ (\x -> (fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand)) <$> (slow (fromIntegral i) tx)
 
-d1 $ degradeOverBy 8 saw1 (n (run 8) # s "arpy")
+d1 $ degradeOverBy 8 saw1 (n (run 8) # s "voodoo")
 
-density 2 $ repestruct "x*2" rand
+repeatCycles 2 $ struct "x*2" rand
 
 d1 $ sound "arpy*8" # n (repeatCycles 2 $ irand 8)
 
