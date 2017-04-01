@@ -1101,7 +1101,7 @@ d2 $ sound "rash:50"
 
 
 let repeatCycles n p = cat (replicate n p)
-    degradeCyclesBy i tx p = unwrap $ (\x -> (fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand)) <$> tx
+    degradeOverBy i tx p = unwrap $ (\x -> (fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand)) <$> tx
     temporalParam f tv = unwrap . (\v -> f v p) <$> tv
     
 in
