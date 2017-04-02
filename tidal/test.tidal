@@ -1106,7 +1106,8 @@ let repeatCycles n p = slowcat (replicate n p)
 d1 $ degradeOverBy 8 saw1 (n (run 8) # s "voodoo")
 
 degradeOverBy i tx p = unwrap $ (\x -> (fmap fst $ filterValues ((> x) . snd) $ (,) <$> p <*> repeatCycles i rand)) <$> (slow (fromIntegral i) tx)
-:t degradeOverBy
+
+:t chop
 
 repeatCycles 2 $ struct "x*2" rand
 
@@ -1130,3 +1131,10 @@ let
 
 fast tp p = unwrap $ (\tv -> _density tv p) <$> tp
 
+do
+  let bassline = rev $ stut' 2 (1/16) ((|+| speed "2") . (|*| gain "0.85")) $ rev $
+      s "bass3(3,8)" # hcutoff 100 |*| up "12" |*| up "[0 1 2 3]/4" # orbit 1
+  d1 $ whenmod 16 12 (rev) $ stack [bassline |*| gain 1]
+
+let a = 1
+    b = 2
