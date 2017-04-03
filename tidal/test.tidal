@@ -1151,3 +1151,5 @@ import qualified Data.Map.Strict as Map
 let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
  in pp (s "hello world")
 
+do d1 silence
+   t1 (xfadeIn 4) $ sound "bd sn"
