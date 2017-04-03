@@ -1151,5 +1151,5 @@ import qualified Data.Map.Strict as Map
 let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
  in pp (s "hello world")
 
-d1 $ sound "bd sn"
-  # gain (now ~> slow 4 envL)
+d1 $ sound "bd sn(2,8)"
+  # room (now ~> slow 16 envL)
