@@ -1151,4 +1151,9 @@ import qualified Data.Map.Strict as Map
 let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
  in pp (s "hello world")
 
-VS "hello"
+show $ VS "hello"
+
+instance Show Value where
+  show (VS s) = s
+  show (VF f) = show f
+  show (VI i) = show i
