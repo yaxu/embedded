@@ -1138,3 +1138,5 @@ do
 
 
 d1 $ (now') ~> do {x <- slow (12 * 12) $ run  12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
+
+let wchoose weights values=choose$concatMap(\x->replicate(fst x)(snd x))(zip weights values)in s"bass3*9"#speed(wchoose[5,1][2,3])
