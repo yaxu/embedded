@@ -1137,4 +1137,4 @@ do
   d1 $ whenmod 16 12 (rev) $ stack [bassline |*| gain 1]
 
 
-d1 $ (now-1) ~> do {x <- slow (12 * 12) $ run  12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
+d1 $ (now') ~> do {x <- slow (12 * 12) $ run  12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
