@@ -1136,5 +1136,5 @@ do
       s "bass3(3,8)" # hcutoff 100 |*| up "12" |*| up "[0 1 2 3]/4" # orbit 1
   d1 $ whenmod 16 12 (rev) $ stack [bassline |*| gain 1]
 
-d1 $ sound ""
-  
+
+d1 $ (now-1) ~> do {x <- slow (12 * 12) $ run  12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
