@@ -1136,5 +1136,18 @@ do
       s "bass3(3,8)" # hcutoff 100 |*| up "12" |*| up "[0 1 2 3]/4" # orbit 1
   d1 $ whenmod 16 12 (rev) $ stack [bassline |*| gain 1]
 
-let a = 1
-    b = 2
+
+d1 $ (now') ~> do {x <- slow (12 * 12) $ run  12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
+
+
+
+s"bass3*9"#speed((\weights values->choose$concatMap(\x->replicate(fst x)(snd x))(zip weights values)) [5,1][2,3])
+
+
+pp :: ParamPattern -> String
+
+import qualified Data.Map.Strict as Map
+
+let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
+ in pp (s "hello world")
+
