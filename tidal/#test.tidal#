@@ -1146,9 +1146,7 @@ s"bass3*9"#speed((\weights values->choose$concatMap(\x->replicate(fst x)(snd x))
 
 pp :: ParamPattern -> String
 
-import Data.Map.Strict as Map
+import qualified Data.Map.Strict as Map
 
-let pp p = (Map.toList ) <$> p
+let pp p = ((show . fst) . Map.toList ) <$> p
  in pp (s "hello world")
-
-    
