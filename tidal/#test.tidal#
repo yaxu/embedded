@@ -1157,3 +1157,4 @@ d1 $ sound "bd sn"
 
 d1 $ slow 4 sine1 >>= \s -> striate' 8 s $ sound "ho"
 
+arc square1 (0.5,1)
