@@ -1155,6 +1155,5 @@ d1 $ sound "bd sn"
   # gain (now ~> slow 4 envL)
 
 
-d1 $ do s <- slow 4 sine1
-        striate' 8 s $ sound "ho"
+d1 $ slow 4 sine1 >>= \s -> striate' 8 s $ sound "ho"
 
