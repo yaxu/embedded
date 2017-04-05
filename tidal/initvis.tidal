@@ -18,7 +18,7 @@ vis "ex2" "lightgray [darkgray white] black"
 
 vis "ex3" "white [darkgray [white lightgray]] black"
 
-vis "ex4" "[darkgray gray white] [black lightgray]"
+vis "ex4" "[darkgray lightgray white] [black lightgray]"
 
 "[darkgray gray white, lightgray black]"
 
