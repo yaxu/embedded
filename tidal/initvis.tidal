@@ -10,3 +10,4 @@ let vis pat = do vLines (C.withSVGSurface) "vis.svg" (600,50) pat 1 1
                  rawSystem "convert" ["vis.svg", "vis.pdf"]
                  return ()
 
+
