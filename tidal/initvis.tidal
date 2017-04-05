@@ -12,7 +12,7 @@ let vis name pat = do vLines (C.withSVGSurface) (name ++ ".svg") (600,50) pat 1 
 
 
 
-vis "ex1" "gray darkgray black"
+vis "ex1" "lightgray darkgray black"
 
 "gray [darkgray white] black"
 
