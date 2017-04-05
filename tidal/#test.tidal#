@@ -1154,4 +1154,7 @@ let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
 d1 $ sound "bd sn"
   # gain (now ~> slow 4 envL)
 
-sound "bd sn"
+
+d1 $ do s <- slow 4 sine1
+        striate' 8 s $ sound "ho"
+
