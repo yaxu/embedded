@@ -12,7 +12,7 @@ let vis name pat = do vLines (C.withSVGSurface) name (600,50) pat 1 1
 
 
 
-"gray darkgray black"
+vis "" "gray darkgray black"
 
 "gray [darkgray white] black"
 
