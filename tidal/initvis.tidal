@@ -20,6 +20,6 @@ vis "ex3" "white [darkgray [white lightgray]] black"
 
 vis "ex4" "[darkgray lightgray white] [black lightgray]"
 
-"[darkgray gray white, lightgray black]"
+vis "ex5" "[darkgray lightgray white, lightgray black]"
 
 "[darkgray gray, [lightgray black]/2 white]*4"
