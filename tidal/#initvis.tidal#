@@ -1,0 +1,25 @@
+import Sound.Tidal.Vis
+import qualified Graphics.Rendering.Cairo as C 
+import Data.Colour
+import Data.Colour.Names
+import Data.Colour.SRGB
+import System.Cmd
+
+let vis name pat = do vLines (C.withSVGSurface) (name ++ ".svg") (600,50) pat 1 1
+                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
+                      rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
+                      return ()
+
+
+
+vis "14-ex1" "lightgray darkgray black"
+
+vis "ex2" "lightgray [darkgray white] black"
+
+vis "ex3" "white [darkgray [white lightgray]] black"
+
+vis "ex4" "[darkgray lightgray white] [black lightgray]"
+
+vis "ex5" "[darkgray lightgray white, lightgray black]"
+
+vis "ex6" "[darkgray black, [lightgray black]/2 white]*4"
