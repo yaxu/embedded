@@ -6,7 +6,7 @@ import Data.Colour.SRGB
 import System.Cmd
 
 let vis name pat = do vLines (C.withSVGSurface) (name ++ ".svg") (600,50) pat 1 1
-                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" ["vis.svg"]
+                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
                       rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                       return ()
 
