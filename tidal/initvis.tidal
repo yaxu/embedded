@@ -5,9 +5,21 @@ import Data.Colour.Names
 import Data.Colour.SRGB
 import System.Cmd
 
-let vis pat = do vLines (C.withSVGSurface) "vis.svg" (600,50) pat 1 1
-                 rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" ["vis.svg"]
-                 rawSystem "convert" ["vis.svg", "vis.pdf"]
-                 return ()
+let vis name pat = do vLines (C.withSVGSurface) name (600,50) pat 1 1
+                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" ["vis.svg"]
+                      rawSystem "convert" ["vis.svg", "vis.pdf"]
+                      return ()
 
 
+
+"gray darkgray black"
+
+"gray [darkgray white] black"
+
+"gray [darkgray [white lightgray]] black"
+
+"[darkgray gray white] [black lightgray]"
+
+"[darkgray gray white, lightgray black]"
+
+"[darkgray gray, [lightgray black]/2 white]*4"
