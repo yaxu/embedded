@@ -1154,7 +1154,6 @@ let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
 d1 $ sound "bd sn"
   # gain (now ~> slow 4 envL)
 
+import Sound.Tidal.Context
 
-d1 $ slow 4 sine1 >>= \s -> striate' 8 s $ sound "ho"
-
-arc square1 (0.5,1)
+tidal_version
