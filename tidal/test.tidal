@@ -1153,3 +1153,5 @@ let pp p = (map (\(k,v) -> (show k) ++ ":" ++ (show v)) . Map.toList ) <$> p
 
 d1 $ sound "bd sn"
   # gain (now ~> slow 4 envL)
+
+d1 $ sound "arpy" # n (floor <$> sine1 * 8)
