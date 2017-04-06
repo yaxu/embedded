@@ -1156,4 +1156,3 @@ d1 $ sound "bd sn"
 
 import Sound.Tidal.Context
 
-tidal_version
