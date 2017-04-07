@@ -1155,3 +1155,11 @@ d1 $ sound "bd sn"
   # gain (now ~> slow 4 envL)
 
 d1 $ sound "arpy" # n (floor <$> sine1 * 8)
+
+
+let sinewave = sig $ \t -> ((sin $ pi * 2 * (fromRational t)) + 1) / 2
+in
+s "bd*4" # speed sinewave
+
+
+
