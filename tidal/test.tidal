@@ -1159,7 +1159,8 @@ d1 $ sound "arpy" # n (floor <$> sine1 * 8)
 
 let sinewave = sig $ \t -> ((sin $ pi * 2 * (fromRational t)) + 1) / 2
 in
-s "bd*4" # speed sinewave
+
+"0*8" + tri
 
 
 
