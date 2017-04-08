@@ -17,4 +17,4 @@ example :: Diagram B
 example = hcat
   [eff, eff # scale 2, eff # scaleX 2, eff # scaleY 2, eff # rotateBy (1/12)]
 
-main = mainWith myCircle
+main = mainWith example
