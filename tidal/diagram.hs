@@ -18,6 +18,6 @@ let (##) = D.#
 
 example :: D.Diagram B
 example = D.hcat
-  [eff, eff # D.scale 2, eff # D.scaleX 2, eff # D.scaleY 2, eff # D.rotateBy (1/12)]
+  [eff, eff ## D.scale 2, eff ## D.scaleX 2, eff ## D.scaleY 2, eff ## D.rotateBy (1/12)]
 
 main = mainWith example
