@@ -2,7 +2,7 @@
 {-# LANGUAGE FlexibleContexts          #-}
 {-# LANGUAGE TypeFamilies              #-}
 
-import Diagrams.Prelude
+import qualified Diagrams.Prelude as D
 import Diagrams.Backend.SVG.CmdLine
 import Sound.Tidal.Context
 -- or:
