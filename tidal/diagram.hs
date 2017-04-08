@@ -4,6 +4,7 @@
 
 import Diagrams.Prelude
 import Diagrams.Backend.SVG.CmdLine
+import Sound.Tidal.Context
 -- or:
 -- import Diagrams.Backend.xxx.CmdLine
 -- where xxx is the backend you would like to use.
