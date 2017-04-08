@@ -16,4 +16,4 @@ eff = (text "F" <> square 1) # fontSize (local 1)
 example = hcat
   [eff, eff # scale 2, eff # scaleX 2, eff # scaleY 2, eff # rotateBy (1/12)]
 
-main = mainWith example
+main = mainWith myCircle
