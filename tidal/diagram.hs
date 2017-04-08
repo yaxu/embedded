@@ -13,6 +13,7 @@ myCircle = circle 1
 
 eff = (text "F" <> square 1) # fontSize (local 1)
 
+example :: Diagram B
 example = hcat
   [eff, eff # scale 2, eff # scaleX 2, eff # scaleY 2, eff # rotateBy (1/12)]
 
