@@ -10,9 +10,9 @@ import Sound.Tidal.Context
 -- where xxx is the backend you would like to use.
 
 myCircle :: Diagram B
-myCircle = circle 1
+myCircle = D.circle 1
 
-eff = (text "F" <> square 1) # fontSize (local 1)
+eff = (D.text "F" <> D.square 1) # D.fontSize (D.local 1)
 
 example :: Diagram B
 example = D.hcat
