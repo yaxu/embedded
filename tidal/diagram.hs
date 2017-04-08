@@ -14,7 +14,7 @@ myCircle = D.circle 1
 
 eff = (D.text "F" <> D.square 1) # D.fontSize (D.local 1)
 
-let (##) = D.#
+let (##) = (D.#)
 
 example :: D.Diagram B
 example = D.hcat
