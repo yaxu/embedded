@@ -1211,6 +1211,6 @@ let markOut :: Integer -> [Integer] -> [(Integer, Integer)]
       where s = sum xs
     spaceOut xs p = slow (fromIntegral $ sum xs) $ stack $ map (\a -> compress a p) $ spaceArcs xs
 in
-d1 $ spaceOut [2,5,3] $ sound "bd*16" # speed (scale 1 2 sine1)
+d1 $ spaceOut [2,5,3] $ jux rev $ n (run 16) # sound "voodoo" # speed (scale 1 2 sine1)
 
 :t foldl
