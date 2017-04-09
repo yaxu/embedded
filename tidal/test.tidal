@@ -1214,4 +1214,9 @@ in
 d1 $ spaceOut [2,5,3,2] $ jux rev $ n (run 16) # sound "voodoo" # speed (scale 1 2 sine1)
 
 
+d1 $ when (>0) (const silence) $ sound "bd sn"
 
+:t stut
+
+d1 $ do x <- "<4 6 2 16>"
+        stut x 0.7 0.25 $ n (run 8) # sound "voodoo"
