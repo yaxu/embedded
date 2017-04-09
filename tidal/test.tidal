@@ -1200,3 +1200,14 @@ cps 1
 d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
   # speed 2
 
+
+let spaceOut xs = foldr (\a b -> (a + (head b)):b) [0] xs
+      where s = sum xs
+
+let markOut :: Int -> [Int] -> [(Int, Int)]
+    markOut offset [] = []
+    markOut offset (x:xs) = (offset,offset+x):(markOut (offset+x) xs)
+
+spaceOut [2,3,5]
+
+:t foldl
