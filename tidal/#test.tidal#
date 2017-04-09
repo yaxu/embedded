@@ -1201,6 +1201,9 @@ d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
   # speed 2
 
 
-spaceOut xs = foldr (\a b -> a + head b) 
+let spaceOut xs = foldr (\a b -> (s - a + (head b)):b) [0] xs
+      where s = sum xs
 
-:t foldr
+spaceOut [4,3,2]
+
+:t foldl
