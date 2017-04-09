@@ -1207,7 +1207,10 @@ let spaceOut xs = foldr (\a b -> (a + (head b)):b) [0] xs
 let markOut :: Int -> [Int] -> [(Int, Int)]
     markOut offset [] = []
     markOut offset (x:xs) = (offset,offset+x):(markOut (offset+x) xs)
+    spaceArcs xs = map (\(a,b) -> (a%s,b%s)) $ markOut 0 xs
+      where s = fromIntegral (sum xs)
+    spaceOut xs p = stack $ map (\a -> compress a p) $ spaceArcs xs
 
-spaceOut [2,3,5]
+spaceOut [2,5,7]
 
 :t foldl
