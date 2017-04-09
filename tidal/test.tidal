@@ -1204,13 +1204,13 @@ d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
 let spaceOut xs = foldr (\a b -> (a + (head b)):b) [0] xs
       where s = sum xs
 
-let markOut :: Int -> [Int] -> [(Int, Int)]
+let markOut :: Integer -> [Integer] -> [(Integer, Integer)]
     markOut offset [] = []
     markOut offset (x:xs) = (offset,offset+x):(markOut (offset+x) xs)
     spaceArcs xs = map (\(a,b) -> (a%s,b%s)) $ markOut 0 xs
-      where s = fromIntegral (sum xs)
-    spaceOut xs p = stack $ map (\a -> compress a p) $ spaceArcs xs
-
-spaceOut [2,5,7]
+      where s = sum xs
+    spaceOut xs p = slow (fromIntegral $ sum xs) $ stack $ map (\a -> compress a p) $ spaceArcs xs
+in
+d1 $ spaceOut [2,5,3] $ sound "bd*16" # speed (scale 1 2 sine1)
 
 :t foldl
