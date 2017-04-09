@@ -1165,3 +1165,11 @@ in
 d1 $ (now) ~> do {x <- slow (12 * 12) $ run 12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
 
 hush
+
+
+d1 $ every 4 (0.25 ~>) (n "0 1 2 3" # sound "arpy")
+
+0 1 2 3
+0 1 2 3
+0 1 2 3
+3 0 1 2
