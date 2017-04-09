@@ -1197,4 +1197,6 @@ cps ( 138/60)
 
 cps 1
 
-d1 $ n (slow 4 $ scan 4) # sound "arpy"
+d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
+  # speed 2
+
