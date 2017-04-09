@@ -1222,5 +1222,5 @@ d1 $ stutx "<4 6 12 2>" 0.6 "<0.25 0.5 0.125>" $ n (run 8) # sound "voodoo"
 
 let stutx n g t p = unwrap $ (\a b c -> stut a b c p) <$> n <*> g <*> t
 
-(0.5 <~ "a b c d" :: Pattern String)
+(0.5 <~ ("a b") :: Pattern String)
 
