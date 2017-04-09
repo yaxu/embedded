@@ -1173,3 +1173,30 @@ d1 $ every 4 (0.25 ~>) (n "0 1 2 3" # sound "arpy")
 0 1 2 3
 0 1 2 3
 3 0 1 2
+
+:t _iter
+
+d1 $ smash 4 [0.5,0.25] $ _iter 3 $ sound "[[~ [drum drum:1]] ~ drum ~]/5"
+
+d1 $ smash 4 [0.5,0.25] $ iter 3 $ sound "[[~ [drum drum:1]] ~ drum ~]/5"
+  # pan 0
+
+d2 $ smash 4 [0.5,0.25] $ _iter 3 $ sound "[[~ [drum drum:1]] ~ drum ~]/5"
+  # pan 0
+
+d1 $ smash 4 [0.5,0.25] $ iter 3 $ sound "[[~ [drum drum:1]] ~ drum ~]/5"
+  # pan 1
+
+d2 $ slow 4 $ sound "cp bd bd bd"
+
+d1 <- superDirtStream
+
+(cps, getNow) <- cpsUtils
+
+cps ( 138/60)
+
+cps 1
+
+d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
+  # speed 2
+
