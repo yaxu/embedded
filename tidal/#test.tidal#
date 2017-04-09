@@ -1195,3 +1195,6 @@ d1 <- superDirtStream
 
 cps ( 138/60)
 
+cps 1
+
+d1 $ n (slow 4 $ scan 4) # sound "arpy"
