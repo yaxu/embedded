@@ -1218,5 +1218,6 @@ d1 $ when (>0) (const silence) $ sound "bd sn"
 
 :t stut
 
-d1 $ do x <- "<4 6 2 16>"
-        stut x 0.7 0.25 $ n (run 8) # sound "voodoo"
+d1 $ stutx "<4 6 12 2>" 0.6 "<0.25 0.5 0.125>" $ n (run 8) # sound "voodoo"
+
+let stutx n g t p = unwrap $ (\a b c -> stut a b c p) <$> n <*> g <*> t
