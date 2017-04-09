@@ -1209,11 +1209,9 @@ let markOut :: Time -> [Time] -> [(Time, Time)]
     markOut offset (x:xs) = (offset,offset+x):(markOut (offset+x) xs)
     spaceArcs xs = map (\(a,b) -> (a/s,b/s)) $ markOut 0 xs
       where s = sum xs
-    spaceOut xs p = slow (fromIntegral $ sum xs) $ stack $ map (\a -> compress a p) $ spaceArcs xs
+    spaceOut xs p = _slow (toRational $ sum xs) $ stack $ map (\a -> compress a p) $ spaceArcs xs
 in
-d1 $ spaceOut [2,5,3] $ jux rev $ n (run 16) # sound "voodoo" # speed (scale 1 2 sine1)
+d1 $ spaceOut [2,5,3,2] $ jux rev $ n (run 16) # sound "voodoo" # speed (scale 1 2 sine1)
 
-:t foldl
 
-d1 $ spaceOut [2,5,3,1,4,2,6,6,1/2] $ sound "bd*99" # gain (scale 0 1 tri1)
 
