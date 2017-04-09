@@ -1201,4 +1201,6 @@ d1 $ jux rev $ n (slow 8 $ slowcat [scan 8, fast 8 $ run 8]) # sound "amencutup"
   # speed 2
 
 
-spaceOut xs = 
+spaceOut xs = foldr
+
+:t foldr
