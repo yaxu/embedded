@@ -1216,3 +1216,4 @@ d1 $ spaceOut [2,5,3] $ jux rev $ n (run 16) # sound "voodoo" # speed (scale 1 2
 :t foldl
 
 d1 $ spaceOut [2,5,3] $ sound "bd*99" # gain (scale 0 1 tri1)
+
