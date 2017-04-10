@@ -14,7 +14,7 @@ def is_live():
   url = "http://slab.org:9090/stat.xsl"
   response = urllib2.urlopen(url)
   x = response.read()
-  s = "<name>yaxu</name>"
+  s = "<name>alex</name>"
   f = open("livestate.txt", "w")
   # hack - todo parse properly
   if s in x and "<video>" in x:
