@@ -75,7 +75,7 @@ def archive_mode():
     os.system("killall omxplayer.bin")
 
 def write_live_srt(title):
-    f = open("../video/live.srt", "w")
+    f = open("/home/alex/video-archive/live.srt", "w")
     f.write("1\n00:00:00,000 --> 01:00:00,000\nLooking screen\n%s\n\n" % (title,))
     f.close()
 
