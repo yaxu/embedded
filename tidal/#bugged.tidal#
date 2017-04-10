@@ -3,7 +3,7 @@
 length $ arc (0.5 <~ "a b c d" :: Pattern String) (0,1)
 -- 8
 
-length $ arc (0.5 <~ (listToPat $ words "a b c d") :: Pattern String) (0,2)
+length $ arc (0 <~ (listToPat $ words "a b c d") :: Pattern String) (0,)
 -- 8
 
 listToPat
