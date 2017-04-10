@@ -37,6 +37,7 @@ def was_live():
         return(False)
 
 def get_info():
+    return("Live stream")
     channel = "UC-id0vwQoAUYBNCm0nmaqQw"
     f = open("youtube.txt")
     key = f.read()
