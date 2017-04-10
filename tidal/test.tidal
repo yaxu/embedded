@@ -1224,3 +1224,7 @@ let stutx n g t p = unwrap $ (\a b c -> stut a b c p) <$> n <*> g <*> t
 
 length $ arc ((density 2 $ (fastcat [pure "a", pure "b"]) :: Pattern String)) (0,1)
 
+d2   $ every 8 (const $ randcat [sound "hh hh hh", sound "mt", sound "hh*4", sound "mt:2*4"] # nudge "[0 0.04]*4")
+      $ every 4 ( (# delay "0.25") . (# delaytime "0.5") .  (# room "0.25") .  (# delayfeedback "0.5") )
+                $ stack[ sound "sd:6(3,8)"
+                    # speed "[~ 1.5 ~ 2]/3]" # room "0.03", every 4 (const $ sound "bd:7(2,8)") $ sound "bd:8(3,8)", sound "hh*8?"]
