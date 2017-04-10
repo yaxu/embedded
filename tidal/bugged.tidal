@@ -1,0 +1,4 @@
+
+
+0.5 <~ "a b c d" :: Pattern String
+
