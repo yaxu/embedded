@@ -3,7 +3,7 @@
 length $ arc (0.5 <~ "a b c d" :: Pattern String) (0,1)
 -- 8
 
-density 2 $ ((listToPat $ words "a b c d") :: Pattern String)
+_density 2 $ (fastcat [pure "a",pure "b"]) :: Pattern String
 
 
 -- 8
