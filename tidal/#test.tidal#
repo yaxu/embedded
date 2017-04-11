@@ -1232,3 +1232,4 @@ d2   $ every 8 (const $ randcat [sound "hh hh hh", sound "mt", sound "hh*4", sou
 arc (unwrap $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1 1")) (0,1)
 
 unwrap p = Pattern $ \a -> concatMap ((\p' -> arc p' a) . thd') (arc p a)
+
