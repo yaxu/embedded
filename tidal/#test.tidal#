@@ -1243,13 +1243,10 @@ arc (density "1 1 1 1 1" $ "bd sn" :: Pattern String) (0,1)
 
 d1 $ jux rev $ off 0.25 (|+| speed "2 4") $ density "1 [4 1 1 32] 1 2" $ n (run 8) # sound "voodoo"
 
-d1 $ do i <- slow 8 $ discretise 256 $ scale 0.1 16 sine1
+d1 $ do i <- slow 16 $ discretise' 64 $ scale 1 2 sine1
         density (realToFrac i) $ sound "bd" #  cut "1"
-
-d1 $ sound "bd*8" # (speed $ discretise' 8 $ scale 0.1 16 sine1)
+hus
 
 discretise 8 rand
 
-let discretise' n p = (_density n $ atom (id)) <*> p
-    discretise n p = (density n $ atom (id)) <*> p
-hush
+
