@@ -1261,3 +1261,4 @@ d1 $ jux rev $ chunk 4 (density 2) $ iter 4 $ off 0.25 (|+| n "<7 12>") $ struct
 d1 $ do i <- slow 2 $ scale 1 2 saw1
         density (realToFrac i) $ sound "bd*8" #  cut "1"
 
+d1 $ slow 4 $ fit' 1 8 (run 8) (run 8) (chop 8 $ s "breaks125")
