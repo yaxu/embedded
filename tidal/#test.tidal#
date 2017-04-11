@@ -1250,4 +1250,4 @@ d1 $ do i <- slow 2 $ discretise' 64 $ scale 1 2 sine1
 discretise 8 rand
 
 
-d1 $ (now') ~> do {x <- slow (12 * 12) $ run 12; jux ((x/12) <~) $ sound "cp ! ! ~ cp ! ~ cp ~ cp ! ~"}
+d1 $ n  sound "arpy"
