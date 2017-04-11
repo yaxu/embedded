@@ -1229,8 +1229,12 @@ d2   $ every 8 (const $ randcat [sound "hh hh hh", sound "mt", sound "hh*4", sou
                 $ stack[ sound "sd:6(3,8)"
                     # speed "[~ 1.5 ~ 2]/3]" # room "0.03", every 4 (const $ sound "bd:7(2,8)") $ sound "bd:8(3,8)", sound "hh*8?"]
 
-arc (unwrap $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1 1")) (0,1)
 
+import Sound.Tidal.Utils
+import Data.Maybe
 
+let munge a (whole,part,v) = do part' <- subArc a part
+                                return (whole, part',v)
+    unwrap'' p = Pattern $ \a -> concatMap ((\p' -> catMaybes $ map (munge a) $ arc p' a) . thd') (arc p a)
 
-unwrap p = Pattern $ \a -> concatMap ((\p' -> arc p' a) . thd') (arc p a)
+arc (unwrap'' $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1 1")) (0,1)
