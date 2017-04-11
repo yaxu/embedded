@@ -1229,5 +1229,5 @@ d2   $ every 8 (const $ randcat [sound "hh hh hh", sound "mt", sound "hh*4", sou
                 $ stack[ sound "sd:6(3,8)"
                     # speed "[~ 1.5 ~ 2]/3]" # room "0.03", every 4 (const $ sound "bd:7(2,8)") $ sound "bd:8(3,8)", sound "hh*8?"]
 
-unwrap $ (\x -> _density x ("a b")) <$> ("1 1")  :: Pattern String
+unwrap $ (\x -> _density x ("a b")) <$> ("1 1 1")  :: Pattern String
 
