@@ -1250,4 +1250,7 @@ d1 $ do i <- slow 2 $ discretise' 64 $ scale 1 2 sine1
 discretise 8 rand
 
 
-d1 $ n  sound "arpy"
+d1 $ jux rev $ chunk 4 (density 2) $ iter 4 $ off 0.25 (|+| n "<7 12>") $ struct "x(3,8) x*2" $ n "<0 7 12>" # sound "[supermandolin]"
+  # legato 1
+  # room 0.4
+
