@@ -1235,6 +1235,6 @@ import Data.Maybe
 
 let munge a (whole,part,v) = do part' <- subArc a part
                                 return (whole, part',v)
-    unwrap'' p = Pattern $ \a -> concatMap ((\p' -> catMaybes $ map (munge a) $ arc p' a) . thd') (arc p a)
+    unwrap'' p = Pattern $ \a -> concatMap (\(outerWhole, outerPart, p') -> catMaybes $ map (munge outerPart) $ arc p' a) (arc p a)
 
 arc (unwrap'' $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1")) (0,1)
