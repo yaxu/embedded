@@ -1241,4 +1241,4 @@ arc (unwrap'' $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1")) (0,1)
 
 arc (density "1 1 1 1 1" $ "bd sn" :: Pattern String) (0,1)
 
-d1 $ jux rev $density "1 1%2 2 1%4" $ n (run 8) # sound "voodoo"
+d1 $ jux rev $ off 0.25 (|+| speed "2 4") $ density "1 [4 1 1 32] 1 2" $ n (run 8) # sound "voodoo"
