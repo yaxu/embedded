@@ -18,3 +18,7 @@ let patterns = [("line",
 in
 d1 $ ur' 16 "[br br:change, ~ line:crash line ~]" patterns txs
 
+:t (>>=)
+
+Pattern a -> (a -> Pattern b) -> Pattern b
+
