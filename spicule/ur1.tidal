@@ -1,2 +1,6 @@
-d1 $ off 0.25 (|*| speed 1.5) $ n (run "8 <4 3 4 6>") # sound "micron"
-  |*| speed 2
+d1 $ slow 2 $ off 0.25 (|*| speed 1.5) $ n (run "8 <4 3 4 6>") # sound "micron"
+  |*| speed (1.38/2)
+  # hcutoff 400
+  # resonance 0.3
+  
+d2 $ n "c7(3,8)" # sound "rash"
