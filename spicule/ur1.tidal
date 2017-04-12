@@ -6,6 +6,4 @@ d2 $ (slow 2 $ degradeBy "0 0.3" $ off "<0.25 0.5 0.125>" (# (s "xx" # speed 2 #
   # orbit 1
   # size 0.75
   # room 0.8
-  # cutoff (slow 4 $ saw1 * 1000 + 3000)
-  # resonance "<0.2 0.3 0.4>"
 
