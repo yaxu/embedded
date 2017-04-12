@@ -1249,5 +1249,5 @@ d1 $ do i <- slow 8 $ discretise 256 $ scale 0.1 16 sine1
 arc (density 2 $ sound "a b c d e f") (0,1)
 
 
-d1 $ "<0 0 0 0.25>" <~ sound "bd sn:1 sn:2 bd"
+d1 $ (density "<1>" $ n (run 16) # sound "amencutup")
 
