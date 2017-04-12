@@ -9,8 +9,12 @@ let patterns = [("line",
                 )
                ]
     txs = [("crash",
-            degrade . (# speed (rev $ saw + 1)))
+            degrade . (# speed (rev $ saw + 1))
+           ),
+           ("change",
+            chunk 4 (density 2)
+           )
           ]
 in
-d1 $ ur' 16 "[br, ~ line:crash line:crash ~]" patterns txs
+d1 $ ur' 16 "[br br:change, ~ line:crash line ~]" patterns txs
 
