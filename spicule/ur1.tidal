@@ -12,7 +12,7 @@ let patterns = [("line",
             degrade . (# speed (rev $ saw + 1))
            ),
            ("change",
-            chunk 4 (density 2)
+            chunk 4 (slow 2)
            )
           ]
 in
