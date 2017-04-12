@@ -9,6 +9,7 @@ d1 $ slow 2 $ n (run 8) # sound "voodoo"
 -- you can now also put a pattern instead:
 d1 $ slow "1 2" $ n (run 8) # sound "voodoo"
 
+-- More examples:
 d1 $ iter "<4 2 8>" $ n (run 8) # sound "voodoo"
 
 -- instead of 'density', you can now say 'fast'. they do the
