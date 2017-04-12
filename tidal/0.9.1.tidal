@@ -1,9 +1,7 @@
 -- new <> syntax for picking one event per cycle:
 d1 $ n "<3 2 1>" # sound "arpy"
-
--- new <> syntax for picking one event per cycle:
 d1 $ n "1*2 <3 [2 3] 1>" # sound "arpy"
-hus
+
 -- For quite a lot of functions, where before you always put numbers, e.g. with slow:
 d1 $ slow 2 $ n (run 8) # sound "voodoo"
 
