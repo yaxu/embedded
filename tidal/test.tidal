@@ -1251,4 +1251,4 @@ arc (density 2 $ sound "a b c d e f") (0,1)
 
 d1 $ chunk 2 (density 2) $ ("<0 0.25 0.5>" <~ (slow "<1 1 2 3>" $ n (run 8) # sound "amencutup")) # speed 1.5
 
-d1 $ slow (palindrome ratsine) (n (run 8) # s "amencutup")
+d1 $ slow (palindrome $ ratsine * 0.01 + 1) (n (run 8) # s "amencutup")
