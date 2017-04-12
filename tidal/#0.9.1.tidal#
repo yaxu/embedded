@@ -1,0 +1,17 @@
+-- new <> syntax for picking one event per cycle:
+d1 $ n "<3 2 1>" # sound "arpy"
+d1 $ n "1*2 <3 [2 3] 1>" # sound "arpy"
+
+-- For quite a lot of functions, where before you always put numbers, e.g. with slow:
+d1 $ slow 2 $ n (run 8) # sound "voodoo"
+
+-- you can now also put a pattern instead:
+d1 $ slow "1 2" $ n (run 8) # sound "voodoo"
+
+d2 $ iter "<4 2 8>" $ n (run 8) # sound "voodoo"
+
+-- instead of 'density', you can now say 'fast'
+d1 $ fast "1 0.5" $ n (run 8) # sound "voodoo"
+
+-- instead of 'slow' you can now say 'sparsi
+d1 $ fast "1 0.5" $ n (run 8) # sound "voodoo"
