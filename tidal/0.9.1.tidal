@@ -10,11 +10,11 @@ d1 $ slow "1 2" $ n (run 8) # sound "voodoo"
 
 d2 $ iter "<4 2 8>" $ n (run 8) # sound "voodoo"
 
--- instead of 'density', you can now say 'fast'. they do the same
+-- instead of 'density', you can now say 'fast'. they do the
+-- same. 'fast' goes better as an opposite of 'slow'
 d1 $ fast 2 $ n (run 8) # sound "voodoo"
 
--- instead of 'slow' you can now say 'sparsity', they do the same
+-- instead of 'slow' you can now say 'sparsity', they do the
+-- same. 'sparsity' goes better as an opposite of 'density'
 d1 $ sparsity 2 $ n (run 8) # sound "voodoo"
-
--- i.e., you can do fast/slow and density/sparsity
 
