@@ -5,7 +5,7 @@ d1 $ n "1*2 <3 [2 3] 1>" # sound "arpy"
 
 -- single-number patterns don't have to go in double quotes:
 d1 $ sound "bd mt lt bd mt:3 lt ht:3 lt"
-  # speed 2
+  # speed 4
 
 -- For quite a lot of functions, where before you always put numbers, e.g. with slow:
 d1 $ slow 2 $ n (run 8) # sound "voodoo"
