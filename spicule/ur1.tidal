@@ -1,7 +1,7 @@
 d1 $ slow 2 $ off 0.25 (|-| n 4) $ n ((run "[8 16] <4 8 4 2>") + 7) # sound "micron"
   # speed 2
 
-d2 $ off 0.25 (# s "pulse") $ jux (rev . (|+| n "<7 7 7 7 12>")) $ off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "rash"
+d2 $ slow 2 $ off 0.25 (# s "pulse") $ jux (rev . (|+| n "<7 7 7 7 12>")) $ off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "rash"
   # gain 1.1
   # legato 2
   # orbit 1
