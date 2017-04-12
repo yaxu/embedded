@@ -1,8 +1,8 @@
 d1 $ slow 2 $ off 0.25 (|-| n 4) $ n ((run "[8 16] <4 8 4 2>") + 7) # sound "micron"
   # speed 2
+  # crush 3
 
 d2 $ (slow 2 $ degradeBy "0 0.3" $ off "<0.25 0.5 0.125>" (# (s "xx" # speed 2 # gain 0.9 # legato 1)) $ jux (rev . (|+| n "<7 7 7 7 12>")) $ off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "rash")
-  # gain 1.1
   # orbit 1
   # size 0.75
   # room 0.8
