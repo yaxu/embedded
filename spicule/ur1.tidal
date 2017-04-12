@@ -1,1 +1,2 @@
-d1 $ sound "micron"
+d1 $ off 0.25 (|*| speed 1.5) $ n (run "8 <4 3 4 6>") # sound "micron"
+  |*| speed 2
