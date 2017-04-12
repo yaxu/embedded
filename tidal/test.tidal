@@ -1247,3 +1247,7 @@ d1 $ do i <- slow 8 $ discretise 256 $ scale 0.1 16 sine1
         density (realToFrac i) $ sound "bd" #  cut "1"
 
 arc (density 2 $ sound "a b c d e f") (0,1)
+
+
+d1 $ (slow "1 0.25" $ n (run 8) # sound "amencutup")
+
