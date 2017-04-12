@@ -4,5 +4,8 @@ d1 $ slow 2 $ off 0.25 (|-| n 4) $ n ((run "[8 16] <4 8 4 2>") + 7) # sound "mic
 d2 $ off 0.25 (|+| n 7) $ n "c7(3,8) f6" # sound "rash"
   # gain 1.1
   # legato 2
+  # orbit 1
+  # size 0.95
+  # room 0.6
 
 
