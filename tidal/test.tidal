@@ -1251,4 +1251,10 @@ arc (density 2 $ sound "a b c d e f") (0,1)
 
 d1 $ chunk 2 (density 2) $ ("<0 0.25 0.5>" <~ (slow "<1 1 2 3>" $ n (run 8) # sound "amencutup")) # speed 1.5
 
-d1 $ slow (palindrome $ ratsine * 0.01 + 1) (n (run 8) # s "amencutup")
+d1 $ (n (run "4 6") # s "amencutup")
+
+let run :: (Enum a, Num a) => Pattern a -> Pattern a
+    run tp =  tp >>= _run
+    _run :: (Enum a, Num a) => a -> Pattern a
+    _run n = listToPat [0 .. n-1]
+
