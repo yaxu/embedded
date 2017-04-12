@@ -1257,4 +1257,3 @@ d1 $ jux rev $ (n (run "8 6") # s "amencutup")
 let temporalParam' f tv p = unwrap' $ (\v -> f v p) <$> tv
     density' = temporalParam' _density
 
-d1 $ density "1 0.5" $ sound "bd sn"
