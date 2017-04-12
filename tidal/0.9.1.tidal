@@ -17,7 +17,6 @@ d1 $ slow "1 2" $ n (run 8) # sound "voodoo"
 d1 $ iter "<4 2 8>" $ n (run 8) # sound "voodoo"
 d1 $ slow 2 $ (choose [0, 0.25, 0.5, 0.75]) <~ (n (run 16) # sound "amencutup")
 d1 $ degradeBy (slow 8 saw1) $ slow 2 $ (n (run 16) # sound "amencutup")
-
 d1 $ rev $ chop "<8 3 2 1>" $ sound "bd ~ sn:2 kurt:2"
 
 -- instead of 'density', you can now say 'fast'. they do the
