@@ -1239,7 +1239,7 @@ let munge a (whole,part,v) = do part' <- subArc a part
 
 arc (unwrap'' $ (\x -> _density x ("a" :: Pattern String)) <$> ("1 1")) (0,1)
 
-map showEvent $ arc (density "1 1 1 1 1" $ "bd sn" :: Pattern String) (0,1)
+density "1 1 1 1 1" $ "bd sn" :: Pattern String
 
 d1 $ jux rev $ off 0.25 (|+| speed "2 4") $ density "1 [4 1 1 32] 1 2" $ n (run 8) # sound "voodoo"
 
