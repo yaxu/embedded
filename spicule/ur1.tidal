@@ -9,7 +9,7 @@ let patterns = [("line",
                 )
                ]
     txs = [("crash",
-            degrade . (# crush "1"))
+            degrade . (# speed (saw + 1)))
           ]
 in
 d1 $ ur' 16 "[br, ~ line:crash . ~]" patterns txs
