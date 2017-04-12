@@ -1249,5 +1249,5 @@ d1 $ do i <- slow 8 $ discretise 256 $ scale 0.1 16 sine1
 arc (density 2 $ sound "a b c d e f") (0,1)
 
 
-d1 $ ("<0 0.25 0.5>" <~ (slow "<1 1 2 3>" $ n (run 8) # sound "amencutup")) # speed 1.5
+d1 $ chunk 2 (density 2) $ ("<0 0.25 0.5>" <~ (slow "<1 1 2 3>" $ n (run 8) # sound "amencutup")) # speed 1.5
 
