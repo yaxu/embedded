@@ -39,10 +39,3 @@ d1 $ fast 2 $ n (run 8) # sound "voodoo"
 d1 $ sparsity 2 $ n (run 8) # sound "voodoo"
 
 
- d1 $ stack [
-    sound "tech:5" # gain "1.6" # up "-8" # speed "0.7"  # room 0.25,
-    (0.2 ~>) $ sound "cp" # speed "1.9" # room 0.1
-] # size 0.2
-
-d2 $ sound "co*2" # gain "0.6"
-
