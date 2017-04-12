@@ -21,6 +21,7 @@ d1 $ rev $ chop "<8 3 2 1>" $ sound "bd ~ sn:2 kurt:2"
 
 d1 $ stut "<3 4>" 0.6 "<0.25 0.5 0.125>"
   $ sound "[bd mt lt bd mt:3 lt ht:3 lt]/2"
+  # speed (sine1 + 1)
 
 
 -- instead of 'density', you can now say 'fast'. they do the
