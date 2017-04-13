@@ -1,0 +1,61 @@
+
+let patterns = [("line",
+                 (slow 2 $ off "<0.25 0.5 0.125>" (degradeBy "0 0.3" . (# (s "xx" # speed 2 # gain 0.9 # legato 1))) $ juxBy 0.2 (rev . (|+| n "<7 7 7 7 12>")) $ off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "rash"
+                  # orbit 1
+                  # room 0.3
+                  # size 0.5
+                 )
+                ),
+                ("br",
+                 slow 2 $ off 0.25 (|-| n 4) $ n ((run "[8 16] <4 8 4 2>") + 7) # sound "micron"
+                 # speed 2
+                 # crush 3
+                ),
+                ("heli",
+                 juxBy 0.5 rev $ density "[1 2] 4" $ sound "bd <sn:3 sn:5 sn:4>"
+                 # crush 4
+                 # end 0.1
+                ),
+                ("bass",
+                 jux rev $ off 0.125 (|+| n "<12 24 -12>") $ off 0.25 (|+| n 7) $ slow 2 $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "jx"
+                )
+               ]
+    txs = [("crash",
+            degrade . (# speed (rev $ saw + 1))
+           ),
+           ("change",
+            chunk 4 (slow 2)
+           ),
+           ("in",
+            unDegradeBy (saw1)
+           ),
+           ("out",
+            degradeBy (saw1)
+           )
+          ]
+in
+d1 $ ur' 128 "heli:in [heli,br] [heli:out,br,line:in] [heli,br,line:crash] [heli,bass] [heli,bass:out,line] [heli,line,bass,br] [heli:out,bass:crash,line:crash,br:out]" patterns txs
+
+cps (-1)
+cps 0.9
+
+
+21/Apr/17, Remote (streamed) solo performance, Montreal, La Plante, Canada
+22/Apr/17, EulerRoom, Sheffield, Access Space, United Kingdom
+28/Apr/17, Algorave, Leeds, ODI Leeds, United Kingdom
+16/May/17, Panel session, Newcastle, Thinking Digital Arts, United Kingdom
+19/May/17, Algorave, Sheffield, Access Space, United Kingdom
+26/May/17, - 27/May/17, Tidal Workshop, London, Call&Response, United Kingdom
+02/Jun/17, Talk and solo performance, London, Open Data Institute HQ, United Kingdom
+03/Jun/17, Algorave, London, Archspace, United Kingdom
+07/Jun/17, Tidal Workshop, London, Somerset House, United Kingdom
+09/Jun/17, Collab with Joanne, Sheffield, No bounds festival, United Kingdom
+17/Jun/17, Hannah Directory Benefit workshops, Sheffield, Access Space, United Kingdom
+23/Jun/17, Talk and solo performance, Brussels, Bump Festival, Belgium
+09/Jul/17, Canute (w/ Matthew Yee-King), Bluedot festival, Jodrell Bank, United Kingdom
+18/Aug/17 - 20/Aug/17, Collab with Joanne, Green Man festival, United Kingdom
+07/Sep/17, Algorave, Brighton, British Science Festival, United Kingdom
+09/Sep/17, F, Oxford, Mathematical Institute, United Kingdom
+Add
+FARM 2017 – 5th ACM SIGPLAN Workshop on Functional Art, Music, Modelling and Design. (performance chair + steering committee member) More information
+08/Nov/17, - 12/Nov/17, Festival, Sheffield, Millennium Galleries, United Kingdom
