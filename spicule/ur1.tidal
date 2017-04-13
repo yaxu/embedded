@@ -34,7 +34,7 @@ let patterns = [("line",
            )
           ]
 in
-d1 $ ur' 128 "heli:in [heli,br] [heli:out,br,line:in] [heli,br,line:crash] [heli,bass] [heli,bass:out,line] [heli,line,br] [heli:out,bass,line,br:out]" patterns txs
+d1 $ ur' 128 "heli:in [heli,br] [heli:out,br,line:in] [heli,br,line:crash] [heli,bass] [heli,bass:out,line] [heli,line,bass,br] [heli:out,bass:crash,line,br:out]" patterns txs
 
 cps (-1)
 cps 0.9
