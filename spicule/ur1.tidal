@@ -8,8 +8,8 @@ let patterns = [("line",
                  # crush 3
                 ),
                 ("heli",
-                 juxBy 0.5 rev $ density "[1 2] 3" $ sound "bd <sn:3 sn:5 sn:4>"
-                 # crush 2
+                 juxBy 0.5 rev $ density "[1 2] 4" $ sound "bd <sn:3 sn:5 sn:4>"
+                 # crush 4
                  # end 0.1
                 )
                ]
