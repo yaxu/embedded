@@ -27,11 +27,14 @@ let patterns = [("line",
             chunk 4 (slow 2)
            ),
            ("in",
-            degradeBy saw1
+            unDegradeBy (saw1)
+           ),
+           ("out",
+            unDegradeBy (saw1)
            )
           ]
 in
-d1 $ ur' 128 "heli" patterns txs
+d1 $ ur' 128 "heli:in [heli,br] ~ ~ ~ ~ ~ ~" patterns txs
 
 cps (-1)
 cps 0.9
