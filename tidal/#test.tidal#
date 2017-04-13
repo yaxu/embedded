@@ -1261,4 +1261,3 @@ let everyt tp f p = tp >>= \t -> every t f p
 
 :t everyt
 
-shu
