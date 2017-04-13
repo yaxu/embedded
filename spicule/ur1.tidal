@@ -22,10 +22,13 @@ let patterns = [("line",
            ),
            ("change",
             chunk 4 (slow 2)
+           ),
+           ("bass",
+            off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "vocobass"            
            )
           ]
 in
-d1 $ ur' 32 "[~ br br:change, line, ~ heli]" patterns txs
+d1 $ ur' 32 "[~ br br:change, line, ~ heli, bass]" patterns txs
 
 
 cps 1.1
