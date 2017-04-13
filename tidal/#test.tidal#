@@ -1263,3 +1263,4 @@ let everyt tp f p = tp >>= \t -> every t f p
 
 d1 $ everyt "2 4 1"  ((slow "1 2").(stut (slow 2 ("{8 4}%3"))) 0.5 2) $ sound "bd arpy sn:3 bd*2"
 
+:t every
