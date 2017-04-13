@@ -1257,4 +1257,8 @@ d1 $ jux rev $ (n (run "8 6") # s "amencutup")
 let temporalParam' f tv p = unwrap' $ (\v -> f v p) <$> tv
     density' = temporalParam' _density
 
-let chop2 n p = begin
+let everyt tp f p = tp >>= \t -> every t f p
+
+:t everyt
+
+shu
