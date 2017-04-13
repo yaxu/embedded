@@ -1266,3 +1266,5 @@ d1 $ everyt "2 4 1"  ((slow "1 2").(stut (slow 2 ("{8 4}%3"))) 0.5 2) $ sound "b
 :t every
 
 :t fromIntegral
+
+:t timeToRand
