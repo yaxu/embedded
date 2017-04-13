@@ -15,6 +15,9 @@ let patterns = [("line",
                  juxBy 0.5 rev $ density "[1 2] 4" $ sound "bd <sn:3 sn:5 sn:4>"
                  # crush 4
                  # end 0.1
+                ),
+                ("bass",
+                 off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "vocobass"            
                 )
                ]
     txs = [("crash",
@@ -22,11 +25,7 @@ let patterns = [("line",
            ),
            ("change",
             chunk 4 (slow 2)
-           ),
-           ("bass",
-            off 0.25 (|+| n 7) $ n "<c7(3,8,<0 4>) a7(3,8) f7(3,8) e7(3,8)>" # sound "vocobass"            
-           )
-          ]
+           )          ]
 in
 d1 $ ur' 32 "[~ br br:change, line, ~ heli, bass]" patterns txs
 
