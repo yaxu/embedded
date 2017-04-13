@@ -1,1 +1,7 @@
-d1 $ sound "bd"
+
+
+d1 $ chop "<1 4 1 3>" $ sound "bd ~ micron:2 [~ micron:1]"
+  # orbit 1
+  # room 0.6
+  # size 0.9
+
