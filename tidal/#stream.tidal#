@@ -9,4 +9,8 @@ d2 $ off 0.25 (# crush 4) $ sound "[future*8] . bd(3,8) bd*2"
   # orbit 0
   # speed "[<1 ~>,2,4]"
 
-d
+d3 $ off 0.25 (|+| n "<7 5>") $ chunk 4 (density 2) $ n "d7 ~ [g7 a8]" # sound "pulse"
+  # orbit 2
+  # room 0.6
+  # size 0.9
+  
