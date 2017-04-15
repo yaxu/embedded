@@ -33,3 +33,6 @@ d5 $ chunk 4 (density 2) $ loopAt 1 $ chop 128 $ sound "breaks165"
 
 
 d1 $ slow 4 $ pan "0 1 " # n "0 1 " # sound "numbers"
+
+d1 $ slow 4 $ n (off 0.25 (+7) $ slow 2 $ "d7(3,8) a7*2 c5(3,8,2) e6*2") # sound "rash"
+  # shape 0.9
