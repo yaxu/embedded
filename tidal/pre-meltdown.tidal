@@ -32,3 +32,10 @@ d5 $ chunk 4 (density 2) $ loopAt 1 $ chop 128 $ sound "breaks165"
   # room 0.8
 
 
+d1 $ slow 4 $ pan "0 1 " # n "0 1 " # sound "numbers"
+
+d1 $ degrade $ off 0.125 (# s "pulse") $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 $ "c7(3,8) a7*2 f6(3,8,2) e6*2") # sound "rash"
+  # shape 0.9
+
+d2 $ loopAt 2 $ chop 16 $ sound "os"
+  # gain 1.8
