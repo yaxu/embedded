@@ -1,0 +1,6 @@
+
+d1 $ off 0.125 (# crush 5) $
+  off "<0.25 0.125>" (# speed 2) $
+  slow 2 $ sound "bd [~ micron] wobble cp8"
+  # room 0.7
+  # size 0.7
