@@ -1,4 +1,7 @@
 
 d1 $ (off 0.25 (# crush 5) $ jux rev $ sound "bd(3,8,[2, 4])")
   # (slow 8 $ room saw1 # size saw1)
+  # orbit 1
   
+d2 $ off 0.125 (|*| speed 2) $ off 0.125 ((|*| speed 1.5) . rev) $ chop "[8 4]/2" $ sound "newnotes"
+  # room 0.9 # size 0.95
