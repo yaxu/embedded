@@ -8,9 +8,6 @@ d1 $ chunk 4 (slow 2) $ off 0.125 (# crush 5) $
 
 d2 $ degradeBy 0.7 $ off 0.25 (# s "pulse") $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ "[d7 e6] [<f7 g7> a6(3,8)]") # sound "rash"
 
-d3 $ every 2 ((|+| speed 0.5) . slow 2) $ chunk 4 (density 2) $ loopAt 1 $ chop 128 $ sound "arc"
-  # gain 1.3
-
 d1 $ off 0.125 (# speed 2) $ every 3 ((|*| speed 2) . fast 2) $ jux rev $ n (run 8) # sound "micron"
 
 d5 $ degradeBy 0.8 $ off 0.25 (# s "jx") $ jux rev $ sometimes (|+| n 12) $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 $ "c7(3,8) a7(3,8,4) f7(3,8,2) e7(3,8,6)") # sound "jx"
@@ -64,13 +61,33 @@ d4 $ jux rev $ density 2 $ brak $ sound "feel*2 feel:3"
   # room 0.8
   # speed "<2 1.5>"
 
-d5 $ jux rev $ chunk 4 (slow 2) $ n (run 16) # sound "amencutup"
-  # gain 1.2
 
-d6 $ off 0.25 (# crush 4) $ n "[c6*2 a6] c6(3,8)" # sound "rash"
-  # gain 1.4
+d6 $ slow 4 $ jux rev $ off 0.25 ((# crush 4) . (# speed "<1 2>")) $ n "[c6*2 g6] c6(3,8,2)" # sound "rash"
+  # gain 0.9
   # lpq 0.3
-  # lpf (slow 4 $ sine1 * 1000 + 3000)
-  
+  # lpf (slow 4 $ sine1 * 3000 + 1000)
+  # orbit 2
+  # size 0.9
+  # room 0.8
+
+d1 $ sometimes (|+| n 12) $ jux rev $ off 0.25 ((# s "jx") . (# gain 0.8)) $ slow 4 $ n (off 0.25 (+12) $ "c7(3,8) e5 g7*2 a6(3,8)") # s "xx"
+  # lpq 0.2
+  # lpf (slow 4 $ sine1 * 500 + 100)
+  # gain 0.8
+
+d2 $ rev $ (loopAt 8 $ striate 128 $ sound "bev")
+  --  # lpq 0.2
+  -- # lpf (slow 4 $ sine1 * 5000 + 2000)
+  # gain 1.2
+  # orbit 1
+  # room 0.7
+  # size 0.7
+
+d3 $ jux rev $ every 2 ((|+| speed 0.5) . slow 2) $ chunk 4 (density 2) $ loopAt 1 $ chop 128 $ sound "arc"
+  # gain 0.95
+
+d5 $ jux rev $ chunk 4 (slow 2) $ slow 2 $ n (run 16) # sound "amencutup"
+  # gain 1
+
 
 cps (135 / 60 / 4)
