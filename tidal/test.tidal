@@ -1266,5 +1266,11 @@ d1 $ everyt "2 4 1"  ((slow "1 2").(stut (slow 2 ("{8 4}%3"))) 0.5 2) $ sound "b
 :t every
 
 :t fromIntegral
+p
+pp:t timeToRand
 
-:t timeToRand
+d1 $ s ("2 3 1 2" `fast` "bd cp bd hh")
+hush
+d1 $ s (unwrap' $ (\x -> _density x "bd cp bd hh") <$> "2 3 1 2")
+
+
