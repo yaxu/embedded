@@ -1277,6 +1277,5 @@ d1 $ rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
 
 cps (-1)
 
-
-cps 
+cps 1
 
