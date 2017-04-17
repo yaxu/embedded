@@ -1306,3 +1306,13 @@ arc (rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel") (0.25,0.5)
 d1 $ rev $ density 1.25 $ sound "bd*4"
 
 d1 $ rev $ 0.125 <~ sound "bd*8"
+
+d1 $ rev $ off 0.25 (# speed 2) $ sound "arpy arpy:2"
+
+d1 $ jux rev $ substruct "x x/2" $ n "[0 4(3,8)]/2" # sound "feel"
+
+
+let substruct :: Pattern String -> Pattern b -> Pattern b
+    substruct s p = Pattern $ f
+      where f a = concatMap (\a' -> arc (compressTo a' p) a') $ (map fst' $ arc s a)
+            compressTo (s,e) p = compress (cyclePos s, e-(sam s)) p
