@@ -1301,8 +1301,8 @@ part: 0.75,1 -> 0,0.25
 
 d1 $ rev $ slow 4 $ fit' 1 8 (run 8) (run 8) (chop 8 $ s "breaks125")
 
-d1 $ rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
+arc (rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel") (0.25,0.5)
 
-d1 $ rev $ _density (1 + (1/4)) $ sound "bd*4"
+d1 $ rev $ density 1.25 $ sound "bd*4"
 
 d1 $ rev $ 0.125 <~ sound "bd*8"
