@@ -808,7 +808,7 @@ let ur :: Time -> Pattern String -> [(String, Pattern a)] -> Pattern a
       where split s = wordsBy (==':') s
             getPat (s:xs) = (match s, transform xs)
             match s = fromMaybe silence $ lookup s ps
-e            ps' = map (fmap (density t)) ps
+            ps' = map (fmap (density t)) ps
             adjust (a, (p, f)) = f a p
             transform (x:_) a = transform' x a
             transform _ _ = id
@@ -1286,9 +1286,9 @@ import Sound.Tidal.Utils
 
 let rev p = splitQueries $ Pattern $ \a -> map makeWholeAbsolute $ mapSnds' mirrorArc $ map makeWholeRelative (arc p (mirrorArc a))
     makeWholeRelative ((s,e), part@(s',e'), v) = ((s'-s, e-e'), part, v)
-    makeWholeAbsolute ((s,e), part@(s',e'), v) = (part, part, v)
+    makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e,e'+s), part, v)
 
-makeWholeAbsolutmakeWholeRelative ((0.5,1.25), (0.75,1),0)
+makeWholeAbsolute $ makeWholeRelative ((0.25,1.25), (0.75,1),0)
 
 0.75,1.25
 0.75,1.25
