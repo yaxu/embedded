@@ -1271,6 +1271,13 @@ pp:t timeToRand
 
 d1 $ s ("2 3 1 2" `fast` "bd cp bd hh")
 hush
-d1 $ s (unwrap' $ (\x -> _density x "bd cp bd hh") <$> "2 3 1 2")
 
+
+d1 $ rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
+
+rev $ slow 4 $ fit' 1 8 (run 8) (run 8) (chop 8 $ s "breaks125")
+
+d1 $ rev $ 0.125 <~ sound "bd*4"
+
+d1 $ rev $ density 1.2 $ sound "bd*4"
 
