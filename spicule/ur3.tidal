@@ -9,7 +9,7 @@ d1 $ iter 4 $ sometimes (fast 2) $ sound "micron:4*2"
   # gain 1.2
   
 d2 $ off 0.125 ((|*| speed 2) . slow 2) $ off 0.125 ((|*| speed 1.5) . rev) $ chop "[8 4]/2" $ sound "newnotes"
-  # room 0.9 # size 0.95
+  -- # room 0.9 # size 0.95
   # orbit 3
   # gain 1.2
 
