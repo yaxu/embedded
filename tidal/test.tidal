@@ -1285,11 +1285,10 @@ import Sound.Tidal.Utils
 
 
 let rev p = splitQueries $ Pattern $ \a -> map makeWholeAbsolute $ mapSnds' mirrorArc $ map makeWholeRelative (arc p (mirrorArc a))
-      where makeWholeRelative ((s,e), part@(s',e'), v) = ((s-s', e'-e), part, v)
-            makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e, e'+s), part, v)
+    makeWholeRelative ((s,e), part@(s',e'), v) = ((s'-s, e-e'), part, v)
+    makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e,e'+s), part, v)
 
-
-makeWholeRelative ((0.75,1.25), (0.75,1),0)
+makeWholeAbsolute $ makeWholeRelative ((0.25,1.25), (0.75,1),0)
 
 0.75,1.25
 0.75,1.25
@@ -1302,8 +1301,8 @@ part: 0.75,1 -> 0,0.25
 
 d1 $ rev $ slow 4 $ fit' 1 8 (run 8) (run 8) (chop 8 $ s "breaks125")
 
-d1 $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
+d1 $ rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
 
-d1 $ rev $ density 1.1 $ sound "bd*4"
+d1 $ rev $ _density (1 + (1/4)) $ sound "bd*4"
 
 d1 $ rev $ 0.125 <~ sound "bd*8"
