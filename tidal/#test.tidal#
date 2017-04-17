@@ -1275,6 +1275,8 @@ hush
 
 d1 $ rev $ substruct "x x/2" $ n "0 ~ 4" # sound "feel"
 
+d1 $ rev $ slow 4 $ fit' 1 8 (run 8) (run 8) (chop 8 $ s "breaks125")
+
 cps (-1)
 
 cps 1
