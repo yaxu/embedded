@@ -1322,3 +1322,4 @@ fit' 4 (words "a b c d e") "0 1 2"
 
 
 d1 $ jux rev $ chop 32 $ 0.25 <~ (slow 2 $ sound "bd sn")
+hush
