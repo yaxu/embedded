@@ -1316,3 +1316,10 @@ let substruct :: Pattern String -> Pattern b -> Pattern b
     substruct s p = Pattern $ f
       where f a = concatMap (\a' -> arc (compressTo a' p) a') $ (map fst' $ arc s a)
             compressTo (s,e) p = compress (cyclePos s, e-(sam s)) p
+
+
+fit' 4 (words "a b c d e") "0 1 2"
+
+
+d1 $ jux rev $ chop 32 $ 0.25 <~ (slow 2 $ sound "bd sn")
+hush
