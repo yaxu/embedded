@@ -1343,5 +1343,5 @@ hush
 hush
 d1 $spreadChoose (density . pure) [2,2,2.5,3,4]$spreadChoose (slow .pure)[1,1.1..4]$s"odx*8cp hc gabba"#pan(slow 3 rand)#gain 3#begin(slow 2 saw1)
 
-d1 $fast (choose[2,2,2.5,3,4])$slow ([1,1.1..4]$s"odx*8cp hc gabba"#pan(slow 3 rand)#gain 3#begin(slow 2 saw)
+d1 $fast(choose[2,2,2.5,3,4])$slow(choose[1,1.1..4])$s"odx*8cp hc gabba"#pan(slow 3 rand)#gain 3#begin(slow 2 saw)
 
