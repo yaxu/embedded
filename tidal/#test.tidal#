@@ -1338,3 +1338,6 @@ let hush = mapM_ ($ silence) [m1,m2,d1,d2,d3,d4,d5,d6,d7,d8,d9] -- edit this lis
 let solo = (>>) hush
 hush
 m1 $ n "128*8" #cc0 (slow 0.1 $ scale 0 1 $ rand) -- 0.0 to 1.0  Most things (synths,softwares, etc) will disregard MIDInote 128 so good for testing/mapping.
+
+hush
+d1 $spreadChoose density[2,2,2.5,3,4]$spreadChoose slow[1,1.1..4]$s"odx*8cp hc gabba"#pan(slow 3 rand)#gain 3#begin(slow 2 saw1)
