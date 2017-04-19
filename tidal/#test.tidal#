@@ -1350,4 +1350,4 @@ let foo :: Pattern Int -> Pattern Int -> Pattern Int -> [Pattern Int]
 let foo a b c = arc ((\x y z -> ((pure $ enumFromThenTo x y z))) <$> a <*> b <*> c) (0,1)
 
 d1 $ density (choose [1,2,3]) $ sound "bd sn"
-hush
+
