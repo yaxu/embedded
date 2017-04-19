@@ -1345,8 +1345,7 @@ d1 $spreadChoose (density . pure) [2,2,2.5,3,4]$spreadChoose (slow .pure)[1,1.1.
 
 d1 $fast(choose[2,2,2.5,3,4])$slow(choose[1,1.1..4])$s"odx*8cp hc gabba"#pan(slow 3 rand)#gain 3#begin(slow 2 saw)
 
-foo :: Pattern Int -> Pattern Int -> Pattern Int -> [Pattern Int]
-    
-let foo a b c = enumFromThenTo <$> a <*> b <*> c
+let foo :: Pattern Int -> Pattern Int -> Pattern Int -> [Pattern Int]
+    foo a b c = unwrap $ (pure . enumFromThenTo) <$> a <*> b <*> c
 
 :t foo
