@@ -1354,7 +1354,7 @@ d1 $ density (choose [1,2,3]) $ sound "bd sn"
 choose [1,2,3]
 
 
-d1 $ ur' 64 "intro a b a b c b b outro"
+d1 $ ur' 64 "intro a b:noise a b c b:noise b outro"
   [("intro", sound "numbers:0"
    ),
    ("a", sound "numbers:1"
@@ -1366,7 +1366,9 @@ d1 $ ur' 64 "intro a b a b c b b outro"
    ("outro", sound "numbers:4"
    )
   ]
-  []
+  [("noise", (# crush 4)),
+   ("squeak", (density 2 . ()))
+  ]
 
 
 
