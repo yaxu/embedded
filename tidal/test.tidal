@@ -1352,3 +1352,25 @@ let foo a b c = arc ((\x y z -> ((pure $ enumFromThenTo x y z))) <$> a <*> b <*>
 d1 $ density (choose [1,2,3]) $ sound "bd sn"
 
 choose [1,2,3]
+
+
+d1 $ ur' 64 "intro a b a b c b b outro"
+  [("intro", sound "numbers:0"
+   ),
+   ("a", sound "numbers:1"
+   ),
+   ("b", sound "numbers:2"
+   ),
+   ("c", sound "numbers:3"
+   ),
+   ("outro", sound "numbers:4"
+   )
+  ]
+  []
+  
+
+and then define
+
+let A = [some patterns]
+     B = 'etc'
+
