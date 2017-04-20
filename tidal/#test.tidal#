@@ -1368,7 +1368,7 @@ d1 $ ur' 64 "intro:spacey a b:noise a:spacey b:squeak c b:noise b outro"
   ]
   [("noise", (# crush 4)),
    ("squeak", fast 2 . (# speed 2)),
-   ("spacey", (# room saw1) . (# size saw1))
+   ("spacey", (# (room saw1 # size saw1 # orbit 1)))
   ]
 
 
