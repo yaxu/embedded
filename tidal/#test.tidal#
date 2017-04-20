@@ -1352,7 +1352,7 @@ let foo a b c = arc ((\x y z -> ((pure $ enumFromThenTo x y z))) <$> a <*> b <*>
 d1 $ density (choose [1,2,3]) $ sound "bd sn"
 
 choose [1,2,3]
-
+asdfadsf
 
 d1 $ ur' 64 "intro:spacey a b:noise a:spacey b:squeak c b:noise b outro"
   [("intro", sound "numbers:0"
