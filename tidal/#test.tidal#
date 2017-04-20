@@ -1477,13 +1477,5 @@ d1 $spread slow([0.1..1]++[1])$s"[bleep*8?cp?bass,blip,bd]"#n"2 7"#release(slow 
 d1 $s"{blue?bottle breaks125,breaks157}%9"#n(choose[0..12])#begin saw#end(slow 2saw)#pan(slow 9rand)#up(choose[-9,-8.5..9])#cut(run 1)
 d1 $every 3(iter 9)$slow 0.13$spreadChoose slow[1..39]$spreadChoose slow[0.9..18]$striate' 333(1/10)$s"bleep*9?cp?odx"#pan(slow 2rand)
 d1 $spread slow(replicate 5 0.6)$spreadChoose slow[0.15..0.001]$s(randcat["cp","hc?","bass","gab?"])#pan(slow 2rand)#n(irand 9)#cut 1
-
-d1 $ sound "in*6"
-  # speed "1"
-  # vowel "a e i"
-  # gain 0.9
-  # lpf 2000
-  # lpq 0.4
-  # crush 3
   
 
