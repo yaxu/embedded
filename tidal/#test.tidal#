@@ -1479,3 +1479,11 @@ d1 $every 3(iter 9)$slow 0.13$spreadChoose slow[1..39]$spreadChoose slow[0.9..18
 d1 $spread slow(replicate 5 0.6)$spreadChoose slow[0.15..0.001]$s(randcat["cp","hc?","bass","gab?"])#pan(slow 2rand)#n(irand 9)#cut 1
   
 
+d1 $ sound "{bd}%4"
+d2 $ sound "{bd}%5"
+d3 $ sound "{bd}%8"
+
+
+> d1 $ steps 4 1/8   $ sound “808bd*4”    -- 1 bar
+> d3 $ steps 5 1/8   $ sound “808bd*5”    -- 1 bar + 1/8
+> d3 $ steps 8 1/16 $ sound “808bd*8”     -- 1/2 bar
