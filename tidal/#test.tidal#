@@ -1479,3 +1479,4 @@ d1 $every 3(iter 9)$slow 0.13$spreadChoose slow[1..39]$spreadChoose slow[0.9..18
 d1 $spread slow(replicate 5 0.6)$spreadChoose slow[0.15..0.001]$s(randcat["cp","hc?","bass","gab?"])#pan(slow 2rand)#n(irand 9)#cut 1
 
 d1 $ density (choose [2,4,1]) $ n (run 4) # sound "odx"
+
