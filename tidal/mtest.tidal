@@ -13,7 +13,7 @@ d2 $ degradeBy "<0.25 0.5>" $ (juxBy 0.25 rev $ (chop 64 $ n "d6 c5(3,8)" # soun
   # lpf (density "<1 2 3 4>" $ sine * 2000 + 1000)
   |+| n "<0 7 12 7>"
 
-d4 $ jux rev $ off "<0.25 0.5 0.125>" (# s "pulse") $ n "d7(3,8) [c6 ~ c6]" # sound "jx"
+d4 $ every 4 (jux rev) $ off "<0.25 0.5 0.125>" (# s "pulse") $ n "d7(3,8) [c6 ~ c6]" # sound "jx"
   # gain 1.4
   # lpq "<0.3 0.34>"
   # lpf (density "<1 2 3 4>" $ sine * 2000 + 1000)
