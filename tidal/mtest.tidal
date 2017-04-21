@@ -22,8 +22,9 @@ d4 $ sometimes (|*| speed 2) $ slow 2 $ off "<0.25 0.5>" (# s "pulse") $ n "d7(3
   # delay 0.4
   # delaytime "<0.1 0.01 0.02>"
   # delayfeedback 0.9
+  # crush 3
 
-d5 $ every 3 ((# speed 2) . (fast 2)) $ whenmod 8 4 (linger 0.25) $ n ((run 16) + "<4 2>") # sound "micron"
+d5 $ every 2 (slow 2) $ every 3 ((# speed 2) . (fast 2)) $ whenmod 8 4 (linger 0.25) $ n ((run 16) + "<4 2>") # sound "micron"
   # gain 1.4
   # crush 4
 
@@ -31,4 +32,8 @@ d6 $ chop "<4 8 12>" $ sound "~ [~ off]"
   # shape 0.7
   # legato 1
   # crush 2
-  
+
+d7 $ off 0.25 (|*| up "7") $ jux rev $ loopAt "<2 [1 2]>" $ chop "<32 16>" $ sound "narc:1"
+  # orbit 3
+  # lpq "<0.2 0.2>"
+  # lpf (density "<1 2 3 4>" $ sine * 3000 + 1000)
