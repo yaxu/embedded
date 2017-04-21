@@ -1492,3 +1492,9 @@ d3 $ sound "{bd}%8"
 > d1 $ steps 4 1/8   $ sound “808bd*4”    -- 1 bar
 > d3 $ steps 5 1/8   $ sound “808bd*5”    -- 1 bar + 1/8
 > d3 $ steps 8 1/16 $ sound “808bd*8”     -- 1/2 bar
+
+
+let trunc n p = _density (1/n) $ zoom (0,n) p
+
+d1 $ every 2 (trunc 0.25) $ n (run 8) # sound "amencutup"
+
