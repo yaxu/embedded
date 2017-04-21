@@ -24,11 +24,11 @@ d4 $ sometimes (|*| speed 2) $ slow 2 $ off "<0.25 0.5>" (# s "pulse") $ n "d7(3
   # delayfeedback 0.9
   # crush 3
 
-d5 $ every 2 (slow 2) $ every 3 ((# speed 2) . (fast 2)) $ whenmod 8 4 (linger 0.25) $ n ((run 16) + "<4 2>") # sound "micron"
+d5 $ slow 2 $ every 2 (slow 2) $ every 3 ((# speed 2) . (fast 2)) $ whenmod 8 4 (linger 0.25) $ n ((run 16) + "<4 2>") # sound "micron"
   # gain 1.4
   # crush 4
 
-d6 $ chop "<4 8 12>" $ sound "~ [~ off]"
+d6 $ slow 2 $ chop "<4 8 12>" $ sound "~ [~ off]"
   # shape 0.7
   # legato 1
   # crush 2
