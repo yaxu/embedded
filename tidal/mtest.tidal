@@ -38,3 +38,8 @@ d7 $ off 0.25 (|*| up "7") $ jux rev $ loopAt "<2 [1 2]>" $ chop "<32 16>" $ sou
   # lpq "<0.2 0.2>"
   # lpf (density "<1 2 3 4>" $ sine * 3000 + 1000)
 
+-- thanks for joining me
+-- I have to go to bed now
+-- getting up early to stream to montreal at 7am
+-- have fun
+
