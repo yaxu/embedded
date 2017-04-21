@@ -24,3 +24,5 @@ d5 $ whenmod 8 4 (linger 0.25) $ n ((run 16) + "<4 2>") # sound "micron"
 d6 $ chop "<4 8 12>" $ sound "~ [~ off]"
   # shape 0.7
   # legato 1
+  # crush 2
+  
