@@ -6,7 +6,8 @@ d1 $ jux rev $ linger "<1 0.5 0.75 0.5>" $ n "0 ~ 8 [~ 5] 0 [~ 9] ~ [7 5*2]" # s
   # speed "[2,1.5]"
   # orbit 1
 
-d2 $ (juxBy 0.25 rev $ (chop 64 $ n "d6 c5(3,8)" # sound "rash"))
+
+d2 $ degradeBy "<0.25 0.5>" $ (juxBy 0.25 rev $ (chop 64 $ n "d6 c5(3,8)" # sound "rash"))
   # gain 1.2
   # shape 0.3
   # crush 3
@@ -14,5 +15,7 @@ d2 $ (juxBy 0.25 rev $ (chop 64 $ n "d6 c5(3,8)" # sound "rash"))
   # lpf (density "<1 2 3 4>" $ sine * 2000 + 1000)
   |+| n "<0 7 12 7>"
 
-d3 $ loopAt 4 $ chop 16 $ sound "shackup"
+
+
+d3 $ jux ((# crush 4) . ((|*| speed 1.5) . (fast 1.5))) $ iter 4 $ loopAt 4 $ chop 16 $ sound "shackup"
   # gain 1.5
