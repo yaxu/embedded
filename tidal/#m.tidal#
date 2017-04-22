@@ -42,5 +42,9 @@ d9 $ chunk 4 (# crush 2) $ jux rev $ every 2 (chop 16) $ off "<0.25 0.125 0.5>" 
   # gain 1.1
   # orbit 2
   
+
+d1 $ jux rev off 0.25 (|+| n "7") $ slow 4 $ n "c8(3,8) a7(3,8) f8*2 e7(3,8,2)" # sound "pulse"
   # room 0.8
   # size 0.8
+  # lpq 0.3
+  # lpf (slow 4 $ sine1 * 6000 + 1000)
