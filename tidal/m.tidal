@@ -72,7 +72,10 @@ d7 $ chunk 4 ((# speed 0.5) . (density 0.5)) $ jux rev $ n (run 16 + "<0 2>") # 
   # hpf 2000
 
 d6 $ jux rev $ slow 8 $ loopAt 8 $ striate 128 $ sound "bev*8"
-  # gain 1.5
+  # gain 1.5-- thanks for listening canada, hope you had a nice rave
+-- hope you can hear ok, my meter isn't showing audio.. hmm seems it worked!
+-- goodnight! :)
+
   # orbit 1
   # room 0.98
   # size 0.98
