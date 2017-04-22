@@ -85,3 +85,8 @@ d7 $ jux rev $ loopAt 1 $ iter 4 $ chop 8 $ sound "<os os:1 os:2>"
 
 d8 $ jux rev $ iter 4 $ n (run 16) # sound "gabba"
   # gain 1.2
+
+d1 $ n "0 7" # sound "superchip"
+  # slide (7/12)
+
+d1 $ 
