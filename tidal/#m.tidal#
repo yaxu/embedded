@@ -73,9 +73,16 @@ d7 $ chunk 4 ((# speed 0.5) . (density 0.5)) $ jux rev $ n (run 16 + "<0 2>") # 
 
 d6 $ jux rev $ slow 4 $ loopAt 8 $ striate 64 $ sound "bev*4"
   # gain 1.5
+  # orbit 1
+  # room 0.9
+  # size 0.98
+
+-- thanks for listening canada, hope you had a nice rave
+-- hope you can hear ok, my meter isn't showing audio.. hmm
+
 
 d7 $ jux rev $ loopAt 1 $ iter 4 $ chop 8 $ sound "<os os:1 os:2>"
   # gain 1.4
 
-d8 $ n (run 16) # sound "gabba"
-  # gain 1.
+d8 $ jux rev $ iter 4 $ n (run 16) # sound "gabba"
+  # gain 1.2
