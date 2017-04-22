@@ -9,14 +9,18 @@ d2 $ chunk 4 (density 2) $ slow 2 $ degradeBy 0 $ off 0.25 (# s "pulse") $ jux r
   # lpq 0.2
   # lpf (slow 16 $ sine * 3000 + 1000)
 
-d3 $ chunk 4 (# speed 2) $ density 1 $ sound "[odx(3,8), ~ odx:2]"
+d3 $ density 2 $ chunk 4 (# speed 2) $ density 1 $ sound "[odx(3,8), ~ odx:2]"
   # gain "1.1"
   # orbit 1
-  # room 0.6
-  # size 0.2
-  # crush 2
+  # room 0
+  # size 0
+  # crush 4
 
 d5 $ sometimes (density 2 . (# speed 2)) $ jux (0.5 <~)$ iter 4 $ substruct "x x/2" $ sound "feel drum future ~"
   # gain 1.3
   # crush 5
-  
+
+d6 $ off 0.25 (|*| up 12) $ up "[0 2] [7 2 12]" # sound "sid"
+  # gain 1.2
+  # shape 0.5
+  # legato 1
