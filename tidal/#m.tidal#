@@ -89,3 +89,4 @@ d8 $ jux rev $ iter 4 $ n (run 16) # sound "gabba"
 d1 $ n "0 7" # sound "superchip"
   # slide (7/12)
 
+d1 $ stack $ do sound "bd sn"
