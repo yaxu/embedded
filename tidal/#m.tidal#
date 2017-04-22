@@ -1,5 +1,7 @@
 -- greetings from Sheffield, the Socialist Republic of South Yorkshire
 
-d1 $ jux rev $ fast "1 1 2 1" $ n (run 8 + "<0 2>") # sound "micron"
+d1 $ chunk 4 (# speed 2) $ jux rev $ fast "1 <2 1> <1 2> 1" $ n (run 8 + "<0 2>") # sound "micron"
 
 
+d2 $ off 0.25 (|+|  2) $ chop "<8 6>" $ n "d6" # sound "rash"
+  # shape 0.8
