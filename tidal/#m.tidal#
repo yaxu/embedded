@@ -1,1 +1,5 @@
-d1 $ sound "micron"
+-- are you receiving me canada? @yaxu
+
+d1 $ n (run 8) # sound "micron"
+  # pan "0 1"
+
