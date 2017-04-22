@@ -16,4 +16,7 @@ d3 $ chunk 4 (# speed 2) $ density 1 $ sound "[odx(3,8), ~ odx:2]"
   # size 0.2
   # crush 2
 
-d5 $ sound "feel drum future ~"
+d5 $ sometimes (density 2 . (# speed 2)) $ jux (0.5 <~)$ iter 4 $ substruct "x x/2" $ sound "feel drum future ~"
+  # gain 1.3
+  # crush 5
+  
