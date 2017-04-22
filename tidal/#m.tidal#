@@ -64,5 +64,7 @@ d6 $ slow 2 $ off 0.25 (|*| up 7) $ sound "~ wobble(3,8) ~ wobble*2"
   # speed 1
   # shape 0.8
 
-d7 $ n (run 16) # sound "amencutup"
-  # sh
+d7 $ chunk 4 ((# speed 0.5) . (density 0.5)) $ jux rev $ n (run 16 + "<0 2>") # sound "amencutup"
+  # shape 0.8
+  # orbit 2
+  # gain 1.3
