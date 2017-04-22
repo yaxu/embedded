@@ -1,5 +1,5 @@
--- are you receiving me canada? @yaxu
+-- greetings from Sheffield, the Socialist Republic of South Yorkshire
 
-d1 $ n (run 8) # sound "micron"
-  # pan "0 1"
+d1 $ jux rev $ fast "1 1 2 1" $ n (run 8 + "<0 2>") # sound "micron"
+
 
