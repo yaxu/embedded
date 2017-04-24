@@ -1503,6 +1503,8 @@ let follow :: (ParamType a, ParamType b) => Param -> Param -> (Pattern a -> Patt
     soundToOrbit :: [String] -> ParamPattern -> ParamPattern
     soundToOrbit sounds p = follow s_p orbit_p ((\s -> fromMaybe 0 $ elemIndex s sounds) <$>) p
 
+soundToOrbit (words "bd sn cp") $ sound "bd [sn cp]"
+
 import Data.Maybe
 :t fromMaybe
 :t elemIndex
