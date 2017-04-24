@@ -1501,6 +1501,8 @@ d1 $ every 2 (trunc 0.25) $ n (run 8) # sound "amencutup"
 let follow :: (ParamType a, ParamType b) => Param -> Param -> (Pattern a -> Pattern b) -> ParamPattern -> ParamPattern
     follow source dest f p = p # (makeP dest $ f (get source p))
     soundToOrbit :: [String] -> ParamPattern -> ParamPattern
-    soundToOrbit sounds p = follow s_p orbit_p ((\s -> (maybe 0 ((flip elemIndex) sounds) s)) <$>) p
+    soundToOrbit sounds p = follow s_p orbit_p ((\s -> fromMaybe 0 $ elemIndex s sounds) <$>) p
 
-:t maybe
+import Data.Maybe
+:t fromMaybe
+:t elemIndex
