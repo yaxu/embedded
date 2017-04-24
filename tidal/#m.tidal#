@@ -89,6 +89,6 @@ d8 $ jux rev $ iter 4 $ n (run 16) # sound "gabba"
 d1 $ n "0 7" # sound "superchip"
   # slide (7/12)
 
-d1 $ (chop 16 (sound "glitch:5(3,8)"))
+d1 $ (loopAt 1 $ chop 16 (sound "glitch:5"))
   # lpf (scale 10 10000 rev saw)
-  #legato 1
+
