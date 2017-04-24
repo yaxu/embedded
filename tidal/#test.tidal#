@@ -1511,4 +1511,6 @@ import Data.Maybe
 
 
 
-d1 $ with n_p (`mod` (2 :: Patter) $ soundToOrbit ["bd", "sn", "cp"] $ sound "bd [sn cp]"
+soundToOrbit ["bd", "sn", "cp"] $ sound "bd [sn cp]"
+
+:t withI
