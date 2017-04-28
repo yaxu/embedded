@@ -17,9 +17,11 @@ d4 $ jux rev $ chop 4 $ stut "<4 2>" 0.9 0.25 $ sound "odx(3,8)"
   # gain 1
 
 
-d5 $ jux rev $ off 0.25( # speed 2) $n "0 ~ 1 2" # sound "voodoo"
+d5 $ chunk 4 (density 2 . ()) $ jux rev $ off 0.25( # speed 2) $n "0 ~ 1 2" # sound "voodoo"
   # gain 1.1
+  |+| n (slow 4 $run 4)
+
+d6 $ iter 4 $ off 0.25 (# speed "<2 3 4>") $ sound "~ [wobble wobble?]"
 
 
-d6 $ off 0.sound "~ [wobble wobble?]"
-
+d7 $ sound "ra
