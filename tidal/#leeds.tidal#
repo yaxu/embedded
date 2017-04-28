@@ -23,7 +23,7 @@ d5 $ chunk 4 (density 2 . ()) $ jux rev $ off 0.25( # speed 2) $n "0 ~ 1 2" # so
 
 d6 $ iter 4 $ off 0.25 (# speed "<2 3 4>") $ sound "~ [wobble wobble?]"
 
-d7 $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (# (s "xx" # speed 2)) $ slow 2 $ n (offadd 0.25 (7) $ slow 4 "c8(3,8) [a7(6,16)]/2 f8(3,8) e7(3,8)") # sound "rash"
+d7 $ degradeBy 0.5 $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (# (s "xx" # speed 2)) $ slow 2 $ n (offadd 0.25 (7) $ slow 4 "c8(3,8) [a7(6,16)]/2 f8(3,8) e7(3,8)") # sound "rash"
   # end 0.5
   # gain 0.85
   |+| n "-12"
@@ -31,5 +31,9 @@ d7 $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (# (s "xx" # speed 2)) $ slow 2 $
 
 d9 $ sound "gabba(3,8)"
 
+d1 $ jux rev $ every 3 (chop "<4 8>") $  slow 2 $ sound "~ [~ off]"
+
 d8 $ chunk 4 ((|*| speed 0.5) . (slow 2)) $ jux (|*| speed "-1") $ loopAt "<8 4>" $ chop 16 $ sound "shackup"
 
+d2 $ n "0 ~ 4 2" # sound "jvbass"
+  #
