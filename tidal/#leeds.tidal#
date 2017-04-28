@@ -23,9 +23,10 @@ d5 $ chunk 4 (density 2 . ()) $ jux rev $ off 0.25( # speed 2) $n "0 ~ 1 2" # so
 
 d6 $ iter 4 $ off 0.25 (# speed "<2 3 4>") $ sound "~ [wobble wobble?]"
 
+d7 $ slow 4 $ jux rev $ off 0.25 (# (s "xx" # speed 2)) $ slow 2 $ n (offadd 0.25 (7) $ slow 2 "c8(3,8) [a7(6,16)]/2 f8(3,8) e7(3,8)") # sound "rash"
+  # lpf 2000
+  # lpq 0.2
+  # end 0.5
 
-d7 $ every 2 (# vowel "<a e i>") $ jux rev $ off 0.25 (# (s "xx" # speed 2)) $ slow 2 $ n (offadd 0.25 (-5) $ slow 2 "c8 [a6(6,16)]/2 f8(3,8) e7") # sound "rash"
-
-d8 $ chunk 4 ((|*| speed 2) . (fast 2
-                            )) $ jux (|*| speed "-1") $ loopAt "<8 4>" $ chop 16 $ sound "shackup"
+d8 $ chunk 4 ((|*| speed 0.5) . (slow 2)) $ jux (|*| speed "-1") $ loopAt "<8 4>" $ chop 16 $ sound "shackup"
 
