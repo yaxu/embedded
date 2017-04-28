@@ -29,12 +29,17 @@ d7 $ degradeBy 0.5 $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (# (s "xx" # spee
   |+| n "-12"
 
 
-d9 $ sound "gabba(3,8)"
+d9 $ jux rev $ sound "gabba(3,8,<0 4>)"
 
 d1 $ jux rev $ every 3 (chop "<4 8>") $  slow 2 $ sound "~ [~ off]"
 
-d8 $ chunk 4 ((|*| speed 0.5) . (slow 2)) $ jux (|*| speed "-1") $ loopAt "<8 4>" $ chop 16 $ sound "shackup"
+d8 $ degrade $ chunk 4 ((|*| speed 0.5) . (slow 2)) $ jux (|*| speed "-1") $ loopAt "<8 4>" $ chop 16 $ sound "shackup"
+
 
 d2 $ sometimes (|*| speed 2) $ jux (rev . (# speed 2)) $ off 0.125 (# crush 6)$ n "0 ~ 4*2 2" # sound "jvbass"
   # shape 0.7
+  # lpf "<2000 5000>"
+  # lpq 0.2
 
+d9 $ loopAt 2 $ chop 8 $ sound "narc"
+  # n (irand 2
