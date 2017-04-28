@@ -1510,7 +1510,5 @@ import Data.Maybe
 :t elemIndex
 
 
-d1 $ stack $ replicate 2 $ sound "[ numbers dr2 ]" # n (irand 10) # pan
-rand # speed ( (3/4)** irand 4 * (2/3) ** irand 3 ** (1/2)**irand 2 ) #
-delay 1 # delayfeedback 0.8 # delaytime rand
 
+d1 $ n "0 1 " # sound "numbers" # pan "0 1"
