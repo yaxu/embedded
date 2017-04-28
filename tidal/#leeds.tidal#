@@ -1,8 +1,10 @@
 
-d1 $ chunk 4 (density 0.5) $ jux rev $ n (run 4) # sound "micron"
+d1 $ jux rev $ chop "<2 4 1>" $ chunk 4 (density 0.5) $ n ((run 4) + "0 [4 2] 1 2") # sound "micron"
   # room (slow 8 saw)
   # orbit 1
   # gain 0.9
   
 
-d2 $ n "d7" sound "jx"
+d2 $ n "d7(3,8)" # sound "jx"
+  # gain 1.1
+  # lpf (slow 4 $ saw * 3000 + 100)
