@@ -45,11 +45,17 @@ d9 $ iter 4 $ loopAt 2 $ chop 8 $ sound "narc"
 
 d9 $ jux rev $ iter 4 $ loopAt "<4 8>" $ chop 8 $ sound "liq"
 d9 silence
+
 d1 $ off 0.25 (# crush 4) $ slow 2 $ n (run 16 + (irand 4)) # sound "amencutup"
   # gain 1.1
+
+d5 $ jux rev $ iter 4 $ up "0 ~ [7 3] ~ 2" # sound "arpy"
 
 d2 $ sound "~ wobble*3"
   # crush "<4 3>"
 
-
-d1 $ sound "{future future:2*2, ~ ~ cp8:3}"
+d1 $ iter 4 $ sound "{future(3,8) future:2*2, ~ ~ cp8:3}"
+  # room 0.8
+  # size 0.4
+  # orbit 1
+  # speed 2
