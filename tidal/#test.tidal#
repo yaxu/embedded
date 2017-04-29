@@ -1521,5 +1521,5 @@ d1 $ every 8 (rev) $ every 4 (fast 4) (sound "[voodoo:1 ~ voodoo:8? voodoo:8? vo
 
 d1 $ n "<0 .. 2>" # sound "alphabet"
 
-
+hush
 
