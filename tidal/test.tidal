@@ -1518,3 +1518,6 @@ d1 $ n "0 1 " # sound "numbers" # pan "0 1"
 
 
 d1 $ every 8 (rev) $ every 4 (fast 4) (sound "[voodoo:1 ~ voodoo:8? voodoo:8? voodoo:16? voodoo:16? voodoo:8? voodoo:8?]/2")
+
+d1 $ n "<0 .. 2>" # sound "alphabet"
+
