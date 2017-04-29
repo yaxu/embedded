@@ -21,4 +21,4 @@ let cyc = cat . map pure
 
 d1 $ sound "anintest
 
-I work across digital arts practice and research. My arts practice is based around live coding of music, using my TidalCycles live coding environment for making pattern with code, through a range of bands and collaborations. I also enjoy collaborating on strange events including Algorave (algorithmic dance music), and the Festival of Algorithmic and Mechanical Movement (2nd edition Nov 2017). My research is as post-doc on the PENELOPE project based in the Deutsches Museum Research Institute, applying live coding techniques to investigate the thought processes of ancient weavers.
+I work across digital arts practice and research. My arts practice is based around live coding of music, using my TidalCycles live coding environment for making pattern with code. I also enjoy collaborating on strange events including Algorave (algorithmic dance music), and the Festival of Algorithmic and Mechanical Movement (2nd edition Nov 2017). My research is as post-doc on the PENELOPE project based in the Deutsches Museum Research Institute, applying live coding techniques to investigate the thought processes of ancient weavers.
