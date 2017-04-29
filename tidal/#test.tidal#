@@ -1523,4 +1523,5 @@ d1 $ n "<0..5>" # sound "alphabet"
 
 d1 $ n ("<0 .. 4>" :: Pattern Int) # sound "numbers"
 
- ("0..3":: Pattern D)
+ ("0 0.25 .. 3":: Pattern Double)
+
