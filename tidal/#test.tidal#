@@ -1510,12 +1510,6 @@ import Data.Maybe
 :t elemIndex
 
 
-
+let cyc = cat . 
+      
 d1 $ n "0 1 " # sound "numbers" # pan "0 1"
-
-
-d1 $ off 0.25 (# speed 2) $ jux rev $ n (run "<8 4>" + "<0 4 6>") # sound "micron"
-  # room 0.6
-  # size 0.6
-
-d2 $ sound "rash"
