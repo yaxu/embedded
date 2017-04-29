@@ -1528,6 +1528,7 @@ d1 $ n ("<0 .. 4>" :: Pattern Int) # sound "numbers"
 
 d1$slow "0.1 .. 4" $s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) rand)#delay 1#delayfeedback 1#pan(slow 2rand)
 
+[0.1 .. 4]
 
 
 [0.1 .. 4]
