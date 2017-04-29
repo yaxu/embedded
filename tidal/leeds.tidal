@@ -19,6 +19,7 @@ d4 $ jux rev $ chop 4 $ stut "<4 2>" 0.9 0.25 $ sound "odx(3,8)"
 
 let cyc = cat . map pure
 hush
+
 d1 $slow(cyc[0.1..4])$s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) rand)#delay 1#delayfeedback 1#pan(slow 2rand)
 
 d1$spread _slow[0.1..4]$s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) rand)#delay 1#delayfeedback 1#pan(slow 2rand)
