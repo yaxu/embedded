@@ -19,7 +19,6 @@ d4 $ jux rev $ chop 4 $ stut "<4 2>" 0.9 0.25 $ sound "odx(3,8)"
 
 let cyc = cat . map pure
 
-d1 $ sound "anintest"
+d1 $ sound "anintest
 
-
-
+I work across digital arts practice and research. I enjoy collaborating on strange events with the possibility of failure including Algorave (algorithmic dance music), and the Festival of Algorithmic and Mechanical Movement (2nd edition Nov 2017). My own practice is based around live coding of music, using my TidalCycles live coding environment, through a range of bands and collaborations. I also research pattern in
