@@ -1530,6 +1530,8 @@ d1$slow "0.1 .. 4" $s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) 
 
 
 
-d1 $ n "e7 .. c8" # sound "xx"
+d1 $ n "<e7 .. c8>" # sound "xx"
 
-khush
+d2 $ sound "bd"
+
+hush
