@@ -1521,14 +1521,17 @@ d1 $ every 8 (rev) $ every 4 (fast 4) (sound "[voodoo:1 ~ voodoo:8? voodoo:8? vo
 
 d1 $ n "<0..5>" # sound "alphabet"
 
-d1 $ n ("<0 .. 4>" :: Pattern Int) # sound "numbers"
+d1 $ chop "<4 8 3>" $ n "0 2..14" # sound "micron"
 
  ("0 0.25 .. 3":: Pattern Double)
 
 
 d1$slow "0.1 .. 4" $s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) rand)#delay 1#delayfeedback 1#pan(slow 2rand)
 
-[0.1..4]
 
 
-[0.1 .. 4]
+d1 $ n "<e7 .. c8>" # sound "xx"
+
+d2 $ sound "bd"
+
+hush
