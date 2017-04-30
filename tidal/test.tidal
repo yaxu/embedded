@@ -1532,7 +1532,10 @@ d1$slow "0.1 .. 4" $s"d hc?cp"#delaytime(scale 1.0e-6 0.02$slow (choose [1..9]) 
 
 d1 $ n "<e7 .. c8>" # sound "xx"
 
-d2 $ sound "bd"
+d2 $ discretise "8 16" $ speed (scale 1 2 sine) #  sound "bd"
 
 d1 $ jux rev $ iter 4 $ chop "<4 8 3>" $ n "[0 2..14]/2" # sound "drum"
   # speed "<1.0 1.5 .. 4>"
+
+d1 $ n "0 .. <3 4>" # sound "arpy"
+
