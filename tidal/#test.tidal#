@@ -1537,6 +1537,6 @@ d2 $ discretise "8 16" $ speed (scale 1 2 sine) #  sound "bd"
 d1 $ jux rev $ iter 4 $ chop "<4 8 3>" $ n "[0 2..14]/2" # sound "drum"
   # speed "<1.0 1.5 .. 4>"
 
-d1 $ speed "[0.5*2 [[0.6 2] .. 7]" # sound "drum"
+d1 $ jux rev $ speed "[0.5*2 [<0.6 0.7 0.8 0.55> 2] .. 7]" # sound "drum"
   # room 0.4
-  
+  # size 0.6
