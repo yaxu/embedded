@@ -1521,7 +1521,9 @@ d1 $ every 8 (rev) $ every 4 (fast 4) (sound "[voodoo:1 ~ voodoo:8? voodoo:8? vo
 
 d1 $ n "<0..5>" # sound "alphabet"
 
-d1 $ chop "<4 8 3>" $ n "0 2..14" # sound "micron"
+d1 $ chop "<4 8 3>" $ n "[0 1..15]/2" # sound "micron"
+
+d2 $ sound "bd*2 sn:2"
 
  ("0 0.25 .. 3":: Pattern Double)
 
