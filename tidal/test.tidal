@@ -1535,5 +1535,5 @@ d1 $ n "<e7 .. c8>" # sound "xx"
 d2 $ sound "bd"
 
 
-d1 $ jux rev $ chop "<4 8 3>" $ n "[0 2..14]/2" # sound "micron"
-  # speed "<1.0..4>"
+d1 $ jux rev $ iter 4 $ chop "<4 8 3>" $ n "[0 2..14]/2" # sound "micron"
+  # speed "<1.0 1.5 .. 4>"
