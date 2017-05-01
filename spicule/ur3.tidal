@@ -28,5 +28,5 @@ d4 $ every 2 rev $ chop 8 $ off 0.25 (# crush 1) $ n "cs6(3,8) ~ ds7(3,8) ~" # s
   # lpf (sine1 * 3000 + 200)
 
 
-d5 $ chunk 4 (density 2) $ loopAt 1 $ chop 128 $ sound "breaks165"
+d5 $ chunk 4 (density 2 . (|*| speed 2)) $ loopAt 1 $ chop 128 $ sound "breaks165"
   # gain 1.3
