@@ -11,3 +11,4 @@ d1 $ with speed_p (+ (slow 4 sine)) $ sound "bd sn:2"
 
 d1 $ sound "bd" |/| speed "8"
 
+hush
