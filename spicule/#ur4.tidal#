@@ -11,4 +11,8 @@ d1 $ with speed_p (+ (slow 4 sine)) $ sound "bd sn:2"
 
 d1 $ sound "bd" |/| speed "8"
 
-hush
+d1 $ n "[3 2 1 0]" |*| n "7" |+| n "[0,3,7]" # s "superpiano"
+
+VS.
+
+d1 $ withI n_p ((-) 1) $ n "[3 2 1 0]" |*| n "7" |+| n "[0,3,7]" # s "superpiano"
