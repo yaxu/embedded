@@ -1539,3 +1539,4 @@ d1 $ jux rev $ iter 4 $ chop "<4 8 3>" $ n "[0 2..14]/2" # sound "drum"
 
 d1 $ speed "0.125 <0.25 0.5 1 2> .. 7" # sound "drum"
   
+"c6" :: Pattern Int
