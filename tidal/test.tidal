@@ -1542,5 +1542,5 @@ d1 $ speed "0.125 <0.25 0.5 1 2> .. 7" # sound "drum"
 "c6" :: Pattern Int
 
 d1 $ jux rev $ off 0.25 (|+| octave "<1 -1>") $ off 0.125 (|+| n 7) $ n "3(3,8)" # octave "<4 5 6>" # sound "supermandolin"
-  # legato 5
   |+| n "<0 7 [-5 2] 4>"
+  # sustain (slow 2 $ scale 0.5 1 saw)
