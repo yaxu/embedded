@@ -1548,4 +1548,3 @@ d1 $ superimpose ((# (s "superpiano" # gain 0.8)) . struct "[x(3,8)]/2") $ jux r
   # sustain (slow 2 $ scale 0.5 1 saw)
   # room 0.6
   # size 0.9
-
