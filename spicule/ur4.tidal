@@ -13,12 +13,3 @@ d1 $ sound "bd" |/| speed "8"
 
 d1 $ n "[3 2 1 0]" |*| n "7" |+| n "[0,3,7]" # s "superpiano"
 
-VS.
-
-d1 $ withI n_p ((-) 1) $ n "[3 2 1 0]" |*| n "7" |+| n "[0,3,7]" # s "superpiano"
-
-do
-  let shiftdown by lower i =
-        if i>=lower then shiftdown by lower (i - by) else n
-  d1 $ withI n_p (shiftdown 12 12) $ n "[3 2 1 0]" |*| n "7" |+| n "[0,3,7]" # s "superpiano"
-
