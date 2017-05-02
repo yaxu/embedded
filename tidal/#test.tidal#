@@ -1575,7 +1575,3 @@ let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x ->
 
 d1 $ n (every 3 (slow 2) ([0, 2 .. 14] ++ [0,1])) # sound "amencutup" 
 
-import Sound.Tidal.PatternList
-
-
-[0,1,2] :: Pattern Int
