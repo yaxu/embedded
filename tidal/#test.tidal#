@@ -1565,12 +1565,15 @@ d1 $ sound "bd sn"
 
 import GHC.Exts( IsList(..) )
 
-:set -XTypeFamilies -XOverloadedLists
+:set -XOverloadedLists
 
 {-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances, TypeFamilies #-}
 
 let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
 
+"0 1 2 3" :: Lis
+
+d1 $ n (every 3 (slow 2) [0, 2 .. 14]) # sound "amencutup" 
 
 import Sound.Tidal.PatternList
 
