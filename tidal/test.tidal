@@ -1553,6 +1553,21 @@ d1 $ off 0.25 (# crush 2) $ superimpose (off "<0.25 0.5 0.75>" (|+| n "12") . (#
 let patToList :: Pattern a -> [a]
     patToList p = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) (arc p (0,1))
 
+instance (Ord a) => IsList (Pattern a) where
+  type Item (Pattern a) = a
+  fromList = listToPat
+  toList   = patToList
+
+[0,1 :: Int] :: Pattern Int
+
+d1 $ sound "bd sn"
+  # n [0]
+
+import GHC.Exts( IsList(..) )
+
+:set -XTypeFamilies
+
+{-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances, TypeFamilies #-}
 
 let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
 
