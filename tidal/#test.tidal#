@@ -1553,8 +1553,7 @@ d1 $ off 0.25 (# crush 2) $ superimpose (off "<0.25 0.5 0.75>" (|+| n "12") . (#
 let patToList :: Pattern a -> List a
     patToList p = arc (0,1)
 
-let x = arc ("0 1 2 3" :: Pattern Int) (0,1)
+let x = filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
 
-(fst . snd') $ x !! 0
+:t sortBy
 
-filter (fst . snd' >= 0) x
