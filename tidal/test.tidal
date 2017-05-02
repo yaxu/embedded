@@ -1548,3 +1548,13 @@ d1 $ off 0.25 (# crush 2) $ superimpose (off "<0.25 0.5 0.75>" (|+| n "12") . (#
   # sustain (slow 2 $ scale 0.5 1 saw)
   # room 0.6
   # size 0.9
+
+
+let patToList :: Pattern a -> [a]
+    patToList p = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) (arc p (0,1))
+
+
+let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
+
+x
+
