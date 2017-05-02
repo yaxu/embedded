@@ -1836,4 +1836,4 @@ let metre metrep p = unwrap $ (\metren -> struct (xs !!! metren) p) <$> metrep
       "{~ 1 ~ 1 ~ 1 ~ 1}"
       ]
 
-d1 $ metre ru $ sound "cp"
+d1 $ metre (slow 128 $ run 128) $ sound "cp"
