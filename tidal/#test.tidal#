@@ -1575,4 +1575,4 @@ let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x ->
 import Sound.Tidal.PatternList
 
 
-rev $ "0 1 2" :: Pattern Int
+[0,1,2] :: Pattern Int
