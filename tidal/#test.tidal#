@@ -1558,6 +1558,17 @@ instance (Ord a) => IsList (Pattern a) where
   fromList = listToPat
   toList   = patToList
 
+[0,1] :: Pattern Int
+
+d1 $ sound "bd sn"
+  # n [0]
+
+import GHC.Exts( IsList(..) )
+
+:set -XTypeFamilies
+
+{-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances, TypeFamilies #-}
+
 let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
 
 x
