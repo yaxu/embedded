@@ -1845,5 +1845,5 @@ d1 $fast 8$s"bass1"
   # up( 1 <~ (choose [0..9])
       )
 
-(discretise 4 $ slow 8 saw1)
-  # n 2
+(discretise 0.25 $ saw1)
+
