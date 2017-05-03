@@ -1835,3 +1835,15 @@ let metre metrep p = unwrap $ (\metren -> struct (xs !!! metren) p) <$> metrep
       "{~ 1 1 1 ~ 1 ~ 1}",
       "{~ 1 ~ 1 ~ 1 ~ 1}"
       ]
+
+
+d1 $fast 8$s"bass1"
+  # n (discretise'(1/4) $ choose [2..5])
+  
+  # gain(slow 8sine)
+  # pan(slow 16sine1)
+  # up( 1 <~ (choose [0..9])
+      )
+
+d1 $ sound "bass1*8" # speed ((discretise 0.5 $ slow 8 saw1)+1)
+  # n 2
