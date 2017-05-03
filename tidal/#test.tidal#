@@ -1845,5 +1845,5 @@ d1 $fast 8$s"bass1"
   # up( 1 <~ (choose [0..9])
       )
 
-density 4 (discretise' 0.25 $ saw1)
+density 4 (discretise 0.25 saw)
 
