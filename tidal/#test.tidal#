@@ -1837,8 +1837,9 @@ let metre metrep p = unwrap $ (\metren -> struct (xs !!! metren) p) <$> metrep
       ]
 
 
-d1 $slow 0.225$s"bass1"
-  # n (1<~ (discretise'(1/8) $ choose [2..5]))
+d1 $fast 8$s"bass1"
+  # n (discretise'(1/4) $ choose [2..5])
+  
   # gain(slow 8sine)
   # pan(slow 16sine1)
   # up( 1 <~ (choose [0..9])
