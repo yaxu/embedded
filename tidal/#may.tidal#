@@ -1,0 +1,8 @@
+cps 0.85
+
+d1 $ n "d10*4" # sound "jx"
+  # speed 2
+  # cutoff (slow 2 $ scale 500 1000 saw)
+  # resonance (scale 0.1 0.3 saw)
+  # orbit 1
+  # room 0.9
