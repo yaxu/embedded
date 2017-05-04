@@ -74,7 +74,8 @@ d3 $ slow 2 $ sometimes (|*| speed 2) $ off 0.125 (|+| n "<7 -5>") $ slow 2 $ of
   # room 0.4
   # orbit 1
 
-solo 4
-d4 $ loopAt 2 $ chop 16 $ sound "os"
+
+d4 $ degrade $ loopAt 2 $ chop 128 $ sound "os"
   # gain 1.4
-  
+
+-- thank you for listening
