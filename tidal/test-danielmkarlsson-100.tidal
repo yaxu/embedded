@@ -3,7 +3,7 @@ import qualified Data.Map as Map
 let es = [((0,1), (0,1),Map.fromList [(s_p, VS "hello")])] ::[Event ParamMap]
 
 let deepShowEvents es = "["++ concatMap deepShowEvent es ++ "]"
-    deepShowEvent (a,a',m) = concat ["(", show a, "," show a', ")"]
+    deepShowEvent (a,a',m) = concat ["(", show a, ",", show a', ",", show m, ")"] :: String
 in deepShowEvents es
 
 arc (s"gabba*8"#n(choose[0,0,0,1])#lpf(fast 8$scale 20 20000rand)#pan(fast 9$choose[0,0.125..1])#cut(fast 7$choose[0,1,1])#shape 0.99) (0,1)
