@@ -121,3 +121,4 @@ let unwrap p = Pattern $ \a -> concatMap (\(_, outerPart, p') -> catMaybes $ map
     discretise n p = fast n $ struct "x" p
 in
 arc (discretise "0.25" "a" :: Pattern String)  (0,1)
+
