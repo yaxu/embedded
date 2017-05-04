@@ -57,13 +57,15 @@ d1 $ jux rev $ delayt "[0.04(3,8) 0.02*2, 0.03(3,8,2)]" # sound "[bd,drum,future
   # delayfb 0.9
   # orbit 1
   # up "<0 3 7 5>"
+  # gain 0.8
 
-d2 $ jux rev $ delayt "[0.04(3,8) 0.02*2, 0.03(3,8,2)]" # sound "[cp]"
-  # room 0.7
+d2 $ off 0.25 (# crush 4) $ jux rev $ delayt "[0.06(3,8,4) 0.08*2, 0.03(3,8,3)]" # sound "[cp]"
+  # room (slow 4 saw)
   # size 0.4
   # speed 0.8
   # delay 0.8
   # delayfb 0.9
   # orbit 2
-  # up "<0 3 7 5>"
+  # up "<12>"
+  # gain 0.7
   
