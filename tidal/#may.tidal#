@@ -19,5 +19,9 @@ d3 $ off 0.25 (# (s "xx" # gain 0.7)) $ jux rev $ sometimes (|+| n 12) $ off 0.2
   # resonance (scale 0.1 0.3 saw)
   # legato 1
 
-d4 $ sound "~ kurt"
-  
+d4 $ stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "~ [kurt kurt?]"
+  # orbit 2
+  # delay 0.8
+  # delayt (rand * 0.01)
+  # delayfb 0.98
+
