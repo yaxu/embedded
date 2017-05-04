@@ -1852,4 +1852,3 @@ let maybeListToPat = fastcat . map (maybe silence atom)
 
 filterValues (/= 0) $ listToPat [255, 0, 255]
 
-"x(58,4)":: Pattern String
