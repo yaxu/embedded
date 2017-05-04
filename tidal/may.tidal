@@ -34,7 +34,7 @@ d1 $ ur' 16 "[kurt ~, [arp <arp:inc arp:rev> arp arp:jr], bt:inc, brk brk:jr brk
              # delayfb 0.98
             )
    ),
-   ("arp", (slow 2 $ off 0.125 (|+| n 12)$ n (off 0.25 (+7) $ slow 2 "c7(3,8) a7*2 f7(3,8,2) e7(3,8)") # sound "rash")
+   ("arp", (slow 2 $ off 0.125 (|+| n 12)$ n (off 0.25 (+7) $ slow 2 "<c7 g7>(3,8) a7*2 f7(3,8,2) e7(3,8)") # sound "rash")
    ),
    ("bt",
     (jux (rev . (0.25 <~)) $ chop "<1 2>" $ off 0.25 (# crush 4) $ n "0 ~ 3 2" # s "voodoo") # orbit 1
