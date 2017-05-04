@@ -111,3 +111,7 @@ spread _slow(replicate 5 0.6)$slow(choose[0.15..0.001])$s(randcat["cp","hc?","ba
 
 density 4 $ unwrap $ (slow 4) <$> atom ((atom "test") :: Pattern String)
 
+let fast = temporalParam _density
+    discretise n p = fast n $ struct "x" p
+in
+arc (discretise 0.25 "a" :: Pattern String)  (0,1)
