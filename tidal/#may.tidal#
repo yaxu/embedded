@@ -8,8 +8,8 @@ d1 $ degrade $ slow 2 $ jux rev $ within (0.75,1) (|+| n 12) $ (off 0.25 (# (s "
   # room 0.9
   |+| n (palindrome "<0 0 2 2 3 3 5 5>")
 
-d2 $ chunk 4 (density 2 . (|*| speed 2)) $ juxBy 0.5 rev $ iter 4 $ n ("0-7" + 7) # sound "micron"
-  |*| speed 1
+d2 $ slow 2 $ chunk 4 (density 2 . (|*| speed 2)) $ juxBy 0.5 rev $ iter 4 $ n ("0-7" + 7) # sound "micron"
+  |*| speed 2
 
 d3 $ off 0.25 (# (s "xx" # gain 0.7)) $ jux rev $ sometimes (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ off 0.25 (|*| (gain 0.6 # shape 0.9 # speed 2)) $ n "d6(3,8) [~ d6*2] ~ e6(3,8,2)" # sound "rash"
   # orbit 1
@@ -69,8 +69,9 @@ d2 $ off 0.25 (# crush 4) $ jux rev $ delayt "[0.06(3,8,4) 0.08*2, 0.03(3,8,3)]"
   # up "<12>"
   # gain 0.7
 
-
-d3 $ off 0.25 (# s "jx") $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ n ("c6(<3 4 5>,8,<2 4>)") # sound "pulse"
+d3 $ slow 2 $ off "<0.25 0.5>" (# s "jx") $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ n ("<c6 a7 d7 g7>(<3 4 5>,8,<2 4>)") # sound "pulse"
   # gain 1.1
-  # lpf (slow 2 $ scale 500 1000 saw)
-  # lpq 0.3
+  # lpf (slow 2 $ scale 500 2000 saw)
+  # lpq 0.2
+  # room 0.4
+  # orbit 1
