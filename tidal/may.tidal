@@ -26,7 +26,7 @@ d4 $ stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "~ [kurt kurt?]"
   # delayfb 0.98
 
 
-d1 $ ur' 16 "[kurt ~, [~ arp:inc ~ arp:jr], bt:inc]"
+d1 $ ur' 16 "[kurt ~, [arp <arp:inc arp:rev> arp arp:jr], bt:inc, brk brk:jr brk:crak brk:inc]"
   [("kurt", (stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "bd8 [bd8 [mt8 ht8]]"
              # orbit 2
              # delay 0.8
@@ -38,8 +38,12 @@ d1 $ ur' 16 "[kurt ~, [~ arp:inc ~ arp:jr], bt:inc]"
    ),
    ("bt",
     (jux (rev . (0.25 <~)) $ chop "<1 2>" $ off 0.25 (# crush 4) $ n "0 ~ 3 2" # s "voodoo") # orbit 1
-    )
+   ),
+   ("brk", loopAt 4 $ chop 16 $ s "shackup"
+   )
   ]
   [("inc", (# (speed (saw1 * 0.5 + 1) # room saw1 # size saw1))),
-   ("jr", (jux rev))
+   ("jr", (jux rev)),
+   ("crak", iter 4),
+   ("r", rev)
   ]
