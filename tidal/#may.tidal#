@@ -49,4 +49,11 @@ d1 $ degrade $ ur' 16 "[kurt ~, [arp <arp:inc arp:rev> arp arp:jr], bt:inc, brk 
    ("r", rev)
   ]
 
-d1 $ sound "[bd,dr(3,8)"
+d1 $ delayt "[0.8(3,8)]" # sound "[bd,drum,future]"
+  # room 0.9
+  # size 0.4
+  # speed 0.8
+  # delayt 0.01
+  # delay 0.8
+  # delayfb 0.9
+  # orbit 1
