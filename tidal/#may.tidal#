@@ -83,3 +83,5 @@ d4 $ degrade $ loopAt 2 $ chop 128 $ sound "os"
 
 d1 $ sound "[bd sn:1](5,8)"
 
+d1 $ sound "[hc hh hc hh hc](5,8)"
+
