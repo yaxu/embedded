@@ -1,4 +1,11 @@
-s"gabba*8"#n(choose[0,0,0,1])#lpf(fast 8$scale 20 20000rand)#pan(fast 9$choose[0,0.125..1])#cut(fast 7$choose[0,1,1])#shape 0.99
+import Data.Map
+
+let es = [((0,1), (0,1),fromList [(s_p, VS "hello")])] ::[Event ParamMap]
+
+let deepShowEvents es = "["++ map deepShowEvent es ++ "]"
+    deepShowEvent (a,a',m) = "(" ++ (show a, show a', show m) ++ ")"
+
+arc (s"gabba*8"#n(choose[0,0,0,1])#lpf(fast 8$scale 20 20000rand)#pan(fast 9$choose[0,0.125..1])#cut(fast 7$choose[0,1,1])#shape 0.99) (0,1)
 spread _slow[0.3..1]$s"ade*16cp?v"#n(irand 9)#pan(fast 9rand)#nudge(slow 9$scale(-0.5)3sine)#up"-9"#release 0.7#cut(choose[0,0,1])
 fast(choose[2,2,2.5,3,4])$slow(choose[1,1.1..4])$s"odx*8cp hc gabba"#pan(fast 9rand)#gain 3#begin(slow 2saw)#hpf 60 #gain 1.4
 slow 0.08$randcat[s"odx",s"cp",s"hc",s"bd",s"clak"]#release 0.1#gain(slow(choose[9,5,7])$scale 0.5 2saw)#pan(fast 9rand)
