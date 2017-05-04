@@ -109,4 +109,4 @@ spread _slow(replicate 5 0.6)$slow(choose[0.15..0.001])$s(randcat["cp","hc?","ba
 
 -- 0.9.2
 
-arc (discretise 0.25 saw) (0,4)
+density 4 $ (slow 4) <$> atom ((atom "test") :: Pattern String)
