@@ -1847,3 +1847,8 @@ d1 $fast 8$s"bass1"
 
 (discretise 0.25 $ saw1)
 
+
+let maybeListToPat = fastcat . map (maybe silence atom)
+
+filterValues (/= 0) $ listToPat [255, 0, 255]
+
