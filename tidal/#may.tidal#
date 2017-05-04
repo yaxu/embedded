@@ -26,15 +26,18 @@ d4 $ stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "~ [kurt kurt?]"
   # delayfb 0.98
 
 
-d1 $ ur' 16 "[kurt, arp]"
-  [("kurt", (stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "bd8 [~ bd8 cp8]"
+d1 $ ur' 16 "[kurt arp,bt]"
+  [("kurt", (stut "<3 5>" (0.8) "<0.25 0.125>" $ sound "bd8 [bd8 [mt8 ht8]]"
              # orbit 2
              # delay 0.8
              # delayt (saw * 0.04 + 0.02)
              # delayfb 0.98
             )
    ),
-   ("arp", (n (slow 2 "c7 a7 f7 e7") # sound "rash")
-   )
+   ("arp", (n (slow 2 "c7(3,8) a7 f7 e7") # sound "rash")
+   ),
+   ("bt",
+    (jux rev off 0.25 (# crush 4) $ n "0 ~ 3 2" # s "voodoo")
+    )
   ]
   []
