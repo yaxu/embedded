@@ -79,3 +79,7 @@ d4 $ degrade $ loopAt 2 $ chop 128 $ sound "os"
   # gain 1.4
 
 -- thank you for listening
+
+
+d1 $ sound "[bd sn:1](5,8)"
+
