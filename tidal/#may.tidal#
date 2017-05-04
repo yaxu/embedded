@@ -69,7 +69,8 @@ d2 $ off 0.25 (# crush 4) $ jux rev $ delayt "[0.06(3,8,4) 0.08*2, 0.03(3,8,3)]"
   # up "<12>"
   # gain 0.7
 
-d3 $ n "c6(<3 4 5>,8,<2 4>)" # sound "pulse"
+
+d3 $ off 0.25 (# s "jx") $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ n ("c6(<3 4 5>,8,<2 4>)") # sound "pulse"
   # gain 1.1
-  # lpf 1000
-  # lpq 0.
+  # lpf (slow 2 $ scale 500 1000 saw)
+  # lpq 0.3
