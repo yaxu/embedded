@@ -1850,4 +1850,4 @@ d1 $fast 8$s"bass1"
 
 let maybeListToPat = fastcat . map (maybe silence atom)
 
-maybeListToPat [Just 0, Nothing, Just 1]
+filterValues (/= 0) $ listToPat [255, 0, 255]
