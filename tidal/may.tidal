@@ -69,7 +69,21 @@ d2 $ off 0.25 (# crush 4) $ jux rev $ delayt "[0.06(3,8,4) 0.08*2, 0.03(3,8,3)]"
   # up "<12>"
   # gain 0.7
 
-d3 $ sometimes (|*| speed 2) $ off 0.125 (|+| n 7) $ slow 2 $ off "<0.25 0.5>" (# s "jx") $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ n ("<c6 a7 d7 g7>(<3 4 5>,8,<2 4>)") # sound "rash"
+d3 $ slow 2 $ sometimes (|*| speed 2) $ off 0.125 (|+| n "<7 -5>") $ slow 2 $ off "<0.25 0.5>" (# s "jx") $ jux rev $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ slow 2 $ n ("<c6 a7 d7 g7>(<3 4 5>,8,<2 4>)") # sound "rash"
   # gain 1.1
   # room 0.4
   # orbit 1
+
+
+d4 $ degrade $ loopAt 2 $ chop 128 $ sound "os"
+  # gain 1.4
+
+n (toScale Scales.dorian "0 3" + 5)
+
+-- thank you for listening
+
+
+d1 $ sound "[bd sn:1](5,8)"
+
+d1 $ sound "[hc hh hc hh hc](5,8)"
+
