@@ -1566,6 +1566,7 @@ import GHC.Exts( IsList(..) )
 
 :set -XOverloadedLists
 
+d1 $ sound "arpy  # speed (slow 8 $ (saw * 0.125) + (discretise 1 $ choose [0.5, 0.75,2]))
 
 d1 $ sound ( ["bd", "sn"])
 d1 $ linger 1/4 $ sound "bd sn"
