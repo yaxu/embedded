@@ -1568,7 +1568,7 @@ import GHC.Exts( IsList(..) )
 
 
 d1 $ sound ( ["bd", "sn"])
-d1 $ sound "bd sn"
+d1 $ linger 1/4 $ sound "bd sn"
 {-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances, TypeFamilies #-}
 
 let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
