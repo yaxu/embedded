@@ -1566,9 +1566,10 @@ import GHC.Exts( IsList(..) )
 
 :set -XOverloadedLists
 
+d1 $ sound "arpy*4" # speed (slow 8 $ (saw * 0.125) + (discretise 1 $ choose [0.5, 0.75, 2]))
 
 d1 $ sound ( ["bd", "sn"])
-
+d1 $ linger 1/4 $ sound "bd sn"
 {-# LANGUAGE OverloadedStrings, TypeSynonymInstances, FlexibleInstances, TypeFamilies #-}
 
 let x = map (thd') $ sortBy (\a b -> compare (snd' a) (snd' b)) $ filter ((\x -> x >= 0 && x < 1) . fst . snd' ) $ arc ("0 1 2 3" :: Pattern Int) (0,1)
@@ -1849,7 +1850,6 @@ d1 $fast 8$s"bass1"
       )
 
 (discretise 0.25 $ saw1)
-
 
 let maybeListToPat = fastcat . map (maybe silence atom)
 
