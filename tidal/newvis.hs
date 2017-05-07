@@ -13,7 +13,7 @@ import System.Cmd
 import Data.List
 
 totalWidth = 600 :: Double
-ratio = 1/20
+ratio = 1/40
 levelHeight = totalWidth * ratio
 
 arrangeEvents [] = []
