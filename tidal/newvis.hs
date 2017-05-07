@@ -5,6 +5,7 @@ import Data.Colour.SRGB
 import Control.Applicative
 import Sound.Tidal.Parse
 import Sound.Tidal.Pattern
+import Sound.Tidal.Time
 import Sound.Tidal.Utils
 import Data.Ratio
 import Data.Maybe
