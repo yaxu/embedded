@@ -26,7 +26,7 @@ v sf fn (x,y) levels =
       sf fn x y $ \surf -> do
         C.renderWith surf $ do
           C.save
-          C.scale x (y / (fromIntegral $ length levels))
+          -- C.scale x (y / (fromIntegral $ length levels))
           C.setOperator C.OperatorOver
           -- C.setSourceRGB 0 0 0
           -- C.rectangle 0 0 1 1
