@@ -47,8 +47,8 @@ renderLevel total (n, level) = do C.save
                  C.setSourceRGBA r g b 1
                  -- C.rectangle x y w h
                  C.arc x y (w/2) 0 (1 * pi)
-                 C.fill
-                 C.stroke
+                 -- C.fill
+                 -- C.stroke
                    where x = (fromRational s)
                          y = (fromIntegral n) * height + border
                          w = (ratio) - (border * ratio * 2)
