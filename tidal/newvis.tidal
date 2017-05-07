@@ -34,14 +34,19 @@ let v sf fn (x,y) levels =
       where height = 1
             drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
+                 C.setSourceRGBA 0 0 0 1
+                 C.rectangle x (y+half -(lineH/2)) lineW lineH
+                 C.fill
+                 C.stroke
                  C.setSourceRGBA r g b 1
                  C.rectangle x y w h
                  C.fill
                  C.stroke
                    where x = (fromRational s)
                          y = (fromIntegral n) * height
-                         -- w = (fromRational (e-s))
                          w = (fromRational ratio)
+                         lineW = (fromRational (e-s))
+                         lineH = 0.1
                          h = height
                          half = height / 2
                          quarter = height / 4
@@ -54,7 +59,7 @@ let v sf fn (x,y) levels =
                       return ()
                         where levels = arrangeEvents (arc pat (0,1))
 in
-vis "test" "[red blue, green orange, purple green ~]"
+vis "test" $ superimpose rev "[red blue, green orange, purple green ~]"
 
 :t totalWidth
 
