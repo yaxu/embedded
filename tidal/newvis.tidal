@@ -62,6 +62,7 @@ let v sf fn (x,y) levels =
                       rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                       return ()
                         where levels = arrangeEvents (arc pat (0,1))
+                              
 in
 vis "test" $ density 4 "[red blue, green orange, purple green tomato]"
 
