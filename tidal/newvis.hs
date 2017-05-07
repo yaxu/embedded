@@ -54,12 +54,13 @@ renderLevel total (n, level) = do C.save
                          h = height - border*2
                          half = height / 2
                          quarter = height / 4
-    vPDF = v C.withPDFSurface
-    totalWidth = 600 :: Double
-    ratio = 1/20
-    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth,((totalWidth * ratio)*(fromIntegral $ length levels))) levels
-                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
-                      rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
-                      return ()
-                        where levels = arrangeEvents (arc pat (0,1))
+            vPDF = v C.withPDFSurface
+            totalWidth = 600 :: Double
+            ratio = 1/20
+
+vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth,((totalWidth * ratio)*(fromIntegral $ length levels))) levels
+                  rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
+                  rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
+                  return ()
+                    where levels = arrangeEvents (arc pat (0,1))
 
