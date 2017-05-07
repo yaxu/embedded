@@ -41,8 +41,8 @@ renderLevel total (n, level) = do C.save
       where drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
                  C.setSourceRGBA 0.6 0.6 0.6 1
+                  C.rectangle (x + l gap + w) (y + half) - (lineH/2.0) - border) lineW lineH
                  C.setSourceRGBA r g b 1
-                 -- C.rectangle (x+(lgap*totalWidth)+w) (y+(half*totalHeight) -(lineH/2.0) - border) lineW lineH
                  C.fill
                  C.rectangle x y w w
                  -- C.stroke
