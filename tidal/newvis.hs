@@ -14,6 +14,7 @@ import System.Cmd
 
 totalWidth = 600 :: Double
 ratio = 1/20
+totalHeight = totalWidth * ratio
 
 arrangeEvents [] = []
 arrangeEvents (e:es) = addEvent e (arrangeEvents es)
@@ -50,14 +51,14 @@ renderLevel total (n, level) = do C.save
                  C.fill
                  -- C.stroke
                    where x = (fromRational s) * totalWidth
-                         y = (fromIntegral n) * height + border
-                         w = (ratio) - (border * ratio * 2)
+                         y = ((fromIntegral n) * height + border) * totalHeight
+                         w = ((ratio) - (border * ratio * 2))*totalWidth
                          lineW = (fromRational (e-s)) - lgap - rgap - w
                          lineH = 0.03
                          lgap = 0.002
                          rgap = 0.01
                          border = 0.1
-                         h = height - border*2
+                         h = (height - border*2)*todalHeight
                          half = height / 2
                          quarter = height / 4
             vPDF = v C.withPDFSurface
