@@ -12,6 +12,9 @@ import Data.Maybe
 import System.Cmd
 
 
+totalWidth = 600 :: Double
+ratio = 1/20
+
 arrangeEvents [] = []
 arrangeEvents (e:es) = addEvent e (arrangeEvents es)
 fits e es = null $ filter (id) $ map (\e' -> isJust $ subArc (snd' e) (snd' e')) es
@@ -57,12 +60,9 @@ renderLevel total (n, level) = do C.save
                          half = height / 2
                          quarter = height / 4
             vPDF = v C.withPDFSurface
-            totalWidth = 600 :: Double
-            ratio = 1/20
 
 vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth,((totalWidth * ratio)*(fromIntegral $ length levels))) levels
                   rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
                   rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                   return ()
                     where levels = arrangeEvents (arc pat (0,1))
-
