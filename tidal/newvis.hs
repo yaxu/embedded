@@ -41,7 +41,7 @@ renderLevel total (n, level) = do C.save
       where drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
                  C.setSourceRGBA 0.6 0.6 0.6 1
-                 C.rectangle (x + w) y lineW lineH
+                 C.rectangle (x + w) y levelHeight lineH
                  C.setSourceRGBA r g b 1
                  C.fill
                  C.arc (x+half) (y+half) (w/2) 0 (2 * pi)
