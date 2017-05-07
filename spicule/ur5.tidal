@@ -18,4 +18,7 @@ d1 $ ur' 16
   [("wake", (# (room saw # size saw # orbit 1)))
   ]
   
-~ ~ ~ ~
+d1 $ n "[~ ~ 2 [~ 2]]" # s "bskick"
+  # gain 1.2
+
+d2 $ n "[3 4] [2 4]" # sound "bssnare"
