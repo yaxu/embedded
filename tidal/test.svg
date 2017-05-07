@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="60pt" viewBox="0 0 600 60" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="60pt" viewBox="0 0 600 60" version="1.1" shape-rendering="crispEdges">
 <g id="surface41">
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(60%,60%,60%);fill-opacity:1;" d="M 25.199219 14.550781 L 144 14.550781 L 144 15.449219 L 25.199219 15.449219 Z M 25.199219 14.550781 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,100%);fill-opacity:1;" d="M 12 3 C 12 3.332031 6.628906 3.601562 0 3.601562 C -6.628906 3.601562 -12 3.332031 -12 3 C -12 2.667969 -6.628906 2.398438 0 2.398438 C 6.628906 2.398438 12 2.667969 12 3 "/>
