@@ -14,7 +14,7 @@ import System.Cmd
 
 totalWidth = 600 :: Double
 ratio = 1/20
-totalHeight = totalWidth * ratio
+levelHeight = totalWidth * ratio
 
 arrangeEvents [] = []
 arrangeEvents (e:es) = addEvent e (arrangeEvents es)
@@ -50,18 +50,18 @@ renderLevel total (n, level) = do C.save
                  C.fill
                  -- C.stroke
                    where x = (fromRational s) * totalWidth
-                         y = (fromIntegral n) * height + border
+                         y = (fromIntegral n) * levelHeight + border
                          w = ((ratio) - (border * ratio * 2))
                          lineW = ((fromRational $ e-s) * totalWidth) - lgap - rgap - w
                          lineH = 2
                          lgap = 3
                          rgap = 3
                          border = 3
-                         half = height / 2
-                         quarter = height / 4
+                         half = levelHeight / 2
+                         quarter = levelHeight / 4
             vPDF = v C.withPDFSurface
 
-vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth,((totalWidth * ratio)*(fromIntegral $ length levels))) levels
+vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth, levelHeight*(fromIntegral $ length levels)) levels
                   rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
                   rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                   return ()
