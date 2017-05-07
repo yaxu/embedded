@@ -48,7 +48,7 @@ renderLevel total (n, level) = do C.save
                  -- C.rectangle x y w h
                  C.arc x y (w/2) 0 (1 * pi)
                  C.fill
-                 -- C.stroke
+                 C.stroke
                    where x = (fromRational s)
                          y = (fromIntegral n) * height + border
                          w = (ratio) - (border * ratio * 2)
