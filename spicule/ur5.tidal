@@ -10,7 +10,7 @@ d1 $ ur' 16
    ),
    ("shadow", off 0.25 (# s "drum:2") $ off 0.25 (# crush 4) $ sound "<micron:5>(3,8, <0 2 4>)"
    ),
-   ("tune", off 0.25 ((off 0.25 (# crush 4)) . (# s "rash")) $ off 0.25 (|+| n 7) $ n "e7 ~ g7" # s "jx"
+   ("tune", off 0.25 ((off "<0.25 0.5>" (# crush 4)) . (# s "rash")) $ off 0.25 (|+| n 7) $ n "e7 ~ g7" # s "jx"
             # hpf (slow 16 $ cat [(0.5 <~ sine) * 1500, saw * 2000])
             # hpq 0.3
    )
