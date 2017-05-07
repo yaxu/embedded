@@ -1862,4 +1862,4 @@ every 3 (const $ s "bd sn") silence
 
 :load newvis
 
-vis "test" $ superimpose rev $ density 16 $ every 2 (slow 2) $ "[red orange grey, blue green, [grey black]*2]"
+vis "test" $ superimpose rev $ density 16 $ iter 4 $ every 3 (blend 0.5 red <$>) $  every 2 (0.5 <~) $ "[red orange grey, blue green, [grey black]*2]"
