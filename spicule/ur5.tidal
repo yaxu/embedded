@@ -2,12 +2,14 @@
 
 
 
-d1 $ ur' 64 "simple:wake complex:wake simple:wake shadow:wake"
+d1 $ ur' 8
+  -- "simple:wake complex:wake simple:wake shadow:wake"
+  "shadow:wake"
   [("simple", sound "bd*4"
    ),
    ("complex", off 0.25 (# crush 4) $ sound "bd(3,8)"
    ),
-   ("shadow", off 0.25 (# s "drum:3") $ off 0.25 (# crush 4) $ sound "bd(3,8)"
+   ("shadow", off 0.25 (# s "drum:2") $ off 0.25 (# crush 4) $ sound "bd8:2(3,8, <0 2 4>)"
    )
   ]
   [("wake", (# (room saw # size saw # orbit 1)))
