@@ -40,8 +40,7 @@ renderLevel total (n, level) = do C.save
                  C.fill
                  -- C.stroke
                  C.setSourceRGBA r g b 1
-                 -- C.rectangle x y w h
-                 C.
+                 C.rectangle x y w h
                  C.fill
                  -- C.stroke
                    where x = (fromRational s)
