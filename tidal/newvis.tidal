@@ -12,10 +12,13 @@ import Data.Maybe
 
 let x = ("[blue red, orange]"  :: Pattern ColourD)
     arrangeEvents [] = []
-    arrangeEvents (e:es) = filter () (arrangeEvents es)
-      where fits e es = null $ filter (id) $ map (\e' -> isNothing $ subArc (snd' e) (snd e')) es
+    arrangeEvents (e:es) = addEvent e (arrangeEvents es)
+      where fits e es = null $ filter (id) $ map (\e' -> isNothing $ subArc (snd' e) (snd' e')) es
+            addEvent e [] = [[e]]
+            addEvent e (level:levels) | fits e level = (e:level):levels
+                                      | otherwise = level:(addEvent e levels)
 
-x
+
 
 vPDF = v C.withPDFSurface
 vSVG = v C.withSVGSurface
