@@ -35,13 +35,13 @@ let v sf fn (x,y) levels =
             drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
                  C.setSourceRGBA 0.6 0.6 0.6 1
-                 C.rectangle (x+lgap+w) (y+half -(lineH/2) - border) lineW lineH
+                 C.rectangle (x+lgap+w) (y+half -(lineH/2.0) - border) lineW lineH
                  C.fill
-                 C.stroke
+                 -- C.stroke
                  C.setSourceRGBA r g b 1
                  C.rectangle x y w h
                  C.fill
-                 C.stroke
+                 -- C.stroke
                    where x = (fromRational s)
                          y = (fromIntegral n) * height + border
                          w = (fromRational ratio) - (border * ratio * 2)
@@ -62,7 +62,7 @@ let v sf fn (x,y) levels =
                       return ()
                         where levels = arrangeEvents (arc pat (0,1))
 in
-vis "test" $ density 4 "[red blue, green orange, purple green ~]"
+vis "test" $ density 4 "[red blue, green orange, purple green tomato]"
 
 :t totalWidth
 
