@@ -10,7 +10,7 @@ import Sound.Tidal.Utils
 import Data.Ratio
 import Data.Maybe
 import System.Cmd
-
+import Data.List
 
 totalWidth = 600 :: Double
 ratio = 1/20
