@@ -51,7 +51,7 @@ let v sf fn (x,y) levels =
                       return ()
                         where levels = arrangeEvents (arc pat (0,1))
 in
-vis "test" "[red blue, green ~]"
+vis "test" "[red blue, green orange, purpl~]"
 
 :t C.polygon
 
