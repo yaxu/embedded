@@ -1858,3 +1858,10 @@ filterValues (/= 0) $ listToPat [255, 0, 255]
 every 3 (const $ s "bd sn") silence
 
 "3 .. 6" :: Pattern Double
+
+
+:load newvis
+
+:t vis
+
+vis "test" $ "[red red, blue*3]"
