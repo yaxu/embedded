@@ -28,9 +28,10 @@ v sf fn (x,y) levels =
           --C.fill
           mapM_ (renderLevel (length levels)) $ enumerate levels
           C.restore
-    renderLevel total (n, level) = do C.save
-                                      mapM_ drawEvent level
-                                      C.restore
+
+renderLevel total (n, level) = do C.save
+                                  mapM_ drawEvent level
+                                  C.restore
       where height = 1
             drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
