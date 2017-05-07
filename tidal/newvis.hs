@@ -45,7 +45,6 @@ renderLevel total (n, level) = do C.save
                  -- C.rectangle (x+(lgap*totalWidth)+w) (y+(half*totalHeight) -(lineH/2.0) - border) lineW lineH
                  C.fill
                  C.rectangle x y w w
-                 C.rectangle 10 10 10 10
                  -- C.stroke
                  -- C.arc x y (w/2) 0 (1 * pi)
                  C.fill
