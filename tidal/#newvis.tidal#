@@ -35,7 +35,7 @@ let v sf fn (x,y) levels =
             drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
                  C.setSourceRGBA 0.6 0.6 0.6 1
-                 C.rectangle (x+lgap+w) (y+half -(lineH/2) - border) lineW lineH
+                 C.rectangle (x+lgap+w) (y+half -(lineH/2.0) - border) lineW lineH
                  C.fill
                  C.stroke
                  C.setSourceRGBA r g b 1
