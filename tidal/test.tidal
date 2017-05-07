@@ -1861,7 +1861,4 @@ every 3 (const $ s "bd sn") silence
 
 
 :load newvis
-
-:t vis
-
 vis "test" $ density 2 "[red orange grey, blue green]"
