@@ -2,14 +2,17 @@
 
 
 
-d1 $ ur' 8
-  -- "simple:wake complex:wake simple:wake shadow:wake"
-  "shadow:wake"
+d1 $ ur' 16
+  "[simple:wake complex:wake simple:wake shadow:wake, tune]"
   [("simple", sound "bd*4"
    ),
-   ("complex", off 0.25 (# crush 4) $ sound "bd(3,8)"
+   ("complex", off 0.25 (# crush 4) $ sound "micron:5(3,8)"
    ),
-   ("shadow", off 0.25 (# s "drum:2") $ off 0.25 (# crush 4) $ sound "bd8:2(3,8, <0 2 4>)"
+   ("shadow", off 0.25 (# s "drum:2") $ off 0.25 (# crush 4) $ sound "<micron:5>(3,8, <0 2 4>)"
+   ),
+   ("tune", off 0.25 (# s "rash") $ off 0.25 (|+| n 7) $ n "e7 ~ g7" # s "jx"
+            # hpf (slow 16 $ cat [sine * 1500, (0.5 <~ saw) * 2000])
+            # hpq 0.3
    )
   ]
   [("wake", (# (room saw # size saw # orbit 1)))
