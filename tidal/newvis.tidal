@@ -40,13 +40,13 @@ let v sf fn (x,y) pat =
                  C.fill
                  C.stroke
                    where x = (fromRational s)
-                         y = (fromIntegral n) * height + quarter
+                         y = (fromIntegral n) * height
                          w = (fromRational (e-s))
-                         h = half
+                         h = height
                          half = height / 2
                          quarter = height / 4
     vPDF = v C.withPDFSurface
-    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (600,50) pat
+    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (600,600) pat
                       rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
                       rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                       return ()
