@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="300pt" viewBox="0 0 600 300" version="1.1" shape-rendering="crispEdges">
-<g id="surface153">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(50.196078%,0%,50.196078%);fill-opacity:1;" d="M 0 0 L 200 0 L 200 100 L 0 100 Z M 0 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,50.196078%,0%);fill-opacity:1;" d="M 200 0 L 400 0 L 400 100 L 200 100 Z M 200 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,50.196078%,0%);fill-opacity:1;" d="M 0 100 L 300 100 L 300 200 L 0 200 Z M 0 100 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 300 100 L 600 100 L 600 200 L 300 200 Z M 300 100 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 0 200 L 300 200 L 300 300 L 0 300 Z M 0 200 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,100%);fill-opacity:1;" d="M 300 200 L 600 200 L 600 300 L 300 300 Z M 300 200 "/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="180pt" viewBox="0 0 600 180" version="1.1" shape-rendering="crispEdges">
+<g id="surface201">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(50.196078%,0%,50.196078%);fill-opacity:1;" d="M 0 0 L 60 0 L 60 60 L 0 60 Z M 0 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,50.196078%,0%);fill-opacity:1;" d="M 200 0 L 260 0 L 260 60 L 200 60 Z M 200 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,50.196078%,0%);fill-opacity:1;" d="M 0 60 L 60 60 L 60 120 L 0 120 Z M 0 60 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 300 60 L 360 60 L 360 120 L 300 120 Z M 300 60 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 0 120 L 60 120 L 60 180 L 0 180 Z M 0 120 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,100%);fill-opacity:1;" d="M 300 120 L 360 120 L 360 180 L 300 180 Z M 300 120 "/>
 </g>
 </svg>

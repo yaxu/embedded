@@ -40,18 +40,23 @@ let v sf fn (x,y) levels =
                  C.stroke
                    where x = (fromRational s)
                          y = (fromIntegral n) * height
-                         w = (fromRational (e-s))
+                         -- w = (fromRational (e-s))
+                         w = (fromRational ratio)
                          h = height
                          half = height / 2
                          quarter = height / 4
     vPDF = v C.withPDFSurface
-    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (600,fromIntegral (100*(length levels))) levels
+    totalWidth = 600 :: Double
+    ratio = 1/10
+    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth,((totalWidth * ratio)*(fromIntegral $ length levels))) levels
                       rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
                       rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                       return ()
                         where levels = arrangeEvents (arc pat (0,1))
 in
-vis "test" "[red blue, green ~]"
+vis "test" "[red blue, green orange, purple green ~]"
+
+:t totalWidth
 
 :t C.polygon
 
