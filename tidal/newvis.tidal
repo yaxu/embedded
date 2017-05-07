@@ -23,12 +23,12 @@ let v sf fn (x,y) pat =
           C.save
           C.scale x y
           C.setOperator C.OperatorOver
-          C.setSourceRGB 0 0 0
-          C.rectangle 0 0 1 1
-          C.fill
+          -- C.setSourceRGB 0 0 0
+          -- C.rectangle 0 0 1 1
+          --C.fill
           mapM_ (renderLevel (length levels)) $ enumerate levels
           C.restore
-            where levels = arrangeEvents pat
+            where levels = arrangeEvents (arc pat (0,1))
     renderLevel total (n, level) = do C.save
                                       mapM_ drawEvent level
                                       C.restore
@@ -40,10 +40,18 @@ let v sf fn (x,y) pat =
                  C.fill
                  C.stroke
                    where x = (fromRational s)
-                         y = (fromIntegral n) * height
+                         y = (fromIntegral n) * height + quarter
                          w = (fromRational (e-s))
-                         h = height
-
+                         h = half
+                         half = height / 2
+                         quarter = height / 4
+    vPDF = v C.withPDFSurface
+    vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (600,50) pat
+                      rawSystem "/home/alex/Dropbox/bin/fixsvg.pl" [name ++ ".svg"]
+                      rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
+                      return ()
+in
+vis "test" "[red blue, green ~]"
 
 fits ((0,1),(0,1),"b")  [((0,1),(0,1), "a") :: Event String]
 
