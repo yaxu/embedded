@@ -1,7 +1,3 @@
-
-
-
-
 d1 $ ur' 16
   "[simple:wake complex:wake simple:wake shadow:wake, tune]"
   [("simple", sound "bd*4"
