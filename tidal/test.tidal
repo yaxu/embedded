@@ -71,9 +71,9 @@ import Sound.Tidal.MIDI.VolcaBass
 
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
-m1 <- midiStream devices "X18/XR18 MIDI 1" 1 volcabassController
+m1 <- midiStream devices "Midi Through Port-0" 1 volcabassController
 
-c1 $ sound "bd sn:3"
+m1 $ sound "bd sn:3"
 
 
 slide
@@ -1856,3 +1856,5 @@ let maybeListToPat = fastcat . map (maybe silence atom)
 filterValues (/= 0) $ listToPat [255, 0, 255]
 
 every 3 (const $ s "bd sn") silence
+
+"3 .. 6" :: Pattern Double
