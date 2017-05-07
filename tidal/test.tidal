@@ -1864,4 +1864,4 @@ every 3 (const $ s "bd sn") silence
 
 :t vis
 
-vis "test" $ "[red red, blue*3]"
+vis "test" $ density 2 "[red orange grey, blue green]"
