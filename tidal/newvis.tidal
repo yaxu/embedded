@@ -53,6 +53,8 @@ let v sf fn (x,y) pat =
 in
 vis "test" "[red blue, green ~]"
 
+:t C.polygon
+
 fits ((0,1),(0,1),"b")  [((0,1),(0,1), "a") :: Event String]
 
 vPDF = v C.withPDFSurface
@@ -84,6 +86,10 @@ renderEvent (_, (s,e), (cs)) = do C.save
          drawBlocks [] _ = return ()
          drawBlocks (c:cs) n = do let (RGB r g b) = toSRGB c
                                   C.setSourceRGBA r g b 1
+                                  C.rectangle x y h h
+                                  C.fill
+                                  C.stroke
+                                  C.setSourceRGBA 1 1 1 1
                                   C.rectangle x y w h
                                   C.fill
                                   C.stroke
@@ -99,3 +105,4 @@ events pat = (map (mapSnd' (\(s,e) -> ((s - (ticks/2))/speed,(e - (ticks/2))/spe
   where speed = 1
 ticks = 0
 --pat = p "[red blue green,orange purple]" :: Sequence ColourD
+:t C.path
