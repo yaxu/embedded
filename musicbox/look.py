@@ -210,14 +210,14 @@ def runloop():
     cap = cv2.VideoCapture(1)
 #    orig = cv2.blur(cv2.imread('image.jpg'), (3,3))
     ret,grab = cap.read()
-    cv2.imwrite('save.png',grab)
+    #cv2.imwrite('save.png',grab)
     #grab = grab[170:270,140:440]
     #roi = grab[170:270,140:440]
     # top left: 100,145
     # bottom right: 500,275
     grab = grab[145:275,100:500]
     roi = grab[145:275,100:500]
-    cv2.imwrite('roi.png',grab)
+    #cv2.imwrite('roi.png',grab)
 
     low = 1000
     high = 0
