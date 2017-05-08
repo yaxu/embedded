@@ -94,27 +94,18 @@ def runloop():
             area = cv2.contourArea(c)
             if area < 100:
                 continue
+
             #print "area %i: %f" % (i, area)
             thing = {}
             thing['area'] = area
+
             # centroid
             m = cv2.moments(c)
             thing['x'] = m['m10'] / m['m00']
             thing['y'] = m['m01'] / m['m00']
-            #thing['rect'] = rect = cv2.boundingRect(c)
-            #thing['hull'] = hull = cv2.convexHull(c)
-            #thing['hull_area'] = abs(cv2.contourArea(hull))
             
             thing['perimeter'] = perimeter = cv2.arcLength(c, True)
             thing['roundness'] = roundness = (perimeter * 0.282) / math.sqrt(area)
-            #print "roundness: " + str(thing['roundness'])
-            #print "area: " + str(thing['area'])
-            #(centre, axes, orientation) = cv2.fitEllipse(c)
-            #thing['centre'] = centre
-            #print ("centre: " + str(centre))
-            #thing['orientation'] = orientation / 180
-            # TODO - check these are width and height
-            #thing['aspect'] = float(rect[1]) / float(rect[3])
             thing['contour'] = [c]
             # TODO - brightness
             #cv2.drawContours(orig,[c],-1, ((i/float(len(contours)))*256.0, 0,255), 2)
