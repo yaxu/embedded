@@ -39,8 +39,8 @@ def runloop():
     low = 1000
     high = 0
 
-    highest = 300.5
-    lowest = 40.6
+    highest = 361.8
+    lowest = 55
 
     current_notes = []
     
