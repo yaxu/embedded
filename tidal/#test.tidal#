@@ -1868,4 +1868,4 @@ vis "test" $ superimpose rev $ density 16 $ iter 4 $ every 2 (blend 0.5 grey <$>
 
 soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
-cps 0.85
+ "{a, b c}%3" :: Pattern String
