@@ -217,6 +217,8 @@ def runloop():
     roi = grab[170:270,140:440]
     cv2.imwrite('roi.png',grab)
 
+    # top left: 100,145
+    # bottom right: 500,275
     low = 1000
     high = 0
 
