@@ -48,7 +48,7 @@ renderLevel total (n, level) = do C.save
                       C.patternAddColorStopRGB pattern 0 0.91 0.96 0.93
                       C.patternAddColorStopRGB pattern 1 0.65 0.68 0.68
                       -- C.patternSetFilter pattern C.FilterFast
-                      -- C.setSource pattern
+                      C.setSource pattern
                       -- C.setSourceRGBA r g b 1
                       --C.arc (x+half) (y+half) (w/2) 0 (2 * pi)
                       C.rectangle x y w w
