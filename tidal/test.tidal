@@ -1892,10 +1892,13 @@ d2 $ jux rev $ chop 8 $ n "0 [~ 3]" # sound "micron"
 
 
 
+import Data.Bits
 
-let noise2d :: (Int32, Int32) -> Double
-    noise2d (x, y) =
+let noise2d :: Int -> Int -> Double
+    noise2d x y =
       let m = x + y * 57
           n = (shiftR m 13) `xor` m
           j = (n * (n * n * 15731 + 789221) + 1376312589) .&. 0x7fffffff
-      in  1.0 - (fromIntegral j / 1073741824.0)
+      in  (fromIntegral j / 2.147483648e9)
+
+noise2d 0 3
