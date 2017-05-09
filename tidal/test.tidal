@@ -1869,4 +1869,4 @@ soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
 :load newvis
 
-vis "test" $ "red green blue" :: Pattern ColourD
+vis "test" $ ("red green blue" :: Pattern ColourD)
