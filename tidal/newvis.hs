@@ -48,9 +48,9 @@ renderLevel total (n, level) = do C.save
                       -- C.patternSetFilter pattern C.FilterFast
                       C.setSource pattern
                       -- C.setSourceRGBA r g b 1
-                      C.fill
                       --C.arc (x+half) (y+half) (w/2) 0 (2 * pi)
                       C.rectangle x y w w
+                      C.fill
                       -- C.stroke
                       --C.fill
                       -- C.stroke
