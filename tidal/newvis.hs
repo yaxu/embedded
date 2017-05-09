@@ -40,19 +40,22 @@ renderLevel total (n, level) = do C.save
                                   C.restore
       where drawEvent (_, (s,e), c) = 
               do let (RGB r g b) = toSRGB c
-                 C.setSourceRGBA 0.6 0.6 0.6 1
-                 C.rectangle (x + half) y lineW levelHeight
+                 -- C.setSourceRGBA 0.6 0.6 0.6 1
+                 -- C.rectangle x y lineW levelHeight
                  C.withLinearPattern 0 0 lineW levelHeight $ \pattern ->
                    do --C.patternAddColorStopRGB pattern 0 0 0 0
                       --C.patternAddColorStopRGB pattern 0.5 1 1 1
+                      C.save
                       C.patternAddColorStopRGBA pattern 0 r g b 1
-                      C.patternAddColorStopRGBA pattern 1 r g b 0.5
+                      C.patternAddColorStopRGBA pattern 1 r g b 0.25
                       C.patternSetFilter pattern C.FilterFast
                       C.setSource pattern
                       -- C.setSourceRGBA r g b 1
                       --C.arc (x+half) (y+half) (w/2) 0 (2 * pi)
-                      C.rectangle x y w w
+                      C.translate x y
+                      C.rectangle 0 0 lineW levelHeight
                       C.fill
+                      C.restore
                       -- C.stroke
                       --C.fill
                       -- C.stroke
