@@ -38,7 +38,7 @@ v sf fn (x,y) levels =
 renderLevel total (n, level) = do C.save
                                   mapM_ drawEvent $ sortOn (fst . snd') $ level
                                   C.restore
-      where drawEvent (_, (s,e), c) = 
+      where drawEvent ((sWhole, eWhole), (s,e), c) = 
               do let (RGB r g b) = toSRGB c
                  -- C.setSourceRGBA 0.6 0.6 0.6 1
                  -- C.rectangle x y lineW levelHeight
