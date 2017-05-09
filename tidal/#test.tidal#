@@ -1884,4 +1884,8 @@ vis "test" $ density 16 $
 
 vis "test" $ density 16 $ superimpose (density 2) "red blue"
 
-d1 $ every 4 rev $ sound "arpy arpy:3"
+d1 $ off 0.25 (|*| speed 2) $ every 4 (|*| up "7")
+   $ every 3 (density 2) $ every 4 rev $
+   sound "arpy [~ arpy:3] arpy:3 ~"
+
+d2 $ jux rev $ chop 8 $ n "0 [~ 3]" # sound "micron"
