@@ -26,7 +26,7 @@
 <stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:1;"/>
 </linearGradient>
 </defs>
-<g id="surface21">
+<g id="surface25">
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 7.5 0 L 207.5 0 L 207.5 15 L 7.5 15 Z M 7.5 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 15 7.5 C 15 11.640625 11.640625 15 7.5 15 C 3.359375 15 0 11.640625 0 7.5 C 0 3.359375 3.359375 0 7.5 0 C 11.640625 0 15 3.359375 15 7.5 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 207.5 0 L 407.5 0 L 407.5 15 L 207.5 15 Z M 207.5 0 "/>
