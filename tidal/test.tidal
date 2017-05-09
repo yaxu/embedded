@@ -1861,11 +1861,12 @@ every 3 (const $ s "bd sn") silence
 
 
 :t comparing
-:load newvis
 
 
 vis "test" $ superimpose rev $ iter 4 $ every 2 (blend 0.5 grey <$>)$ every 3 (blend 0.5 red <$>) $  every 2 (0.5 <~) $ "[[red orange] grey, blue green, [grey black]*2]"
 
 soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
-vis "test" $ "red green"
+:load newvis
+
+vis "test" $ "red green blue"
