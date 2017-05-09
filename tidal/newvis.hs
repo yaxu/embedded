@@ -60,6 +60,8 @@ renderLevel total (n, level) = do C.save
                       -- C.stroke
                    where x = (fromRational s) * totalWidth
                          y = (fromIntegral n) * levelHeight
+                         xWhole = (fromRational sWhole) * totalWidth
+                         yWhole = (fromIntegral n) * levelHeight
                          w = levelHeight
                          lineW = ((fromRational $ e-s) * totalWidth)
                          lineH = 2
