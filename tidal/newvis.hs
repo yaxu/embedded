@@ -43,8 +43,8 @@ renderLevel total (n, level) = do C.save
                  C.setSourceRGBA 0.6 0.6 0.6 1
                  C.rectangle (x + half) y lineW levelHeight
                  let pat = C.patternCreateLinear r g b 256.0
-                 C.addColorStopRGBA pat 0 r g b 1
-                 C.addColorStopRGBA pat 1 r g b 1
+                 C.patternAddColorStopRGBA pat 0 r g b 1
+                 C.patternAddColorStopRGBA pat 1 r g b 1
                  C.setSource pat
                  -- C.setSourceRGBA r g b 1
                  C.fill
