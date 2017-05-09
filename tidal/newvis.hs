@@ -42,7 +42,7 @@ renderLevel total (n, level) = do C.save
               do let (RGB r g b) = toSRGB c
                  C.setSourceRGBA 0.6 0.6 0.6 1
                  C.rectangle (x + half) y lineW levelHeight
-                 C.withLinearPattern r g b 256.0 $ \pattern ->
+                 C.withLinearPattern r g b 1 $ \pattern ->
                    do C.patternAddColorStopRGB pattern 0 0.5 0 0
                       C.patternAddColorStopRGB pattern 1 1 1 1
                       -- C.patternSetFilter pattern C.FilterFast
