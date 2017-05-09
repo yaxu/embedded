@@ -44,7 +44,7 @@ renderLevel total (n, level) = do C.save
                  C.rectangle (x + half) y lineW levelHeight
                  C.withLinearPattern r g b 256.0 $ \pattern ->
                    do C.patternAddColorStopRGBA pattern 0 r g b 1
-                      C.patternAddColorStopRGBA pattern 1 r g b 1
+                      C.patternAddColorStopRGBA pattern 1 r g b 0
                       C.patternSetFilter pattern C.FilterFast
                       C.setSource pattern
                       -- C.setSourceRGBA r g b 1
