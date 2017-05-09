@@ -2,31 +2,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="15pt" viewBox="0 0 600 15" version="1.1" shape-rendering="crispEdges">
 <defs>
 <linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="1" y1="0" x2="0" y2="256" >
-<stop offset="0" style="stop-color:rgb(100%,0%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,0%,0%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 <linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="1" y1="0" x2="0" y2="256" >
-<stop offset="0" style="stop-color:rgb(100%,0%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,0%,0%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 <linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0.501961" x2="0" y2="256" >
-<stop offset="0" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 <linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="0" y1="0.501961" x2="0" y2="256" >
-<stop offset="0" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 <linearGradient id="linear4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="256" >
-<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 <linearGradient id="linear5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="256" >
-<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </linearGradient>
 </defs>
-<g id="surface1">
+<g id="surface5">
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 7.5 0 L 207.5 0 L 207.5 15 L 7.5 15 Z M 7.5 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 15 7.5 C 15 11.640625 11.640625 15 7.5 15 C 3.359375 15 0 11.640625 0 7.5 C 0 3.359375 3.359375 0 7.5 0 C 11.640625 0 15 3.359375 15 7.5 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 207.5 0 L 407.5 0 L 407.5 15 L 207.5 15 Z M 207.5 0 "/>
