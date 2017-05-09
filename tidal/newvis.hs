@@ -52,8 +52,7 @@ renderLevel total (n, level) = do C.save
                       C.setSource pattern
                       -- C.setSourceRGBA r g b 1
                       --C.arc (x+half) (y+half) (w/2) 0 (2 * pi)
-                      C.translate x y
-                      C.rectangle 0 0 lineW levelHeight
+                      C.rectangle x y lineW levelHeight
                       C.fill
                       C.restore
                       -- C.stroke
