@@ -25,3 +25,7 @@ p <- start
 
 n p $ sound "rash"
   |+| n "8"
+
+
+d1 $ someCycles (1 <~) $ n "12 <7 2> 6 9" # s "supermandolin"
+
