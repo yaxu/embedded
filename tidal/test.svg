@@ -6,8 +6,8 @@
 <stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="9.375" y1="0" x2="18.75" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="18.75" y1="0" x2="28.125" y2="15" >
 <stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
@@ -18,12 +18,12 @@
 <stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear4" gradientUnits="userSpaceOnUse" x1="37.5" y1="0" x2="46.875" y2="15" >
-<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear5" gradientUnits="userSpaceOnUse" x1="46.875" y1="0" x2="56.25" y2="15" >
-<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear6" gradientUnits="userSpaceOnUse" x1="56.25" y1="0" x2="65.625" y2="15" >
 <stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
@@ -34,8 +34,8 @@
 <stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear8" gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="84.375" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear9" gradientUnits="userSpaceOnUse" x1="84.375" y1="0" x2="93.75" y2="15" >
 <stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
@@ -46,8 +46,8 @@
 <stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear11" gradientUnits="userSpaceOnUse" x1="103.125" y1="0" x2="112.5" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear12" gradientUnits="userSpaceOnUse" x1="112.5" y1="0" x2="121.875" y2="15" >
 <stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
@@ -66,36 +66,36 @@
 <stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear16" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="159.375" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear17" gradientUnits="userSpaceOnUse" x1="159.375" y1="0" x2="168.75" y2="15" >
 <stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear18" gradientUnits="userSpaceOnUse" x1="168.75" y1="0" x2="178.125" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear19" gradientUnits="userSpaceOnUse" x1="178.125" y1="0" x2="187.5" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear20" gradientUnits="userSpaceOnUse" x1="187.5" y1="0" x2="196.875" y2="15" >
-<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear21" gradientUnits="userSpaceOnUse" x1="196.875" y1="0" x2="206.25" y2="15" >
-<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear22" gradientUnits="userSpaceOnUse" x1="206.25" y1="0" x2="215.625" y2="15" >
 <stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear23" gradientUnits="userSpaceOnUse" x1="215.625" y1="0" x2="225" y2="15" >
-<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear24" gradientUnits="userSpaceOnUse" x1="225" y1="0" x2="234.375" y2="15" >
 <stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
@@ -106,36 +106,36 @@
 <stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear26" gradientUnits="userSpaceOnUse" x1="243.75" y1="0" x2="253.125" y2="15" >
-<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear27" gradientUnits="userSpaceOnUse" x1="253.125" y1="0" x2="262.5" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
-</linearGradient>
-<linearGradient id="linear28" gradientUnits="userSpaceOnUse" x1="262.5" y1="0" x2="271.875" y2="15" >
 <stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
+</linearGradient>
+<linearGradient id="linear28" gradientUnits="userSpaceOnUse" x1="262.5" y1="0" x2="271.875" y2="15" >
+<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear29" gradientUnits="userSpaceOnUse" x1="271.875" y1="0" x2="281.25" y2="15" >
 <stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear30" gradientUnits="userSpaceOnUse" x1="281.25" y1="0" x2="290.625" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear31" gradientUnits="userSpaceOnUse" x1="290.625" y1="0" x2="300" y2="15" >
-<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear32" gradientUnits="userSpaceOnUse" x1="300" y1="0" x2="309.375" y2="15" >
 <stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear33" gradientUnits="userSpaceOnUse" x1="309.375" y1="0" x2="318.75" y2="15" >
-<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear34" gradientUnits="userSpaceOnUse" x1="318.75" y1="0" x2="328.125" y2="15" >
 <stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
@@ -150,8 +150,8 @@
 <stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear37" gradientUnits="userSpaceOnUse" x1="346.875" y1="0" x2="356.25" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear38" gradientUnits="userSpaceOnUse" x1="356.25" y1="0" x2="365.625" y2="15" >
 <stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
@@ -162,20 +162,20 @@
 <stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear40" gradientUnits="userSpaceOnUse" x1="375" y1="0" x2="384.375" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear41" gradientUnits="userSpaceOnUse" x1="384.375" y1="0" x2="393.75" y2="15" >
-<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear42" gradientUnits="userSpaceOnUse" x1="393.75" y1="0" x2="403.125" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear43" gradientUnits="userSpaceOnUse" x1="403.125" y1="0" x2="412.5" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear44" gradientUnits="userSpaceOnUse" x1="412.5" y1="0" x2="421.875" y2="15" >
 <stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
@@ -186,28 +186,28 @@
 <stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear46" gradientUnits="userSpaceOnUse" x1="431.25" y1="0" x2="440.625" y2="15" >
-<stop offset="0" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear47" gradientUnits="userSpaceOnUse" x1="440.625" y1="0" x2="450" y2="15" >
-<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
-</linearGradient>
-<linearGradient id="linear48" gradientUnits="userSpaceOnUse" x1="450" y1="0" x2="459.375" y2="15" >
 <stop offset="0" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(80.241588%,36.224914%,36.224914%);stop-opacity:0.25;"/>
+</linearGradient>
+<linearGradient id="linear48" gradientUnits="userSpaceOnUse" x1="450" y1="0" x2="459.375" y2="15" >
+<stop offset="0" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear49" gradientUnits="userSpaceOnUse" x1="459.375" y1="0" x2="468.75" y2="15" >
 <stop offset="0" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(100%,47.094985%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear50" gradientUnits="userSpaceOnUse" x1="468.75" y1="0" x2="478.125" y2="15" >
-<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear51" gradientUnits="userSpaceOnUse" x1="478.125" y1="0" x2="487.5" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear52" gradientUnits="userSpaceOnUse" x1="487.5" y1="0" x2="496.875" y2="15" >
 <stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
@@ -226,8 +226,8 @@
 <stop offset="1" style="stop-color:rgb(50.196078%,50.196078%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear56" gradientUnits="userSpaceOnUse" x1="525" y1="0" x2="534.375" y2="15" >
-<stop offset="0" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(80.241588%,0%,36.224914%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear57" gradientUnits="userSpaceOnUse" x1="534.375" y1="0" x2="543.75" y2="15" >
 <stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
@@ -250,15 +250,15 @@
 <stop offset="1" style="stop-color:rgb(100%,64.705882%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear62" gradientUnits="userSpaceOnUse" x1="581.25" y1="0" x2="590.625" y2="15" >
-<stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
+<stop offset="0" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(73.535698%,0%,73.535698%);stop-opacity:0.25;"/>
 </linearGradient>
 <linearGradient id="linear63" gradientUnits="userSpaceOnUse" x1="590.625" y1="0" x2="600" y2="15" >
 <stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
 </linearGradient>
 </defs>
-<g id="surface93">
+<g id="surface97">
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 0 0 L 9.375 0 L 9.375 15 L 0 15 Z M 0 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 9.375 0 L 18.75 0 L 18.75 15 L 9.375 15 Z M 9.375 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 18.75 0 L 28.125 0 L 28.125 15 L 18.75 15 Z M 18.75 0 "/>
