@@ -27,4 +27,4 @@ n p $ sound "rash"
   |+| n "8"
 
 
-d1 $  n "12 <7 2> 6 9" # s ""
+d1 $  n "12 <7 2> 6 9" # s "supermandolin"
