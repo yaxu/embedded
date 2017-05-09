@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="15pt" viewBox="0 0 600 15" version="1.1" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="45pt" viewBox="0 0 600 45" version="1.1" shape-rendering="crispEdges">
 <defs>
-<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="300" y2="15" >
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="15" >
+<stop offset="0" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(50.196078%,0%,50.196078%);stop-opacity:0.25;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="15" x2="600" y2="30" >
+<stop offset="0" style="stop-color:rgb(100%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(100%,0%,0%);stop-opacity:0.25;"/>
+</linearGradient>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="30" x2="300" y2="45" >
 <stop offset="0" style="stop-color:rgb(0%,0%,100%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(0%,0%,100%);stop-opacity:0.25;"/>
 </linearGradient>
-<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="300" y1="0" x2="600" y2="15" >
+<linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="300" y1="30" x2="600" y2="45" >
 <stop offset="0" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(0%,50.196078%,0%);stop-opacity:0.25;"/>
 </linearGradient>
 </defs>
-<g id="surface21">
-<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 0 0 L 300 0 L 300 15 L 0 15 Z M 0 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 300 0 L 600 0 L 600 15 L 300 15 Z M 300 0 "/>
+<g id="surface25">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 0 0 L 600 0 L 600 15 L 0 15 Z M 0 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 0 15 L 600 15 L 600 30 L 0 30 Z M 0 15 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 0 30 L 300 30 L 300 45 L 0 45 Z M 0 30 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear3);" d="M 300 30 L 600 30 L 600 45 L 300 45 Z M 300 30 "/>
 </g>
 </svg>
