@@ -1869,7 +1869,7 @@ soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
 :load newvis
 
-vis "test" $ density 16 $ every 2 (slow 3) $ "[red black]"
+vis "test" $ density 16 $ "[red orange green]"
 
 
 
