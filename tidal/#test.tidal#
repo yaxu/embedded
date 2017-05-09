@@ -1876,11 +1876,12 @@ vis "test" $ density 16 $ superimpose (slow 3) $ superimpose (rev . ((1/3) <~)) 
 
 
 
-vis "test" $ superimpose id $ density 16 $
+vis "test" $ density 16 $
   weave' 16 "red blue orange purple"
   [(blend 0.5 <$> "red green" <*>),
-   (blend 0.5 <$> "green red purple" <*>),
-   (blend 0.5 <$> "green red purple" <*>),
-   (blend 0.5 <$> "green red purple" <*>)
+   (blend 0.5 <$> "green yellow purple" <*>)
   ]
 
+vis "test" $ density 16 $ superimpose (density 2) "red blue"
+
+d1 $ every 4 rev $ sound "arpy arpy:3"
