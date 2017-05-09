@@ -1868,4 +1868,4 @@ vis "test" $ superimpose rev $ iter 4 $ every 2 (blend 0.5 grey <$>)$ every 3 (b
 soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
 :load newvis
-vis "test" $ "red green"
+vis "test" $ "red green blue"
