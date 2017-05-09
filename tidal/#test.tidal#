@@ -1869,7 +1869,7 @@ soundToOrbit ["bd","sn","oh"] $ off 0.5 (#speed 2)$ sound "{bd [sn oh]}%3"
 
 :load newvis
 
-vis "test" $ density 16 $ iter 4 $ rev "[purple blue orange grey]"
+vis "test" $ density 16 $ superimpose (slow 3) $ superimpose (slow 2) $ sometimes (blend 0.5 red <$>) $ every 3 rev "[purple blue]"
 
 
 
