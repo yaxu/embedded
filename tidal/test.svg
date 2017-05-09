@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="15pt" viewBox="0 0 600 15" version="1.1" shape-rendering="crispEdges">
 <defs>
-<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="1" y1="0" x2="0" y2="256" >
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="1" y1="0" x2="0" y2="1" >
 <stop offset="0" style="stop-color:rgb(50%,0%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:1;"/>
 </linearGradient>
-<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0.501961" x2="0" y2="256" >
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0.501961" x2="0" y2="1" >
 <stop offset="0" style="stop-color:rgb(50%,0%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:1;"/>
 </linearGradient>
-<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="256" >
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="1" >
 <stop offset="0" style="stop-color:rgb(50%,0%,0%);stop-opacity:1;"/>
 <stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:1;"/>
 </linearGradient>
 </defs>
-<g id="surface33">
+<g id="surface37">
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 7.5 0 L 207.5 0 L 207.5 15 L 7.5 15 Z M 7.5 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 207.5 0 L 407.5 0 L 407.5 15 L 207.5 15 Z M 207.5 0 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 407.5 0 L 607.5 0 L 607.5 15 L 407.5 15 Z M 407.5 0 "/>
