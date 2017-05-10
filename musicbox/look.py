@@ -61,7 +61,7 @@ def runloop():
         things = []
 
         orig = grab
-        im = cv2.GaussianBlur(orig, (0,0), 3)
+        # im = cv2.GaussianBlur(orig, (0,0), 3)
         gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
         ret,thresh = cv2.threshold(gray,threshold,255,0)
         contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
@@ -108,7 +108,7 @@ def runloop():
 
         things = sorted(things, key=lambda thing: thing['y']) 
 
-        frame = thresh.copy()
+        frame = orig.copy()
         for thing in things:
             note = thing['note']
             #print("note: " + str(note) + " (" + note_names[note] + ")")
