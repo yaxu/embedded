@@ -1904,10 +1904,13 @@ let noise2d :: Int -> Int -> Double
 noise2d 0 3
 
 let timeCat :: [(Time, Pattern a)] -> Pattern a
-    timeCat tps = map (\(s,e,p) -> rotR (s/total) $ densityGap (1/((e-s)/total))) $ arrange 0 tps
+    timeCat tps = cat $ map (\(s,e,p) -> rotR (s/total) $ densityGap (1/((e-s)/total)) p) $ arrange 0 tps
       where total = sum $ map fst tps
             arrange :: Time -> [(Time, Pattern a)] -> [(Time, Time, Pattern a)]
             arrange _ [] = []
             arrange t ((t',p):tps) = (t,t+t',p):(arrange (t+t') tps)
+
+
+arc (timeCat [(1, "a"), (2, "b")]  :: Pattern String) (0,2)
 
 sum [1,2,3]
