@@ -1912,3 +1912,5 @@ density 2 $ compress (0,0.5) "a" :: Pattern String
 (parseTPat "a _ b") :: TPat String
 
 "a _ b" :: Pattern String
+
+d1 $ slow 4 $ n "d ~ e g _ g" # sound "supersaw"
