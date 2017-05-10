@@ -1910,3 +1910,5 @@ sum [1,2,3]
 density 2 $ compress (0,0.5) "a" :: Pattern String
 
 (parseTPat "a _ b") :: TPat String
+
+"a _ b" :: Pattern String
