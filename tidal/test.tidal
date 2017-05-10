@@ -1902,3 +1902,9 @@ let noise2d :: Int -> Int -> Double
       in  (fromIntegral j / 2.147483648e9)
 
 noise2d 0 3
+
+let timeCat :: [(Time, Pattern a)] -> Pattern a
+    timeCat tps = map (\(s,e,p) -> rotR (s/total) $ densityGap (1/((e-s)/total))) $ arrange 0 tps
+      where total = sum $ map fst tps
+            arrange _ [] = []
+            arrange t ((t',p):tps) = (t,t+t',p):(arrange (t+t') tps)
