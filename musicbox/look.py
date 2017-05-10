@@ -108,7 +108,7 @@ def runloop():
 
         things = sorted(things, key=lambda thing: thing['y']) 
 
-        frame = orig.copy()
+        frame = thresh.copy()
         for thing in things:
             note = thing['note']
             #print("note: " + str(note) + " (" + note_names[note] + ")")
