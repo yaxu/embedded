@@ -1914,3 +1914,6 @@ density 2 $ compress (0,0.5) "a" :: Pattern String
 "a _ b" :: Pattern String
 
 d1 $ slow 4 $ n "d ~ e g _ g" # sound "supersaw"
+
+d1 $ slow 2 $ n "[c _] g _" # sound "superpiano"
+
