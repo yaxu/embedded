@@ -1,3 +1,5 @@
+module Sound.Tidal.Vis2 where
+
 import qualified Graphics.Rendering.Cairo as C 
 import Data.Colour
 import Data.Colour.Names
