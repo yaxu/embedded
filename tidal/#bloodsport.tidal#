@@ -20,14 +20,11 @@ d3 $ slow 2 $ rev $ loopAt 8 $ slowspread (striate) [8,16] $ sound "bsvocals:10 
   # gain "1.1"
   # vowel "i"
 
-d3 silence
-cps 1.1
-
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
            ("chop", rev . chop 128),
-           ("drop", (chop' ((floor <$>) $ saw1 * 100))),
+           ("drop", (chop ((floor <$>) $ saw1 * 100))),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1)))
           ]
@@ -50,7 +47,7 @@ let txs = [("rev", rev),
                # cutoff (slow 8 $ saw1 * 8000 + 100)
               ),
               ("snare",
-               density' "<1 2 4>" $ jux ("<0.5 0.25>" <<<~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
+               density "<1 2 4>" $ jux ("<0.5 0.25>" <~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
                # orbit 1
                # room 0.4
                # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
@@ -59,18 +56,27 @@ let txs = [("rev", rev),
               ("voc",
                loopAt 2 $ chop 32 $ s "<bsvocals:2>"
                # shape 0.3
+              ),
+              ("upthere",
+               jux rev $ off 0.125 ((# (crush 3 # orbit 1 # room (slow 8 $ sine * 0.5)))) $ off 0.25 (|*| speed 2) $ up "0 [7*2 -2] ~ <12 12*3>" # n "14" # sound "bsguitar"
+               # lpf (slow 2 $ tri * 2000 + (slow 4 $ saw * 300))
+               # lpq 0.3
+               |*| speed 4
+               # gain 0.7
               )
              ]
 in
 d1 $ ur' 32 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], perc:chop perc ! perc:drop] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare]" pats txs
 
+hush
+cps $ 0.9
 
 
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
            ("chop", rev . chop 128),
-           ("drop", (chop' ((floor <$>) $ saw1 * 100))),
+           ("drop", (chop ((floor <$>) $ saw1 * 100))),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1)))
           ]
@@ -79,7 +85,7 @@ let txs = [("rev", rev),
              # cutoff (slow 8 $ saw1 * 8000 + 100)
             ),
             ("snare",
-             density' "<1 2 4>" $ jux ("<0.5 0.25>" <<<~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
+             density "<1 2 4>" $ jux ("<0.5 0.25>" <~) $ n "{~ 0*2, ~ ~ 1}" # s "bssnare"
              # orbit 1
              # room 0.4
              # cutoff (((slow 4 saw1) + sine1) * 5000 + 300)
@@ -94,13 +100,3 @@ in
 d1 $ ur' 16 "[kick2 ! ! [kick2 kick2:drop], snare:out, [voc:erk ~] ~ [~ voc] ~]" pats txs
 
 
-
-let (<<<~) :: Pattern Time -> Pattern a -> Pattern a
-    (<<<~) tp p = unwrap $ (\tv -> tv <~ p) <$> tp
-
-let (~>>>) :: Pattern Time -> Pattern a -> Pattern a
-    (~>>>) tp p = unwrap $ (\tv -> tv ~> p) <$> tp
-
-
-let off' :: Pattern Time -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
-    off' tp f p = unwrap $ (\tv -> superimpose (f . (tv ~>)) p) <$> tp

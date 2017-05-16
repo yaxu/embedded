@@ -79,3 +79,4 @@ vis name pat = do v (C.withSVGSurface) (name ++ ".svg") (totalWidth, levelHeight
                   rawSystem "convert" [name ++ ".svg", name ++ ".pdf"]
                   return ()
                     where levels = arrangeEvents (arc pat (0,1))
+

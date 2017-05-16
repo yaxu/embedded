@@ -23,7 +23,7 @@ let start = do mp <- newMVar (silence :: Pattern Int)
 
 p <- start
 
-d1 $ n p # sound "xx"
+d1 $ slow 2 $ jux rev $ sometimes (|+| n "12") $ off 0.25 (|+| n 7) $ struct "x(3,8) x(3,8,4)" $ n p # sound "xx"
   |+| n (pure $ 8 + 12)
 
 
