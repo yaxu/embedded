@@ -46,3 +46,6 @@ d3 $ every 4 (const silence) $ sound "stabs:4 ~ stabs:5"
 d4 $ jux (0.25 <~) $ iter 4 $ n "0 .. 7" # sound "amencutup"
   # gain 1.4
   |+| n "<0 2 0 4>"
+
+d5 $ jux rev $ loopAt "<2 4 2 2>" $ chop 8 $ sound "<narc narc:1>"
+  # gain 1.4
