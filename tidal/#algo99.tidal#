@@ -2,7 +2,7 @@ d1 $ off 0.25 (# (s "superpiano" # gain (0.9))) $ jux rev $ slow 4 $ off 0.25 (|
   # sound "supermandolin"
   # legato 2
 
-d2 $ iter 4 $ loopAt 4 $ chop 32 $ sound "paper"
+d2 $ jux rev $ iter 4 $ loopAt 4 $ chop 32 $ sound "paper"
 
-d3 $ n "0 .. 3" # sound "micron"
-  
+d3 $ chunk 4 ((# speed 0.5) .slow 2) $ jux (rev . chop 4) $ slow 2 $ off 0.25 (# crush 3) $ n "0 .. 7" # sound "micron"
+  # gain "1"
