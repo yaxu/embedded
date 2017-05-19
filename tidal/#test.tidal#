@@ -1921,4 +1921,4 @@ d1 $ (pure now) ~> seqP [
   (8, 12, sound (samples "arpy*8" (run 16)))
 ]
 
-struct "x x x x x" $ choose [1, 2, 3]
+(discretise 1 $ choose [1, 2, 3])
