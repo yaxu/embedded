@@ -21,10 +21,10 @@ d3 $ jux rev $ sometimes (# speed 2) $  chop "<2 4 3>" $ sound "~ off"
 
 d4 $ jux rev $ off 0.25 (# (crush 3 # speed 0.5)) $ slow 4 $ chop "<3 4 8 16>" $ sound "fm:10"
 
-d5 $ jux rev $ loopAt "<4 8 2>" $ chop "<8 4>" $ sound "repetition"
+d5 $ iter 4 $ jux rev $ loopAt 4 $ chop "<8 4>" $ sound "repetition"
   # gain 1
-  # n (irand 12)
+  # n 3
 
-d6 $ jux rev $ off "<0.125 0.25>" (# speed 1.4) $ sound "gabba(3,8)"
+d6 $ off "<0.125 0.25>" (# speed 1.4) $ sound "gabba(3,8,<0 4>)"
   # speed 4
   # gain 0.8
