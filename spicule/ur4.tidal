@@ -9,3 +9,6 @@ d1 $ superimpose (off "<0.25 0.5 0.75>" (|+| n "12") . (# (s "superpiano" # gain
   # room 0.6
   # size 0.9
 
+d2 $ chunk 4 ((# speed 2) . density 2) $ jux (|+| n 1) $ n "0 .. 3" # sound "drumtraks"
+  # orbit 2
+  |*| speed 2
