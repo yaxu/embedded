@@ -1915,3 +1915,8 @@ let stut' steps steptime f p | steps <= 0 = p
 
 unwrap (choose ["ds6", "ds4", "gs5"]) :: Pattern Int
 
+d1 $ (pure now) ~> seqP [ 
+  (0, 12, sound "bd bd*2"), 
+  (4, 12, sound "hh*2 [sn cp] cp future*4"), 
+  (8, 12, sound (samples "arpy*8" (run 16)))
+]
