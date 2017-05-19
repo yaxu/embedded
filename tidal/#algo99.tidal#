@@ -36,15 +36,3 @@ d7 $ degradeBy 0.6 $ slow 2 $ off 0.25 ((# s "~") . (|+| n "-12")) $ jux rev $ s
 d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ slow 2 $ sound "bd [~ bd] [mt8 sn:2] sd8:3"
   # room (slow 8 saw)
   # size (slow 8 saw)
-
-d2 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "0 .. 3" # sound "micron"
-  # orbit 2
-
-
-d3 $ every 4 (const silence) $ sound "stabs:4 ~ stabs:5"
-  # orbit 2
-  |+| n (irand 3)
-
-d4 $ jux (0.25 <~) $ iter 4 $ n "0 .. 7" # sound "amencutup"
-  # gain 1.4
-  |+| n "<0 2 0 4>"
