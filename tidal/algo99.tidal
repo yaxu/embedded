@@ -18,3 +18,5 @@ d2 $ (jux (fast 2) $ loopAt 2 $ chop 16 $ sound "arc")
   # speed (slow 4 $ sine + 1)
 
 d3 $ jux rev $ sometimes (# speed 2) $  chop "<2 4 3>" $ sound "~ off"
+
+d4 $ jux rev $ off 0.25 (# (crush 3 # speed 0.5)) $ slow 4 $ chop "<3 4 8 16>" $ sound "fm:10"
