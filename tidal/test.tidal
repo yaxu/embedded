@@ -1931,6 +1931,6 @@ d2 $ n "0 0 . 3 ~ 5 4" # sound "feel"
 d3 $ iter 4 $ loopAt 2 $ chop 8 $ sound "arc"
   # gain 1.5
 
-d4 $ sound "gabba(3,8)"
+d4 $ sound "gabbalouder(3,8)"
 
 d5 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ slow 4 $ chop 16 $ sound "fm:11"
