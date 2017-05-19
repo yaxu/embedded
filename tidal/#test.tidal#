@@ -1912,3 +1912,4 @@ density 2 $ compress (0,0.5) "a" :: Pattern String
 
 let stut' steps steptime f p | steps <= 0 = p
                              | otherwise = overlay (f (steptime `rotR` stut' (steps-1) steptime f p)) p
+:t choose
