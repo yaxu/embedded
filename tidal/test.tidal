@@ -1914,3 +1914,9 @@ let stut' steps steptime f p | steps <= 0 = p
                              | otherwise = overlay (f (steptime `rotR` stut' (steps-1) steptime f p)) p
 
 unwrap (choose ["ds6", "ds4", "gs5"]) :: Pattern Int
+
+
+cps 0.95
+
+d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~" #
+  sound "stabs"
