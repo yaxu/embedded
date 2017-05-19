@@ -1918,5 +1918,17 @@ unwrap (choose ["ds6", "ds4", "gs5"]) :: Pattern Int
 
 cps 0.95
 
-d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~"
+d1 $ (jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~")
   # sound "stabs"
+  # lpf (slow 2 $ sine * 4000 + 600)
+  # lpq 0.2
+
+d2 $ n "0 0 . 3 ~ 5 4" # sound "feel"
+  # orbit 1
+  # size 0.8
+  # room 0.5
+
+d3 $ loopAt 2 $ chop 8 $ sound "arc"
+  # gain 1.5
+
+d4 $ sound "gabba(3,8)"
