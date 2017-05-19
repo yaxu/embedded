@@ -1921,3 +1921,10 @@ cps 0.95
 d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~"
   # sound "stabs"
 
+d2 $ n "0 0 . 3 ~ 5 4" # sound "feel"
+  # orbit 1
+  # size 0.8
+  # room 0.5
+
+d3 $ loopAt 2 $ chop 8 $ sound "arc"
+  # gain 1.5
