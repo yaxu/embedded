@@ -1918,5 +1918,5 @@ unwrap (choose ["ds6", "ds4", "gs5"]) :: Pattern Int
 
 cps 0.95
 
-d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~" #
-  sound "stabs"
+d1 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ n "3 6 [~ 5] ~"
+  # sound "stabs"
