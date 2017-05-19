@@ -1,0 +1,3 @@
+d1 $ slow 4 $ off 0.25 (|+| up 12) $ off 0.125 (|+| n 7) $ n "c(3,8) e(3,8,4) f*2 g*3"
+  # sound "supermandolin"
+  # legato 2
