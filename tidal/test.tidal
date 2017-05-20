@@ -1943,3 +1943,6 @@ d1 $ slow 2 $ sound "bd bd*2"
   # orbit 1
 
 d2 $ off 0.25 (hurry "<2 4>") $ sound "~ mt8:4*2 ~ mt8*2"
+
+let hurry :: Pattern Rational -> ParamPattern -> ParamPattern
+    hurry x = (|*| speed (fromRational <$> x)) . fast x
