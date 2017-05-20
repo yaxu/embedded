@@ -1936,7 +1936,7 @@ d5 $ jux (2 <~) $ chunk 4 ((|*| speed "0.5") . density 0.5) $ loopAt 2 $ chop 8 
 
 d5 $ jux rev $ chunk 4 ((# speed 2) . density 2) $ slow 4 $ chop 16 $ sound "fm:11"
 
-d1 $ stut 4 0.9 "<0.25 0.5>" $ slow 2 $ sound "bd bd*2"
+d1 $ jux ("<0.125 0.25>" <~) $ stut 4 0.9 "<0.25 0.5>" $ slow 2 $ sound "bd bd*2"
   # delay 0.95
   # delaytime "<0.01 0.02>"
   # delayfeedback 0.8
