@@ -39,3 +39,6 @@ d3 $ jux (0.25 <~) $ off 0.25 (# crush 4) $ chunk 4 (hurry "<4 3>")$ off 0.25 (#
 
 d4 $ off 0.25 (# speed 2) $ chop "<3 2>" $ sound  "wobble off"
   # gain 1.2
+
+d5 $ jux rev $ sound "bskick:2(3,8,<2 4>)"
+  # gain 1.4
