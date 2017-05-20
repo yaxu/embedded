@@ -16,6 +16,6 @@ d3 $ every 4 (# hpf 0) $ off 0.25 (|*| speed 2) $ jux rev $ chunk 4 (hurry 2) $ 
   # speed 2
 
 d4 $ stut "<4 3 2>" 0.8 (1/6) $ sound "~ sd8:4 ~ sd8:4"
-  # crush "<3 5 7>"
+  -- # crush "<3 5 7>"
   # shape 0.97
   # speed 2
