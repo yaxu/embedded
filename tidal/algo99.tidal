@@ -1,8 +1,9 @@
-d1 $ degrade $ off 0.25 (# (s "superpiano" # gain (0.9))) $ jux rev $ slow 4 $ off 0.25 (|+| up 12) $ off 0.125 (|+| n 7) $ n "c(3,8) e(3,8,4) f*2 g*3"
-  # sound "supermandolin"
+d1 $ off 0.125 (# s "superzow")$ jux rev $ slow 4 $ off (1/16) (|+| up 12) $ off (0.125) (|+| n 12) $ degrade $ n "c4(3,8) e4(3,8,4) f4(3,8) g4*3"
+  # sound "superpiano"
   # legato 2
 
-d2 $ jux rev $ iter 4 $ loopAt 4 $ chop 32 $ sound "paper"
+d2 $ jux rev $ iter 4 $ loopAt 4 $ chop 16 $ sound "paper"
+  # gain 1.3
 
 d3 $ chunk 4 ((# speed 0.5) .slow 2) $ jux (rev . chop 4) $ slow 2 $ off 0.25 (# crush 3) $ n "0 .. 3" # sound "micron"
   # gain "1"
@@ -20,7 +21,7 @@ d2 $ slow 2 $ (jux (fast 2) $ loopAt 2 $ chop 16 $ sound "arc")
 d3 $ jux rev $ sometimes (# speed 2) $  chop "<2 4 3>" $ sound "~ off"
 
 d4 $ jux rev $ off 0.25 (# (crush 3 # speed 0.5)) $ slow 4 $ chop "<3 4 8 16>" $ sound "fm:10"
-d4 silence
+
 d6 $ off "<0.125 0.25>" (# speed 1.4) $ sound "gabba(3,8,<0 4>)"
   # speed 4
   # gain 0.7
