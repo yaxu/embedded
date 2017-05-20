@@ -1,0 +1,6 @@
+
+d1 $ chunk every 4 (jux rev) $ off 0.25 (# crush 3) $ sound "bd(3,8)"
+  # delay 0.5
+  # delaytime "<0.01 0.02 0.3>"
+  # delayfeedback 0.8
+  
