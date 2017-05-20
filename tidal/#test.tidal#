@@ -1942,5 +1942,6 @@ d1 $ jux ("<0.125 0.25>" <~) $ stut 4 0.9 "<0.25 0.5>" $ slow 2 $ sound "bd bd*2
   # delayfeedback 0.8
   # orbit 1
 
-d2 $ off 0.125 (# speed 2) $ jux rev $ off 0.25 (hurry "<2 0.5 3>") $ sound "~ mt8:4*2 ~ mt8*2"
-  # ro
+d2 $ (off 0.125 (|*| up 7) $ (off 0.125 (# speed 2) $ jux rev $ off 0.25 (hurry "<2 0.5 3>") $ sound "~ lt8:4*2 ~ lt8(3,8)"))
+  |*| up "<0 12 7 5>"
+  |*| speed 2
