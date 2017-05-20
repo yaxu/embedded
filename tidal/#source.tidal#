@@ -1,11 +1,11 @@
 
 d1 $ chunk 4 (hurry 2) $ every 4 (jux rev) $ off 0.25 (# crush 3) $ sound "bd(3,8)"
-  # delay 0.5
-  # delaytime "<0.01 0.02 0.3>"
-  # delayfeedback 0.8
   # hpf (slow 2 $ sine * 400 + 100)
   # hpq 0.2
 
 
-d2 $ slow 4 $ n "c4(3 e4 f4 g4" # sound "superpiano"
+d2 $ off 0.slow 4 $ off 0.125 (|+| n 12) $ off 0.25 (|+| n 7) $ n "c4(3,8) e4(3,8,2) f4(3,8) g4*3" # sound "superzow"
   # orbit 1
+  # lpf 2000
+  # lpq 0.2
+  # gain 0.9
