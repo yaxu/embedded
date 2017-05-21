@@ -1952,17 +1952,7 @@ d3 $ jux rev $ chunk 4 (hurry 2) $ off 0.125 (# crush 3) $ sound "bd(3,8)"
   # hpq 0.3
 
 
-d1 $ rev $ 0.25 <~ (sound "bd")
+d1 $ jux rev $ 0.25 <~ (sound "bd(3,8,<2 3>)")
 
 
 
--- | Returns the `mirror image' of an @Arc@ around given point of symmetry, used by @Sound.Tidal.Pattern.rev@.
-let
-
-let rev :: Pattern a -> Pattern a
-    rev p = splitQueries $ Pattern $ \a -> map makeWholeAbsolute $ mapSnds' (mirrorArc' (mid a)) $ map makeWholeRelative (arc p (mirrorArc' (mid a) a))
-      where makeWholeRelative ((s,e), part@(s',e'), v) = ((s'-s, e-e'), part, v)
-            makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e,e'+s), part, v)
-            mid (s,e) = (sam s) + 0.5
-            mirrorArc' :: Time -> Arc -> Arc
-            mirrorArc' mid (s, e) = (mid - (e-mid), mid+(mid-s))
