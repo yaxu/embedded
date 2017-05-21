@@ -1959,3 +1959,10 @@ let rev :: Pattern a -> Pattern a
       where makeWholeRelative ((s,e), part@(s',e'), v) = ((s'-s, e-e'), part, v)
             makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e,e'+s), part, v)
 
+
+-- | Returns the `mirror image' of an @Arc@, used by @Sound.Tidal.Pattern.rev@.
+let mirrorArc' :: Arc -> Arc
+    mirrorArc' (s, e) = (mirrorT e, mirrorT s)
+      where mirrorT t = nextSam t - (t - sam t)
+
+mirrorArc (0,1)
