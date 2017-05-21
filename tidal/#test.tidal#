@@ -1952,4 +1952,4 @@ d3 $ jux rev $ chunk 4 (hurry 2) $ off 0.125 (# crush 3) $ sound "bd(3,8)"
   # hpq 0.3
 
 
-0.25 `rotR` (sound "bd")
+rev $ 0.25 `rotR` (sound "bd")
