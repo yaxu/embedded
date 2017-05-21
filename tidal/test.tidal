@@ -1961,7 +1961,7 @@ let mirrorArc' :: Time -> Arc -> Arc
     mirrorArc' mid (s, e) = (mid - (e-mid), mid+(mid-s))
 
 let rev :: Pattern a -> Pattern a
-    rev p = splitQueries $ Pattern $ \a -> map makeWholeAbsolute $ mapSnds' mirrorArc' (mid a) $ map makeWholeRelative (arc p (mirrorArc' (mid a) a))
+    rev p = splitQueries $ Pattern $ \a -> map makeWholeAbsolute $ mapSnds' (mirrorArc' (mid a)) $ map makeWholeRelative (arc p (mirrorArc' (mid a) a))
       where makeWholeRelative ((s,e), part@(s',e'), v) = ((s'-s, e-e'), part, v)
             makeWholeAbsolute ((s,e), part@(s',e'), v) = ((s'-e,e'+s), part, v)
             mid (s,e) = (sam s) + 0.5
