@@ -1963,3 +1963,8 @@ v $ density 24 $ within' (0,0.25) (fast 2 . blend' "red") $ "blue*3"
 
 v $ "red"
 
+
+d1 $ pan "0 1" # sound "cp"
+
+d2 $ sound "wobble"
+
