@@ -1963,7 +1963,7 @@ v $ density 24 $ within (0,0.25) (fast 2 . blend' "red") $ "blue*3"
 
 import Sound.Tidal.Utils
 
-length $ arc (_fast 12 $ chunk 4 (_fast 2) $ _iter 4 ("lightblue blue darkblue" :: Pattern String)) (0,1)
+length $ arc (_fast 12 $ chunk 4 (_fast 2) $ _iter 4 ("x x x" :: Pattern String)) (0,1)
 
 :t _fast
 
