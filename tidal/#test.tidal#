@@ -1989,6 +1989,7 @@ nudger 0.01
 
 d1 $ striate 32 $ sound "bev"
 
-d1 $ slow 32 striate 32 $ sound "bev"
+d1 $ slow 16 $ striate 32 $ sound "bev"
   # unit "c"
+  # speed (1/16)
 
