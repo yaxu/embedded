@@ -1972,6 +1972,6 @@ d1 $ slow 2 $ sound "bd sn sn sn"
 
 cps 0.8
 
-hush
+
 
 nudger 0.01
