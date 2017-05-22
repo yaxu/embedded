@@ -1970,4 +1970,4 @@ d2 $ sound "wobble"
 
 d1 $ sound "[bd, sync]"
 
-cps 0.9
+cps 0.8
