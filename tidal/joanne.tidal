@@ -9,3 +9,37 @@ d3 $ every 3 (fast 2) $ n "0 .. 3" # sound "micron"
   # gain 0.9
 
 
+cps (130/60/2)
+
+
+
+nudger (-0.1)
+
+
+d1 $ jux rev $ off "<0.125 0.125 0.5>" (# crush 3) $ off 0.25 (# speed 0.5) $ slow 2 $ n "0 [~ 3] 2 1" # sound "ht8"
+  # room 0.7
+  # size 0.8
+  # delayfb 0.4
+  # delayt "<0.01 0.03>"
+  # delay 0.7
+  # gain 0.9
+
+d2 $ jux rev $ chunk 4 (hurry 1.5) $ loopAt 2 $ chop 8 $ sound "arc"
+  # gain 1.2
+  # crush 5
+
+d3 $ jux (rev) $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
+  # gain 0.8
+
+d1 $ off 0.5 ((# s "jx") . (|+| n 24)) $ chunk 4 (|+| n 12) $ off 0.25 ( struct "x(3,8)" . (#s "pulse" ).(|+| n "-12")) $ (slow 2 $ jux rev $ n (sometimes (offadd 0.125 "12") $ offadd 0.25 7 $ slow 2 $ "d7(3,8) [e6 f6?]") # sound "rash")
+  # orbit 1
+  # room 0.9
+  # size 0.9
+  # lpf (sine * 3000 + 1000)
+  # lpq 0.2
+  # gain 0.7
+  |+| n "<0 0 7 12 0 0 5 12>"
+
+d1 $ slow 2 $ sound "sn:3 ~ bd ~ bd ~ bd ~"
+
+nudger (0.01)
