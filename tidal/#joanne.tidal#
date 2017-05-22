@@ -16,8 +16,16 @@ cps (130/60/2)
 nudger (-0.1)
 
 
-d1 $ off "<0.125 0.125 0.5>" (# crush 3) $ off 0.25 (# speed 0.5) $ slow 2 $ n "0 [~ 3] 2 1" # sound "ht8"
-  # room 0.4
-  # size 0.4
+
+d1 $ jux rev $ off "<0.125 0.125 0.5>" (# crush 3) $ off 0.25 (# speed 0.5) $ slow 2 $ n "0 [~ 3] 2 1" # sound "ht8"
+  # room 0.7
+  # size 0.8
   # hpq 0.2
   # hpf "<300 300 400>"
+  #delayfb 0.4
+  # delayt 0.01
+  # delay 0.7
+
+
+d2 $ jux rev $ chop 16 $ sound "cp8"
+  # orbit 1
