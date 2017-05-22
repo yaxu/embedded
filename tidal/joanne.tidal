@@ -76,6 +76,12 @@ d4 $ (off 0.25 (rev . (# s "jx") . (|+| n "36")) $ off 0.125 (|+| vowel "<a e i>
   # room 0.3
   # room 0.5
 
-d1 $ chunk 4 (hurry 0.5) $ every 4 (off 0.25 (|*| speed 2)) $ chunk 4 (# speed 2) $ jux (chop "<8 4 12 <32 64>>") $ n "12 0 12 2" # sound "jvr"
+d1 $ degradeBy 0.9 $ chunk 4 (hurry 0.5) $ every 4 (off 0.25 (|*| speed 2)) $ chunk 4 (# speed 2) $ jux (chop "<8 4 12 <32 64>>") $ n "12 0 12 2" # sound "jvr"
   # crush 4
-  
+
+d2 $ slow 4 $ sound "wobble" 
+
+d3 $ off 0.5 (# accelerate (0.3)) $ off 0.25 (# crush 2) $ slow 4 $ n "c10 ~" # sound "xx"
+  # accelerate (-0.3)
+  # legato 0.5
+  # cut 1
