@@ -44,5 +44,4 @@ d1 $ slow 2 $ sound "sn:3 ~ bd ~ bd*2 ~ bd ~"
 
 nudger (0.01)
 
-d2 $ slowjux rev $ slow 2 $ off (1/8) (|+| n "<7 12>") $ n "c6 ~ a6 c7" # sound "rash"
-
+d2 $ sound
