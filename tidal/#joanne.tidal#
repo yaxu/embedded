@@ -41,3 +41,4 @@ d4 $ off 0.25 ( struct "x(3,8)" . (#s "pulse" ).(|+| n "-12")) $ (slow 2 $ jux r
   |+| n "<0 0 7 12 0 0 5 12>"
 
 
+d1 $ sound "bd"
