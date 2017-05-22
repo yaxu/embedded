@@ -1998,4 +1998,4 @@ d1 $ jux rev $ every 3 (0.25 <~) $ loopAt 2 $ chop 16 $ sound "arc"
 
 d2 $ loopAt 4 $ (striate 256 $ sound "breaks152")
   # cut 1
-  # speed ( discretise 4 $ rand + "[0.4 [-1 1.4] 0.7 [0.2 -0.6] 0.9 2]*2" )
+  # speed ( "[0.4 [-1 1.4] 0.7 [0.2 -0.6] 0.9 2]*2" + rand )
