@@ -58,8 +58,9 @@ d3 $ degrade $ slow 2 $ chunk 4 (hurry 2) $ jux rev $ sound "future [feel:3 futu
   # speed 8
 
 
-d4 $ off 0.25 ((struct "x(5,8)") . (# s "supermandolin") . (# gain 1.4)) $ off 0.25 (|+| n 5) $ every 2 (off 0.25 (# crush 3)) $ jux (|+| n 12) $ n "c ~ [~ e] ~" # sound "superpiano"
-  # hpf 1000
+d4 $ off 0.125 (slow 4 $ off 0.125 (rev) $ off 0.25 ((struct "x(5,8,<0 2>)") . (# s "supermandolin") . (# gain 1.4) . (# legato 8)) $ off 0.25 (|+| n 5) $ every 2 (off 0.25 (# crush 3)) $ jux (|+| n 12) $ n "c ~ [~ e] ~" # sound "superpiano"
+  # hpf 500
   # hpq 0.2
+  |*| gain 0.9
 
 
