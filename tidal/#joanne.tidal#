@@ -48,10 +48,9 @@ d2 $ slow 2 $ jux ((# speed 2) . rev) $ chunk 4 (hurry 2) $ slow 2 $ n "0 .. 7" 
   |+| n "4"
   # speed 1.5
 
-
-d3 $ jux rev $ sound "future [~ future:2]"
+d3 $ chunk 4 (hurry 2) $ jux rev $ sound "future [feel:2 future:2]"
   # lpf (slow 4 $ saw * 3000 + 1000)
   # lpq 0.3
   # delay 0.9
-  # delayt 0.01
+  # delayt (every 2 (+ 0.2) $ slow 4 $ sine * 0.04)
   # delayfb 0.9
