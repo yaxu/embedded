@@ -31,7 +31,9 @@ d2 $ jux rev $ chunk 4 (hurry 1.5) $ loopAt 2 $ chop 8 $ sound "arc"
 d3 $ jux (rev) $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
   # gain 0.8
 
-d4 $ n (offadd 0.25 7 $ slow 2 $ "d7 e6") # sound "rash"
+d4 $ off 0.25 () $ jux rev $ n (sometimes (offadd 0.125 "12") $ offadd 0.25 7 $ slow 2 $ "d7(3,8) [e6 f6?]") # sound "rash"
   # orbit 1
-  # room 0.8
-  # size 0.8
+  # room 0.4
+  # size 0.4
+  # lpf (sine * 3000 + 1000)
+  # lpq 0.2
