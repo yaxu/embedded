@@ -81,7 +81,13 @@ d1 $ degradeBy 0.5 $ chunk 4 (hurry 0.5) $ every 4 (off 0.25 (|*| speed 2)) $ ch
 
 d2 $ slow 4 $ sound "wobble" 
 
-d3 $ off 0.25 (|+| speed 2) $ chop 2 $ off 0.5 (# accelerate (0.1)) $ off 0.25 (# crush 2) $ slow 4 $ n "<c7(3,8) a7(3,8,2) f7(3,8) e8(3,8)>" # sound "xx"
+
+d3 $ sometimes (|*| speed 2) $ off 0.25 (|+| speed 2) $ chop 2 $ off 0.5 (# accelerate (0.1)) $ off 0.25 (# crush 2) $ slow 4 $ n "<c7(3,8) a7(3,8,2) f7(3,8) e8(3,8)>" # sound "xx"
   # accelerate (-0.1)
   # legato 0.5
   # cut 1
+  # room 1
+  # gain 0.8
+  # size 0.6
+
+d2 $ sound "bd(3,8)"
