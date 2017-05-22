@@ -1994,4 +1994,4 @@ d1 $ slow 16 $ striate 32 $ sound "bev"
   # speed (1/16)
 
 
-d1 $ sound "breaks
+d1 $ jux rev $ every 3 (0.25 <~) $ loopAt 2 $ chop 16 $ sound "arc"
