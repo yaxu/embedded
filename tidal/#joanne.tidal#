@@ -33,10 +33,9 @@ d3 $ jux (rev) $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
 
 d4 $ (slow 2 $ jux rev $ n (sometimes (offadd 0.125 "12") $ offadd 0.25 7 $ slow 2 $ "d7(3,8) [e6 f6?]") # sound "rash")
   # orbit 1
-  # room 0.4
-  # size 0.8
+  # room 0.9
+  # size 0.9
   # lpf (sine * 3000 + 1000)
   # lpq 0.2
-  # gain 0.8
+  # gain 0.7
   |+| n "<0 0 7 12 0 0 5 12>"
-  
