@@ -58,8 +58,8 @@ d3 $ degrade $ slow 2 $ chunk 4 (hurry 2) $ jux rev $ sound "future [feel:3 futu
   # orbit 1
   # speed 8
 
-d4 $ jux rev $ chunk 4 (hurry 2) $ sound "ht ~ ht ht . mt lt mt"
-  # speed 4
+d4 $ off 0.25 (# cru) $ chunk 4 (hurry 2) $ n "<0 2> [3 4] 6 3" # sound "jvr"
+  # gain 1.5
 
 
 d4 $ (off 0.25 (rev . (# s "jx") . (|+| n "36")) $ off 0.125 (|+| vowel "<a e i>") $ slow 4 $ off 0.125 (rev) $ off 0.25 ((struct "x(5,8,<0 2>)") . (# s "supermandolin") . (|*| gain 1.2) . (# legato 8)) $ off 0.25 (|+| n 5) $ every 2 (off 0.25 (# crush 3)) $ jux (|+| n 12) $ n "c ~ [~ e] ~" # sound "superpiano")
