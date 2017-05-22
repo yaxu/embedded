@@ -1992,4 +1992,6 @@ d1 $ striate 32 $ sound "bev"
 d1 $ slow 16 $ striate 32 $ sound "bev"
   # unit "c"
   # speed (1/16)
-hush
+
+
+d1 $ sound "breaks
