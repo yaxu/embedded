@@ -90,12 +90,9 @@ d3 $ sometimes (|*| speed 2) $ off 0.25 (|+| speed 2) $ chop 2 $ off 0.5 (# acce
   # gain 0.8
   # size 0.6
 
-d2 $ sound "bd(3,8)"
-
-d3 $ degrade $ off 0.25 (# crush 3) $ jux rev $ smash 4 [1,2,3,4] $ slow 4 $ n "0 [~ <1 2>] <0 5> <1 3>" # sound "onoff"
-
-d4 $ off 0.25 (# hpf 0) $ (off 0.125 (|+| n "<7 9 12 24>") $ slow 2 $ n "c8(3,8) e8(3,8) c8(3,8) g8" # sound "jx")
-  # hpf 1000
+d2 $ off 0.25 (# n 2) $ off 0.125 (# crush 4) $ off 0.25 (# speed 2) $ (slow 2 $ sound "diphone2(3,8)")
+  # lpf "500"
   # lpq 0.2
-  |+| n (slow 2 "<0 7 12 5>")
 
+
+d3 $ degrade $ off 0.25 (# crush 3) $ jux rev $ smash 4 [1,2,3,4] $ slow 4 $ n "0 [~ <1 2>] <0 5> <1 3>" # sound "
