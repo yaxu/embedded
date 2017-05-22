@@ -1961,3 +1961,4 @@ d1 $ jux rev $ off (toRational <$> (slow 4 sine)) (|*| speed 2) $ off 0.125 (# c
 
 v $ density 12 $ chunk 4 (blend' "red") $ slow 2 $ rev $ superimpose rev $ "{red [green blue], orange purple grey}"
 
+v $ "red"
