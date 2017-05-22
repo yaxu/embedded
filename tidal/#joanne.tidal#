@@ -28,4 +28,10 @@ d2 $ jux rev $ chunk 4 (hurry 1.5) $ loopAt 2 $ chop 8 $ sound "arc"
   # gain 1.2
   # crush 5
 
-d3 $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
+d3 $ jux (rev) $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
+  # gain 0.8
+
+d4 $ n (offadd 0.25 7 $ slow 2 $ "d7 e6") # sound "rash"
+  # orbit 1
+  # room 0.8
+  # size 0.8
