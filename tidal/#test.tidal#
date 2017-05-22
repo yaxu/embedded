@@ -1959,4 +1959,4 @@ d1 $ jux rev $ 0.25 <~ (sound "bd(3,8,<2 3>)")
 d1 $ jux rev $ off (toRational <$> (slow 4 sine)) (|*| speed 2) $ off 0.125 (# crush 4) $ off (1/8) (# (s "superpiano" # gain 0.8)) $ off 0.125 (|+| n "<-12 -7>") $ off 0.25 (|+| n 7) $ slow 4 $ n "c(3,8) e(3,8,2) f(3,8) g(3,8,2)" # sound "supermandolin"
   # legato 4
 
-v $ density 12 $ sometimes (superimpose rev $ "{red [green blue], orange purple grey}"
+v $ density 12 $ chunk 4 (blend' "red") $ slow 2 $ rev $ superimpose rev $ "{red [green blue], orange purple grey}"
