@@ -44,4 +44,8 @@ d1 $ slow 2 $ sound "sn:3 ~ bd ~ bd*2 ~ bd ~"
 
 nudger (0.01)
 
-d2 $ sound
+d2 $ jux ((# speed 2) . rev) $ chunk 4 (hurry 2) $ slow 2 $ n "0 .. 7" # sound "micron"
+  |+| n "4"
+  # speed 1.5
+
+d3 $ sound "future future:2"
