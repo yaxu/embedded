@@ -1966,4 +1966,4 @@ v $ "red"
 
 d1 $ pan "0 1" # sound "cp"
 
-d2 $ sound "wobble
+d2 $ sound "wobble"
