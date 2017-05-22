@@ -1961,8 +1961,11 @@ d1 $ jux rev $ off (toRational <$> (slow 4 sine)) (|*| speed 2) $ off 0.125 (# c
 
 v $ density 24 $ within (0,0.25) (fast 2 . blend' "red") $ "blue*3"
 
-v $ density 12 $ chunk 4 (fast 2) $ iter 4 "lightblue blue darkblue*2"
+import Sound.Tidal.Utils
 
+let p = density 12 $ chunk 4 (fast 2) $ iter 4 ("lightblue blue darkblue*2" :: Pattern ColourD)
+
+length $ sortOn ((\x -> snd x - fst x) . snd') $ map (\x -> ((snd x - (fst x),x)) (arc p (0,1))
 
 d1 $ pan "0 1" # sound "cp"
 
