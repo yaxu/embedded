@@ -40,6 +40,42 @@ d1 $ off 0.5 (degradeBy 0.6 . (# s "jx") . (|+| n 24)) $ chunk 4 (|+| n 12) $ of
   # gain 0.7
   |+| n "<0 0 7 12 0 0 <5 2> 12>"
 
-d1 $ slow 2 $ sound "sn:3 ~ bd ~ bd ~ bd ~"
+d1 $ slow 2 $ sound "sn:3 ~ bd ~ bd*2 ~ bd ~"
 
 nudger (0.01)
+
+d2 $ slow 2 $ jux ((# speed 2) . rev) $ chunk 4 (hurry 2) $ slow 2 $ n "0 .. 7" # sound "micron"
+  |+| n "4"
+  # speed 1.5
+
+
+d3 $ degrade $ slow 2 $ chunk 4 (hurry 2) $ jux rev $ sound "future [feel:3 future:2]"
+  # lpf (slow 4 $ saw * 3000 + 1000)
+  # lpq 0.3
+  # delay 0.9
+  # delayt (every 2 (+ 0.2) $ slow 4 $ sine * 0.04)
+  # delayfb 0.9
+  # orbit 1
+  # speed 8
+
+
+d4 $ off 0.25 (# crush 3) $ chunk 4 (hurry 2) $ n "<0 2> [3 4] 6 3" # sound "jvr"
+  # gain 1.2
+
+d5 $ jux rev $ slow 2 $ stut 2 0.9 "<0.25 0.125 0.5>" $ n "0 [2 3] <1 ~> 2" # sound "micron"
+  # gain 1.1
+
+d2 $ sound "drum*2"
+  # shape 0.9
+
+d4 $ (off 0.25 (rev . (# s "jx") . (|+| n "36")) $ off 0.125 (|+| vowel "<a e i>") $ slow 4 $ off 0.125 (rev) $ off 0.25 ((struct "x(5,8,<0 2>)") . (# s "supermandolin") . (|*| gain 1.2) . (# legato 8)) $ off 0.25 (|+| n 5) $ every 2 (off 0.25 (# crush 3)) $ jux (|+| n 12) $ n "c ~ [~ e] ~" # sound "superpiano")
+  # hpf 300
+  # hpq 0.2
+  |*| gain 0.8
+  |+| n "<0 7 7 0 0 5 12 0>"
+  # room 0.3
+  # room 0.5
+
+d1 $ chunk 4 (hurry 0.5) $ every 4 (off 0.25 (|*| speed 2)) $ chunk 4 (# speed 2) $ jux (chop "<8 4 12 <32 64>>") $ n "12 0 12 2" # sound "jvr"
+  # crush 4
+  
