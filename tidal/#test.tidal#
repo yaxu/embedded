@@ -1968,8 +1968,10 @@ d1 $ pan "0 1" # sound "cp"
 
 d2 $ sound "wobble"
 
-d1 $ sound "[bd, sync]"
+d1 $ slow 2 $ sound "bd sn sn sn sn sn sn sn"
 
 cps 0.8
 
 hush
+
+nudger 0.01
