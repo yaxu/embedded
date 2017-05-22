@@ -76,4 +76,4 @@ d4 $ (off 0.25 (rev . (# s "jx") . (|+| n "36")) $ off 0.125 (|+| vowel "<a e i>
   # room 0.3
   # room 0.5
 
-d1 $ sound 
+d1 $ n "12" # sound "jvr"
