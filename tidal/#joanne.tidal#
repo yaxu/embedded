@@ -10,3 +10,10 @@ d3 $ every 3 (fast 2) $ n "0 .. 3" # sound "micron"
 
 
 cps (130/60/2)
+
+
+
+nudger (-0.1)
+
+
+d1 $ n "" # sound "ht8"
