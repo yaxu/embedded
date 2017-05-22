@@ -24,4 +24,8 @@ d1 $ jux rev $ off "<0.125 0.125 0.5>" (# crush 3) $ off 0.25 (# speed 0.5) $ sl
   # delay 0.7
   # gain 0.9
 
-d2 $ chunk 4 ()$loopAt 4 $ chop 16 $ sound "arc"
+d2 $ jux rev $ chunk 4 (hurry 1.5) $ loopAt 2 $ chop 8 $ sound "arc"
+  # gain 1.2
+  # crush 5
+
+d3 $ off 0.25 (# speed 4) $ slow 2 $ sound "gabba(5,16,<0 4>)"
