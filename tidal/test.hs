@@ -1,4 +1,4 @@
-import Sound.Tidal.Context
+-- import Sound.Tidal.Context
 
 x = fast 12 $ chunk 4 (fast 2) $ iter 4 ((p "bd bd bd") :: Pattern String)
 
