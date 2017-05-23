@@ -1976,12 +1976,12 @@ cps 0.8
 
 nudger 0.01
 
-d1 $ fast 12 $ chunk 4 (fast 2) $ iter 4 (s "bd bd bd")
+d1 $ fast 12 $ chunk 4 (fast 2) $ chop 6 $ iter 4 (s "bd")
 
 d1 $ fast _12 $ chunk 4 (_fast 2) $ _iter 4 (s "bd bd bd")
 
-let x = fast 12 $ chunk 4 (fast 2) $ iter 4 ("x x x" :: Pattern String)
+let x = fast 12 $ chunk 4 (fast 2) $ iter 4 ("bd bd bd bd bd bd bd bd" :: Pattern String)
 
-length $ arc x (0.25,0.75)
+length $ arc x (0,1)
 
 length $ arc (_fast 12 $ chunk 4 (_fast 2) $ _iter 4 ("x x x" :: Pattern String)) (0,1)
