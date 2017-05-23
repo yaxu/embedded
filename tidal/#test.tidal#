@@ -1980,6 +1980,8 @@ d1 $ fast 12 $ chunk 4 (fast 2) $ iter 4 (s "bd bd bd")
 
 d1 $ fast _12 $ chunk 4 (_fast 2) $ _iter 4 (s "bd bd bd")
 
-length $ arc (fast 12 $ chunk 4 (fast 2) $ iter 4 ("x x x" :: Pattern String)) (0,01)
+let x = fast 12 $ chunk 4 (fast 2) $ iter 4 ("x x x" :: Pattern String)
+
+length $ arc x (0.25,0.75)
 
 length $ arc (_fast 12 $ chunk 4 (_fast 2) $ _iter 4 ("x x x" :: Pattern String)) (0,1)
