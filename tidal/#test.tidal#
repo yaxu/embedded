@@ -1991,4 +1991,11 @@ length $ arc (_fast 12 $ _fast 12 $ chunk 4 (id) $ _iter 4 ("x x x" :: Pattern S
 let x = fast 12 $ chunk 4 (fast 2) $ iter 4 y
     y = (p "bd bd bd") :: Pattern String
   in
+putStrLn $ show $ length $ splitArcs 1 x
+
+
 putStrLn $ show $ length $ concatMap (\n -> arc x (n,n+0.25)) [0, 0.25, 0.5,0.75]
+
+let splitArcs n p = concatMap (\i -> arc p (i,i+(1/n))) [0, (1/n) .. (n-(1/n))]
+
+splitArcs 4 ("x x x" :: Pattern String)
