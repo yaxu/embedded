@@ -1985,6 +1985,10 @@ let x = fast 12 $ chunk 4 (fast 2) $ iter 4 ("bd bd bd" :: Pattern String)
 
 length $ arc x (0,1)
 
-alength $ arc (_fast 12 $ _fast 12 $ chunk 4 (id) $ _iter 4 ("x x x" :: Pattern String)) (0,1)
+length $ arc (_fast 12 $ _fast 12 $ chunk 4 (id) $ _iter 4 ("x x x" :: Pattern String)) (0,1)
 
 
+let x = fast 12 $ chunk 4 (fast 2) $ iter 4 y
+    y = (p "bd bd bd") :: Pattern String
+  in
+putStrLn $ show $ length $ concatMap (\n -> arc x (n,n+0.25)) [0, 0.25, 0.5,0.75]
