@@ -2006,7 +2006,7 @@ density 4 $ n (toScale Scales.ionian (every 3 (* "4") "8 5 7") + "c5")
 
 d1 $ spread _slow [1.0,1.1..2] $ sound "bd sn"
 
-d1 $ sound "arpy"
+d1 $ sound "cp"
 
   # orbit 3
   # room 0.9
