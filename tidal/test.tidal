@@ -1992,7 +1992,7 @@ let x = fast 12 $ chunk 4 (fast 2) $ iter 4 y
     y = (p "bd bd bd") :: Pattern String
     splitArcs n p = concatMap (\i -> arc p (i,i+(1/n))) [0, (1/n) .. (1-(1/n))]
   in
-putStrLn $ show $ length $ splitArcs 8 x
+putStrLn $ show $ length $ arc x (0,1)
 
 
 let n = 4 in [0, (1/n) .. (1-(1/n))]
@@ -2001,3 +2001,5 @@ putStrLn $ show $ length $ concatMap (\n -> arc x (n,n+0.25)) [0, 0.25, 0.5,0.75
 
 
 splitArcs 4 ("x x x" :: Pattern String)
+
+density 4 $ n (toScale Scales.ionian (every 3 (* "4") "8 5 7") + "c5")
