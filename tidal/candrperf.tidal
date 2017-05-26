@@ -20,10 +20,10 @@ d3 $ jux ("<0.25 0.5>" <~) $ chunk 4 (hurry "<2 2 0.5>") $ iter 4 $ loopAt 2 $ c
 d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound "future(3,8,<0 4>)"
   # gain 0.95
 
-d5 $ off 0.25 (# s "pulse") $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ slow 2 $ n "d7 [a6 g5]" # sound "rash"
+d5 $ sometimes (|*| speed 2) $ slow 2 $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ slow 2 $ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "rash"
   |+| pan (slow 32 saw)
   |+| n (slow 4 "<0 5 12 2>")
   
-d6 $ jux (|*| speed "<2 1.5>") $ (jux rev $ chop "<8 12>" $ sound "~ sn:2*2")
+d6 $ slow 2 $ jux (|*| speed "<2 1.5>") $ (jux rev $ chop "<2 1>" $ sound "~ sn:2*2")
   |+| pan (slow "<4 8>" saw)
   |+| speed "0.5"
