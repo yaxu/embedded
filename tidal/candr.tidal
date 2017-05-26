@@ -20,3 +20,7 @@ d1 $ superimpose (2 <~) $ (chop "<32 64 128>" $ sound "drum arpy:3 cp drum:2")
   |+| pan (slow 4 sine1)
 
 
+
+let superDirtBackend port = do
+      s <- makeConnection "127.0.0.1" port superDirtSlang
+      return $ Backend s (\_ _ _ -> return ())
