@@ -1,2 +1,5 @@
 
-sadfasdf
+d1 $ slow 2 $ slow 2 $ off 0.25 (|+| n "7") $ n "c(3,8) e f g" # sound "superzow"
+  # lpf 1000
+  # lpq 0
+
