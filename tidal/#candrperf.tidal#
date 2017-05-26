@@ -21,12 +21,15 @@ d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound
   # gain 0.95
 
 
-d5 $ every 2 (slow 4) $ slow 2 $ jux' [id, rev] $ slow 2 $ off 0.125 (|+| n 12)$ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "superzow"
+d5 $ off 0.25 () $ every 2 (slow 4) $ slow 2 $ jux' [id, rev] $ slow 2 $ off 0.125 (|+| n 12)$ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "superzow"
   |+| pan (slow 32 saw)
   |+| n (slow 4 "<0 5 12 2>")
-  |+| gain 0.9
-
-
+  |+| gain 0.75
+  |+| n "-36"
+  # lpf (slow 16 $ saw * 2000 + 100)
+  # lpq 0.2
+  # legato 0.25
+  
 d6 $ slow 2 $ jux (|*| speed "<2 1.5>") $ (jux rev $ chop "<2 1>" $ sound "~ sn:2*2")
   |+| pan (slow "<4 8>" saw)
   |+| speed "0.5"
