@@ -62,7 +62,7 @@ d3 $ jux (|*| speed 2) . rev) $ off 0.25 (# crush 5) $ up "0 7 12" # sound "jvba
 
 d1 $ sometimes (|*| speed 2) $ jux ((|+| speed 2) . (slow 2)) $ jux (rev) $ every 5 (0.125 <~) $ every 3 (0.25 <~) $ n "{0 [~ 4] 3*2 2, 0 4 1*2}" # sound "gretsch"
 
-d2 $ slow 2 $ n (off 0.25 (012)$ "a6 <d7 g6>") # sound "superpiano"
+d2 $ sometimes (|+| n 12) $ jux rev $ slow 2 $ n (off 0.125 (+7) $ offadd 0.25 (-12) $ slow 2 $ "a5(3,8) <d5*2 g5>") # sound "superpiano"
   # gain 0.9
-  # vowel "<a e i>"
+
   
