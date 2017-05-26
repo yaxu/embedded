@@ -48,5 +48,5 @@ d7 $ jux (0.25 <~) $ chop "<16 32 8>" $ sound "~ off"
   # unit "c"
   # vowel "<a e i o>"
 
-d9 $ off 0.25 (# crush "4")$ sound  "gabba(3,8,<0 4 2>)"
+d9 $ off 0.25 (# (crush "4" # speed (slow 4 $ scale 0.25 1 saw)))$ sound  "gabba(3,8,<0 4 2>)"
   # pan rand
