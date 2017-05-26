@@ -17,6 +17,9 @@ hush
 
 d3 $ jux ("<0.25 0.5>" <~) $ chunk 4 (hurry "<2 2 0.5>") $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks165"
 
-
-d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sound "odx(3,8,<0 4>)"
+d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound "odx(3,8,<0 4>)"
   # gain 0.95
+
+d5 $ off 0.25 (# s "pulse") $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ slow 2 $ n "d7 [a6 g5]" # sound "rash"
+  |+| pan (slow 32 saw)
+  |+| n (slow 4 "<0 5 12 2>")
