@@ -35,7 +35,7 @@ let superDirtBackend = do
 
 (d,t) <- setters getNow
 
-d $ sound "supermandolin*4"
+d $ sound "supermandolin*8"
   # pan saw
 
 d silence
