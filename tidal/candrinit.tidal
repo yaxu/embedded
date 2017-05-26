@@ -24,3 +24,8 @@ let superDirtBackend = do
 let hush = mapM_ ($ silence) [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10]
     solo = (>>) hush
     jux f p = stack [p |+| pan 0.25, f p |+| pan (0.75)]
+
+d1 $ (jux (rev) $ sound "bd(3,8)")
+  |+| pan (slow 8 saw)
+
+  
