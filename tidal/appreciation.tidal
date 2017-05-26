@@ -19,8 +19,10 @@ d1 $ n "c(3,8) e f g" # sound "supermandolin"
 d1 $ jux rev $ off 0.125 (|+| n 12) $ slow 4 $ off 0.25 (|+| n 7) $ n "c(3,8) e f g" # sound "supermandolin"
   # legato 2
 
+-- numbers are patterns too
 
-let jux f p = stack [p |+| pan 0.25, f p |+| pan (0.75)]
+d1 $ rev $ chop 4 $ n "d6 e7" # sound "rash"
 
+d1 $ rev $ chop "<4 12 3, 8>" $ n "d6 e7" # sound "rash"
 
-d1 $ jux rev $ sound "bd(3,8)"
+-- patterns are numbers too

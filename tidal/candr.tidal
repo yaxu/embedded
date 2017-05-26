@@ -1,0 +1,7 @@
+let jux f p = stack [p |+| pan 0.25, f p |+| pan (0.75)]
+
+d1 $ (jux' [slow 2, rev, iter 4] $ chunk 4 (hurry 2) $ off 0.25 (# (crush 3)) $ n "<c3 [d3 ~ e3 ~]>" # sound "supersiren")
+  # gain 0.7
+  # hpf (slow 4 $ sine * 2000 + 100)
+  # hpq 0.3
+  |+| pan (slow 4 saw)
