@@ -1,3 +1,7 @@
+cps 1.1
+
+d1 $ jux' [id, rev, (0.25 <~), hurry 2] $ slow 8 $ sound "{bd bd*2 mt [~ ht:3], bd sd ~}"
+  # room 0.04
+  # orbit 1
 
 
-  
