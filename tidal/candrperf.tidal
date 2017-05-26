@@ -18,7 +18,6 @@ hush
 d3 $ jux ("<0.25 0.5>" <~) $ chunk 4 (hurry "<2 2 0.5>") $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks165"
 
 d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound "future(3,8,<0 4>)"
-  # gain 0.95
 
 
 d5 $ off 0.25 (# (s "superpiano" # legato 2)) $ every 2 (slow 4) $ slow 2 $ jux' [id, rev] $ slow 2 $ off 0.125 (|+| n 12)$ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "superpiano"
@@ -26,10 +25,13 @@ d5 $ off 0.25 (# (s "superpiano" # legato 2)) $ every 2 (slow 4) $ slow 2 $ jux'
   |+| n (slow 4 "<0 5 12 2>")
   |+| gain 0.75
   |+| n "-36"
-  # lpf (slow 16 $ saw * 2000 + 100)
-  # lpq 0.1
+  # hpf (slow 16 $ saw * 2000 + 100)
+  # hpq 0.1
   # legato 0.25
+
+
+d1 $ every 2 (linger 0.25) $ jux ((# speed 2) . slow 2) $ jux (0.25 <~)$ chunk 4 (hurry 2) $ sound "{drum bd future ~, bd*2 sn mt}"
   
-d6 $ slow 2 $ jux (|*| speed "<2 1.5>") $ (jux rev $ chop "<2 1>" $ sound "bd*2 sn:2(3,8)")
+d6 $ slow 2 $ jux (|*| speed "<2 4>") $ (jux rev $ chop "<2 4>" $ sound "bd*2 sn:2(3,8)")
   |+| pan (slow "<4 8>" saw)
   |+| speed "0.5"
