@@ -22,8 +22,8 @@ d $ (superimpose (2 <~) $ (chop "<32 64 128>" $ sound "drum arpy:3 cp drum:2"))
   |+| pan (slow 8 sine1)
 
 
-hush
 
+d silence
 import Sound.OSC.FD (Datum)
 
 import Sound.Tidal.OscStream
