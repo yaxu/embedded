@@ -51,4 +51,4 @@ d7 $ jux' [id, rev, (0.25 <~), (iter 4)] $ chop "<16 32 8>" $ sound "~ off ~ ~"
 
 d9 $ off 0.25 (# (crush "5" # speed (slow 4 $ scale 2 1 saw)))$ sound  "gabba(3,8,<0 4 2>)"
   # pan rand
-  # end 0.25
+  # end 0.1
