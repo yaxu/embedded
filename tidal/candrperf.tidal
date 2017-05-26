@@ -39,7 +39,7 @@ d2 $ jux' [id, (|*| speed 2), every 2 (hurry 0.5) . rev, iter 4] $ struct "x(3,8
   # shape 0.3
   # legato 1
   |*| up (offadd 0.125 (7) $ "<0 <7 [7 5]>>")
-  |*| up (slow 4 "<0 7 12>")
+  |*| up (slow 2 "<0 7 12 2>")
 
 d6 $ slow 2 $ jux (|*| speed "<2 4>") $ (jux rev $ chop "<2 4>" $ sound "bd*2 sn:2(3,8)")
   |+| pan (slow "<4 8>" saw)
