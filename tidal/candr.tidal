@@ -5,3 +5,9 @@ d1 $ (jux' [slow 2, rev, iter 4] $ chunk 4 (hurry 2) $ off 0.25 (# (crush 3)) $ 
   # hpf (slow 4 $ sine * 2000 + 100)
   # hpq 0.3
   |+| pan (slow 4 saw)
+
+d1 $ superimpose (2 <~) $ (chop "<32 64 128>" $ sound "drum arpy:3 cp drum:2")
+  # nudge (slow 4 sine)
+  |+| pan (slow 4 sine1)
+
+hush
