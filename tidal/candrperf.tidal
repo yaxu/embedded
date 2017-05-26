@@ -18,4 +18,5 @@ hush
 d3 $ jux ("<0.25 0.5>" <~) $ chunk 4 (hurry "<2 2 0.5>") $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks165"
 
 
-d4 $ sound "bd(3,8,<0 4>)"
+d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sound "odx(3,8,<0 4>)"
+  # gain 0.95
