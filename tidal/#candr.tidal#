@@ -24,12 +24,15 @@ import Sound.OSC.FD (Datum)
 
 import Sound.Tidal.OscStream
 
-let setters = do
+let superDirtBackend = do
       s <- makeConnection "192.168.1.73" 57120 superDirtSlang
-      let backend = Backend s (\_ _ _ -> return ())
-      ds <- Sound.Tidal.Stream.state backend dirt
-      return (setter ds, transition getNow ds)
+      return $ Backend s (\_ _ _ -> return ())
+    superDirtState = do
+      backend <- superDirtBackend 
+      Sound.Tidal.Stream.state backend dirt
+    setters getNow = do ds <- superDirtState 
+                        return (setter ds, transition getNow ds)
 
 (d,t) <- setters getNow
 
-d $ sound "x"
+d $ sound "bd(3,8)"
