@@ -52,7 +52,8 @@ d1 $ jux' [id, rev, (|*| speed 2), (|+| speed 4) . rev . (# crush 5)] $ (off 0.2
 d2 $ jux rev $ stut 4 0.8 0.25 $ chop "<2 4>" $ sound "bd [<drum bd> sn:1]"
   |+| pan rand
 
-d3 $ off 0.25 (# crush 5) $ up "0 7 12" # sound "jvbass [~ jvbass]"
+
+d3 $ jux (|*| speed 2) . rev) $ off 0.25 (# crush 5) $ up "0 7 12" # sound "jvbass [~ jvbass]"
   # delay 0.9
   # delayfb 0.9
   # delayt "<0.01 0.02 0.05>"
