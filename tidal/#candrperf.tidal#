@@ -18,7 +18,12 @@ d2 $ (chunk 4 (hurry 0.5) $ jux' [id,rev,iter 4] $ loopAt 4 $ chop 16 $ sound "p
 
 d3 $ chunk 4 (hurry 2) $ jux' [id, (# speed 4), (vowel "<a i*2 u*3 o*4>" #), (rev . chop 8), (off "<0.25 0.5>" (# crush "<5 5 5 3>") )] $ chunk 4 (hurry 0.5) $sound "<ht(3,8) cp drum(5,8) sn:2>"
 
-d4 $ sound "arpy" 
+d4 $ weave 8 (n "0 1 2 3 4 5 6 7" # sound "arpy" )
+  [vowel "a e i" # pan 0,
+   speed "1 2 3 1" # pan saw,
+   speed "2 3 1" # pan sine,
+   speed "1 [3 4] 0.5" # pan tri
+  ]
 
 d2 $ degradeBy 0.8 $ off 0.25 (# (s "pulse"))$ slow 2 $ (jux' [id, rev, (|*| speed 2), (|+| n 7)] $ off "<0.25 0.5 0.75>" (# crush 5) $  off 0.25 (|+| n 7)$ slow 2 $ n "c6(3,8) a7(3,8) f6(3,8) e5*3" # sound "rash")
   # gain "0.8"
