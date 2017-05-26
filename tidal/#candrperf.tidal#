@@ -24,3 +24,6 @@ d5 $ off 0.25 (# s "pulse") $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ s
   |+| pan (slow 32 saw)
   |+| n (slow 4 "<0 5 12 2>")
   
+d6 $ jux (# speed "<2 1.5>") $ (jux rev $ chop "<8 12>" $ sound "~ sn:2*2")
+  |+| pan (slow "<4 8>" saw)
+  # speed "0.5"
