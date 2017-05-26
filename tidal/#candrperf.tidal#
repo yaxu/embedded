@@ -16,4 +16,4 @@ d2 $ (chunk 4 (hurry 0.5) $ jux' [id,rev,iter 4] $ loopAt 4 $ chop 16 $ sound "p
   |+| pan saw
 
 
-d3 $ jux' [id, # speed 2] $ chunk 4 (hurry 0.5) $sound "<bd(3,8) bd:3(5,8)>"
+d3 $ jux' [id, (# speed 4), (vowel "<a i*2 u*3 o*4>" #), (rev . chop 8), (off "<0.25 0.5>" (# crush "<5 5 5 3>") )] $ chunk 4 (hurry 0.5) $sound "<bd(3,8) bd:3(5,8)>"
