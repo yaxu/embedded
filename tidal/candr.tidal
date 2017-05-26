@@ -37,10 +37,20 @@ let superDirtBackend = do
     setters getNow = do ds <- superDirtState 
                         return (setter ds, transition getNow ds)
 
-let hush = mapM_ ($ silence) [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10]")
-  (tidal-send-string "let solo = (>>) hush")
+(d1,t1) <- setters getNow
+(d2,t2) <- setters getNow
+(d3,t3) <- setters getNow
+(d4,t4) <- setters getNow
+(d5,t5) <- setters getNow
+(d6,t6) <- setters getNow
+(d7,t7) <- setters getNow
+(d8,t8) <- setters getNow
+(d9,t9) <- setters getNow
+(d10,t10) <- setters getNow
 
-(d,t) <- setters getNow
+let hush = mapM_ ($ silence) [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10]
+    solo = (>>) hush
+
 
 d $ (sound "bd*16")
   |+| pan (slow 16 saw)
