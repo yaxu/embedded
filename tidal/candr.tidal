@@ -26,4 +26,6 @@ import Sound.Tidal.OscStream
 let superDirtBackend = do
       s <- makeConnection "192.168.1.73" 57120 superDirtSlang
       return $ Backend s (\_ _ _ -> return ())
-
+    superDirtState = do
+      backend <- superDirtBackend 
+      Sound.Tidal.Stream.state backend dirt
