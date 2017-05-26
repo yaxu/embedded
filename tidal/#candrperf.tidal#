@@ -1,0 +1,13 @@
+
+d1 $ jux rev $ slow 2 $ slow 2 $ off 0.125 (|+| n (-12)) $ off 0.25 (|+| n "7") $ n "c(3,8) e*3 f(3,8) g(3,8)" # sound "supermandolin"
+  # lpf (slow 4 $ sine * 3000 + 400)
+  # lpq 0.2
+  # room 0.2
+  # legato "<2 4>"
+
+d2 $ jux' [id, rev, iter 4, slow 2] $ chunk 4 (hurry 2) $ n "0 [~ 1] 2 3" # sound "micron"
+  # gain 0.8
+  # speed 2
+
+d2 $ loopAt 4 $ chop 16 $ sound "paper"
+  # gain 1
