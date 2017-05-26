@@ -44,4 +44,5 @@ d6 $ slow 2 $ jux (|*| speed "<2 4>") $ (jux rev $ chop "<2 4>" $ sound "bd*2 sn
   |+| pan (slow "<4 8>" saw)
   |+| speed "0.5"
 
-d
+d7 $ chop "<16>" $ sound "~ off"
+  # unit "c"
