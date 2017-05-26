@@ -39,7 +39,10 @@ let superDirtBackend = do
 
 (d,t) <- setters getNow
 
-d $ slow 4 $ sound "bd*15"
+d $ (sound "bd*16")
+  |+| pan (slow 16 saw)
+
+d $ (slow 4 $ sound "bd*15")
   # pan saw
 
 d silence
