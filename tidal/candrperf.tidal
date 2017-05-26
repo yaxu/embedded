@@ -42,9 +42,11 @@ d4 $ slow 2 $ every 2 (density 2) $ jux' [id, iter 4] $ chunk 4 (hurry "<0.5 2 0
   # room 0.2
   |*| speed 2
 
+
 d1 $ jux' [id, rev, (|*| speed 2), (|+| speed 4) . rev . (# crush 5)] $ (off 0.25 (|+| n "<0 7 12>")$ (off "<0.125 0.25>" (# s "pulse") $ slow 4 $ n "e6(3,8) [c6*2 g6]" # sound "jx"))
   # orbit 2
   # room (scale 0.2 0.4 $ slow 16 saw)
   # size 0.3
   # gain 0.8
 
+d2 $ jux rev $ stut 4 0.8 0.25 $ chop "<2 4>" $ sound "bd [~ sn:1]"
