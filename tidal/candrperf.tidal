@@ -60,7 +60,7 @@ d3 $ jux (|*| speed 2) . rev) $ off 0.25 (# crush 5) $ up "0 7 12" # sound "jvba
   |+| orbit 1
   |+| gain 1.1
 
-d1 $ jux ((|+| speed 2) . (slow 2)) $ jux (rev) $ every 3 (0.25 <~) $ n "{0 [~ 4] 3*2 2, 0 4 1*2}" # sound "gretsch"
+d1 $ jux ((|+| speed 2) . (slow 2)) $ jux (rev) $ every 5 (0.125 <~) $ every 3 (0.25 <~) $ n "{0 [~ 4] 3*2 2, 0 4 1*2}" # sound "gretsch"
 
 d2 $ slow 2 $ n "~ d7" # sound "xx"
   # gain 0.9
