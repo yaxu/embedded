@@ -18,10 +18,10 @@ d2 $ (chunk 4 (hurry 0.5) $ jux' [id,rev,iter 4] $ loopAt 4 $ chop 16 $ sound "p
 
 d3 $ chunk 4 (hurry 2) $ jux' [id, (# speed 4), (vowel "<a i*2 u*3 o*4>" #), (rev . chop 8), (off "<0.25 0.5>" (# crush "<5 5 5 3>") )] $ chunk 4 (hurry 0.5) $sound "<bd(3,8) bd:3(5,8)>"
 
-d2 $ off 0.25 (# (s "pulse"))$ (jux' [id, rev, (|*| speed 2), (|+| n 7)] $ off "<0.25 0.5 0.75>" (# crush 5) $  off 0.25 (|+| n 7)$ slow 2 $ n "d6(3,8) [~ g7*2 a6*2 e5*3]" # sound "rash")
+d2 $ off 0.25 (# (s "pulse"))$ slow 2 $ (jux' [id, rev, (|*| speed 2), (|+| n 7)] $ off "<0.25 0.5 0.75>" (# crush 5) $  off 0.25 (|+| n 7)$ slow 2 $ n "c6(3,8) a7(3,8) f6(3,8) e5*3" # sound "rash")
   # gain "0.8"
   |+| n (slow 4 "<0 7 12 2>")
   |+| pan (slow 7 saw)
-  # hpf 2000
+  # lpf 3000
   # room 0.1
   # orbit 1
