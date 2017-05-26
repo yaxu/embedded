@@ -20,7 +20,10 @@ d1 $ superimpose (2 <~) $ (chop "<32 64 128>" $ sound "drum arpy:3 cp drum:2")
   |+| pan (slow 4 sine1)
 
 
+import Sound.OSC.FD (Datum)
+import Sound.Tidal.OscStream
 
-let superDirtBackend port = do
-      s <- makeConnection "127.0.0.1" port superDirtSlang
+let superDirtBackend = do
+      s <- makeConnection "192.168.1.73" 57120 superDirtSlang
       return $ Backend s (\_ _ _ -> return ())
+
