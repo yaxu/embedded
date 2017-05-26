@@ -12,3 +12,7 @@ d2 $ jux' [id,rev,(0.25<~)] $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 $ "d6(
   # hpq 0.3
   # room 0.5
   |+| pan (slow 8 saw)
+  # orbit 2
+
+d3 $ iter 4 $ loopAt 2 $ chop 16 $ sound "breaks165"
+  # gain 0.9
