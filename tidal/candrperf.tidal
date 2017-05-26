@@ -16,7 +16,7 @@ d2 $ (chunk 4 (hurry 0.5) $ jux' [id,rev,iter 4] $ loopAt 4 $ chop 16 $ sound "p
   |+| pan saw
 
 
-d3 $ chunk 4 (hurry 2) $ jux' [id, (# speed 4), (vowel "<a i*2 u*3 o*4>" #), (rev . chop 8), (off "<0.25 0.5>" (# crush "<5 5 5 3>") )] $ chunk 4 (hurry 0.5) $sound "<ht(3,8) cp drum(5,8) sn:2>"
+d3 $ chunk 4 (hurry 2) $ jux' [id, (# speed 4), (vowel "<a i*2 u*3 o*4>" #), (rev . chop 8), (off "<0.25 0.5>" (# crush "<5 5 5 3>") )] $ chunk 4 (hurry 0.5) $sound "<future(3,8) cp drum(5,8) sn:2>"
 
 d4 $ jux rev $ weave 16 (palindrome $ n "0 1 2 3 4 5 6 7" # sound "arpy" )
   [vowel "a e [i o] e" # pan 0,
@@ -33,3 +33,5 @@ d2 $ degradeBy 0.8 $ off 0.25 (# (s "pulse"))$ slow 2 $ (jux' [id, rev, (|*| spe
   # room 0.1
   # orbit 1
 
+d3 $ (jux' [id, (0.5 <~), rev] $ (chop "<32 64 128>" $ sound "bd [~ kurt] sn:2 cp"))
+  # nudge (slow 4 sine1)
