@@ -21,7 +21,7 @@ d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound
   # gain 0.95
 
 
-d5 $ every 2 (slow 2) $ degrade $ slow 2 $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ slow 2 $ off 0.125 (|+| n 12)$ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "rash"
+d5 $ every 2 (slow 4) $ slow 2 $ jux' [id, rev] $ slow 2 $ off 0.125 (|+| n 12)$ off 0.25 (|+| n "7") $ n "d7*2 [a6(3,8) g5(3,8)]" # sound "rash"
   |+| pan (slow 32 saw)
   |+| n (slow 4 "<0 5 12 2>")
   |+| gain 0.9
