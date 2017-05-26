@@ -25,7 +25,7 @@ import Sound.OSC.FD (Datum)
 import Sound.Tidal.OscStream
 
 let superDirtBackend = do
-      s <- makeConnection "192.168.1.74" 57120 superDirtSlang
+      s <- makeConnection "192.168.1.73" 57120 superDirtSlang
       return $ Backend s (\_ _ _ -> return ())
     superDirtState = do
       backend <- superDirtBackend 
