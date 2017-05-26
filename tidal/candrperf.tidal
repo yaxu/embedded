@@ -33,8 +33,9 @@ d2 $ degradeBy 0.8 $ off 0.25 (# (s "pulse"))$ slow 2 $ (jux' [id, rev, (|*| spe
   # room 0.1
   # orbit 1
 
-d3 $ chunk 4 (hurry "<0.5 2 0.5>") $ jux rev $ (jux' [id, (0.5 <~), rev, (0.25 <~)] $ (chop "2" $ sound "bd [jvbass:3 <kurt:5 kurt:4>] sn:2 cp"))
+d3 $ degrade $ chunk 4 (hurry "<0.5 2 0.5>") $ jux rev $ (jux' [id, (0.5 <~), rev, (0.25 <~)] $ (chop "2" $ sound "bd [<jvbass:3 jvbass:5> <kurt:5 kurt:4>] sn:2 cp"))
   # gain 0.95
 
 d4 $ jux' [id, iter 4] $ chunk 4 (hurry "<0.5 2 0.5>") $ jux rev $ n ("0 .. 7") # sound "amencutup"
   # gain 1.2
+
