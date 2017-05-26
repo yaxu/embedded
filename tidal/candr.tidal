@@ -30,4 +30,4 @@ let superDirtBackend = do
       backend <- superDirtBackend 
       Sound.Tidal.Stream.state backend dirt
     setters getNow = do ds <- superDirtState 57120
-                              areturn (setter ds, transition getNow ds)
+                        return (setter ds, transition getNow ds)
