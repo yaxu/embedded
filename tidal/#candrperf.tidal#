@@ -32,10 +32,12 @@ d5 $ off 0.25 (# (s "superpiano" # legato 2)) $ every 2 (slow 4) $ slow 2 $ jux'
 
 d1 $ every 2 (linger 0.25) $ jux ((# speed 2) . slow 2) $ jux (0.25 <~)$ chunk 4 (hurry 2) $ sound "{drum bd future ~, bd*2 sn mt}"
 
-d2 $ jux' () $ sound "~ jungbass"
+d2 $ jux' [id, (# speed 2)] $ sound "~ jungbass ~ jungbass*2"
   # gain 0.9
+  |*| speed 2
   # crush 6
   # shape 0.3
+  # legato 1
 
 d6 $ slow 2 $ jux (|*| speed "<2 4>") $ (jux rev $ chop "<2 4>" $ sound "bd*2 sn:2(3,8)")
   |+| pan (slow "<4 8>" saw)
