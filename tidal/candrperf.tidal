@@ -12,4 +12,4 @@ d3 $ jux' [id, rev, iter 4, slow 2] $ chunk 4 (hurry 2) $ n "0 [~ 1] 2 3" # soun
 
 d2 $ (chunk 4 (hurry 2) $ jux' [id,rev] $ loopAt 4 $ chop 16 $ sound "paper")
   # gain 0.8
-  # pan saw
+  |+| pan saw
