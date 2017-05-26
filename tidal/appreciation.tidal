@@ -20,7 +20,7 @@ d1 $ jux rev $ off 0.125 (|+| n 12) $ slow 4 $ off 0.25 (|+| n 7) $ n "c(3,8) e 
   # legato 2
 
 
-let jux f p = stack [p |+| pan 0.25, f p |-| pan 0.25]
+let jux f p = stack [p |+| pan 0.25, f p |+| pan (0.75)]
 
 
-d1 $ sound "bd"
+d1 $ jux rev $ sound "bd(3,8)"
