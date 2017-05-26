@@ -49,6 +49,8 @@ d7 $ jux' [id, rev, (0.25 <~), (iter 4)] $ chop "<16 32 8>" $ sound "~ off ~ ~"
   # unit "c"
   |*| speed 2
 
-d9 $ jux (|*| speed 2) $ off 0.25 (# (crush "5" # speed (slow 4 $ scale 2 1 saw)))$ sound  "gabba(3,8,<0 4 2>)"
+d9 $ chunk 4 (hurry 2) $ jux (|*| speed 2) $ off 0.25 (# (crush "5" # speed (slow 4 $ scale 2 1 saw)))$ sound  "gabba(3,8,<0 4 2>)"
   # pan rand
   # end 0.1
+
+d1 $ jux rev $ n "2(3,8)" # sound "gabba"
