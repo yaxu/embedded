@@ -23,3 +23,4 @@ d4 $ every 4 (0.25 <~) $ jux (iter 4) $ sometimes (off 0.25 (# crush 3)) $ sound
 d5 $ off 0.25 (# s "pulse") $ jux' [id, iter 4, rev . chop 8, rev . chop 12] $ slow 2 $ n "d7 [a6 g5]" # sound "rash"
   |+| pan (slow 32 saw)
   |+| n (slow 4 "<0 5 12 2>")
+  
