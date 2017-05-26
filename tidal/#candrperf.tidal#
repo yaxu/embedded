@@ -1,5 +1,6 @@
 
-d1 $ slow 2 $ slow 2 $ off 0.25 (|+| n "7") $ n "c(3,8) e f g" # sound "superzow"
-  # lpf 1000
-  # lpq 0
+d1 $ slow 2 $ slow 2 $ off 0.125 (|+| n 12) $ off 0.25 (|+| n "7") $ n "c(3,8) e f g" # sound "supermandolin"
+  # lpf (slow 4 $ sine * 3000 + 400)
+  # lpq 0.2
+  # room 0.2
 
