@@ -11,10 +11,22 @@ let x = jux rev $ sometimes (|+| n 12)
 in
 do now <- getNow
    d1 $ (pure now + 1) ~> (ur' 128
-                           "x y ~ ~"
+                           "[y, ~ x] y ~ ~"
                            [("x", x), ("y", y)
                            ]
-                           []
+                           [("crash",
+                             degrade . (# speed (rev $ saw + 1))
+                            ),
+                            ("change",
+                             chunk 4 (slow 2)
+                            ),
+                            ("in",
+                             unDegradeBy (saw1)
+                            ),
+                            ("out",
+                             degradeBy (saw1)
+                            )
+                           ]
                           )
 
 
