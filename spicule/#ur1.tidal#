@@ -1,10 +1,10 @@
 
-d1 $ chunk 4 ((|+| n 12) . (fast 2)) $ n "c4(3,8)" # sound "supermandolin"
+d1 $ off 0.25 (|+| n 12) $ chunk 4 ((|+| n 12) . (fast 2)) $ n "c3(3,8)" # sound "supermandolin"
   # shape 0.3
-  # lpf 1000
-  # lpq 0.4
+  # hpf 500
+  # hpq 0.3
   # legato (scale 2 8 sine)
-  # gain 1.4
+  # gain 1.3
 
 
 
