@@ -10,8 +10,8 @@ let x = jux rev $ sometimes (|+| n 12)
     y = juxBy 0.4 rev $ superimpose (iter 4) $ smash 4 [1,2,3,4] $ sound "<bd bd bd bd*4> [sn:2 jvbass]"
 in
 do now <- getNow
-   d1 $ (pure now + 1) ~> (ur' 64
-                           "x y"
+   d1 $ (pure now + 1) ~> (ur' 128
+                           "x y ~ ~"
                            [("x", x), ("y", y)
                            ]
                            []
