@@ -1,15 +1,20 @@
-
-d1 $ jux rev $ sometimes (|+| n 12)
-  $ off 0.25 ((|+| n 7) . (# (s "superpiano" # gain 0.8))) $ chunk 4 ((|+| n 12) . (fast 2)) $ n "c3(3,8)" # sound "supermandolin"
-  # shape 0.6
-  # bpf (scale 300 1200 rand)
-  # bpq 10
-  # legato (scale 2 8 sine)
-  # gain 1.3
-  |+| n ("<c e f g>" + "[c g]/8")
-  |*| gain 0.9
-
-d2 $ juxBy 0.4 rev $ superimpose (iter 4) $ smash 4 [1,2,3,4] $ sound "<bd bd bd bd*4> [sn:2 jvbass]"
+let x = jux rev $ sometimes (|+| n 12)
+        $ off 0.25 ((|+| n 7) . (# (s "superpiano" # gain 0.8))) $ chunk 4 ((|+| n 12) . (fast 2)) $ n "c3(3,8)" # sound "supermandolin"
+        # shape 0.6
+        # bpf (scale 300 1200 rand)
+        # bpq 10
+        # legato (scale 2 8 sine)
+        # gain 1.3
+        |+| n ("<c e f g>" + "[c g]/8")
+        |*| gain 0.9
+    y = juxBy 0.4 rev $ superimpose (iter 4) $ smash 4 [1,2,3,4] $ sound "<bd bd bd bd*4> [sn:2 jvbass]"
+in
+d1 $ do now <- getNow
+        pure now <~ (ur' 64
+                     "x y"
+                     [("x", x), ("y", y)
+                     ]
+                     []
 
 
 let patterns = [("line",
