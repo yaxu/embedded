@@ -9,7 +9,7 @@ d1 $ jux rev $ sometimes (|+| n 12)
   |+| n ("<c e f g>" + "[c g]/8")
   |*| gain 0.9
 
-d2 $ juxBy 0.4 rev $ superimpose (iter 4) $ smash 4 [1,2,3,4] $ sound "bd*4 [sn:2 cp]"
+d2 $ juxBy 0.4 rev $ superimpose (iter 4) $ smash 4 [1,2,3,4] $ sound "<bd bd bd bd*4> [sn:2 cp]"
 
 
 let patterns = [("line",
