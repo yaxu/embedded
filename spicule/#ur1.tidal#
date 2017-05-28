@@ -32,7 +32,7 @@ do now <- getNow
 
 d1 $ stack [someCycles (jux rev) $ iter 4 $ chunk 4 (fast 2 . (# speed 2)) $ sound "[[odx:1(7,16)]/2, ~ odx, odx:8]"
             # accelerate (rand) # orbit 1 # room 0.1,
-            jux rev $ sometimes (|+| n 12)
+            someCycles (off 0.25 ((|*| up "0 7 12") . struct "x(3,8)" . (# sound "sid:0"))) $ jux rev $ sometimes (|+| n 12)
             $ off 0.25 ((|+| n 7) . (# (s "superpiano" # gain 0.8))) $ chunk 4 ((|+| n 12) . (fast 2)) $ n "c3(3,8)" # sound "supermandolin"
             # shape 0.6
             # bpf (scale 300 1200 rand)
