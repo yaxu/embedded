@@ -2011,7 +2011,7 @@ d1 $ sound "cp"
   # orbit 3
   # room 0.9
 
-let chunk2 n f p = cat [within (i%(fromIntegral n),(i+1)%(fromIntegral n)) f p | i <- [0..n-1]]
+let chunk2 n f p = cat [within (i%(fromIntegral n),(i+1)%(fromIntegral n)) f p | i <- (reverse [0..n-1])]
 :t chunk2
 
 v $ density 12 $ stack [chunk 4 (fast 2) "red blue grey green",
@@ -2019,8 +2019,8 @@ v $ density 12 $ stack [chunk 4 (fast 2) "red blue grey green",
                        ]
 
 import Sound.Tidal.Context
-x = fast 12 $ chunk 4 (fast 2) $ iter 4 ((p "red green blue") :: Pattern ColourD)
-y = fast 12 $ chunk2 4 (fast 2) $ iter 4 ((p "red green blue") :: Pattern ColourD)
+x = fast 12 $ chunk 4 (fast 2) $ iter 4 ((p "red green blue orange") :: Pattern ColourD)
+y = fast 12 $ chunk2 4 (fast 2) $ iter 4 ((p "red green blue orange") :: Pattern ColourD)
 
 v y
 
