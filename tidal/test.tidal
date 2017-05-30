@@ -2011,16 +2011,16 @@ d1 $ sound "cp"
   # orbit 3
   # room 0.9
 
-let chunk2 n f p = cat [within (i%(fromIntegral n),(i+1)%(fromIntegral n)) f p | i <- (reverse [0..n-1])]
-:t chunk2
+let chunk2 n f p = cat [within (i%(fromIntegral n),(i+1)%(fromIntegral n)) f p | i <- ([0..n-1])]
+
 
 v $ density 12 $ stack [chunk 4 (fast 2) "red blue grey green",
                         chunk2 4 (fast 2) "red blue grey green"
                        ]
 
 import Sound.Tidal.Context
-v $ fast 12 $ chunk 4 (fast 2) $ iter 4 ((p "purple green blue orange") :: Pattern ColourD)
-v2 $ fast 12 $ chunk2 4 (fast 2) $ iter 4 ((p "purple green blue orange") :: Pattern ColourD)
+v $ fast 12 $ superimpose (chunk 4 (fast 2)) $ iter 4 ((p "purple green blue orange") :: Pattern ColourD)
+v2 $ fast 12 $ superimpose (chunk2 4 (fast 2)) $ iter 4  ((p "purple green blue orange") :: Pattern ColourD)
 
 v y
-
+:t chunk2
