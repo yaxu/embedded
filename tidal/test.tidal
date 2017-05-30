@@ -2011,3 +2011,9 @@ d1 $ sound "cp"
   # orbit 3
   # room 0.9
 
+let chunk2 n f p = cat [within (i%(fromIntegral n),(i+1)%(fromIntegral n)) f p | i <- [0..n-1]]
+:t chunk2
+
+v $ density 12 $ stack [chunk 4 (fast 2) "red blue grey green",
+                        rev $ chunk2 4 (fast 2) "red blue grey green"
+                       ]
