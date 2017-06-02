@@ -1,0 +1,65 @@
+myk $ slow 2 $ sound "casio casio:1 casio:1 casio:1"
+  # orbit 4
+
+d1 $ jux rev $ chop 8 $ chunk 4 (hurry 2) $ slow 2 $ sound "bd sn:2 [cp arpy] cp"
+  # gain 1.1
+:t mask
+
+d1 $ mask ("x ~ ~ ~" :: Pattern String) $ off 0.25 (|*| up 7) $ sometimes (|*| speed 0.5) $ jux rev $ chunk 4 (|*| speed 2) $ (off 0.25 (# crush 4)$ sound "future [<sn:3 rash:35> rash:40]")
+  # speed 2
+  # size 0.6
+  # room (slow 16 $ saw * 0.9)
+  |+| n "<c d c5 d5>"
+
+
+d2 $ someCycles (const (sound "~ micron")) $ off 0.25 (# crush 4) $ chunk 4 (hurry 2) $ slow 2 $ n "0 .. 7" # sound "micron"
+  # orbit 1
+  # gain 1.1
+  # shape 0.5
+
+
+d3 $ off 0.25 (fast 2) $ sound "~ wobble*2"
+  # shape 0.7
+  # speed 2
+
+d1 $ sometimes (# vowel "a") $ sound "bd sn"
+   # shape "0.4 0.5"
+   # speed "4 2"
+
+
+hush
+(myk,_) <- superDirtSetters getNow
+
+(myk,_) <- dirtSetters getNow
+
+d2 $ sound "bd ~ [~ future]"
+  # speed 4
+
+cps 1.2
+
+import Sound.Tidal.OscStream
+
+let mykShape :: Shape
+    mykShape = Shape {params = [ s_p ],
+                      cpsStamp = False,
+                      latency = 0
+                     }
+    mykSlang = OscSlang {
+      path = "/fx",
+      timestamp = NoStamp,
+      namedParams = True,
+      preamble = []
+    }
+    (fx1, fx1_p) = pF "fx1" Nothing
+    (fx2, fx2_p) = pF "fx2" Nothing
+    (fx3, fx3_p) = pF "fx3" Nothing
+    (fx4, fx4_p) = pF "fx4" Nothing
+    mykb = do s <- makeConnection "127.0.0.1" 57120 mykSlang
+              return $ Backend s (\_ _ _ -> return ())
+
+bb2 <- stream bb mykShape
+
+bb <- mykb
+
+
+bb2 $ fx1 sine
