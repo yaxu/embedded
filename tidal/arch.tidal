@@ -6,9 +6,9 @@ myk $ flange 0
 
 myk $ glass "0"
 
-myk $ grunge "0"
+myk $ grunge "0.9"
 
-myk $ reverb "<0>"
+myk $ reverb "0.9"
 
 -- other patterns
 d1 $ chunk 4 (hurry 2) $ sometimes (# speed 2) $ jux rev $ off 0.25 (# crush 2) $ slow 2 $ sound "bd(3,8)"
@@ -52,6 +52,21 @@ d2 $ slow 2 $ off 0.25 (|+| n 7) $ n "d7 <a7 g7>" # sound "jx"
   # orbit 1
   |+| n (slow 2 "<0 7 12 5>")
 
-d1 $ sound "kurt ~ 4"
+d1 $ off 0.25 (# vowel "a") $ jux (iter 4 . (# speed 0.5)) $ off 0.125 (# crush 4) $ chop "<4 8>" $ slow 2 $ sound "<stabs:5 stabs:6>"
+  # pan rand
+  |*| up "<0 [7 12]>"
 
-cps 1.1
+d2 $ jux rev $ iter 4 $ n "0 .. 7" # sound "amencutup"
+  # gain 1
+  |+| speed 2
+
+d3 $ jux rev $ chunk 4 (# speed 2) $ slow 2 $ sound "gabbaloud(<6 7>,16)"
+
+d4 $ jux rev $ iter 4 $ loopAt "<4 8>" $ chop 16 $ sound "repetition"
+  # gain 1.4
+  # n (irand 8)
+
+d5 $ sound "~ off*4"
+  # vowel "<a e i>"
+
+cps 1.2
