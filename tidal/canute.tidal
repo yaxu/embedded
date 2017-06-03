@@ -3,9 +3,11 @@ myk $ slow 2 $ sound "casio casio:1 casio:1 casio:1"
 
 d1 $ jux rev $ chop 8 $ chunk 4 (hurry 2) $ slow 2 $ sound "bd sn:2 [cp arpy] cp"
   # gain 1.1
+
+
 :t mask
 
-d1 $ mask ("x ~ ~ ~" :: Pattern String) $ off 0.25 (|*| up 7) $ sometimes (|*| speed 0.5) $ jux rev $ chunk 4 (|*| speed 2) $ (off 0.25 (# crush 4)$ sound "future [<sn:3 rash:35> rash:40]")
+d1 $ off 0.25 (|*| up 7) $ sometimes (|*| speed 0.5) $ jux rev $ chunk 4 (|*| speed 2) $ (off 0.25 (# crush 4)$ sound "future [<sn:3 rash:35> rash:40]")
   # speed 2
   # size 0.6
   # room (slow 16 $ saw * 0.9)
@@ -79,3 +81,5 @@ ur' t outer_p ps fs = _slow t $ unwrap $ adjust <$> (timedValues $ (getPat . spl
         transform _ _ = id
         transform' str (s,e) p = s `rotR` (inside (1/(e-s)) (matchF str) p)
         matchF str = fromMaybe id $ lookup str fs
+
+
