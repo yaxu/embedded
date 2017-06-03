@@ -6,3 +6,6 @@ myk $ grunge 0
 myk $ reverb 0
 
 -- other patterns
+d1 $ sometimes (# speed 2) $ jux rev $ off 0.25 (# crush 2) $ slow 2 $ sound "bd(3,8)"
+
+
