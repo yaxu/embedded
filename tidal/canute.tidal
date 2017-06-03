@@ -4,9 +4,6 @@ myk $ slow 2 $ sound "casio casio:1 casio:1 casio:1"
 d1 $ jux rev $ chop 8 $ chunk 4 (hurry 2) $ slow 2 $ sound "bd sn:2 [cp arpy] cp"
   # gain 1.1
 
-
-:t mask
-
 d1 $ off 0.25 (|*| up 7) $ sometimes (|*| speed 0.5) $ jux rev $ chunk 4 (|*| speed 2) $ (off 0.25 (# crush 4)$ sound "future [<sn:3 rash:35> rash:40]")
   # speed 2
   # size 0.6
@@ -27,6 +24,13 @@ d3 $ off 0.25 (fast 2) $ sound "~ wobble*2"
 d1 $ sometimes (# vowel "a") $ sound "bd sn"
    # shape "0.4 0.5"
    # speed "4 2"
+
+d1 $ sound "gabba(3,8)"
+
+
+d1 $ loopAt 4 $ sound "repetition"
+  # gain 1.1
+
 
 
 hush
