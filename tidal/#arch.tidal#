@@ -3,9 +3,22 @@ myk $ delay 0
 myk $ flange 0
 myk $ glass 0
 myk $ grunge 0
-myk $ reverb 0
+
+myk $ reverb "<0 1>"
 
 -- other patterns
-d1 $ sometimes (# speed 2) $ jux rev $ off 0.25 (# crush 2) $ slow 2 $ sound "bd(3,8)"
+d1 $ chunk 4 (hurry 2) $ sometimes (# speed 2) $ jux rev $ off 0.25 (# crush 2) $ slow 2 $ sound "bd(3,8)"
+  |*| speed 4
 
+d2 $ jux (rev . chop 2) $ chunk 4 (hurry 2) $ sound "odx [stabs ~ stabs:2 ~]"
+  # lpf (slow 4 (sine * 3000))
+  # lpq 0.1
 
+d3 $ every 4 (0.25 <~) $ jux rev $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "claus"
+  # speed 2
+  # gain 1.2
+
+d4 $ jux rev $ slow 2 $ n (off "<0.25 0.12>" (+7) $slow 2 $ "c7(3,8) a7(3,8) f7(3,8) e7*2") # sound "rash"
+  # gain 1.2
+  # lpf (slow 4 (sine * 3000 + 1000))
+  # lpq 0.1
