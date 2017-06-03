@@ -1,0 +1,8 @@
+-- drum fx patterns
+myk $ delay 0
+myk $ flange 0
+myk $ glass 0
+myk $ grunge 0
+myk $ reverb 0
+
+-- other patterns

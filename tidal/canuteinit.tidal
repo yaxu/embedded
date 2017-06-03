@@ -2,3 +2,34 @@
 
 myk $ slow 2 $ sound "casio casio:1 casio:1 casio:1"
   # orbit 4
+
+
+import Sound.Tidal.OscStream
+
+let mykShape :: Shape
+    mykShape = Shape {params = [ s_p ],
+                      cpsStamp = False,
+                      latency = 0
+                     }
+    mykSlang = OscSlang {
+      path = "/fx",
+      timestamp = NoStamp,
+      namedParams = True,
+      preamble = []
+    }
+    (grunge, grunge_p) = pF "grunge" Nothing
+    (glass, glass_p) = pF "glass" Nothing
+    (reverb, reverb_p) = pF "reverb" Nothing
+    (flange, flange_p) = pF "flange" Nothing
+    mykb = do s <- makeConnection "192.168.7.2" 57120 mykSlang
+              return $ Backend s (\_ _ _ -> return ())
+
+bb <- mykb
+bb2 <- stream bb mykShape
+
+bb2 $ delay 0
+bb2 $ flange 0
+bb2 $ glass 0
+bb2 $ grunge 0
+bb2 $ reverb 0
+
