@@ -19,11 +19,16 @@ let mykShape :: Shape
     }
     (grunge, grunge_p) = pF "grunge" Nothing
     (glass, glass_p) = pF "glass" Nothing
-    (flanger, flanger_p) = pF "flanger" Nothing
+    (reverb, reverb_p) = pF "reverb" Nothing
+    (flange, flange_p) = pF "flange" Nothing
     mykb = do s <- makeConnection "192.168.7.2" 57120 mykSlang
               return $ Backend s (\_ _ _ -> return ())
 
 bb <- mykb
 bb2 <- stream bb mykShape
 
-bb2 $ grunge 0.
+bb2 $ delay 0
+bb2 $ flange 0
+bb2 $ glass 0
+bb2 $ grunge 0
+bb2 $ reverb 0
