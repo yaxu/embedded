@@ -7,4 +7,18 @@ d2 $ degrade $ jux rev $ chop "<4 2 3>" $ n (off 0.125 (+12) $ someCycles (off 0
   # crush 3
   |+| n "-12"
 
-d3 $ sound "~ bd*8"
+d3 $ off 0.25 (# crush 3) $  jux rev $ slow 2 $ sound "bd*3 bd*8"
+  # speed 4
+  # orbit 1
+  # room 0.9
+  # gain 0.7
+  # pan (slow 8 sine)
+
+d4 $ off "<0.25 0.5>" (|+| n 1) $ sound "~ [stabs stabs:1?]"
+  # gain 1.2
+
+d5 $ chunk 4 (hurry 2) $ jux rev $ iter 4 $ loopAt 2 $ chop 8 $ sound "os"
+  # gain 1.3
+
+
+
