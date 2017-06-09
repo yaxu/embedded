@@ -14,11 +14,18 @@ d3 $ off 0.25 (# crush 3) $  jux rev $ slow 2 $ sound "bd*3 bd*8"
   # gain 0.7
   # pan (slow 8 sine)
 
-d4 $ off "<0.25 0.5>" (|+| n 1) $ sound "~ [stabs stabs:1?]"
+d4 $ gap "<8 4 2>" $ off "<0.25 0.5>" (|+| n 1) $ sound "~ [<~ ~> stabs:1?]"
   # gain 1.2
+  # vowel "<a e i>"
 
-d5 $ chunk 4 (hurry 2) $ jux rev $ iter 4 $ loopAt 2 $ chop 8 $ sound "os"
+d5 $ jux rev $ chunk 4 (hurry 2) $ iter 4 $ loopAt 2 $ chop 8 $ sound "<os os:1>"
   # gain 1.3
 
+d6 $ jux rev $ chunk 4 (hurry 2) $ sound "~ [off off?]"
+  |+| up "<0 7 12>"
 
+d5 $ jux rev $ chunk 4 (hurry 2) $ sound "[gabba off gabba*2 h]"
+  # delay "0.9"
+  # delayt 
 
+d8 $ sound ""
