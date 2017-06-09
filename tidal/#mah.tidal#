@@ -5,7 +5,7 @@ dorkface
 http://192.168.43.19:8000/index16.html
 
 
-d1 $ sound "bd sn:2"
+d1 $ sound "arpy arpy:2 arpy:3"
 
-v2 $ "red blue"
+v2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow blue"
 
