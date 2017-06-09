@@ -9,9 +9,14 @@ d1 $ every 3 (0.25 <~) $ sound "arpy arpy:2 bd arpy:3"
 
 d1 $ weave 16 (
 
-d1 $ weave 16 (n "0 .. 7" # sound "arpy")
-  [vowel "a e i"]
-
+d1 $ superimpose (rev . (# pan "0")) $ weave 16 (n "0 .. 7" # sound "arpy")
+  [vowel "a e i",
+   vowel "a i [o u] e",
+   speed "1 2",
+   speed "1 2 3 1"
+  ]
+  # pan "0.5"
+hush
 
 hushv2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow green"
 
