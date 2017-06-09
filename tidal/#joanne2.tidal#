@@ -1,0 +1,7 @@
+d1 $ sound "bd(5,8)"
+
+d2 $ sound "~ wobble"
+
+d3 $ jux (rev . (|*| speed 2)) $ n (off 0.25 (+7) "d7(3,8)") # sound "rash"
+  |+| n "<0 -12 7>"
+

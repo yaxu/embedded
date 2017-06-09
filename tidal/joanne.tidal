@@ -48,7 +48,7 @@ d2 $ slow 2 $ jux ((# speed 2) . rev) $ chunk 4 (hurry 2) $ slow 2 $ n "0 .. 7" 
   |+| n "4"
   # speed 1.5
 
-
+  
 d3 $ degrade $ slow 2 $ chunk 4 (hurry 2) $ jux rev $ sound "future [feel:3 future:2]"
   # lpf (slow 4 $ saw * 3000 + 1000)
   # lpq 0.3
