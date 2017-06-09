@@ -8,6 +8,10 @@ d1 $ jux' [id, rev, (0.25 <~)] $ slow 8 $ loopAt 16 $ striate "[64 32]*4" $ soun
   # gain 1.4
   # room 0.8
   # orbit 1
+hush
+d1 $ sound "sn:3"
+
+d1 $ sound "supermandolin"
 
 d2 $ jux ((0.25 <~) . rev) $ loopAt 2 $ chop 8 $ sound "os"
   # gain 1.4
