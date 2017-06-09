@@ -15,8 +15,11 @@ d1 $ superimpose (rev . (# pan "0")) $ weave 16 (n "0 .. 7" # sound "arpy")
    speed "1 2",
    speed "1 2 3 1"
   ]
-  # pan "0.5"
-hush
+  # pan "0.75"
+
+
+d1 $ sometimes (# speed 4)$ sound "bd*8"
+  # pan rand
 
 hushv2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow green"
 
