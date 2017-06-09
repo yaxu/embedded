@@ -1,8 +1,10 @@
-d1 $ sound "bd(5,8)"
 
-d2 $ sound "~ wobble"
 
-d3 $ jux (rev . (|*| speed 2)) $ n (off 0.25 (+7) "d7(3,8)") # sound "rash"
-  |+| n "<0 -12 7>"
+d2 $ degrade $ jux rev $ chop "<4 2 3>" $ n (off 0.125 (+12) $ someCycles (off 0.25 (+7)) $ slow 2 $ "f7 c7 g7 ~") # sound "rash"
+  # lpf (slow 2 $ sine * 2000 + 400)
+  # lpq 0.2
+  # gain 1
+  # crush 3
+  |+| n "-12"
 
-d5 $ sound "arpy"
+d3 $ sound "~ bd*8"
