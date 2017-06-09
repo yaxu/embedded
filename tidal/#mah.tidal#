@@ -23,7 +23,12 @@ d1 $ someCycles (slow 2) $ sometimes (# speed 4)$ sound "bd*8"
 
 d2 $ slow 2 $ jux' [id, rev] $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "d7(3,8) a7*2 f6(3,8) e7(3,8)") # sound "rash"
 
-
+d3 $ sound "supermandolin(3,8)"
+  # crush 6
+  # room (slow 8 saw)
+  # size 0.8
+  # legato 4
+  # gain 1.1
 
 v2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow green"
 
