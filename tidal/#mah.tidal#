@@ -5,7 +5,13 @@ dorkface
 http://192.168.43.19:8000/index16.html
 
 
-d1 $ sound "arpy arpy:2 arpy:3"
+d1 $ every 3 (0.25 <~) $ sound "arpy arpy:2 bd arpy:3"
 
-v2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow blue"
+d1 $ weave 16 (
+
+d1 $ weave 16 (n "0 .. 7" # sound "arpy")
+  [vowel "a e i"]
+
+
+hushv2 $ fast 12 $ every 3 (0.25 <~) $ "red orange yellow green"
 
