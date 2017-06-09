@@ -4,6 +4,10 @@ yaxphone
 dorkface
 http://192.168.43.19:8000/index16.html
 
+d1 $ jux (iter 4) $ slow 4 $ loopAt 8 $ striate 16 $ sound "bev*4"
+  # ga
+
+d2 $ sound "bd*100"
 
 d1 $ every 3 (0.25 <~) $ sound "arpy arpy:2 bd arpy:3"
 
