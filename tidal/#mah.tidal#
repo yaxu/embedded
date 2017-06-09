@@ -1,0 +1,11 @@
+cps 0.8
+
+yaxphone
+dorkface
+http://192.168.43.19:8000/index16.html
+
+
+d1 $ sound "bd sn:2"
+
+v2 $ "red blue"
+
