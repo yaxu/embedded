@@ -2024,3 +2024,5 @@ v2 $ fast 12 $ superimpose (chunk2 4 (fast 2)) $ iter 4  ((p "purple green blue 
 
 v y
 :t chunk2
+
+
