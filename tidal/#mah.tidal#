@@ -1,11 +1,3 @@
 cps 0.8
 
-hush
-
-d1 $ degrade $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 $ "f7(3,8) a7*3 c7(3,8) e7(3,8,2)") # sound "rash"
-  # lpf (sine * 3000 + 1000)
-  # lpq 0.2
-  # room 0.5
-
-d2 $ degradeBy 0.8 $ off 0.25 (# crush 4) $ iter 4 $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "micron"
-  # gain 1.1
+d1 $ slow 2 $ n "f7(3,6) a7(3,8,2) c7*3 e7(3,8)" # sound "rash"
