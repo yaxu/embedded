@@ -7,7 +7,10 @@ http://192.168.43.19:8000/index16.html
 d1 $ jux' [id, rev, (0.25 <~)] $ slow 8 $ loopAt 16 $ striate "[64 32]*4" $ sound "bev*8"
   # gain 1.4
 
-d2 $ loopAt 2 $ chsound "os"
+d2 $ jux ((0.25 <~) . rev) $ loopAt 2 $ chop 8 $ sound "os"
+  # gain 1.4
+
+
 
 d2 $ sound "bd*100"
 
