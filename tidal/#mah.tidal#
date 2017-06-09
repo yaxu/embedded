@@ -4,8 +4,10 @@ yaxphone
 dorkface
 http://192.168.43.19:8000/index16.html
 
-d1 $ jux (iter 4) $ slow 4 $ loopAt 8 $ striate 16 $ sound "bev*4"
-  # ga
+d1 $ jux' [id, rev, (0.25 <~)] $ slow 8 $ loopAt 16 $ striate "[64 32]*4" $ sound "bev*8"
+  # gain 1.4
+
+d2 $ loopAt 2 $ chsound "os"
 
 d2 $ sound "bd*100"
 
