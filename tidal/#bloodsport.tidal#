@@ -65,7 +65,7 @@ let txs = [("rev", rev),
                |*| speed 4
                # gain 0.7
               ),
-              ("under", s "bssnare:2 ~ bssnare:6" # orbit 2 # delay 0.8 # delayt "0.001" # delayfb 0.9 # hpf (scale 3saw)
+              ("under", s "bssnare:2 bs <bssnare:6 [bssnare:6 ~ bssnare:6]>" # orbit 2 # delay 0.8 # delayt "0.001" # delayfb 0.9 # hpf (slow 16 $ scale 3000 100 saw) # room 0.9 # size 0.6 # hpq 0.1
               )
              ]
 in
