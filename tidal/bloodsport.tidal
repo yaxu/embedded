@@ -28,7 +28,8 @@ let txs = [("rev", rev),
            ("drop", (chop ((floor <$>) $ saw1 * 100))),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1))),
-           ("crushup", juxBy 0.5 rev . off 0.25 (# crush 4) . (|*| gain 0.8))
+           ("crushup", juxBy 0.5 rev . off 0.25 (# crush 4) . (|*| gain 0.8)),
+           ("roomout", (# (orbit 3 # room saw # size saw)))
           ]
     pats =   [("hook",
                loopAt 2 $ chop 16 $ s "bsbass"
