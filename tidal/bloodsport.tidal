@@ -65,12 +65,12 @@ let txs = [("rev", rev),
                |*| speed 4
                # gain 0.7
               ),
-              ("under", juxBy 0.5 rev $ off 0.25 (# crush 4) $ s "bssnare:2 ~ <bssnare:6 [bssnare:6 ~ bssnare:6]>" # orbit 2 # delay 0.8 # delayt "0.001" # delayfb 0.9 # hpf (slow 16 $ scale 3000 100 saw) # room 0.9 # size 0.6 # hpq 0.1
+              ("under", juxBy 0.5 rev $ off 0.25 (# crush 4) $ s "bssnare:2 ~ <bssnare:6 [bssnare:6 ~ bssnare:6]>" # orbit 2 # delay 0.8 # delayt "0.001" # delayfb 0.9 # hpf (slow 16 $ scale 3000 100 saw) # room 0.9 # size 0.6 # hpq 0.1 # gain 0.9
               )
              ]
 in
 -- d1 $ ur' 64 "[kick2, under]" pats txs
-d1 $ ur' 128 "[~ hook ! !, kick:in kick:drop kick:rev [kick kick:chop], [perc perc:chop] perc ! perc:drop] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2,under]" pats txs
+d1 $ ur' 128 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2,under]" pats txs
 
 
 
