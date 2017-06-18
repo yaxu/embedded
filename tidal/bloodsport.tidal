@@ -29,7 +29,8 @@ let txs = [("rev", rev),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1))),
            ("crushup", juxBy 0.5 rev . off 0.25 (# crush 4) . (|*| gain 0.8)),
-           ("roomout", (# (orbit 3 # room saw # size saw)))
+           ("roomout", (# (orbit 3 # room saw # size saw))),
+           ("deg", degradeBy saw)
           ]
     pats =   [("hook",
                loopAt 2 $ chop 16 $ s "bsbass"
