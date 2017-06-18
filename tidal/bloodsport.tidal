@@ -59,7 +59,7 @@ let txs = [("rev", rev),
                # shape 0.3
               ),
               ("upthere",
-               jux rev $ off 0.125 ((# (crush 3 # orbit 1 # room (slow 8 $ sine * 0.5)))) $ off 0.25 (|*| speed 2) $ up "0 [7*2 -2] ~ <12 12*3>" # n "14" # sound "bsguitar"
+               juxBy 0.7 rev $ off 0.125 ((# (crush 3 # orbit 1 # room (slow 8 $ sine * 0.5)))) $ off 0.25 (|*| speed 2) $ up "0 [7*2 -2] ~ <12 12*3>" # n "14" # sound "bsguitar"
                # lpf (slow 2 $ tri * 2000 + (slow 4 $ saw * 300))
                # lpq 0.3
                |*| speed 4
