@@ -73,7 +73,7 @@ let txs = [("rev", rev),
              ]
 in
 -- d1 $ ur' 64 "[kick2, under]" pats txs
-d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2:deg,hook,~ [under under:crushup],~ kick, ~ ~ [~ voc] ~] . [hook:roomout,[under under:crushup] ~,kick ~, ~ [perc perc:drop] [~ voc] [kick:drop,kick2:roomout]] . ~" pats txs
+d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2:deg,hook,~ [under under:crushup],~ kick, ~ ~ [~ voc] ~] . [hook:roomout,[under under:crushup] ~,kick ~, ~ [perc perc:drop] [~ [voc ! ! voc:drop]] [kick:drop,kick2:roomout]] . ~" pats txs
 
 cps (-1)
 cps 1.1
