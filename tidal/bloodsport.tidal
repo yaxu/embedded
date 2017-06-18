@@ -79,6 +79,10 @@ d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! p
 cps (-1)
 cps 1.1
 
+d2 $ slow 4 $ n "cs7 ~ e6(3,8) ~" # sound "xx"
+  # shape 0.1
+
+
 let txs = [("rev", rev),
            ("in", fadeIn 1),
            ("out", fadeOut 1),
@@ -107,3 +111,4 @@ in
 d1 $ ur' 16 "[kick2 ! ! [kick2 kick2:drop], snare:out, [voc:erk ~] ~ [~ voc] ~]" pats txs
 
 
+hush
