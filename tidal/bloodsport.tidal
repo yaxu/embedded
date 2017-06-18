@@ -26,6 +26,7 @@ let txs = [("rev", rev),
            ("out", fadeOut 1),
            ("chop", rev . chop 128),
            ("drop", (chop ((floor <$>) $ saw1 * 100))),
+           ("dropquiet", (chop ((floor <$>) $ saw1 * 100)) . (# gain 0.666)),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1))),
            ("crushup", juxBy 0.5 rev . off 0.25 (# crush 4) . (|*| gain 0.8)),
@@ -73,7 +74,7 @@ let txs = [("rev", rev),
              ]
 in
 -- d1 $ ur' 64 "[kick2, under]" pats txs
-d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2:deg,hook, [~ under] [under under:crushup],~ kick, ~ ~ [~ voc] ~] . [hook,[under under:crushup] ~,kick ~, ~ [perc perc:drop] [~ [voc ! ! voc:drop]] [kick:drop,kick2:roomout]] . ~" pats txs
+d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2:deg,hook, [~ under] [under under:crushup],~ kick, ~ ~ [~ voc] ~] . [hook,[under under:crushup] ~,kick ~, ~ [perc perc:drop] [~ [voc ! ! voc:dropquiet]] [kick:drop,kick2:roomout]] . ~" pats txs
 
 cps (-1)
 cps 1.1
