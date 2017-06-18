@@ -28,7 +28,7 @@ let txs = [("rev", rev),
            ("drop", (chop ((floor <$>) $ saw1 * 100))),
            ("erk", (# vowel "a e i o u")),
            ("urp", (# speed (saw1 + 1))),
-           ("crushup", juxBy 0.5 rev $ off 0.25 (# crush 4))
+           ("crushup", juxBy 0.5 rev . off 0.25 (# crush 4))
           ]
     pats =   [("hook",
                loopAt 2 $ chop 16 $ s "bsbass"
