@@ -2037,12 +2037,11 @@ d1 $ sound "bd"
 
 let hurry x = (|*| speed (fromRational <$> x)) . fast x
 
-d1 $ sound "bd sn:1"
+d1 $ fast "<3 4>" $ sound "bd sn:1"
+  # speed 2
 
-
-
-
-
+d1 $ sound "bd sn <cp gabba> [sn:2 arpy]"
+  # speed "<1 2 3>"
 
 
 
