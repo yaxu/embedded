@@ -2026,3 +2026,23 @@ v y
 :t chunk2
 
 
+
+
+
+
+
+
+
+d1 $ sound "bd"
+
+let hurry x = (|*| speed (fromRational <$> x)) . fast x
+
+d1 $ sound "bd sn:1"
+
+
+
+
+
+
+
+
