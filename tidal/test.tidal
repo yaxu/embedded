@@ -2048,8 +2048,24 @@ d1 $ sound "bd sn <cp gabba> [sn:2 arpy]"
 d1 $ every 4 (density 2) $ 
   (sound "bd sn cp" # speed "2")
 
-d1 $ slow 2 $ chunk 4 (hurry 2) $ n (run 8) # sound "amencutup"
+d1 $ slow 2 $ chunk 4 (rev . hurry 2) $ n (run 8) # sound "amencutup"
+
+d1 $ jux (rev . fast 2 . (iter 4)) $ sound "bd jvbass sn:2 jvbass:2"
 
 let hurry x = (|*| speed (fromRational <$> x)) . fast x
 
+$ = ()
 
+(3 * 4) + 2
+12 + 2 = 14
+
+3 * (4 + 2)
+3 * 6 = 18
+
+
+d1 $ fast 2 (sound "bd sn" # speed "2 3")
+
+d1 $ fast 2 $ sound "bd sn" # speed "2 3"
+
+d1 $ stack [
+           ]
