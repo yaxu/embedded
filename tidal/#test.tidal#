@@ -2025,9 +2025,24 @@ v2 $ fast 12 $ superimpose (chunk2 4 (fast 2)) $ iter 4  ((p "purple green blue 
 v y
 :t chunk2
 
-cps 0.5
 
-d1 $ (stut' 32 0.125 (|=| gain "1")) $ sound "bd ~ ~ bd"
 
-d1 $ sound "bd*4"
-  # pan saw
+
+
+
+
+
+
+d1 $ sound "bd"
+
+let hurry x = (|*| speed (fromRational <$> x)) . fast x
+
+d1 $ so
+
+
+
+
+
+
+
+
