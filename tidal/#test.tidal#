@@ -2065,6 +2065,7 @@ $ = ()
 
 d1 $ fast 2 (sound "bd sn" # speed "2 3")
 
+d1 $ fast 2 $ sound "bd sn" # speed "2 3"
+
 d1 $ fast 2 (sound "bd sn") # speed "2 3"
 
-d1 $ fast 2 sound "bd sn" # speed "2 3"
