@@ -2069,3 +2069,6 @@ d1 $ fast 2 $ sound "bd sn" # speed "2 3"
 
 d1 $ stack [
            ]
+
+d1 $ up (listToPat [0..11]) # sound "arpy"
+
