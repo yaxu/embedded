@@ -75,12 +75,19 @@ let txs = [("rev", rev),
 in
 -- d1 $ ur' 64 "[kick2, under]" pats txs
 d1 $ ur' 256 "[hook ! ! ~, kick:in kick:drop kick:rev [kick kick:chop], perc ! perc:drop [perc perc:chop]] [kick2:in kick2 ! kick2:drop, kick, ~ ~ [~ voc] ~, snare] . [kick2:deg,hook, [~ under] [under under:crushup],~ kick, ~ ~ [~ voc] ~] . [hook,[under under:crushup] ~,kick ~, ~ [perc perc:drop] [~ [voc ! ! voc:dropquiet]] [kick:drop,kick2:roomout]] . ~" pats txs
+  |*| gain 1.4
 
 cps (-1)
 cps 1.1
 
 d2 $ slow 4 $ n "cs7 ~ e6(3,8) ~" # sound "xx"
   # shape 0.1
+
+d2 $ slow 2 $ off 0.125 (# (s "supermandolin" # gain 1.4 # legato 8)) $ sometimes (|-| n 12) $ (jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "a8(3,8) g8*2 f8(3,8) c9(3,8)") # sound "supergong")
+  # lpf (slow 4 $ rev $ sine * 1000 + 2000)
+  # lpq 0.2
+  |+| n "-48"
+  |+| n "<0 12 12 7 0 7>"
 
 
 let txs = [("rev", rev),
