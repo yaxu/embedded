@@ -73,9 +73,9 @@ devices <- midiDevices
 
 m1 <- midiStream devices "Scarlett 2i4 USB MIDI 1" 1 volcakeysController
 
+let m p = m1 (p # nudge 0.32)
 
-
-m1 $ slow 2 $ n (off 0.25 (+7) $ "c(3,8) a(3,8)")
+m $ slow 2 $ n (off 0.25 (+7) $ "c(3,8) a(3,8)")
   # nudge 0.32
   # cutoff (scale 0.5 1 sine)
 
