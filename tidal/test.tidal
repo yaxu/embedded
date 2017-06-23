@@ -2090,7 +2090,6 @@ d3 $ chunk 4 (hurry 2) $ off 0.25 (# speed 2) $ sound "odx(3,8)"
   # gain 1.2
   # crush 2
 
-
 d4 $ sometimes (|+| n "12") $ off 0.125 (# s "rash") $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "c7(3,8) e8(3,8) f7(3,8,2) g7*3") # sound "jx"
   # lpf (slow 2 $ sine * 3000 + 500)
   # lpq 0.2
