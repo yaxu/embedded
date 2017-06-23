@@ -2091,4 +2091,7 @@ d3 $ chunk 4 (hurry 2) $ off 0.25 (# speed 2) $ sound "odx(3,8)"
   # crush 2
 
 
-d4 $ n "c7 e8" # sound "jx"
+d4 $ jux rev $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "c7(3,8) e8(3,8) f7(3,8,2) g7*3") # sound "jx"
+
+
+d3 $ loopAt 4 $ chop 32sound "paper"
