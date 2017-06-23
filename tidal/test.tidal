@@ -2074,11 +2074,12 @@ d1 $ up (listToPat [0..11]) # sound "arpy"
 
 cps 0.4
 
-d1 $ (up "<0 [2 [3 5]] 7 [~ 12]>" # sound "scream")
+d1 $ (jux rev $ chop 8 $ up "<0 [2 [3 5]] 7 [~ 12]>" # sound "scream")
   # room 0.9
   # size 0.9
   # orbit 1
   # legato 1
+
   # lpf (slow 8 $ sine * 1000 + 500)
   # lpq 0.2
 
