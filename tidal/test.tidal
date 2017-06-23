@@ -2072,3 +2072,20 @@ d1 $ stack [
 
 d1 $ up (listToPat [0..11]) # sound "arpy"
 
+cps 0.4
+
+d1 $ (up "<0 [3 5] 7 ~>" # sound "scream")
+  # room 0.9
+  # size 0.9
+  # orbit 1
+  # legato 1
+  # lpf (slow 8 $ sine * 1000 + 500)
+  # lpq 0.2
+
+d2 $ jux rev $ iter 4 $ loopAt 1 $ chop 8 $ sound "<os os:1 os:2>"
+  # shape 0.8
+
+
+d3 $ chunk 4 (hurry 2) $ off 0.25 (# speed 2) $ sound "odx(3,8)"
+  # gain 1.2
+  # crush 2
