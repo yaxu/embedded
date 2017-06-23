@@ -65,15 +65,6 @@ d1 $ rev $ slow 4 $ chop 64 $ sound "bev"
 
 cps 2
 
-import Sound.Tidal.MIDI.Context
-import Sound.Tidal.MIDI.VolcaKeys
-
-displayOutputDevices >>= putStrLn
-devices <- midiDevices
-
-m1 <- midiStream devices "Scarlett 2i4 USB MIDI 1" 1 volcakeysController
-
-let m p = m1 (p # nudge 0.32)
 
 m $ slow 2 $ n (off 0.25 (+7) $ "c(3,8) a(3,8)")
   # nudge 0.32
