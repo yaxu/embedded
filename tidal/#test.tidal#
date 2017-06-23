@@ -2094,10 +2094,9 @@ d4 $ sometimes (|+| n "12") $ off 0.125 (# s "rash") $ jux rev $ slow 2 $ n (off
   # lpf (slow 2 $ sine * 3000 + 500)
   # lpq 0.2
   # orbit 1
-  # room 0.9
-  # size 0.9
+  # room 0.5
+  # size 0.3
   |+| n "<0 12>"
-  
 
 d3 $ off 0.25 (# crush 4) $ jux rev $ iter 4 $ loopAt 4 $ chop "<8 16>" $ sound "paper"
   
@@ -2105,7 +2104,4 @@ d2 $ off 0.25 (# crush 4) $ jux rev $ every 2 (slow 2) $ chunk 4 (hurry 2) $ n "
   
 d1 $ every 3 (0.25 <~) $ jux rev $ stut "<4 8>" 0.8 "<0.25 0.25 0.5>" $ every 4 (# crush 4) $ sound "gabba(3,8)"
 
-d1 $ sound "bd(3,8)"
-
-
-d3 $ sound "~ off"
+hush
