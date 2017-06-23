@@ -128,3 +128,9 @@ d2 $ jux rev $ loopAt 4 $ chop 16 $ sound "paper"
   # gain 0.9
 
 d3 $ loopAt 2 $ chop 8 $ sound "os"
+
+d2 $ slow 4 $ sound "scream"
+
+d4 $ jux rev $ sound "newnotes(3,8)"
+   # speed 4
+
