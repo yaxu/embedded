@@ -2074,7 +2074,7 @@ d1 $ up (listToPat [0..11]) # sound "arpy"
 
 cps 0.4
 
-d1 $ (up "<0 [3 5] 7 ~>" # sound "scream")
+d1 $ (up "<0 [2 [3 5]] 7 [~ 12]>" # sound "scream")
   # room 0.9
   # size 0.9
   # orbit 1
