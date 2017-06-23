@@ -2079,5 +2079,5 @@ d1 $ up "<0 3 7 ~>" # sound "scream"
   # size 0.9
 
 
-
+d2 $ loopAt 1 $ chop 8 $ sound "arc"
 
