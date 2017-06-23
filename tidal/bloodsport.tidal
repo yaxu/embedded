@@ -119,3 +119,20 @@ d1 $ ur' 16 "[kick2 ! ! [kick2 kick2:drop], snare:out, [voc:erk ~] ~ [~ voc] ~]"
 
 
 hush
+
+
+
+d1 $ sometimes (|+| n "12") $ slow 2 $ jux rev $ slow 2 $ n (off 0.25 (+12) $ off 0.25 (+7) $ slow 2 "c6(3,8) e6(3,8,2) f6*4 g6*3") # sound "rash"
+
+d2 $ jux rev $ loopAt 4 $ chop 8 $ sound "paper"
+  # gain 0.9
+
+d3 $ iter 4 $ loopAt 2 $ chop 8 $ sound "os"
+  # shape 0.6
+
+d2 $ slow 4 $ sound "scream"
+
+d4 $ jux rev $ sound "newnotes(3,8)"
+   # speed 4
+
+d1 $ loopAt 2 $ sound "repetition"
