@@ -1,7 +1,7 @@
 d1 $ slow 4 $
   stack [sound "cp [~ ~ arpy] bd*2 ~"
          ]
-  # nudge "0.04"
+
 
   
 
@@ -27,8 +27,8 @@ d1 $ seqPLoop [(0,2,sound "bd*2"),
               ]
 
 hush
-d1 $ sound "bd"              
 
+d1 $ sound "bd*8"
 
 let p = "[1 2 3 4 5 6 7 8]/8" :: Pattern Int
 
