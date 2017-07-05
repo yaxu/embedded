@@ -4,7 +4,7 @@ d2 $ slow 2 $ every 8 (const (s "bd9(3,8)" # shape 0.9)) $ jux rev $ stut "<4 8 
   # speed 1
 
 d1 $ jux rev $ chunk 4 (hurry 2) $
-  off 0.25 (|+| (n "<7 12>" |+| speed 2)) $ slow 2 $ n "3 ~ 3(3,8) [14 6]" # sound "jvr"
+  off 0.25 (|+| (n "<7 12>" |+| speed 2)) $ slow 2 $ n "3 ~ [~ 3] [14 6]" # sound "jvr"
   # shape 0.7
 
 d3 $ never (off 0.125 (|+| n 7)) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 ~ [~ 9] ~" # sound "stabs"
