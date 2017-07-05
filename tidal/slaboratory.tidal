@@ -2,7 +2,7 @@ cps 0.45
 
 # hello listeners, thanks for listening!
 
-d1 $ jux rev $ n (off 0.25 (+ "<7 12>") $ off 0.25 (slow 1.5) $ "d7 ~ [d6 g7] c7") # sound "jx"
+d1 $ jux rev $ off 0.25 (|+| (crush "3" |+| n "<12 -12>")) $ n (off 0.25 (+ "<7 12>") $ "d7 ~ [d6 g7] c7") # sound "jx"
   # legato 0.5
   # lpf (slow 8 $ scale 500 2000 sine)
   # lpq "<0.2 0.3>"
