@@ -46,3 +46,5 @@ let br :: (ParamPattern -> IO ()) -> Time -> ParamPattern -> IO ()
 br1 4 $ sound "bd sn"
 
 hush
+
+tidal_version
