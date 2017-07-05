@@ -13,4 +13,5 @@ d3 $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 0 [~ 6] ~" # sound "sta
   # orbit 1
   # room 0.7
   # size 0.4
+  |+| pan (slow 4 saw)
   
