@@ -9,7 +9,7 @@ d1 $ jux rev $ chunk 4 (hurry 2) $
   |*| speed "-0.5"
 
 d3 $ never (off 0.125 (|+| n 7)) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 ~ [~ 9] ~" # sound "stabs"
-  # lpf "<600 1000>"
+  -- # lpf "<600 1000>"
   # lpq (slow 16 $ scale 0.2 0.4 saw )
   # orbit 1
   # room 0.9
