@@ -2,7 +2,8 @@ cps 0.45
 
 # hello listener, thanks for listening
 
-d1 $ n (off 0.25 (slow 1.5) $ "d4 ~ d5 c5") # sound "jx"
-  # legato 1
-  # hpf 1000
+d1 $ jux rev $ n (off 0.25 (+ 7) $ off 0.25 (slow 1.5) $ "d7 ~ d6 c7") # sound "jx"
+  # legato 0.5
+  # hpf (slow 8 $ scale 500 600 sine)
+  # hpq "<0.2 0.3>"
   
