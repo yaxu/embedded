@@ -7,9 +7,9 @@ d1 $ jux rev $ chunk 4 (hurry 2) $
   off 0.25 (|+| (n "<7 12>" |+| speed 2)) $ slow 2 $ n "3 ~ 3(3,8) [14 6]" # sound "jvr"
   # shape 0.7
 
-d3 $ off 0.125 (|+| n 7) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 0 [~ 6] ~" # sound "stabs"
-  # hpf "<600 1000>"
-  # hpq 0.4
+d3 $ never (off 0.125 (|+| n 7)) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 ~ [~ 9] ~" # sound "stabs"
+  # lpf "<600 1000>"
+  # lpq 0.4
   # orbit 1
   # room 0.7
   # size 0.4
@@ -17,3 +17,5 @@ d3 $ off 0.125 (|+| n 7) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 0
   # delayt 0.01
   # delayfb 0.9
   
+d4 $ sound "jvgabba:2(3,8)"
+  # shape 0.3
