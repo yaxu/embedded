@@ -21,6 +21,6 @@ d3 $ never (off 0.125 (|+| n 7)) $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))
 d4 $ sound "jvgabba:2(3,8)"
   # shape 0.3
 
-d5 $ jux (|*| speed 2) $ chunk 4 (hurry 2) $ loopAt 1 $ chop 16 $ sound "arc"
+d5 $ jux (|*| speed 2) $ chunk 4 (hurry 2) $ loopAt "<1 2>" $ chop 16 $ sound "arc"
   # gain 1
   # shape 0.9
