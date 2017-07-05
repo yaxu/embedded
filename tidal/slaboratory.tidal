@@ -25,3 +25,7 @@ d5 $ slow 4 $ jux (|*| speed 2) $ chunk 4 (hurry 2) $ loopAt "<1 2>" $
   striate 16 $ sound "arc*4"
   # gain 1
   # shape 0.9
+
+d6 $ sound "~ wobble*2"
+  # gain 1.1
+  # speed 2
