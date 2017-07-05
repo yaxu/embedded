@@ -10,4 +10,7 @@ d1 $ jux rev $ chunk 4 (hurry 2) $
 d3 $ off 0.25 ((jux rev) . (# speed 4) . (fast 2))$ n "0 0 [~ 6] ~" # sound "stabs"
   # hpf "<600 1000>"
   # hpq 0.4
+  # orbit 1
+  # room 0.7
+  # size 0.4
   
