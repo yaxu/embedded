@@ -33,6 +33,6 @@ d6 $ sound "~ wobble*2"
 d7 $ chunk 4 (hurry 2) $ sound "[future,bd,drum,odx]*4"
   # gain 1.4
 
-d8 $ sometimes (|*| speed "-1") $ loopAt 4 $ chop 8 $ sound "repetition"
+d8 $ jux rev $ sometimes (|*| speed "-1") $ loopAt 4 $ chop 8 $ sound "repetition"
   # gain 1.7
   # n (irand 8)
