@@ -1,10 +1,6 @@
-cps 0.45
 
-# hello listeners, thanks for listening!
+d2 $ every 4 (const (s "bd9(3,8)")) $ jux rev $ stut "<4 8 [16 2]>" 0.5 (-0.25) $ (|+| speed 0.4) $ sound "bd9(3,8)"
+  # gain 1.3
+  # speed 1
 
-d1 $ jux rev $ off 0.25 (|+| (crush "3" |+| n "<12 -12>")) $ n (off 0.25 (+ "<7 12>") $ "d7 ~ [d6 g7] c7") # sound "jx"
-  # legato 0.5
-  # lpf (slow 8 $ scale 500 2000 sine)
-  # lpq "<0.2 0.3>"
-  # orbit 1 # room 0.8 # size 0.7
-  
+
