@@ -13,10 +13,10 @@ d3 $ off 0.25 (|*| up "<7 2 12>") $ off 0.125 (|*| n "<7>") $ never (off 0.125 (
   # lpq (slow 16 $ scale 0.2 0.4 saw )
   # orbit 1
   # room 0.9
-  -- # size 0.9
+  # size 0.9
   -- # delay "<0.9>"
   -- # delayt "<0.01 0.02 0.1>"
-  # delayfb 0.9
+  -- # delayfb 0.9
   
 d4 $ off 0.25 (|*| up "<7 12 2>") $ sound "jvgabba:5(3,8,<0 2 4 6>)"
   # shape 0.8
