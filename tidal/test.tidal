@@ -2108,3 +2108,4 @@ let br :: (ParamPattern -> IO ()) -> Time -> ParamPattern -> IO ()
     br out len pat = do now <- getNow
                         out $ pure (nextSam now) ~> seqP [(0,len,pat)]
     br1 = br d1
+
