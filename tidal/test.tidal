@@ -2109,3 +2109,5 @@ let br :: (ParamPattern -> IO ()) -> Time -> ParamPattern -> IO ()
                         out $ pure (nextSam now) ~> seqP [(0,len,pat)]
     br1 = br d1
 
+br1 4 $ sound "bd sn"
+
