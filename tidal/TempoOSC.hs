@@ -9,4 +9,6 @@ serverPort =
 
 listen = udpServer iNADDR_ANY aNY_PORT
 
-server = do udpServer iNADDR_ANY 
+server = do port <- serverPort
+            serv <- udpServer iNADDR_ANY port
+            
