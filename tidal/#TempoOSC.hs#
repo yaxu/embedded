@@ -1,8 +1,0 @@
-module Sound.Tidal.TempoOSC where
-
-import Sound.OSC.FD
-import Network.Socket
-
-
-listen = do <- iNADDR_ANY aNY_PORT
-
