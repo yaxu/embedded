@@ -16,8 +16,8 @@ runServer = do port <- serverPort
 serverLoop = do msg <- recvMessage osc
                 putStrLn $ "received message" ++ (show msg)
 
-let address = messageAddress msg
-                act 
-                loop osc
+let address = do messageAddress msg
+                 act 
+                 loop osc
                
                
