@@ -15,11 +15,9 @@ runServer = do port <- serverPort
 
 serverLoop = do msg <- recvMessage osc
                 putStrLn $ "received message" ++ (show msg)
-                let -- todo - Data.Maybe version of !!
 
-                    tempo = datum_floating $ (messageDatum msg) !! 1
-                    address = messageAddress msg
-                act address timestamp tick tempo
+let address = messageAddress msg
+                act 
                 loop osc
                
                
