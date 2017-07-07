@@ -10,6 +10,12 @@ serverPort =
 listen = udpServer iNADDR_ANY aNY_PORT
 
 runServer = do port <- serverPort
-               serv <- udpServer iNADDR_ANY port
-               
+               s <- udpServer iNADDR_ANY port
+               serverLoop s
+
+serverLoop s = do msg <- recvMessage osc
+                  putStrLn $ "received message" ++ (show msg)
+                  let address = messageAddress msg
+                  act address
+                  serverLoop s
                
