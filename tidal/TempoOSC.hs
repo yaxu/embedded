@@ -19,4 +19,4 @@ serverLoop s cs = do msg <- recvMessage osc
                      cs' <- act address cs
                      serverLoop s cs'
 
-  where act "/subscribe" = 
+  where act "/join" = 
