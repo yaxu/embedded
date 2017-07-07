@@ -16,7 +16,7 @@ runServer = do port <- serverPort
 serverLoop s cs = do msg <- recvMessage osc
                      putStrLn $ "received message" ++ (show msg)
                      let address = messageAddress msg
-                     cs' <- act address cs
+                     cs' <- act address msg cs
                      serverLoop s cs'
 
-  where act "/join" = 
+  where act "/join" msg cs = return 
