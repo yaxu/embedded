@@ -18,4 +18,4 @@ serverLoop s = do msg <- recvMessage osc
                   let address = messageAddress msg
                   act address
                   serverLoop s
-               
+
