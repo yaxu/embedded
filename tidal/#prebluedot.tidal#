@@ -18,4 +18,6 @@ d3 $ jux rev $ someCycles (linger 0.25)
   # gain 1.2
   |+| n (slow 16 "0 .. 3")
 
-d4 $ n "d6 ~" # sound "jx"
+d4 $ (off 0.125 (|+| n "<7 7 12 -12>") $ off 0.25 (# crush 3) $ n ("d6 ~ [~ d8] [~ d7]") # sound "jx")
+  # lpf (slow 4 $ saw1 * 100 + 500)
+  # lpq 0.3
