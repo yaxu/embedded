@@ -49,8 +49,9 @@ d3 $ jux rev $ chop "<3 4 8 2>" $ sound "arpy"
 d4 $ iter 4 $ loopAt 2 $ chop 16 $ sound "os"
   # shape 0.5
 
-
-d1 $ n (off 0.25 (+7) $ "<c7(3,8) e7(3,8) f7*3 g7(3,8,4)>") # s "xx"
-  # gain 1.2
+solo $ 
+d1 $ jux rev $ slow 2 $ off 0.25 (# (s "pulse" # gain 1.2)) $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 "c7(3,8) e7(3,8) f7*3 g7(3,8)") # s "xx"
+  # gain 1.1
+  # orbit # room 0.8
 
 d2 $ loopAt 4 $ chop 16 $ sound "paper"
