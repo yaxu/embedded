@@ -49,4 +49,4 @@ d3 $ jux rev $ chop "<3 4 8 2>" $ sound "arpy"
 d4 $ iter 4 $ loopAt 2 $ chop 16 $ sound "os"
   # shape 0.5
 
-hush
+
