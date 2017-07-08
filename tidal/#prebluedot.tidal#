@@ -6,10 +6,12 @@ d1 $ every 4 (# s "sn:2") $ sound "bd(5,8,<0 2 4 6>)"
   # size 0.4
   # orbit 1
 
-d2 $ jux rev $ chunk 4 (hurry 2) $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+ "<7 -5 12>") $ "<c7(3,8) a6(3,8,2) f6(3,8) e6(3,8)>") # sound "rash"
+d2 $ slow 2 $ off 0.25 (# s "pulse") $ jux rev $ chunk 4 (hurry 2) $ slow 2 $ n (off 0.125 (+12) $ off 0.25 (+ "<7 -5 12>") $ "<c7(3,8) a6(3,8,2) f6(3,8) e6(3,8)>") # sound "rash"
   # crush 5
   # lpf (slow 4 $ scale 2000 2500 sine1)
   # lpq 0.2
   # orbit 2 # size 0.6 # room 0.7
 
-d3 $ sound "~ claus"
+d3 $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "claus"
+  # gain 1.2
+  
