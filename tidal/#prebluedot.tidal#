@@ -6,10 +6,10 @@ d1 $ every 4 (# s "sn:2") $ sound "bd(5,8,<0 2 4 6>)"
   # size 0.4
   # orbit 1
 
-d2 $ substruct "x [~ x]" $ slow 2 $ n (off 0.25 (+ "<7 -5 12>") $ "<d7(3,8) g6(3,8)>") # sound "rash"
+d2 $ chunk 4 (hurry 2) $ slow 2 $ n (off 0.25 (+ "<7 -5 12>") $ "<c7(3,8) a6(3,8,2) f6(3,8) e6(3,8)>") # sound "rash"
   # end 0.2
   # crush 3
   # lpf 3000
   # lpq 0.2
-  
+  # orbit 2 # size 0.6 # room 0.7
 
