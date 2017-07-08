@@ -1,2 +1,7 @@
-d1 $ sound "bd"
-  # begin "0.01"
+d1 $ every 4 (# s "sn:2") $ sound "bd*8"
+  # begin (chunk 4 (fast 2) $ scale 0.002 0.1 sine)
+  # speed 2
+  # room 0.7
+  # size 0.4
+  # orbit 1
+  
