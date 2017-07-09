@@ -56,3 +56,4 @@ d1 $ jux rev $ sometimes (|*| speed 2) $ slow 2 $ off 0.25 (# s "jx") $ n (off 0
 d2 $ iter 4 $ loopAt 4 $ chop 16 $ sound "paper"
   # gain 1.2
 
+d1 $ sound "micron"
