@@ -2120,7 +2120,7 @@ displayOutputDevices >>= putStrLn
 m1 <- midiStream devs "X18/XR18 MIDI 1" 1 volcakeysController
 
 
-m1 $ off 0.25 () $ (slow 2 $ note $ slow 2 $ off 0.25 (+7) $ "c(3,8) e*2 f(3,8) g*3")
+m1 $ off 0.25 (|+| n 12) $ (slow 2 $ note $ slow 2 $ off 0.25 (+7) $ "c(3,8) e*2 f(3,8) g*3")
   # nudge 0.14
 
 d1 $ loopAt 4 $ chop 16 $ sound "paper"
