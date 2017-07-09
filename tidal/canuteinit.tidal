@@ -9,7 +9,6 @@ import Sound.Tidal.MIDI.VolcaKeys
 devs <- midiDevices
 displayOutputDevices >>= putStrLn
 m1 <- midiStream devs "X18/XR18 MIDI 1" 1 volcakeysController
-
 let hush = mapM_ ($ silence) [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,m1]
 
 import Sound.Tidal.OscStream
