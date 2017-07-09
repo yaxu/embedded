@@ -2111,5 +2111,13 @@ let br :: (ParamPattern -> IO ()) -> Time -> ParamPattern -> IO ()
 
 br1 4 $ sound "bd sn"
 
-d1 $ every 4 (0.25 <~) $ n "0 1 2 3" # s "alphabet"
-hush
+
+import Sound.Tidal.MIDI.Context
+import Sound.Tidal.MIDI.Stream
+import Sound.Tidal.MIDI.VolcaKeys
+devs <- midiDevices
+displayOutputDevices >>= putStrLn
+m1 <- midiStream devs "" 1 keysController
+
+m1 <- midiStream devices "USB Audio Quattro MIDI 1" 1 ccallController
+
