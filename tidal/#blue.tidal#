@@ -81,10 +81,21 @@ d1 $ jux rev $ weave 16 (palindrome $ n "0 .. 7" # sound "arpy")
 d2 $ every 4 (0.25 <~) $ brak $ sound "[ifdrums ~ ~ rash:40] [sn:4*2 arpy:3]"
   # gain 0.9
 
-d1 $ jux rev $ slow 2 $ sound "gabba [~ jungbass] gabba*2 gabba:2"
-  # gain 0.96
+d1 $ off 0.125 (|*| up 7) $ slow 2 $ sound "micron [~ jungbass] ifdrums*2 gabba"
+  # gain 0.85
+
+d2 $ brak $ chop 8 $ sound "bd(3,8,<0 4>) sn:3"
+
+
+d3 $ degrade $ off 0.125 (# crush 4) $ off 0.25 (# s "rash") $ off 0.25 (|+| n "<7 12>") $ n "<d6(3,8) a7(3,8)>" # sound "pulse"
+  |+| n "<0 0 2 5 7 7 12 12>"
+  |*| speed 0.5
+  |*| gain 0.9
+
+d1 $ sound "gab(3,8)"
   # speed 2
 
+d2 $ s "~ off"
 
 bb2 $ grunge "<0 0.7>"
 
