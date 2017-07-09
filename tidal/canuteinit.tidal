@@ -16,7 +16,7 @@ import Sound.Tidal.OscStream
 let mykShape :: Shape
     mykShape = Shape {params = [ s_p ],
                       cpsStamp = False,
-                      latency = 0
+                      Sound.Tidal.Context.latency = 0
                      }
     mykSlang = OscSlang {
       path = "/fx",
