@@ -1,0 +1,5 @@
+
+d1 $ every 4 (const $ sound "cp") $ sound "bd(3,8)"
+
+-- nothing in our monitors
+
