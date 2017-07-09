@@ -2111,3 +2111,23 @@ let br :: (ParamPattern -> IO ()) -> Time -> ParamPattern -> IO ()
 
 br1 4 $ sound "bd sn"
 
+
+
+
+m1 $ off 0.25 (|+| n 12) $ (slow 2 $ note $ slow 2 $ off 0.25 (+7) $ "c(3,8) e*2 f(3,8) g*3")
+  # nudge 0.14
+
+d1 $ loopAt 4 $ chop 16 $ sound "paper"
+
+cps 0.8
+
+d1 $ sound "cp"
+
+m1 $ note "60"
+ # nudge 0.14
+
+import Sound.Tidal.MIDI.Context
+import Sound.Tidal.MIDI.VolcaKeys
+displayOutputDevices >>= putStrLn
+devices <- midiDevices
+m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
