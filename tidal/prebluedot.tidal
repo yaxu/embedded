@@ -56,6 +56,8 @@ d1 $ jux rev $ sometimes (|*| speed 2) $ slow 2 $ off 0.25 (# s "jx") $ n (off 0
 d2 $ iter 4 $ loopAt 4 $ chop 16 $ sound "paper"
   # gain 1.2
 
-d1 $ off 0.125 (|*| lpf 0.5) $ off 0.25 (|*| up 7) $ n "<0(3,8)>" # sound "stabs"
-  # lpf 3000
+d1 $ jux rev $ off 0.125 (|*| lpf 0.5) $ off 0.25 (|*| up 7) $ n "<0(3,8)>" # sound "stabs"
+  # lpf (slow 2 $ sine * 3000 + 100)
   # lpq 0.2
+
+d2 $ jux rev $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "micron"
