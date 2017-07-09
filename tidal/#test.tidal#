@@ -2117,7 +2117,14 @@ import Sound.Tidal.MIDI.Stream
 import Sound.Tidal.MIDI.VolcaKeys
 devs <- midiDevices
 displayOutputDevices >>= putStrLn
-m1 <- midiStream devs "" 1 keysController
+m1 <- midiStream devs "X18/XR18 MIDI 1" 1 volcakeysController
 
-m1 <- midiStream devices "USB Audio Quattro MIDI 1" 1 ccallController
 
+m1 $ note $ slow 2 $ "c(3,8) e f g"
+
+
+import Sound.Tidal.MIDI.Context
+import Sound.Tidal.MIDI.VolcaKeys
+displayOutputDevices >>= putStrLn
+devices <- midiDevices
+m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
