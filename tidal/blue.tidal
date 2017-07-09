@@ -1,0 +1,28 @@
+
+d1 $ jux rev $ every 4 (const $ sound "cp") $ sound "odx(3,8)"
+
+d2 $ off 0.25 (# up 7) $ sound "~ stabs*2"
+
+d3 $ every 2 (slow 2) $ chunk 4 (hurry 2) $ n "0 .. 3" # sound "micron"
+  # speed 2
+
+d2 $ iter 4 $ sound "bd*2 [~ gabba]"
+
+
+d1 $ degrade $ slow 2 $ jux rev $ slow 2 $ n (off 0.25 (+12) $ off 0.25 (+7) $ slow 2 "c8(3,8) a7(3,8) f7*2 e8(3,8)") # sound "xx"
+  # gain 0.75
+
+d1 $ chop 4 $ sound "wobble future"
+
+d2 $ jux rev $ slow 2 $ n (off 0.125 (+7) $ off 0.25 (+12) $ slow 2 "c7(3,8) e7(3,8) f7*2 g7(3,8,4)") # sound "rash"
+  # lpf (slow 4 $ scale 2000 3000 sine)
+  # lpq 0.2
+
+d3 $ iter 4 $ jux rev $ loopAt 4 $ chop 16 $ sound "paper"
+  # gain 1
+
+d5 $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "micron"
+  # speed 2
+  # gain 1.1
+
+cps 0.8
