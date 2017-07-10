@@ -12,7 +12,7 @@ serverPort =
 listen = udpServer "0.0.0.0" 0
 
 runServer = do port <- serverPort
-               s <- udpServer iNADDR_ANY port
+               s <- listen
                serverLoop s []
 
 serverLoop s cs = do msg <- recvMessage osc
