@@ -66,3 +66,5 @@ d3 $ loopAt 4 $ chop 16 $ sound "repetition"
 
 
 hush
+
+d1 $ sound "
