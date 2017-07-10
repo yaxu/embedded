@@ -14,10 +14,16 @@ runServer = do port <- serverPort
                s <- udpServer "0.0.0.0" 0
                serverLoop s []
 
-serverLoop s cs = do msg <- recvMessage osc
-                     putStrLn $ "received message" ++ (show msg)
-                     let address = messageAddress msg
-                     cs' <- act address msg cs
+serverLoop s cs = do msgs <- recvMessages osc
+                     cs' <- process msgs cs
                      serverLoop s cs'
+           where process [] cs = return cs
+                 process (msg:msgs) cs = do putStrLn $ "received message" ++ (show msg)
+                                            let address = messageAddress msg
+                                            cs' <- act address msg cs
+                                            process msgs cs'
+
+                                            
+                     
 
   where act "/join" msg cs = return 
