@@ -14,7 +14,7 @@ runServer = do port <- serverPort
                s <- udpServer "0.0.0.0" 0
                serverLoop s []
 
-serverLoop s cs = do maybeMsg <- recvMessage osc
+serverLoop s cs = do msgs <- recvMessages osc
                      putStrLn $ "received message" ++ (show msg)
                      do let address = messageAddress msg
                      cs' <- act address msg cs
