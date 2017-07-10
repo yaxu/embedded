@@ -9,7 +9,7 @@ serverPort :: IO Int
 serverPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
-listen = udpServer "0.0.0.0" aNY_PORT
+listen = udpServer "0.0.0.0" 0
 
 runServer = do port <- serverPort
                s <- udpServer iNADDR_ANY port
