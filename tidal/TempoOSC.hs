@@ -14,7 +14,7 @@ runServer = do port <- serverPort
                s <- udpServer "0.0.0.0" 0
                serverLoop s []
 
-serverLoop s cs = do msgs <- recvMessages osc
+serverLoop s cs = do msgs <- recvMessages s
                      cs' <- process msgs cs
                      serverLoop s cs'
            where process [] cs = return cs
