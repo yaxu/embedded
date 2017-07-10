@@ -3,6 +3,7 @@ module TempoOSC where
 import Sound.OSC.FD
 import Network.Socket
 import Safe (readNote)
+import System.Environment (lookupEnv)
 
 serverPort :: IO Int
 serverPort =
