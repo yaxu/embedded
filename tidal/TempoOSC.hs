@@ -1,4 +1,4 @@
-module Sound.Tidal.TempoOSC where
+module TempoOSC where
 
 import Sound.OSC.FD
 import Network.Socket
