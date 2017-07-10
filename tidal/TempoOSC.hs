@@ -23,7 +23,5 @@ serverLoop s cs = do msgs <- recvMessages osc
                                             cs' <- act address msg cs
                                             process msgs cs'
 
-                                            
                      
-
-  where act "/join" msg cs = return 
+act "/join" msg cs = return cs
