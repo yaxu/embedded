@@ -1,0 +1,4 @@
+d1 $ stack [off 0.25 (|+| crush 3) $ sound "bd <bd*3 bd(3,8)>",
+            s "~ cp8" #
+           ]
+
