@@ -50,6 +50,7 @@ d2 $ off 0.125 (# s "rash") $ off 0.25 (# s "pulse") $ degradeBy 0.8 $ jux rev $
 d1 $ jux rev $ someCycles (within (0,0.5) (fast 2)) $ slow 2 $ n "0 .. 15" # sound "funky"
   |+| n "<0 0 3 0 2>"
   |*| speed 2
+   # gain 1.3
 
 d2 $ chunk 4 (hurry 0.5) $ superimpose (|*| speed 1.5) $  off 0.125 (# crush 7) $ up ("0*2 [~ <7 -5>]") # sound "scream"
   # legato 0.5
@@ -62,7 +63,6 @@ d2 $ chunk 4 (hurry 0.5) $ superimpose (|*| speed 1.5) $  off 0.125 (# crush 7) 
 d3 $ jux rev $ chunk 4 (hurry 2) $ iter 4 $ loopAt 1 $ chop 16 $ sound "<os os:1>"
   # shape 0.5
 
-
 d4 $ off 0.25 (# speed 2) $ off "<0.25 0.125>" (# crush 1) $ sound "gabba(3,8)"
   # gain 0.98
   # room 0.6 # size 0.6
@@ -74,7 +74,7 @@ d3 $ jux rev $ chop "<8 3 4 16>" $ sound "~ off"
   # vowel "<a e i>"
   # gain 1.7
 
-d2 $ off 0.25 (|+| n "7") $ off 0.25 (# s "pulse") $ n (off 0.25 (+12)"<c8(3,8) e8(3,8) f8(3,8,4) g8>") # sound "rash"
+d2 $ jux rev $ off 0.25 (|+| n "7") $ off 0.25 (# s "pulse") $ n (off 0.25 (+12)"<c8(3,8) e8(3,8) f8(3,8,4) g8>") # sound "rash"
   # gain 1.3
 
 d5 $ iter 4 $ loopAt 4 $ chop 16 $ sound "paper"
