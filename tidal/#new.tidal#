@@ -33,7 +33,7 @@ d5 $ someCycles (|*| speed "-1") $ jux (chunk 4 (hurry 0.5)) $ iter 4 $ loopAt 1
   # gain 1.2
   # shape 0.9
 
-d1 $ n "{0 [~ 2] [5 ~ ~ 4] [2 6], ~ ~ 4}" # sound "micron"
+d1 $ chunk 4 (hurry 2) $ n "{0 [~ 2] [5 ~ ~ 4] [2 6], ~ ~ 4}" # sound "micron"
   # gain 1
   # delay 0.4
   # delayt (slow 1 sine)
@@ -41,4 +41,6 @@ d1 $ n "{0 [~ 2] [5 ~ ~ 4] [2 6], ~ ~ 4}" # sound "micron"
   # orbit 1
   # shape 0.6
 
-d2 $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 "f6(3,8) a7(3,8) g8(2,8) g8*3") # sound "xx"
+d2 $ off 0.25 (# s "pulse") $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 4 "f6(3,8) a7(3,8) g8(2,8) c8*3") # sound "xx"
+  # lpf "300 ! ! 3000"
+  # orbit 2 # room 0.3
