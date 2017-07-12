@@ -45,11 +45,18 @@ d2 $ off 0.125 (# s "rash") $ off 0.25 (# s "pulse") $ degradeBy 0.8 $ jux rev $
   # orbit 2 # room 0.3
   |+| n "<0 0 12 0 0 0 7 0>"
 
-d1 $ jux rev $ someCycles (within (0,0.5) (fast 2)) $ n "0 .. 7" # sound "funky"
+d1 $ jux rev $ someCycles (within (0,0.5) (fast 2)) $ slow 2 $ n "0 .. 15" # sound "funky"
   |+| n "<0 0 3 0 2>"
+  |*| speed 2
 
-d2 $ off 0.125 (# crush 7) $ up ("0*2 [~ <7 -5>]") # sound "scream"
+d2 $ superimpose (|$  off 0.125 (# crush 7) $ up ("0*2 [~ <7 -5>]") # sound "scream"
   # legato 0.5
   |*| up "<0 2 3>"
   # lpf (saw * 3000 + 1000)
   # lpq 0.1
+  # room 0.3 # size 0.3
+  # orbit 1
+  
+
+d3 $ loopAt 2 $ chop 2 $ sound "os"
+
