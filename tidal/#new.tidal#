@@ -48,5 +48,8 @@ d2 $ off 0.125 (# s "rash") $ off 0.25 (# s "pulse") $ degradeBy 0.8 $ jux rev $
 d1 $ jux rev $ someCycles (within (0,0.5) (fast 2)) $ n "0 .. 7" # sound "funky"
   |+| n "<0 0 3 0 2>"
 
-d2 $ up "0*2 [~ 7]" # sound "scream"
+d2 $ off 0.125 (# crush 7) $ up ("0*2 [~ <7 -5>]") # sound "scream"
   # legato 0.5
+  |*| up "<0 2 3>"
+  # lpf (saw * 3000 + 1000)
+  # lpq 0.1
