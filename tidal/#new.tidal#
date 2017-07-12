@@ -45,4 +45,8 @@ d2 $ off 0.125 (# s "rash") $ off 0.25 (# s "pulse") $ degradeBy 0.8 $ jux rev $
   # orbit 2 # room 0.3
   |+| n "<0 0 12 0 0 0 7 0>"
 
-d1 $ inside n "0 .. 7" # sound "funky"
+d1 $ jux rev $ someCycles (within (0,0.5) (fast 2)) $ n "0 .. 7" # sound "funky"
+  |+| n "<0 0 3 0 2>"
+
+d2 $ up "0*2 [~ 7]" # sound "scream"
+  # legato 0.5
