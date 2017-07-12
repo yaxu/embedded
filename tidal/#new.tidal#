@@ -1,8 +1,0 @@
-d1 $ stack [off 0.25 (|+| crush 3) $ sound "bd <bd*3 bd(3,8)>"
-            # speed (slow 4 $ scale 1 1.5 saw)
-           ,
-            off 0.125 (# vowel "<a o>")$ off 0.25 (# speed 2) $ s "~ <cp8 [~ cp8] cp8*2>" # orbit 1 # room 0.8 # size 0.8
-             # crush 3 # begin 0.02,
-             chunk 4 ()iter 4 $ struct "x ~ [~ x] ~" $ sound "jungbass:3" # legato 1
-           ]
-
