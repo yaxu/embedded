@@ -13,5 +13,8 @@ d2 $ jux rev $ off 0.125 (|*| speed 2) $ off 0.125 (|+| n 7) $ chunk 4 (hurry 0.
   # crush 4
   |+| n "<0 0 7 7>"
 
-d3 $ jux rev $ chunk 4 (|+| crus $ off 0.25 (|+| n "<7 8 2>") $ n "0 .. 3" # sound "micron"
+d3 $ jux rev $ chunk 4 ((|+| crush 2) . (# speed 2) . every 2 (fast 2)) $ off 0.25 (|+| n "<7 8 2>") $ n "0 .. 7" # sound "micron"
   # speed 2
+
+d4 $ off 0.25 (fast 2 . (# ) $sound "jvbass(3,8)"
+  # shape 0.7
