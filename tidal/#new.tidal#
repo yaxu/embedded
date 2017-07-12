@@ -7,5 +7,8 @@ d1 $ stack [off 0.25 (|+| crush 3) $ sound "bd <bd*3 bd(3,8)>"
              iter 4 $ struct "x ~ [~ x] ~" $ sound "jungbass:3" # legato 1 # speed 0.5
            ]
 
-d2 $ chunk 4 (n "~ <a9 g9>" # sound "rash"
+d2 $ jux rev $ chunk 4 (hurry 0.5) $ n "g7 <[d9 e8] g9>" # sound "rash"
+  # lpf (slow 4 $ scale 100 400 sine)
+  # lpq 10
+  # crush 4
   
