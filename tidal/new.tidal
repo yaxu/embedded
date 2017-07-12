@@ -62,3 +62,6 @@ d3 $ jux rev $ chunk 4 (hurry 2) $ iter 4 $ loopAt 1 $ chop 16 $ sound "<os os:1
 
 d4 $ off "<0.25 0.125>" (# crush 1) $ sound "gabba(3,8)"
   # gain 0.98
+  # room 0.6 # size 0.6
+  |*| speed 1.5
+  # orbit 1
