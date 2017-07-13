@@ -177,9 +177,9 @@ nudger (0.1)
 
 c1 $ jux rev $ chop 8 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
-hush
-hush
-d1 $ sound "supermandolin"
+d1 $ n "c7" # sound "supermandolin"
+
+
 
 d1 $ jux rev $ chop 16 $ sound "bd sn:2"
 
