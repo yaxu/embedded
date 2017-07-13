@@ -2136,3 +2136,7 @@ import Sound.Tidal.MIDI.VolcaKeys
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
 m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
+
+d1 $ jux rev $ off 0.25 (# glass 0.9) $ sound "bd [~ bd] cp8:3 bd"
+
+hush
