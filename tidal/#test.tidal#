@@ -2140,6 +2140,6 @@ m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
 let (grunge, grunge_p) = pF "grunge" Nothing
 
 d1 $ sound "bd(3,8)"
-   # grunge 1
+   # grunge sine1
 
 hush
