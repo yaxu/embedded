@@ -2136,3 +2136,14 @@ import Sound.Tidal.MIDI.VolcaKeys
 displayOutputDevices >>= putStrLn
 devices <- midiDevices
 m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
+
+let (grunge, grunge_p) = pF "grunge" Nothing
+let (glass, glass_p) = pF "glass" Nothing
+
+d1 $ off (toRational <$> (slow 4 $ discretise 4 $ saw1)) (# grunge 0.6) $ off 0.25 (# glass 0.3) $ sound "xx:50(3,8)"
+
+d1 $ sound "drum(3,8)"
+  # legato 4
+  # glass 0.1
+  # gain 1.4
+
