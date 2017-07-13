@@ -2138,9 +2138,7 @@ devices <- midiDevices
 m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
 
 let (grunge, grunge_p) = pF "grunge" Nothing
+let (glass, glass_p) = pF "glass" Nothing
 
-d1 $ sound "bd(3,8)"
-   # grunge 0
-hush
+d1 $ off (toRational <$> (discretise 2 $ slow 8 saw1)) (# grunge 1) $ off 0.25 (# glass 0.4) $ sound "bd(3,8)"
 
-hush
