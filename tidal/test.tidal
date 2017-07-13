@@ -180,7 +180,7 @@ nudger (0.1)
 c1 $ jux rev $ chop 8 $ sound "bd [sn sd8:3*2] bd*3 bd"
 
 
-d1 $ n "c5 <fs fs fs fs(3,8) g g g a>" # sound "supermandolin"
+d1 $ n "c5 <fs fs fs fs(3,8) g g g a(3,8)>" # sound "supermandolin"
   # legato 8
 
 
