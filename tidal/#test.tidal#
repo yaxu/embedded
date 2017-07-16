@@ -2141,4 +2141,4 @@ d1 $ jux rev $ off 0.25 (# glass 0.9) $ sound "bd [~ bd] cp8:3 bd"
 
 hush
 
-discretise 8 sine
+discretise 8 (0.25 ~> sine)
