@@ -71,10 +71,10 @@ act "/join" msg cs = return cs
 
 sendTempo :: UDP -> Tempo -> IO ()
 sendTempo sock t = sendOSC sock $
-  Message "/tempo" [Float (realToFrac $ utcTimeToPOSIXSeconds $ at t),
-                    Float (realToFrac $ beat t),
-                    Float (realToFrac $ cps t),
-                    String (show $ paused t)
+  Message "/tempo" [float (realToFrac $ utcTimeToPOSIXSeconds $ at t),
+                    float (realToFrac $ beat t),
+                    float (realToFrac $ cps t),
+                    string (show $ paused t)
                    ]
 
 logicalTime :: Tempo -> Double -> Double
