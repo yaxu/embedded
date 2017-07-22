@@ -11,16 +11,14 @@ import Data.Maybe
 data Tempo = Tempo {at :: UTCTime,
                     beat :: Double,
                     cps :: Double,
-                    paused :: Bool,
-                    clockLatency :: Double
+                    paused :: Bool
                    }
 
 instance Show Tempo where
   show x = (show (at x) ++ "," ++
             show (beat x) ++ "," ++
             show (cps x) ++ "," ++
-            show (paused x) ++ ","
-            ++ (show $ clockLatency x)
+            show (paused x)
            )
 
 getLatency :: IO Double
