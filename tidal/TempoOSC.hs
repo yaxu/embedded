@@ -9,6 +9,7 @@ import Data.Time (getCurrentTime, UTCTime, NominalDiffTime, diffUTCTime, addUTCT
 import Data.Time.Clock.POSIX
 import Data.Maybe
 import Control.Concurrent.MVar
+import Data.Concurrent
 
 data Tempo = Tempo {at :: UTCTime,
                     beat :: Double,
