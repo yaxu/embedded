@@ -84,6 +84,7 @@ logicalTime t b = changeT + timeDelta
         timeDelta = beatDelta / (cps t)
         changeT = realToFrac $ utcTimeToPOSIXSeconds $ at t
 
+{-
 tempoMVar :: IO (MVar (Tempo))
 tempoMVar = do now <- getCurrentTime
                mv <- newMVar (Tempo now 0 0.5 False)
@@ -91,6 +92,8 @@ tempoMVar = do now <- getCurrentTime
                return mv
   where f mv change _ = do swapMVar mv change
                            return ()
+-}
+
 beatNow :: Tempo -> IO (Double)
 beatNow t = do now <- getCurrentTime
                let delta = realToFrac $ diffUTCTime now (at t)
