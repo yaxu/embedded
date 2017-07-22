@@ -4,6 +4,8 @@ import Sound.OSC.FD
 import Network.Socket
 import Safe (readNote)
 import System.Environment (lookupEnv)
+import qualified Control.Exception as E
+
 
 serverPort :: IO Int
 serverPort =
