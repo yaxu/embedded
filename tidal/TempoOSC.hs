@@ -13,7 +13,7 @@ serverPort =
 
 runServer = do port <- serverPort
                -- inaddr_any + any_port
-               s <- udpServer "0.0.0.0" 0
+               s <- udpServer "0.0.0.0" 6030
                serverLoop s []
 
 serverLoop s cs = do msgs <- recvMessages s
@@ -27,3 +27,13 @@ serverLoop s cs = do msgs <- recvMessages s
 
                      
 act "/join" msg cs = return cs
+
+myk <- dirtStream
+192.168.42.50
+
+x <- udpServer "0.0.0.0" 4040
+
+xx <- openUDP "92.51.149.243" 90930
+
+(sendOSC xx $ Message "/tidal" [string "1 2 3 4 5 8 9"])
+  `E.catch` \(_ :: E.SomeException) -> putStrLn "aha"
