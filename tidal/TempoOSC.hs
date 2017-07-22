@@ -6,6 +6,7 @@ import Safe (readNote)
 import System.Environment (lookupEnv)
 import qualified Control.Exception as E
 import Data.Time (getCurrentTime, UTCTime, NominalDiffTime, diffUTCTime, addUTCTime)
+import Data.Time.Clock.POSIX
 import Data.Maybe
 
 data Tempo = Tempo {at :: UTCTime,
