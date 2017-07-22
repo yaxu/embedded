@@ -5,6 +5,7 @@ import qualified Network.Socket as N
 import Safe (readNote)
 import System.Environment (lookupEnv)
 import qualified Control.Exception as E
+import Data.Time (getCurrentTime, UTCTime, NominalDiffTime, diffUTCTime, addUTCTime)
 
 data Tempo = Tempo {at :: UTCTime,
                     beat :: Double,
