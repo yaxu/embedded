@@ -73,7 +73,7 @@ sendTempo :: UDP -> Tempo -> IO ()
 sendTempo sock t = sendOSC sock $
   Message "/tempo" [Float (realToFrac $ utcTimeToPOSIXSeconds $ at t),
                     Float (realToFrac $ beat t),
-                    Float (cps t),
+                    Float (realToFrac $ cps t),
                     Int (paused t)
                    ]
 
