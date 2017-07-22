@@ -1,7 +1,7 @@
 module TempoOSC where
 
 import Sound.OSC.FD
-import Network.Socket
+import qualified Network.Socket as N {- network -}
 import Safe (readNote)
 import System.Environment (lookupEnv)
 import qualified Control.Exception as E
@@ -13,7 +13,13 @@ serverPort =
 
 runServer = do port <- serverPort
                -- inaddr_any + any_port
-               s <- udpServer "0.0.0.0" 6030
+               sock <- socket AF_INET Stream defaultProtocol
+               setSocketOption (NoDelay  , 1) sock
+               setSocketOption (ReuseAddr, 1) sock
+               setSocketOption (ReusePort, 1) sock
+               bind sock $ SockAddrInet p $ tupleToHostAddress (127, 0, 0, 1)
+               listen sock (max 2048 maxListenQueue)
+               let s = UDP sock
                serverLoop s []
 
 serverLoop s cs = do msgs <- recvMessages s
