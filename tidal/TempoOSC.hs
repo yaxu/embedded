@@ -68,6 +68,21 @@ serverLoop s cs = do msgs <- recvMessages s
                      
 act "/join" msg cs = return cs
 
+sendTempo :: UDP -> Tempo -> IO ()
+sendTempo sock t = sendOSC sock $
+  Message "/tempo" [Float (realToFrac $ utcTimeToPOSIXSeconds $ at t $ at t),
+                    Float (beat t),
+                    Float (cps t),
+                    Int (paused t)
+                   ]
+
+data Tempo = Tempo {at :: UTCTime,
+                    beat :: Double,
+                    cps :: Double,
+                    paused :: Bool
+                   }
+
+
 
 logicalTime :: Tempo -> Double -> Double
 logicalTime t b = changeT + timeDelta
@@ -82,9 +97,9 @@ tempoMVar = do now <- getCurrentTime
                return mv
   where f mv change _ = do swapMVar mv change
                            return ()
-
 beatNow :: Tempo -> IO (Double)
 beatNow t = do now <- getCurrentTime
                let delta = realToFrac $ diffUTCTime now (at t)
                let beatDelta = cps t * delta               
                return $ beat t + beatDelta
+
