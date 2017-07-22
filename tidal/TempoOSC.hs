@@ -74,3 +74,11 @@ logicalTime t b = changeT + timeDelta
   where beatDelta = b - (beat t)
         timeDelta = beatDelta / (cps t)
         changeT = realToFrac $ utcTimeToPOSIXSeconds $ at t
+
+tempoMVar :: IO (MVar (Tempo))
+tempoMVar = do now <- getCurrentTime
+               mv <- newMVar (Tempo now 0 0.5 False)
+               forkIO $ clocked $ f mv
+               return mv
+  where f mv change _ = do swapMVar mv change
+                           return ()
