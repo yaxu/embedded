@@ -18,7 +18,7 @@ runServer = do port <- serverPort
                N.setSocketOption sock N.ReuseAddr 1
                N.setSocketOption sock N.ReusePort 1
                a <- N.inet_addr "0.0.0.0"
-               let sa = N.SockAddrInet (fromIntegral port) a
+               let sa = N.SockAddrInet (fromIntegral 6030) a
                N.bind sock sa
                let s = UDP sock
                serverLoop s []
