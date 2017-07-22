@@ -82,3 +82,9 @@ tempoMVar = do now <- getCurrentTime
                return mv
   where f mv change _ = do swapMVar mv change
                            return ()
+
+beatNow :: Tempo -> IO (Double)
+beatNow t = do now <- getCurrentTime
+               let delta = realToFrac $ diffUTCTime now (at t)
+               let beatDelta = cps t * delta               
+               return $ beat t + beatDelta
