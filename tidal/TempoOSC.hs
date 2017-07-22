@@ -74,7 +74,7 @@ sendTempo sock t = sendOSC sock $
   Message "/tempo" [Float (realToFrac $ utcTimeToPOSIXSeconds $ at t),
                     Float (realToFrac $ beat t),
                     Float (realToFrac $ cps t),
-                    Int (paused t)
+                    String (show $ paused t)
                    ]
 
 logicalTime :: Tempo -> Double -> Double
