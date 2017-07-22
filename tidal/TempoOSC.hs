@@ -6,12 +6,38 @@ import Safe (readNote)
 import System.Environment (lookupEnv)
 import qualified Control.Exception as E
 
+data Tempo = Tempo {at :: UTCTime,
+                    beat :: Double,
+                    cps :: Double,
+                    paused :: Bool,
+                    clockLatency :: Double
+                   }
 
-serverPort :: IO Int
-serverPort =
+instance Show Tempo where
+  show x = (show (at x) ++ "," ++
+            show (beat x) ++ "," ++
+            show (cps x) ++ "," ++
+            show (paused x) ++ ","
+            ++ (show $ clockLatency x)
+           )
+
+getLatency :: IO Double
+getLatency =
+   maybe 0.04 (readNote "latency parse") <$> lookupEnv "TIDAL_CLOCK_LATENCY"
+
+getClockIp :: IO String
+getClockIp = fromMaybe "127.0.0.1" <$> lookupEnv "TIDAL_TEMPO_IP"
+
+getServerPort :: IO Int
+getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
-runServer = do port <- serverPort
+
+readTempo :: String -> Tempo
+readTempo x = Tempo (read a) (read b) (read c) (read d) (read e)
+  where (a:b:c:d:e:_) = wordsBy (== ',') x
+
+runServer = do port <- getServerPort
                -- inaddr_any + any_port
                sock <- N.socket N.AF_INET N.Datagram 0
                -- N.setSocketOptiSocketon sock N.NoDelay 1
