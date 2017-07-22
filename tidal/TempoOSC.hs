@@ -16,7 +16,7 @@ runServer = do port <- serverPort
                sock <- N.socket N.AF_INET N.Datagram 0
                -- N.setSocketOptiSocketon sock N.NoDelay 1
                -- N.setSocketOption sock N.ReuseAddr 1
-               -- N.setSocketOption sock N.ReusePort 1
+               N.setSocketOption sock N.ReusePort 1
                a <- N.inet_addr "0.0.0.0"
                let sa = N.SockAddrInet (fromIntegral port) a
                N.bind sock sa
