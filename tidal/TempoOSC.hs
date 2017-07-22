@@ -28,6 +28,7 @@ serverLoop s cs = do msgs <- recvMessages s
                      
 act "/join" msg cs = return cs
 
+{-
 myk <- dirtStream
 192.168.42.50
 
@@ -37,3 +38,4 @@ xx <- openUDP "92.51.149.243" 90930
 
 (sendOSC xx $ Message "/tidal" [string "1 2 3 4 5 8 9"])
   `E.catch` \(_ :: E.SomeException) -> putStrLn "aha"
+-}
