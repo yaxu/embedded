@@ -33,6 +33,18 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
+bundleToTempo :: Bundle -> Maybe Tempo
+bundleToTempo b =            let timestamp = addUTCTime (realToFrac $ ntpr_to_ut $ bundleTime b) ut_epoch
+                 msg = head $ bundleMessages b
+                 -- todo - Data.Maybe version of !!
+                 tick = datum_floating $ (messageDatum msg) !! 0
+                 tempo = datum_floating $ (messageDatum msg) !! 1
+                 address = messageAddress msg
+
+readTempo :: String -> Tempo
+readTempo x = Tempo (read a) (read b) (read c) (read d) (read e)
+  where (a:b:c:d:e:_) = wordsBy (== ',') x
+
 runServer = do port <- getServerPort
                -- inaddr_any + any_port
                sock <- N.socket N.AF_INET N.Datagram 0
