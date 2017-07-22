@@ -33,10 +33,6 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
-readTempo :: String -> Tempo
-readTempo x = Tempo (read a) (read b) (read c) (read d) (read e)
-  where (a:b:c:d:e:_) = wordsBy (== ',') x
-
 runServer = do port <- getServerPort
                -- inaddr_any + any_port
                sock <- N.socket N.AF_INET N.Datagram 0
@@ -71,14 +67,3 @@ serverLoop s cs = do msgs <- recvMessages s
                      
 act "/join" msg cs = return cs
 
-{-
-myk <- dirtStream
-192.168.42.50
-
-x <- udpServer "0.0.0.0" 4040
-
-xx <- openUDP "92.51.149.243" 90930
-
-(sendOSC xx $ Message "/tidal" [string "1 2 3 4 5 8 9"])
-  `E.catch` \(_ :: E.SomeException) -> putStrLn "aha"
--}
