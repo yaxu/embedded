@@ -69,7 +69,13 @@ serverLoop s cs = do msgs <- recvMessages s
 act "/join" msg cs = return cs
 
 sendTempo :: UDP -> Tempo -> IO ()
-sendTempo sock t = WS.sendTextData conn (T.pack $ show t)
+sendTempo sock t = sendOSC sock $ Message "/tempo" [Float (at)]
+
+data Tempo = Tempo {at :: UTCTime,
+                    beat :: Double,
+                    cps :: Double,
+                    paused :: Bool
+                   }
 
 
 
