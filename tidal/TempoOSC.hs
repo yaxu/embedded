@@ -67,3 +67,9 @@ serverLoop s cs = do msgs <- recvMessages s
                      
 act "/join" msg cs = return cs
 
+
+logicalTime :: Tempo -> Double -> Double
+logicalTime t b = changeT + timeDelta
+  where beatDelta = b - (beat t)
+        timeDelta = beatDelta / (cps t)
+        changeT = realToFrac $ utcTimeToPOSIXSeconds $ at t
