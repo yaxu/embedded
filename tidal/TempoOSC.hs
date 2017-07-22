@@ -76,14 +76,6 @@ sendTempo sock t = sendOSC sock $
                     Int (paused t)
                    ]
 
-data Tempo = Tempo {at :: UTCTime,
-                    beat :: Double,
-                    cps :: Double,
-                    paused :: Bool
-                   }
-
-
-
 logicalTime :: Tempo -> Double -> Double
 logicalTime t b = changeT + timeDelta
   where beatDelta = b - (beat t)
