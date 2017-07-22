@@ -23,6 +23,16 @@ runServer = do port <- serverPort
                let s = UDP sock
                serverLoop s []
 
+client = do sock <- N.socket N.AF_INET N.Datagram 0
+            -- N.setSocketOptiSocketon sock N.NoDelay 1
+            N.setSocketOption sock N.Broadcast 1
+            -- N.setSocketOption sock N.ReusePort 1
+            a <- N.inet_addr "127.255.255.255"
+            let sa = N.SockAddrInet (fromIntegral 6040) a
+            N.connect sock sa
+            let s = UDP sock
+            return s
+
 serverLoop s cs = do msgs <- recvMessages s
                      cs' <- process msgs cs
                      serverLoop s cs'
