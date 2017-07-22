@@ -8,6 +8,7 @@ import qualified Control.Exception as E
 import Data.Time (getCurrentTime, UTCTime, NominalDiffTime, diffUTCTime, addUTCTime)
 import Data.Time.Clock.POSIX
 import Data.Maybe
+import Control.Concurrent.MVar
 
 data Tempo = Tempo {at :: UTCTime,
                     beat :: Double,
