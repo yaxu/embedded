@@ -60,6 +60,8 @@ tempoReceiverLoop s mvs =
                do putStrLn $ "received message" ++ (show m)
                   let address = messageAddress m
                   act address mvs timestamp m
+{-
+
 
 act "/tempo" mvs timestamp m = return ()
   where t = Tempo {at = timestamp,
@@ -67,7 +69,7 @@ act "/tempo" mvs timestamp m = return ()
                    cps = datum_floating $ (messageDatum m) !! 1,
                    paused = False
                   }
-
+-}
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
             N.setSocketOption sock N.Broadcast 1
