@@ -57,7 +57,7 @@ tempoReceiverLoop s cs = do msgs <- recvMessages s
                                             cs' <- act address msg cs
                                             process msgs cs'
 
-act "/join" msg cs = return cs
+act "/tempo" msg cs = return cs
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
