@@ -61,7 +61,7 @@ tempoReceiverLoop s mvs =
                   let address = messageAddress m
                   act address mvs timestamp m
 
-act "/tempo" mvs timestamp m = return ()
+act "/tempo" mvs timestamp m = do
   where t = Tempo {at = timestamp,
                    beat = fromJust $ datum_floating $ (messageDatum m) !! 0,
                    cps = fromJust $ datum_floating $ (messageDatum m) !! 1,
@@ -92,15 +92,15 @@ logicalTime t b = changeT + timeDelta
         timeDelta = beatDelta / (cps t)
         changeT = realToFrac $ utcTimeToPOSIXSeconds $ at t
 
-{-
+
 tempoMVar :: IO (MVar (Tempo))
 tempoMVar = do now <- getCurrentTime
                mv <- newMVar (Tempo now 0 0.5 False)
-               forkIO $ clocked $ f mv
+               forkIO $ clockedTick 1 $ f mv
                return mv
   where f mv change _ = do swapMVar mv change
                            return ()
--}
+
 
 beatNow :: Tempo -> IO (Double)
 beatNow t = do now <- getCurrentTime
