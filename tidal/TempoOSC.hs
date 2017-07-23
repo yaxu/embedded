@@ -61,7 +61,7 @@ tempoReceiverLoop s mvs =
                   let address = messageAddress m
                   act address mvs timestamp m
 
-act "/tempo" mvs timestamp m = do
+act "/tempo" mvs timestamp m = return ()
   where t = Tempo {at = timestamp,
                    beat = fromJust $ datum_floating $ (messageDatum m) !! 0,
                    cps = fromJust $ datum_floating $ (messageDatum m) !! 1,
