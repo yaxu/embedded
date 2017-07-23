@@ -59,7 +59,7 @@ tempoReceiverLoop s mvs =
        where process mvs timestamp m =
                do putStrLn $ "received message" ++ (show m)
                   let address = messageAddress m
-                  act address m mvs
+                  act address mvs timestamp m
 
 act "/tempo" m mvs = return ()
 --  where 
