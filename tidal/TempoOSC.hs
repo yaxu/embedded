@@ -73,7 +73,7 @@ client = do sock <- N.socket N.AF_INET N.Datagram 0
             return s
 
 sendTempo :: UDP -> Tempo -> IO ()
-sendTempo sock t = sendOSC sock $
+sendTempo sock t = sendOSC sock b
   where m = Message "/tempo" [float (realToFrac $ beat t),
                               float (realToFrac $ cps t),
                               string (show $ paused t)
