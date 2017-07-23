@@ -61,7 +61,7 @@ tempoReceiverLoop s mvs =
                   let address = messageAddress m
                   act address mvs timestamp m
 
-act "/tempo" m mvs = return ()
+act "/tempo" mvs timestamp m = return ()
 --  where 
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
