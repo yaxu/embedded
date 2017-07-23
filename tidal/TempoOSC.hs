@@ -54,13 +54,14 @@ tempoReceiver = do
 tempoReceiverLoop s mvs =
   do b <- recvBundle s
      let timestamp = addUTCTime (realToFrac $ ntpr_to_ut $ bundleTime b) ut_epoch
-     mapM_ (process ms timestamp) (bundleMessages b)
-     tempoReceiverLoop s ms
-       where process ms m = do putStrLn $ "received message" ++ (show msg)
-                               let address = messageAddress msg
-                               act address msg ms
+     mapM_ (process mvs timestamp) (bundleMessages b)
+     tempoReceiverLoop s mvs
+       where process mvs m =
+               do putStrLn $ "received message" ++ (show m)
+                  let address = messageAddress m
+                      act address m mvs
 
-act "/tempo" msg ms = return ()
+act "/tempo" m mvs = return ()
 --  where 
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
