@@ -36,17 +36,26 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
-runServer = do port <- getServerPort
-               -- inaddr_any + any_port
-               sock <- N.socket N.AF_INET N.Datagram 0
-               -- N.setSocketOptiSocketon sock N.NoDelay 1
-               N.setSocketOption sock N.ReuseAddr 1
-               -- N.setSocketOption sock N.ReusePort 1
-               a <- N.inet_addr "0.0.0.0"
-               let sa = N.SockAddrInet (fromIntegral 6040) a
-               N.bind sock sa
-               let s = UDP sock
-               serverLoop s []
+tempoReceiver = do port <- getServerPort
+                   -- inaddr_any + any_port
+                   sock <- N.socket N.AF_INET N.Datagram 0
+                   -- N.setSocketOptiSocketon sock N.NoDelay 1
+                   N.setSocketOption sock N.ReuseAddr 1
+                   -- N.setSocketOption sock N.ReusePort 1
+                   a <- N.inet_addr "0.0.0.0"
+                   let sa = N.SockAddrInet (fromIntegral 6040) a
+                   N.bind sock sa
+                   let s = UDP sock
+                   tempoReceiverLoop s []
+
+tempoReceiverLoop s cs = do msgs <- recvMessages s
+                            cs' <- process msgs cs
+                            tempoReceiverLoop s cs'
+           where process [] cs = return cs
+                 process (msg:msgs) cs = do putStrLn $ "received message" ++ (show msg)
+                                            let address = messageAddress msg
+                                            cs' <- act address msg cs
+                                            process msgs cs'
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
@@ -57,15 +66,6 @@ client = do sock <- N.socket N.AF_INET N.Datagram 0
             N.connect sock sa
             let s = UDP sock
             return s
-
-serverLoop s cs = do msgs <- recvMessages s
-                     cs' <- process msgs cs
-                     serverLoop s cs'
-           where process [] cs = return cs
-                 process (msg:msgs) cs = do putStrLn $ "received message" ++ (show msg)
-                                            let address = messageAddress msg
-                                            cs' <- act address msg cs
-                                            process msgs cs'
 
                      
 act "/join" msg cs = return cs
