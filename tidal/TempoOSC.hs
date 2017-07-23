@@ -126,7 +126,6 @@ clockedTick tpb callback =
                  delay = tickDelta / tps
              threadDelay $ floor (delay * 1000000)
              callback tempo tick
-             -- putStrLn $ "hmm diff: " ++ show (abs $ (floor actualTick) - tick)
              let newTick | (abs $ (floor actualTick) - tick) > 4 = floor actualTick
                          | otherwise = tick + 1
              return $ newTick
