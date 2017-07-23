@@ -56,7 +56,7 @@ tempoReceiverLoop s mvs =
      let timestamp = addUTCTime (realToFrac $ ntpr_to_ut $ bundleTime b) ut_epoch
      mapM_ (process mvs timestamp) (bundleMessages b)
      tempoReceiverLoop s mvs
-       where process mvs m =
+       where process mvs timestamp m =
                do putStrLn $ "received message" ++ (show m)
                   let address = messageAddress m
                   act address m mvs
