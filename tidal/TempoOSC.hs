@@ -57,7 +57,7 @@ tempoReceiverLoop s cs = do msgs <- recvMessages s
                                             cs' <- act address msg cs
                                             process msgs cs'
 
-act "/tempo" msg cs = return cs
+act "/tempo" msg cs = do return cs
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
@@ -99,3 +99,41 @@ beatNow t = do now <- getCurrentTime
                let beatDelta = cps t * delta               
                return $ beat t + beatDelta
 
+clockedTick :: Int -> (Tempo -> Int -> IO ()) -> IO ()
+clockedTick tpb callback = 
+  do (mTempo, _, mCps) <- runClient
+     t <- readMVar mTempo
+     now <- getCurrentTime
+     let delta = realToFrac $ diffUTCTime now (at t)
+         beatDelta = cps t * delta
+         nowBeat = beat t + beatDelta
+         nextTick = ceiling (nowBeat * (fromIntegral tpb))
+         -- next4 = nextBeat + (4 - (nextBeat `mod` 4))
+     loop mTempo nextTick
+  where loop mTempo tick = 
+          do tempo <- readMVar mTempo
+             tick' <- doTick tempo tick
+             loop mTempo tick'
+        doTick tempo tick | paused tempo =
+          do let pause = 0.01
+             -- TODO - do this via blocking read on the mvar somehow
+             -- rather than polling
+             threadDelay $ floor (pause * 1000000)
+             -- reset tick to 0 if cps is negative
+             return $ if cps tempo < 0 then 0 else tick
+                          | otherwise =
+          do now <- getCurrentTime
+             let tps = (fromIntegral tpb) * cps tempo
+                 delta = realToFrac $ diffUTCTime now (at tempo)
+                 actualTick = ((fromIntegral tpb) * beat tempo) + (tps * delta)
+                 -- only wait by up to two ticks
+                 tickDelta = min 2 $ (fromIntegral tick) - actualTick
+                 delay = tickDelta / tps
+             -- putStrLn $ "tick delta: " ++ show tickDelta
+             --putStrLn ("Delay: " ++ show delay ++ "s Beat: " ++ show (beat tempo))
+             threadDelay $ floor (delay * 1000000)
+             callback tempo tick
+             -- putStrLn $ "hmm diff: " ++ show (abs $ (floor actualTick) - tick)
+             let newTick | (abs $ (floor actualTick) - tick) > 4 = floor actualTick
+                         | otherwise = tick + 1
+             return $ newTick
