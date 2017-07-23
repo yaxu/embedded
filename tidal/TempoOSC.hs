@@ -32,7 +32,11 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
-tempoReceiver = do port <- getServerPort
+tempoReceiver = do
+                   mTempo <- newEmptyMVar 
+                   mCps <- newEmptyMVar 
+                   mNudge <- newEmptyMVar 
+                   port <- getServerPort
                    -- inaddr_any + any_port
                    sock <- N.socket N.AF_INET N.Datagram 0
                    -- N.setSocketOptiSocketon sock N.NoDelay 1
@@ -42,7 +46,9 @@ tempoReceiver = do port <- getServerPort
                    let sa = N.SockAddrInet (fromIntegral 6040) a
                    N.bind sock sa
                    let s = UDP sock
-                   tempoReceiverLoop s []
+                   forkIO $ tempoReceiverLoop s (mTempo, mCps, mNudge)
+                   return (mTempo, mCps, mNudge)
+
 
 tempoReceiverLoop s cs = do msgs <- recvMessages s
                             cs' <- process msgs cs
