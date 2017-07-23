@@ -78,7 +78,7 @@ sendTempo sock t = sendOSC sock b
                               float (realToFrac $ cps t),
                               string (show $ paused t)
                              ]
-        b = Bundle (ut_to_ntpr $ realToFrac $ at t) m
+        b = Bundle (ut_to_ntpr $ realToFrac $ at t) [m]
 
 logicalTime :: Tempo -> Double -> Double
 logicalTime t b = changeT + timeDelta
