@@ -104,7 +104,6 @@ clockedTick tpb callback =
          beatDelta = cps t * delta
          nowBeat = beat t + beatDelta
          nextTick = ceiling (nowBeat * (fromIntegral tpb))
-         -- next4 = nextBeat + (4 - (nextBeat `mod` 4))
      loop mTempo nextTick
   where loop mTempo tick = 
           do tempo <- readMVar mTempo
@@ -125,8 +124,6 @@ clockedTick tpb callback =
                  -- only wait by up to two ticks
                  tickDelta = min 2 $ (fromIntegral tick) - actualTick
                  delay = tickDelta / tps
-             -- putStrLn $ "tick delta: " ++ show tickDelta
-             --putStrLn ("Delay: " ++ show delay ++ "s Beat: " ++ show (beat tempo))
              threadDelay $ floor (delay * 1000000)
              callback tempo tick
              -- putStrLn $ "hmm diff: " ++ show (abs $ (floor actualTick) - tick)
