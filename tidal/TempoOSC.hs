@@ -74,11 +74,11 @@ client = do sock <- N.socket N.AF_INET N.Datagram 0
 
 sendTempo :: UDP -> Tempo -> IO ()
 sendTempo sock t = sendOSC sock $
-  Message "/tempo" [float (realToFrac $ utcTimeToPOSIXSeconds $ at t),
-                    float (realToFrac $ beat t),
-                    float (realToFrac $ cps t),
-                    string (show $ paused t)
-                   ]
+  where m = Message "/tempo" [float (realToFrac $ beat t),
+                              float (realToFrac $ cps t),
+                              string (show $ paused t)
+                             ]
+        b = Bundle (ut_to_ntpr at t) m
 
 logicalTime :: Tempo -> Double -> Double
 logicalTime t b = changeT + timeDelta
