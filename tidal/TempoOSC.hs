@@ -59,7 +59,7 @@ tempoReceiverLoop s mvs =
        where process mvs m =
                do putStrLn $ "received message" ++ (show m)
                   let address = messageAddress m
-                      act address m mvs
+                  act address m mvs
 
 act "/tempo" m mvs = return ()
 --  where 
