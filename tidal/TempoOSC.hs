@@ -24,10 +24,6 @@ instance Show Tempo where
             show (paused x)
            )
 
-getLatency :: IO Double
-getLatency =
-   maybe 0.04 (readNote "latency parse") <$> lookupEnv "TIDAL_CLOCK_LATENCY"
-
 getClockIp :: IO String
 getClockIp = fromMaybe "127.0.0.1" <$> lookupEnv "TIDAL_TEMPO_IP"
 
