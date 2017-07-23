@@ -62,7 +62,11 @@ tempoReceiverLoop s mvs =
                   act address mvs timestamp m
 
 act "/tempo" mvs timestamp m = return ()
---  where 
+  where t = Tempo {at = timestamp,
+                   beat = datum_floating $ (messageDatum m) !! 0,
+                   cps = datum_floating $ (messageDatum m) !! 1,
+                   paused = False
+                  }
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
