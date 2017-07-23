@@ -50,16 +50,16 @@ tempoReceiver = do
                    return (mTempo, mCps, mNudge)
 
 
-tempoReceiverLoop s cs = do msgs <- recvMessages s
-                            cs' <- process msgs cs
-                            tempoReceiverLoop s cs'
-           where process [] cs = return cs
-                 process (msg:msgs) cs = do putStrLn $ "received message" ++ (show msg)
+tempoReceiverLoop s ms = do msgs <- recvMessages s
+                            process msgs ms
+                            tempoReceiverLoop s ms
+           where process [] ms = return ()
+                 process (msg:msgs) ms = do putStrLn $ "received message" ++ (show msg)
                                             let address = messageAddress msg
-                                            cs' <- act address msg cs
-                                            process msgs cs'
+                                            act address msg ms
+                                            process msgs ms
 
-act "/tempo" msg cs = do return cs
+act "/tempo" msg ms = return ()
 
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
