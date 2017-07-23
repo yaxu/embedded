@@ -57,6 +57,8 @@ tempoReceiverLoop s cs = do msgs <- recvMessages s
                                             cs' <- act address msg cs
                                             process msgs cs'
 
+act "/join" msg cs = return cs
+
 client = do sock <- N.socket N.AF_INET N.Datagram 0
             -- N.setSocketOptiSocketon sock N.NoDelay 1
             N.setSocketOption sock N.Broadcast 1
@@ -66,9 +68,6 @@ client = do sock <- N.socket N.AF_INET N.Datagram 0
             N.connect sock sa
             let s = UDP sock
             return s
-
-                     
-act "/join" msg cs = return cs
 
 sendTempo :: UDP -> Tempo -> IO ()
 sendTempo sock t = sendOSC sock $
