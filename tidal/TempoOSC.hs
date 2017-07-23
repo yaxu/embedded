@@ -103,7 +103,7 @@ beatNow t = do now <- getCurrentTime
 
 clockedTick :: Int -> (Tempo -> Int -> IO ()) -> IO ()
 clockedTick tpb callback = 
-  do (mTempo, _, mCps) <- tempoReceiver
+  do (mTempo, mCps, _) <- tempoReceiver
      t <- readMVar mTempo
      now <- getCurrentTime
      let delta = realToFrac $ diffUTCTime now (at t)
