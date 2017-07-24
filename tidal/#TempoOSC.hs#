@@ -32,7 +32,7 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
-tempoSender = do 
+tempoSender = do mv <- tempoMVar
 
 tempoReceiver = do
                    mTempo <- newEmptyMVar 
