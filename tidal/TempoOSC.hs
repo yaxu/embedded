@@ -32,6 +32,10 @@ getServerPort =
    maybe 9160 (readNote "port parse") <$> lookupEnv "TIDAL_TEMPO_PORT"
 
 
+tempoSender = do now <- getCurrentTime
+                 tempoState <- newMVar (Tempo now 0 1 False)
+
+
 tempoReceiver = do
                    mTempo <- newEmptyMVar 
                    mCps <- newEmptyMVar 
@@ -91,15 +95,6 @@ logicalTime t b = changeT + timeDelta
   where beatDelta = b - (beat t)
         timeDelta = beatDelta / (cps t)
         changeT = realToFrac $ utcTimeToPOSIXSeconds $ at t
-
-
-tempoMVar :: IO (MVar (Tempo))
-tempoMVar = do now <- getCurrentTime
-               mv <- newMVar (Tempo now 0 0.5 False)
-               forkIO $ clockedTick 1 $ f mv
-               return mv
-  where f mv change _ = do swapMVar mv change
-                           return ()
 
 
 beatNow :: Tempo -> IO (Double)
