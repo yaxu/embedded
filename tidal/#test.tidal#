@@ -2143,4 +2143,7 @@ hush
 discretise 8 (0.25 ~> sine)
 
 d1 $ sound "arpy*4" # n (discretise 2 $ irand 4)
-hush
+
+d1 $ sound "bd*3"
+
+cps 1.6
