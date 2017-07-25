@@ -2142,4 +2142,4 @@ hush
 
 discretise 8 (0.25 ~> sine)
 
-d1 $ sound "arpy" # n (irand 4)
+d1 $ sound "arpy*4" # n (discretise 0.25 $ irand 4)
