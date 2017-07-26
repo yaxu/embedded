@@ -2144,7 +2144,7 @@ discretise 8 (0.25 ~> sine)
 
 d1 $ sound "bd"
 
-cps 2
+cps (0.8)
 
 clocked  (\_ tick -> putStrLn $ show tick)
 
