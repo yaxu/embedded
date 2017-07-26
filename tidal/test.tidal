@@ -2141,3 +2141,7 @@ m1 <- midiStream devices "USB Midi Cable MIDI 1" 1 keysController
 hush
 
 discretise 8 (0.25 ~> sine)
+
+d1 $ sound "bd"
+
+cps 0.4
