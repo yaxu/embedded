@@ -2144,4 +2144,8 @@ discretise 8 (0.25 ~> sine)
 
 d1 $ sound "bd"
 
-cps 0.4
+cps 2
+
+clocked  (\_ tick -> putStrLn $ show tick)
+
+forkIO $ tempoSender
