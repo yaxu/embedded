@@ -2142,9 +2142,11 @@ hush
 
 discretise 8 (0.25 ~> sine)
 
-d1 $ sound "bd"
+d1 $ sound "bd(3,8)"
 
-cps (0.8)
+d2 $ sound "sn:2"
+
+cps (1)
 
 clocked  (\_ tick -> putStrLn $ show tick)
 
