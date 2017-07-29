@@ -2151,3 +2151,7 @@ cps (1)
 clocked  (\_ tick -> putStrLn $ show tick)
 
 forkIO $ tempoSender
+
+
+d1 $ sound "bd"
+
