@@ -1,1 +1,13 @@
-d1 $ sound "bd"
+
+d1 $ jux (# s "pulse") $
+  off 0.25 (|*| speed 2) $ superimpose (slow 2) $ sound "rash [~ rash:5 ~ rash:2]"
+  # shape 0.5
+  |+| pan (slow 4 saw)
+
+d2 $ every 4 (0.25 <~) $ sound "lighter:4 [cp8 lighter]"
+  # orbit 1
+  # room 0.8
+  # size 0.4 # speed 2
+
+d3 $ stut 2 0.7 0.5 $ sound "future*3"
+  # shape 0.5
