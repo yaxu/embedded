@@ -21,8 +21,9 @@ d3 $ off 0.25 (|*| speed 2) $ stut 2 0.7 0.5 $ sound "<future*2 future*3>"
 
 d4 $ chunk 8 (hurry 4) $ every 4 (rev.chop 32) $ sound "~ gabba"
 
-d5 $ chunk 4 (hurry 0.5) $ iter 4 $ loopAt 2 $ chop 16 $ sound "os"
-  # gain 1.
+d5 $ jux (0.25 <~) $ chunk 4 (hurry 0.5) $ iter 4 $ loopAt 2 $ chop 16 $ sound "<os os:2>"
+  # gain 1.6
+
 
 d6 $ chunk 4 (hurry 2) $ (slow 2 $ off 0.25 (|*| speed 2) $ up "0 [0 ~ 0] [3 4 ~] -2" # n "c7" # sound "stabs")
   # gain 1.1
