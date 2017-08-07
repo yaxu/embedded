@@ -1,10 +1,13 @@
 
 d1 $ slow 2 $ jux (# s "pulse") $
-  off 0.25 (|*| speed 2) $ superimpose (slow 2) $ sound "rash [~ rash:5 ~ rash:2]"
+  off 0.125 (|+| n 7) $
+  off 0.25 (|*| speed 2) $ superimpose (slow 2) $ sound "rash [~ rash:7 ~ rash:3]"
   # shape 0.5
   |+| pan (slow 4 saw)
   |+| n "24"
-  # hpf 3000
+  # hpf (slow 4 $ sine * 1000 + 400)
+  # hpq 0.3
+  # gain 0.9
 
 d2 $ every 4 (0.25 <~) $ sound "{lighter:4 [cp8 lighter], lighter*4 lighter lighter:4}"
   # orbit 1
@@ -14,4 +17,4 @@ d2 $ every 4 (0.25 <~) $ sound "{lighter:4 [cp8 lighter], lighter*4 lighter ligh
 d3 $ off 0.25 (|*| speed 2) $ stut 2 0.7 0.5 $ sound "<future*2 future*3>"
   # shape 0.5
 
-d4 $ every 4 (rev.chop 32) $ sound "~ gabba"
+d4 $ chunk 8 (hurry 4) $ every 4 (rev.chop 32) $ sound "~ gabba"
