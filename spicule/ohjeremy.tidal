@@ -8,6 +8,7 @@ d1 $ slow 2 $ jux (# s "pulse") $
   # hpf (slow 4 $ sine * 1000 + 400)
   # hpq 0.3
   # gain 0.9
+  |+| n "<0 7 12>"
 
 d2 $ every 4 (0.25 <~) $ sound "{lighter:4 [cp8 lighter], lighter*4 lighter lighter:4}"
   # orbit 1
