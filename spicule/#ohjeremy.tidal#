@@ -1,4 +1,4 @@
-d1 sil
+
 d1 $ chunk 4 (hurry 0.5) $ jux rev $ slow 2 $ jux (# s "pulse") $
   off (1/16) (|+| n 12) $ off 0.125 (|+| n 7) $
   off 0.25 (|*| speed 2) $ superimpose (slow 2) $ sound "rash [~ rash:7 ~ rash:3]"
@@ -23,4 +23,11 @@ d4 $ chunk 8 (hurry 4) $ every 4 (rev.chop 32) $ sound "~ gabba"
 
 d5 $ chunk 4 (hurry 0.5) $ iter 4 $ loopAt 2 $ chop 16 $ sound "arc"
   # shape 0.99
-  # gain 0.9
+  # gain 0.8
+
+d6 $ up "0 0 [3 4 ~] -2" # n "c7" # sound "stabs"
+  # gain 1.1
+  # orbit 3 # size 0.3
+  # lpf 2000
+  # lpq 0.2
+  
