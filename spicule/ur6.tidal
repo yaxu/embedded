@@ -23,3 +23,4 @@ d2 $ off 0.25 (|+| n 7) $ off 0.125 (|+| n 12) $ slow 4 $ n "c(3,8) e(3,8) f(3,8
   # gain 1.3
 
 d5 $ loopAt 4 $ chop 32 $ sound "paper"
+
