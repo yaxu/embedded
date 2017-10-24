@@ -1,0 +1,19 @@
+
+
+-- Hello Sheffield
+
+d1 $ degrade $ off 0.25 ((|+| s "<pulse rash>") . (|*| gain 1.2)) $ jux rev $ n (off 0.125 (+12) $ off 0.25 (+7) $ "<c7(3,8) a6*2 f6(3,8,2) e7*2>") # sound "xx"
+  |+| n "12"
+
+
+d2 $ chunk 4 (hurry 2) $ n "0 .. 7" # sound "micron"
+  # gain 1.1
+
+d3 $ n "<c(3, e f g>" # s "rash"
+  |+| n "24"
+  # gain 1.2
+
+d3 $ jux rev $ chop "<1 3 8>" $ sound "~ off"
+
+d4 $ iter 4 $ loopAt 4 $ chop 8 $ sound "paper"
+
